@@ -1,0 +1,111 @@
+== What are the terms of use for qBittorrent ? ==
+
+qBittorrent is a Free software under [http://www.gnu.org/copyleft/gpl.html GNU GPLv2] license. You don't have to pay for it and it won't change. Its [http://qbittorrent.svn.sourceforge.net/viewvc/qbittorrent/trunk/ code] is open and available to everyone and reusable as long as you keep the license information and mention the original author (see the license text for more information). qBittorrent - of course - does not contain any malware, spyware or third-part program.
+
+== I found a bug in the software, where can I report it? ==
+qBittorrent bug tracker is located on launchpad, [https://bugs.launchpad.net/qbittorrent/ here]. Do not hesitate to report any problem you may experience with qBittorrent and we will do our best to address it.
+
+== There is a feature I would like to see in qBittorrent, where can I make a request? ==
+On our bug tracker, [https://bugs.launchpad.net/qbittorrent/ here]. All ideas/feedback are welcome. Just know that we want qBittorrent to stay a low-footprint software and we do not want to integrate "heavy" features that are not really useful to most people.
+
+== I wrote a patch for qBittorrent, to whom can I send it? ==
+Do not hesitate to send patches at the following address: chris(at)qbittorrent(dot)org. We will review it shortly.
+
+== Who is developing qBittorrent? ==
+qBittorrent was created in Mars 2006 by [mailto:chris@qbittorrent.org Christophe Dumez], and still actively maintained/developed by him. Several other persons (Arnaud Demaiziere, Ishan Arora, Stephanos Antaris, Mohammad Dib) contributed or are still contributing to the project. If you like the software and you would like to help the project to subsist by giving some money, please do so [http://sourceforge.net/donate/index.php?group_id=163414 here]. We thank you in advance.
+
+== What Operating systems are currently supported by qBittorrent? ==
+qBittorrent code compiles on Unix-like systems (Linux, BSD, MacOSX...) and Windows. Windows is officially supported as of qBittorrent v2.2.9.
+
+== Is qBittorrent integrated in my Linux distribution? ==
+qBittorrent is now officially included in the repositories of the major Linux Distributions (Ubuntu, Fedora, Debian, Gentoo, Alt Linux, ...). Binary distributions are usually available to the other distributions through 3rd party repositories. If not, feel free to file a bug report against your Linux distribution.
+
+== Is it legal to use qBittorrent? ==
+qBittorrent is a ''Peer to Peer'' (P2P) file sharing software. Although the software is perfectly legal, it may be illegal to download copyrighted content with this software, depending on the law in your country.
+
+== Why use qBittorrent instead of another client? ==
+A lot of other Bittorrent clients exist but qbittorrent has several advantages: 
+* It is a Free software (you can see the code and see what qBittorrent is doing)
+* It is the closest open-source equivalent to the official Bittorrent client: [http://www.utorrent.com| µTorrent]
+* Its development team is very active and friendly
+* It is stable and it has a low footprint. while providing all the features you may need
+* It is easy to use and all its features are well documented.
+* It is an international program, supporting Unicode and translated into more than 25 languages
+
+== My menu icons in qBittorrent are gone, why? ==
+You are probably using Gnome >= 2.28. As a default, this window manager is no longer displaying menu icons. You can change this behavior by issuing the following two commands in a terminal:
+ gconftool-2 --type boolean --set /desktop/gnome/interface/buttons_have_icons true
+ gconftool-2 --type boolean --set /desktop/gnome/interface/menus_have_icons true
+
+== Why the name qBittorrent? ==
+Well, actually I lacked inspiration on this one :P qBittorrent is simply a Bittorrent client written using [http://qt.nokia.com/products Qt4 graphic toolkit] for its user interface. Most programs developed with Qt4 toolkit use a 'q' as first letter of their name. ''qBT'' abbreviation is also commonly used to refer to qBittorrent client. However, please do '''not''' use ''qtorrent'' abbreviation since another Bittorrent with this name already exists. 
+
+== Where does qBittorrent save its settings? ==
+qBittorrent saves its preferences in ''~/.config/qBittorrent/'' folder.
+The .torrent files are stored in:
+* ''~/.qBittorrent/'' by qBittorrent < 2.1.0
+* ''~/.local/share/data/qBittorrent/'' by qBittorrent >= 2.1.0. This is the standard XDG data folder.
+
+== I configured qBittorrent not to download some files in a torrent but they still appear on my hard disk, why is that? ==
+As you may know, a torrent is split into pieces of equal sizes that do not take files into consideration. As a consequence, a piece can contain information relative to more than one file and qBittorrent only operates at piece level. As a consequence, if two files are adjacent and you choose to download only one of them, it is likely that the filtered one will be partly downloaded and thus appear on the hard-disk.
+
+== Seeding torrents have no priority (i.e. queue position), why? ==
+qBittorrent is handling seeding torrents priority by itself in order to optimize sharing and benefit to the swarm as much as possible.
+
+== How do I import my torrents from another Bittorrent client? ==
+Most users want to keep the torrents they are downloading or seeding when switching to qBittorrent from another Bittorrent client. This is of course possible and it is quite simple to achieve. Here is how should should proceed:
+* Add the *.torrent files corresponding to your torrents to qBittorrent
+** '''Deluge''' stores its *.torrent files in ''~/.config/deluge/''
+** '''KTorrent''' stores its *.torrent files in ''~/.kde4/share/apps/ktorrent/''
+** '''Vuze''' stores its *.torrent files in ''~/.azureus/torrents/''
+** '''Transmission''' stores its *.torrent files in ''~/.config/transmission/torrents/''
+** '''rTorrent''' stores its *.torrent files in ''~/.session/'' (as a default)
+* Edit the download path in torrent addition dialog and choose the path where the torrents were actually being downloaded/seeded.
+* For the torrents that are complete, you can select ''Skip file checking and start seeding immediately'' option in torrent addition dialog in order to save time and CPU. Basically, qBittorrent will trust that the local files are not corrupt and will start seeding them without rechecking all the files.
+
+== Can I run qBittorrent on a remote computer? Without a X server? ==
+Yes and Yes!
+qBittorrent can be run on your server and controlled remotely through its Web UI. As a default, the Web UI is running on http://server-ip:8080 (user: admin, password: adminadmin). If you server does not have a X server running, then you will need to disable qBittorrent graphical user interface at compilation time (>= v2.1.0 only). Pass --disable-debug parameter to the configure file before compilation to disable the GUI. A documentation to disable qBittorrent GUI is available [[Running qBittorrent 2 without a X server|here]].
+
+== My favorite RSS feed requires cookies, how to configure qBittorrent to use them? ==
+Support for cookies in RSS feeds was added in qBittorrent v2.3.0.
+
+To use feeds that require cookies, you must find the cookie for the site, and grab UID and pass from it.
+* Firefox users will find their cookies in ''Tools -> Options -> Privacy -> Show Cookies''
+* Opera users will find their cookies in ''Tools -> Advanced -> Cookies''
+* IE users will find their cookies in ''%UserProfile%\Cookies''
+* Users of other browsers will have to consult their browser's documentation
+
+Once you have the appropriate information, right click on the RSS feed in qBittorrent and select ''"Manage cookies"''. Then define the same key/values as in your Web browser cookies. For example:
+{| border="1"
+! Key
+! Value
+|-
+|uid
+|1234
+|-
+|pass
+|asdjh12378912y3lk
+|}
+
+Not every site uses uid and pass as the cookie variables, or use additional ones, so one MUST use the exact variable name and the extra variables they specify. For example, a certain site uses id, password, and secure as its cookie variables.
+
+== What is qBittorrent Peer ID? ==
+Each Bittorrent client is identified by a string called Peer ID. This ID is sometimes used by trackers to whitelist only a limited amount of trusted clients.
+
+qBittorrent Peer ID is formatted as follows: -qBXYZW-
+where:
+* X is the major version number
+* Y is the minor version number
+* Z is the bugfix version number (in hexadecimal so that we can go up to 15)
+* W indicates the development status
+** 0: NORMAL/STABLE
+** 1: ALPHA
+** 2: BETA
+** 3: RELEASE CANDIDATE
+** 4: DEVEL (unused)
+
+For example, we would have the following Peer IDs : 
+* qBittorrent v2.4.0: '''-qB2400-'''
+* qBittorrent v2.4.5: '''-qB2450-'''
+* qBittorrent v2.4.10: '''-qB24A0-'''
