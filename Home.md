@@ -10,4 +10,4 @@ Welcome to the qBittorrent wiki!
 * [Windows compilation](Windows-compilation)
 
 ## Linux
-* Running qBittorrent without X server
+* [Running qBittorrent without X server](Running-qBittorrent-without-X-server)
