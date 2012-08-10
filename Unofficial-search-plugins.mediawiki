@@ -12,21 +12,21 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 !  Comment
 |-
 |  [[http://www.qbittorrent.org/wiki-images/Fenopy.png]] [http://fenopy.com Fenopy.com]
-|  [mailto:chris@qbittorrent.org Christophe DUMEZ]
+|  chris(at)qbittorrent(dot)org
 |  1.1
 |  Dec 26 2010
 |  [https://raw.github.com/cdumez/qBittorrent-Search-Plugins/master/fenopy.py Download]
 |  
 |-
 |  [[http://www.qbittorrent.org/wiki-images/SumoTorrent.png]] [http://www.sumotorrent.com Sumo Torrent]
-|  [mailto:chris@qbittorrent.org Christophe DUMEZ]
+|  chris(at)qbittorrent(dot)org
 |  1.2
 |  Sep 17 2011
 |  [https://raw.github.com/cdumez/qBittorrent-Search-Plugins/master/sumotorrent.py Download]
 |
 |-
 |  [[http://www.qbittorrent.org/wiki-images/Limetorrents.png]] [http://www.limetorrents.com LimeTorrents]
-|  [mailto:chris@qbittorrent.org Christophe DUMEZ]
+|  chris(at)qbittorrent(dot)org
 |  1.0
 |  Dec 29 2010
 |  [https://raw.github.com/cdumez/qBittorrent-Search-Plugins/master/limetorrents.py Download]
