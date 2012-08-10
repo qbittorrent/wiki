@@ -1,7 +1,7 @@
 Welcome to the qBittorrent wiki!
 
 ## General
-* [Frequently Asked Questions (FAQ)](Frequently-Asked-Questions)
+* [Frequently Asked Questions (FAQ)](wiki/Frequently-Asked-Questions)
 * [How to use qBittorrent as a tracker](How-to-use-qBittorrent-as-a-tracker)
 
 ## Search plugins
