@@ -1,0 +1,53 @@
+qBittorrent has a feature-rich Web UI allowing users to control qBittorrent remotely. Up until v2.1.0, qBittorrent required a X server to run because its Qt4 graphical user interface could not be disabled. However, it is often the case that Linux servers are not running any X server. To allow users to run qBittorrent v2 on a computer without X we separated the GUI code from the core in qBittorrent v2.1.0.
+
+== Disable qBittorrent Graphical User Interface ==
+First of all, you need to understand that qBittorrent graphical user interface can only be disabled at compilation time.
+To disable qBittorrent Graphical User Interface, you should run the configure file as follows:
+ ./configure --disable-gui
+
+Then compile qBittorrent as usual:
+ make && sudo make install
+
+== Run qBittorrent-nox ==
+qBittorrent-nox can be launched as usual with the following command:
+ qbittorrent-nox
+
+Note that qBittorrent-nox is a terminal application and it will not run as a daemon. As a consequence, it is advised to run qBittorrent-nox within [http://www.gnu.org/software/screen/ GNU Screen], using '''detach''' feature so that the user can conveniently logout from the system while keeping the file transfers active.
+
+== Control qBittorrent-nox ==
+qBittorrent-nox ships a feature-rich Web UI that is almost identical to qBittorrent graphical user interface. The Web UI can be accessed via most Web Browsers (including Firefox, Chromium, IE7/8).
+
+When the GUI is disabled, the Web UI is automatically enabled and running as a default on:
+ http://server-ip:8080
+ Username: admin
+ Password: adminadmin
+
+It is strongly advised that you change the username / password as soon as possible as it is a security risk to leave the default values. You can choose a new username / password from '''Options > Preferences''' window in the Web UI. The new parameters will be taken into account instantly, without restarting qBittorrent.
+
+If you already have a server listening on port 8080 (e.g. An application server such as Tomcat or Glassfish), then you can use a different port by running qBittorrent-nox as follows:
+ qbittorrent-nox --webui-port=x
+
+For example, to run qBittorrent-nox Web UI on port 8181 instead of 8080, use:
+ qbittorrent-nox --webui-port=8181
+
+It is only required to pass --webui-port parameter once because qBittorrent-nox will remember the new port upon restart.
+
+== Useless dependencies ==
+qBittorrent-nox does not need as many dependencies as standard qBittorrent because its Qt4 GUI is disabled. The following dependencies are no longer useful:
+* geoip-database
+* libnotify
+* QtGui, QtXml
+* Python
+
+== How to run qbittorrent-nox on startup ==
+A qBittorrent user (Jakster) wrote an init script for Debian/Ubuntu to run qbittorrent-nox on startup. This script can be found [http://launchpadlibrarian.net/38905385/qbittorrent here]. 
+Save it in ''/etc/init.d/'' folder, under the name ''qbittorrent-nox-daemon''.
+
+Then make sure it is executable using this command:
+ sudo chmod 755 /etc/init.d/qbittorrent-nox-daemon
+
+Then make sure it is executed on startup using this command:
+ sudo update-rc.d qbittorrent-nox-daemon defaults
+
+If you wish to undo the previous command, you can use the following command:
+ sudo update-rc.d -f qbittorrent-nox-daemon remove
