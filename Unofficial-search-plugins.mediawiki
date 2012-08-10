@@ -40,42 +40,42 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 |  Tested with qBittorrent >= 2.6.5
 |-
 |  [[http://www.qbittorrent.org/wiki-images/Divxtotal.png]] [http://divxtotal.com/ DivxTotal]
-|  [mailto:hazuki.shiro@gmail.com Shiro Hazuki]
+|  hazuki.shiro(at)gmail(dot)com
 |  1.2
 |  Nov 13 2011
 |  [https://raw.github.com/cdumez/qBittorrent-Search-Plugins/master/divxtotal.py Download]
 |  
 |-
 |  [[http://www.qbittorrent.org/wiki-images/Torrentz.png]] [http://torrentz.eu/ Torrentz]
-|  [mailto:hazuki.shiro@gmail.com Shiro Hazuki]
+|  hazuki.shiro(at)gmail(dot)com
 |  1.2
 |  Nov 13 2011
 |  [https://raw.github.com/cdumez/qBittorrent-Search-Plugins/master/torrentz.py Download]
 |  
 |-
 |  [[http://www.qbittorrent.org/wiki-images/Demonoid.png]] [http://www.demonoid.me/ Demonoid]
-|  [mailto:hazuki.shiro@gmail.com Shiro Hazuki]
+|  hazuki.shiro(at)gmail(dot)com
 |  1.2
 |  Nov 13 2011
 |  [https://raw.github.com/cdumez/qBittorrent-Search-Plugins/master/demonoid.py Download]
 |
 |-
 |  [[http://www.qbittorrent.org/wiki-images/NyaaTorrents.png]] [http://www.nyaa.eu/ NyaaTorrents]
-|  [mailto:hazuki.shiro@gmail.com Shiro Hazuki]
+|  hazuki.shiro(at)gmail(dot)com
 |  1.0
 |  Oct 30 2011
 |  [https://raw.github.com/cdumez/qBittorrent-Search-Plugins/master/nyaatorrents.py Download]
 |
 |-
 |  [[http://www.qbittorrent.org/wiki-images/Rarbg.png]] [http://rarbg.com/ Rarbg]
-|  [mailto:blood2game@yahoo.fr Zero]
+|  blood2game(at)yahoo(dot)fr
 |  1.0
 |  May 23 2011
 |  [http://dl.dropbox.com/u/30097239/rarbg.py Download]
 |  Tested with qbittorrent 2.2.11 
 |-
 |  [[http://www.qbittorrent.org/wiki-images/Tfile.png]] [http://tfile.ru/ tfile.ru]
-|  [mailto:bnagaev@gmail.com Starius]
+|  bnagaev(at)gmail(dot)com
 |  1.0
 |  Dec 8 2011
 |  [https://bitbucket.org/starius/qbittorrent-plugins/downloads/tfile.py Download]
