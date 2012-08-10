@@ -3,7 +3,7 @@ Since qBittorrent v2.5.0, qBittorrent ships a fully-functional tracker that allo
 == Enable the embedded tracker ==
 qBittorrent's embedded tracker is disabled as a default to save resources. If you wish to use it, you need to enable it from the advanced preferences panel.
 
-[[http://www.qbittorrent.org/wiki-images/Embedded tracker.png]]
+[[http://www.qbittorrent.org/wiki-images/Embedded_tracker.png]]
 
 
 As a default, the tracker URL is:
@@ -25,7 +25,7 @@ Once you have configure your router, you can test that your configuration is wor
 * Enable the embedded tracker from advanced preferences
 * Run the torrent creation tool in qBittorrent
 
-[[http://www.qbittorrent.org/wiki-images/Torrent creation.png]]
+[[http://www.qbittorrent.org/wiki-images/Torrent_creation.png]]
 
 * Select the local files you wish to share
 * Type the URL of your local tracker in the tracker list (http://your_public_ip:9000/announce)
