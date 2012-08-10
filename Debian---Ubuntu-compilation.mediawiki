@@ -1,0 +1,101 @@
+
+This How to will guide you though the compilation of qBittorrent svn and libtorrent-rasterbar. I wrote it for Ubuntu/Debian but there shouldn't be much difference for other Linux distributions.
+
+== Required dependencies ==
+* General build dependencies
+ sudo apt-get install build-essential libtool automake autoconf subversion
+
+* Boost and SSL libraries
+ sudo apt-get install libboost-date-time-dev libboost-dev libboost-filesystem-dev \
+ libboost-iostreams-dev libboost-program-options-dev libboost-regex-dev \
+ libboost-serialization-dev libboost-signals-dev libboost-test-dev \
+ libboost-thread-dev libssl-dev
+
+* Qt4 libraries
+ sudo apt-get install libqt4-dev
+
+* Python (Run time only dependency, for the search engine)
+ sudo apt-get install python
+
+== Optional dependencies ==
+
+* Geoip Database (For peer country resolution, strongly advised)
+ sudo apt-get install geoip-database
+
+* Libnotify (for system notifications)
+ sudo apt-get install libnotify-dev
+
+== Compiling libtorrent ==
+[http://wwww.libtorrent.net Libtorrent] is a library written by Arvid Norberg that qBittorrent uses for the bittorrent part. It is necessary to compile and install libtorrent before compiling qBittorrent.
+
+First you should get libtorrent-rasterbar from SVN:
+ mkdir -p qBittorrent_compiling
+ cd qBittorrent_compiling
+
+* Libtorrent v0.14 (Oldstable but less features - advised)
+ svn co https://libtorrent.svn.sourceforge.net/svnroot/libtorrent/branches/RC_0_14/ libtorrent
+
+* Libtorrent v0.15 (More features but possibly unstable)
+ svn co https://libtorrent.svn.sourceforge.net/svnroot/libtorrent/branches/RC_0_15/ libtorrent
+
+* Libtorrent v0.16 (Most features but possibly unstable)
+ svn co https://libtorrent.svn.sourceforge.net/svnroot/libtorrent/branches/RC_0_16/ libtorrent
+
+You should now have the latest libtorrent svn branch in libtorrent/ folder. You will notice that there is no configure file provided. Hence, you must generate it yourself by issuing the following commands:
+ cd libtorrent
+ ./autotool.sh
+
+Ok, Now you have a configure file, just type the following command:
+ ./configure --disable-debug --prefix=/usr && make clean && make
+
+Then you can install libtorrent using the following commands:
+ make uninstall
+ make install-strip
+
+For more information on building libtorrent, see [http://www.rasterbar.com/products/libtorrent/building.html libtorrent downloading and building]
+
+== Compiling qBittorrent (with the Qt4 graphical interface) ==
+Now, let's get to the interesting part: compiling qBittorrent.
+
+Grab latest qBittorrent on svn:
+ cd .. (to go back to qBittorrent_compiling/ folder)
+ svn co https://qbittorrent.svn.sourceforge.net/svnroot/qbittorrent/trunk qbittorrent
+
+Ok, now let's compile it:
+ cd qbittorrent
+ ./configure --prefix=/usr
+ make
+
+And to install it:
+ make install
+
+That's it! qBittorrent should now be installed. You can now run qBittorrent using the following command:
+ qbittorrent
+
+== Compiling qBittorrent (without the Qt4 graphical interface) ==
+Now, let's get to the interesting part: compiling qBittorrent.
+
+Grab latest qBittorrent on svn:
+ cd .. (to go back to qBittorrent_compiling/ folder)
+ svn co https://qbittorrent.svn.sourceforge.net/svnroot/qbittorrent/trunk qbittorrent
+
+Ok, now let's compile it:
+ cd qbittorrent
+ ./configure --prefix=/usr --disable-gui
+ make
+
+And to install it:
+ make install
+
+That's it! qBittorrent should now be installed. You can now run qBittorrent using the following command:
+ qbittorrent-nox
+
+Since you disabled the graphical user interface, qBittorrent should be controlled via its Web UI. As a default, you can access it from:
+ http://localhost:8080
+ Username: admin
+ Password: adminadmin
+
+A documentation about running qBittorrent 2 without GUI is available [[Running-qBittorrent-without-X-server|here]].
+
+== Notes ==
+* If you experience any problem with this how to, do not hesitate to contact me at chris(at)qbittorrent(dot)org.
