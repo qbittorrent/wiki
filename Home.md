@@ -1,5 +1,4 @@
 Welcome to the qBittorrent wiki!
 
 ## Compilation
-
-Windows Compilation
+* [Windows compilation](Windows-compilation)
