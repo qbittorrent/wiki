@@ -9,7 +9,7 @@ We are using the internationalization feature provided by Qt, hence it is import
 * On Windows and Mac OS, you can download Qt Linguist from [http://code.google.com/p/qtlinguistdownload/ this page].
 
 == Get the translation file ==
-First of all, you need to get the latest translation file available. If this is a new translation, you can get the default translation file [http://gitorious.org/qbittorrent/qbittorrent/blobs/raw/master/src/lang/qbittorrent_en.ts here].
+First of all, you need to get the latest translation file available. If this is a new translation, you can get the default translation file [http://github.com/qbittorrent/qBittorrent/raw/master/src/lang/qbittorrent_en.ts here].
 
 If you downloaded the default translation file, then you must rename the file according to your locale. 
 Here are some examples:
