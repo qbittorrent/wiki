@@ -5,15 +5,15 @@ Welcome to the qBittorrent wiki!
 * [How to use qBittorrent as a tracker](How-to-use-qBittorrent-as-a-tracker)
 
 ## Search plugins
-* [List of unofficial search plugins](Unofficial-search-plugins)
-* [How to write a search plugin](How-to-write-a-search-plugin)
+* [List of unofficial search plugins](wiki/Unofficial-search-plugins)
+* [How to write a search plugin](wiki/How-to-write-a-search-plugin)
 
 ## Translation
-* [How to translate qBittorrent](How-to-translate-qBittorrent)
+* [How to translate qBittorrent](wiki/How-to-translate-qBittorrent)
 
 ## Compilation
-* [Windows compilation](Windows-compilation)
-* [Debian / Ubuntu compilation](Debian---Ubuntu-compilation)
+* [Windows compilation](wiki/Windows-compilation)
+* [Debian / Ubuntu compilation](wiki/Debian---Ubuntu-compilation)
 
 ## Linux
-* [Running qBittorrent without X server](Running-qBittorrent-without-X-server)
+* [Running qBittorrent without X server](wiki/Running-qBittorrent-without-X-server)
