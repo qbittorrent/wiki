@@ -9,6 +9,7 @@ Welcome to the qBittorrent wiki!
 
 ## Compilation
 * [Windows compilation](Windows-compilation)
+* [Debian / Ubuntu compilation](Debian---Ubuntu-compilation)
 
 ## Linux
 * [Running qBittorrent without X server](Running-qBittorrent-without-X-server)
