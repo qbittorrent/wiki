@@ -33,7 +33,7 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 |
 |-
 |  [[http://www.qbittorrent.org/wiki-images/Freetorrent.png]] [http://freetorrent.fr/ Free Torrent (FR)]
-|  [mailto:sinusnco@gmail.com Sinusnco]
+|  sinusnco(at)gmail(dot)com
 |  1.0
 |  Feb 07 2011
 |  [http://sourceforge.net/projects/qbt-extrasearch/files/freetorrent_fr-1.0.tar.gz/download Download]
@@ -96,35 +96,35 @@ Be careful, these scripts probably require editing before you can use them. Thos
 !  Comment
 |-
 |[[http://www.qbittorrent.org/wiki-images/AlloTracker.png]][http://www.allotracker.com AlloTracker]
-|[mailto:sinusnco@gmail.com Sinusnco]
+|sinusnco(at)gmail(dot)com
 |1.0
 |Feb 04 2011
 |[http://qbt-extrasearch.svn.sourceforge.net/viewvc/qbt-extrasearch/trunk/allotracker_com/allotracker.py Script only] / [http://sourceforge.net/projects/qbt-extrasearch/files/allotracker_com-1.0.tar.gz/download All files]*
 |Tested with qBittorrent >= 2.6.3
 |-
 |[[http://www.qbittorrent.org/wiki-images/Torrent411.png]][http://www.torrent411.com Torrent411]
-|[mailto:sinusnco@gmail.com Sinusnco]
+|sinusnco(at)gmail(dot)com
 |1.0
 |Jan 23 2011
 |[http://qbt-extrasearch.svn.sourceforge.net/viewvc/qbt-extrasearch/trunk/torrent411_com/torrent411.py Script only] / [http://sourceforge.net/projects/qbt-extrasearch/files/torrent411_com-1.0.tar.gz/download All files]*
 |Tested with qBittorrent >= 2.6.3
 |-
 |[[http://www.qbittorrent.org/wiki-images/Itoma.png]][http://www.itoma.info/tracker/ Itoma]
-|[mailto:sinusnco@gmail.com Sinusnco]
+|sinusnco(at)gmail(dot)com
 |1.0
 |Jan 22 2011
 |[http://qbt-extrasearch.svn.sourceforge.net/viewvc/qbt-extrasearch/trunk/itoma_info/itoma.py Script only] / [http://sourceforge.net/projects/qbt-extrasearch/files/itoma-1.0.tar.gz/download All files]*
 |Tested with qBittorrent >= 2.6.3
 |-
 |[[http://www.qbittorrent.org/wiki-images/Quebecpartage.png]][http://www.quebec-partage.com/ Quebec-Partage]
-|[mailto:sinusnco@gmail.com Sinusnco]
+|sinusnco(at)gmail(dot)com
 |1.0
 |Jan 19 2011
 |[http://qbt-extrasearch.svn.sourceforge.net/viewvc/qbt-extrasearch/trunk/quebecpartage_com/quebecpartage.py Script only] / [http://sourceforge.net/projects/qbt-extrasearch/files/quebecpartage_com-1.0.tar.gz/download All files]*
 |Tested with qBittorrent >= 2.6.3
 |-
 |[[http://www.qbittorrent.org/wiki-images/Smartorrent.png]][http://smartorrent.com/ Smartorrent]
-|[mailto:sinusnco@gmail.com Sinusnco]
+|sinusnco(at)gmail(dot)com
 |1.0
 |Jan 18 2011
 |[http://qbt-extrasearch.svn.sourceforge.net/viewvc/qbt-extrasearch/trunk/smartorrent_com/smartorrent.py Script only] / [http://sourceforge.net/projects/qbt-extrasearch/files/smartorrent_com-1.0.tar.gz/download All files]*
