@@ -25,7 +25,7 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 |  [https://raw.github.com/cdumez/qBittorrent-Search-Plugins/master/sumotorrent.py Download]
 |
 |-
-|  [[http://www.qbittorrent.org/wiki-images/limetorrents.png]] [http://www.limetorrents.com LimeTorrents]
+|  [[http://www.qbittorrent.org/wiki-images/Limetorrents.png]] [http://www.limetorrents.com LimeTorrents]
 |  [mailto:chris@qbittorrent.org Christophe DUMEZ]
 |  1.0
 |  Dec 29 2010
