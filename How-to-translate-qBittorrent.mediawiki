@@ -27,11 +27,11 @@ A list of locales is available on this [http://www.iana.org/assignments/language
 Now you just need to open your ''qbittorrent_xx.ts'' file with ''linguist-qt4'' in order to proceed with the translation. You will see all the the translatable string in the left menu.
 
 They can have one of the following states:
-* [[file:Translated.png]] Already translated (Good!)
-* [[file:Partial.png]] Partially translated or unsure (Must check it and then click on the ''?'' to set as ''Translated'')
-* [[file:Untranslated.png]] Not translated (Must translate it from scratch and click on the ''?'' to set as ''Translated'')
-* [[file:Error.png]] Error in translation (Usually means that the translation doesn't have the same punctuation as the initial string)
-* [[file:Outdated.png]] Outdated (You don't need to translate them, these are not used anymore in qBittorrent)
+* [[http://www.qbittorrent.org/wiki-images/Translated.png]] Already translated (Good!)
+* [[http://www.qbittorrent.org/wiki-images/Partial.png]] Partially translated or unsure (Must check it and then click on the ''?'' to set as ''Translated'')
+* [[http://www.qbittorrent.org/wiki-images/Untranslated.png]] Not translated (Must translate it from scratch and click on the ''?'' to set as ''Translated'')
+* [[http://www.qbittorrent.org/wiki-images/Error.png]] Error in translation (Usually means that the translation doesn't have the same punctuation as the initial string)
+* [[http://www.qbittorrent.org/wiki-images/Outdated.png]] Outdated (You don't need to translate them, these are not used anymore in qBittorrent)
 
 === Things you need to pay attention to ===
 * HTML tags
@@ -39,7 +39,7 @@ We tried not to put much html code in the translatable strings but some of them 
 * %1, %2, %3...
 These were introduced to give the translator more flexibility. They must appear ''as is'' in the translated string but their location ''can'' change (this is the point). Some languages require that some words are moved in the sentence in order to be undertandable. (i.e: "Finished to download %1." can be translated in french as "Le téléchargement de %1 est terminé.")
 
-{[[file:Percentages.png]]
+{[[http://www.qbittorrent.org/wiki-images/Percentages.png]]
 
 * Keyboard shotcuts: ''&''
 They should be present in the translation too. Just recopy them at the same location.
