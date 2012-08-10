@@ -11,70 +11,70 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 !  Download link
 !  Comment
 |-
-|  [[File:Fenopy.png]] [http://fenopy.com Fenopy.com]
+|  [[http://www.qbittorrent.org/wiki-images/Fenopy.png]] [http://fenopy.com Fenopy.com]
 |  [mailto:chris@qbittorrent.org Christophe DUMEZ]
 |  1.1
 |  Dec 26 2010
 |  [https://raw.github.com/cdumez/qBittorrent-Search-Plugins/master/fenopy.py Download]
 |  
 |-
-|  [[File:SumoTorrent.png]] [http://www.sumotorrent.com Sumo Torrent]
+|  [[http://www.qbittorrent.org/wiki-images/SumoTorrent.png]] [http://www.sumotorrent.com Sumo Torrent]
 |  [mailto:chris@qbittorrent.org Christophe DUMEZ]
 |  1.2
 |  Sep 17 2011
 |  [https://raw.github.com/cdumez/qBittorrent-Search-Plugins/master/sumotorrent.py Download]
 |
 |-
-|  [[File:limetorrents.png]] [http://www.limetorrents.com LimeTorrents]
+|  [[http://www.qbittorrent.org/wiki-images/limetorrents.png]] [http://www.limetorrents.com LimeTorrents]
 |  [mailto:chris@qbittorrent.org Christophe DUMEZ]
 |  1.0
 |  Dec 29 2010
 |  [https://raw.github.com/cdumez/qBittorrent-Search-Plugins/master/limetorrents.py Download]
 |
 |-
-|  [[File:Freetorrent.png]] [http://freetorrent.fr/ Free Torrent (FR)]
+|  [[http://www.qbittorrent.org/wiki-images/Freetorrent.png]] [http://freetorrent.fr/ Free Torrent (FR)]
 |  [mailto:sinusnco@gmail.com Sinusnco]
 |  1.0
 |  Feb 07 2011
 |  [http://sourceforge.net/projects/qbt-extrasearch/files/freetorrent_fr-1.0.tar.gz/download Download]
 |  Tested with qBittorrent >= 2.6.5
 |-
-|  [[File:Divxtotal.png]] [http://divxtotal.com/ DivxTotal]
+|  [[http://www.qbittorrent.org/wiki-images/Divxtotal.png]] [http://divxtotal.com/ DivxTotal]
 |  [mailto:hazuki.shiro@gmail.com Shiro Hazuki]
 |  1.2
 |  Nov 13 2011
 |  [https://raw.github.com/cdumez/qBittorrent-Search-Plugins/master/divxtotal.py Download]
 |  
 |-
-|  [[File:Torrentz.png]] [http://torrentz.eu/ Torrentz]
+|  [[http://www.qbittorrent.org/wiki-images/Torrentz.png]] [http://torrentz.eu/ Torrentz]
 |  [mailto:hazuki.shiro@gmail.com Shiro Hazuki]
 |  1.2
 |  Nov 13 2011
 |  [https://raw.github.com/cdumez/qBittorrent-Search-Plugins/master/torrentz.py Download]
 |  
 |-
-|  [[File:Demonoid.png]] [http://www.demonoid.me/ Demonoid]
+|  [[http://www.qbittorrent.org/wiki-images/Demonoid.png]] [http://www.demonoid.me/ Demonoid]
 |  [mailto:hazuki.shiro@gmail.com Shiro Hazuki]
 |  1.2
 |  Nov 13 2011
 |  [https://raw.github.com/cdumez/qBittorrent-Search-Plugins/master/demonoid.py Download]
 |
 |-
-|  [[File:NyaaTorrents.png]] [http://www.nyaa.eu/ NyaaTorrents]
+|  [[http://www.qbittorrent.org/wiki-images/NyaaTorrents.png]] [http://www.nyaa.eu/ NyaaTorrents]
 |  [mailto:hazuki.shiro@gmail.com Shiro Hazuki]
 |  1.0
 |  Oct 30 2011
 |  [https://raw.github.com/cdumez/qBittorrent-Search-Plugins/master/nyaatorrents.py Download]
 |
 |-
-|  [[File:Rarbg.png]] [http://rarbg.com/ Rarbg]
+|  [[http://www.qbittorrent.org/wiki-images/Rarbg.png]] [http://rarbg.com/ Rarbg]
 |  [mailto:blood2game@yahoo.fr Zero]
 |  1.0
 |  May 23 2011
 |  [http://dl.dropbox.com/u/30097239/rarbg.py Download]
 |  Tested with qbittorrent 2.2.11 
 |-
-|  [[File:Tfile.png]] [http://tfile.ru/ tfile.ru]
+|  [[http://www.qbittorrent.org/wiki-images/Tfile.png]] [http://tfile.ru/ tfile.ru]
 |  [mailto:bnagaev@gmail.com Starius]
 |  1.0
 |  Dec 8 2011
@@ -95,35 +95,35 @@ Be careful, these scripts probably require editing before you can use them. Thos
 !  Download link
 !  Comment
 |-
-|[[File:AlloTracker.png]][http://www.allotracker.com AlloTracker]
+|[[http://www.qbittorrent.org/wiki-images/AlloTracker.png]][http://www.allotracker.com AlloTracker]
 |[mailto:sinusnco@gmail.com Sinusnco]
 |1.0
 |Feb 04 2011
 |[http://qbt-extrasearch.svn.sourceforge.net/viewvc/qbt-extrasearch/trunk/allotracker_com/allotracker.py Script only] / [http://sourceforge.net/projects/qbt-extrasearch/files/allotracker_com-1.0.tar.gz/download All files]*
 |Tested with qBittorrent >= 2.6.3
 |-
-|[[File:Torrent411.png]][http://www.torrent411.com Torrent411]
+|[[http://www.qbittorrent.org/wiki-images/Torrent411.png]][http://www.torrent411.com Torrent411]
 |[mailto:sinusnco@gmail.com Sinusnco]
 |1.0
 |Jan 23 2011
 |[http://qbt-extrasearch.svn.sourceforge.net/viewvc/qbt-extrasearch/trunk/torrent411_com/torrent411.py Script only] / [http://sourceforge.net/projects/qbt-extrasearch/files/torrent411_com-1.0.tar.gz/download All files]*
 |Tested with qBittorrent >= 2.6.3
 |-
-|[[File:Itoma.png]][http://www.itoma.info/tracker/ Itoma]
+|[[http://www.qbittorrent.org/wiki-images/Itoma.png]][http://www.itoma.info/tracker/ Itoma]
 |[mailto:sinusnco@gmail.com Sinusnco]
 |1.0
 |Jan 22 2011
 |[http://qbt-extrasearch.svn.sourceforge.net/viewvc/qbt-extrasearch/trunk/itoma_info/itoma.py Script only] / [http://sourceforge.net/projects/qbt-extrasearch/files/itoma-1.0.tar.gz/download All files]*
 |Tested with qBittorrent >= 2.6.3
 |-
-|[[File:Quebecpartage.png]][http://www.quebec-partage.com/ Quebec-Partage]
+|[[http://www.qbittorrent.org/wiki-images/Quebecpartage.png]][http://www.quebec-partage.com/ Quebec-Partage]
 |[mailto:sinusnco@gmail.com Sinusnco]
 |1.0
 |Jan 19 2011
 |[http://qbt-extrasearch.svn.sourceforge.net/viewvc/qbt-extrasearch/trunk/quebecpartage_com/quebecpartage.py Script only] / [http://sourceforge.net/projects/qbt-extrasearch/files/quebecpartage_com-1.0.tar.gz/download All files]*
 |Tested with qBittorrent >= 2.6.3
 |-
-|[[File:Smartorrent.png]][http://smartorrent.com/ Smartorrent]
+|[[http://www.qbittorrent.org/wiki-images/Smartorrent.png]][http://smartorrent.com/ Smartorrent]
 |[mailto:sinusnco@gmail.com Sinusnco]
 |1.0
 |Jan 18 2011
