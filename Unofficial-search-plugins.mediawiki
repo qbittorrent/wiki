@@ -1,0 +1,137 @@
+You can find here unofficial search engine plugins for qBittorrent that are made available by its users. If you wrote one, please add it to these tables.
+
+== Plugins for Public sites ==
+
+{| class="wikitable" border="1"
+|-
+!  Search engine name / URL
+!  Plugin author name / e-mail
+!  Version
+!  Last update date
+!  Download link
+!  Comment
+|-
+|  [[File:Fenopy.png]] [http://fenopy.com Fenopy.com]
+|  [mailto:chris@qbittorrent.org Christophe DUMEZ]
+|  1.1
+|  Dec 26 2010
+|  [https://raw.github.com/cdumez/qBittorrent-Search-Plugins/master/fenopy.py Download]
+|  
+|-
+|  [[File:SumoTorrent.png]] [http://www.sumotorrent.com Sumo Torrent]
+|  [mailto:chris@qbittorrent.org Christophe DUMEZ]
+|  1.2
+|  Sep 17 2011
+|  [https://raw.github.com/cdumez/qBittorrent-Search-Plugins/master/sumotorrent.py Download]
+|
+|-
+|  [[File:limetorrents.png]] [http://www.limetorrents.com LimeTorrents]
+|  [mailto:chris@qbittorrent.org Christophe DUMEZ]
+|  1.0
+|  Dec 29 2010
+|  [https://raw.github.com/cdumez/qBittorrent-Search-Plugins/master/limetorrents.py Download]
+|
+|-
+|  [[File:Freetorrent.png]] [http://freetorrent.fr/ Free Torrent (FR)]
+|  [mailto:sinusnco@gmail.com Sinusnco]
+|  1.0
+|  Feb 07 2011
+|  [http://sourceforge.net/projects/qbt-extrasearch/files/freetorrent_fr-1.0.tar.gz/download Download]
+|  Tested with qBittorrent >= 2.6.5
+|-
+|  [[File:Divxtotal.png]] [http://divxtotal.com/ DivxTotal]
+|  [mailto:hazuki.shiro@gmail.com Shiro Hazuki]
+|  1.2
+|  Nov 13 2011
+|  [https://raw.github.com/cdumez/qBittorrent-Search-Plugins/master/divxtotal.py Download]
+|  
+|-
+|  [[File:Torrentz.png]] [http://torrentz.eu/ Torrentz]
+|  [mailto:hazuki.shiro@gmail.com Shiro Hazuki]
+|  1.2
+|  Nov 13 2011
+|  [https://raw.github.com/cdumez/qBittorrent-Search-Plugins/master/torrentz.py Download]
+|  
+|-
+|  [[File:Demonoid.png]] [http://www.demonoid.me/ Demonoid]
+|  [mailto:hazuki.shiro@gmail.com Shiro Hazuki]
+|  1.2
+|  Nov 13 2011
+|  [https://raw.github.com/cdumez/qBittorrent-Search-Plugins/master/demonoid.py Download]
+|
+|-
+|  [[File:NyaaTorrents.png]] [http://www.nyaa.eu/ NyaaTorrents]
+|  [mailto:hazuki.shiro@gmail.com Shiro Hazuki]
+|  1.0
+|  Oct 30 2011
+|  [https://raw.github.com/cdumez/qBittorrent-Search-Plugins/master/nyaatorrents.py Download]
+|
+|-
+|  [[File:Rarbg.png]] [http://rarbg.com/ Rarbg]
+|  [mailto:blood2game@yahoo.fr Zero]
+|  1.0
+|  May 23 2011
+|  [http://dl.dropbox.com/u/30097239/rarbg.py Download]
+|  Tested with qbittorrent 2.2.11 
+|-
+|  [[File:Tfile.png]] [http://tfile.ru/ tfile.ru]
+|  [mailto:bnagaev@gmail.com Starius]
+|  1.0
+|  Dec 8 2011
+|  [https://bitbucket.org/starius/qbittorrent-plugins/downloads/tfile.py Download]
+|  Tested with qbittorrent 2.2.11
+|}
+
+== Plugins for Private sites ==
+
+Be careful, these scripts probably require editing before you can use them. Those sites require an account and your username/password need to be added into the script.
+
+{| class="wikitable" border="1"
+|-
+!  Search engine name / URL
+!  Plugin author name / e-mail
+!  Version
+!  Last update date
+!  Download link
+!  Comment
+|-
+|[[File:AlloTracker.png]][http://www.allotracker.com AlloTracker]
+|[mailto:sinusnco@gmail.com Sinusnco]
+|1.0
+|Feb 04 2011
+|[http://qbt-extrasearch.svn.sourceforge.net/viewvc/qbt-extrasearch/trunk/allotracker_com/allotracker.py Script only] / [http://sourceforge.net/projects/qbt-extrasearch/files/allotracker_com-1.0.tar.gz/download All files]*
+|Tested with qBittorrent >= 2.6.3
+|-
+|[[File:Torrent411.png]][http://www.torrent411.com Torrent411]
+|[mailto:sinusnco@gmail.com Sinusnco]
+|1.0
+|Jan 23 2011
+|[http://qbt-extrasearch.svn.sourceforge.net/viewvc/qbt-extrasearch/trunk/torrent411_com/torrent411.py Script only] / [http://sourceforge.net/projects/qbt-extrasearch/files/torrent411_com-1.0.tar.gz/download All files]*
+|Tested with qBittorrent >= 2.6.3
+|-
+|[[File:Itoma.png]][http://www.itoma.info/tracker/ Itoma]
+|[mailto:sinusnco@gmail.com Sinusnco]
+|1.0
+|Jan 22 2011
+|[http://qbt-extrasearch.svn.sourceforge.net/viewvc/qbt-extrasearch/trunk/itoma_info/itoma.py Script only] / [http://sourceforge.net/projects/qbt-extrasearch/files/itoma-1.0.tar.gz/download All files]*
+|Tested with qBittorrent >= 2.6.3
+|-
+|[[File:Quebecpartage.png]][http://www.quebec-partage.com/ Quebec-Partage]
+|[mailto:sinusnco@gmail.com Sinusnco]
+|1.0
+|Jan 19 2011
+|[http://qbt-extrasearch.svn.sourceforge.net/viewvc/qbt-extrasearch/trunk/quebecpartage_com/quebecpartage.py Script only] / [http://sourceforge.net/projects/qbt-extrasearch/files/quebecpartage_com-1.0.tar.gz/download All files]*
+|Tested with qBittorrent >= 2.6.3
+|-
+|[[File:Smartorrent.png]][http://smartorrent.com/ Smartorrent]
+|[mailto:sinusnco@gmail.com Sinusnco]
+|1.0
+|Jan 18 2011
+|[http://qbt-extrasearch.svn.sourceforge.net/viewvc/qbt-extrasearch/trunk/smartorrent_com/smartorrent.py Script only] / [http://sourceforge.net/projects/qbt-extrasearch/files/smartorrent_com-1.0.tar.gz/download All files]*
+|Tested with qBittorrent >= 2.6.3
+|}
+''*All files'' is a tarball (.tar.gz) containing script, icon, README & INSTALL files.
+
+== Notes ==
+* If you want to write your own search plugins, please follow this [[How_to_write_a_search_engine_plugin|tutorial]].
+* If you experience issues with any of the plugins posted here, please contact their author. In case the author is unresponsive, you can also try to contact the [mailto:chris@qbittorrent.org author of qBittorrent].
