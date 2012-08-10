@@ -6,7 +6,7 @@ Welcome to the qBittorrent wiki!
 
 ## Search plugins
 * [List of unofficial search plugins](Unofficial-search-plugins)
-* How to write a search plugin
+* [How to write a search plugin](How-to-write-a-search-plugin)
 
 ## Translation
 * [How to translate qBittorrent](How-to-translate-qBittorrent)
