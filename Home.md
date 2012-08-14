@@ -3,6 +3,7 @@ Welcome to the qBittorrent wiki!
 ## General
 * [Frequently Asked Questions (FAQ)](wiki/Frequently-Asked-Questions)
 * [How to use qBittorrent as a tracker](wiki/How-to-use-qBittorrent-as-a-tracker)
+* [Anonymous Mode](wiki/Anonymous-Mode)
 
 ## Search plugins
 * [List of unofficial search plugins](wiki/Unofficial-search-plugins)
