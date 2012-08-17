@@ -34,3 +34,10 @@ Once you have configure your router, you can test that your configuration is wor
 * Press the "Create and save..." button
 ** Save the torrent file wherever you like
 * Send this newly created .torrent files to your friends and they will be able the download the files you are sharing using any Bittorrent client.
+
+== If you are using qBittorrent without X ==
+Add the following lines:
+ Advanced\trackerEnabled=true
+ Advanced\trackerPort=9000
+
+under the '''[Preferences]''' section.
