@@ -93,19 +93,12 @@ Not every site uses uid and pass as the cookie variables, or use additional ones
 == What is qBittorrent Peer ID? ==
 Each Bittorrent client is identified by a string called Peer ID. This ID is sometimes used by trackers to whitelist only a limited amount of trusted clients.
 
-qBittorrent Peer ID is formatted as follows: -qBXYZW-
+qBittorrent Peer ID is formatted as follows: -qBXYZ0-
 where:
 * X is the major version number
 * Y is the minor version number
 * Z is the bugfix version number (in hexadecimal so that we can go up to 15)
-* W indicates the development status
-** 0: NORMAL/STABLE
-** 1: ALPHA
-** 2: BETA
-** 3: RELEASE CANDIDATE
-** 4: DEVEL (unused)
 
 For example, we would have the following Peer IDs : 
-* qBittorrent v2.4.0: '''-qB2400-'''
-* qBittorrent v2.4.5: '''-qB2450-'''
 * qBittorrent v2.4.10: '''-qB24A0-'''
+* qBittorrent v3.0.2: '''-qB3020-'''
