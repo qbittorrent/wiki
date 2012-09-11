@@ -5,6 +5,9 @@ Welcome to the qBittorrent wiki!
 * [How to use qBittorrent as a tracker](wiki/How-to-use-qBittorrent-as-a-tracker)
 * [Anonymous Mode](wiki/Anonymous-Mode)
 
+## Troubleshooting
+* [I forgot my UI lock password](wiki/I-forgot-my-UI-lock-password)
+
 ## Search plugins
 * [List of unofficial search plugins](wiki/Unofficial-search-plugins)
 * [How to write a search plugin](wiki/How-to-write-a-search-plugin)
