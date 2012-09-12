@@ -6,7 +6,7 @@ We are building qBittorrent on Windows with MSVC compiler instead of MinGW. This
 * Download and install [http://www.microsoft.com/visualstudio/en-us/products/2010-editions/visual-cpp-express Visual C++ 2010 Express]
 * Download and install [http://qt.nokia.com/downloads/windows-cpp-vs2008 Qt binaries compiled with MSVC] (not compiled with MinGW)
 * Add MSVC and Qt bin/ folders (''C:\Qt\4.8.0\bin'' and ''C:\Program Files\Microsoft Visual Studio 10.0\VC\bin'') to the ''PATH'' environment variable
-* Download [http://downloads.sourceforge.net/project/boost/boost-jam/3.1.18/boost-jam-3.1.18-1-ntx86.zip?use_mirror=freefr Boost Jam] (bjam) and [http://sourceforge.net/projects/boost/files/boost/1.49.0/boost_1_49_0.zip/download Boost library] (v1.42-1.49 are known to work) and unzip them
+* Download [http://downloads.sourceforge.net/project/boost/boost-jam/3.1.18/boost-jam-3.1.18-1-ntx86.zip?use_mirror=freefr Boost Jam] (bjam) and [http://sourceforge.net/projects/boost/files/boost/1.51.0/boost_1_51_0.zip/download Boost library] (v1.42-1.51 are known to work) and unzip them
 * Compile boost using the following command in a terminal (bjam must be in the PATH)
  bjam -q --with-filesystem --with-thread --toolset=MSVC variant=release link=static runtime-link=shared
 * Define ''BOOST_ROOT'' environment variable and point to the boost source folder (you will need to close and reopen your terminal window after that)
