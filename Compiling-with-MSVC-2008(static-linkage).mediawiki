@@ -70,6 +70,6 @@ Let's assume that the working directory for our compilation will be '''C:\qBitto
 * Just follow the installer instructions for the installation.
 * Launch Qt Creator and select Tools->Options...
 * Select the '''Build & Run''' item from the left and select the '''Qt Versions''' tab.
-* Click the '''Add...''' button and select the qmake.exe we just build. It should in '''C:\qBittorrent\qt-everywhere-opensource-src-4.8.3\bin\qmake.exe'''
+* Click the '''Add...''' button and select the qmake.exe you just build. It should be in '''C:\qBittorrent\qt-everywhere-opensource-src-4.8.3\bin\qmake.exe'''
 * Name it something meaningful like "Qt 4.8.3 - MSVC2008"
 * Apply the changes and close the window
