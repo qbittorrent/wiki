@@ -28,3 +28,11 @@ Let's assume that the working directory for our compilation will be '''C:\qBitto
  xcopy /s "my_build\include\*" "C:\Program Files\Microsoft Visual Studio 9.0\VC\include\*"
  xcopy "my_build\lib\*" "C:\Program Files\Microsoft Visual Studio 9.0\VC\lib\*"
 The last 2 commands will copy the necessary files to MSVC's directories so OpenSSL can be picked up by libtorrent, asio, qbittorrent and any other program that needs it.
+
+=== Compiling Boost ===
+* Extract the Boost sources in the working dir.
+* Open the MSVC2008 command shell. Start->Programs->Microsoft Visual C++ 2008 Express Edition->Visual Studio Tools->Visual Studio 2008 Command Prompt
+* Navigate to the Boost source folder. eg ''cd C:\qBittorrent\boost_1_51_0''
+* Now you will need to bootstrap Boost so it will build b2.exe(previously bjam.exe). Issue the following commands where N is the number of cores you have or how many threads you want b2 to use when compiling:
+ bootstrap.bat
+ b2 -q --with-system --toolset=msvc variant=release link=static runtime-link=static -j N
