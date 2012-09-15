@@ -25,9 +25,9 @@ Let's assume that the working directory for our compilation will be '''C:\qBitto
  ms\do_nasm
  nmake -f ms\nt.mak
  nmake -f ms\nt.mak install
+* Copy the necessary files to MSVC's directories so OpenSSL can be picked up by libtorrent, asio and qBittorrent.
  xcopy /s "my_build\include\*" "C:\Program Files\Microsoft Visual Studio 9.0\VC\include\*"
  xcopy "my_build\lib\*" "C:\Program Files\Microsoft Visual Studio 9.0\VC\lib\*"
-The last 2 commands will copy the necessary files to MSVC's directories so OpenSSL can be picked up by libtorrent, asio, qbittorrent and any other program that needs it.
 
 === Compiling Boost ===
 * Extract the Boost sources in the working dir.
