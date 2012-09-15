@@ -64,3 +64,12 @@ Let's assume that the working directory for our compilation will be '''C:\qBitto
  configure.exe -debug-and-release -opensource -static -ltcg -fast -qt-zlib -no-qt3support -no-opengl -no-openvg -no-dsp -no-vcproj -no-dbus -no-phonon -no-phonon-backend -no-multimedia -no-audio-backend -no-webkit -no-script -no-scripttools -no-declarative -no-declarative-debug -mp -arch windows -qt-style-windowsxp -nomake examples -nomake demos -platform win32-msvc2008 -openssl-linked
  bin\qmake.exe projects.pro QT_BUILD_PARTS="libs translations"
  nmake
+* You can close the command prompt now.
+
+=== Install and Configure Qt Creator ===
+* Just follow the installer instructions for the installation.
+* Launch Qt Creator and select Tools->Options...
+* Select the '''Build & Run''' item from the left and select the '''Qt Versions''' tab.
+* Click the '''Add...''' button and select the qmake.exe we just build. It should in '''C:\qBittorrent\qt-everywhere-opensource-src-4.8.3\bin\qmake.exe'''
+* Name it something meaningful like "Qt 4.8.3 - MSVC2008"
+* Apply the changes and close the window
