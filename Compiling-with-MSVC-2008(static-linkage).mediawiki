@@ -1,1 +1,12 @@
 This page is currently being worked on and constantly updated. Do not touch it.
+
+This page describes how to compile qBittorrent using MSVC 2008 under Windows. This is tested under Windows XP sp2 but it should work the same under any other Windows version. Also it should build fine with MSVC 2010 with minor adjustments. Here the Express Edition of MSVC 2008 was used but the full edition must behave the same.
+
+=== What you will need: ===
+* The MSVC 2008 compiler. The Express Edition(free) will do fine.
+* A [http://www.perl.org/ Perl language] interpreter. [http://strawberryperl.com/ Strawberry Perl] will do fine. Download version 5.16.1.1 [http://strawberry-perl.googlecode.com/files/strawberry-perl-5.16.1.1-32bit.msi here].
+* Latest release of the [http://www.nasm.us/ NASM assembler]. Download version 2.10.5 [http://www.nasm.us/pub/nasm/releasebuilds/2.10.05/win32/nasm-2.10.05-installer.exe here].
+* Latest release of [http://www.openssl.org/ OpenSSL]. Download version 1.0.0c [http://www.openssl.org/source/openssl-1.0.1c.tar.gz here].
+* Latest release of the [http://www.boost.org/ Boost libraries]. Download version 1.51.0 [http://sourceforge.net/projects/boost/files/boost/1.51.0/boost_1_51_0.7z/download here].
+* Latest release of [http://www.rasterbar.com/products/libtorrent/ libtorrent(rasterbar)]. Download version 0.16.3 [https://libtorrent.googlecode.com/files/libtorrent-rasterbar-0.16.3.tar.gz here].
+* Latest release of [http://www.qbittorrent.org qBittorrent]. Download version 3.0.2 [http://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-3.0.2/qbittorrent-3.0.2.tar.xz/download here].
