@@ -62,5 +62,5 @@ Let's assume that the working directory for our compilation will be '''C:\qBitto
  QMAKE_LFLAGS_RELEASE = /INCREMENTAL:NO /NODEFAULTLIB:MSVCRT
 * Issue the following commands:
  configure.exe -debug-and-release -opensource -static -ltcg -fast -no-qt3support -no-opengl -no-openvg -no-dsp -no-vcproj -no-dbus -no-phonon -no-phonon-backend -no-multimedia -no-audio-backend -no-webkit -no-script -no-scripttools -no-declarative -no-declarative-debug -mp -arch windows -qt-style-windowsxp -nomake examples -nomake demos -platform win32-msvc2008 -openssl-linked
- bin/qmake.exe projects.pro QT_BUILD_PARTS=“libs translations”
+ bin\qmake.exe projects.pro QT_BUILD_PARTS="libs translations"
  nmake
