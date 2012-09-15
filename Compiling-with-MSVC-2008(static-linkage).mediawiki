@@ -9,4 +9,5 @@ This page describes how to compile qBittorrent using MSVC 2008 under Windows. Th
 * Latest release of [http://www.openssl.org/ OpenSSL]. Download version 1.0.0c [http://www.openssl.org/source/openssl-1.0.1c.tar.gz here].
 * Latest release of the [http://www.boost.org/ Boost libraries]. Download version 1.51.0 [http://sourceforge.net/projects/boost/files/boost/1.51.0/boost_1_51_0.7z/download here].
 * Latest release of [http://www.rasterbar.com/products/libtorrent/ libtorrent(rasterbar)]. Download version 0.16.3 [https://libtorrent.googlecode.com/files/libtorrent-rasterbar-0.16.3.tar.gz here].
+* Latest release of the [http://qt-project.org/ Qt libraries] source. Download version 4.8.3 [http://releases.qt-project.org/qt4/source/qt-everywhere-opensource-src-4.8.3.tar.gz here].
 * Latest release of [http://www.qbittorrent.org qBittorrent]. Download version 3.0.2 [http://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-3.0.2/qbittorrent-3.0.2.tar.xz/download here].
