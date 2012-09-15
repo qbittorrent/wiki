@@ -1,3 +1,4 @@
 qBittorrent is officially supported on Windows and installers are available on [http://sourceforge.net/projects/qbittorrent/files/qbittorrent-win32/ Sourceforge].
 
 * [[Compiling with MSVC 10.0(dynamic linkage)]]
+* [[Compiling with MSVC 2008(static linkage)]]
