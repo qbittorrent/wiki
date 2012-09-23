@@ -16,7 +16,7 @@ locked=true
 ## Mac OS X
 * Kill qBittorrent
 * Open a terminal and type the following:
-``rm $HOME/Library/Preferences/org.qbittorrent.plist*``
+``rm $HOME/Library/Preferences/com.qbittorrent.plist*``
 * Start qBittorrent again
 
 The user interface should not be locked anymore. Next time you lock it, it will ask you to choose a password again.
