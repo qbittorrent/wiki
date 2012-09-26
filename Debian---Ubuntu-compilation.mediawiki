@@ -55,7 +55,7 @@ Grab latest qBittorrent from GIT:
  git clone https://github.com/qbittorrent/qBittorrent.git
 
 Ok, now let's compile it:
- cd qbittorrent
+ cd qBittorrent
  ./configure --prefix=/usr
  make
 
@@ -73,7 +73,7 @@ Grab latest qBittorrent from GIT:
  git clone https://github.com/qbittorrent/qBittorrent.git
 
 Ok, now let's compile it:
- cd qbittorrent
+ cd qBittorrent
  ./configure --prefix=/usr --disable-gui
  make
 
