@@ -42,8 +42,8 @@ Ok, Now you have a configure file, just type the following command:
  ./configure --disable-debug --prefix=/usr && make clean && make
 
 Then you can install libtorrent using the following commands:
- make uninstall
- make install-strip
+ sudo make uninstall
+ sudo make install-strip
 
 For more information on building libtorrent, see [http://www.rasterbar.com/products/libtorrent/building.html libtorrent downloading and building]
 
@@ -60,7 +60,7 @@ Ok, now let's compile it:
  make
 
 And to install it:
- make install
+ sudo make install
 
 That's it! qBittorrent should now be installed. You can now run qBittorrent using the following command:
  qbittorrent
@@ -78,7 +78,7 @@ Ok, now let's compile it:
  make
 
 And to install it:
- make install
+ sudo make install
 
 That's it! qBittorrent should now be installed. You can now run qBittorrent using the following command:
  qbittorrent-nox
