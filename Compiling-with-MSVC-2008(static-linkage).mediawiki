@@ -38,7 +38,9 @@ Let's assume that the working directory for our compilation will be '''C:\qBitto
 === Compiling Boost ===
 * Extract the Boost sources in the working dir.
 * Open the MSVC2008 command shell. Start->Programs->Microsoft Visual C++ 2008 Express Edition->Visual Studio Tools->Visual Studio 2008 Command Prompt
-* Navigate to the Boost source folder. eg ''cd C:\qBittorrent\boost_1_51_0''
+* Navigate to the Boost source folder. If you are still in the MSVC shell just issue (assuming you have only one folder beginning with the letter 'b' in your qBt folder) the command
+  cd ..
+  cd b<TAB><ENTER>
 * Now you will need to bootstrap Boost so it will build b2.exe(previously bjam.exe). Issue the following commands where N is the number of cores you have or how many threads you want b2 to use when compiling:
  bootstrap.bat 
 * Compile a static version of Boost. Issue the following command where N is the number of CPU cores you have or how many threads you want b2 to use when compiling:
