@@ -26,7 +26,7 @@ Let's assume that the working directory for our compilation will be '''C:\qBitto
 * Copy the necessary files to MSVC's directories so OpenSSL can be picked up by libtorrent, asio and qBittorrent.
  xcopy /s "my_build\include\*" "C:\Program Files\Microsoft Visual Studio 9.0\VC\include\*"
  xcopy "my_build\lib\*" "C:\Program Files\Microsoft Visual Studio 9.0\VC\lib\*"
-* Put this in a batchfile, and it will perform all the above steps:
+* Put this in a batchfile -- e.g 'mko.bat' -- in your openssl directory, and it will perform all the above steps:
  for /f "tokens=* delims=/" %%A in ('cd') do set CURRENT_DIR=%%A
  perl Configure VC-WIN32 no-shared no-zlib-dynamic threads --prefix="%CURRENT_DIR%\my_build"
  call ms\do_nasm
