@@ -63,6 +63,9 @@ Let's assume that the working directory for our compilation will be '''C:\qBitto
  set BOOST_ROOT="C:\qBittorrent\boost_1_51_0"
 * Compile a static version of Libtorrent. Issue the following command where N is the number of CPU cores you have or how many threads you want b2 to use when compiling:
  b2 -q --without-python --toolset=msvc variant=release link=static runtime-link=static encryption=openssl logging=none geoip=static dht-support=on boost=source character-set=unicode boost-link=static -j N
+* If you want to continue with the lazy batch file approach heres the battch file you need to use (still assuming you haven't left the VS2008 Command prompt):
+ copy %BOOST_ROOT%\b2.exe
+ b2 -q --without-python --toolset=msvc variant=release link=static runtime-link=static encryption=openssl logging=none geoip=static dht-support=on boost=source character-set=unicode boost-link=static -j 2
 
 === Compiling Qt ===
 * Extract the Qt sources in the working dir.
