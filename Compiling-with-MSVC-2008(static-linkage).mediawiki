@@ -18,15 +18,8 @@ Let's assume that the working directory for our compilation will be '''C:\qBitto
 * Extract the OpenSSL source inside our working dir.
 * Open the MSVC2008 command shell. Start->Programs->Microsoft Visual C++ 2008 Express Edition->Visual Studio Tools->Visual Studio 2008 Command Prompt
 * Navigate to the OpenSSL source folder. eg ''cd C:\qBittorrent\openssl-1.0.1c''
-* Now we will build a static version of OpenSSL. Issue the following commands:
- perl Configure VC-WIN32 no-shared no-zlib-dynamic threads --prefix=C:\qBittorrent\openssl-1.0.1c\my_build
- ms\do_nasm
- nmake -f ms\nt.mak
- nmake -f ms\nt.mak install
-* Copy the necessary files to MSVC's directories so OpenSSL can be picked up by libtorrent, asio and qBittorrent.
- xcopy /s "my_build\include\*" "C:\Program Files\Microsoft Visual Studio 9.0\VC\include\*"
- xcopy "my_build\lib\*" "C:\Program Files\Microsoft Visual Studio 9.0\VC\lib\*"
-* Put this in a batchfile -- e.g 'mko.bat' -- in your openssl directory, and it will perform all the above steps:
+* Now we will build a static version of OpenSSL.
+* Copy & paste this into a batchfile -- e.g 'mko.bat' -- in your openssl directory, and issue the command 'mko':
  for /f "tokens=* delims=/" %%A in ('cd') do set CURRENT_DIR=%%A
  perl Configure VC-WIN32 no-shared no-zlib-dynamic threads --prefix="%CURRENT_DIR%\my_build"
  call ms\do_nasm
