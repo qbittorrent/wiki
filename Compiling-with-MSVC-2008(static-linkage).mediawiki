@@ -26,7 +26,7 @@ Let's assume that the working directory for our compilation will be '''C:\qBitto
 * Copy the necessary files to MSVC's directories so OpenSSL can be picked up by libtorrent, asio and qBittorrent.
  xcopy /s "my_build\include\*" "C:\Program Files\Microsoft Visual Studio 9.0\VC\include\*"
  xcopy "my_build\lib\*" "C:\Program Files\Microsoft Visual Studio 9.0\VC\lib\*"
-* Put this in a batchfile -- e.g 'mko.bat' -- in your openssl directory, and it will perform all the above steps:
+* (Optional) Put this in a batchfile -- e.g 'mko.bat' -- in your openssl directory, and it will perform all the above steps:
  for /f "tokens=* delims=/" %%A in ('cd') do set CURRENT_DIR=%%A
  perl Configure VC-WIN32 no-shared no-zlib-dynamic threads --prefix="%CURRENT_DIR%\my_build"
  call ms\do_nasm
@@ -41,12 +41,12 @@ Let's assume that the working directory for our compilation will be '''C:\qBitto
 * Navigate to the Boost source folder. If you are still in the MSVC shell just issue (assuming you have only one folder beginning with the letter 'b' in your qBt folder) the command
   cd ..
   cd b<TAB><ENTER>
-* Now you will need to bootstrap Boost so it will build b2.exe(previously bjam.exe). Issue the following commands where N is the number of cores you have or how many threads you want b2 to use when compiling:
+* Now you will need to bootstrap Boost so it will build b2.exe(previously bjam.exe). Issue the following command:
  bootstrap.bat 
 * Compile a static version of Boost. Issue the following command where N is the number of CPU cores you have or how many threads you want b2 to use when compiling:
  b2 -q --with-system --toolset=msvc variant=release link=static runtime-link=static -j N
 
-* This is what you can put in a batch file -- e.g. 'mkb.bat' -- to perform the above. Assuming you don't care about how many threads boost will use. You must stay within this command prompt to benefit from the SET command here, when you navigate to the next step.
+* (Optional) This is what you can put in a batch file -- e.g. 'mkb.bat' -- to perform the above. Assuming you don't care about how many threads boost will use. You must stay within this command prompt to benefit from the SET command here, when you navigate to the next step.
  call bootstrap
  b2 -q --with-system --toolset=msvc variant=release link=static runtime-link=static -j 1
  for /f "tokens=* delims=/" %%A in ('cd') do set BOOST_ROOT=%%A
