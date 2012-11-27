@@ -66,7 +66,10 @@ Let's assume that the working directory for our compilation will be '''C:\qBitto
  b2 -q --without-python --toolset=msvc variant=release link=static runtime-link=static encryption=openssl logging=none geoip=static dht-support=on boost=source character-set=unicode boost-link=static -j N
 * If you want to continue with the lazy batch file approach here's the batch file you need to use (still assuming you haven't left the VS2008 Command prompt) -- copy and paste it to e.g. 'mkl.bat' and place it in your lib* folder and then run it:
  copy %BOOST_ROOT%\b2.exe
- b2 -q --without-python --toolset=msvc variant=release link=static runtime-link=static encryption=openssl logging=none geoip=static dht-support=on boost=source character-set=unicode boost-link=static -j 2
+ b2 -q --without-python --toolset=msvc variant=release link=static runtime-link=static encryption=openssl logging=none geoip=static dht-support=on boost=source character-set=unicode boost-link=static -j 1
+ echo on
+ cd ..
+ rem Now navigate to the next folder, issuing the command 'cd QT<TAB><ENTER>
 
 === Compiling Qt ===
 * Extract the Qt sources in the working dir.
