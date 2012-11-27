@@ -43,9 +43,8 @@ Let's assume that the working directory for our compilation will be '''C:\qBitto
  call bootstrap
  b2 -q --with-system --toolset=msvc variant=release link=static runtime-link=static -j 1
  for /f "tokens=* delims=/" %%A in ('cd') do set BOOST_ROOT=%%A
- echo on
  cd ..
- rem Now navigate to the next folder, issuing the command 'cd L<TAB><ENTER>
+ echo Now navigate to the next folder, issuing the command 'cd L<TAB><ENTER>
 
 === Compiling Libtorrent ===
 * Extract the Libtorrent sources in the working dir.
