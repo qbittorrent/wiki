@@ -22,6 +22,10 @@ h1. Source Requirements
 ** 1.0.1c is used in this article.
 # Latest version of "Qt.":https://qt-project.org/downloads Look for @The source code is available as a zip@ on download page. This is what you need, not the prebuilt binaries.
 ** 4.8.3 is used in this article.
+** If you can't download from the official site with official links use a direct link like that:
+@https://releases.qt-project.org/qt4/source/qt-everywhere-opensource-src-VERSION.tar.gz@
+where @VERSION@ is, for exmaple, @4.8.4@
+** An example direct link: "https://releases.qt-project.org/qt4/source/qt-everywhere-opensource-src-4.8.4.tar.gz":https://releases.qt-project.org/qt4/source/qt-everywhere-opensource-src-4.8.4.tar.gz
 # Latest version of "Boost.":http://www.boost.org/users/download/
 ** 1.52 is used in this article.
 # Latest version of "libtorrent-rasterbar.":https://code.google.com/p/libtorrent/downloads/list
