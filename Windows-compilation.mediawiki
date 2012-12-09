@@ -2,3 +2,4 @@ qBittorrent is officially supported on Windows and installers are available on [
 
 * [[Compiling with MSVC 2008(static linkage)]] - method used for the official installer
 * [[Compiling with MSVC 10.0(dynamic linkage)]]
+* [[Compiling with MSVC 2010 for x86_64 (dynamic linkage)]]
