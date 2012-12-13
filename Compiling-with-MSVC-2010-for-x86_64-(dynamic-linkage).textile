@@ -217,8 +217,9 @@ h1. Build Qt
 # Build Qt:
 <pre>
 <code>
-.\configure.exe -release -shared -opensource -confirm-license -platform win32-msvc2010 -arch windows -ltcg -no-fast -exceptions -no-accessibility -stl -no-xmlpatterns -no-sql-mysql -no-sql-psql -no-sql-oci -no-sql-odbc -no-sql-tds -no-sql-db2 -no-sql-sqlite -no-sql-sqlite2 -no-sql-ibase -no-qt3support -no-opengl -no-openvg -graphicssystem raster -qt-zlib -qt-libpng -no-libmng -no-libtiff -qt-libjpeg -no-gif -no-dsp -no-vcproj -no-incredibuild-xge -plugin-manifests -process -mp -no-rtti -no-3dnow -mmx -sse -sse2 -openssl -no-dbus -no-phonon -no-phonon-backend -no-multimedia -no-audio-backend -no-webkit -no-script -no-scripttools -no-declarative -no-declarative-debug -no-style-s60 -no-style-windowsmobile -no-style-windowsce -no-style-cde -no-style-motif -qt-style-cleanlooks -qt-style-plastique -qt-style-windows -qt-style-windowsxp -qt-style-windowsvista -no-native-gestures -no-directwrite -qmake -nomake examples -nomake demos -nomake tools -nomake translations -nomake docs -I T:\install\OpenSSL\include -L T:\install\OpenSSL\lib -prefix T:\install\Qt
+.\configure.exe -release -shared -opensource -confirm-license -platform win32-msvc2010 -arch windows -ltcg -no-fast -exceptions -no-accessibility -stl -no-xmlpatterns -no-sql-mysql -no-sql-psql -no-sql-oci -no-sql-odbc -no-sql-tds -no-sql-db2 -no-sql-sqlite -no-sql-sqlite2 -no-sql-ibase -no-qt3support -no-opengl -no-openvg -graphicssystem raster -qt-zlib -qt-libpng -no-libmng -no-libtiff -qt-libjpeg -no-gif -no-dsp -no-vcproj -incredibuild-xge -plugin-manifests -process -mp -no-rtti -no-3dnow -mmx -sse -sse2 -openssl -no-dbus -no-phonon -no-phonon-backend -no-multimedia -no-audio-backend -no-webkit -no-script -no-scripttools -no-declarative -no-declarative-debug -no-style-s60 -no-style-windowsmobile -no-style-windowsce -no-style-cde -no-style-motif -qt-style-cleanlooks -qt-style-plastique -qt-style-windows -qt-style-windowsxp -qt-style-windowsvista -no-native-gestures -no-directwrite -qmake -nomake examples -nomake demos -nomake tools -nomake docs -I T:\install\OpenSSL\include -L T:\install\OpenSSL\lib -prefix T:\install\Qt
 nmake sub-src
+nmake sub-translations-make_default-ordered
 </code>
 </pre>
 # Install Qt:
@@ -311,10 +312,16 @@ COPY /Y *.exe T:\install\qBittorrent\
 FOR %X IN (QtCore4.dll QtGui4.dll QtNetwork4.dll QtXml4.dll) DO (
     COPY /Y T:\install\Qt\bin\%X T:\install\qBittorrent\
 )
-FOR %X IN (codecs iconengines imageformats) DO (
-    MD T:\install\qBittorrent\%X
-    COPY /Y T:\install\Qt\plugins\%X\*.dll T:\install\qBittorrent\%X\
+MD T:\install\qBittorrent\plugins
+XCOPY /E /Y T:\install\Qt\plugins T:\install\qBittorrent\plugins\
+MD T:\install\qBittorrent\translations
+FOR /R T:\install\Qt\translations %X IN (qt_*) DO (
+    COPY /Y %X T:\install\qBittorrent\translations\
+    DEL /S /Q T:\install\qBittorrent\translations\qt_help*
 )
+echo [Paths] > T:\install\qBittorrent\qt.conf
+echo Translations = translations >> T:\install\qBittorrent\qt.conf
+echo Plugins = plugins >> T:\install\qBittorrent\qt.conf
 COPY /Y T:\install\OpenSSL\bin\*.dll T:\install\qBittorrent\
 COPY /Y T:\install\libtorrent\lib\*.dll T:\install\qBittorrent\
 COPY /Y T:\install\Boost\lib\*.dll T:\install\qBittorrent\
