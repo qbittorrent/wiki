@@ -269,9 +269,23 @@ and replace with @DEFINES += _WIN32_WINNT=0x0600@
 # Build qBt:
 <pre>
 <code>
+SET "PATH=T:\install\Qt\bin;%PATH%"
+</code>
+</pre>
+** Update translations
+<pre>
+<code>
+CD .\src
+lupdate -no-obsolete ./src.pro
+lrelease ./src.pro
+CD ..\
+</code>
+</pre>
+** Build
+<pre>
+<code>
 MD build
 CD build
-SET "PATH=T:\install\Qt\bin;%PATH%"
 qmake -config release -r ../qbittorrent.pro "CONFIG += warn_off msvc_mp rtti ltcg mmx sse sse2" "CONFIG -= 3dnow"
 nmake
 </code>
