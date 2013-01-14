@@ -37,16 +37,18 @@ This page describes the process of building qBittorrent on Windows targeting x86
 # Preparing Directory Structure #
 
 1. First of all you will need a working directory structure for source code and compiled binaries. Create something like that:
-
-        C:\work
-            \sources
-            \install
+```
+C:\work
+    \sources
+    \install
+```
 
 1. In this article I'm using a drive as a working directory, so I have something like that:
-
-        T: 
-            \sources
-            \install
+```
+T: 
+    \sources
+    \install
+```
 
     > This directory structure will be used as an example.
 
@@ -67,9 +69,10 @@ This page describes the process of building qBittorrent on Windows targeting x86
     + `ARFLAGS = -nologo` **to**<br />
     `ARFLAGS = -nologo -ltcg`
 1. Build Zlib:
-
-        nmake -f .\win32\Makefile.msc AS=ml64 LOC="-DASMV -DASMINF -DNDEBUG -I." OBJA="inffasx64.obj gvmat64.obj inffas8664.obj"
-        nmake -f .\win32\Makefile.msc test
+```
+nmake -f .\win32\Makefile.msc AS=ml64 LOC="-DASMV -DASMINF -DNDEBUG -I." OBJA="inffasx64.obj gvmat64.obj inffas8664.obj"
+nmake -f .\win32\Makefile.msc test
+```
 
     > Last command will run a short test to make sure that Zlib is working.
 
@@ -77,15 +80,17 @@ This page describes the process of building qBittorrent on Windows targeting x86
 
     > Technical note: because Makefile does not provide an install target, we need to do it ourselves.
 
-        IF EXIST T:\install\zlib RD /S /Q T:\install\zlib
-        MD T:\install\zlib
-        FOR %X IN (bin lib include) DO (
-          MD T:\install\zlib\%X
-        )
-        XCOPY /Y /Q /I .\*.dll T:\install\zlib\bin\
-        XCOPY /Y /Q /I .\*.lib T:\install\zlib\lib\
-        XCOPY /Y /Q /I .\zconf.h T:\install\zlib\include\
-        XCOPY /Y /Q /I .\zlib.h T:\install\zlib\include\
+    ```
+IF EXIST T:\install\zlib RD /S /Q T:\install\zlib
+MD T:\install\zlib
+FOR %X IN (bin lib include) DO (
+  MD T:\install\zlib\%X
+)
+XCOPY /Y /Q /I .\*.dll T:\install\zlib\bin\
+XCOPY /Y /Q /I .\*.lib T:\install\zlib\lib\
+XCOPY /Y /Q /I .\zconf.h T:\install\zlib\include\
+XCOPY /Y /Q /I .\zlib.h T:\install\zlib\include\
+    ```
 
 
 # Build OpenSSL #
@@ -99,13 +104,15 @@ This page describes the process of building qBittorrent on Windows targeting x86
 1. Navigate to OpenSSL source folder.
 1. If you still haven't installed NASM, now is the best time. In this article NASM is installed in `T:\NASM`.
 1. Adjust `PATH` variable:
-
-    `SET "PATH=T:\NASM;%PATH%"`
+```
+SET "PATH=T:\NASM;%PATH%"
+```
 
 1. Configure OpenSSL:
-
-        perl Configure VC-WIN64A threads shared zlib -IT:\install\zlib\include -LT:\install\zlib\lib --prefix=T:\install\openssl
-        .\ms\do_win64a.bat
+```
+perl Configure VC-WIN64A threads shared zlib -IT:\install\zlib\include -LT:\install\zlib\lib --prefix=T:\install\openssl
+.\ms\do_win64a.bat
+```
 
 1. Edit `.\ms\ntdll.mak` and do the following changes:
     + Find line starting with `CFLAG=` and on that line:
@@ -119,23 +126,27 @@ This page describes the process of building qBittorrent on Windows targeting x86
     + Find line `$(SHLIB_EX_OBJ) $(CRYPTOOBJ)  zlib1.lib $(EX_LIBS)`
         + Replace `zlib1.lib` **with** `zlib.lib` in line
 1. Build OpenSSL:
-
-    `nmake -f .\ms\ntdll.mak`
+```
+nmake -f .\ms\ntdll.mak
+```
 
 1. ***Optional***. Test OpenSSL:
-
-    `nmake -f .\ms\ntdll.mak test`
+```
+nmake -f .\ms\ntdll.mak test
+```
 
     Somewhere near the end of test you should see:
-
-        Available compression methods:
-          1: zlib compression
-
+    ```
+    Available compression methods:
+      1: zlib compression
+    ```
+    
     And in the very end you should see `passed all tests`.
 
 1. Install OpenSSL:
-
-    `nmake -f .\ms\ntdll.mak install`
+```
+nmake -f .\ms\ntdll.mak install
+```
 
 # Build Boost #
 
@@ -143,19 +154,20 @@ This page describes the process of building qBittorrent on Windows targeting x86
 1. Open `Visual Studio x64 Win64 Command Prompt (2010)`.
 1. Navigate to Boost source folder.
 1. Build and install bjam (aka Boost-Build):
-
-        CD .\tools\build\v2
-        .\bootstrap.bat vc10
-        .\b2.exe --toolset=msvc architecture=x86 address-model=64 --prefix=T:\install\bjam link=shared runtime-link=shared variant=release debug-symbols=off warnings=off warnings-as-errors=off inlining=full optimization=speed "cflags=/O2 /GL /Gy /favor:blend" "linkflags=/NOLOGO /OPT:REF /OPT:ICF=5 /LTCG" install
-        CD ..\..\..\
+```
+CD .\tools\build\v2
+.\bootstrap.bat vc10
+.\b2.exe --toolset=msvc architecture=x86 address-model=64 --prefix=T:\install\bjam link=shared runtime-link=shared variant=release debug-symbols=off warnings=off warnings-as-errors=off inlining=full optimization=speed "cflags=/O2 /GL /Gy /favor:blend" "linkflags=/NOLOGO /OPT:REF /OPT:ICF=5 /LTCG" install
+CD ..\..\..\
+```
 
 1. Build and install Boost:
-
-        SET "PATH=T:\install\bjam\bin;%PATH%"
-        bjam -j2 -q --with-system --toolset=msvc --layout=system --prefix=T:\install\boost link=shared runtime-link=shared variant=release debug-symbols=off threading=multi address-model=64 host-os=windows target-os=windows embed-manifest=on architecture=x86 warnings=off warnings-as-errors=off inlining=full optimization=speed "cflags=/O2 /GL /favor:blend" "linkflags=/NOLOGO /OPT:REF /OPT:ICF=5 /LTCG" install
-        XCOPY /Y /Q /I .\*.jam T:\install\boost\
-        COPY /Y Jamroot T:\install\boost\
-
+```
+SET "PATH=T:\install\bjam\bin;%PATH%"
+bjam -j2 -q --with-system --toolset=msvc --layout=system --prefix=T:\install\boost link=shared runtime-link=shared variant=release debug-symbols=off threading=multi address-model=64 host-os=windows target-os=windows embed-manifest=on architecture=x86 warnings=off warnings-as-errors=off inlining=full optimization=speed "cflags=/O2 /GL /favor:blend" "linkflags=/NOLOGO /OPT:REF /OPT:ICF=5 /LTCG" install
+XCOPY /Y /Q /I .\*.jam T:\install\boost\
+COPY /Y Jamroot T:\install\boost\
+```
 
 # Build libtorrent #
 
@@ -166,9 +178,10 @@ This page describes the process of building qBittorrent on Windows targeting x86
     + Replace `TORRENT_EXTRA_EXPORT std::string base32decode(std::string const& s);` **with**<br />
     `TORRENT_EXPORT std::string base32decode(std::string const& s);`
 1. Build and install libtorrent:
-
-        SET "PATH=T:\install\bjam\bin;%PATH%"
-        bjam -j2 -q --toolset=msvc --prefix=T:\install\libtorrent boost=system boost-link=shared link=shared runtime-link=shared variant=release debug-symbols=off resolve-countries=on full-stats=on export-extra=off ipv6=on dht-support=on character-set=unicode geoip=static encryption=openssl windows-version=vista threading=multi address-model=64 host-os=windows target-os=windows embed-manifest=on architecture=x86 warnings=off warnings-as-errors=off inlining=full optimization=speed "cflags=/O2 /GL /favor:blend" "linkflags=/NOLOGO /OPT:REF /OPT:ICF=5 /LTCG" "include=T:\install\OpenSSL\include" "include=T:\install\Boost\include" "library-path=T:\install\OpenSSL\lib" "library-path=T:\install\Boost\lib" "define=BOOST_ALL_NO_LIB" install
+```
+SET "PATH=T:\install\bjam\bin;%PATH%"
+bjam -j2 -q --toolset=msvc --prefix=T:\install\libtorrent boost=system boost-link=shared link=shared runtime-link=shared variant=release debug-symbols=off resolve-countries=on full-stats=on export-extra=off ipv6=on dht-support=on character-set=unicode geoip=static encryption=openssl windows-version=vista threading=multi address-model=64 host-os=windows target-os=windows embed-manifest=on architecture=x86 warnings=off warnings-as-errors=off inlining=full optimization=speed "cflags=/O2 /GL /favor:blend" "linkflags=/NOLOGO /OPT:REF /OPT:ICF=5 /LTCG" "include=T:\install\OpenSSL\include" "include=T:\install\Boost\include" "library-path=T:\install\OpenSSL\lib" "library-path=T:\install\Boost\lib" "define=BOOST_ALL_NO_LIB" install
+```
     + If you want to build For XP 64-bit or WinServer 2003 64-bit you must build with `windows-version=xp` instead of `windows-version=vista`
 
 # Build Qt #
@@ -177,14 +190,16 @@ This page describes the process of building qBittorrent on Windows targeting x86
 1. Open `Visual Studio x64 Win64 Command Prompt (2010)`.
 1. Navigate to Qt source folder.
 1. Build Qt:
-
-        .\configure.exe -release -shared -opensource -confirm-license -platform win32-msvc2010 -arch windows -ltcg -no-fast -exceptions -no-accessibility -stl -no-xmlpatterns -no-sql-mysql -no-sql-psql -no-sql-oci -no-sql-odbc -no-sql-tds -no-sql-db2 -no-sql-sqlite -no-sql-sqlite2 -no-sql-ibase -no-qt3support -no-opengl -no-openvg -graphicssystem raster -qt-zlib -qt-libpng -qt-libmng -qt-libtiff -qt-libjpeg -no-dsp -no-vcproj -incredibuild-xge -plugin-manifests -process -mp -no-rtti -no-3dnow -mmx -sse -sse2 -openssl -no-dbus -no-phonon -no-phonon-backend -no-multimedia -no-audio-backend -no-webkit -no-script -no-scripttools -no-declarative -no-declarative-debug -no-style-s60 -no-style-windowsmobile -no-style-windowsce -no-style-cde -no-style-motif -qt-style-cleanlooks -qt-style-plastique -qt-style-windows -qt-style-windowsxp -qt-style-windowsvista -no-native-gestures -no-directwrite -qmake -nomake examples -nomake demos -nomake tools -nomake docs -I T:\install\OpenSSL\include -L T:\install\OpenSSL\lib -prefix T:\install\Qt
-        nmake sub-src
-        nmake sub-translations-make_default-ordered
+```
+.\configure.exe -release -shared -opensource -confirm-license -platform win32-msvc2010 -arch windows -ltcg -no-fast -exceptions -no-accessibility -stl -no-xmlpatterns -no-sql-mysql -no-sql-psql -no-sql-oci -no-sql-odbc -no-sql-tds -no-sql-db2 -no-sql-sqlite -no-sql-sqlite2 -no-sql-ibase -no-qt3support -no-opengl -no-openvg -graphicssystem raster -qt-zlib -qt-libpng -qt-libmng -qt-libtiff -qt-libjpeg -no-dsp -no-vcproj -incredibuild-xge -plugin-manifests -process -mp -no-rtti -no-3dnow -mmx -sse -sse2 -openssl -no-dbus -no-phonon -no-phonon-backend -no-multimedia -no-audio-backend -no-webkit -no-script -no-scripttools -no-declarative -no-declarative-debug -no-style-s60 -no-style-windowsmobile -no-style-windowsce -no-style-cde -no-style-motif -qt-style-cleanlooks -qt-style-plastique -qt-style-windows -qt-style-windowsxp -qt-style-windowsvista -no-native-gestures -no-directwrite -qmake -nomake examples -nomake demos -nomake tools -nomake docs -I T:\install\OpenSSL\include -L T:\install\OpenSSL\lib -prefix T:\install\Qt
+nmake sub-src
+nmake sub-translations-make_default-ordered
+```
 
 1. Install Qt:
-
-    `nmake install`
+```
+nmake install
+```
 
 # Build qBittorrent #
 
@@ -197,24 +212,26 @@ This page describes the process of building qBittorrent on Windows targeting x86
         + Find and remove line `DEFINES += BOOST_FILESYSTEM_VERSION=2`
     + Edit `winconf-msvc.pri`:
         + Find
-
-                 CONFIG(debug, debug|release) {
-                  LIBS += libtorrentd.lib \
-                          libboost_system-vc90-mt-sgd-1_51.lib
-                 } else {
-                  LIBS += libtorrent.lib \
-                          libboost_system-vc90-mt-s-1_51.lib
-                 }
+        ```
+        CONFIG(debug, debug|release) {
+         LIBS += libtorrentd.lib \
+                 libboost_system-vc90-mt-sgd-1_51.lib
+        } else {
+         LIBS += libtorrent.lib \
+                 libboost_system-vc90-mt-s-1_51.lib
+        }
+        ```
 
             and replace with
-
-                 CONFIG(debug, debug|release) {
-                  LIBS += torrent.lib \
-                          boost_system.lib
-                 } else {
-                  LIBS += torrent.lib \
-                          boost_system.lib
-                 }
+        ```
+        CONFIG(debug, debug|release) {
+         LIBS += torrent.lib \
+                 boost_system.lib
+        } else {
+         LIBS += torrent.lib \
+                 boost_system.lib
+        }
+        ```
     + Edit `winconf.pri` and adjust paths accordingly (remember that `T:\install\` is used as an example):
         + Find `INCLUDEPATH += $$quote(C:/qBittorrent/boost_1_51_0)`<br />
         and replace with<br />
@@ -237,9 +254,10 @@ This page describes the process of building qBittorrent on Windows targeting x86
         and insert `DEFINES += BOOST_ASIO_ENABLE_CANCELIO` on next line
         + Find `DEFINES += BOOST_EXCEPTION_DISABLE`<br />
         and insert
-
-                DEFINES += BOOST_ASIO_DYN_LINK
-                DEFINES += BOOST_ALL_DYN_LINK
+        ```
+        DEFINES += BOOST_ASIO_DYN_LINK
+        DEFINES += BOOST_ALL_DYN_LINK
+        ```
 
             on previous line
         + Find `DEFINES += TORRENT_USE_OPENSSL`<br />
@@ -250,36 +268,40 @@ This page describes the process of building qBittorrent on Windows targeting x86
             > If you want to build For XP 64-bit or WinServer 2003 64-bit replace `DEFINES += _WIN32_WINNT=0x0500` with `DEFINES += _WIN32_WINNT=0x0501`
             
 1. Build qBt:
-
-    `SET "PATH=T:\install\Qt\bin;%PATH%"`
+```
+SET "PATH=T:\install\Qt\bin;%PATH%"
+```
     + Update translations
-
-            CD .\src
-            lupdate -no-obsolete ./src.pro
-            lrelease ./src.pro
-            CD ..\
+    ```
+    CD .\src
+    lupdate -no-obsolete ./src.pro
+    lrelease ./src.pro
+    CD ..\
+    ```
     + Build
-
-            MD build
-            CD build
-            qmake -config release -r ../qbittorrent.pro "CONFIG += warn_off msvc_mp rtti ltcg mmx sse sse2" "CONFIG -= 3dnow"
-            nmake
+    ```
+    MD build
+    CD build
+    qmake -config release -r ../qbittorrent.pro "CONFIG += warn_off msvc_mp rtti ltcg mmx sse sse2" "CONFIG -= 3dnow"
+    nmake
+    ```
 
 1. Install qBt:
-
-        XCOPY /Y /Q /I .\src\release\qbittorrent.exe T:\install\qBittorrent\
-        FOR %X IN (QtCore4.dll QtGui4.dll QtNetwork4.dll QtXml4.dll) DO (
-            COPY /Y T:\install\Qt\bin\%X T:\install\qBittorrent\
-        )
-        XCOPY /Y /Q /I T:\install\Qt\plugins\imageformats\qico4.dll T:\install\qBittorrent\plugins\imageformats\
-        XCOPY /Y /Q /I T:\install\Qt\translations\qt_* T:\install\qBittorrent\translations\
-        DEL /Q T:\install\qBittorrent\translations\qt_help*
-        XCOPY /Y /Q /I T:\install\OpenSSL\bin\*.dll T:\install\qBittorrent\
-        XCOPY /Y /Q /I T:\install\libtorrent\lib\torrent.dll T:\install\qBittorrent\
-        XCOPY /Y /Q /I T:\install\Boost\lib\*.dll T:\install\qBittorrent\
-        echo [Paths] > T:\install\qBittorrent\qt.conf
-        echo Translations = ./translations >> T:\install\qBittorrent\qt.conf
-        echo Plugins = ./plugins >> T:\install\qBittorrent\qt.conf
+```
+XCOPY /Y /Q /I .\src\release\qbittorrent.exe T:\install\qBittorrent\
+FOR %X IN (QtCore4.dll QtGui4.dll QtNetwork4.dll QtXml4.dll) DO (
+  COPY /Y T:\install\Qt\bin\%X T:\install\qBittorrent\
+)
+XCOPY /Y /Q /I T:\install\Qt\plugins\imageformats\qico4.dll T:\install\qBittorrent\plugins\imageformats\
+XCOPY /Y /Q /I T:\install\Qt\translations\qt_* T:\install\qBittorrent\translations\
+DEL /Q T:\install\qBittorrent\translations\qt_help*
+XCOPY /Y /Q /I T:\install\OpenSSL\bin\*.dll T:\install\qBittorrent\
+XCOPY /Y /Q /I T:\install\libtorrent\lib\torrent.dll T:\install\qBittorrent\
+XCOPY /Y /Q /I T:\install\Boost\lib\*.dll T:\install\qBittorrent\
+echo [Paths] > T:\install\qBittorrent\qt.conf
+echo Translations = ./translations >> T:\install\qBittorrent\qt.conf
+echo Plugins = ./plugins >> T:\install\qBittorrent\qt.conf
+```
 
 
 # Using resulting binaries on different computers #
@@ -287,5 +309,6 @@ This page describes the process of building qBittorrent on Windows targeting x86
 If you want to use the resulting binaries on other Windows computers (or redistribute them) you will need [Microsoft Visual C++ 2010 SP1 Redistributable Package (x64)](https://www.microsoft.com/en-us/download/details.aspx?id=13523). Users must have it installed in order to use any x86\_64 software compiled with Visual Studio 2010. If you are using qBt on computer, which was used for building it, you don't need VC++ 2010 x64 Redistributable Package, because you already have it installed (it came with Visual Studio 2010).
 
 Alternatively you can copy redistributable dlls into program folder like this:
-
-    `XCOPY /Y /Q /I "%VCINSTALLDIR%\redist\x64\Microsoft.VC100.CRT\*.dll" T:\install\qBittorrent\`
+    ```
+    XCOPY /Y /Q /I "%VCINSTALLDIR%\redist\x64\Microsoft.VC100.CRT\*.dll" T:\install\qBittorrent\
+    ```
