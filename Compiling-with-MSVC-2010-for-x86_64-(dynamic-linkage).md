@@ -6,6 +6,7 @@ This page describes the process of building qBittorrent on Windows targeting x86
 > 
 > Final note: Resulting binary will not support Windows XP 64-bit Edition and Windows Server 2003 64-bit Edition unless you follow special notes describing how to make it compatible with those systems.
 
+[[_TOC_]]
 
 # Software Requirements #
 
