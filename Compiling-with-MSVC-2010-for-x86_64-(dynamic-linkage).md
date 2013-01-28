@@ -205,7 +205,7 @@ This page describes the process of building qBittorrent on Windows targeting x86
 1. Build Qt:
 
 
-        .\configure.exe -release -shared -opensource -confirm-license -platform win32-msvc2010 -arch windows -ltcg -no-fast -exceptions -no-accessibility -stl -no-xmlpatterns -no-sql-mysql -no-sql-psql -no-sql-oci -no-sql-odbc -no-sql-tds -no-sql-db2 -no-sql-sqlite -no-sql-sqlite2 -no-sql-ibase -no-qt3support -no-opengl -no-openvg -graphicssystem raster -qt-zlib -qt-libpng -qt-libmng -qt-libtiff -qt-libjpeg -no-dsp -no-vcproj -incredibuild-xge -plugin-manifests -process -mp -no-rtti -no-3dnow -mmx -sse -sse2 -openssl -no-dbus -no-phonon -no-phonon-backend -no-multimedia -no-audio-backend -no-webkit -no-script -no-scripttools -no-declarative -no-declarative-debug -no-style-s60 -no-style-windowsmobile -no-style-windowsce -no-style-cde -no-style-motif -qt-style-cleanlooks -qt-style-plastique -qt-style-windows -qt-style-windowsxp -qt-style-windowsvista -no-native-gestures -no-directwrite -qmake -nomake examples -nomake demos -nomake tools -nomake docs -I T:\install\OpenSSL\include -L T:\install\OpenSSL\lib -prefix T:\install\Qt
+        .\configure.exe -release -shared -opensource -confirm-license -platform win32-msvc2010 -arch windows -ltcg -no-fast -exceptions -no-accessibility -stl -no-xmlpatterns -no-sql-mysql -no-sql-psql -no-sql-oci -no-sql-odbc -no-sql-tds -no-sql-db2 -qt-sql-sqlite -no-sql-sqlite2 -no-sql-ibase -no-qt3support -no-opengl -no-openvg -graphicssystem raster -qt-zlib -qt-libpng -qt-libmng -qt-libtiff -qt-libjpeg -no-dsp -no-vcproj -no-incredibuild-xge -plugin-manifests -process -mp -rtti -no-3dnow -mmx -sse -sse2 -openssl -no-dbus -no-phonon -no-phonon-backend -no-multimedia -no-audio-backend -no-webkit -no-script -no-scripttools -no-declarative -no-declarative-debug -no-style-s60 -no-style-windowsmobile -no-style-windowsce -no-style-cde -no-style-motif -qt-style-cleanlooks -qt-style-plastique -qt-style-windows -qt-style-windowsxp -qt-style-windowsvista -no-native-gestures -no-directwrite -qmake -nomake examples -nomake demos -nomake docs -I T:\install\OpenSSL\include -L T:\install\OpenSSL\lib -prefix T:\install\Qt
         nmake sub-src
         nmake sub-translations-make_default-ordered
 
@@ -286,7 +286,6 @@ This page describes the process of building qBittorrent on Windows targeting x86
 
             CD .\src
             lupdate -no-obsolete ./src.pro
-            lrelease ./src.pro
             CD ..\
     + Build
 
@@ -302,8 +301,12 @@ This page describes the process of building qBittorrent on Windows targeting x86
           COPY /Y T:\install\Qt\bin\%X T:\install\qBittorrent\
         )
         XCOPY /Y /Q /I T:\install\Qt\plugins\imageformats\qico4.dll T:\install\qBittorrent\plugins\imageformats\
-        XCOPY /Y /Q /I T:\install\Qt\translations\qt_* T:\install\qBittorrent\translations\
-        DEL /Q T:\install\qBittorrent\translations\qt_help*
+        FOR /F "usebackq" %X IN (`DIR /B "T:\sources\qbt\src\qt-translations\"`) DO (
+          IF EXIST "T:\install\Qt\translations\%X" (
+            COPY /Y "T:\install\Qt\translations\%X" "T:\sources\qbt\src\qt-translations\"
+          )
+        )
+        XCOPY /Y /Q /I T:\sources\qbt\src\qt-translations\qt_* T:\install\qBittorrent\translations\
         XCOPY /Y /Q /I T:\install\OpenSSL\bin\*.dll T:\install\qBittorrent\
         XCOPY /Y /Q /I T:\install\libtorrent\lib\torrent.dll T:\install\qBittorrent\
         XCOPY /Y /Q /I T:\install\Boost\lib\*.dll T:\install\qBittorrent\
