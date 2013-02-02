@@ -33,7 +33,7 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 |
 |-
 |  [[http://www.qbittorrent.org/wiki-images/Limetorrents.png]] [http://www.limetorrents.com LimeTorrents 1.01]
-|  richard(at)richardurban(dot)org
+|  richard(at)richardurban(dot)de
 |  1.01
 |  Feb 02 2013
 |  [https://raw.github.com/richardurban/qBittorrent-Search-Plugins/master/limetorrents.py Download]
