@@ -32,6 +32,13 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 |  [https://raw.github.com/cdumez/qBittorrent-Search-Plugins/master/limetorrents.py Download]
 |
 |-
+|  [[http://www.qbittorrent.org/wiki-images/Limetorrents.png]] [http://www.limetorrents.com LimeTorrents fixed]
+|  richard(at)richardurban(dot)org
+|  1.01
+|  Feb 02 2013
+|  [https://github.com/richardurban/qBittorrent-Search-Plugins/blob/master/limetorrents.py Download]
+|
+|-
 |  [[http://www.qbittorrent.org/wiki-images/Freetorrent.png]] [http://freetorrent.fr/ Free Torrent (FR)]
 |  sinusnco(at)gmail(dot)com
 |  1.0
