@@ -374,7 +374,7 @@ This method can add torrents from urls and magnet links. BC links are also suppo
 POST http://127.0.0.1/command/download HTTP/1.1
 User-Agent: Fiddler
 Host: 127.0.0.1
-Authorization: Digest username="admin", realm="Web UI Access", nonce="a3f396f2dcc1cafae73637e2ac321134", uri="/", response="3f6b2f30c95dfed64c0e835119ce48d0"
+Authorization: your_auth_string
 Content-Type: application/x-www-form-urlencoded
 Content-Length: length
 
