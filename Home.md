@@ -21,3 +21,6 @@ Welcome to the qBittorrent wiki!
 
 ## Linux
 * [Running qBittorrent without X server](wiki/Running-qBittorrent-without-X-server)
+
+## WebUI-related
+* [API Documentation](WebUI-API-Documentation)
