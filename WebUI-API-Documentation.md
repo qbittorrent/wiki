@@ -13,30 +13,29 @@
   1. [Get qBittorrent preferences](#prefget)
 1. [POST methods](#POST)
   1. [Download torrent from URL](#dlweb)
-  1. Upload torrent from disk
-1. Unsorted/Currently unknown/WIP
-  1. Add trackers to torrent
-  1. Resume all torrents
-  1. Pause all torrents
-  1. Set prefernces ?setPreferences?
-  1. Set file priority
-  1. ?getGlobalUpLimit?
-  1. ?getGlobalDlLimit?
-  1. ?getTorrentUpLimit?
-  1. ?getTorrentDlLimit?
-  1. ?setTorrentUpLimit?
-  1. ?setTorrentDlLimit?
-  1. ?setGlobalUpLimit?
-  1. ?setGlobalDlLimit?
-  1. ?pause?
-  1. ?delete?
-  1. ?deletePerm?
-  1. ?increasePrio?
-  1. ?decreasePrio?
-  1. ?topPrio?
-  1. ?topPrio?
-  1. ?recheck?
-  1. Get torrent contents
+  1. [Upload torrent from disk](#dldisk)
+  1. [Add trackers to torrent](#addtrack)
+  1. [Pause torrent](#pausetorrent)
+  1. [Pause all torrents](#pauseall)
+  1. [Resume torrent](#resumetorrent)
+  1. [Resume all torrents](#resumeall)
+  1. [Delete torrent](#delete)
+  1. [Delete torrent with downloaded data](#deleteperm)
+  1. [Recheck torrent](#recheck)
+  1. [Increase torrent priority](#prioup)
+  1. [Decrease torrent priority](#priodown)
+  1. [Maximal torrent priority](#priotop)
+  1. [Minimal torrent priority](#priobottom)
+  1. [Set file priority](#priofile)
+  1. [Get global download limit](#getglobaldl)
+  1. [Set global download limit](#setglobaldl)
+  1. [Get global upload limit](#getglobalul)
+  1. [Set global upload limit](#setglobalul)
+  1. [Get torrent download limit](#gettorrentdl)
+  1. [Set torrent download limit](#settorrentdl)
+  1. [Get torrent upload limit](#gettorrentul)
+  1. [Set torrent upload limit](#settorrentul)
+  1. [Set qBittorrent preferences](#setpref)
 
 ***
 
@@ -55,7 +54,7 @@ Authorization requires using `Authorization` header inside GET/POST requests. qB
 
   When you fail Authorization or don't supply required header qBittorrent will send the following reply (example):
 
-  ```
+  ```http
 HTTP/1.1 401 Unauthorized
 WWW-Authenticate: Digest realm="Web UI Access", nonce="a3f396f2dcc1cafae73637e2ac321134", opaque="a3f396f2dcc1cafae73637e2ac321134", stale="false", algorithm="MD5", qop="auth"
   ```
@@ -94,14 +93,14 @@ Authorization: Digest username="admin", realm="Web UI Access", nonce="a3f396f2dc
 
       Server reply:
       
-      ```
+      ```http
 HTTP/1.1 401 Unauthorized
 WWW-Authenticate: Digest realm="Web UI Access", nonce="a3f396f2dcc1cafae73637e2ac321134", opaque="a3f396f2dcc1cafae73637e2ac321134", stale="false", algorithm="MD5", qop="auth"
       ```
 
       Client request:
 
-      ```
+      ```http
 GET / HTTP/1.1
 User-Agent: Fiddler
 Host: 127.0.0.1
@@ -112,7 +111,7 @@ Authorization: Digest username="admin", realm="Web UI Access", nonce="a3f396f2dc
 
 ### <a id="shutdown"></a>Shutdown qBittorrent ###
 
-```
+```http
 GET /command/shutdown HTTP/1.1
 User-Agent: Fiddler
 Host: 127.0.0.1
@@ -121,7 +120,7 @@ Authorization: your_auth_string
 
 ### <a id="torrentlist"></a>Get torrent list ###
 
-```
+```http
 GET /json/torrents HTTP/1.1
 User-Agent: Fiddler
 Host: 127.0.0.1
@@ -129,7 +128,7 @@ Authorization: your_auth_string
 ```
 Server will return the following reply (example):
 
-```
+```http
 HTTP/1.1 200 OK
 content-type: text/javascript
 content-length: length
@@ -180,13 +179,15 @@ where
 1. `downloading` - torrent is being downloaded and data is being transfered
 1. `stalledDL` - torrent is being downloaded, but no connection were made
 
-**BIG FAT WARNING:** `size`, `dlspeed`, `upspeed` and `eta` suffixes (e.g. MiB, KiB/s) will depend on current language selected in qBt; these suffixes will be translated. 
+**BIG FAT WARNING:** `size`, `dlspeed`, `upspeed` and `eta` suffixes (e.g. MiB, KiB/s) will depend on current language selected in qBt; these suffixes will be translated.
+
+**BIG FAT WARNING 2:** Raw data this methods provides can exceed 40 KiB for ~200 torrents. Continuous polling is strongly discouraged for mobile clients.
 
 ### <a id="propsgen"></a>Get torrent generic properties ###
 
 Requires known torrent hash, get 'em from [torrent list](#torrentlist).
 
-```
+```http
 GET /json/propertiesGeneral/fae6e49afa359ab07c3ef169438ff95d870bc178 HTTP/1.1
 User-Agent: Fiddler
 Host: 127.0.0.1
@@ -195,7 +196,7 @@ Authorization: your_auth_string
 
 If your torrent hash is invalid server will reply with:
 
-```
+```http
 HTTP/1.1 200 OK
 content-type: text/javascript
 content-length: 0
@@ -203,7 +204,7 @@ content-length: 0
 
 Otherwise server will return the following reply (example):
 
-```
+```http
 HTTP/1.1 200 OK
 content-type: text/javascript
 content-length: lenth
@@ -227,7 +228,7 @@ where
 
 Requires known torrent hash, get 'em from [torrent list](#torrentlist).
 
-```
+```http
 GET http://127.0.0.1/json/propertiesTrackers/fae6e49afa359ab07c3ef169438ff95d870bc178 HTTP/1.1
 User-Agent: Fiddler
 Host: 127.0.0.1
@@ -236,7 +237,7 @@ Authorization: your_auth_string
 
 If your torrent hash is invalid server will reply with:
 
-```
+```http
 HTTP/1.1 200 OK
 content-type: text/javascript
 content-length: 2
@@ -246,7 +247,7 @@ content-length: 2
 
 Otherwise server will return the following reply (example):
 
-```
+```http
 HTTP/1.1 200 OK
 content-type: text/javascript
 content-length: length
@@ -270,7 +271,7 @@ where
 
 Requires known torrent hash, get 'em from [torrent list](#torrentlist).
 
-```
+```http
 GET http://127.0.0.1/json/propertiesFiles/fae6e49afa359ab07c3ef169438ff95d870bc178 HTTP/1.1
 User-Agent: Fiddler
 Host: 127.0.0.1
@@ -279,7 +280,7 @@ Authorization: your_auth_string
 
 If your torrent hash is invalid server will reply with:
 
-```
+```http
 HTTP/1.1 200 OK
 content-type: text/javascript
 content-length: 0
@@ -287,7 +288,7 @@ content-length: 0
 
 Otherwise server will return the following reply (example):
 
-```
+```http
 HTTP/1.1 200 OK
 content-type: text/javascript
 content-length: length
@@ -312,7 +313,7 @@ where
 
 This method returns info you usually see in qBt status bar.
 
-```
+```http
 GET http://127.0.0.1/json/transferInfo HTTP/1.1
 User-Agent: Fiddler
 Host: 127.0.0.1
@@ -321,7 +322,7 @@ Authorization: your_auth_string
 
 Server reply (example):
 
-```
+```http
 HTTP/1.1 200 OK
 content-type: text/javascript
 content-length: length
@@ -335,7 +336,7 @@ where
 
 ### <a id="prefget"></a>Get qBittorrent preferences ###
 
-```
+```http
 GET http://127.0.0.1/json/preferences HTTP/1.1
 User-Agent: Fiddler
 Host: 127.0.0.1
@@ -344,7 +345,7 @@ Authorization: your_auth_string
 
 Server reply; contents may vary depending on which settings are present in qBittorrent.ini (example):
 
-```
+```http
 HTTP/1.1 200 OK
 content-type: text/javascript
 content-length: length
@@ -370,7 +371,7 @@ where
 
 This method can add torrents from urls and magnet links. BC links are also supported.
 
-```
+```http
 POST http://127.0.0.1/command/download HTTP/1.1
 User-Agent: Fiddler
 Host: 127.0.0.1
@@ -378,20 +379,526 @@ Authorization: your_auth_string
 Content-Type: application/x-www-form-urlencoded
 Content-Length: length
 
-urls=http://www.nyaa.eu/?page=download%26tid=305093
-     http://www.nyaa.eu/?page=download%26tid=305255
-     magnet:?xt=urn:btih:4c284ebef5bf0d967e2e174cfe825d9fb40ae5e1%26dn=QBittorrent+2.8.4+Win7+Vista+64+working+version%26tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80%26tr=udp%3A%2F%2Ftracker.publicbt.com%3A80%26tr=udp%3A%2F%2Ftracker.istole.it%3A6969%26tr=udp%3A%2F%2Ftracker.ccc.de%3A80
+urls=http://www.nyaa.eu/?page=download%26tid=305093%0Ahttp://www.nyaa.eu/?page=download%26tid=305255%0Amagnet:?xt=urn:btih:4c284ebef5bf0d967e2e174cfe825d9fb40ae5e1%26dn=QBittorrent+2.8.4+Win7+Vista+64+working+version%26tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80%26tr=udp%3A%2F%2Ftracker.publicbt.com%3A80%26tr=udp%3A%2F%2Ftracker.istole.it%3A6969%26tr=udp%3A%2F%2Ftracker.ccc.de%3A80
 ```
 
 Please note that:
 
 1. `Content-Type: application/x-www-form-urlencoded` is required
-1. `urls` contains a list of links; each links goes on a new line
+1. `urls` contains a list of links; links are separated with `%0A` (LF newline)
 1. `http://`, `https://`, `magnet:` and `bc://bt/` links are supported
 1. Links' contents must be escaped, e.g. `&` becomes `%26` (don't know about other characters but ampersand **MUST** be escaped)
 
 No matter if successful or not server will return the following reply:
 
-```
+```http
 HTTP/1.1 200 OK
 ```
+
+### <a id="dldisk"></a>Upload torrent from disk ###
+
+```http
+POST http://127.0.0.1/command/upload HTTP/1.1
+Content-Type: multipart/form-data; boundary=-------------------------acebdf13572468
+User-Agent: Fiddler
+Host: 127.0.0.1
+Authorization: your_auth_string
+Content-Length: length
+
+---------------------------acebdf13572468
+Content-Disposition: form-data; name="torrents"; filename="8f18036b7a205c9347cb84a253975e12f7adddf2.torrent"
+Content-Type: application/x-bittorrent
+
+file_binary_data_goes_here
+---------------------------acebdf13572468
+Content-Disposition: form-data; name="torrents"; filename="UFS.torrent"
+Content-Type: application/x-bittorrent
+
+file_binary_data_goes_here
+---------------------------acebdf13572468--
+
+```
+
+The above example will add two torrent files. `file_binary_data_goes_here` represents raw data of torrent file (basically a byte array).
+
+No matter if successful or not server will return the following reply:
+
+```http
+HTTP/1.1 200 OK
+content-type: text/html
+content-length: 64
+
+<script type="text/javascript">window.parent.hideAll();</script>HTTP/1.1 200 OK
+content-type: text/html
+content-length: 64
+
+<script type="text/javascript">window.parent.hideAll();</script>
+```
+
+### <a id="addtrack"></a>Add trackers to torrent ###
+
+Requires known torrent hash, get 'em from [torrent list](#torrentlist).
+
+```http
+POST http://127.0.0.1/command/addTrackers HTTP/1.1
+User-Agent: Fiddler
+Host: 127.0.0.1
+Authorization: your_auth_string
+Content-Type: application/x-www-form-urlencoded
+Content-Length: length
+
+hash=fae6e49afa359ab07c3ef169438ff95d870bc178&urls=http://192.168.0.1/announce%0Audp://192.168.0.1:3333/dummyAnnounce
+```
+
+This adds two trackers to torrent with hash `fae6e49afa359ab07c3ef169438ff95d870bc178`. Note `%0A` (aka LF newline) between trackers. Ampersand in tracker urls **MUST** be escaped.
+
+No matter if successful or not server will return the following reply:
+
+```http
+HTTP/1.1 200 OK
+```
+
+### <a id="pausetorrent"></a>Pause torrent ###
+
+Requires known torrent hash, get 'em from [torrent list](#torrentlist).
+
+```http
+POST http://127.0.0.1/command/pause HTTP/1.1
+User-Agent: Fiddler
+Host: 127.0.0.1
+Authorization: your_auth_string
+Content-Type: application/x-www-form-urlencoded
+Content-Length: length
+
+hash=fae6e49afa359ab07c3ef169438ff95d870bc178
+```
+
+No matter if successful or not server will return the following reply:
+
+```http
+HTTP/1.1 200 OK
+```
+
+### <a id="pauseall"></a>Pause all torrents ###
+
+```http
+POST http://127.0.0.1/command/pauseall HTTP/1.1
+User-Agent: Fiddler
+Host: 127.0.0.1
+Authorization: your_auth_string
+Content-Length: 0
+```
+
+No matter if successful or not server will return the following reply:
+
+```http
+HTTP/1.1 200 OK
+```
+
+### <a id="resumetorrent"></a>Resume torrent ###
+
+Requires known torrent hash, get 'em from [torrent list](#torrentlist).
+
+```http
+POST http://127.0.0.1/command/resume HTTP/1.1
+User-Agent: Fiddler
+Host: 127.0.0.1
+Authorization: your_auth_string
+Content-Type: application/x-www-form-urlencoded
+Content-Length: length
+
+hash=fae6e49afa359ab07c3ef169438ff95d870bc178
+```
+
+No matter if successful or not server will return the following reply:
+
+```http
+HTTP/1.1 200 OK
+```
+
+### <a id="resumeall"></a>Resume all torrents ###
+
+```http
+POST http://127.0.0.1/command/resumeall HTTP/1.1
+User-Agent: Fiddler
+Host: 127.0.0.1
+Authorization: your_auth_string
+Content-Length: 0
+```
+
+No matter if successful or not server will return the following reply:
+
+```http
+HTTP/1.1 200 OK
+```
+
+### <a id="delete"></a>Delete torrent ###
+
+Requires known torrent hash, get 'em from [torrent list](#torrentlist).
+
+```http
+POST http://127.0.0.1/command/delete HTTP/1.1
+User-Agent: Fiddler
+Host: 127.0.0.1
+Authorization: your_auth_string
+Content-Type: application/x-www-form-urlencoded
+Content-Length: length
+
+hashes=fae6e49afa359ab07c3ef169438ff95d870bc178
+```
+
+`hashes` can contain multiple hashes separated by `|`
+
+No matter if successful or not server will return the following reply:
+
+```http
+HTTP/1.1 200 OK
+```
+
+### <a id="deleteperm"></a>Delete torrent with downloaded data ###
+
+Requires known torrent hash, get 'em from [torrent list](#torrentlist).
+
+```http
+POST http://127.0.0.1/command/deletePerm HTTP/1.1
+User-Agent: Fiddler
+Host: 127.0.0.1
+Authorization: your_auth_string
+Content-Type: application/x-www-form-urlencoded
+Content-Length: length
+
+hashes=fae6e49afa359ab07c3ef169438ff95d870bc178
+```
+
+`hashes` can contain multiple hashes separated by `|`
+
+No matter if successful or not server will return the following reply:
+
+```http
+HTTP/1.1 200 OK
+```
+
+### <a id="recheck"></a> Recheck torrent ###
+
+Requires known torrent hash, get 'em from [torrent list](#torrentlist).
+
+```http
+POST http://127.0.0.1/command/recheck HTTP/1.1
+User-Agent: Fiddler
+Host: 127.0.0.1
+Authorization: your_auth_string
+Content-Type: application/x-www-form-urlencoded
+Content-Length: length
+
+hash=fae6e49afa359ab07c3ef169438ff95d870bc178
+```
+
+No matter if successful or not server will return the following reply:
+
+```http
+HTTP/1.1 200 OK
+```
+### <a id="prioup"></a>Increase torrent priority ###
+
+Requires known torrent hash, get 'em from [torrent list](#torrentlist).
+
+```http
+POST http://127.0.0.1/command/increasePrio HTTP/1.1
+User-Agent: Fiddler
+Host: 127.0.0.1
+Authorization: your_auth_string
+Content-Type: application/x-www-form-urlencoded
+Content-Length: length
+
+hashes=fae6e49afa359ab07c3ef169438ff95d870bc178
+```
+
+`hashes` can contain multiple hashes separated by `|`
+
+No matter if successful or not server will return the following reply:
+
+```http
+HTTP/1.1 200 OK
+```
+
+### <a id="priodown"></a>Decrease torrent priority ###
+
+Requires known torrent hash, get 'em from [torrent list](#torrentlist).
+
+```http
+POST http://127.0.0.1/command/decreasePrio HTTP/1.1
+User-Agent: Fiddler
+Host: 127.0.0.1
+Authorization: your_auth_string
+Content-Type: application/x-www-form-urlencoded
+Content-Length: length
+
+hashes=fae6e49afa359ab07c3ef169438ff95d870bc178
+```
+
+`hashes` can contain multiple hashes separated by `|`
+
+No matter if successful or not server will return the following reply:
+
+```http
+HTTP/1.1 200 OK
+```
+
+### <a id="priotop"></a>Maximal torrent priority ###
+
+Requires known torrent hash, get 'em from [torrent list](#torrentlist).
+
+```http
+POST http://127.0.0.1/command/topPrio HTTP/1.1
+User-Agent: Fiddler
+Host: 127.0.0.1
+Authorization: your_auth_string
+Content-Type: application/x-www-form-urlencoded
+Content-Length: length
+
+hashes=fae6e49afa359ab07c3ef169438ff95d870bc178
+```
+
+`hashes` can contain multiple hashes separated by `|`
+
+No matter if successful or not server will return the following reply:
+
+```http
+HTTP/1.1 200 OK
+```
+
+### <a id="priobottom"></a>Minimal torrent priority ###
+
+Requires known torrent hash, get 'em from [torrent list](#torrentlist).
+
+```http
+POST http://127.0.0.1/command/bottomPrio HTTP/1.1
+User-Agent: Fiddler
+Host: 127.0.0.1
+Authorization: your_auth_string
+Content-Type: application/x-www-form-urlencoded
+Content-Length: length
+
+hashes=fae6e49afa359ab07c3ef169438ff95d870bc178
+```
+
+`hashes` can contain multiple hashes separated by `|`
+
+No matter if successful or not server will return the following reply:
+
+```http
+HTTP/1.1 200 OK
+```
+
+### <a id="priofile"></a>Set file priority ###
+
+Requires known torrent hash, get 'em from [torrent list](#torrentlist).
+
+```http
+POST http://127.0.0.1/command/setFilePrio HTTP/1.1
+User-Agent: Fiddler
+Host: 127.0.0.1
+Authorization: your_auth_string
+Content-Type: application/x-www-form-urlencoded
+Content-Length: length
+
+hash=fae6e49afa359ab07c3ef169438ff95d870bc178&id=0&priority=7
+```
+
+Please consult [torrent contents API](#propscont) for possible `priority` values. `id` values coresspond to contents returned by [torrent contents API](#propscont), e.g. `id=0` for first file, `id=1` for second file, etc.
+
+No matter if successful or not server will return the following reply:
+
+```http
+HTTP/1.1 200 OK
+```
+
+### <a id="getglobaldl"></a>Get global download limit ###
+
+```http
+POST http://127.0.0.1/command/getGlobalDlLimit HTTP/1.1
+User-Agent: Fiddler
+Host: 127.0.0.1
+Authorization: your_auth_string
+Content-Length: 0
+```
+
+Server reply (example):
+
+```http
+HTTP/1.1 200 OK
+content-type: text/html
+content-length: length
+
+3145728
+```
+
+`3145728` is the value of current global download speed limit in bytes; this value will be zero if no limit is applied.
+
+### <a id="setglobaldl"></a>Set global download limit ###
+
+```http
+POST http://127.0.0.1/command/setGlobalDlLimit HTTP/1.1
+User-Agent: Fiddler
+Host: 127.0.0.1
+Authorization: your_auth_string
+Content-Type: application/x-www-form-urlencoded
+Content-Length: length
+
+limit=4194304
+```
+
+`limit` is global download speed limit you want to set in bytes.
+
+No matter if successful or not server will return the following reply:
+
+```http
+HTTP/1.1 200 OK
+```
+
+### <a id="getglobalul"></a>Get global upload limit ###
+
+```http
+POST http://127.0.0.1/command/getGlobalUpLimit HTTP/1.1
+User-Agent: Fiddler
+Host: 127.0.0.1
+Authorization: your_auth_string
+Content-Length: 0
+```
+
+Server reply (example):
+
+```http
+HTTP/1.1 200 OK
+content-type: text/html
+content-length: length
+
+3145728
+```
+
+`3145728` is the value of current global upload speed limit in bytes; this value will be zero if no limit is applied.
+
+### <a id="setglobalul"></a>Set global upload limit ###
+
+```http
+POST http://127.0.0.1/command/setGlobalUpLimit HTTP/1.1
+User-Agent: Fiddler
+Host: 127.0.0.1
+Authorization: your_auth_string
+Content-Type: application/x-www-form-urlencoded
+Content-Length: length
+
+limit=4194304
+```
+
+`limit` is global upload speed limit you want to set in bytes.
+
+No matter if successful or not server will return the following reply:
+
+```http
+HTTP/1.1 200 OK
+```
+
+### <a id="gettorrentdl"></a>Get torrent download limit ###
+
+Requires known torrent hash, get 'em from [torrent list](#torrentlist).
+
+```http
+POST http://127.0.0.1/command/getTorrentDlLimit HTTP/1.1
+User-Agent: Fiddler
+Host: 127.0.0.1
+Authorization: your_auth_string
+Content-Type: application/x-www-form-urlencoded
+Content-Length: length
+
+hash=fae6e49afa359ab07c3ef169438ff95d870bc178
+```
+
+Server reply (example):
+
+```http
+HTTP/1.1 200 OK
+content-type: text/html
+content-length: length
+
+338944
+```
+
+`338944` is the value of current torrent download speed limit in bytes; this value will be zero if no limit is applied.
+
+### <a id="settorrentdl"></a>Set torrent download limit ###
+
+Requires known torrent hash, get 'em from [torrent list](#torrentlist).
+
+```http
+POST http://127.0.0.1/command/setTorrentDlLimit HTTP/1.1
+User-Agent: Fiddler
+Host: 127.0.0.1
+Authorization: your_auth_string
+Content-Type: application/x-www-form-urlencoded
+Content-Length: length
+
+hash=fae6e49afa359ab07c3ef169438ff95d870bc178&limit=131072
+```
+
+`limit` is torrent download speed limit you want to set in bytes.
+
+No matter if successful or not server will return the following reply:
+
+```http
+HTTP/1.1 200 OK
+```
+
+### <a id="gettorrentul"></a>Get torrent upload limit ###
+
+Requires known torrent hash, get 'em from [torrent list](#torrentlist).
+
+```http
+POST http://127.0.0.1/command/getTorrentUpLimit HTTP/1.1
+User-Agent: Fiddler
+Host: 127.0.0.1
+Authorization: your_auth_string
+Content-Type: application/x-www-form-urlencoded
+Content-Length: length
+
+hash=fae6e49afa359ab07c3ef169438ff95d870bc178
+```
+
+Server reply (example):
+
+```http
+HTTP/1.1 200 OK
+content-type: text/html
+content-length: length
+
+338944
+```
+
+`338944` is the value of current torrent upload speed limit in bytes; this value will be zero if no limit is applied.
+
+### <a id="settorrentul"></a>Set torrent upload limit ###
+
+Requires known torrent hash, get 'em from [torrent list](#torrentlist).
+
+```http
+POST http://127.0.0.1/command/setTorrentUpLimit HTTP/1.1
+User-Agent: Fiddler
+Host: 127.0.0.1
+Authorization: your_auth_string
+Content-Type: application/x-www-form-urlencoded
+Content-Length: length
+
+hash=fae6e49afa359ab07c3ef169438ff95d870bc178&limit=131072
+```
+
+`limit` is torrent download speed limit you want to set in bytes.
+
+No matter if successful or not server will return the following reply:
+
+```http
+HTTP/1.1 200 OK
+```
+
+### <a id="setpref"></a>Set qBittorrent preferences ###
+
+**WORK IN PROGRESS**
