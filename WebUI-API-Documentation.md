@@ -421,7 +421,7 @@ where
 
     First options allows you to use both encrypted and unencrypted connections (this is the default); other options are mutually exclusive: e.g. by forcing encryption on you won't be able to use unencrypted connections and vice versa.
 
-`anonymous_mode` - if true anonymous mode will be enabled; read more [here](wiki/Anonymous-Mode); this option is only available in qBittorent built against libtorrent version 0.16.X and higher<br/>
+`anonymous_mode` - if true anonymous mode will be enabled; read more [here](Anonymous-Mode); this option is only available in qBittorent built against libtorrent version 0.16.X and higher<br/>
 `proxy_type` - possible values:<br/>
 
   1. `-1` - proxy is disabled
