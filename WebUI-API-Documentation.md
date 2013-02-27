@@ -1002,7 +1002,7 @@ Authorization: your_auth_string
 Content-Type: application/x-www-form-urlencoded
 Content-Length: length
 
-json={"save_path":"C:/Users/Dayman/Downloads","queueing_enabled":"false","scan_dirs":["C:/Games","D:/Downloads"],"download_in_scan_dirs":[false,true]}
+json={"save_path":"C:/Users/Dayman/Downloads","queueing_enabled":false,"scan_dirs":["C:/Games","D:/Downloads"],"download_in_scan_dirs":[false,true]}
 ```
 
 No matter if successful or not server will return the following reply:
@@ -1013,6 +1013,7 @@ HTTP/1.1 200 OK
 
   1. There is no need to pass all possible preferences' `token:value` pairs if you only want to change one option
   1. When setting preferences `scan_dirs` must **always** be accompanied with `download_in_scan_dirs`
+  1. Paths in `scan_dirs` must exist, otherwise this option will have no effect
   1. String values must be quoted; integer and boolean values must never be quoted
 
 For a list of possible preference options see [Get qBittorrent preferences](#prefget)
