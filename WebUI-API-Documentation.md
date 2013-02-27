@@ -1,5 +1,3 @@
-**This is a work in progress, it's still not finished**
-
 # Table of Contents #
 
 1. [Authorization](#auth)
@@ -36,6 +34,8 @@
   1. [Get torrent upload limit](#gettorrentul)
   1. [Set torrent upload limit](#settorrentul)
   1. [Set qBittorrent preferences](#setpref)
+1. [Additional information](#postscriptum)
+  1. [Version 3.0.8 bugs](#3.0.8)
 
 ***
 
@@ -360,8 +360,101 @@ where
 `temp_path` - path for incomplete torrents, separated by slashes<br/>
 `scan_dirs` - list of watch folders to add torrent automatically; slashes are used as path separators; list entries are separated by commas<br/>
 `download_in_scan_dirs` - true if torrents should be downloaded to watch folder; list entries are separated by commas<br/>
+`export_dir_enabled` - true if .torrent file should be copied to export directory upon adding<br/>
+`export_dir` - path to directory to copy .torrent files if `export_dir_enabled` is enabled; path is separated by slashes<br/>
+`mail_notification_enabled` - true if e-mail notification should be enabled<br/>
+`mail_notification_email` - e-mail to send notifications to<br/>
+`mail_notification_smtp` - smtp server for e-mail notifications<br/>
+`mail_notification_ssl_enabled` - true if smtp server requires SSL connection<br/>
+`mail_notification_auth_enabled` - true if smtp server requires authentication<br/>
+`mail_notification_username` - username for smtp authentication<br/>
+`mail_notification_password` - password for smtp authentication<br/>
+`autorun_enabled` - true if external program should be run after torrent has finished downloading<br/>
+`autorun_program` - program path/name/arguments to run if `autorun_enabled` is enabled; path is separated by slashes; you can use `%f` and `%n` arguments, which will be expanded by qBittorent as path_to_torrent_file and torrent_name (from the GUI; not the .torrent file name) respectively<br/>
+`preallocate_all` - true if file preallocation should take place, otherwise sparse files are used<br/>
+`queueing_enabled` - true if torrent queuing is enabled<br/>
+`max_active_downloads` - maximum number of active simultaneous downloads<br/>
+`max_active_torrents` - maximum number of active simultaneous downloads and uploads<br/>
+`max_active_uploads` - maximum number of active simultaneous uploads<br/>
+`dont_count_slow_torrents` - if true torrents w/o any activity (stalled ones) will not be counted towards `max_active_*` limits; see [dont_count_slow_torrents](http://www.rasterbar.com/products/libtorrent/manual.html#session-customization) for more information<br/>
+`incomplete_files_ext` - if true `.!qB` extension will be appended to incomplete files<br/>
+`listen_port` - port for incoming connections<br/>
+`upnp` - true if UPnP/NAT-PMP is enabled<br/>
+`dl_limit` - global download speed limit in KiB/s; `-1` means no limit is applied<br/>
+`up_limit` - global upload speed limit in KiB/s; `-1` means no limit is applied<br/>
+`max_connec` - maximum global number of simultaneous connections<br/>
+`max_connec_per_torrent` - maximum number of simultaneous connections per torrent<br/>
+`max_uploads_per_torrent` - maximum number of upload slots per torrent<br/>
+`enable_utp` - true if uTP protocol should be enabled; this option is only available in qBittorent built against libtorrent version 0.16.X and higher<br/>
+`limit_utp_rate` - true if `[du]l_limit` should be applied to uTP connections; this option is only available in qBittorent built against libtorrent version 0.16.X and higher<br/>
+`limit_tcp_overhead` - true if `[du]l_limit` should be applied to estimated TCP overhead (service data: e.g. packet headers)<br/>
+`alt_dl_limit` - alternative global download speed limit in KiB/s<br/>
+`alt_up_limit` - alternative global upload speed limit in KiB/s<br/>
+`scheduler_enabled` - true if alternative limits should be applied according to schedule<br/>
+`schedule_from_hour` - scheduler starting hour<br/>
+`schedule_from_min` - scheduler starting minute<br/>
+`schedule_to_hour` - scheduler ending hour<br/>
+`schedule_to_min` - scheduler ending minute<br/>
+`scheduler_days` - scheduler days; possible values:<br/>
 
-**WOK IN PROGRESS - TOO MANY VALUES TO DESCRIBE**
+  1. `0` - every day
+  1. `1` - every weekday
+  1. `2` - every weekend
+  1. `3` - every Monday
+  1. `4` - every Tuesday
+  1. `5` - every Wednesday
+  1. `6` - every Thursday
+  1. `7` - every Friday
+  1. `8` - every Saturday
+  1. `9` - every Sunday
+
+`dht` - true if DHT is enabled<br/>
+`dhtSameAsBT` - true if DHT port should match TCP port<br/>
+`dht_port` - DHT port if `dhtSameAsBT` is false<br/>
+`pex` - true if PeX is enabled<br/>
+`lsd` - true if LSD is eanbled<br/>
+`encryption` - possible values:<br/>
+
+  1. `0` - prefer encryption
+  1. `1` - force encryption on
+  1. `2` - force encryption off
+
+    First options allows you to use both encrypted and unencrypted connections (this is the default); other options are mutually exclusive: e.g. by forcing encryption on you won't be able to use unencrypted connections and vice versa.
+
+`anonymous_mode` - if true anonymous mode will be enabled; read more [here](wiki/Anonymous-Mode); this option is only available in qBittorent built against libtorrent version 0.16.X and higher<br/>
+`proxy_type` - possible values:<br/>
+
+  1. `-1` - proxy is disabled
+  1. `1` - HTTP proxy without authentication
+  1. `2` - SOCKS5 proxy without authentication
+  1. `3` - HTTP proxy with authentication
+  1. `4` - SOCKS5 proxy with authentication
+  1. `5` - SOCKS4 proxy without authentication
+
+`proxy_ip` - proxy IP address or domain name<br/>
+`proxy_port` - proxy port<br/>
+`proxy_peer_connections` - true if peer and web seed connections should be proxified; this option will have any effect only in qBittorent built against libtorrent version 0.16.X and higher<br/>
+`proxy_auth_enabled` - true proxy requires authentication; doesn't apply to SOCKS4 proxies<br/>
+`proxy_username` - username for proxy authentication<br/>
+`proxy_password` - password for proxy authentication<br/>
+`ip_filter_enabled` - true if external IP filter should be enabled<br/>
+`ip_filter_path` - path to IP filter file (.dat, .p2p, .p2b files are supported); path is separated by slashes<br/>
+`web_ui_port` - WebUI port<br/>
+`web_ui_username` - WebUI username<br/>
+`web_ui_password` - MD5 hash of WebUI password; hash is generated from the following string: `username:Web UI Access:plain_text_web_ui_password`<br/>
+`bypass_local_auth` - true if auithetication challenge for loopback address (127.0.0.1) should be disabled<br/>
+`use_https` - true if WebUI HTTPS access is eanbled<br/>
+`ssl_key` - SSL keyfile contents (this is a not a path)<br/>
+`ssl_cert` - SSL certificate contents (this is a not a path)<br/>
+`dyndns_enabled` - true if server DNS should be updated dynamically<br/>
+`dyndns_service` - possible values:<br/>
+
+  1. `0` - use DyDNS
+  1. `1` - use NOIP
+
+`dyndns_username` - username for DDNS service<br/>
+`dyndns_password` - password for DDNS service<br/>
+`dyndns_domain` - your DDNS domain name <br/>
 
 # <a id="POST"></a>POST methods #
 
@@ -901,4 +994,37 @@ HTTP/1.1 200 OK
 
 ### <a id="setpref"></a>Set qBittorrent preferences ###
 
-**WORK IN PROGRESS**
+```http
+POST http://127.0.0.1/command/setPreferences HTTP/1.1
+User-Agent: Fiddler
+Host: 127.0.0.1
+Authorization: your_auth_string
+Content-Type: application/x-www-form-urlencoded
+Content-Length: length
+
+json={"save_path":"C:/Users/Dayman/Downloads","queueing_enabled":"false","scan_dirs":["C:/Games","D:/Downloads"],"download_in_scan_dirs":[false,true]}
+```
+
+No matter if successful or not server will return the following reply:
+
+```http
+HTTP/1.1 200 OK
+```
+
+  1. There is no need to pass all possible preferences' `token:value` pairs if you only want to change one option
+  1. When setting preferences `scan_dirs` must **always** be accompanied with `download_in_scan_dirs`
+  1. String values must be quoted; integer and boolean values must never be quoted
+
+For a list of possible preference options see [Get qBittorrent preferences](#prefget)
+
+# <a id="postscriptum"></a>Additional information #
+
+### <a id="3.0.8"></a>Version 3.0.8 bugs ###
+
+The following WebUI-related bugs exist in qBittorent v3.0.8 and lower:
+
+1. JSON generation bugs
+  * `'` and `&` (apostrophe and ampersand) characters are escaped by backslash `\`
+1. JSON parsing bugs
+  * When [setting qBittorent preferences](#setpref) JSON values, containing `:` semicolons will be disregarded; this mostly affects Windows users, whose paths start with `DiskName:\`
+  * When [setting qBittorent preferences](#setpref) JSON bool lists (e.g. `"download_in_scan_dirs":[false,true]`) will be treated as all bool values in the list are `false`, this doesn't affect bool values outside JSON lists
