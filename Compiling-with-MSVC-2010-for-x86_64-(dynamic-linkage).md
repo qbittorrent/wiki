@@ -252,6 +252,9 @@ This page describes the process of building qBittorrent on Windows targeting x86
         + Find `INCLUDEPATH += $$quote(C:/qBittorrent/RC_0_16/include)`<br />
         and replace with
         `INCLUDEPATH += $$quote(T:/install/libtorrent/include)`<br />
+        + Find `INCLUDEPATH += $$quote(C:/qBittorrent/Zlib/include)`<br />
+        and replace with
+        `INCLUDEPATH += $$quote(T:/install/Zlib/include)`<br />
         and insert `INCLUDEPATH += $$quote(T:/install/OpenSSL/include)` on next line 
         + Find `LIBS += $$quote(-LC:/qBittorrent/boost_1_51_0/stage/lib)`<br />
         and replace with
@@ -259,6 +262,9 @@ This page describes the process of building qBittorrent on Windows targeting x86
         + Find `LIBS += $$quote(-LC:/qBittorrent/RC_0_16/bin/<path-according-to-the-build-options-chosen>)`<br />
         and replace with
         `LIBS += $$quote(-LT:/install/libtorrent/lib)`<br />
+        + Find `LIBS += $$quote(-LC:/qBittorrent/Zlib/lib)`<br />
+        and replace with
+        `LIBS += $$quote(-LT:/install/Zlib/lib)`<br />
         and insert `LIBS += $$quote(-LT:/install/OpenSSL/lib)` on next line
         + Find and remove the following lines:<br />
         `DEFINES += BOOST_ASIO_SEPARATE_COMPILATION`<br />
