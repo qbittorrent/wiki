@@ -16,7 +16,7 @@ Let's assume that the working directory for our compilation will be '''C:\qBitto
 
 === Compiling Zlib ===
 * Extract the Zlib source inside our working dir.
-* * Open the MSVC2008 command shell. Start->Programs->Microsoft Visual C++ 2008 Express Edition->Visual Studio Tools->Visual Studio 2008 Command Prompt
+* Open the MSVC2008 command shell. Start->Programs->Microsoft Visual C++ 2008 Express Edition->Visual Studio Tools->Visual Studio 2008 Command Prompt
 * Navigate to the OpenSSL source folder. eg ''cd C:\qBittorrent\zlib-1.2.7''
 * Issue the following commands:
  nmake -f win32/Makefile.msc LOC="-DASMV -DASMINF" OBJA="inffas32.obj match686.obj"
