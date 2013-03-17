@@ -14,13 +14,25 @@ This page describes how to compile qBittorrent using MSVC 2008 under Windows. Th
 
 Let's assume that the working directory for our compilation will be '''C:\qBittorrent'''
 
+=== Compiling Zlib ===
+* Extract the Zlib source inside our working dir.
+* * Open the MSVC2008 command shell. Start->Programs->Microsoft Visual C++ 2008 Express Edition->Visual Studio Tools->Visual Studio 2008 Command Prompt
+* Navigate to the OpenSSL source folder. eg ''cd C:\qBittorrent\zlib-1.2.7''
+* Issue the following commands:
+ nmake -f win32/Makefile.msc LOC="-DASMV -DASMINF" OBJA="inffas32.obj match686.obj"
+* Copy zlib.h, zconf.h, zlib.lib, zlib.pdb to our install dir.
+ xcopy zlib.h C:\qBittorrent\install\include\
+ xcopy zconf.h C:\qBittorrent\install\include\
+ xcopy zlib.lib C:\qBittorrent\install\lib\
+ xcopy zlib.pdb C:\qBittorrent\install\lib\
+
 === Compiling OpenSSL ===
 * Make sure you have installed perl and nasm.
 * Extract the OpenSSL source inside our working dir.
 * Open the MSVC2008 command shell. Start->Programs->Microsoft Visual C++ 2008 Express Edition->Visual Studio Tools->Visual Studio 2008 Command Prompt
-* Navigate to the OpenSSL source folder. eg ''cd C:\qBittorrent\openssl-1.0.1c''
+* Navigate to the OpenSSL source folder. eg ''cd C:\qBittorrent\openssl-1.0.1e''
 * Now we will build a static version of OpenSSL. Issue the following commands:
- perl Configure VC-WIN32 no-shared no-zlib-dynamic threads --prefix=C:\qBittorrent\openssl-1.0.1c\my_build
+ perl Configure VC-WIN32 no-shared no-zlib-dynamic threads --prefix=C:\qBittorrent\openssl-1.0.1e\my_build
  ms\do_nasm
  nmake -f ms\nt.mak
  nmake -f ms\nt.mak install
