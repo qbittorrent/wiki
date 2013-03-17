@@ -3,13 +3,14 @@ This page describes how to compile qBittorrent using MSVC 2008 under Windows. Th
 === What you will need: ===
 * The MSVC 2008 compiler. The Express Edition(free) will do fine.
 * A [http://www.perl.org/ Perl language] interpreter. [http://strawberryperl.com/ Strawberry Perl] will do fine. Download version 5.16.1.1 [http://strawberry-perl.googlecode.com/files/strawberry-perl-5.16.1.1-32bit.msi here].
-* Latest release of the [http://www.nasm.us/ NASM assembler]. Download version 2.10.5 [http://www.nasm.us/pub/nasm/releasebuilds/2.10.05/win32/nasm-2.10.05-win32.zip here].
-* Latest release of [http://www.openssl.org/ OpenSSL]. Download version 1.0.0c [http://www.openssl.org/source/openssl-1.0.1c.tar.gz here].
-* Latest release of the [http://www.boost.org/ Boost libraries]. Download version 1.51.0 [http://sourceforge.net/projects/boost/files/boost/1.51.0/boost_1_51_0.7z/download here].
-* Latest release of [http://www.rasterbar.com/products/libtorrent/ libtorrent(rasterbar)]. Download version 0.16.3 [https://libtorrent.googlecode.com/files/libtorrent-rasterbar-0.16.3.tar.gz here].
-* Latest release of the [http://qt-project.org/ Qt libraries] source. Download version 4.8.3 [http://releases.qt-project.org/qt4/source/qt-everywhere-opensource-src-4.8.3.tar.gz here].
-* Latest release of [http://www.qbittorrent.org qBittorrent]. Download version 3.0.2 [http://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-3.0.2/qbittorrent-3.0.2.tar.xz/download here].
-* Latest release of [http://qt-project.org/downloads#qt-creator Qt Creator]. Download version 2.5.2 [http://get.qt.nokia.com/qtcreator/qt-creator-win-opensource-2.5.2.exe here].
+* Latest release of the [http://www.nasm.us/ NASM assembler]. Download version 2.10.07 [http://www.nasm.us/pub/nasm/releasebuilds/2.10.07/win32/nasm-2.10.07-win32.zip here].
+* Latest release of [http://www.zlib.net/ Zlib]. Download version 1.2.7 [http://zlib.net/zlib-1.2.7.tar.bz2 here].
+* Latest release of [http://www.openssl.org/ OpenSSL]. Download version 1.0.1e [https://www.openssl.org/source/openssl-1.0.1e.tar.gz here].
+* Latest release of the [http://www.boost.org/ Boost libraries]. Download version 1.53.0 [http://sourceforge.net/projects/boost/files/boost/1.53.0/boost_1_53_0.7z/download here].
+* Latest release of [http://www.rasterbar.com/products/libtorrent/ libtorrent(rasterbar)]. Download version 0.16.9 [https://libtorrent.googlecode.com/files/libtorrent-rasterbar-0.16.9.tar.gz here].
+* Latest release of the [http://qt-project.org/ Qt libraries] source. Download version 4.8.4 [http://releases.qt-project.org/qt4/source/qt-everywhere-opensource-src-4.8.4.tar.gz here].
+* Latest release of [http://www.qbittorrent.org qBittorrent]. Download version 3.0.9 [http://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-3.0.9/qbittorrent-3.0.9.tar.xz/download here].
+* Latest release of [http://qt-project.org/downloads#qt-creator Qt Creator]. Download version 2.6.2 [http://releases.qt-project.org/qtcreator/2.6.2/qt-creator-windows-opensource-2.6.2.exe here].
 
 Let's assume that the working directory for our compilation will be '''C:\qBittorrent'''
 
