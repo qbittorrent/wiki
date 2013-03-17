@@ -88,7 +88,7 @@ Let's assume that the working directory for our compilation will be '''C:\qBitto
 === Compiling Qt ===
 * Extract the Qt sources in the working dir.
 * Open the MSVC2008 command shell. Start->Programs->Microsoft Visual C++ 2008 Express Edition->Visual Studio Tools->Visual Studio 2008 Command Prompt
-* Navigate to the Qtsource folder. eg ''cd C:\qBittorrent\qt-everywhere-opensource-src-4.8.3'' 
+* Navigate to the Qtsource folder. eg ''cd C:\qBittorrent\qt-everywhere-opensource-src-4.8.4'' 
 * Now we will build a static version of Qt with making as small as possible.
 * Open '''mkspecs\win32-msvc2008\qmake.conf''' and replace the  '''QMAKE_CFLAGS_RELEASE''' line with:
  QMAKE_CFLAGS_RELEASE = -O1 -Og -GL -MT
@@ -96,8 +96,10 @@ Let's assume that the working directory for our compilation will be '''C:\qBitto
  QMAKE_LFLAGS = /NOLOGO /DYNAMICBASE /NXCOMPAT /LTCG
 '''QMAKE_LFLAGS_RELEASE''' line with:
  QMAKE_LFLAGS_RELEASE = /INCREMENTAL:NO /NODEFAULTLIB:MSVCRT
+* Open '''src\3rdparty\zlib_dependency.pri''' and replace '''zdll.lib''' with '''zlib.lib'''
+* Do the same for '''src\tools\bootstrap\bootstrap.pri'''
 * Issue the following commands:
- configure.exe -debug-and-release -opensource -static -ltcg -fast -qt-zlib -no-qt3support -no-opengl -no-openvg -no-dsp -no-vcproj -no-dbus -no-phonon -no-phonon-backend -no-multimedia -no-audio-backend -no-webkit -no-script -no-scripttools -no-declarative -no-declarative-debug -mp -arch windows -qt-style-windowsxp -nomake examples -nomake demos -platform win32-msvc2008 -openssl-linked
+ configure.exe -debug-and-release -opensource -static -ltcg -fast -system-zlib -no-qt3support -no-opengl -no-openvg -no-dsp -no-vcproj -no-dbus -no-phonon -no-phonon-backend -no-multimedia -no-audio-backend -no-webkit -no-script -no-scripttools -no-declarative -no-declarative-debug -mp -arch windows -qt-style-windowsxp -nomake examples -nomake demos -platform win32-msvc2008 -openssl-linked -I "C:\QBITTORRENT\install\include" -L "C:\QBITTORRENT\install\lib"
  bin\qmake.exe projects.pro QT_BUILD_PARTS="libs translations"
  nmake
 * You can close the command prompt now.
@@ -106,14 +108,14 @@ Let's assume that the working directory for our compilation will be '''C:\qBitto
 * Just follow the installer instructions for the installation.
 * Launch Qt Creator and select Tools->Options...
 * Select the '''Build & Run''' item from the left and select the '''Qt Versions''' tab.
-* Click the '''Add...''' button and select the qmake.exe you just build. It should be in '''C:\qBittorrent\qt-everywhere-opensource-src-4.8.3\bin\qmake.exe'''
-* Name it something meaningful like "Qt 4.8.3 - MSVC2008"
+* Click the '''Add...''' button and select the qmake.exe you just build. It should be in '''C:\qBittorrent\qt-everywhere-opensource-src-4.8.4\bin\qmake.exe'''
+* Name it something meaningful like "Qt 4.8.4 - MSVC2008"
 * Apply the changes and close the window
 
 === Compiling qBittorrent ===
 * Go to [http://www.maxmind.com Maxmind] and download the GeoLite Country database in binary format. Here is the [http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz link].
-* Extract the ''GeoIP.dat'' file inside ''C:\qBittorrent\qbittorrent-3.0.2\src\geoip''.
-* Launch Qt Creator and open the ''qbittorrent.pro'' file in ''C:\qBittorrent\qbittorrent-3.0.2''
+* Extract the ''GeoIP.dat'' file inside ''C:\qBittorrent\qbittorrent-3.0.9\src\geoip''.
+* Launch Qt Creator and open the ''qbittorrent.pro'' file in ''C:\qBittorrent\qbittorrent-3.0.9''
 * From the Window that pops up select the Qt version you added above and specify '''release''' version. Also check the ''Use Shadow Building'' checkbox. You can also select where qBittorrent will be built if you want.
 * Open the ''winconf.pri'' file and adjust the paths. Read the comments. '''NOTE:''' Replace any '\' with '/' in the paths to avoid some Qt warnings.
 * Open the ''winconf-msvc.pri'' file and adjust the filename of the lib of Boost.
