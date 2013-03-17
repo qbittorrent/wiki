@@ -32,21 +32,24 @@ Let's assume that the working directory for our compilation will be '''C:\qBitto
 * Open the MSVC2008 command shell. Start->Programs->Microsoft Visual C++ 2008 Express Edition->Visual Studio Tools->Visual Studio 2008 Command Prompt
 * Navigate to the OpenSSL source folder. eg ''cd C:\qBittorrent\openssl-1.0.1e''
 * Now we will build a static version of OpenSSL. Issue the following commands:
- perl Configure VC-WIN32 no-shared no-zlib-dynamic threads --prefix=C:\qBittorrent\openssl-1.0.1e\my_build
+ perl Configure VC-WIN32 no-shared zlib no-zlib-dynamic threads --prefix=C:\qBittorrent\install -IC:\qBittorrent\install\include -LC:\qBittorrent\install\lib
  ms\do_nasm
+* Edit the ''C:\qBittorrent\openssl-1.0.1e\ms\nt.mak'' file and find the line that says:
+ EX_LIBS=/libpath:C:\qBittorrent\install\lib ws2_32.lib gdi32.lib advapi32.lib crypt32.lib user32.lib zlib1.lib
+* Replace '''zlib1.lib''' with '''zlib.lib'''
+* Find line that says:
+ LFLAGS=/nologo /subsystem:console /opt:ref /debug
+* And append:
+ /ltcg /nodefaultlib:msvcrt
+* Then issue the following:
  nmake -f ms\nt.mak
  nmake -f ms\nt.mak install
-* Copy the necessary files to MSVC's directories so OpenSSL can be picked up by libtorrent, asio and qBittorrent.
- xcopy /s "my_build\include\*" "C:\Program Files\Microsoft Visual Studio 9.0\VC\include\*"
- xcopy "my_build\lib\*" "C:\Program Files\Microsoft Visual Studio 9.0\VC\lib\*"
-* (Optional) Put this in a batchfile -- e.g 'mko.bat' -- in your openssl directory, and it will perform all the above steps:
+* (Optional) '''OUTDATED DO NOT USE.''' Put this in a batchfile -- e.g 'mko.bat' -- in your openssl directory, and it will perform all the above steps:
  for /f "tokens=* delims=/" %%A in ('cd') do set CURRENT_DIR=%%A
  perl Configure VC-WIN32 no-shared no-zlib-dynamic threads --prefix="%CURRENT_DIR%\my_build"
  call ms\do_nasm
  nmake -f ms\nt.mak
  nmake -f ms\nt.mak install
- xcopy my_build\include\*.* "%VCINSTALLDIR%\include\" /Y /Q /S
- xcopy my_build\lib\*.* "%VCINSTALLDIR%\lib\" /Y /Q /S
 
 === Compiling Boost ===
 * Extract the Boost sources in the working dir.
