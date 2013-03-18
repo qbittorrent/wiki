@@ -10,7 +10,7 @@ This page describes how to compile qBittorrent using MSVC 2008 under Windows. Th
 * Latest release of [http://www.rasterbar.com/products/libtorrent/ libtorrent(rasterbar)]. Download version 0.16.9 [https://libtorrent.googlecode.com/files/libtorrent-rasterbar-0.16.9.tar.gz here].
 * Latest release of the [http://qt-project.org/ Qt libraries] source. Download version 4.8.4 [http://releases.qt-project.org/qt4/source/qt-everywhere-opensource-src-4.8.4.tar.gz here].
 * Latest release of [http://www.qbittorrent.org qBittorrent]. Download version 3.0.9 [http://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-3.0.9/qbittorrent-3.0.9.tar.xz/download here].
-* Latest release of [http://qt-project.org/downloads#qt-creator Qt Creator]. Download version 2.6.2 [http://releases.qt-project.org/qtcreator/2.6.2/qt-creator-windows-opensource-2.6.2.exe here].
+* Qt Creator version [ftp://ftp.qt-project.org/qtcreator/qt-creator-win-opensource-2.5.2.exe 2.5.2]. Version 2.6.2 freezes when trying to open the qbittorrent project.
 
 Let's assume that the working directory for our compilation will be '''C:\qBittorrent'''
 
