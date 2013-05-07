@@ -88,7 +88,7 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 |  [https://bitbucket.org/starius/qbittorrent-plugins/downloads/tfile.py Download]
 |  Tested with qbittorrent 2.2.11
 |-
-|  [[https://raw.github.com/mr-mmajoR/myrepo/master/rutor.png]] [http://rutor.prg/ rutor.org]
+|  [[https://raw.github.com/mr-mmajoR/myrepo/master/rutor.png]] [http://rutor.org/ rutor.org]
 |  mmajor(at)yandex(dot)ru
 |  1.0
 |  May 7 2013
