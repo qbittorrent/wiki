@@ -25,7 +25,7 @@ qBittorrent is a ''Peer to Peer'' (P2P) file sharing software. Although the soft
 == Why use qBittorrent instead of another client? ==
 A lot of other BitTorrent clients exist but qBittorrent has several advantages: 
 * It is a Free Software (you can see the code and see what qBittorrent is doing).
-* It is the closest open-source equivalent to the official BitTorrent client: [http://www.utorrent.com| µTorrent].
+* It is the closest open-source extremely popular (and Windows only) BitTorrent client: [http://www.utorrent.com µTorrent].  
 * Its development team is very active and friendly.
 * It is stable and it has a low footprint, whilst providing all the features you may need.
 * It uses the high-tech [http://www.rasterbar.com/products/libtorrent/ libtorrent (Rasterbar)] library, which means greater download and upload speed as well as excellent support of the latest features of the BitTorrent protocol.
@@ -44,7 +44,8 @@ Well, actually I lacked inspiration on this one. :P qBittorrent is simply a BitT
 qBittorrent saves its preferences in the ''~/.config/qBittorrent/'' folder.
 The .torrent files are stored in:
 * ''~/.qBittorrent/'' by qBittorrent < 2.1.0
-* ''~/.local/share/data/qBittorrent/'' by qBittorrent ≥ 2.1.0. This is the standard [http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html XDG] data folder.
+* ''~/.local/share/data/qBittorrent/'' by qBittorrent ≥ 2.1.0. This is the standard  [http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html XDG] data folder.
+* ''%APPDATA%\qBittorrent on Windows.
 
 == I configured qBittorrent to not download some files in a torrent but they still appear on my hard disk, why is that? ==
 As you may know, a torrent is split into pieces of equal size that do not take files into consideration. As a consequence, a piece can contain information relative to more than one file and qBittorrent only operates at piece level. Because of this, if two files are adjacent and you choose to download only one of them, it is likely that the filtered one will be partially downloaded and thus appear on the hard-disk.
