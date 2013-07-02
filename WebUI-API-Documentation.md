@@ -41,7 +41,7 @@
 
 # <a id="auth"></a>Authorization #
 
-Authorization requires using `Authorization` header inside GET/POST requests. qBittorrent requires Digest Authorization type with MD5 has generator.
+Authorization requires using `Authorization` header inside GET/POST requests. qBittorrent requires Digest Authorization type with MD5 hash generator.
 
 1. Digest Authorization standard
 
@@ -207,7 +207,7 @@ Otherwise server will return the following reply (example):
 ```http
 HTTP/1.1 200 OK
 content-type: text/javascript
-content-length: lenth
+content-length: length
 
 {"save_path":"D:/Downloads/somefolder","creation_date":"16 ноября 2011 г. 20:52:54","piece_size":"4.0 МиБ","comment":"comment_string_if_any","total_wasted":"0 Б","total_uploaded":"41.9 ГиБ (0 Б за эту сессию)","total_downloaded":"261.2 МиБ (0 Б за эту сессию)","up_limit":"∞","dl_limit":"∞","time_elapsed":"53д 0ч (Раздается 0)","nb_connections":"0 (100 макс)","share_ratio":"∞"}
 ```
