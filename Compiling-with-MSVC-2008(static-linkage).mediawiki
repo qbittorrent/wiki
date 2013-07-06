@@ -8,7 +8,7 @@ This page describes how to compile qBittorrent using MSVC 2008 under Windows. Th
 * Latest release of [http://www.openssl.org/ OpenSSL]. Download version 1.0.1e [https://www.openssl.org/source/openssl-1.0.1e.tar.gz here].
 * Latest release of the [http://www.boost.org/ Boost libraries]. Download version 1.53.0 [http://sourceforge.net/projects/boost/files/boost/1.53.0/boost_1_53_0.7z/download here].
 * Latest release of [http://www.rasterbar.com/products/libtorrent/ libtorrent(rasterbar)]. Download version 0.16.9 [https://libtorrent.googlecode.com/files/libtorrent-rasterbar-0.16.9.tar.gz here].
-* Latest release of the [http://qt-project.org/ Qt libraries] source. Download version 4.8.4 [http://releases.qt-project.org/qt4/source/qt-everywhere-opensource-src-4.8.4.tar.gz here].
+* Latest release of the [http://qt-project.org/ Qt libraries] source. Download version 4.8.5 [http://download.qt-project.org/official_releases/qt/4.8/4.8.5/qt-everywhere-opensource-src-4.8.5.tar.gz here].
 * Latest release of [http://www.qbittorrent.org qBittorrent]. Download version 3.0.9 [http://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-3.0.9/qbittorrent-3.0.9.tar.xz/download here].
 * Qt Creator version [ftp://ftp.qt-project.org/qtcreator/qt-creator-win-opensource-2.5.2.exe 2.5.2]. Version 2.6.2 freezes when trying to open the qbittorrent project.
 
@@ -99,9 +99,11 @@ Let's assume that the working directory for our compilation will be '''C:\qBitto
 * Open '''src\3rdparty\zlib_dependency.pri''' and replace '''zdll.lib''' with '''zlib.lib'''
 * Do the same for '''src\tools\bootstrap\bootstrap.pri'''
 * Issue the following commands:
- configure.exe -debug-and-release -opensource -static -ltcg -fast -system-zlib -no-qt3support -no-opengl -no-openvg -no-dsp -no-vcproj -no-dbus -no-phonon -no-phonon-backend -no-multimedia -no-audio-backend -no-webkit -no-script -no-scripttools -no-declarative -no-declarative-debug -mp -arch windows -qt-style-windowsxp -nomake examples -nomake demos -platform win32-msvc2008 -openssl-linked -I "C:\QBITTORRENT\install\include" -L "C:\QBITTORRENT\install\lib"
+ configure.exe -debug-and-release -opensource -static -ltcg -fast -system-zlib -no-qt3support -no-opengl -no-openvg -no-dsp -no-vcproj -no-dbus -no-phonon -no-phonon-backend -no-multimedia -no-audio-backend -no-webkit -no-script -no-scripttools -no-declarative -no-declarative-debug -mp -arch windows -qt-style-windowsxp -nomake examples -nomake demos -platform win32-msvc2008 -openssl-linked -largefile -I "C:\QBITTORRENT\install\include" -L "C:\QBITTORRENT\install\lib"
  bin\qmake.exe projects.pro QT_BUILD_PARTS="libs translations"
  nmake
+* At some point the build will fail. Go to '''lib/''' and open in a text editor '''QtNetwork.prl''' and '''QtNetworkd.prl'''. Append to the end of '''QMAKE_PRL_LIBS''' these: '''gdi32.lib crypt32.lib'''
+* Run nmake again.
 * You can close the command prompt now.
 
 === Install and Configure Qt Creator ===
