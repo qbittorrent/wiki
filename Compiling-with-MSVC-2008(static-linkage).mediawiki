@@ -49,12 +49,6 @@ Let's assume that the working directory for our compilation will be '''C:\qBitto
 * Then issue the following:
  nmake -f ms\nt.mak
  nmake -f ms\nt.mak install
-* (Optional) '''OUTDATED DO NOT USE.''' Put this in a batchfile -- e.g 'mko.bat' -- in your openssl directory, and it will perform all the above steps:
- for /f "tokens=* delims=/" %%A in ('cd') do set CURRENT_DIR=%%A
- perl Configure VC-WIN32 no-shared no-zlib-dynamic threads --prefix="%CURRENT_DIR%\my_build"
- call ms\do_nasm
- nmake -f ms\nt.mak
- nmake -f ms\nt.mak install
 
 === Compiling Boost ===
 * Extract the Boost sources in the working dir.
