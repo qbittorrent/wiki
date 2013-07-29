@@ -20,7 +20,7 @@ Let's assume that the working directory for our compilation will be '''C:\qBitto
 * Navigate to the OpenSSL source folder. eg ''cd C:\qBittorrent\zlib-1.2.7''
 * Edit the win32/Makefile.msc file. Find the CFLAGS and LDFLAGS variables and replace it with these:
  CFLAGS  = -nologo -W3 -O2 -Oy- -Zi -Fd"zlib" nologo -Zm200 -Zc:wchar_t- -O1 -Og -GL -MT $(LOC)
- LDFLAGS = -nologo -incremental:no -opt:ref -opt:icf -dynamicbase -nxcompat -ltcg /NODEFAULTLIB:MSVCRT
+ LDFLAGS = -nologo -debug -incremental:no -opt:ref -opt:icf -dynamicbase -nxcompat -ltcg /nodefaultlib:msvcrt
 * Issue the following commands:
  nmake -f win32/Makefile.msc LOC="-DASMV -DASMINF" OBJA="inffas32.obj match686.obj"
 * Copy zlib.h, zconf.h, zlib.lib, zlib.pdb to our install dir.
@@ -43,7 +43,9 @@ Let's assume that the working directory for our compilation will be '''C:\qBitto
 * Find line that says:
  LFLAGS=/nologo /subsystem:console /opt:ref /debug
 * And append:
- /ltcg /nodefaultlib:msvcrt
+ /incremental:no /opt:ref /opt:icf /dynamicbase /nxcompat /ltcg /nodefaultlib:msvcrt
+* Find the CFLAGS variable and append:
+  -nologo -Zm200 -Zc:wchar_t- -O1 -Og -GL -MT -Zi
 * Then issue the following:
  nmake -f ms\nt.mak
  nmake -f ms\nt.mak install
