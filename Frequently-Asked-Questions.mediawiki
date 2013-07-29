@@ -25,7 +25,7 @@ qBittorrent is a ''Peer to Peer'' (P2P) file sharing software. Although the soft
 == Why use qBittorrent instead of another client? ==
 A lot of other BitTorrent clients exist but qBittorrent has several advantages: 
 * It is a Free Software (you can see the code and see what qBittorrent is doing).
-* It is the closest open-source extremely popular (and Windows only) BitTorrent client: [http://www.utorrent.com µTorrent].  
+* It is the closest open-source equivalent to the extremely popular (and Windows only) BitTorrent client: [http://www.utorrent.com µTorrent].  
 * Its development team is very active and friendly.
 * It is stable and it has a low footprint, whilst providing all the features you may need.
 * It uses the high-tech [http://www.rasterbar.com/products/libtorrent/ libtorrent (Rasterbar)] library, which means greater download and upload speed as well as excellent support of the latest features of the BitTorrent protocol.
