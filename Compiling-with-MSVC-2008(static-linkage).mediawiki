@@ -40,12 +40,12 @@ Let's assume that the working directory for our compilation will be '''C:\qBitto
 * Edit the ''C:\qBittorrent\openssl-1.0.1e\ms\nt.mak'' file and find the line that says:
  EX_LIBS=/libpath:C:\qBittorrent\install\lib ws2_32.lib gdi32.lib advapi32.lib crypt32.lib user32.lib zlib1.lib
 * Replace '''zlib1.lib''' with '''zlib.lib'''
+* Find the CFLAGS variable and append:
+  -nologo -Zm200 -Zc:wchar_t- -O1 -Og -GL -MT -Zi
 * Find line that says:
  LFLAGS=/nologo /subsystem:console /opt:ref /debug
 * And append:
  /incremental:no /opt:ref /opt:icf /dynamicbase /nxcompat /ltcg /nodefaultlib:msvcrt
-* Find the CFLAGS variable and append:
-  -nologo -Zm200 -Zc:wchar_t- -O1 -Og -GL -MT -Zi
 * Then issue the following:
  nmake -f ms\nt.mak
  nmake -f ms\nt.mak install
