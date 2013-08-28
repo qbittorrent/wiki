@@ -21,6 +21,7 @@ Welcome to the qBittorrent wiki!
 
 ## Linux
 * [Running qBittorrent without X server](wiki/Running-qBittorrent-without-X-server)
+* [Desktop Notifications with 'libnotify'](wiki/Easy-pop-up-notifications-using-libnotify)
 
 ## WebUI-related
 * [API Documentation](wiki/WebUI-API-Documentation)
