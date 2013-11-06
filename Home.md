@@ -18,6 +18,7 @@ Welcome to the qBittorrent wiki!
 ## Compilation
 * [Windows compilation](wiki/Windows-compilation)
 * [Debian / Ubuntu compilation](wiki/Debian---Ubuntu-compilation)
+* [Mac OSX compilation](wiki/Compilation-guide-for-Mac-OSX-systems)
 
 ## Linux
 * [Running qBittorrent without X server](wiki/Running-qBittorrent-without-X-server)
