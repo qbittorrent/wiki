@@ -1,4 +1,4 @@
-This How to will guide you though the compilation of qBittorrent svn and libtorrent-rasterbar. I wrote it for Ubuntu/Debian but there shouldn't be much difference for other Linux distributions.
+This How to will guide you though the compilation of qBittorrent svn and libtorrent-rasterbar.<br />This guide is written for Ubuntu/Debian but there shouldn't be much difference for other Linux distributions.
 
 == Required dependencies ==
 * General build dependencies
@@ -88,7 +88,7 @@ Since you disabled the graphical user interface, qBittorrent should be controlle
  Username: admin
  Password: adminadmin
 
-A documentation about running qBittorrent 2 without GUI is available [[Running-qBittorrent-without-X-server|here]].
+A documentation about running qBittorrent without GUI is available [[Running-qBittorrent-without-X-server|here]].
 
 == Notes ==
 * If you experience any problem with this how to, do not hesitate to contact me at chris(at)qbittorrent(dot)org.
