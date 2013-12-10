@@ -58,7 +58,7 @@ A qBittorrent user (Jakster) wrote an init script for Debian/Ubuntu to run qbitt
 Save it in ''/etc/init.d/'' folder, under the name ''qbittorrent-nox-daemon''.
 
 You can do this in one step, by issuing this command:
- sudo wget -O /etc/init/qbittorrent-nox-daemon http://launchpadlibrarian.net/38905385/qbittorrent
+ sudo wget -O /etc/init.d/qbittorrent-nox-daemon http://launchpadlibrarian.net/38905385/qbittorrent
 
 However, always make sure you got the proper content. Check the link and the mirror.<br />Make sure the downloaded file is correct as well, by opening it in the text editor 'nano'.
  nano -w /etc/init.d/qbittorrent-nox-daemon
