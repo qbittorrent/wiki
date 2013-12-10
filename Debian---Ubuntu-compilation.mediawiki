@@ -1,4 +1,4 @@
-This How to will guide you though the compilation of qBittorrent svn and libtorrent-rasterbar.<br />This guide is written for Ubuntu/Debian but there shouldn't be much difference for other Linux distributions.
+This How to will guide you though the compilation of qBittorrent and libtorrent-rasterbar.<br />This guide is written for Ubuntu/Debian but there shouldn't be much difference for other Linux distributions.<br /><br />Only follow the guide if you know what you are doing, and this is what you really want.<br />If you are looking only for the latest version of qBittorrent, head to the download page, and use our PPAs.
 
 == Required dependencies ==
 * General build dependencies
