@@ -121,7 +121,7 @@ Be careful, these scripts probably require editing before you can use them. Thos
 |skymirrh(at)skymirrh(dot)net
 |1.0
 |Nov 30 2013
-|[https://raw.github.com/Skymirrh/qBittorent-rutracker-plugin/master/rutracker.py Download]
+|[https://github.com/Skymirrh/qBittorent-rutracker-plugin Download]
 |Tested with qBittorrent 3.1.3
 |-
 |[[http://www.qbittorrent.org/wiki-images/AlloTracker.png]][http://www.allotracker.com AlloTracker]
