@@ -8,10 +8,10 @@ The qBittorrent issue tracker is located right [https://github.com/qbittorrent/q
 On our issue tracker [https://github.com/qbittorrent/qBittorrent/issues here]. All ideas and feedback are welcome. Just know that we want qBittorrent to remain low-footprint software and we do not want to integrate "heavy" features that are not really useful to most people.
 
 == I wrote a patch for qBittorrent, to whom can I send it? ==
-Do not hesitate to send patches to the following address: chris(at)qbittorrent(dot)org. We will review them promptly.
+You can either fork our github repository and make a pull request(highly recommended) or send patches to the following address: sledgehammer999(at)qbittorrent(dot)org. We will review them promptly.
 
 == Who is developing qBittorrent? ==
-qBittorrent was created in March 2006 by [mailto:chris@qbittorrent.org Christophe Dumez], and is still actively maintained/developed by him. Several other people (Arnaud Demaiziere, Ishan Arora, Stephanos Antaris, Mohammad Dib) have contributed or are still contributing to the project. If you like the software and you would like to help the project to subsist by giving some money, please do so [http://sourceforge.net/donate/index.php?group_id=163414 here]. We thank you in advance.
+qBittorrent was created in March 2006 by [mailto:chris@qbittorrent.org Christophe Dumez], and was actively maintained/developed by him until July 2013. After that [mailto:sledgehammer999@qbittorrent.org sledgehammer999] is maintaining the project. Several other people (Arnaud Demaiziere, Ishan Arora, Stephanos Antaris, Mohammad Dib, Gelmir(Dayman)) have contributed or are still contributing to the project. If you like the software and you would like to help the project to subsist by giving some money, please do so [http://sourceforge.net/donate/index.php?group_id=163414 here]. We thank you in advance.
 
 == What Operating systems are currently supported by qBittorrent? ==
 qBittorrent code compiles on Unix-like systems (Linux, BSD, MacOSX...) and Windows. Windows is officially supported as of qBittorrent v2.2.9.
