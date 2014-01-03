@@ -29,7 +29,7 @@ Once you have configure your router, you can test that your configuration is wor
 
 * Select the local files you wish to share
 * Type the URL of your local tracker in the tracker list (http://your_public_ip:9000/announce)
-** You can check [[http://www.whatsmyip.org/ http://www.whatsmyip.org/]] to know your public IP Address
+** You can check [[http://www.whatsmyip.org/]] to know your public IP Address
 * Check the "Start seeding after creation" box
 * Press the "Create and save..." button
 ** Save the torrent file wherever you like
