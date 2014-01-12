@@ -1,6 +1,41 @@
-# Step One
+# Building system
 Make sure your system is running the latest xcode build system with the commandline toolset.
-# Step Two
-Once you have ensured that you will want to install [macports](http://www.macports.org/install.php) (macports is a build system that compiles a lot of libraries and other software for Mac Operating Systems) as we will compile the necessary libraries needed for it, so you'll want to run sudo port install qt4-mac libtorrent-rasterbar and it will compile them. While that is compiling we will want to download the qBittorrent source code, which you can obtain from [qBittorrent's](http://www.qbittorrent.org/download.php) download page, extract the tarball and then download the [geoip dat](http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz) file and extract it to qbittorrents src/geoip folder
-# Step Three
-Once you have the pre-requesites compile you can run either command line via qmake qbittorrent.pro and then make or you can use qt creator. Once compiled you will want to run "sudo macdeployqt qbittorrent" or "sudo macdeployqt -dmg" (if you want to make a dmg installer for distribution)
+
+# Dependencies
+
+## Custom
+See the [INSTALL](https://github.com/qbittorrent/qBittorrent/blob/master/INSTALL) file for a list of dependencies.
+
+Adjust paths in `macxconf.pri` accordingly. See example using Homebrew
+
+## Using MacPorts
+[Install MacPorts](http://www.macports.org/install.php)
+
+    sudo port install qt4-mac libtorrent-rasterbar
+
+## Using Homebrew
+[Install Homebrew](http://brew.sh/)
+
+    brew install qt4 libtorrent-rasterbar
+
+Adjust paths in `macxconf.pri` from
+
+    INCLUDEPATH += /usr/include/openssl /usr/include /opt/local/include/boost /opt/local/include
+    LIBS += -L/opt/local/lib
+
+to
+
+    INCLUDEPATH += /usr/include/openssl /usr/include /usr/local/include/boost /usr/local/include
+    LIBS += -L/usr/local/lib
+
+# Download source
+ 
+ 1. Download main source from [qBittorrent's](http://www.qbittorrent.org/download.php) download page, extract the tarball.
+ 2. Optional: Download the [geoip dat](http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz) file.and extract it to qbittorrents src/geoip folder.
+
+# Compilation
+
+ 1. Configuration: `qmake qbittorrent.pro`  If this fails, try using `./configure`
+ 2. Compilation: `make -j4` where 4 is your number of cores
+ 3. Packaging: `macdeployqt src/qbittorrent.app` (may require sudo)
+ 4. Create DMG: `macdeployqt src/qbittorrent.app -dmg` (may require sudo)
