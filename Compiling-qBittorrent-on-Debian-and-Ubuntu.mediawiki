@@ -41,6 +41,10 @@ You should now have the latest libtorrent svn branch in libtorrent/ folder. You 
 Ok, Now you have a configure file, just type the following command:
  ./configure --disable-debug --prefix=/usr && make clean && make
 
+if you get a "configure: error: Boost.System library not found.", try:
+ ./configure --disable-debug --prefix=/usr --with-boost-libdir=/usr/lib/i386-linux-gnu && make clean && make
+
+
 Then you can install libtorrent using the following commands:
  sudo make uninstall
  sudo make install-strip
