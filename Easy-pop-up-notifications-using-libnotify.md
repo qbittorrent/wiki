@@ -1,3 +1,6 @@
+You no longer the instructions mentioned below(at least from v3.1.5 onwards). If you have a freedesktop.org compliant notification-deamon installed, the notifications will appear through that.
+
+**Outdated instructions:**
 Folks running qBittorrent on a linux desktop can easily setup pop-up alerts (among other things) triggered when a torrent download finishes. For the purpose of this example, let's assume a pop-up notice is the goal.
 
 The libnotify package should have both "notify-send" and "libnotify," the former being a CLI to the later.  To incorporate it into your qBittorrent configuration, open the "Options" window and select the "Downloads" page.  Enable the "Run an external program on torrent completion" check-box and enter the following into the command text-box:
