@@ -97,14 +97,14 @@ Not every site uses UID and pass as the cookie variable names and they may inclu
 You MUST use the exact variable name and the extra variables they specify. For example, a certain site may use id, password, and secure as its cookie variables.
 
 == What is qBittorrent Peer ID? ==
-Each BitTorrent client is identified by a string called Peer ID. This ID is sometimes used by trackers to whitelist only a limited amount of trusted clients.
+Each BitTorrent client is identified by a string called Peer ID. This ID is sometimes used by trackers to whitelist only a limited amount of trusted clients. The size of the Peer ID field is '''20 bytes'''.
 
-qBittorrent Peer ID is formatted as follows: -qBXYZ0-
+qBittorrent Peer ID is formatted as follows: -qBXYZ0-<nowiki><</nowiki>12 random bytes<nowiki>></nowiki>
 where:
 * X is the major version number
 * Y is the minor version number
 * Z is the bugfix version number (in hexadecimal so that we can go up to 15)
 
 For example, we would have the following Peer IDs for these versions: 
-* qBittorrent v2.4.10: '''-qB24A0-'''
-* qBittorrent v3.0.2: '''-qB3020-'''
+* qBittorrent v2.4.10: '''-qB24A0-<nowiki><</nowiki>12 random bytes<nowiki>></nowiki>'''
+* qBittorrent v3.0.2: '''-qB3020-<nowiki><</nowiki>12 random bytes<nowiki>></nowiki>'''
