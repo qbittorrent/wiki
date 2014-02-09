@@ -53,6 +53,9 @@ As you may know, a torrent is split into pieces of equal size that do not take f
 == Seeding torrents have no priority (i.e. queue position), why? ==
 qBittorrent is handling torrent seeding priority by itself in order to optimise sharing and benefit to the swarm as much as possible.
 
+== What do the different colours mean? ==
+Grey colour means inactive (include download, upload and check), green colour means active download, orange colour means active upload and red colour means error.
+
 == How do I import my torrents from another Bittorrent client? ==
 Most users want to keep the torrents they are downloading or seeding when switching to qBittorrent from another Bittorrent client. This is of course possible and it is quite simple to achieve. Here is how you should proceed:
 * Add the *.torrent files corresponding to your torrents to qBittorrent
