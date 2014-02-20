@@ -88,13 +88,6 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 |  [https://bitbucket.org/starius/qbittorrent-plugins/downloads/tfile.py Download]
 |  Tested with qbittorrent 2.2.11
 |-
-|  [[http://www.qbittorrent.org/wiki-images/Tfile.png]] [http://tfile.ru/ tfile.ru 1.01]
-|  mmajor(at)yandex(dot)ru
-|  1.01
-|  May 8 2013
-|  [https://raw.github.com/mr-mmajoR/myrepo/master/tfile.py Download]
-|  Added the ability to open the description
-|-
 |  [[https://raw.github.com/mr-mmajoR/myrepo/master/rutor.png]] [http://rutor.org/ rutor.org]
 |  mmajor(at)yandex(dot)ru
 |  1.01
