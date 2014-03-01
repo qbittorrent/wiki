@@ -24,7 +24,7 @@ qBittorrent is a ''Peer to Peer'' (P2P) file sharing software. Although the soft
 
 == Why use qBittorrent instead of another client? ==
 A lot of other BitTorrent clients exist but qBittorrent has several advantages: 
-* It is a Free Software (you can see the code and see what qBittorrent is doing).
+* It is Free Software (you can see the code and see what qBittorrent is doing).
 * It is the closest open-source equivalent to the extremely popular (and Windows only) BitTorrent client: [http://www.utorrent.com µTorrent].  
 * Its development team is very active and friendly.
 * It is stable and it has a low footprint, whilst providing all the features you may need.
@@ -53,14 +53,14 @@ The .torrent files are stored in:
 * ''~/.local/share/data/qBittorrent/'' by qBittorrent ≥ 2.1.0. This is the standard  [http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html XDG] data folder.
 * ''%APPDATA%\qBittorrent on Windows.
 
-== How can I reset the preferences to default values in Mac OS X?==
+== How can I reset the settings to default values in Mac OS X?==
 
 You need to delete the qBittorrent .plist files from  ~/Library/Preferences:
 
 * <tt>~/Library/Preferences/org.qbittorrent.*</tt> 
 * <tt>~/Library/Preferences/com.qbittorrent.*</tt>
 
-And then do this to reset the plist cache:
+And then do the following to reset the plist cache:
 
 <code>$ killall -u yourusername cfprefsd</code>
 
