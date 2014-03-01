@@ -53,6 +53,7 @@ The .torrent files are stored in:
 * ''~/.qBittorrent/'' by qBittorrent < 2.1.0
 * ''~/.local/share/data/qBittorrent/'' by qBittorrent ≥ 2.1.0. This is the standard  [http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html XDG] data folder.
 * ''%APPDATA%\qBittorrent on Windows.
+* ''~/Library/Application Support/qBittorrent'' on OS X
 
 == How can I reset the settings to default values in OS X?==
 
