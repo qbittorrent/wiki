@@ -111,3 +111,15 @@ where:
 For example, we would have the following Peer IDs for these versions: 
 * qBittorrent v2.4.10: '''-qB24A0-<nowiki><</nowiki>12 random bytes<nowiki>></nowiki>'''
 * qBittorrent v3.0.2: '''-qB3020-<nowiki><</nowiki>12 random bytes<nowiki>></nowiki>'''
+
+== How can I reset the options to default values in Mac OS X?==
+
+You need to delete the qBittorrent .plist files from  ~/Library/Preferences:
+
+~/Library/Preferences/org.qbittorrent.*
+~/Library/Preferences/com.qbittorrent.*
+
+And then do this to reset the plist cache:
+$ killall -u yourusername cfprefsd
+
+Where "yourusername" is your OS X user name.
