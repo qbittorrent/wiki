@@ -116,10 +116,10 @@ For example, we would have the following Peer IDs for these versions:
 
 You need to delete the qBittorrent .plist files from  ~/Library/Preferences:
 
-~/Library/Preferences/org.qbittorrent.*
-~/Library/Preferences/com.qbittorrent.*
+<code>~/Library/Preferences/org.qbittorrent.*</code>
+<code>~/Library/Preferences/com.qbittorrent.*</code>
 
 And then do this to reset the plist cache:
-$ killall -u yourusername cfprefsd
+<code>$ killall -u yourusername cfprefsd</code>
 
 Where "yourusername" is your OS X user name.
