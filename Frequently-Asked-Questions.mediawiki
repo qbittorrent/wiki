@@ -42,10 +42,30 @@ Well, actually I lacked inspiration on this one. :P qBittorrent is simply a BitT
 
 == Where does qBittorrent save its settings? ==
 qBittorrent saves its preferences in the ''~/.config/qBittorrent/'' folder.
+On OS X the preferences are stored in:
+
+* ''~/Library/Preferences/com.qbittorrent.qBittorrent.plist'' (Actual settings)
+* ''~/Library/Preferences/com.qbittorrent.qBittorrent-resume.plist''
+* ''~/Library/Preferences/org.qbittorrent.plist''
+
 The .torrent files are stored in:
 * ''~/.qBittorrent/'' by qBittorrent < 2.1.0
 * ''~/.local/share/data/qBittorrent/'' by qBittorrent ≥ 2.1.0. This is the standard  [http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html XDG] data folder.
 * ''%APPDATA%\qBittorrent on Windows.
+
+== How can I reset the preferences to default values in Mac OS X?==
+
+You need to delete the qBittorrent .plist files from  ~/Library/Preferences:
+
+* <tt>~/Library/Preferences/org.qbittorrent.*</tt> 
+* <tt>~/Library/Preferences/com.qbittorrent.*</tt>
+
+And then do this to reset the plist cache:
+
+<code>$ killall -u yourusername cfprefsd</code>
+
+Where "yourusername" is your OS X user name.
+
 
 == I configured qBittorrent to not download some files in a torrent but they still appear on my hard disk, why is that? ==
 As you may know, a torrent is split into pieces of equal size that do not take files into consideration. As a consequence, a piece can contain information relative to more than one file and qBittorrent only operates at piece level. Because of this, if two files are adjacent and you choose to download only one of them, it is likely that the filtered one will be partially downloaded and thus appear on the hard-disk.
@@ -111,16 +131,3 @@ where:
 For example, we would have the following Peer IDs for these versions: 
 * qBittorrent v2.4.10: '''-qB24A0-<nowiki><</nowiki>12 random bytes<nowiki>></nowiki>'''
 * qBittorrent v3.0.2: '''-qB3020-<nowiki><</nowiki>12 random bytes<nowiki>></nowiki>'''
-
-== How can I reset the options to default values in Mac OS X?==
-
-You need to delete the qBittorrent .plist files from  ~/Library/Preferences:
-
-* <tt>~/Library/Preferences/org.qbittorrent.*</tt> 
-* <tt>~/Library/Preferences/com.qbittorrent.*</tt>
-
-And then do this to reset the plist cache:
-
-<code>$ killall -u yourusername cfprefsd</code>
-
-Where "yourusername" is your OS X user name.
