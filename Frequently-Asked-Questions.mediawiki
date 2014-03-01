@@ -42,6 +42,7 @@ Well, actually I lacked inspiration on this one. :P qBittorrent is simply a BitT
 
 == Where does qBittorrent save its settings? ==
 qBittorrent saves its preferences in the ''~/.config/qBittorrent/'' folder.
+
 On OS X the preferences are stored in:
 
 * ''~/Library/Preferences/com.qbittorrent.qBittorrent.plist'' (Actual settings)
@@ -53,7 +54,7 @@ The .torrent files are stored in:
 * ''~/.local/share/data/qBittorrent/'' by qBittorrent ≥ 2.1.0. This is the standard  [http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html XDG] data folder.
 * ''%APPDATA%\qBittorrent on Windows.
 
-== How can I reset the settings to default values in Mac OS X?==
+== How can I reset the settings to default values in OS X?==
 
 You need to delete the qBittorrent .plist files from  ~/Library/Preferences:
 
