@@ -55,7 +55,7 @@ The .torrent files are stored in:
 * ''%APPDATA%\qBittorrent on Windows.
 * ''~/Library/Application Support/qBittorrent'' on OS X
 
-== How can I reset the settings to default values in OS X?==
+== How can I reset the settings to default values on OS X?==
 
 You need to delete the qBittorrent .plist files from  ~/Library/Preferences:
 
