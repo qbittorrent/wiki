@@ -67,12 +67,12 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 |  [https://raw.github.com/cdumez/qBittorrent-Search-Plugins/master/demonoid.py Download]
 |
 |-
-|  [[http://www.qbittorrent.org/wiki-images/NyaaTorrents.png]] [http://www.nyaa.eu/ NyaaTorrents]
-|  hazuki.shiro(at)gmail(dot)com
-|  1.0
-|  Oct 30 2011
-|  [https://raw.github.com/cdumez/qBittorrent-Search-Plugins/master/nyaatorrents.py Download]
-|
+|  [[http://www.qbittorrent.org/wiki-images/NyaaTorrents.png]] [http://www.nyaa.se/ NyaaTorrents]
+|  yukariin(at)yandex(dot)ru
+|  2.11
+|  Mar 21 2014
+|  [https://raw.githubusercontent.com/Yukariin/qBittorrent-Search-Plugins/master/nyaatorrents.py Download]
+|  Python 3 plugin, using html.parser lib. Tested with qbittorrent 3.1.9
 |-
 |  [[http://www.qbittorrent.org/wiki-images/Rarbg.png]] [http://rarbg.com/ Rarbg]
 |  blood2game(at)yahoo(dot)fr
