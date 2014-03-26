@@ -53,6 +53,7 @@ Here is a usage example:
 
 ==Python Class File Structure==
 Your plugin should be named ''engine_name.py'', in lowercase and without spaces not any special characters. Here is the basic structure of this file:
+```
  #VERSION: 1.00
  #AUTHORS: YOUR_NAME (YOUR_MAIL)
  # LICENSING INFORMATION
@@ -87,6 +88,7 @@ Your plugin should be named ''engine_name.py'', in lowercase and without spaces 
      # search engine website.
      # everytime you parse a result line, store it in a dictionary
      # and call the prettyPrint(your_dict) function
+```
 
 ''PLEASE note that the filename (without .py extension) must be identical to the class name. Otherwise, qBittorrent will refuse to install it!''
 
