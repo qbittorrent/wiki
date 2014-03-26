@@ -99,10 +99,9 @@ In order to parse the pages, you can use the following python modules (not exhau
 * ''re'': If you like using regular expressions (''regex'')
 
 ==Examples==
-Do not hesitate to use the official search engine plugins as an example. They are available [http://qbittorrent.svn.sourceforge.net/viewvc/qbittorrent/trunk/src/search_engine/engines/ here]. 
-* ''mininova.py'' uses ''xml.dom.minidom'' module
+Do not hesitate to use the official search engine plugins as an example. They are available [https://github.com/qbittorrent/qBittorrent/tree/master/src/searchengine/nova/engines here]. 
+* ''kickasstorrents.py'' uses ''json'' module
 * ''torrentreactor.py'' uses ''sgmllib.SGMLParser'' one
-* ''btjunkie.py'' uses ''re'' one
 
 ==Test your plugin==
 It is better to test your plugin while developing it, before installing it in qBittorrent. Hence, we advise that you download [http://hydr0g3n.free.fr/search_engine.zip this archive]. Unzip it and you will get the following structure:
