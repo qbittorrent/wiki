@@ -115,7 +115,7 @@ Be careful, these scripts probably require editing before you can use them. Thos
 |1.0
 |Nov 30 2013
 |[https://github.com/Skymirrh/qBittorent-rutracker-plugin Download]
-|Tested with qBittorrent 3.1.3 and 3.1.4
+|Tested with qBittorrent 3.1.3 to 3.1.9
 |-
 |[[http://www.qbittorrent.org/wiki-images/AlloTracker.png]][http://www.allotracker.com AlloTracker]
 |sinusnco(at)gmail(dot)com
