@@ -94,6 +94,13 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 |  May 7 2013
 |  [https://raw.github.com/mr-mmajoR/myrepo/master/rutor.py Download]
 |  Tested with qbittorrent 3.0.9
+|-
+|  [http://yts.re]
+|  craig9(at)gmail(dot)com
+|  1.0
+|  April 13 2014
+|  [https://anonfiles.com/file/ce3be04de24098be9149643bc9afa403 Download]
+|  Needs BeautifulSoup 4 library installed in local python lib
 |}
 
 
