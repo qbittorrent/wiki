@@ -135,4 +135,12 @@ For example, we would have the following Peer IDs for these versions:
 * qBittorrent v2.4.10: '''-qB24A0-<nowiki><</nowiki>12 random bytes<nowiki>></nowiki>'''
 * qBittorrent v3.0.2: '''-qB3020-<nowiki><</nowiki>12 random bytes<nowiki>></nowiki>'''
 
-== How do I do IP Filtering (eMule and PeerGuardian compatible) in qbittorrent ? ==
+== How do I do IP Filtering (eMule and PeerGuardian compatible) in qbittorrent in GNU/Linux? ==
+
+In most GNU/Linuxes go to Tools > Options > Connection 
+Then click on IP Filtering
+
+As far as adding the ipfilter file is concerned, see https://forums.mageia.org/en/viewtopic.php?f=41&t=3612 for a potential way. 
+
+
+
