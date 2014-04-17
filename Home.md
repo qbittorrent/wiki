@@ -26,4 +26,5 @@ Welcome to the qBittorrent wiki!
 * [Desktop Notifications with 'libnotify'](wiki/Easy-pop-up-notifications-using-libnotify)
 
 ## WebUI-related
+* [HTTPS with Self Signed SSL Certificates - Linux](wiki/Linux-WebUI-setting-up-HTTPS-with-self-signed-SSL-certificates)
 * [API Documentation](wiki/WebUI-API-Documentation)
