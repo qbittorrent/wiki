@@ -91,7 +91,7 @@ Most users want to keep the torrents they are downloading or seeding when switch
 
 == Can I run qBittorrent on a remote computer? Without an X server? ==
 Yes and Yes!
-qBittorrent can be run on your server and controlled remotely through its Web UI. As a default, the Web UI is running on http://server-ip:8080 (user: admin, password: adminadmin). If your server does not have an X server running, then you will need to disable the qBittorrent graphical user interface at compilation time (≥ v2.1.0 only). Pass --disable-debug parameter to the configure file before compilation to disable the GUI. Instructions on disabling the qBittorrent GUI is available [[Running qBittorrent without X server|here]].
+qBittorrent can be run on your server and controlled remotely through its Web UI. As a default, the Web UI is running on http://server-ip:8080 (user: admin, password: adminadmin). There is a guide for Ubuntu Server install [[Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface|here]]. For other distributions, if your server does not have an X server running, then you will need to disable the qBittorrent graphical user interface at compilation time (≥ v2.1.0 only). Pass --disable-debug parameter to the configure file before compilation to disable the GUI. Instructions on disabling the qBittorrent GUI is available [[Running qBittorrent without X server|here]].
 
 == Is there a firefox/chrome addon that can help me send torrents to qBittorrent? ==
 Yes there is a great firefox addon called [https://addons.mozilla.org/en-US/firefox/addon/bittorrent-webui-120685/ Bit Torrent WebUI+] that can send torrent and magnet links directly to the qBT Web UI server when clicked.
