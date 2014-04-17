@@ -17,7 +17,7 @@ Let's assume that the working directory for our compilation will be '''C:\qBitto
 === Compiling Zlib ===
 * Extract the Zlib source inside our working dir.
 * Open the MSVC2008 command shell. Start->Programs->Microsoft Visual C++ 2008 Express Edition->Visual Studio Tools->Visual Studio 2008 Command Prompt
-* Navigate to the OpenSSL source folder. eg ''cd C:\qBittorrent\zlib-1.2.7''
+* Navigate to the Zlib source folder. eg ''cd C:\qBittorrent\zlib-1.2.7''
 * Edit the win32/Makefile.msc file. Find the CFLAGS and LDFLAGS variables and replace it with these:
  CFLAGS  = -nologo -W3 -O2 -Oy- -Zi -Fd"zlib" nologo -Zm200 -Zc:wchar_t- -O1 -Og -GL -MT $(LOC)
  LDFLAGS = -nologo -debug -incremental:no -opt:ref -opt:icf -dynamicbase -nxcompat -ltcg /nodefaultlib:msvcrt
