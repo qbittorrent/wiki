@@ -279,10 +279,12 @@ to have the changes take effect.
 
 **Uninstall**
 To uninstall qbittorrent-nox:
-```sudo update-rc.d -f qbittorrent remove #Disables the startup scrupt from startup
+```
+sudo update-rc.d -f qbittorrent remove #Disables the startup scrupt from startup
 sudo apt-get remove --purge qbittorrent* #Removes the filles installed with qbittorrent
 sudo rm /etc/init.d/qbittorrent #Removes the init script
 sudo rm /var/log/qbittorrent-nox.log #Removes the log file
 sudo rm -R /home/qbtuser/.config/qBittorrent #Removes config. You may have reason to keep this
-sudo add-apt-repository -r ppa:surfernsk/internet-software # Removes the PPA if you used it.```
+sudo add-apt-repository -r ppa:surfernsk/internet-software # Removes the PPA if you used it.
+```
 
