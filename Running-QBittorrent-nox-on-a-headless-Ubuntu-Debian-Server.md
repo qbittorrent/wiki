@@ -278,6 +278,7 @@ Now little further, click save. You can now restart the server in the terminal w
 to have the changes take effect.
 
 **Uninstall**
+
 To uninstall qbittorrent-nox:
 ```
 sudo update-rc.d -f qbittorrent remove #Disables the startup scrupt from startup
