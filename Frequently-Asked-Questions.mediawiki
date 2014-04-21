@@ -140,7 +140,7 @@ For example, we would have the following Peer IDs for these versions:
 In most GNU/Linuxes go to Tools > Options > Connection 
 Then click on IP Filtering
 
-As far as adding the ipfilter file is concerned, see https://forums.mageia.org/en/viewtopic.php?f=41&t=3612 for a potential way. 
+As far as adding the ipfilter file is concerned, see http://forums.debian.net/viewtopic.php?f=16&t=113690 for a potential way. 
 
 
 
