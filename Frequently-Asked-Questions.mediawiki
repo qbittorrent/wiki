@@ -155,5 +155,5 @@ When restoring qBittorrent from the tray in an Openbox desktop environment, it d
         <layer>normal</layer>
     </application>
 
-This is if you desire to have qBittorrent to be maximized on the whole screen. If you want to have the window restored to a specific size, obapps can be used. You can copy the class and name from the above  and set it according to how you like it. obapps can be launched from the terminal.
+This is if you desire to have qBittorrent to be maximized on the whole screen. If you want to have the window restored to a specific size, obapps can be used. You can copy the class and name from the above xml code and set it according to how you like it. obapps can be launched from the terminal.
 
