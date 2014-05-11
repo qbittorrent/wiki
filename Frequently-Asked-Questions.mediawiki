@@ -142,5 +142,18 @@ Then click on IP Filtering
 
 As far as adding the ipfilter file is concerned, see http://forums.debian.net/viewtopic.php?f=16&t=113690 for a potential way. 
 
+== Solving the Openbox issue when restoring qBittorrent from tray ==
+When restoring qBittorrent from the tray in an Openbox desktop environment, it doesn't restore the window's initial geometry, so add this to the end of ~/.config/openbox/rc.xml:
 
+<code>    <application class="Qbittorrent" name="qbittorrent">
+        <focus>no</focus>
+        <iconic>no</iconic>
+        <fullscreen>no</fullscreen>
+        <decor>yes</decor>
+        <shade>no</shade>
+        <maximized>yes</maximized>
+        <layer>normal</layer>
+    </application></code>
+
+This is if you desire to have qBittorrent to be maximized on the whole screen. If you want to have the window restored to a specific size, obapps can be used. You can copy the class and name from the above  and set it according to how you like it. obapps can be launched from the terminal.
 
