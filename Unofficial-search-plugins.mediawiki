@@ -11,26 +11,54 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 !  Download link
 !  Comment
 |-
-|  [[http://www.qbittorrent.org/wiki-images/Fenopy.png]] [http://fenopy.com Fenopy.com]
-|  chris(at)qbittorrent(dot)org
-|  1.1
-|  Dec 26 2010
-|  [https://raw.github.com/cdumez/qBittorrent-Search-Plugins/master/fenopy.py Download]
+| [[https://raw.githubusercontent.com/davy39/qbfrench/master/cpasbien.png]] [http://cpasbien.pe]
+|  davy39(at)hmamail(dot)com
+|  1.0
+|  May 29 2014
+|  [https://raw.githubusercontent.com/davy39/qbfrench/master/cpasbien.py Download]
 |  
 |-
-|  [[http://www.qbittorrent.org/wiki-images/SumoTorrent.png]] [http://www.sumotorrent.com Sumo Torrent]
-|  chris(at)qbittorrent(dot)org
-|  1.2
-|  Sep 17 2011
-|  [https://raw.github.com/cdumez/qBittorrent-Search-Plugins/master/sumotorrent.py Download]
-|
-|-
-|  [[http://www.qbittorrent.org/wiki-images/Limetorrents.png]] [http://www.limetorrents.com LimeTorrents]
-|  chris(at)qbittorrent(dot)org
+| [[https://raw.githubusercontent.com/davy39/qbfrench/master/omgtorrent.png]] [http://omgtorrent.com]
+|  davy39(at)hmamail(dot)com
 |  1.0
-|  Dec 29 2010
-|  [https://raw.github.com/cdumez/qBittorrent-Search-Plugins/master/limetorrents.py Download]
-|
+|  May 29 2014
+|  [https://raw.githubusercontent.com/davy39/qbfrench/master/omgtorrent.py Download]
+|  
+|-
+| [[https://raw.githubusercontent.com/davy39/qbfrench/master/smartorrent.png]] [http://smartorrent.com]
+|  davy39(at)hmamail(dot)com
+|  1.0
+|  May 29 2014
+|  [https://raw.githubusercontent.com/davy39/qbfrench/master/smartorrent.py Download]
+|  
+|-
+| [[https://raw.githubusercontent.com/davy39/qbfrench/master/torrentfrancais.png]] [http://torrentfrancais.com]
+|  davy39(at)hmamail(dot)com
+|  1.0
+|  May 29 2014
+|  [https://raw.githubusercontent.com/davy39/qbfrench/master/torrentfrancais.py Download]
+|  
+|-
+|  [http://yts.re]
+|  craig9(at)gmail(dot)com
+|  1.0
+|  April 13 2014
+|  [https://anonfiles.com/file/ce3be04de24098be9149643bc9afa403 Download]
+|  Needs BeautifulSoup 4 library installed in local python lib
+|-
+|  [[http://www.qbittorrent.org/wiki-images/NyaaTorrents.png]] [http://www.nyaa.se/ NyaaTorrents]
+|  yukariin(at)yandex(dot)ru
+|  2.11
+|  Mar 21 2014
+|  [https://raw.githubusercontent.com/Yukariin/qBittorrent-Search-Plugins/master/nyaatorrents.py Download]
+|  Python 3 plugin, using html.parser lib. Tested with qbittorrent 3.1.9
+|-
+|  [[https://raw.github.com/mr-mmajoR/myrepo/master/rutor.png]] [http://rutor.org/ rutor.org]
+|  mmajor(at)yandex(dot)ru
+|  1.01
+|  May 7 2013
+|  [https://raw.github.com/mr-mmajoR/myrepo/master/rutor.py Download]
+|  Tested with qbittorrent 3.0.9
 |-
 |  [[http://www.qbittorrent.org/wiki-images/Limetorrents.png]] [http://www.limetorrents.com LimeTorrents 1.01]
 |  richard(at)richardurban(dot)de
@@ -39,12 +67,12 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 |  [https://raw.github.com/richardurban/qBittorrent-Search-Plugins/master/limetorrents.py Download]
 |  Bugfix for changed search and result page format
 |-
-|  [[http://www.qbittorrent.org/wiki-images/Freetorrent.png]] [http://freetorrent.fr/ Free Torrent (FR)]
-|  sinusnco(at)gmail(dot)com
+|  [[http://www.qbittorrent.org/wiki-images/Tfile.png]] [http://tfile.ru/ tfile.ru]
+|  bnagaev(at)gmail(dot)com
 |  1.0
-|  Feb 07 2011
-|  [http://sourceforge.net/projects/qbt-extrasearch/files/freetorrent_fr-1.0.tar.gz/download Download]
-|  Tested with qBittorrent >= 2.6.5
+|  Dec 8 2011
+|  [https://bitbucket.org/starius/qbittorrent-plugins/downloads/tfile.py Download]
+|  Tested with qbittorrent 2.2.11
 |-
 |  [[http://www.qbittorrent.org/wiki-images/Divxtotal.png]] [http://divxtotal.com/ DivxTotal]
 |  hazuki.shiro(at)gmail(dot)com
@@ -67,12 +95,12 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 |  [https://raw.github.com/cdumez/qBittorrent-Search-Plugins/master/demonoid.py Download]
 |
 |-
-|  [[http://www.qbittorrent.org/wiki-images/NyaaTorrents.png]] [http://www.nyaa.se/ NyaaTorrents]
-|  yukariin(at)yandex(dot)ru
-|  2.11
-|  Mar 21 2014
-|  [https://raw.githubusercontent.com/Yukariin/qBittorrent-Search-Plugins/master/nyaatorrents.py Download]
-|  Python 3 plugin, using html.parser lib. Tested with qbittorrent 3.1.9
+|  [[http://www.qbittorrent.org/wiki-images/SumoTorrent.png]] [http://www.sumotorrent.com Sumo Torrent]
+|  chris(at)qbittorrent(dot)org
+|  1.2
+|  Sep 17 2011
+|  [https://raw.github.com/cdumez/qBittorrent-Search-Plugins/master/sumotorrent.py Download]
+|
 |-
 |  [[http://www.qbittorrent.org/wiki-images/Rarbg.png]] [http://rarbg.com/ Rarbg]
 |  blood2game(at)yahoo(dot)fr
@@ -81,26 +109,26 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 |  [http://dl.dropbox.com/u/30097239/rarbg.py Download]
 |  Tested with qbittorrent 2.2.11 
 |-
-|  [[http://www.qbittorrent.org/wiki-images/Tfile.png]] [http://tfile.ru/ tfile.ru]
-|  bnagaev(at)gmail(dot)com
+|  [[http://www.qbittorrent.org/wiki-images/Freetorrent.png]] [http://freetorrent.fr/ Free Torrent (FR)]
+|  sinusnco(at)gmail(dot)com
 |  1.0
-|  Dec 8 2011
-|  [https://bitbucket.org/starius/qbittorrent-plugins/downloads/tfile.py Download]
-|  Tested with qbittorrent 2.2.11
+|  Feb 07 2011
+|  [http://sourceforge.net/projects/qbt-extrasearch/files/freetorrent_fr-1.0.tar.gz/download Download]
+|  Tested with qBittorrent >= 2.6.5
 |-
-|  [[https://raw.github.com/mr-mmajoR/myrepo/master/rutor.png]] [http://rutor.org/ rutor.org]
-|  mmajor(at)yandex(dot)ru
-|  1.01
-|  May 7 2013
-|  [https://raw.github.com/mr-mmajoR/myrepo/master/rutor.py Download]
-|  Tested with qbittorrent 3.0.9
-|-
-|  [http://yts.re]
-|  craig9(at)gmail(dot)com
+|  [[http://www.qbittorrent.org/wiki-images/Limetorrents.png]] [http://www.limetorrents.com LimeTorrents]
+|  chris(at)qbittorrent(dot)org
 |  1.0
-|  April 13 2014
-|  [https://anonfiles.com/file/ce3be04de24098be9149643bc9afa403 Download]
-|  Needs BeautifulSoup 4 library installed in local python lib
+|  Dec 29 2010
+|  [https://raw.github.com/cdumez/qBittorrent-Search-Plugins/master/limetorrents.py Download]
+|
+|-
+|  [[http://www.qbittorrent.org/wiki-images/Fenopy.png]] [http://fenopy.com Fenopy.com]
+|  chris(at)qbittorrent(dot)org
+|  1.1
+|  Dec 26 2010
+|  [https://raw.github.com/cdumez/qBittorrent-Search-Plugins/master/fenopy.py Download]
+|  
 |}
 
 
@@ -116,6 +144,13 @@ Be careful, these scripts probably require editing before you can use them. Thos
 !  Last update date
 !  Download link
 !  Comment
+|-
+|[[https://raw.githubusercontent.com/davy39/qbfrench/master/t411.png]][http://www.t411.me T411]
+|davy39(at)hmamail(dot)com
+|1.0
+|May 29 2014
+|[https://raw.githubusercontent.com/davy39/qbfrench/master/t411.py Script only] / [https://github.com/davy39/qbfrench/wiki README]*
+|
 |-
 |[http://rutracker.org/ rutracker.org]
 |skymirrh(at)skymirrh(dot)net
