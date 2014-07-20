@@ -2,7 +2,6 @@ Welcome to the qBittorrent wiki!
 
 ## General
 * [Frequently Asked Questions (FAQ)](wiki/Frequently-Asked-Questions)
-* [Explanation of qBittorrent Options](wiki/qBittorrent-Options)
 * [How to use qBittorrent as a tracker](wiki/How-to-use-qBittorrent-as-a-tracker)
 * [Anonymous Mode](wiki/Anonymous-Mode)
 
