@@ -1,16 +1,14 @@
-Here you will find explanation for various settings found under the options in qBittorrent, grouped by the tab. The options can be accessed by hitting '''Alt''' + '''O''' or going to ''Tools'' and clicking on ''Options''.
-
-Options (Settings) in qBittorrent
-Here you will find explanation for various settings found under the options in qBittorrent, grouped by the tab. The options can be accessed by hitting '''Alt''' + '''O''' or going to ''Tools'' and clicking on ''Options''.
+Here you will find explanation for various settings found under the options in qBittorrent, grouped by the tab. The options can be accessed by hitting '''Alt''' + '''O''' or going to ''Tools'' and clicking on ''Options''. Some of these options are pretty self explanatory, so detailed explanations for these have been omitted. For additional clarification or explanation, please visit the [http://forum.qbittorrent.org qBittorrent forum].
 
 = Behaviour =
 
 == Language ==
-This is used to set the language qBittorrent uses in it's GUI (Graphical User Interface). If you want to provide another language, or update an already existing one, you may do so through Transifex. [http://qbforums.shiki.hu/index.php/topic,2134.0.html Here] is the corressponding forum topic.
+This is used to set the language qBittorrent uses in it's GUI (Graphical User Interface). If you want to provide another language, or update an already existing one, you may do so through Transifex. [http://qbforums.shiki.hu/index.php/topic,2134.0.html Here] is the corresponding forum topic.
 
-== Tranfer lists ==
-'''Use alternating row colours''' - using alternating row colours makes it easier for the human eye to read lists from a short distance. It is enabled by default, disable it if you choose.
-'''Action on double click''' - You can also customize the actions that are triggered upon double clicking with the mouse.
+== Transfer lists ==
+*'''Use alternating row colors''' - using alternating row colors makes it easier for the human eye to read lists from a short distance. It is enabled by default, disable it if you choose.
+
+*'''Action on double click''' - You can also customize the actions that are triggered upon double clicking with the mouse.
 
 == Desktop ==
 
@@ -19,11 +17,15 @@ This is used to set the language qBittorrent uses in it's GUI (Graphical User In
 *'''Start qBittorrent minimized''' - this specifies whether, when you start qBittorrent, you want it to be minimized to the taskbar or not. Disabled by default.
 *'''Ask for program exit confirmation''' - if you try to close qBittorrent when there are active torrents, it will display a warning stating the same. Enabled by default.
 *'''Show qBittorrent in notification area''' - choose whether you want qBittorrent to be shown in the notification area along with other system icons. There are also two additional options -
+
 **'''Minimize qBittorrent to notification area''' minimizes qB to the notification area and
 **'''Close qBittorrent to notification area''' results in qB moving to the notification area upon closing (similar to µTorrent).
+
 *'''File association''' allows you to select or deselect qBittorrent as the default application for opening torrent files and/or magnet links. This is asked upon installation, after which the options can be changed here.
+
 **'''Use qBittorrent for .torrent files''' allows qBittorrent to associate itself whenever you open a .torrent file. This setting can be also adjusted via the system settings, ''Set default programs'' in Windows 7 and earlier, or ''Choose default apps by file type'' in Windows 8 and later.
 **'''Use qBittorrent for magnet links''' allows qBittorrent to pop up whenever you click on a magnet link. This setting can also be adjusted in the browser.
+
 
 == Power Management ==
 This allows you to prevent the system from going into sleep mode when torrents are active. Useful if you do not want to change sleep settings for your system, but still don't want it to go into sleep mode when qBittorrent is up and running.
@@ -39,14 +41,14 @@ This allows you to prevent the system from going into sleep mode when torrents a
 * '''Save files to location''' allows you to select your default save locations.
 ** '''Append the label of the torrent to the save path''' - if you want to append the labels of your torrent to the save path (click here if you want to know what labels are and how to use them), you can choose to do so.
 * '''Pre-allocate disk space for all files''' - this option allows qBittorrent to allocate (that is, assign) space on your hard disk (or SSD) so that the problem of not having enough space does not arise later on.
-** '''Keep incomplete torrents in''' - if you wish to save your incomplete torrents to a temporary folder, before they are moved to another folder upon completition, use this option.
-* '''Append .!qb extenstion to incomplete files''' - this option is similar to µTorrent's appending of .ut to incomplete files. What this option does is that, to enable you to identify files that have not yet been downloaded fully, it adds a .!qb extension to these files. So, ''Hello.mp3'' will be stored as ''Hello.!qb'' until the download is complete, after which it gets renamed to ''Hello.mp3''.
+** '''Keep incomplete torrents in''' - if you wish to save your incomplete torrents to a temporary folder, before they are moved to another folder upon completion, use this option.
+* '''Append .!qb extension to incomplete files''' - this option is similar to µTorrent's appending of .ut to incomplete files. What this option does is that, to enable you to identify files that have not yet been downloaded fully, it adds a .!qb extension to these files. So, ''Hello.mp3'' will be stored as ''Hello.!qb'' until the download is complete, after which it gets renamed to ''Hello.mp3''.
 * '''Automatically add torrent from''' option allows qBittorrent to automatically load torrents from specific folders to be downloaded to another set of specific folders.
 * '''Copy .torrent files to''' option allows you to copy .torrent files for the torrents that you download to a specific folder (for example, ''Downloaded torrents'').
 * '''Copy .torrent files for finished downloads to''' option is the same as the above, with one difference. Only for completed torrents will qBittorrent copy the .torrent file to the specified location.
 
-== Email notification upon completition of downloads ==
-This allows you to recieve an email when your download finishes. For this, you will have to suppy the fields required.
+== Email notification upon completion of downloads ==
+This allows you to receive an email when your download finishes. For this, you will have to supply the fields required.
 
 == Run an external program on torrent completion ==
 This allows you to run a program on finishing certain types of torrents in a certain location.
@@ -55,8 +57,8 @@ This allows you to run a program on finishing certain types of torrents in a cer
 
 == Listening Port ==
 * '''Port used for incoming connections''' - either specify the [http://whatismyipaddress.com/port port] or choose a random one.
-* '''Use UPnP/ NAT-PMP port forwaring from my router''' - for a helpful introduction to port forwarding, go [https://en.wikipedia.org/wiki/Port_forwarding here], or [http://netforbeginners.about.com/od/p/f/What-Is-Port-Forwarding.htm here].
-* '''Use different port on each startup''' voids the first option, and randomly assigs a different port per startup.
+* '''Use UPnP/ NAT-PMP port forwarding from my router''' - for a helpful introduction to port forwarding, go [https://en.wikipedia.org/wiki/Port_forwarding here], or [http://netforbeginners.about.com/od/p/f/What-Is-Port-Forwarding.htm here].
+* '''Use different port on each startup''' voids the first option, and randomly assigns a different port every time qBittorrent starts up.
 
 == Connection Limits ==
 * '''Global maximum number of connections''' sets the maximum number of peers to connect to for ''all'' torrents.
@@ -90,3 +92,9 @@ These options allow you to control the number of torrents being downloaded and u
 
 == Share Ratio Limiting ==
 Here, you can configure to what ratio (amount uploaded/amount uploaded) the torrent should be seeded. You can also configure on whther you want them to be paused or removed after this.
+
+= Web UI =
+You can use a remote control with qBittorrent. For more information, go [https://github.com/qbittorrent/qBittorrent/wiki#webui-related here].
+
+= Advanced =
+Help for this topic is not available at present. Sorry.
