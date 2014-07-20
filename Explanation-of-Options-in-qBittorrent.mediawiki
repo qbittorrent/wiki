@@ -1,1 +1,92 @@
 Here you will find explanation for various settings found under the options in qBittorrent, grouped by the tab. The options can be accessed by hitting '''Alt''' + '''O''' or going to ''Tools'' and clicking on ''Options''.
+
+Options (Settings) in qBittorrent
+Here you will find explanation for various settings found under the options in qBittorrent, grouped by the tab. The options can be accessed by hitting '''Alt''' + '''O''' or going to ''Tools'' and clicking on ''Options''.
+
+= Behaviour =
+
+== Language ==
+This is used to set the language qBittorrent uses in it's GUI (Graphical User Interface). If you want to provide another language, or update an already existing one, you may do so through Transifex. [http://qbforums.shiki.hu/index.php/topic,2134.0.html Here] is the corressponding forum topic.
+
+== Tranfer lists ==
+'''Use alternating row colours''' - using alternating row colours makes it easier for the human eye to read lists from a short distance. It is enabled by default, disable it if you choose.
+'''Action on double click''' - You can also customize the actions that are triggered upon double clicking with the mouse.
+
+== Desktop ==
+
+*'''Start qBittorrent on Windows start up''' - specifies whether or not you want to start qBittorrent when you start up your Windows PC. Disabled by default.
+*'''Show splash screen on start up''' - specifies whether the screen containing the qBittorrent logo along with the current version number should be shown whenever the program is started. Enabled by default.
+*'''Start qBittorrent minimized''' - this specifies whether, when you start qBittorrent, you want it to be minimized to the taskbar or not. Disabled by default.
+*'''Ask for program exit confirmation''' - if you try to close qBittorrent when there are active torrents, it will display a warning stating the same. Enabled by default.
+*'''Show qBittorrent in notification area''' - choose whether you want qBittorrent to be shown in the notification area along with other system icons. There are also two additional options -
+**'''Minimize qBittorrent to notification area''' minimizes qB to the notification area and
+**'''Close qBittorrent to notification area''' results in qB moving to the notification area upon closing (similar to µTorrent).
+*'''File association''' allows you to select or deselect qBittorrent as the default application for opening torrent files and/or magnet links. This is asked upon installation, after which the options can be changed here.
+**'''Use qBittorrent for .torrent files''' allows qBittorrent to associate itself whenever you open a .torrent file. This setting can be also adjusted via the system settings, ''Set default programs'' in Windows 7 and earlier, or ''Choose default apps by file type'' in Windows 8 and later.
+**'''Use qBittorrent for magnet links''' allows qBittorrent to pop up whenever you click on a magnet link. This setting can also be adjusted in the browser.
+
+== Power Management ==
+This allows you to prevent the system from going into sleep mode when torrents are active. Useful if you do not want to change sleep settings for your system, but still don't want it to go into sleep mode when qBittorrent is up and running.
+
+= Downloads =
+
+== When adding a torrent ==
+* '''Display the torrent content and some options''' - this enables qBittorrent to allow you to configure the save location, specifying whether to start the torrent immediately, skip the hash check, to select the label, and to select the content to download and assign priorities.
+** '''Bring torrent dialog to the front''' does what it says. It brings the torrent dialog to focus.
+* '''Do not start the download automatically''' allows you the option of either starting the download without delay, or to wait for the user to click on the Start button.
+
+== Hard Disk ==
+* '''Save files to location''' allows you to select your default save locations.
+** '''Append the label of the torrent to the save path''' - if you want to append the labels of your torrent to the save path (click here if you want to know what labels are and how to use them), you can choose to do so.
+* '''Pre-allocate disk space for all files''' - this option allows qBittorrent to allocate (that is, assign) space on your hard disk (or SSD) so that the problem of not having enough space does not arise later on.
+** '''Keep incomplete torrents in''' - if you wish to save your incomplete torrents to a temporary folder, before they are moved to another folder upon completition, use this option.
+* '''Append .!qb extenstion to incomplete files''' - this option is similar to µTorrent's appending of .ut to incomplete files. What this option does is that, to enable you to identify files that have not yet been downloaded fully, it adds a .!qb extension to these files. So, ''Hello.mp3'' will be stored as ''Hello.!qb'' until the download is complete, after which it gets renamed to ''Hello.mp3''.
+* '''Automatically add torrent from''' option allows qBittorrent to automatically load torrents from specific folders to be downloaded to another set of specific folders.
+* '''Copy .torrent files to''' option allows you to copy .torrent files for the torrents that you download to a specific folder (for example, ''Downloaded torrents'').
+* '''Copy .torrent files for finished downloads to''' option is the same as the above, with one difference. Only for completed torrents will qBittorrent copy the .torrent file to the specified location.
+
+== Email notification upon completition of downloads ==
+This allows you to recieve an email when your download finishes. For this, you will have to suppy the fields required.
+
+== Run an external program on torrent completion ==
+This allows you to run a program on finishing certain types of torrents in a certain location.
+
+= Connection =
+
+== Listening Port ==
+* '''Port used for incoming connections''' - either specify the [http://whatismyipaddress.com/port port] or choose a random one.
+* '''Use UPnP/ NAT-PMP port forwaring from my router''' - for a helpful introduction to port forwarding, go [https://en.wikipedia.org/wiki/Port_forwarding here], or [http://netforbeginners.about.com/od/p/f/What-Is-Port-Forwarding.htm here].
+* '''Use different port on each startup''' voids the first option, and randomly assigs a different port per startup.
+
+== Connection Limits ==
+* '''Global maximum number of connections''' sets the maximum number of peers to connect to for ''all'' torrents.
+* '''Maximum number of connections per torrent''' sets the maximum number of peers to connect to for ''each'' torrent.
+* '''Global maximum number of upload slots''' sets the maximum number of [http://wiki.vuze.com/w/Max_upload_slots_per_torrent upload slots] (basically the number of peers you connect to) for ''all'' torrents.
+* '''Maximum number of upload slots''' sets the maximum of upload slots for ''each'' torrent.
+== Proxy server ==
+These options allow you to set up a proxy server to use when downloading torrents. A tutorial of sorts can be accessed [https://kickass.to/community/show/41088/ here] (for µTorrent, but can be used for qBittorrent as well).
+== IP filering ==
+This is a feature which allows you to block certain ''bad peers''. Didn't understand a word? More information about that [http://www.techzilo.com/ban-utorrent-peers-ip-address/ here].
+
+= Speed =
+
+== Global Rate Limits ==
+You can use this to set global (for all torrents) rate limits for both downloads and uploads. For the other options, read [https://en.wikipedia.org/wiki/Micro_Transport_Protocol this]  Wikipedia article.
+
+== Alternative Global Rate Limits ==
+For those of you whose internet connectivity is limited during specific hours (for example, you might have unlimited bandwidth during the night, but limited during the day), this option is for you. You can schedule these to be activated automatically, or manually activate it using the bottom tool bar in qBittorrent.
+
+= BitTorrent =
+
+== Privacy ==
+* '''Enable DHT (decentralized network) to find more peers'''  - DHT is a solution to make torrent downloading and uploading a tracker independent operation. More about DHT [https://en.wikipedia.org/wiki/BitTorrent_%28protocol%29#Creating_and_publishing_torrents here].
+** '''Use a different port for DHT and BitTorrent''' allows the port that DHT and BitTorrent use to be different.
+* '''Enable Peer Exchange (PeX) to find more peers''' - another alternative to enable lesser dependency on trackers. More information [http://wiki.vuze.com/w/Peer_Exchange here].
+* '''Enable Local Peer Discovery to find more peers''' - an extension to the BitTorrent protocol to enable communication via LAN. More information [https://en.wikipedia.org/wiki/Local_Peer_Discovery here].
+* '''Enable anonymous mode''' - in simple terms, qBittorrent tries to maintain a certain degree of anonymity while using this function. Detailed explanation [https://github.com/qbittorrent/qBittorrent/wiki/Anonymous-Mode here].
+
+== Torrent Queuing ==
+These options allow you to control the number of torrents being downloaded and uploaded. Refer to the documentation [http://www.rasterbar.com/products/libtorrent/manual.html here] for information on ''slow torrents''.
+
+== Share Ratio Limiting ==
+Here, you can configure to what ratio (amount uploaded/amount uploaded) the torrent should be seeded. You can also configure on whther you want them to be paused or removed after this.
