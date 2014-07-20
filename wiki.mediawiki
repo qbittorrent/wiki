@@ -1,0 +1,22 @@
+== Language ==
+This is used to set the language qBittorrent uses in it's GUI (Graphical User Interface). If you want to provide another language, or update an already existing one, you may do so through Transifex. [http://qbforums.shiki.hu/index.php/topic,2134.0.html Here] is the corressponding forum topic.
+
+== Tranfer lists ==
+'''Use alternating row colours''' - using alternating row colours makes it easier for the human eye to read lists from a short distance. It is enabled by default, disable it if you choose.
+'''Action on double click''' - You can also customize the actions that are triggered upon double clicking with the mouse.
+
+== Desktop ==
+
+*'''Start qBittorrent on Windows start up''' - specifies whether or not you want to start qBittorrent when you start up your Windows PC. Disabled by default.
+*'''Show splash screen on start up''' - specifies whether the screen containing the qBittorrent logo along with the current version number should be shown whenever the program is started. Enabled by default.
+*'''Start qBittorrent minimized''' - this specifies whether, when you start qBittorrent, you want it to be minimized to the taskbar or not. Disabled by default.
+*'''Ask for program exit confirmation''' - if you try to close qBittorrent when there are active torrents, it will display a warning stating the same. Enabled by default.
+*'''Show qBittorrent in notification area''' - choose whether you want qBittorrent to be shown in the notification area along with other system icons. There are also two additional options -
+**'''Minimize qBittorrent to notification area''' minimizes qB to the notification area and
+**'''Close qBittorrent to notification area''' results in qB moving to the notification area upon closing (similar to µTorrent).
+*'''File association''' allows you to select or deselect qBittorrent as the default application for opening torrent files and/or magnet links. This is asked upon installation, after which the options can be changed here.
+**'''Use qBittorrent for .torrent files''' allows qBittorrent to associate itself whenever you open a .torrent file. This setting can be also adjusted via the system settings, ''Set default programs'' in Windows 7 and earlier, or ''Choose default apps by file type'' in Windows 8 and later.
+**'''Use qBittorrent for magnet links''' allows qBittorrent to pop up whenever you click on a magnet link. This setting can also be adjusted in the browser.
+
+== Power Management ==
+This allows you to prevent the system from going into sleep mode when torrents are active. Useful if you do not want to change sleep settings for your system, but still don't want it to go into sleep mode when qBittorrent is up and running.
