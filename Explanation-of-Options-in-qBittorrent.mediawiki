@@ -1,0 +1,1 @@
+Here you will find explanation for various settings found under the options in qBittorrent, grouped by the tab. The options can be accessed by hitting '''Alt''' + '''O''' or going to ''Tools'' and clicking on ''Options''.
