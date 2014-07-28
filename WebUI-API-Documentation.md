@@ -41,7 +41,17 @@
 
 # <a id="auth"></a>Authorization #
 
-Authorization requires using `Authorization` header inside GET/POST requests. qBittorrent requires Digest Authorization type with MD5 hash generator.
+Authorization requires using `Authorization` header inside GET/POST requests. qBittorrent uses the standard Digest Authorization type (using a MD5 hash generator).
+
+For example on Python using [requests](http://docs.python-requests.org/en/latest/):
+
+    import requests
+    from requests.auth import HTTPDigestAuth
+
+    response = requests.post('http://127.0.0.1:8080/command/download', {'urls': magnet_link}, auth=HTTPDigestAuth(username, password))
+    if not response.ok:
+        response.raise_for_status()
+    response.content
 
 1. Digest Authorization standard
 
