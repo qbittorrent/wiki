@@ -69,15 +69,15 @@ This page describes the process of building qBittorrent on Windows targeting x86
 1. Navigate to Zlib source folder.
 1. Edit `.\win32\Makefile.msc` and do the following changes:
 
-    + Find line starting with `AS` and on that line:
+    + Find the line starting with `AS` and on that line:
         + Replace `ml` **with** `ml64`
-    + Find line starting with `ASFLAGS` and on that line:
+    + Find the line starting with `ASFLAGS` and on that line:
         + Replace `-coff -Zi $(LOC)` **with** `$(LOC)`
-    + Find line starting with `CFLAGS` and on that line:
+    + Find the line starting with `CFLAGS` and on that line:
         + Replace `-nologo -MD -W3 -O2 -Oy- -Zi -Fd"zlib" $(LOC)` **with** `-nologo -MD -O2 -w -favor:blend -GL -GR- -Y- -MP -EHs-c- $(LOC)`
-    + Find line starting with `LDFLAGS` and on that line:
+    + Find the line starting with `LDFLAGS` and on that line:
         + Replace `-nologo -debug -incremental:no -opt:ref` **with** `-nologo -incremental:no -opt:ref -opt:icf=5 -ltcg`
-    + Find line starting with `ARFLAGS` and on that line:
+    + Find the line starting with `ARFLAGS` and on that line:
         + Replace `-nologo` **with** `-nologo -ltcg`
 
 1. Build Zlib:
@@ -127,15 +127,15 @@ This page describes the process of building qBittorrent on Windows targeting x86
 
 
 1. Edit `.\ms\ntdll.mak` and do the following changes:
-    + Find line starting with `CFLAG=` and on that line:
+    + Find the line starting with `CFLAG=` and on that line:
         + Replace `/Ox` **with** `/O2 /favor:blend /GL /Y-`
-    + Find line starting with `LFLAGS=`
+    + Find the line starting with `LFLAGS=`
         + Replace `/debug` **with** `/OPT:ICF=5 /LTCG`
-    + Find line starting with `MLFLAGS=`
+    + Find the line starting with `MLFLAGS=`
         + Replace `/debug` **with** `/OPT:ICF=5 /LTCG`
-    + Find line starting with `ASM=`
+    + Find the line starting with `ASM=`
         + Remove `-g` from that line
-    + Find line containing `zlib1.lib $(EX_LIBS)`
+    + Find the line containing `zlib1.lib $(EX_LIBS)`
         + Replace `zlib1.lib` **with** `zlib.lib` in line
 1. Build OpenSSL:
 
