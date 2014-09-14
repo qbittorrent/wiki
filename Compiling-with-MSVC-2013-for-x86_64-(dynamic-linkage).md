@@ -1,54 +1,50 @@
 This page describes the process of building qBittorrent on Windows targeting x86\_64 (aka x64 aka AMD64 aka 64-bit) architecture. Building for x86\_64 arch is only supported by Visual Studio Professional or better, Express edition won't do.
 
-> Note: It is possible to use 64-bit compiler collection included in WinSDK 7.1. But if you already have ***ANY*** edition of Visual Studio 2010 installed with SP1 applied you won't be able to install it. Thus, using WinSDK is out of this article's scope.
-> 
-> Another note: Even though this article tries to be as full as possible, it is not recommended for users without basic knowledge in programming and windows shell scripting.
+> Note: Even though this article tries to be as full as possible, it is not recommended for users without basic knowledge in programming and windows shell scripting.
 > 
 > Final note: Resulting binary will not support Windows XP 64-bit Edition and Windows Server 2003 64-bit Edition unless you follow special notes describing how to make it compatible with those systems.
 
 # Table of Contents #
 
-1. [Software Requirements](#softreq)
-1. [Source Requirements](#sourcereq)
-1. [Preparing Directory Structure](#diskprep)
-1. [Build Zlib](#zlib)
-1. [Build OpenSSL](#ossl)
-1. [Build Boost](#boost)
-1. [Build libtorrent](#torrent)
-1. [Build Qt](#qt)
-1. [Build qBittorrent](#qbt)
-1. [Using resulting binaries on different computers](#other)
+1. [Software Requirements](#software-requirements)
+1. [Source Requirements](#source-requirements)
+1. [Preparing Directory Structure](#preparing-directory-structure)
+1. [Build Zlib](#build-zlib)
+1. [Build OpenSSL](#build-openssl)
+1. [Build Boost](#build-boost)
+1. [Build libtorrent](#build-libtorrent)
+1. [Build Qt](#build-qt)
+1. [Build qBittorrent](#build-qbittorrent)
+1. [Using resulting binaries on different computers](#using-resulting-binaries-on-different-computers)
 
 ***
 
-# <a id="softreq"></a>Software Requirements #
+# Software Requirements #
 
-1. At least Windows Vista 64-bit
-1. At least  Visual Studio 2010 Professional Edition.
+1. At least Windows 7 SP1 64-bit
+1. At least Visual Studio 2013 Professional Edition.
 1. Perl. [ActiveState Perl x86](http://www.activestate.com/activeperl/downloads) is known to work.
 1. Latest version of [NASM assembler](http://www.nasm.us/).
 
-# <a id="sourcereq"></a>Source Requirements #
+# Source Requirements #
 
 1. Latest version of [Zlib](http://zlib.net/).
-    + 1.2.7 is used in this article.
+    + [1.2.8](http://zlib.net/zlib-1.2.8.tar.gz) is used in this article.
 1. Latest version of [OpenSSL](https://www.openssl.org/source/). Be sure to download the one _**without**_ fips in the name.
-    + 1.0.1c is used in this article.
-1. Latest version of [Qt](https://qt-project.org/downloads). Look for `The source code is available as a zip` on download page. This is what you need, not the prebuilt binaries.
+    + [1.0.1i](https://www.openssl.org/source/openssl-1.0.1i.tar.gz) is used in this article.
+1. Latest version of [Qt](https://qt-project.org/downloads). Look for `The source code is also available as a single zip` on download page. This is what you need, not the prebuilt binaries.
 
     > Note: Qt5 is currently not supported by qBittorrent.
-    + 4.8.4 is used in this article.
-    + If you can't download from the official site with official links use a direct link like that: `https://releases.qt-project.org/qt4/source/qt-everywhere-opensource-src-VERSION.tar.gz` where `VERSION` is, for exmaple, `4.8.4`
-    + An example direct link: [https://releases.qt-project.org/qt4/source/qt-everywhere-opensource-src-4.8.4.tar.gz](https://releases.qt-project.org/qt4/source/qt-everywhere-opensource-src-4.8.4.tar.gz)
+    + [4.6.8](http://download.qt-project.org/archive/qt/4.8/4.8.6/qt-everywhere-opensource-src-4.8.6.zip) is used in this article.
 1. Latest version of [Boost](http://www.boost.org/users/download/).
-    + 1.52 is used in this article.
-1. Latest version of [libtorrent-rasterbar](https://code.google.com/p/libtorrent/downloads/list).
-    + 0.16.6 is used in this article.
+    + [1.56](http://sourceforge.net/projects/boost/files/boost/1.56.0/boost_1_56_0.7z) is used in this article.
+1. Latest version of [libtorrent-rasterbar](http://sourceforge.net/projects/libtorrent/files/libtorrent/).
+    + [0.16.17](http://sourceforge.net/projects/libtorrent/files/libtorrent/libtorrent-rasterbar-0.16.17.tar.gz) is used in this article.
 1. Latest version of [qBittorrent](http://sourceforge.net/projects/qbittorrent/files/qbittorrent) or you can [Download Master Branch from GitHub](https://github.com/qbittorrent/qBittorrent/archive/master.zip).
     + Git master is used in this article.
 1. Maxmind [GeoIP Database](https://www.maxmind.com/download/geoip/database/GeoLiteCountry/).
 
-# <a id="diskprep"></a>Preparing Directory Structure #
+# Preparing Directory Structure #
 
 1. First of all you will need a working directory structure for source code and compiled binaries. Create something like that:
 
@@ -66,22 +62,24 @@ This page describes the process of building qBittorrent on Windows targeting x86
 
     > This directory structure will be used as an example.
 
-# <a id="zlib"></a>Build Zlib #
+# Build Zlib #
 
 1. Unpack Zlib into `\sources\zlib\`.
-1. Open `Visual Studio x64 Win64 Command Prompt (2010)` usually found in `Start->All Programs->Microsoft Visual Studio 2010->Visual Studio Tools`
+1. Open `VS2013 x64 Native Tools Command Prompt` usually found in `Start->All Programs->Visual Studio 2013->Visual Studio Tools`
 1. Navigate to Zlib source folder.
 1. Edit `.\win32\Makefile.msc` and do the following changes:
-    + `AS=ml` **to**<br />
-    `AS=ml64`
-    + `ASFLAGS = -coff -Zi $(LOC)` **to**<br />
-    `ASFLAGS = $(LOC)`
-    + `CFLAGS  = -nologo -MD -W3 -O2 -Oy- -Zi -Fd"zlib" $(LOC)` **to**<br />
-    `CFLAGS  = -nologo -MD -O2 -w -favor:blend -GL -GR- -Y- -MP -EHs-c- $(LOC)`
-    + `LDFLAGS = -nologo -debug -incremental:no -opt:ref` **to**<br />
-    `LDFLAGS = -nologo -incremental:no -opt:ref -opt:icf=5 -ltcg`
-    + `ARFLAGS = -nologo` **to**<br />
-    `ARFLAGS = -nologo -ltcg`
+
+    + Find line starting with `AS` and on that line:
+        + Replace `ml` **with** `ml64`
+    + Find line starting with `ASFLAGS` and on that line:
+        + Replace `-coff -Zi $(LOC)` **with** `$(LOC)`
+    + Find line starting with `CFLAGS` and on that line:
+        + Replace `-nologo -MD -W3 -O2 -Oy- -Zi -Fd"zlib" $(LOC)` **with** `-nologo -MD -O2 -w -favor:blend -GL -GR- -Y- -MP -EHs-c- $(LOC)`
+    + Find line starting with `LDFLAGS` and on that line:
+        + Replace `-nologo -debug -incremental:no -opt:ref` **with** `-nologo -incremental:no -opt:ref -opt:icf=5 -ltcg`
+    + Find line starting with `ARFLAGS` and on that line:
+        + Replace `-nologo` **with** `-nologo -ltcg`
+
 1. Build Zlib:
 
 
@@ -107,14 +105,14 @@ This page describes the process of building qBittorrent on Windows targeting x86
         XCOPY /Y /Q /I .\zconf.h T:\install\zlib\include\
         XCOPY /Y /Q /I .\zlib.h T:\install\zlib\include\
 
-# <a id="ossl"></a>Build OpenSSL #
+# Build OpenSSL #
 
 1. Unpack OpenSSL into `\sources\openssl\`.
 1. Install Perl if you haven't. In this article Perl is installed in `T:\Perl`.
 
     > It is recommended to install both perl and NASM to directory structure without spaces.
 
-1. Open `Visual Studio x64 Win64 Command Prompt (2010)`.
+1. Open `VS2013 x64 Native Tools Command Prompt`.
 1. Navigate to OpenSSL source folder.
 1. If you still haven't installed NASM, now is the best time. In this article NASM is installed in `T:\NASM`.
 1. Adjust `PATH` variable:
@@ -137,7 +135,7 @@ This page describes the process of building qBittorrent on Windows targeting x86
         + Replace `/debug` **with** `/OPT:ICF=5 /LTCG`
     + Find line starting with `ASM=`
         + Remove `-g` from that line
-    + Find line `$(SHLIB_EX_OBJ) $(CRYPTOOBJ)  zlib1.lib $(EX_LIBS)`
+    + Find line containing `zlib1.lib $(EX_LIBS)`
         + Replace `zlib1.lib` **with** `zlib.lib` in line
 1. Build OpenSSL:
 
@@ -162,17 +160,17 @@ This page describes the process of building qBittorrent on Windows targeting x86
         nmake -f .\ms\ntdll.mak install
 
 
-# <a id="boost"></a>Build Boost #
+# Build Boost #
 
 1. Unpack Boost into `\sources\boost\`.
-1. Open `Visual Studio x64 Win64 Command Prompt (2010)`.
+1. Open `VS2013 x64 Native Tools Command Prompt`.
 1. Navigate to Boost source folder.
 1. Build and install bjam (aka Boost-Build):
 
-        CD .\tools\build\v2
-        .\bootstrap.bat vc10
+        CD .\tools\build
+        .\bootstrap.bat vc12
         .\b2.exe --toolset=msvc architecture=x86 address-model=64 --prefix=T:\install\bjam link=shared runtime-link=shared variant=release debug-symbols=off warnings=off warnings-as-errors=off inlining=full optimization=speed "cflags=/O2 /GL /Gy /favor:blend" "linkflags=/NOLOGO /OPT:REF /OPT:ICF=5 /LTCG" install
-        CD ..\..\..\
+        CD ..\..\
 
 
 1. Build and install Boost:
@@ -183,10 +181,10 @@ This page describes the process of building qBittorrent on Windows targeting x86
         COPY /Y Jamroot T:\install\boost\
 
 
-# <a id="torrent"></a>Build libtorrent #
+# Build libtorrent #
 
 1. Unpack libtorrent into `\sources\libtorrent\`.
-1. Open `Visual Studio x64 Win64 Command Prompt (2010)`.
+1. Open `VS2013 x64 Native Tools Command Prompt`.
 1. Navigate to libtorrent source folder.
 1. Edit `include/libtorrent/escape_string.hpp` to fix symbol export with dynamic linking:
     + Replace `TORRENT_EXTRA_EXPORT std::string base32decode(std::string const& s);` **with**<br />
@@ -197,15 +195,15 @@ This page describes the process of building qBittorrent on Windows targeting x86
         bjam -j2 -q --toolset=msvc --prefix=T:\install\libtorrent boost=system boost-link=shared link=shared runtime-link=shared variant=release debug-symbols=off resolve-countries=on full-stats=on export-extra=off ipv6=on dht-support=on character-set=unicode geoip=static encryption=openssl windows-version=vista threading=multi address-model=64 host-os=windows target-os=windows embed-manifest=on architecture=x86 warnings=off warnings-as-errors=off inlining=full optimization=speed "cflags=/O2 /GL /favor:blend" "linkflags=/NOLOGO /OPT:REF /OPT:ICF=5 /LTCG" "include=T:\install\OpenSSL\include" "include=T:\install\Boost\include" "library-path=T:\install\OpenSSL\lib" "library-path=T:\install\Boost\lib" "define=BOOST_ALL_NO_LIB" install
     + If you want to build For XP 64-bit or WinServer 2003 64-bit you must build with `windows-version=xp` instead of `windows-version=vista`
 
-# <a id="qt"></a>Build Qt #
+# Build Qt #
 
 1. Unpack Qt into `\sources\Qt\`.
-1. Open `Visual Studio x64 Win64 Command Prompt (2010)`.
+1. Open `VS2013 x64 Native Tools Command Prompt`.
 1. Navigate to Qt source folder.
 1. Build Qt:
 
 
-        .\configure.exe -release -shared -opensource -confirm-license -platform win32-msvc2010 -arch windows -ltcg -no-fast -exceptions -no-accessibility -stl -no-xmlpatterns -no-sql-mysql -no-sql-psql -no-sql-oci -no-sql-odbc -no-sql-tds -no-sql-db2 -qt-sql-sqlite -no-sql-sqlite2 -no-sql-ibase -no-qt3support -no-opengl -no-openvg -graphicssystem raster -qt-zlib -qt-libpng -qt-libmng -qt-libtiff -qt-libjpeg -no-dsp -no-vcproj -no-incredibuild-xge -plugin-manifests -process -mp -rtti -no-3dnow -mmx -sse -sse2 -openssl -no-dbus -no-phonon -no-phonon-backend -no-multimedia -no-audio-backend -no-webkit -no-script -no-scripttools -no-declarative -no-declarative-debug -no-style-s60 -no-style-windowsmobile -no-style-windowsce -no-style-cde -no-style-motif -qt-style-cleanlooks -qt-style-plastique -qt-style-windows -qt-style-windowsxp -qt-style-windowsvista -no-native-gestures -no-directwrite -qmake -nomake examples -nomake demos -nomake docs -I T:\install\OpenSSL\include -L T:\install\OpenSSL\lib -prefix T:\install\Qt
+        .\configure.exe -release -shared -opensource -confirm-license -platform win32-msvc2013 -arch windows -ltcg -no-fast -exceptions -no-accessibility -stl -no-xmlpatterns -no-sql-mysql -no-sql-psql -no-sql-oci -no-sql-odbc -no-sql-tds -no-sql-db2 -qt-sql-sqlite -no-sql-sqlite2 -no-sql-ibase -no-qt3support -no-opengl -no-openvg -graphicssystem raster -qt-zlib -qt-libpng -qt-libmng -qt-libtiff -qt-libjpeg -no-dsp -no-vcproj -no-incredibuild-xge -plugin-manifests -process -mp -rtti -no-3dnow -mmx -sse -sse2 -openssl -no-dbus -no-phonon -no-phonon-backend -no-multimedia -no-audio-backend -no-webkit -no-script -no-scripttools -no-declarative -no-declarative-debug -no-style-s60 -no-style-windowsmobile -no-style-windowsce -no-style-cde -no-style-motif -qt-style-cleanlooks -qt-style-plastique -qt-style-windows -qt-style-windowsxp -qt-style-windowsvista -no-native-gestures -no-directwrite -qmake -nomake examples -nomake demos -nomake docs -I T:\install\OpenSSL\include -L T:\install\OpenSSL\lib -prefix T:\install\Qt
         nmake sub-src
         nmake sub-translations-make_default-ordered
 
@@ -215,10 +213,10 @@ This page describes the process of building qBittorrent on Windows targeting x86
         nmake install
 
 
-# <a id="qbt"></a>Build qBittorrent #
+# Build qBittorrent #
 
 1. Unpack qbittorrent into `\sources\qbt\`.
-1. Open `Visual Studio x64 Win64 Command Prompt (2010)`.
+1. Open `VS2013 x64 Native Tools Command Prompt`.
 1. Navigate to qbittorrent source folder.
 1. Prepare qBt sources:
     + Unpack Maxmind GeoIP.dat file into `.\src\geoip\`
@@ -320,11 +318,9 @@ This page describes the process of building qBittorrent on Windows targeting x86
         echo Translations = ./translations >> T:\install\qBittorrent\qt.conf
         echo Plugins = ./plugins >> T:\install\qBittorrent\qt.conf
 
-# <a id="other"></a>Using resulting binaries on different computers #
+# Using resulting binaries on different computers #
 
-If you want to use the resulting binaries on other Windows computers (or redistribute them) you will need [Microsoft Visual C++ 2010 SP1 Redistributable Package (x64)](https://www.microsoft.com/en-us/download/details.aspx?id=13523). Users must have it installed in order to use any x86\_64 software compiled with Visual Studio 2010. If you are using qBt on computer, which was used for building it, you don't need VC++ 2010 x64 Redistributable Package, because you already have it installed (it came with Visual Studio 2010).
+If you want to use the resulting binaries on other Windows computers (or redistribute them) you will need [Visual C++ Redistributable Packages for Visual Studio 2013 (x64)](http://www.microsoft.com/en-us/download/details.aspx?id=40784). Users must have it installed in order to use any x86\_64 software compiled with Visual Studio 2013. If you are using qBt on computer, which was used for building it, you don't need VC++ 2013 x64 Redistributable Package, because you already have it installed (it came with Visual Studio 2013).
 
 Alternatively you can copy redistributable dlls into program folder like this:
-
-        XCOPY /Y /Q /I "%VCINSTALLDIR%\redist\x64\Microsoft.VC100.CRT\*.dll" T:\install\qBittorrent\
-
+> XCOPY /Y /Q /I "%ProgramFiles(x86)%\Microsoft Visual Studio 12.0\VC\redist\x64\Microsoft.VC120.CRT\\*.dll" T:\install\qBittorrent\
