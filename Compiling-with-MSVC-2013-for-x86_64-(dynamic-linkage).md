@@ -42,7 +42,7 @@ This page describes the process of building qBittorrent on Windows targeting x86
     + [0.16.17](http://sourceforge.net/projects/libtorrent/files/libtorrent/libtorrent-rasterbar-0.16.17.tar.gz/download) is used in this article.
 1. Latest version of [qBittorrent](http://sourceforge.net/projects/qbittorrent/files/qbittorrent) or you can [Download Master Branch from GitHub](https://github.com/qbittorrent/qBittorrent/archive/master.zip).
     + [3.1.9.2](http://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-3.1.9.2/qbittorrent-3.1.9.2.tar.gz/download) is used in this article.
-1. Maxmind [GeoIP Database](https://www.maxmind.com/download/geoip/database/GeoLiteCountry/).
+1. Maxmind [GeoIP Database](http://dev.maxmind.com/geoip/legacy/geolite/).
 
 # Preparing Directory Structure #
 
