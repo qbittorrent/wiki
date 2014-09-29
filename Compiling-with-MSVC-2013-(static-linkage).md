@@ -34,7 +34,7 @@ Let's assume that the working directory(ies) for our compilation will be:
 # Preparation #
 * Install **Perl**.
 * Install **Qt Creator**.
-* Extract **NASM** inside our working dir(s), eg.:
+* Extract **NASM** inside our working dir, eg.:
 	* For **x86**: ```C:\qBittorrent\nasm```
 
 # Compiling zlib #
