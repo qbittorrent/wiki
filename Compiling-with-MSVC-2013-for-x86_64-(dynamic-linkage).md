@@ -35,7 +35,7 @@ This page describes the process of building qBittorrent on Windows targeting x86
 1. Latest version of [Qt](https://qt-project.org/downloads). Look for `The source code is also available as a single zip` on download page. This is what you need, not the prebuilt binaries.
 
     > Note: Qt5 is currently not supported by qBittorrent.
-    + [4.6.8](http://download.qt-project.org/archive/qt/4.8/4.8.6/qt-everywhere-opensource-src-4.8.6.zip) is used in this article.
+    + [4.8.6](http://download.qt-project.org/archive/qt/4.8/4.8.6/qt-everywhere-opensource-src-4.8.6.zip) is used in this article.
 1. Latest version of [Boost](http://www.boost.org/users/download/).
     + [1.56](http://sourceforge.net/projects/boost/files/boost/1.56.0/boost_1_56_0.7z/download) is used in this article.
 1. Latest version of [libtorrent-rasterbar](http://sourceforge.net/projects/libtorrent/files/libtorrent/).
