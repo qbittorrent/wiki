@@ -1,124 +1,257 @@
-This page describes how to compile qBittorrent using MSVC 2008 under Windows. This is tested under Windows XP sp2 but it should work the same under any other Windows version. Also it should build fine with MSVC 2010 with minor adjustments. Here the Express Edition of MSVC 2008 was used but the full edition must behave the same.
+This page describes how to compile qBittorrent for both x86 and x64 platforms using Microsoft Visual C++ 2013 under Windows.
 
-=== What you will need: ===
-* The MSVC 2008 compiler. The Express Edition(free) will do fine.
-* A [http://www.perl.org/ Perl language] interpreter. [http://strawberryperl.com/ Strawberry Perl] will do fine. Download version 5.16.1.1 [http://strawberry-perl.googlecode.com/files/strawberry-perl-5.16.1.1-32bit.msi here].
-* Latest release of the [http://www.nasm.us/ NASM assembler]. Download version 2.10.07 [http://www.nasm.us/pub/nasm/releasebuilds/2.10.07/win32/nasm-2.10.07-win32.zip here].
-* Latest release of [http://www.zlib.net/ Zlib]. Download version 1.2.8 [http://zlib.net/zlib-1.2.8.tar.xz here].
-* Latest release of [http://www.openssl.org/ OpenSSL]. Download version 1.0.1e [https://www.openssl.org/source/openssl-1.0.1e.tar.gz here].
-* Latest release of the [http://www.boost.org/ Boost libraries]. Download version 1.54.0 [http://sourceforge.net/projects/boost/files/boost/1.54.0/boost_1_54_0.7z/download here].
-* Latest release of [http://www.rasterbar.com/products/libtorrent/ libtorrent(rasterbar)]. Download version 0.16.10 [https://libtorrent.googlecode.com/files/libtorrent-rasterbar-0.16.10.tar.gz here].
-* Latest release of the [http://qt-project.org/ Qt libraries] source. Download version 4.8.5 [http://download.qt-project.org/official_releases/qt/4.8/4.8.5/qt-everywhere-opensource-src-4.8.5.tar.gz here].
-* Latest release of [http://www.qbittorrent.org qBittorrent]. Download version 3.0.9 [http://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-3.0.9/qbittorrent-3.0.9.tar.xz/download here].
-* Qt Creator version [ftp://ftp.qt-project.org/qtcreator/qt-creator-win-opensource-2.5.2.exe 2.5.2]. Version 2.6.2 freezes when trying to open the qbittorrent project.
+# Table of Contents #
 
-Let's assume that the working directory for our compilation will be '''C:\qBittorrent'''
+1. [Requirements](#requirements)
+1. [Preparation](#preparation)
+1. [Compiling zlib](#compiling-zlib)
+1. [Compiling OpenSSL](#compiling-openssl)
+1. [Compiling Boost](#compiling-boost)
+1. [Compiling libtorrent](#compiling-libtorrent)
+1. [Compiling Qt4](#compiling-qt4)
+1. [Configuring Qt Creator](#configuring-qt-creator)
+1. [Compiling qBittorrent](#compiling-qbittorrent)
 
-=== Compiling Zlib ===
-* Extract the Zlib source inside our working dir.
-* Open the MSVC2008 command shell. Start->Programs->Microsoft Visual C++ 2008 Express Edition->Visual Studio Tools->Visual Studio 2008 Command Prompt
-* Navigate to the Zlib source folder. eg ''cd C:\qBittorrent\zlib-1.2.7''
-* Edit the win32/Makefile.msc file. Find the CFLAGS and LDFLAGS variables and replace it with these:
- CFLAGS  = -nologo -W3 -O2 -Oy- -Zi -Fd"zlib" nologo -Zm200 -Zc:wchar_t- -O1 -Og -GL -MT $(LOC)
- LDFLAGS = -nologo -debug -incremental:no -opt:ref -opt:icf -dynamicbase -nxcompat -ltcg /nodefaultlib:msvcrt
+***
+
+# Requirements #
+* The Microsoft Visual C++ 2013 compiler.
+* A [Perl language](http://www.perl.org/) interpreter. [Strawberry Perl](http://strawberryperl.com/) or [ActivePerl](http://www.activestate.com/activeperl/downloads) can be used. Download Strawberry Perl 5.20.1.1 [here](http://strawberryperl.com/download/5.20.1.1/strawberry-perl-5.20.1.1-32bit.msi).
+* Latest release of the [NASM assembler](http://www.nasm.us/). Download version 2.11.05 [here](http://www.nasm.us/pub/nasm/releasebuilds/2.11.05/win32/nasm-2.11.05-win32.zip).
+* Latest release of [zlib](http://www.zlib.net/). Download version 1.2.8 [here](http://zlib.net/zlib128.zip).
+* Latest release of [OpenSSL](http://www.openssl.org/). Download version 1.0.1i [here](https://www.openssl.org/source/openssl-1.0.1i.tar.gz).
+* Latest release of the [Boost libraries](http://www.boost.org/). Download version 1.56.0 [here](http://sourceforge.net/projects/boost/files/boost/1.56.0/boost_1_56_0.7z/download).
+* Latest release of [libtorrent-rasterbar](http://www.rasterbar.com/products/libtorrent/). Download version 0.16.17 [here](http://sourceforge.net/projects/libtorrent/files/libtorrent/libtorrent-rasterbar-0.16.17.tar.gz/download).
+* Latest release of the [Qt4 source](http://qt-project.org/). Download version 4.8.6 [here](http://download.qt-project.org/archive/qt/4.8/4.8.6/qt-everywhere-opensource-src-4.8.6.zip).
+* Latest release of [Qt Creator](http://qt-project.org/wiki/category:Tools::QtCreator). Download version 2.3.1 [here](http://download.qt-project.org/official_releases/qtcreator/3.2/3.2.1/qt-creator-opensource-windows-x86-3.2.1.exe).
+* Latest release of [qBittorrent](http://www.qbittorrent.org). Download version 3.1.10 [here](http://sourceforge.net/projects/qbittorrent/qbittorrent/qbittorrent-3.1.10/qbittorrent-3.1.10.tar.gz/download).
+
+Let's assume that the working directory(ies) for our compilation will be:
+1. For **x86**: ```C:\qBittorrent```
+2. For **x64**: ```C:\qBittorrent64```
+
+# Preparation #
+* Install **Perl**.
+* Install **Qt Creator**.
+* Extract **NASM** inside our working dir(s), eg.:
+	* For **x86**: ```C:\qBittorrent\nasm```
+
+# Compiling zlib #
+* Extract the **zlib** source inside our working dir(s).
+* Rename the resulting dir(s) from ```zlib-x.x.x``` to just ```zlib```.
+* Open the **MSVC2013 command shell**:
+	1. For **x86**: ```Start->Programs->Visual Studio 2013->Visual Studio Tools->VS2013 x86 Native Tools Command Prompt```
+	2. For **x64**: ```Start->Programs->Visual Studio 2013->Visual Studio Tools->VS2013 x64 Native Tools Command Prompt```
+* Navigate to the **zlib** source folder:
+	1. For **x86**: ```pushd C:\qBittorrent\zlib```
+	2. For **x64**: ```pushd C:\qBittorrent64\zlib```
+* Edit the ```win32\Makefile.msc``` file.
+* Find the line starting with ```CFLAGS```
+	* Replace ```-MD``` with ```-GL -MT -Zc:wchar_t-```
+* Find the line starting with ```LDFLAGS```
+	* Replace ```-debug``` with ```-opt:icf -dynamicbase -nxcompat -ltcg /nodefaultlib:msvcrt```
 * Issue the following commands:
- nmake -f win32/Makefile.msc LOC="-DASMV -DASMINF" OBJA="inffas32.obj match686.obj"
-* Copy zlib.h, zconf.h, zlib.lib, zlib.pdb to our install dir.
- xcopy zlib.h C:\qBittorrent\install\include\
- xcopy zconf.h C:\qBittorrent\install\include\
- xcopy zlib.lib C:\qBittorrent\install\lib\
- xcopy zlib.pdb C:\qBittorrent\install\lib\
+	1. For **x86**:
+```
+nmake -f win32/Makefile.msc LOC="-DASMV -DASMINF -DNDEBUG -I." OBJA="inffas32.obj match686.obj"
+```
+	2. For **x64**:
+```
+nmake -f win32/Makefile.msc AS=ml64 LOC="-DASMV -DASMINF -DNDEBUG -I." OBJA="inffasx64.obj gvmat64.obj inffas8664.obj"
+```
 
-=== Compiling OpenSSL ===
-* Make sure you have installed perl and nasm.
-* Extract the OpenSSL source inside our working dir.
-* Open the MSVC2008 command shell. Start->Programs->Microsoft Visual C++ 2008 Express Edition->Visual Studio Tools->Visual Studio 2008 Command Prompt
-* Navigate to the OpenSSL source folder. eg ''cd C:\qBittorrent\openssl-1.0.1e''
-* Now we will build a static version of OpenSSL. Issue the following commands:
- perl Configure VC-WIN32 no-shared zlib no-zlib-dynamic threads --prefix=C:\qBittorrent\install -IC:\qBittorrent\install\include -LC:\qBittorrent\install\lib
- ms\do_nasm
-* Edit the ''C:\qBittorrent\openssl-1.0.1e\ms\nt.mak'' file and find the line that says:
- EX_LIBS=/libpath:C:\qBittorrent\install\lib ws2_32.lib gdi32.lib advapi32.lib crypt32.lib user32.lib zlib1.lib
-* Replace '''zlib1.lib''' with '''zlib.lib'''
-* Find the '''CFLAG''' variable and append:
-  -nologo -Zm200 -Zc:wchar_t- -O1 -Og -GL -MT -Zi
-* Find line that says:
- LFLAGS=/nologo /subsystem:console /opt:ref /debug
-* And append:
- /incremental:no /opt:ref /opt:icf /dynamicbase /nxcompat /ltcg /nodefaultlib:msvcrt
-* Then issue the following:
- nmake -f ms\nt.mak
- nmake -f ms\nt.mak install
 
-=== Compiling Boost ===
-* Extract the Boost sources in the working dir.
-* Open the MSVC2008 command shell. Start->Programs->Microsoft Visual C++ 2008 Express Edition->Visual Studio Tools->Visual Studio 2008 Command Prompt
-* Navigate to the Boost source folder. If you are still in the MSVC shell just issue (assuming you have only one folder beginning with the letter 'b' in your qBt folder) the command
-  cd ..
-  cd b<TAB><ENTER>
-* Now you will need to bootstrap Boost so it will build b2.exe(previously bjam.exe). Issue the following command:
- bootstrap.bat 
-* Compile a static version of Boost. Issue the following command where N is the number of CPU cores you have or how many threads you want b2 to use when compiling (msvc version is needed for the correct choice of msvc-9.0 if installed msvc-10.0) (replace N with the number of processor cores):
- b2 -q --with-system --toolset=msvc-9.0 variant=release link=static runtime-link=static -j N
+* Copy **zlib.h**, **zconf.h**, **zlib.lib**, **zlib.pdb** to our install dir.
 
-* (Optional) This is what you can put in a batch file -- e.g. 'mkb.bat' -- to perform the above. Assuming you don't care about how many threads boost will use. You must stay within this command prompt to benefit from the SET command here, when you navigate to the next step.
- call bootstrap
- b2 -q --with-system --toolset=msvc-9.0 variant=release link=static runtime-link=static -j 1
- for /f "tokens=* delims=/" %%A in ('cd') do set BOOST_ROOT=%%A
- echo on
- cd ..
- rem Now navigate to the next folder, issuing the command 'cd L<TAB><ENTER>
+	1. For **x86**:
+```
+xcopy zlib.h C:\qBittorrent\install\include\
+xcopy zconf.h C:\qBittorrent\install\include\
+xcopy zlib.lib C:\qBittorrent\install\lib\
+xcopy zlib.pdb C:\qBittorrent\install\lib\
+```
+	2. For **x64**:
+```
+xcopy zlib.h C:\qBittorrent64\install\include\
+xcopy zconf.h C:\qBittorrent64\install\include\
+xcopy zlib.lib C:\qBittorrent64\install\lib\
+xcopy zlib.pdb C:\qBittorrent64\install\lib\
+```
 
-=== Compiling Libtorrent ===
-* Extract the Libtorrent sources in the working dir.
-* Open the MSVC2008 command shell. Start->Programs->Microsoft Visual C++ 2008 Express Edition->Visual Studio Tools->Visual Studio 2008 Command Prompt
-* Navigate to the Libtorrent source folder. eg ''cd C:\qBittorrent\libtorrent-rasterbar-0.16.9''
-* Copy the b2.exe from the Boost directory to the Libtorrent directory
- copy ..\boost_1_53_0\b2.exe b2.exe
-* Compile a static version of Libtorrent. Issue the following command where N is the number of CPU cores you have or how many threads you want b2 to use when compiling, adjust the value of BOOST_ROOT to the Boost source directory(absolute path) and adjuct the value of the "include=" and "library-path=" keywords:
- b2 -q --without-python --toolset=msvc-9.0 variant=release link=static runtime-link=static encryption=openssl logging=none geoip=static dht-support=on boost=source character-set=unicode boost-link=static -sBOOST_ROOT="C:\qBittorrent\boost_1_53_0" include="C:\QBITTORRENT\install\include" library-path="C:\QBITTORRENT\install\lib" -j N
-* If you want to continue with the lazy batch file approach here's the batch file you need to use (still assuming you haven't left the VS2008 Command prompt) -- copy and paste it to e.g. 'mkl.bat' and place it in your lib* folder and then run it:
- copy %BOOST_ROOT%\b2.exe
- b2 -q --without-python --toolset=msvc-9.0 variant=release link=static runtime-link=static encryption=openssl logging=none geoip=static dht-support=on boost=source character-set=unicode boost-link=static -sBOOST_ROOT="C:\qBittorrent\boost_1_53_0" include="C:\QBITTORRENT\install\include" library-path="C:\QBITTORRENT\install\lib" -j 1
- echo on
- cd ..
- rem Now navigate to the next folder, issuing the command 'cd QT<TAB><ENTER>
+# Compiling OpenSSL #
+* Make sure you have installed **Perl** and **NASM** (for **x86**).
+* Extract the **OpenSSL** source inside our working dir(s).
+* Rename the resulting dir(s) from ```openssl-x.x.x``` to just ```openssl```.
+* Open the **MSVC2013 command shell**:
+	1. For **x86**: ```Start->Programs->Visual Studio 2013->Visual Studio Tools->VS2013 x86 Native Tools Command Prompt```
+	2. For **x64**: ```Start->Programs->Visual Studio 2013->Visual Studio Tools->VS2013 x64 Native Tools Command Prompt```
+* Navigate to the **OpenSSL** source folder:
+	1. For **x86**: ```pushd C:\qBittorrent\openssl```
+	2. For **x64**: ```pushd C:\qBittorrent64\openssl```
+* Now we will build a static version of **OpenSSL**. Issue the following commands:
 
-=== Compiling Qt ===
-* Extract the Qt sources in the working dir.
-* Open the MSVC2008 command shell. Start->Programs->Microsoft Visual C++ 2008 Express Edition->Visual Studio Tools->Visual Studio 2008 Command Prompt
-* Navigate to the Qtsource folder. eg ''cd C:\qBittorrent\qt-everywhere-opensource-src-4.8.4'' 
-* Now we will build a static version of Qt with making as small as possible.
-* Open '''mkspecs\win32-msvc2008\qmake.conf''' and replace the  '''QMAKE_CFLAGS_RELEASE''' line with:
- QMAKE_CFLAGS_RELEASE = -O1 -Og -GL -MT
-'''QMAKE_LFLAGS''' line with:
- QMAKE_LFLAGS = /NOLOGO /DYNAMICBASE /NXCOMPAT /LTCG
-'''QMAKE_LFLAGS_RELEASE''' line with:
- QMAKE_LFLAGS_RELEASE = /INCREMENTAL:NO /NODEFAULTLIB:MSVCRT
-* Open '''src\3rdparty\zlib_dependency.pri''' and replace '''zdll.lib''' with '''zlib.lib'''
-* Do the same for '''src\tools\bootstrap\bootstrap.pri'''
+	1. For **x86**:
+```
+set "PATH=%PATH%;C:\qBittorrent\nasm"
+perl Configure VC-WIN32 no-shared zlib no-zlib-dynamic threads --prefix=C:\qBittorrent\install -IC:\qBittorrent\install\include -LC:\qBittorrent\install\lib
+ms\do_nasm
+```
+	2. For **x64**:
+```
+perl Configure VC-WIN64A no-shared zlib no-zlib-dynamic threads --prefix=C:\qBittorrent64\install -IC:\qBittorrent64\install\include -LC:\qBittorrent64\install\lib
+ms\do_win64a.bat
+```
+* Edit the ```ms\nt.mak``` file:
+	* Find the line that starts with: ```EX_LIBS```
+    	* Replace ```zlib1.lib``` with ```zlib.lib```
+	* Find the line that starts with: ```CFLAG```
+    	* Append: ```/Zc:wchar_t- /GL /Zi```
+	* Find the line that starts with: ```LFLAGS```
+		* Replace ```/debug``` with ```/incremental:no /opt:icf /dynamicbase /nxcompat /ltcg /nodefaultlib:msvcrt```
+	* Then issue the following:
+	```
+nmake -f ms\nt.mak
+nmake -f ms\nt.mak install
+	```
+
+# Compiling Boost #
+* Extract the **Boost** sources in the working dir(s).
+* Rename the resulting dir(s) from ```boost_x_x_x``` to just ```boost```.
+* Open the **MSVC2013 command shell**:
+	1. For **x86**: ```Start->Programs->Visual Studio 2013->Visual Studio Tools->VS2013 x86 Native Tools Command Prompt```
+	2. For **x64**: ```Start->Programs->Visual Studio 2013->Visual Studio Tools->VS2013 x64 Native Tools Command Prompt```
+* Navigate to the **Boost** source folder:
+	1. For **x86**: ```pushd C:\qBittorrent\boost```
+	2. For **x64**: ```pushd C:\qBittorrent64\boost```
+
+* Now you will need to bootstrap **Boost** so it will build ```b2.exe```. Issue the following command: ```bootstrap.bat vc12```
+* Compile a static version of **Boost**. Issue the following command (if you want to set how many threads b2 uses when compiling, add ```-j N``` at the end of the command, where ```N``` is the number of threads; the ```toolset``` parameter is needed for the correct choice of ```msvc-12.0``` if other versions are installed):
+
+	1. For **x86**:
+```
+b2 -q --with-system --toolset=msvc-12.0 variant=release link=static runtime-link=static debug-symbols=off warnings=off warnings-as-errors=off
+```
+	2. For **x64**:
+```
+b2 -q --with-system --toolset=msvc-12.0 variant=release link=static runtime-link=static debug-symbols=off warnings=off warnings-as-errors=off architecture=x86 address-model=64
+```
+
+# Compiling libtorrent #
+* Extract the **libtorrent** sources in the working dir(s).
+* Rename the resulting dir(s) from ```libtorrent-rasterbar-x.x.x``` to just ```libtorrent```.
+* Open the **MSVC2013 command shell**:
+	1. For **x86**: ```Start->Programs->Visual Studio 2013->Visual Studio Tools->VS2013 x86 Native Tools Command Prompt```
+	2. For **x64**: ```Start->Programs->Visual Studio 2013->Visual Studio Tools->VS2013 x64 Native Tools Command Prompt```
+* Navigate to the **libtorrent** source folder:
+	1. For **x86**: ```pushd C:\qBittorrent\libtorrent```
+	2. For **x64**: ```pushd C:\qBittorrent64\libtorrent```
+* Copy the b2.exe from the **Boost** directory to the **libtorrent** directory:
+```
+copy ..\boost\b2.exe b2.exe
+```
+* Compile a static version of **libtorrent**. Issue the following command (if you want to set how many threads b2 uses when compiling, add ```-j N``` at the end of the command, where ```N``` is the number of threads):
+	1. For **x86**:
+```
+b2 -q --without-python --toolset=msvc-12.0 variant=release link=static runtime-link=static encryption=openssl logging=none geoip=static dht-support=on boost=source character-set=unicode boost-link=static -sBOOST_ROOT="C:\qBittorrent\boost" include="C:\qBittorrent\install\include" library-path="C:\qBittorrent\install\lib"
+```
+	2. For **x64**:
+```
+b2 -q --without-python --toolset=msvc-12.0 variant=release link=static runtime-link=static encryption=openssl logging=none geoip=static dht-support=on boost=source character-set=unicode boost-link=static -sBOOST_ROOT="C:\qBittorrent64\boost" include="C:\qBittorrent64\install\include" library-path="C:\qBittorrent64\install\lib" architecture=x86 address-model=64
+```
+
+# Compiling Qt4 #
+* Extract the **Qt4** sources in the working dir(s).
+* Rename the resulting dir(s) from ```qt-everywhere-opensource-src-x.x.x``` to just ```qt4```.
+* Open the **MSVC2013 command shell**:
+	1. For **x86**: ```Start->Programs->Visual Studio 2013->Visual Studio Tools->VS2013 x86 Native Tools Command Prompt```
+	2. For **x64**: ```Start->Programs->Visual Studio 2013->Visual Studio Tools->VS2013 x64 Native Tools Command Prompt```
+* Navigate to the Qt4 source folder:
+	1. For **x86**: ```pushd C:\qBittorrent\qt4```
+	2. For **x64**: ```pushd C:\qBittorrent64\qt4```
+* Now we will build a static version of **Qt4** with making as small as possible.
+* Open ```mkspecs\win32-msvc2013\qmake.conf``` and replace the
+	* Find the line that starts with: ```QMAKE_CFLAGS_RELEASE```
+		* Replace ```-MD``` with ```-GL -MT```
+	* Find the line that starts with: ```QMAKE_LFLAGS```
+		* Replace ```/NXCOMPAT``` with ```/NXCOMPAT /LTCG```
+	* Find the line that starts with: ```QMAKE_LFLAGS_RELEASE```
+		* Replace ```/INCREMENTAL:NO``` with ```/INCREMENTAL:NO /NODEFAULTLIB:MSVCRT```
+* Open ```src\3rdparty\zlib_dependency.pri``` **and** ```src\tools\bootstrap\bootstrap.pri```
+	* Replace ```zdll.lib``` with ```zlib.lib```
 * Issue the following commands:
- configure.exe -debug-and-release -opensource -static -ltcg -fast -system-zlib -no-qt3support -no-opengl -no-openvg -no-dsp -no-vcproj -no-dbus -no-phonon -no-phonon-backend -no-multimedia -no-audio-backend -no-webkit -no-script -no-scripttools -no-declarative -no-declarative-debug -mp -arch windows -qt-style-windowsxp -nomake examples -nomake demos -platform win32-msvc2008 -openssl-linked -largefile -I "C:\QBITTORRENT\install\include" -L "C:\QBITTORRENT\install\lib"
- bin\qmake.exe projects.pro QT_BUILD_PARTS="libs translations"
- nmake
-* At some point the build will fail. Go to '''lib/''' and open in a text editor '''QtNetwork.prl''' and '''QtNetworkd.prl'''. Append to the end of '''QMAKE_PRL_LIBS''' these: '''gdi32.lib crypt32.lib'''
-* Run nmake again.
+	1. For **x86**:
+```
+configure.exe -release -opensource -confirm-license -static -ltcg -fast -system-zlib -no-qt3support -no-opengl -no-openvg -no-dsp -no-vcproj -no-dbus -no-phonon -no-phonon-backend -no-multimedia -no-audio-backend -no-webkit -no-script -no-scripttools -no-declarative -no-declarative-debug -mp -arch windows -qt-style-windowsxp -nomake examples -nomake demos -platform win32-msvc2013 -openssl-linked -largefile -I "C:\qBittorrent\install\include" -L "C:\qBittorrent\install\lib"
+bin\qmake.exe projects.pro QT_BUILD_PARTS="libs translations"
+nmake
+```
+	2. For **x64**:
+```
+configure.exe -release -opensource  -confirm-license -static -ltcg -fast -system-zlib -no-qt3support -no-opengl -no-openvg -no-dsp -no-vcproj -no-dbus -no-phonon -no-phonon-backend -no-multimedia -no-audio-backend -no-webkit -no-script -no-scripttools -no-declarative -no-declarative-debug -mp -arch windows -qt-style-windowsxp -nomake examples -nomake demos -platform win32-msvc2013 -openssl-linked -largefile -I "C:\qBittorrent64\install\include" -L "C:\qBittorrent64\install\lib"
+bin\qmake.exe projects.pro QT_BUILD_PARTS="libs translations"
+nmake
+```
+
 * You can close the command prompt now.
 
-=== Install and Configure Qt Creator ===
-* Just follow the installer instructions for the installation.
-* Launch Qt Creator and select Tools->Options...
-* Select the '''Build & Run''' item from the left and select the '''Qt Versions''' tab.
-* Click the '''Add...''' button and select the qmake.exe you just build. It should be in '''C:\qBittorrent\qt-everywhere-opensource-src-4.8.4\bin\qmake.exe'''
-* Name it something meaningful like "Qt 4.8.4 - MSVC2008"
-* Apply the changes and close the window
+# Configuring Qt Creator #
+* Launch **Qt Creator** and select ```Tools->Options...```
+* Select the ```Build & Run``` item from the left and select the ```Qt Versions``` tab.
+	1. For **x86**:
+		* Click the ```Add...``` button and select ```qmake.exe```. It should be in: ```C:\qBittorrent\qt4\bin\qmake.exe```
+		* Name it something meaningful like ```Qt4 - MSVC2013 (x86)```
+	1. For **x64**:
+		* Click the ```Add...``` button and select ```qmake.exe```. It should be in: ```C:\qBittorrent64\qt4\bin\qmake.exe```
+		* Name it something meaningful like ```Qt4 - MSVC2013 (x64)```
+* Still in the ```Build & Run``` item, select the ```Kits``` tab.
+	1. For **x86**:
+		* Click the ```Add...``` button and name it ```x86```
+		* In ```Compiler``` select ```Microsoft Visual C++ Compiler 12.0 (x86)```
+		* In ```Qt version``` select ```Qt4 - MSVC2013 (x86)```
+	1. For **x64**:
+		* Click the ```Add...``` button and name it ```x64```
+		* In ```Compiler``` select ```Microsoft Visual C++ Compiler 12.0 (amd64)```
+		* In ```Qt version``` select ```Qt4 - MSVC2013 (x64)```
 
-=== Compiling qBittorrent ===
-* Go to [http://www.maxmind.com Maxmind] and download the GeoLite Country database in binary format. Here is the [http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz link].
-* Extract the ''GeoIP.dat'' file inside ''C:\qBittorrent\qbittorrent-3.0.9\src\geoip''.
-* Launch Qt Creator and open the ''qbittorrent.pro'' file in ''C:\qBittorrent\qbittorrent-3.0.9''
-* From the Window that pops up select the Qt version you added above and specify '''release''' version. Also check the ''Use Shadow Building'' checkbox. You can also select where qBittorrent will be built if you want.
-* Open the ''winconf.pri'' file and adjust the paths. Read the comments. '''NOTE:''' Replace any '\' with '/' in the paths to avoid some Qt warnings.
-* Open the ''winconf-msvc.pri'' file and adjust the filename of the lib of Boost.
-* Select Build->Build All
-* After the compilation ends you should have ''qbittorrent.exe'' in ''<build folder>\src\release''. "build folder" is where you chose qBittorrent to be build in the popup window.
+# Compiling qBittorrent #
+* Extract the **qBittorrent** sources in the working dir(s).
+* Go to [Maxmind](http://www.maxmind.com) and download the [GeoLite Country database](http://dev.maxmind.com/geoip/legacy/geolite/) in binary format. Here is the [link](http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz). Extract the ```GeoIP.dat``` file to: ```src\geoip```
+* Open the ```winconf.pri``` file, edit and adjust the paths:
+	1. For **both**:
+    	* Replace ```_WIN32_WINNT=0x0500``` with ```_WIN32_WINNT=0x0501```
+	2. For **x86**:
+    	* Replace ```C:/qBittorrent/boost_1_51_0``` with ```C:/qBittorrent/boost```
+    	* Replace ```C:/qBittorrent/RC_0_16/include``` with ```C:/qBittorrent/libtorrent/include```
+    	* Replace ```C:/qBittorrent/Zlib/include``` with ```C:/qBittorrent/install/include```
+    	* Replace ```C:/qBittorrent/boost_1_51_0/stage/lib``` with ```C:/qBittorrent/boost/stage/lib```
+    	* Replace ```C:/qBittorrent/RC_0_16/bin/<path-according-to-the-build-options-chosen>``` with:
+```
+C:/qBittorrent/libtorrent/bin/msvc-12.0/release/boost-source/encryption-openssl/geoip-static/link-static/runtime-link-static/threading-multi
+```
+    	* Replace ```C:/qBittorrent/Zlib/lib``` with ```C:/qBittorrent/install/lib```
+	3. For **x64**:
+    	* Replace ```C:/qBittorrent/boost_1_51_0``` with ```C:/qBittorrent64/boost```
+    	* Replace ```C:/qBittorrent/RC_0_16/include``` with ```C:/qBittorrent64/libtorrent/include```
+    	* Replace ```C:/qBittorrent/Zlib/include``` with ```C:/qBittorrent64/install/include```
+    	* Replace ```C:/qBittorrent/boost_1_51_0/stage/lib``` with ```C:/qBittorrent64/boost/stage/lib```
+    	* Replace ```C:/qBittorrent/RC_0_16/bin/<path-according-to-the-build-options-chosen>``` with:
+```
+C:/qBittorrent64/libtorrent/bin/msvc-12.0/release/address-model-64/architecture-x86/boost-source/encryption-openssl/geoip-static/link-static/runtime-link-static/threading-multi
+```
+    	* Replace ```C:/qBittorrent/Zlib/lib``` with ```C:/qBittorrent64/install/lib```
+
+* Open the ```winconf-msvc.pri``` file and adjust the filename of the lib of Boost:
+	* Check the ```C:\qBittorrent\boost\stage\lib``` or ```C:\qBittorrent64\boost\stage\lib``` for the ```.lib``` name, eg: ```libboost_system-vc120-mt-s-1_56.lib```
+	* Replace ```libboost_system-vc90-mt-s-1_51.lib``` with the ```.lib``` name.
+
+* Launch **Qt Creator** and open the ```qbittorrent.pro``` file.
+	1. For **x86**: check the ```x86``` checkbox and click ```Configure Project```
+	2. For **x64**: check the ```x64``` checkbox and click ```Configure Project```
+
+* Change the configuration from ```Debug``` to ```Release``` in the left side of the window (where the computer icon is).
+
+* Select ```Build->Build All```
+
+* After the compilation ends you should have ```qbittorrent.exe``` in:
+	1. For **x86**: ```C:\qBittorrent\build-qbittorrent-x86-Release\src\release```
+	2. For **x64**: ```C:\qBittorrent64\build-qbittorrent-x64-Release\src\release```
