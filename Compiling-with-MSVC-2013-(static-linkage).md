@@ -254,7 +254,7 @@ C:/qBittorrent64/libtorrent/bin/msvc-12.0/release/address-model-64/architecture-
     	* Replace ```C:/qBittorrent/Zlib/lib``` with ```C:/qBittorrent64/install/lib```
 
 * Open the ```winconf-msvc.pri``` file and adjust the filename of the lib of Boost:
-	* Check the ```C:\qBittorrent\boost\stage\lib``` or ```C:\qBittorrent64\boost\stage\lib``` for the ```.lib``` name, eg: ```libboost_system-vc120-mt-s-1_56.lib```
+	* Check ```C:\qBittorrent\boost\stage\lib``` or ```C:\qBittorrent64\boost\stage\lib``` for the ```.lib``` name, eg: ```libboost_system-vc120-mt-s-1_56.lib```
 	* Replace ```libboost_system-vc90-mt-s-1_51.lib``` with the ```.lib``` name.
 
 * Launch **Qt Creator** and open the ```qbittorrent.pro``` file.
