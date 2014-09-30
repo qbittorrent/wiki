@@ -18,13 +18,6 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 |  [https://raw.githubusercontent.com/fvisin/qbittorrent_plugins/master/pirateproxy.py Download]
 |  Piratebay proxy - Original plugin modified by Francesco Visin
 |-
-| [[https://raw.githubusercontent.com/fvisin/qbittorrent_plugins/master/kasstocomein.png]] [http://kassto.come.in/]
-|  chris(at)qbittorrent(dot)org
-|  1.24
-|  Sept 30 2014
-|  [https://raw.githubusercontent.com/fvisin/qbittorrent_plugins/master/pirateproxy.py Download]
-|  Kickasstorrent proxy - Original plugin modified by Francesco Visin
-|-
 | [[https://raw.githubusercontent.com/davy39/qbfrench/master/cpasbien.png]] [http://cpasbien.pe]
 |  davy39(at)hmamail(dot)com
 |  1.0
