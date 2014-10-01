@@ -155,17 +155,16 @@ b2 -q --with-system --toolset=msvc-12.0 variant=release link=static runtime-link
 * Navigate to the **libtorrent** source folder:
 	* For **x86**: ```pushd C:\qBittorrent\libtorrent```
 	* For **x64**: ```pushd C:\qBittorrent64\libtorrent```
-* Copy the b2.exe from the **Boost** directory to the **libtorrent** directory: ```copy ..\boost\b2.exe b2.exe```
 * Compile a static version of **libtorrent**. Issue the following command (if you want to set how many threads b2 uses when compiling, add ```-j N``` to the end of the command, where ```N``` is the number of threads):
 	* For **x86**:
 
 		```
-b2 -q --without-python --toolset=msvc-12.0 variant=release link=static runtime-link=static encryption=openssl logging=none geoip=static dht-support=on boost=source character-set=unicode boost-link=static -sBOOST_ROOT="C:\qBittorrent\boost" include="C:\qBittorrent\install\include" library-path="C:\qBittorrent\install\lib"
+..\boost\b2 -q --prefix="stage" --without-python --toolset=msvc-12.0 variant=release link=static runtime-link=static encryption=openssl logging=none geoip=static dht-support=on boost=source character-set=unicode boost-link=static -sBOOST_ROOT="C:\qBittorrent\boost" include="C:\qBittorrent\install\include" library-path="C:\qBittorrent\install\lib" install
 		```
 	* For **x64**:
 
 		```
-b2 -q --without-python --toolset=msvc-12.0 variant=release link=static runtime-link=static encryption=openssl logging=none geoip=static dht-support=on boost=source character-set=unicode boost-link=static -sBOOST_ROOT="C:\qBittorrent64\boost" include="C:\qBittorrent64\install\include" library-path="C:\qBittorrent64\install\lib" architecture=x86 address-model=64
+..\boost\b2 -q --prefix="stage" --without-python --toolset=msvc-12.0 variant=release link=static runtime-link=static encryption=openssl logging=none geoip=static dht-support=on boost=source character-set=unicode boost-link=static -sBOOST_ROOT="C:\qBittorrent64\boost" include="C:\qBittorrent64\install\include" library-path="C:\qBittorrent64\install\lib" architecture=x86 address-model=64 install
 		```
 
 # Compiling Qt4 #
@@ -235,26 +234,18 @@ nmake
     	* Replace ```C:/qBittorrent/RC_0_16/include``` with ```C:/qBittorrent/libtorrent/include```
     	* Replace ```C:/qBittorrent/Zlib/include``` with ```C:/qBittorrent/install/include```
     	* Replace ```C:/qBittorrent/boost_1_51_0/stage/lib``` with ```C:/qBittorrent/boost/stage/lib```
-    	* Replace ```C:/qBittorrent/RC_0_16/bin/<path-according-to-the-build-options-chosen>``` with:
-
-			```
-C:/qBittorrent/libtorrent/bin/msvc-12.0/release/boost-source/encryption-openssl/geoip-static/link-static/runtime-link-static/threading-multi
-			```
+    	* Replace ```C:/qBittorrent/RC_0_16/bin/<path-according-to-the-build-options-chosen>``` with ```C:/qBittorrent/libtorrent/stage/lib```
     	* Replace ```C:/qBittorrent/Zlib/lib``` with ```C:/qBittorrent/install/lib```
 	* For **x64**:
     	* Replace ```C:/qBittorrent/boost_1_51_0``` with ```C:/qBittorrent64/boost```
     	* Replace ```C:/qBittorrent/RC_0_16/include``` with ```C:/qBittorrent64/libtorrent/include```
     	* Replace ```C:/qBittorrent/Zlib/include``` with ```C:/qBittorrent64/install/include```
     	* Replace ```C:/qBittorrent/boost_1_51_0/stage/lib``` with ```C:/qBittorrent64/boost/stage/lib```
-    	* Replace ```C:/qBittorrent/RC_0_16/bin/<path-according-to-the-build-options-chosen>``` with:
-
-			```
-C:/qBittorrent64/libtorrent/bin/msvc-12.0/release/address-model-64/architecture-x86/boost-source/encryption-openssl/geoip-static/link-static/runtime-link-static/threading-multi
-			```
+    	* Replace ```C:/qBittorrent/RC_0_16/bin/<path-according-to-the-build-options-chosen>``` with ```C:/qBittorrent64/libtorrent/stage/lib```
     	* Replace ```C:/qBittorrent/Zlib/lib``` with ```C:/qBittorrent64/install/lib```
 
 * Open the ```winconf-msvc.pri``` file and adjust the filename of the lib of Boost:
-	* Check ```C:\qBittorrent\boost\stage\lib``` or ```C:\qBittorrent64\boost\stage\lib``` for the ```.lib``` name, eg: ```libboost_system-vc120-mt-s-1_56.lib```
+	* Check ```C:\qBittorrent\boost\stage\lib``` or ```C:\qBittorrent64\boost\stage\lib``` for the ```.lib``` name, it should be named in this format: ```libboost_system-vcx-mt-s-x_x.lib```, eg: ```libboost_system-vc120-mt-s-1_56.lib```
 	* Replace ```libboost_system-vc90-mt-s-1_51.lib``` with the ```.lib``` name.
 
 * Launch **Qt Creator** and open the ```qbittorrent.pro``` file.
