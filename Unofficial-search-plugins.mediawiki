@@ -55,10 +55,10 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 |-
 |  [[http://www.qbittorrent.org/wiki-images/NyaaTorrents.png]] [http://www.nyaa.se/ NyaaTorrents]
 |  yukariin(at)yandex(dot)ru
-|  2.11
-|  Mar 21 2014
+|  2.23
+|  Oct 3 2014
 |  [https://raw.githubusercontent.com/Yukariin/qBittorrent-Search-Plugins/master/nyaatorrents.py Download]
-|  Python 3 plugin, using html.parser lib. Tested with qbittorrent 3.1.9
+|  Tested with qbittorrent 3.1.10
 |-
 |  [[https://raw.github.com/mr-mmajoR/myrepo/master/rutor.png]] [http://rutor.org/ rutor.org]
 |  mmajor(at)yandex(dot)ru
