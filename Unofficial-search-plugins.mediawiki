@@ -46,13 +46,6 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 |  [https://raw.githubusercontent.com/davy39/qbfrench/master/torrentfrancais.py Download]
 |  
 |-
-|  [http://yts.re]
-|  craig9(at)gmail(dot)com
-|  1.0
-|  April 13 2014
-|  [https://anonfiles.com/file/ce3be04de24098be9149643bc9afa403 Download]
-|  Needs BeautifulSoup 4 library installed in local python lib
-|-
 |  [[http://www.qbittorrent.org/wiki-images/NyaaTorrents.png]] [http://www.nyaa.se/ NyaaTorrents]
 |  yukariin(at)yandex(dot)ru
 |  2.23
