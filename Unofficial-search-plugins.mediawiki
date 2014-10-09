@@ -11,6 +11,20 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 !  Download link
 !  Comment
 |-
+| [[https://raw.githubusercontent.com/BrunoReX/qbittorrent-search-plugins/master/yts.png]] [http://yts.re/ YTS]
+| brunorex(at)gmail(dot).com
+| 1.0
+| Oct 8 2014
+| [https://raw.githubusercontent.com/BrunoReX/qbittorrent-search-plugins/master/yts.py Download]
+| Tested with qbittorrent 3.1.10
+|-
+|  [[http://www.qbittorrent.org/wiki-images/NyaaTorrents.png]] [http://www.nyaa.se/ NyaaTorrents]
+|  yukariin(at)yandex(dot)ru
+|  2.23
+|  Oct 3 2014
+|  [https://raw.githubusercontent.com/Yukariin/qBittorrent-Search-Plugins/master/nyaatorrents.py Download]
+|  Tested with qbittorrent 3.1.10
+|-
 | [[https://raw.githubusercontent.com/fvisin/qbittorrent_plugins/master/pirateproxy.png]] [http://pirateproxy.bz/]
 |  fab(at)gnux(dot)info
 |  1.53
@@ -45,13 +59,6 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 |  May 29 2014
 |  [https://raw.githubusercontent.com/davy39/qbfrench/master/torrentfrancais.py Download]
 |  
-|-
-|  [[http://www.qbittorrent.org/wiki-images/NyaaTorrents.png]] [http://www.nyaa.se/ NyaaTorrents]
-|  yukariin(at)yandex(dot)ru
-|  2.23
-|  Oct 3 2014
-|  [https://raw.githubusercontent.com/Yukariin/qBittorrent-Search-Plugins/master/nyaatorrents.py Download]
-|  Tested with qbittorrent 3.1.10
 |-
 |  [[https://raw.github.com/mr-mmajoR/myrepo/master/rutor.png]] [http://rutor.org/ rutor.org]
 |  mmajor(at)yandex(dot)ru
