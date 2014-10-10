@@ -21,9 +21,9 @@ This page describes how to compile qBittorrent for both x86 and x64 platforms us
 * Latest release of [zlib](http://www.zlib.net/). Download version 1.2.8 [here](http://zlib.net/zlib128.zip).
 * Latest release of [OpenSSL](http://www.openssl.org/). Download version 1.0.1i [here](https://www.openssl.org/source/openssl-1.0.1i.tar.gz).
 * Latest release of the [Boost libraries](http://www.boost.org/). Download version 1.56.0 [here](http://sourceforge.net/projects/boost/files/boost/1.56.0/boost_1_56_0.7z/download).
-* Latest release of [libtorrent-rasterbar](http://www.rasterbar.com/products/libtorrent/). Download version 0.16.17 [here](http://sourceforge.net/projects/libtorrent/files/libtorrent/libtorrent-rasterbar-0.16.17.tar.gz/download).
+* Latest release of [libtorrent-rasterbar](http://www.libtorrent.org/). Download version 0.16.17 [here](http://sourceforge.net/projects/libtorrent/files/libtorrent/libtorrent-rasterbar-0.16.17.tar.gz/download).
 * Latest release of the [Qt4 source](http://qt-project.org/). Download version 4.8.6 [here](http://download.qt-project.org/archive/qt/4.8/4.8.6/qt-everywhere-opensource-src-4.8.6.zip).
-* Latest release of [Qt Creator](http://qt-project.org/wiki/category:Tools::QtCreator). Download version 2.3.1 [here](http://download.qt-project.org/official_releases/qtcreator/3.2/3.2.1/qt-creator-opensource-windows-x86-3.2.1.exe).
+* Latest release of [Qt Creator](http://qt-project.org/wiki/category:Tools::QtCreator). Download version 3.2.1 [here](http://download.qt-project.org/official_releases/qtcreator/3.2/3.2.1/qt-creator-opensource-windows-x86-3.2.1.exe).
 * Latest release of [qBittorrent](http://www.qbittorrent.org). Download version 3.1.10 [here](http://sourceforge.net/projects/qbittorrent/qbittorrent/qbittorrent-3.1.10/qbittorrent-3.1.10.tar.gz/download).
 
 Let's assume that the working directory(ies) for our compilation will be:
