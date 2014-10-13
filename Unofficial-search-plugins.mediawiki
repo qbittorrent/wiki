@@ -18,6 +18,14 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 | [https://raw.githubusercontent.com/BrunoReX/qbittorrent-search-plugins/master/yts.py Download]
 | Tested with qbittorrent 3.1.10
 |-
+| [http://tokyotosho.info/index.php Tokyo Toshokan]
+| custparaste(at)gmx(dot)se
+| 0.7
+| Oct 13 2014
+| Download 
+[https://github.com/DoumanAsh/qBittorrent-Search-Plugins/blob/master/py3/tokyotoshokan.py python3] [https://github.com/DoumanAsh/qBittorrent-Search-Plugins/blob/master/py2/tokyotoshokan.py python2]
+| python 3 version is tested with qbittorrent 3.1.9.2
+|-
 |  [[http://www.qbittorrent.org/wiki-images/NyaaTorrents.png]] [http://www.nyaa.se/ NyaaTorrents]
 |  yukariin(at)yandex(dot)ru
 |  2.23
