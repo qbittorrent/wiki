@@ -117,13 +117,6 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 |  [https://raw.github.com/cdumez/qBittorrent-Search-Plugins/master/sumotorrent.py Download]
 |
 |-
-|  [[http://www.qbittorrent.org/wiki-images/Rarbg.png]] [http://rarbg.com/ Rarbg]
-|  blood2game(at)yahoo(dot)fr
-|  1.0
-|  May 23 2011
-|  [http://dl.dropbox.com/u/30097239/rarbg.py Download]
-|  Tested with qbittorrent 2.2.11 
-|-
 |  [[http://www.qbittorrent.org/wiki-images/Freetorrent.png]] [http://freetorrent.fr/ Free Torrent (FR)]
 |  sinusnco(at)gmail(dot)com
 |  1.0
