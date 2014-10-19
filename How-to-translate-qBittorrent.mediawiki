@@ -1,57 +1,30 @@
 qBittorrent is currently translated into approximately 25 languages but we are still looking for new translators to help us make qBittorrent available into as many languages as possible.
 
 == Languages already supported ==
-Please refer to the [http://qbittorrent.sourceforge.net/localization.php Internationalization Page] to see if your mother tongue is already supported or not. If it is not supported or if it is outdated, do not hesitate to contact us and become an official translator for the project!
+We are using [https://www.transifex.com/ Transifex] to localize qBittorrent. You can see the current state of the localization by visiting the [https://www.transifex.com/projects/p/qbittorrent/ page of the project].
 
-== Requirements ==
-We are using the internationalization feature provided by Qt, hence it is important that you have qt-linguist software in order to work on the translation file.
-* On Linux, qt-linguist is usually provided in ''qt4-dev-tools'' package. The binary is usually named ''linguist-qt4''.
-* On Windows and Mac OS, you can download Qt Linguist from [http://code.google.com/p/qtlinguistdownload/ this page].
-
-== Get the translation file ==
-First of all, you need to get the latest translation file available. If this is a new translation, you can get the default translation file [http://github.com/qbittorrent/qBittorrent/raw/master/src/lang/qbittorrent_en.ts here].
-
-If you downloaded the default translation file, then you must rename the file according to your locale. 
-Here are some examples:
-* qbittorrent_en.ts : English
-* qbittorrent_fr.ts : French
-* qbittorrent_es.ts : Spanish
-* qbittorrent_zh.ts : Simplified Chinese
-* qbittorrent_zh_HK.ts : Traditional Chinese
-* And so on...
-
-A list of locales is available on this [http://www.iana.org/assignments/language-subtag-registry page].
+If you want to help, sign up for free, select the language you want to translate and request to join the translation team.<br>
+Once you are accepted as member of the team, you can proceed with the translation.
 
 == Proceed with the translation ==
+Transifex provides an easy to use web interface to work on the translation. The only requirement is to be part of the translation team.
 
-Now you just need to open your ''qbittorrent_xx.ts'' file with ''linguist-qt4'' in order to proceed with the translation. You will see all the the translatable string in the left menu.
-
-They can have one of the following states:
-* [[http://www.qbittorrent.org/wiki-images/Translated.png]] Already translated (Good!)
-* [[http://www.qbittorrent.org/wiki-images/Partial.png]] Partially translated or unsure (Must check it and then click on the ''?'' to set as ''Translated'')
-* [[http://www.qbittorrent.org/wiki-images/Untranslated.png]] Not translated (Must translate it from scratch and click on the ''?'' to set as ''Translated'')
-* [[http://www.qbittorrent.org/wiki-images/Error.png]] Error in translation (Usually means that the translation doesn't have the same punctuation as the initial string)
-* [[http://www.qbittorrent.org/wiki-images/Outdated.png]] Outdated (You don't need to translate them, these are not used anymore in qBittorrent)
+You can alternatively work locally using tools such as ''Qt Linguist'' and submit your changes using the Transifex client. Make sure your local files are updated before pushing changes or you may override the work of others.
 
 === Things you need to pay attention to ===
 * HTML tags
-We tried not to put much html code in the translatable strings but some of them still contain some html tags in them. If it is the case, please recopy the html tags in the translation ''as is'' and translate the rest of the string. the html '''MUST''' be present in the translation and at the same location.
-* %1, %2, %3...
-These were introduced to give the translator more flexibility. They must appear ''as is'' in the translated string but their location ''can'' change (this is the point). Some languages require that some words are moved in the sentence in order to be undertandable. (i.e: "Finished to download %1." can be translated in french as "Le téléchargement de %1 est terminé.")
+We tried not to put much html code in the translatable strings but some of them still contain some html tags in them. If it is the case, please recopy the html tags in the translation ''as is'' and translate the rest of the string. the html '''MUST''' be present in the translation and at the same location.<br><br>
 
-{[[http://www.qbittorrent.org/wiki-images/Percentages.png]]
+* %1, %2, %3...
+These were introduced to give the translator more flexibility. They must appear ''as is'' in the translated string but their location ''can'' change (this is the point). Some languages require that some words are moved in the sentence in order to be undertandable. (i.e: "Finished to download %1." can be translated in french as "Le téléchargement de %1 est terminé.")<br><br>
 
 * Keyboard shotcuts: ''&''
-They should be present in the translation too. Just recopy them at the same location.
+They should be present in the translation too. Just recopy them at the same location.<br><br>
+
 * Comments
-Sometimes, it may be important to understand to context in order to translate well. This is why I sometimes include comments in the translation files. They appear on a blue background in QtLinguist. Of course, you must translate the source sentence only, not the comment.
+Sometimes, it may be important to understand to context in order to translate well. This is why I sometimes include comments in the translation files. Refer to refer to ''Context'' in ''More details'' on the online editor.
 
 == Translating Bittorrent specific terms ==
 If you need help understanding some Bittorrent specific terms, you can refer to these pages:
 * [http://en.wikipedia.org/wiki/BitTorrent_vocabulary Wikipedia - Bittorrent vocabulary]
 * [http://btfaq.com/serve/cache/23.html BTFaq - Bittorrent terms]
-
-== Send us your work ==
-Once your translation is finished, please send it to me at ''chris(at)qbittorrent(dot)org''.
-It is important that you do so. This way, we will add your translation ''Mainstream'' and everybody will benefit from your work.
-Your name will appear on the website, on the internationalization page.
