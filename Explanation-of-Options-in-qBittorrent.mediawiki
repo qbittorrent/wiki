@@ -67,7 +67,7 @@ This allows you to run a program on finishing certain types of torrents in a cer
 * '''Maximum number of upload slots''' sets the maximum of upload slots for ''each'' torrent.
 == Proxy server ==
 These options allow you to set up a proxy server to use when downloading torrents. A tutorial of sorts can be accessed [https://kickass.to/community/show/41088/ here] (for µTorrent, but can be used for qBittorrent as well).
-== IP filering ==
+== IP filtering ==
 This is a feature which allows you to block certain ''bad peers''. Didn't understand a word? More information about that [http://www.techzilo.com/ban-utorrent-peers-ip-address/ here].
 
 = Speed =
