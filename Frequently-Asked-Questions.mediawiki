@@ -16,7 +16,7 @@ qBittorrent was created in March 2006 by [mailto:chris@qbittorrent.org Christoph
 == Which operating systems are currently supported by qBittorrent? ==
 qBittorrent code compiles on Unix-like systems (GNU/Linux, BSD, OS X, …) and Windows. Windows is officially supported as of qBittorrent 2.2.9.
 
-== Is qBittorrent integrated in my GNU/Linux distribution? ==
+== Is qBittorrent available on my GNU/Linux distribution? ==
 qBittorrent is included in the official repositories of several major GNU/Linux distributions (Ubuntu, Linux Mint, Fedora, Debian, Gentoo, Arch Linux, …). Binary distributions are usually available to the other distros through 3rd party repositories. If not, feel free to file a request at your GNU/Linux distribution's tracker.
 
 == Is it legal to use qBittorrent? ==
