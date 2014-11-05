@@ -1,11 +1,11 @@
 == What are the terms of use for qBittorrent ? ==
-qBittorrent is [http://www.gnu.org/philosophy/free-sw.html Free Software] (more than just Freeware! Free as in Freedom) released under the [http://www.gnu.org/copyleft/gpl.html GNU GPLv2] license. You don't have to pay for it and this won't change. Its [https://github.com/qbittorrent/qBittorrent code] is open and available to everyone and reusable as long as you keep the license information and mention the original author (see the license text for more information). qBittorrent - of course - does not contain any malware, spyware or undesired third-part programs.
+qBittorrent is [http://www.gnu.org/philosophy/free-sw.html Free Software] (more than just freeware! Free as in Freedom) released under the [http://www.gnu.org/copyleft/gpl.html GNU GPLv2] license. You don't have to pay for it and this won't change. Its [https://github.com/qbittorrent/qBittorrent code] is open and available to everyone and reusable under certain conditions (see the license text for more information). qBittorrent – of course – does not contain any malware, spyware, advertisements or undesired third-party programs.
 
 == I found a bug in the software, where can I report it? ==
 The qBittorrent issue tracker is located right [https://github.com/qbittorrent/qBittorrent/issues here], on the top bar of this page. Please do not hesitate to report any problem you may experience with qBittorrent. We will do our best to address it.
 
 == There is a feature I would like to see in qBittorrent, where can I make a request? ==
-On our issue tracker [https://github.com/qbittorrent/qBittorrent/issues here]. All ideas and feedback are welcome. Just know that we want qBittorrent to remain low-footprint software and we do not want to integrate "heavy" features that are not really useful to most people.
+On our issue tracker [https://github.com/qbittorrent/qBittorrent/issues here]. All ideas and feedback are welcome. Just know that we want qBittorrent to remain low-footprint software and that we do not want to integrate “heavy” features that are not really useful to most people.
 
 == I wrote a patch for qBittorrent, to whom can I send it? ==
 You can either fork our github repository and make a pull request(highly recommended) or send patches to the following address: sledgehammer999(at)qbittorrent(dot)org. We will review them promptly.
@@ -13,18 +13,18 @@ You can either fork our github repository and make a pull request(highly recomme
 == Who is developing qBittorrent? ==
 qBittorrent was created in March 2006 by [mailto:chris@qbittorrent.org Christophe Dumez], and was actively maintained/developed by him until July 2013. After that [mailto:sledgehammer999@qbittorrent.org sledgehammer999] is maintaining the project. Several other people (Arnaud Demaiziere, Ishan Arora, Stephanos Antaris, Mohammad Dib, Gelmir(Dayman)) have contributed or are still contributing to the project. If you like the software and you would like to help the project to subsist by giving some money, please do so [http://sourceforge.net/donate/index.php?group_id=163414 here]. We thank you in advance.
 
-== What Operating systems are currently supported by qBittorrent? ==
-qBittorrent code compiles on Unix-like systems (Linux, BSD, MacOSX...) and Windows. Windows is officially supported as of qBittorrent v2.2.9.
+== Which operating systems are currently supported by qBittorrent? ==
+qBittorrent code compiles on Unix-like systems (GNU/Linux, BSD, OS X, …) and Windows. Windows is officially supported as of qBittorrent 2.2.9.
 
-== Is qBittorrent integrated in my Linux distribution? ==
-qBittorrent is now officially included in the repositories of several major Linux Distributions (Ubuntu, Fedora, Debian, Gentoo, Alt Linux, ...). Binary distributions are usually available to the other distros through 3rd party repositories. If not, feel free to file a bug report against your Linux distribution.
+== Is qBittorrent integrated in my GNU/Linux distribution? ==
+qBittorrent is included in the official repositories of several major GNU/Linux distributions (Ubuntu, Fedora, Debian, Gentoo, Arch Linux, …). Binary distributions are usually available to the other distros through 3rd party repositories. If not, feel free to file a request at your GNU/Linux distribution's tracker.
 
 == Is it legal to use qBittorrent? ==
-qBittorrent is a ''Peer to Peer'' (P2P) file sharing software. Although the software is perfectly legal, it may be illegal to download copyrighted content with this software, depending on the law in your country.
+qBittorrent is a ''peer to peer'' (P2P) file sharing software. Although the software is perfectly legal, it may be illegal to download restricted content with this software, depending on the law in your country.
 
 == Why use qBittorrent instead of another client? ==
 A lot of other BitTorrent clients exist but qBittorrent has several advantages: 
-* It is Free Software (you can see the code and see what qBittorrent is doing).
+* It is Free/Libre Software (you can see the code and see what qBittorrent is doing).
 * It is the closest open-source equivalent to the extremely popular (and Windows only) BitTorrent client: [http://www.utorrent.com µTorrent].  
 * Its development team is very active and friendly.
 * It is stable and it has a low footprint, whilst providing all the features you may need.
@@ -43,7 +43,7 @@ Well, actually I lacked inspiration on this one. :P qBittorrent is simply a BitT
 == Where does qBittorrent save its settings? ==
 qBittorrent saves its preferences in the ''~/.config/qBittorrent/'' folder.
 
-On OS X the preferences are stored in:
+On OS X, the preferences are stored in:
 
 * ''~/Library/Preferences/com.qbittorrent.qBittorrent.plist'' (Actual settings)
 * ''~/Library/Preferences/com.qbittorrent.qBittorrent-resume.plist''
@@ -55,7 +55,7 @@ The .torrent files are stored in:
 * ''%APPDATA%\qBittorrent on Windows.
 * ''~/Library/Application Support/qBittorrent'' on OS X
 
-== How can I reset the settings to default values on OS X?==
+== How can I reset the settings to default values on OS X? ==
 
 You need to delete the qBittorrent .plist files from  ~/Library/Preferences:
 
@@ -64,9 +64,9 @@ You need to delete the qBittorrent .plist files from  ~/Library/Preferences:
 
 And then do the following to reset the plist cache:
 
-<code>$ killall -u yourusername cfprefsd</code>
+<code>$ killall -u yourname cfprefsd</code>
 
-Where "yourusername" is your OS X user name.
+Where “yourname” is your OS X user name.
 
 
 == I configured qBittorrent to not download some files in a torrent but they still appear on my hard disk, why is that? ==
@@ -76,10 +76,10 @@ As you may know, a torrent is split into pieces of equal size that do not take f
 qBittorrent is handling torrent seeding priority by itself in order to optimise sharing and benefit to the swarm as much as possible.
 
 == What do the different colours mean? ==
-Grey colour means inactive (include download, upload and check), green colour means active download, orange colour means active upload and red colour means error.
+Grey colour means inactive (include download, upload and check), green colour means active download, orange colour means active upload and red colour means paused or error.
 
-== How do I import my torrents from another Bittorrent client? ==
-Most users want to keep the torrents they are downloading or seeding when switching to qBittorrent from another Bittorrent client. This is of course possible and it is quite simple to achieve. Here is how you should proceed:
+== How do I import my torrents from another BitTorrent client? ==
+Most users want to keep the torrents they are downloading or seeding when switching to qBittorrent from another BitTorrent client. This is of course possible and it is quite simple to achieve. Here is how you should proceed:
 * Add the *.torrent files corresponding to your torrents to qBittorrent
 ** '''Deluge''' stores its *.torrent files in ''~/.config/deluge/''
 ** '''KTorrent''' stores its *.torrent files in ''~/.kde4/share/apps/ktorrent/''
@@ -93,21 +93,21 @@ Most users want to keep the torrents they are downloading or seeding when switch
 Yes and Yes!
 qBittorrent can be run on your server and controlled remotely through its Web UI. As a default, the Web UI is running on http://server-ip:8080 (user: admin, password: adminadmin). There is a guide for Ubuntu Server install [[Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface|here]]. For other distributions, if your server does not have an X server running, then you will need to disable the qBittorrent graphical user interface at compilation time (≥ v2.1.0 only). Pass --disable-debug parameter to the configure file before compilation to disable the GUI. Instructions on disabling the qBittorrent GUI is available [[Running qBittorrent without X server|here]].
 
-== Is there a firefox/chrome addon that can help me send torrents to qBittorrent? ==
-Yes there is a great firefox addon called [https://addons.mozilla.org/en-US/firefox/addon/bittorrent-webui-120685/ Bit Torrent WebUI+] that can send torrent and magnet links directly to the qBT Web UI server when clicked.
-This addon works with many popular WebUI clients including qBittorrent.
-And yes, there is a Chrome extension that works great with qBittorrent : "Remote Torrent Adder" ! Find it there : https://chrome.google.com/webstore/detail/remote-torrent-adder/oabphaconndgibllomdcjbfdghcmenci
+== Is there a Firefox or Chrome/Chromium addon that can help me send torrents to qBittorrent? ==
+Yes, there is a great Firefox add-on called [https://addons.mozilla.org/en-US/firefox/addon/bittorrent-webui-120685/ Bit Torrent WebUI+] that can send torrent and magnet links directly to the qBT Web UI server when clicked.
+This add-on works with many popular WebUI clients including qBittorrent.
+And yes, there is a Chrome/Chromium extension that works great with qBittorrent : “Remote Torrent Adder”! Find it there : https://chrome.google.com/webstore/detail/remote-torrent-adder/oabphaconndgibllomdcjbfdghcmenci
 
 == My favorite RSS feed requires cookies, how can I configure qBittorrent to use them? ==
-Support for cookies in RSS feeds was added in qBittorrent v2.3.0.
+Support for cookies in RSS feeds was added in qBittorrent 2.3.0.
 
 To use feeds that require cookies, you must find the cookie for the site, and extract the UID and pass parameters from it.
-* '''Firefox''' users will find their cookies in ''Tools -> Options -> Privacy -> Show Cookies''
-* '''Opera''' users will find their cookies in ''Tools -> Advanced -> Cookies''
-* '''Internet Explorer''' users will find their cookies in ''%UserProfile%\Cookies''
+* '''Firefox''' users will find their cookies in '''Tools → Options → Privacy → Show Cookies'''
+* '''Opera''' users will find their cookies in '''Tools → Advanced → Cookies'''
+* '''Internet Explorer''' users will find their cookies in '''%USERPROFILE%\Cookies'''
 * Users of other browsers will have to consult their browsers documentation.
 
-Once you have the appropriate information, right click on the RSS feed in qBittorrent and select ''"Manage cookies"''. Then define the same key/values found in your Web browser cookies. For example:
+Once you have the appropriate information, right click on the RSS feed in qBittorrent and select ''“Manage cookies”''. Then define the same key/values found in your Web browser cookies. For example:
 {| border="1"
 ! Key
 ! Value
@@ -137,13 +137,12 @@ For example, we would have the following Peer IDs for these versions:
 
 == How do I do IP Filtering (eMule and PeerGuardian compatible) in qbittorrent in GNU/Linux? ==
 
-In most GNU/Linuxes go to Tools > Options > Connection 
-Then click on IP Filtering
+In most GNU/Linux distributions, you can go to '''Tools > Options > Connection''' then click on IP Filtering
 
 As far as adding the ipfilter file is concerned, see http://forums.debian.net/viewtopic.php?f=16&t=113690 for a potential way. 
 
 == Restoring qBittorrent from tray when using Openbox ==
-When restoring qBittorrent from the tray in an Openbox desktop environment, it doesn't restore the window's initial geometry, so add this to the end of ~/.config/openbox/rc.xml:
+When restoring qBittorrent from the tray in an Openbox desktop environment, it doesn't restore the window's initial geometry, so add this to the end of '''~/.config/openbox/rc.xml''':
 
     <application class="Qbittorrent" name="qbittorrent">
         <focus>no</focus>
@@ -155,5 +154,4 @@ When restoring qBittorrent from the tray in an Openbox desktop environment, it d
         <layer>normal</layer>
     </application>
 
-This is if you desire to have qBittorrent to be maximized on the whole screen. If you want to have the window restored to a specific size, obapps can be used. You can copy the class and name from the above xml code and set it according to how you like it. obapps can be launched from the terminal.
-
+This is if you desire to have qBittorrent to be maximized on the whole screen. If you want to have the window restored to a specific size, obapps can be used. You can copy the class and name from the above XML code and set it according to how you like it. obapps can be launched from the terminal.
