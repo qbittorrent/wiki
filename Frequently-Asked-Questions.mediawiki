@@ -71,6 +71,9 @@ Where “yourname” is your OS X user name.
 == I configured qBittorrent to not download some files in a torrent but they still appear on my hard disk, why is that? ==
 As you may know, a torrent is split into pieces of equal size that do not take files into consideration. As a consequence, a piece can contain information relative to more than one file and qBittorrent only operates at piece level. Because of this, if two files are adjacent and you choose to download only one of them, it is likely that the filtered one will be partially downloaded and thus appear on the hard-disk.
 
+==Only one tracker is working. The others aren't contacted yet.==
+Tools->Options...->Advanced->Always announce to all trackers.
+
 == Seeding torrents have no priority (i.e. queue position), why? ==
 qBittorrent is handling torrent seeding priority by itself in order to optimise sharing and benefit to the swarm as much as possible.
 
