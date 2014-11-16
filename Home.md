@@ -21,6 +21,7 @@ Welcome to the qBittorrent wiki!
 
 ## Developing
 * [Coding style](wiki/Coding-style)
+
 ##### Search plugins
 * [How to write a search plugin](wiki/How-to-write-a-search-plugin)
 
