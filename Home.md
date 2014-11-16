@@ -18,7 +18,6 @@ Welcome to the qBittorrent wiki!
 ## Linux
 * [Running qBittorrent without X server](wiki/Running-qBittorrent-without-X-server)
 * [Setting up qBittorrent on Ubuntu server as daemon with Web interface] (wiki/Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface)
-* [Desktop Notifications with 'libnotify'](wiki/Easy-pop-up-notifications-using-libnotify)
 
 ## Developing
 ##### Search plugins
