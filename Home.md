@@ -20,6 +20,7 @@ Welcome to the qBittorrent wiki!
 * [Setting up qBittorrent on Ubuntu server as daemon with Web interface] (wiki/Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface)
 
 ## Developing
+* [Coding style](wiki/Coding-style)
 ##### Search plugins
 * [How to write a search plugin](wiki/How-to-write-a-search-plugin)
 
