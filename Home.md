@@ -11,21 +11,24 @@ Welcome to the qBittorrent wiki!
 
 ## Search plugins
 * [List of unofficial search plugins](wiki/Unofficial-search-plugins)
-* [How to write a search plugin](wiki/How-to-write-a-search-plugin)
 
 ## Translation
 * [How to translate qBittorrent](wiki/How-to-translate-qBittorrent)
-
-## Compilation
-* [Windows compilation](wiki/Windows-compilation)
-* [Debian / Ubuntu compilation](wiki/Compiling-qBittorrent-on-Debian-and-Ubuntu)
-* [Mac OSX compilation](wiki/Compilation-guide-for-Mac-OSX-systems)
 
 ## Linux
 * [Running qBittorrent without X server](wiki/Running-qBittorrent-without-X-server)
 * [Setting up qBittorrent on Ubuntu server as daemon with Web interface] (wiki/Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface)
 * [Desktop Notifications with 'libnotify'](wiki/Easy-pop-up-notifications-using-libnotify)
 
-## WebUI-related
+## Developing
+##### Search plugins
+* [How to write a search plugin](wiki/How-to-write-a-search-plugin)
+
+##### Compilation
+* [Windows compilation](wiki/Windows-compilation)
+* [Debian / Ubuntu compilation](wiki/Compiling-qBittorrent-on-Debian-and-Ubuntu)
+* [Mac OSX compilation](wiki/Compilation-guide-for-Mac-OSX-systems)
+
+##### WebUI-related
 * [HTTPS with Self Signed SSL Certificates - Linux](wiki/Linux-WebUI-setting-up-HTTPS-with-self-signed-SSL-certificates)
 * [API Documentation](wiki/WebUI-API-Documentation)
