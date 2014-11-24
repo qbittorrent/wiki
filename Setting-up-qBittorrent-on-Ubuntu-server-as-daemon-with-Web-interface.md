@@ -165,6 +165,12 @@ case "$1" in
 	;;
 esac
 ```
+Save the file. Once you've created and saved the script, make it executable and make sure it's owned by root.
+
+```
+sudo chmod 755 /etc/init.d/qbittorrent
+sudo chown root:root /etc/init.d/qbittorrent
+```
 
 **User Configuration**
 
@@ -244,4 +250,3 @@ sudo rm /var/log/qbittorrent-nox.log #Removes the log file
 sudo rm -R /home/qbtuser/.config/qBittorrent #Removes config. You may have reason to keep this
 sudo add-apt-repository -r ppa:surfernsk/internet-software # Removes the PPA if you used it.
 ```
-
