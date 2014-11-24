@@ -187,7 +187,6 @@ Now you'll want to run qbittorrent to get it to generate the config file and sho
 ```
 sudo su qbtuser
 sudo qbittorrent-nox
-exit
 ```
 
 You'll see the following:
@@ -217,7 +216,11 @@ Now that first run is accomplished, you can log in to your server's IP address o
 Username is 'admin'
 Password is 'adminadmin'
 
-Once you have logged in and see that its working, you can proceed. Go back to the terminal and terminate the process by pressing 'CTRL+C'. You can now start qbittorrent with:
+Once you have logged in and see that its working, you can proceed. Go back to the terminal and terminate the process by pressing 'CTRL+C'. Return to your normal user by exiting
+
+`exit`
+
+You can now start qbittorrent with:
 
 **Starting the Daemon**
 
