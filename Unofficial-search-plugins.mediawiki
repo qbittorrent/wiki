@@ -23,7 +23,7 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 | 0.7
 | Oct 13 2014
 | Download 
-[https://github.com/DoumanAsh/qBittorrent-Search-Plugins/blob/master/py3/tokyotoshokan.py python3] [https://github.com/DoumanAsh/qBittorrent-Search-Plugins/blob/master/py2/tokyotoshokan.py python2]
+[https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/py3/tokyotoshokan.py python3] [https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/py2/tokyotoshokan.py python2]
 | python 3 version is tested with qbittorrent 3.1.9.2
 |-
 |  [[http://www.qbittorrent.org/wiki-images/NyaaTorrents.png]] [http://www.nyaa.se/ NyaaTorrents]
