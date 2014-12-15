@@ -97,8 +97,9 @@ After downloading the content of the web page containing the results (using ''re
 
 In order to parse the pages, you can use the following python modules (not exhaustive):
 * ''xml.dom.minidom'': xml parser. Be careful, this parser is very sensitive and the website must be fully XHTML compliant for this to work.
-* ''sgmllib.SGMLParser'': SGML parser. Less sensitive and very efficient. '''[ADVISED METHOD]'''
+* ''sgmllib.SGMLParser'': SGML parser. Less sensitive and very efficient. DEPRECATED
 * ''re'': If you like using regular expressions (''regex'')
+* ''[https://docs.python.org/2/library/htmlparser.html HTMLParser]/[https://docs.python.org/3/library/html.parser.html html.parser]'': Builtin python parser which replaces deprecated SGMLParser. Mostly similar to the SMGLParser '''[ADVISED METHOD]'''
 
 ==Examples==
 Do not hesitate to use the official search engine plugins as an example. They are available [https://github.com/qbittorrent/qBittorrent/tree/master/src/searchengine/nova/engines here]. 
