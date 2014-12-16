@@ -29,11 +29,11 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 |-
 | [http://tokyotosho.info/index.php Tokyo Toshokan]
 | custparaste(at)gmx(dot)se
-| 0.7
+| 1.0
 | Oct 13 2014
 | Download 
 [https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/py3/tokyotoshokan.py python3] [https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/py2/tokyotoshokan.py python2]
-| python 3 version is tested with qbittorrent 3.1.9.2
+| python 2 version is tested with qBittorent 3.1.11
 |-
 |  [[http://www.qbittorrent.org/wiki-images/NyaaTorrents.png]] [http://www.nyaa.se/ NyaaTorrents]
 |  yukariin(at)yandex(dot)ru
