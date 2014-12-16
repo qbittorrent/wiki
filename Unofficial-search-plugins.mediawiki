@@ -13,7 +13,7 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 |-
 | [https://oldpiratebay.org/ Old Pirate Bay]
 | custparaste(at)gmx(dot)se
-| 1.0
+| 1.1
 | Dec 16 2014
 | Download 
 [https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/py3/old_pirate_bay.py python3]
