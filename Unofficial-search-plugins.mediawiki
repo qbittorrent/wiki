@@ -79,10 +79,10 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 |-
 |  [[https://raw.github.com/mr-mmajoR/myrepo/master/rutor.png]] [http://rutor.org/ rutor.org]
 |  mmajor(at)yandex(dot)ru
-|  1.01
-|  May 7 2013
-|  [https://raw.github.com/mr-mmajoR/myrepo/master/rutor.py Download]
-|  Tested with qbittorrent 3.0.9
+|  1.10
+|  Dec 20 2014
+|  [https://raw.githubusercontent.com/kmlebedev/myrepo/master/rutor.py Download]
+|  Tested with qbittorrent 3.1.15
 |-
 |  [[http://www.qbittorrent.org/wiki-images/Limetorrents.png]] [http://www.limetorrents.com LimeTorrents 1.01]
 |  richard(at)richardurban(dot)de
