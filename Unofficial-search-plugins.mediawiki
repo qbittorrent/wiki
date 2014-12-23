@@ -12,7 +12,7 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 !  Comment
 |-
 | [[https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/py2/old_pirate_bay.png]] [https://oldpiratebay.org/ Old Pirate Bay]
-| custparaste(at)gmx(dot)se
+| custparasite(at)gmx(dot)se
 | 1.2
 | Dec 16 2014
 | Download 
@@ -28,7 +28,7 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 | Tested with qbittorrent 3.1.10
 |-
 | [http://tokyotosho.info/index.php Tokyo Toshokan]
-| custparaste(at)gmx(dot)se
+| custparasite(at)gmx(dot)se
 | 1.0
 | Oct 13 2014
 | Download 
