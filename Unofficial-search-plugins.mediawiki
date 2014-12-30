@@ -11,13 +11,12 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 !  Download link
 !  Comment
 |-
-| [[https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/py2/old_pirate_bay.png]] [https://oldpiratebay.org/ Old Pirate Bay]
+| [[https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/old_pirate_bay/old_pirate_bay.png]] [https://oldpiratebay.org/ Old Pirate Bay]
 | custparasite(at)gmx(dot)se
-| 1.3
-| Dec 24 2014
+| 1.5
+| Dec 30 2014
 | Download 
-[https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/py3/old_pirate_bay.py python3]
-[https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/py2/old_pirate_bay.py python2]
+[https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/old_pirate_bay/old_pirate_bay.py Download]
 | Python2 version is tested with qBittorent 3.1.11
 |-
 | [[https://raw.githubusercontent.com/BrunoReX/qbittorrent-search-plugins/master/yts.png]] [http://yts.re/ YTS]
