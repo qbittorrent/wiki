@@ -25,12 +25,11 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 | [https://raw.githubusercontent.com/BrunoReX/qbittorrent-search-plugins/master/yts.py Download]
 | Tested with qbittorrent 3.1.10
 |-
-| [http://tokyotosho.info/index.php Tokyo Toshokan]
+| [[https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/tokyotoshokan/tokyotoshokan.ico]] [http://tokyotosho.info/index.php Tokyo Toshokan]
 | custparasite(at)gmx(dot)se
-| 1.0
-| Oct 13 2014
-| Download 
-[https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/py3/tokyotoshokan.py python3] [https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/py2/tokyotoshokan.py python2]
+| 1.1
+| Dec 30 2014
+| [https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/tokyotoshokan/tokyotoshokan.py Download]
 | python 2 version is tested with qBittorent 3.1.11
 |-
 |  [[http://www.qbittorrent.org/wiki-images/NyaaTorrents.png]] [http://www.nyaa.se/ NyaaTorrents]
