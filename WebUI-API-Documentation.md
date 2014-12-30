@@ -35,7 +35,7 @@
   1. [Set torrent upload limit](#set-torrent-upload-limit)
   1. [Set qBittorrent preferences](#set-qbittorrent-preferences)
 1. [Additional information](#additional-information)
-  1. [Version 3.0.8 bugs](#version-3.0.8-bugs)
+  1. [Version 3.0.8 bugs](#version-308-bugs)
 
 ***
 
