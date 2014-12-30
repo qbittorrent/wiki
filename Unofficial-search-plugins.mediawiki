@@ -25,7 +25,7 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 | [https://raw.githubusercontent.com/BrunoReX/qbittorrent-search-plugins/master/yts.py Download]
 | Tested with qbittorrent 3.1.10
 |-
-| [[https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/tokyotoshokan/tokyotoshokan.ico]] [http://tokyotosho.info/index.php Tokyo Toshokan]
+| [http://tokyotosho.info/index.php Tokyo Toshokan]
 | custparasite(at)gmx(dot)se
 | 1.1
 | Dec 30 2014
