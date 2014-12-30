@@ -1,45 +1,45 @@
 # Table of Contents #
 
-1. [Authorization](#auth)
-1. [GET methods](#GET)
-  1. [Shutdown qBittorrent](#shutdown)
-  1. [Get torrent list](#torrentlist)
-  1. [Get torrent generic properties](#propsgen)
-  1. [Get torrent trackers](#propstrack)
-  1. [Get torrent contents](#propscont)
-  1. [Get global transfer info](#globalinfo)
-  1. [Get qBittorrent preferences](#prefget)
-1. [POST methods](#POST)
-  1. [Download torrent from URL](#dlweb)
-  1. [Upload torrent from disk](#dldisk)
-  1. [Add trackers to torrent](#addtrack)
-  1. [Pause torrent](#pausetorrent)
-  1. [Pause all torrents](#pauseall)
-  1. [Resume torrent](#resumetorrent)
-  1. [Resume all torrents](#resumeall)
-  1. [Delete torrent](#delete)
-  1. [Delete torrent with downloaded data](#deleteperm)
-  1. [Recheck torrent](#recheck)
-  1. [Increase torrent priority](#prioup)
-  1. [Decrease torrent priority](#priodown)
-  1. [Maximal torrent priority](#priotop)
-  1. [Minimal torrent priority](#priobottom)
-  1. [Set file priority](#priofile)
-  1. [Get global download limit](#getglobaldl)
-  1. [Set global download limit](#setglobaldl)
-  1. [Get global upload limit](#getglobalul)
-  1. [Set global upload limit](#setglobalul)
-  1. [Get torrent download limit](#gettorrentdl)
-  1. [Set torrent download limit](#settorrentdl)
-  1. [Get torrent upload limit](#gettorrentul)
-  1. [Set torrent upload limit](#settorrentul)
-  1. [Set qBittorrent preferences](#setpref)
-1. [Additional information](#postscriptum)
-  1. [Version 3.0.8 bugs](#3.0.8)
+1. [Authorization](#authorization)
+1. [GET methods](#get-methods)
+  1. [Shutdown qBittorrent](#shutdown-qbittorrent)
+  1. [Get torrent list](#get-torrent-list)
+  1. [Get torrent generic properties](#get-torrent-generic-properties)
+  1. [Get torrent trackers](#get-torrent-trackers)
+  1. [Get torrent contents](#get-torrent-contents)
+  1. [Get global transfer info](#get-global-transfer-info)
+  1. [Get qBittorrent preferences](#get-qbittorrent-preferences)
+1. [POST methods](#post-methods)
+  1. [Download torrent from URL](#download-torrent-from-url)
+  1. [Upload torrent from disk](#upload-torrent-from-disk)
+  1. [Add trackers to torrent](#add-trackers-to-torrent)
+  1. [Pause torrent](#pause-torrent)
+  1. [Pause all torrents](#pause-all-torrents)
+  1. [Resume torrent](#resume-torrent)
+  1. [Resume all torrents](#resume-all-torrents)
+  1. [Delete torrent](#delete-torrent)
+  1. [Delete torrent with downloaded data](#delete-torrent-with-downloaded-data)
+  1. [Recheck torrent](#recheck-torrent)
+  1. [Increase torrent priority](#increase-torrent-priority)
+  1. [Decrease torrent priority](#decrease-torrent-priority)
+  1. [Maximal torrent priority](#maximal-torrent-priority)
+  1. [Minimal torrent priority](#minimal-torrent-priority)
+  1. [Set file priority](#set-file-priority)
+  1. [Get global download limit](#get-global-download-limit)
+  1. [Set global download limit](#set-global-download-limit)
+  1. [Get global upload limit](#get-global-upload-limit)
+  1. [Set global upload limit](#set-global-upload-limit)
+  1. [Get torrent download limit](#get-torrent-download-limit)
+  1. [Set torrent download limit](#set-torrent-download-limit)
+  1. [Get torrent upload limit](#get-torrent-upload-limit)
+  1. [Set torrent upload limit](#set-torrent-upload-limit)
+  1. [Set qBittorrent preferences](#set-qbittorrent-preferences)
+1. [Additional information](#additional-information)
+  1. [Version 3.0.8 bugs](#version-3.0.8-bugs)
 
 ***
 
-# <a id="auth"></a>Authorization #
+# Authorization #
 
 Authorization requires using `Authorization` header inside GET/POST requests. qBittorrent uses the standard Digest Authorization type (using a MD5 hash generator).
 
@@ -117,9 +117,9 @@ Host: 127.0.0.1
 Authorization: Digest username="admin", realm="Web UI Access", nonce="a3f396f2dcc1cafae73637e2ac321134", uri="/", response="4067cfe4c029cd00b56076c78abd034c"
       ```
 
-# <a id="GET"></a> GET methods #
+# GET methods #
 
-### <a id="shutdown"></a>Shutdown qBittorrent ###
+### Shutdown qBittorrent ###
 
 ```http
 GET /command/shutdown HTTP/1.1
@@ -128,7 +128,7 @@ Host: 127.0.0.1
 Authorization: your_auth_string
 ```
 
-### <a id="torrentlist"></a>Get torrent list ###
+### Get torrent list ###
 
 ```http
 GET /json/torrents HTTP/1.1
@@ -193,7 +193,7 @@ where
 
 **BIG FAT WARNING 2:** Raw data this methods provides can exceed 40 KiB for ~200 torrents. Continuous polling is strongly discouraged for mobile clients.
 
-### <a id="propsgen"></a>Get torrent generic properties ###
+### Get torrent generic properties ###
 
 Requires known torrent hash, get 'em from [torrent list](#torrentlist).
 
@@ -234,7 +234,7 @@ where
 `nb_connections` - (translated string) number of connections, value in parentheses represents maximum number of connections per torrent set in preferences<br/>
 `share_ratio` - (translated string) UL/DL ratio; contains `∞` for ratios > 100 <br/>
 
-### <a id="propstrack"></a>Get torrent trackers ###
+### Get torrent trackers ###
 
 Requires known torrent hash, get 'em from [torrent list](#torrentlist).
 
@@ -277,7 +277,7 @@ where
 `num_peers` - number of peers for current torrent eported by tracker<br/>
 `msg` - tracker message (there is no way of knowing what this message is - it's up to tracker admins)<br/>
 
-### <a id="propscont"></a>Get torrent contents ###
+### Get torrent contents ###
 
 Requires known torrent hash, get 'em from [torrent list](#torrentlist).
 
@@ -319,7 +319,7 @@ where
 
 `is_seed` - only present for the first file in torrent; true if torrent is in seed mode<br/>
 
-### <a id="globalinfo"></a>Get global transfer info ###
+### Get global transfer info ###
 
 This method returns info you usually see in qBt status bar.
 
@@ -344,7 +344,7 @@ where
 `dl_info` - (translated string) contains current global downalod speed and global amount of data downaloded during this session<br/>
 `up_info` - (translated string) contains current global upload speed and global amount of data uploaded during this session<br/>
 
-### <a id="prefget"></a>Get qBittorrent preferences ###
+### Get qBittorrent preferences ###
 
 ```http
 GET http://127.0.0.1/json/preferences HTTP/1.1
@@ -466,11 +466,11 @@ where
 `dyndns_password` - password for DDNS service<br/>
 `dyndns_domain` - your DDNS domain name <br/>
 
-# <a id="POST"></a>POST methods #
+# POST methods #
 
 **Please adjust you auth string aacordingly for POST methods.**
 
-### <a id="dlweb"></a>Download torrent from URL ###
+### Download torrent from URL ###
 
 This method can add torrents from urls and magnet links. BC links are also supported.
 
@@ -498,7 +498,7 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
-### <a id="dldisk"></a>Upload torrent from disk ###
+### Upload torrent from disk ###
 
 ```http
 POST http://127.0.0.1/command/upload HTTP/1.1
@@ -538,7 +538,7 @@ content-length: 64
 <script type="text/javascript">window.parent.hideAll();</script>
 ```
 
-### <a id="addtrack"></a>Add trackers to torrent ###
+### Add trackers to torrent ###
 
 Requires known torrent hash, get 'em from [torrent list](#torrentlist).
 
@@ -561,7 +561,7 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
-### <a id="pausetorrent"></a>Pause torrent ###
+### Pause torrent ###
 
 Requires known torrent hash, get 'em from [torrent list](#torrentlist).
 
@@ -582,7 +582,7 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
-### <a id="pauseall"></a>Pause all torrents ###
+### Pause all torrents ###
 
 ```http
 POST http://127.0.0.1/command/pauseall HTTP/1.1
@@ -598,7 +598,7 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
-### <a id="resumetorrent"></a>Resume torrent ###
+### Resume torrent ###
 
 Requires known torrent hash, get 'em from [torrent list](#torrentlist).
 
@@ -619,7 +619,7 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
-### <a id="resumeall"></a>Resume all torrents ###
+### Resume all torrents ###
 
 ```http
 POST http://127.0.0.1/command/resumeall HTTP/1.1
@@ -635,7 +635,7 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
-### <a id="delete"></a>Delete torrent ###
+### Delete torrent ###
 
 Requires known torrent hash, get 'em from [torrent list](#torrentlist).
 
@@ -658,7 +658,7 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
-### <a id="deleteperm"></a>Delete torrent with downloaded data ###
+### Delete torrent with downloaded data ###
 
 Requires known torrent hash, get 'em from [torrent list](#torrentlist).
 
@@ -681,7 +681,7 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
-### <a id="recheck"></a> Recheck torrent ###
+### Recheck torrent ###
 
 Requires known torrent hash, get 'em from [torrent list](#torrentlist).
 
@@ -701,7 +701,7 @@ No matter if successful or not server will return the following reply:
 ```http
 HTTP/1.1 200 OK
 ```
-### <a id="prioup"></a>Increase torrent priority ###
+### Increase torrent priority ###
 
 Requires known torrent hash, get 'em from [torrent list](#torrentlist).
 
@@ -724,7 +724,7 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
-### <a id="priodown"></a>Decrease torrent priority ###
+### Decrease torrent priority ###
 
 Requires known torrent hash, get 'em from [torrent list](#torrentlist).
 
@@ -747,7 +747,7 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
-### <a id="priotop"></a>Maximal torrent priority ###
+### Maximal torrent priority ###
 
 Requires known torrent hash, get 'em from [torrent list](#torrentlist).
 
@@ -770,7 +770,7 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
-### <a id="priobottom"></a>Minimal torrent priority ###
+### Minimal torrent priority ###
 
 Requires known torrent hash, get 'em from [torrent list](#torrentlist).
 
@@ -793,7 +793,7 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
-### <a id="priofile"></a>Set file priority ###
+### Set file priority ###
 
 Requires known torrent hash, get 'em from [torrent list](#torrentlist).
 
@@ -816,7 +816,7 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
-### <a id="getglobaldl"></a>Get global download limit ###
+### Get global download limit ###
 
 ```http
 POST http://127.0.0.1/command/getGlobalDlLimit HTTP/1.1
@@ -838,7 +838,7 @@ content-length: length
 
 `3145728` is the value of current global download speed limit in bytes; this value will be zero if no limit is applied.
 
-### <a id="setglobaldl"></a>Set global download limit ###
+### Set global download limit ###
 
 ```http
 POST http://127.0.0.1/command/setGlobalDlLimit HTTP/1.1
@@ -859,7 +859,7 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
-### <a id="getglobalul"></a>Get global upload limit ###
+### Get global upload limit ###
 
 ```http
 POST http://127.0.0.1/command/getGlobalUpLimit HTTP/1.1
@@ -881,7 +881,7 @@ content-length: length
 
 `3145728` is the value of current global upload speed limit in bytes; this value will be zero if no limit is applied.
 
-### <a id="setglobalul"></a>Set global upload limit ###
+### Set global upload limit ###
 
 ```http
 POST http://127.0.0.1/command/setGlobalUpLimit HTTP/1.1
@@ -902,7 +902,7 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
-### <a id="gettorrentdl"></a>Get torrent download limit ###
+### Get torrent download limit ###
 
 Requires known torrent hash, get 'em from [torrent list](#torrentlist).
 
@@ -929,7 +929,7 @@ content-length: length
 
 `338944` is the value of current torrent download speed limit in bytes; this value will be zero if no limit is applied.
 
-### <a id="settorrentdl"></a>Set torrent download limit ###
+### Set torrent download limit ###
 
 Requires known torrent hash, get 'em from [torrent list](#torrentlist).
 
@@ -952,7 +952,7 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
-### <a id="gettorrentul"></a>Get torrent upload limit ###
+### Get torrent upload limit ###
 
 Requires known torrent hash, get 'em from [torrent list](#torrentlist).
 
@@ -979,7 +979,7 @@ content-length: length
 
 `338944` is the value of current torrent upload speed limit in bytes; this value will be zero if no limit is applied.
 
-### <a id="settorrentul"></a>Set torrent upload limit ###
+### Set torrent upload limit ###
 
 Requires known torrent hash, get 'em from [torrent list](#torrentlist).
 
@@ -1002,7 +1002,7 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
-### <a id="setpref"></a>Set qBittorrent preferences ###
+### Set qBittorrent preferences ###
 
 ```http
 POST http://127.0.0.1/command/setPreferences HTTP/1.1
@@ -1028,9 +1028,9 @@ HTTP/1.1 200 OK
 
 For a list of possible preference options see [Get qBittorrent preferences](#prefget)
 
-# <a id="postscriptum"></a>Additional information #
+# Additional information #
 
-### <a id="3.0.8"></a>Version 3.0.8 bugs ###
+### Version 3.0.8 bugs ###
 
 The following WebUI-related bugs exist in qBittorent v3.0.8 and lower:
 
