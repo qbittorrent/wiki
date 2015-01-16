@@ -11,6 +11,13 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 !  Download link
 !  Comment
 |-
+| [[https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/torlock/torlock.png]] [http://www.torlock.com/ Torlock]
+| custparasite(at)gmx(dot)se
+| 1.0
+| Jan 17 2015
+| [https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/torlock/torlock.py Download]
+| Python2 version is tested with qBittorent 3.2alpha
+|-
 | [[https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/old_pirate_bay/old_pirate_bay.png]] [https://oldpiratebay.org/ Old Pirate Bay]
 | custparasite(at)gmx(dot)se
 | 1.5
