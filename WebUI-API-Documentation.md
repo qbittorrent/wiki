@@ -131,7 +131,7 @@ Authorization: your_auth_string
 ### Get torrent list ###
 
 ```http
-GET /json/torrents HTTP/1.1
+GET /query/torrents HTTP/1.1
 User-Agent: Fiddler
 Host: 127.0.0.1
 Authorization: your_auth_string
@@ -198,7 +198,7 @@ where
 Requires known torrent hash, get 'em from [torrent list](#torrentlist).
 
 ```http
-GET /json/propertiesGeneral/fae6e49afa359ab07c3ef169438ff95d870bc178 HTTP/1.1
+GET /query/propertiesGeneral/fae6e49afa359ab07c3ef169438ff95d870bc178 HTTP/1.1
 User-Agent: Fiddler
 Host: 127.0.0.1
 Authorization: your_auth_string
@@ -239,7 +239,7 @@ where
 Requires known torrent hash, get 'em from [torrent list](#torrentlist).
 
 ```http
-GET http://127.0.0.1/json/propertiesTrackers/fae6e49afa359ab07c3ef169438ff95d870bc178 HTTP/1.1
+GET http://127.0.0.1/query/propertiesTrackers/fae6e49afa359ab07c3ef169438ff95d870bc178 HTTP/1.1
 User-Agent: Fiddler
 Host: 127.0.0.1
 Authorization: your_auth_string
@@ -282,7 +282,7 @@ where
 Requires known torrent hash, get 'em from [torrent list](#torrentlist).
 
 ```http
-GET http://127.0.0.1/json/propertiesFiles/fae6e49afa359ab07c3ef169438ff95d870bc178 HTTP/1.1
+GET http://127.0.0.1/query/propertiesFiles/fae6e49afa359ab07c3ef169438ff95d870bc178 HTTP/1.1
 User-Agent: Fiddler
 Host: 127.0.0.1
 Authorization: your_auth_string
@@ -324,7 +324,7 @@ where
 This method returns info you usually see in qBt status bar.
 
 ```http
-GET http://127.0.0.1/json/transferInfo HTTP/1.1
+GET http://127.0.0.1/query/transferInfo HTTP/1.1
 User-Agent: Fiddler
 Host: 127.0.0.1
 Authorization: your_auth_string
@@ -347,7 +347,7 @@ where
 ### Get qBittorrent preferences ###
 
 ```http
-GET http://127.0.0.1/json/preferences HTTP/1.1
+GET http://127.0.0.1/query/preferences HTTP/1.1
 User-Agent: Fiddler
 Host: 127.0.0.1
 Authorization: your_auth_string
