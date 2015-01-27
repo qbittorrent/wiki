@@ -7,8 +7,8 @@ The qBittorrent issue tracker is located right [https://github.com/qbittorrent/q
 == There is a feature I would like to see in qBittorrent, where can I make a request? ==
 On our issue tracker [https://github.com/qbittorrent/qBittorrent/issues here]. All ideas and feedback are welcome. Just know that we want qBittorrent to remain low-footprint software and that we do not want to integrate “heavy” features that are not really useful to most people.
 
-== How can I turn off the '''Splash Screen''' / Loading Icon? ==
-You can turn this off by Unchecking "[ ] Show splash screen on start up" in Tools -> Options -> Behaviour. That will make qBittorrent start ''silently''.
+== How can I turn off the "Splash Screen" / "Loading Icon"? ==
+You can turn this off by Unchecking "[ ] Show splash screen on start up" in Tools -> Options -> Behaviour. That will make qBittorrent start "silently".
 
 == I wrote a patch for qBittorrent, to whom can I send it? ==
 You can either fork our GitHub repository and make a pull request (highly recommended) or send patches to the following address: sledgehammer999(at)qbittorrent(dot)org. We will review them promptly.
