@@ -13,7 +13,7 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 |-
 | [[https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/torlock/torlock.png]] [http://www.torlock.com/ Torlock]
 | custparasite(at)gmx(dot)se
-| 1.5
+| 1.6
 | Feb 6 2015
 | [https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/torlock/torlock.py Download]
 | Python2 version is tested with qBittorent 3.2alpha
