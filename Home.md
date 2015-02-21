@@ -8,7 +8,7 @@ Welcome to the qBittorrent wiki!
 
 ## Troubleshooting
 * [I forgot my UI lock password](wiki/I-forgot-my-UI-lock-password)
-* [Speed issues](https://github.com/qbittorrent/qBittorrent/wiki/Things-we-need-to-know-to-help-you-with-'speed'-issues.)
+* [Speed issues](https://github.com/qbittorrent/qBittorrent/wiki/Things-we-need-to-know-to-help-you-with-'speed'-issues)
 
 ## Search plugins
 * [List of unofficial search plugins](wiki/Unofficial-search-plugins)
