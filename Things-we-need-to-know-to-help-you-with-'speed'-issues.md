@@ -48,9 +48,11 @@ If a specific loaded task is a problem, please provide;
 The status of the task.
 
 Seed and Peer counts in bracketed form x(n) ... The number in the bracket is potential, the number outside is actual. 
+
 Tracker status information.
+
 If providing screen shots for any of the above, **please** hide the name column or obfuscate the name and/or hash id of the task along with 'access keys' in 'private' tracker URIs
 
 
-## Please note: We **DO NOT** need or want metadata file (.torrent) URIs or magnet links to downloadable content that is **NOT** open source or public domain material. Failure to comply with this will result in a warning and/or account removal. 
+Please note: We **DO NOT** need or want metadata file (.torrent) URIs or magnet links to downloadable content that is **NOT** open source or public domain material. Failure to comply with this will result in a warning and/or account removal. 
 
