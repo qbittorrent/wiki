@@ -105,7 +105,7 @@ do_start()
 
 	start-stop-daemon --start --chuid $USER --test --quiet --make-pidfile --pidfile $PIDFILE -background --exec /bin/bash -- -c "$DAEMONSTRING" || return 1
 
-	start-stop-daemon --start --chuid $USER --make-pidfile --pidfile $PIDFILE --background --exec bin/bash -- -c "$DAEMONSTRING" || return 2
+	start-stop-daemon --start --chuid $USER --make-pidfile --pidfile $PIDFILE --background --exec /bin/bash -- -c "$DAEMONSTRING" || return 2
 	sleep 1
 }
 
