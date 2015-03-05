@@ -72,10 +72,8 @@ That's it! qBittorrent should now be installed. You can now run qBittorrent usin
 == Compiling qBittorrent (without the Qt4 graphical interface) ==
 Now, let's get to the interesting part: compiling qBittorrent.
 
-Go back to qBittorrent_compiling/ folder:
-cd .. ()
-
-Grab latest qBittorrent from GIT:
+Go back to qBittorrent_compiling/ folder and grab latest qBittorrent from GIT:
+ cd ..
  git clone https://github.com/qbittorrent/qBittorrent.git
 
 Ok, now let's compile it:
