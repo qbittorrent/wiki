@@ -54,8 +54,8 @@ For more information on building libtorrent, see [http://www.rasterbar.com/produ
 == Compiling qBittorrent (with the Qt4 graphical interface) ==
 Now, let's get to the interesting part: compiling qBittorrent.
 
-Grab latest qBittorrent from GIT:
- cd .. (to go back to qBittorrent_compiling/ folder)
+Go back to qBittorrent_compiling/ folder and grab latest qBittorrent from GIT:
+ cd ..
  git clone https://github.com/qbittorrent/qBittorrent.git
 
 Ok, now let's compile it:
@@ -72,8 +72,10 @@ That's it! qBittorrent should now be installed. You can now run qBittorrent usin
 == Compiling qBittorrent (without the Qt4 graphical interface) ==
 Now, let's get to the interesting part: compiling qBittorrent.
 
+Go back to qBittorrent_compiling/ folder:
+cd .. ()
+
 Grab latest qBittorrent from GIT:
- cd .. (to go back to qBittorrent_compiling/ folder)
  git clone https://github.com/qbittorrent/qBittorrent.git
 
 Ok, now let's compile it:
