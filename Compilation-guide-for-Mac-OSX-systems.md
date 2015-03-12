@@ -31,7 +31,7 @@ to
 # Download source
  
  1. Download main source from [qBittorrent's](http://www.qbittorrent.org/download.php) download page, extract the tarball.
- 2. Optional: Download the [geoip dat](http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz) file.and extract it to qbittorrents src/geoip folder.
+ 2. Optional: Download the [geoip dat](http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz) file and extract it to qbittorrent's src/geoip folder.
 
 # Compilation
 
