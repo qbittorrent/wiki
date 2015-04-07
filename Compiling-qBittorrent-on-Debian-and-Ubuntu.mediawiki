@@ -10,8 +10,10 @@ This How to will guide you though the compilation of qBittorrent and libtorrent-
  libboost-serialization-dev libboost-signals-dev libboost-test-dev \
  libboost-thread-dev libssl-dev
 
-* Qt4 libraries
- sudo apt-get install libqt4-dev
+* Qt5 libraries
+ sudo apt-add-repository ppa:ubuntu-sdk-team/ppa
+ sudo apt-get update
+ sudo apt-get install qtdeclarative5-dev
 
 * Python (Run time only dependency, for the search engine)
  sudo apt-get install python
@@ -51,7 +53,7 @@ Then you can install libtorrent using the following commands:
 
 For more information on building libtorrent, see [http://www.rasterbar.com/products/libtorrent/building.html libtorrent downloading and building]
 
-== Compiling qBittorrent (with the Qt4 graphical interface) ==
+== Compiling qBittorrent (with the Qt5 graphical interface) ==
 Now, let's get to the interesting part: compiling qBittorrent.
 
 Go back to qBittorrent_compiling/ folder and grab latest qBittorrent from GIT:
@@ -69,7 +71,7 @@ And to install it:
 That's it! qBittorrent should now be installed. You can now run qBittorrent using the following command:
  qbittorrent
 
-== Compiling qBittorrent (without the Qt4 graphical interface) ==
+== Compiling qBittorrent (without the Qt5 graphical interface) ==
 Now, let's get to the interesting part: compiling qBittorrent.
 
 Go back to qBittorrent_compiling/ folder and grab latest qBittorrent from GIT:
