@@ -33,8 +33,8 @@ First you should get libtorrent-rasterbar from SVN:
  mkdir -p qBittorrent_compiling
  cd qBittorrent_compiling
 
-* Libtorrent v0.16
- svn co https://svn.code.sf.net/p/libtorrent/code/branches/RC_0_16 libtorrent
+* Libtorrent v1.0.4
+ svn co https://svn.code.sf.net/p/libtorrent/code/branches/RC_1_0/ libtorrent
 
 You should now have the latest libtorrent svn branch in libtorrent/ folder. You will notice that there is no configure file provided. Hence, you must generate it yourself by issuing the following commands:
  cd libtorrent
