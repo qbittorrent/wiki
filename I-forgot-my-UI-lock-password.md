@@ -1,4 +1,4 @@
-You locked qBittorrent user interface and forgot the password you used?
+You locked the qBittorrent user interface and forgot the password you used?
 Don't worry, you can recover from this.
 
 ## Windows
@@ -27,8 +27,10 @@ locked=true
 
 ## Mac OS X
 * Kill qBittorrent
-* Open a terminal and type the following:
-``rm $HOME/Library/Preferences/com.qbittorrent.plist*``
+* Open a terminal and run the following command:
+```shell
+defaults delete com.qbittorrent.qBittorrent Locking.locked; defaults delete com.qbittorrent.qBittorrent Locking.password
+```
 * Start qBittorrent again
 
 The user interface should not be locked anymore. Next time you lock it, it will ask you to choose a password again.
