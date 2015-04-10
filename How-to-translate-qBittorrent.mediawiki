@@ -23,7 +23,7 @@ These were introduced to give the translator more flexibility. They must appear 
 They should be present in the translation too. Just recopy them at the same location.<br><br>
 
 * Comments
-Sometimes, it may be important to understand to context in order to translate well. This is why I sometimes include comments in the translation files. Refer to refer to ''Context'' in ''More details'' on the online editor.
+Sometimes, it may be important to understand to context in order to translate well. This is why I sometimes include comments in the translation files. Refer to ''Context'' in ''More details'' on the online editor.
 
 == Translating Bittorrent specific terms ==
 If you need help understanding some Bittorrent specific terms, you can refer to these pages:
