@@ -109,13 +109,6 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 |  [https://raw.github.com/cdumez/qBittorrent-Search-Plugins/master/divxtotal.py Download]
 |  
 |-
-|  [[http://www.qbittorrent.org/wiki-images/Torrentz.png]] [http://torrentz.eu/ Torrentz]
-|  hazuki.shiro(at)gmail(dot)com
-|  1.2
-|  Nov 13 2011
-|  [https://raw.github.com/cdumez/qBittorrent-Search-Plugins/master/torrentz.py Download]
-|  
-|-
 |  [[http://www.qbittorrent.org/wiki-images/Demonoid.png]] [http://www.demonoid.me/ Demonoid]
 |  hazuki.shiro(at)gmail(dot)com
 |  1.2
