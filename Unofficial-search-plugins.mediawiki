@@ -102,6 +102,13 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 |  [https://bitbucket.org/starius/qbittorrent-plugins/downloads/tfile.py Download]
 |  Tested with qbittorrent 2.2.11
 |-
+|  [[http://www.qbittorrent.org/wiki-images/Tfile.png]] [http://tfile.me/ tfile.me]
+|  bnagaev(at)gmail(dot)com, danerde(at)gmail(dot)com
+|  1.0
+|  Apr 28 2015
+|  [https://raw.github.com/danerde/qbittorrent-plugins/master/tfile_me.py Download]
+|  Tested with qbittorrent 3.1.8
+|-
 |  [[http://www.qbittorrent.org/wiki-images/Divxtotal.png]] [http://divxtotal.com/ DivxTotal]
 |  hazuki.shiro(at)gmail(dot)com
 |  1.2
