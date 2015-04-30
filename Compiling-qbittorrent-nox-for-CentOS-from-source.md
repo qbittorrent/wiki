@@ -1,4 +1,4 @@
-After stumbling for about 3 hours here is the concise list of commands to build as per:
+After stumbling for about 3 hours _(not knowing what the distro package names were to install)_ here is the concise list of commands to build as per:
 
 * https://github.com/qbittorrent/qBittorrent/commit/452b643e0c449fdd53e159776f0608e7fb2a4014
 * CentOS 7 x64
