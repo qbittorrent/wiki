@@ -5,10 +5,8 @@ After stumbling for about 3 hours _(not knowing what the distro package names we
 * 2015/04/30
 
 ```
-yum groupinstall 'Development Tools'
-yum install qt-devel
-yum install boost-devel
-yum install openssl-devel
+yum -y groupinstall 'Development Tools'
+yum -y install qt-devel boost-devel openssl-devel
 
 wget http://sourceforge.net/projects/libtorrent/files/libtorrent/libtorrent-rasterbar-1.0.4.tar.gz
 tar -zxf libtorrent-rasterbar-1.0.4.tar.gz
