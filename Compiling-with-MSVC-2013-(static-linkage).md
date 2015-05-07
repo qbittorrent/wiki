@@ -166,6 +166,11 @@ b2 -q --with-system --toolset=msvc-12.0 variant=release link=static runtime-link
 		```
 ..\boost\b2 -q --prefix="stage" --without-python --toolset=msvc-12.0 variant=release link=static runtime-link=static encryption=openssl logging=none geoip=static dht-support=on boost=source character-set=unicode boost-link=static -sBOOST_ROOT="C:\qBittorrent64\boost" include="C:\qBittorrent64\install\include" library-path="C:\qBittorrent64\install\lib" architecture=x86 address-model=64 install
 		```
+	* Note: When you use **libtorrent-rasterbar-1.0.4**: 
+		change ```dht-support=on``` to ```dht=on```
+		see [libtorrent manual](http://www.libtorrent.org/building.html)
+
+
 
 # Compiling Qt4 #
 * Extract the **Qt4** sources in the working dir(s).
