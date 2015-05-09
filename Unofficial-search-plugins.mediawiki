@@ -13,8 +13,8 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 |-
 | [[https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/demonoid/demonoid.png]] [https://www.demonoid.pw/ Demonoid]
 | custparasite(at)gmx(dot)se
-| 1.0
-| April 20 2015
+| 1.1
+| May 09 2015
 | [https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/demonoid/demonoid.py Download]
 | Python3 version is tested with qBittorent 3.2beta
 |-
