@@ -113,7 +113,7 @@ To use feeds that require cookies, you must find the cookie for the site, and ex
 * Users of other browsers will have to consult their browsers documentation.
 
 Once you have the appropriate information, right click on the RSS feed in qBittorrent and select ''“Manage cookies”''. Then define the same key/values found in your Web browser cookies. For example:
-{| border="1"
+{| border="0"
 ! Key
 ! Value
 |-
