@@ -1,7 +1,9 @@
 qBittorrent provides a search engine plugins management system. Thanks to this, you can ''easily'' write your own plugins to look for torrents in your favorite Bittorrent search engines and extend qBittorrent integrated search engine.
 
 All you need is some motivation and some knowledge of [http://www.python.org Python language].
-But it would be good to also follow good coding style(Use only spaces and tab indent should be 4 space)
+
+But it would be good to also follow good coding style: **Use only spaces and tab indent should be 4 space**.
+
 For more see [https://www.python.org/dev/peps/pep-0008/ PEP0008]
 
 ==Plugins specification==
