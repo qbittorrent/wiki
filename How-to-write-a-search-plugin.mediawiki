@@ -2,7 +2,7 @@ qBittorrent provides a search engine plugins management system. Thanks to this, 
 
 All you need is some motivation and some knowledge of [http://www.python.org Python language].
 
-But it would be good to also follow good coding style: *Use only spaces and tab indent should be 4 space*.
+But it would be good to also follow good coding style: '''Use only spaces and tab indent should be 4 space'''.
 
 For more see [https://www.python.org/dev/peps/pep-0008/ PEP0008]
 
