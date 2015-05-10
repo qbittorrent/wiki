@@ -11,6 +11,13 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 !  Download link
 !  Comment
 |-
+| [[https://raw.githubusercontent.com/MrNeon/qbittorrent-search-plugins/master/strikesearch.ico]][https://getstrike.net/torrents/ Strike Search]
+| iamtheneon(at)gmail(dot)com
+| 1.01
+| May 10 2015
+| [https://github.com/MrNeon/qbittorrent-search-plugins/blob/master/strikesearch.py Download]
+| Tested with qBittorrent 3.2.0
+|-
 | [[https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/demonoid/demonoid.png]] [https://www.demonoid.pw/ Demonoid]
 | custparasite(at)gmx(dot)se
 | 1.1
