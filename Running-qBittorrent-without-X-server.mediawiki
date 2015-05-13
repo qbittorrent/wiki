@@ -58,7 +58,7 @@ qBittorrent-nox does not need as many dependencies as standard qBittorrent becau
 == How to run qbittorrent-nox on startup ==
 Warning! Ubuntu 15.04 switched to Systemd, do not use the script below with 15.04, it will be corrected.
 
-A qBittorrent user (Jakster) wrote an init script for Debian to run qbittorrent-nox on startup.<br />This script can be found [http://launchpadlibrarian.net/38905385/qbittorrent here] | [http://pastebin.com/nvMZiAxQ mirror]. 
+A qBittorrent user (Jakster) wrote an init script for Debian to run qbittorrent-nox on startup.<br />This script can be found [http://launchpadlibrarian.net/38905385/qbittorrent here] | [http://pastebin.com/nvMZiAxQ mirror] | [https://qbforums.shiki.hu/index.php/topic,3483.0.html mirror2]. 
 Save it in ''/etc/init.d/'' folder, under the name ''qbittorrent-nox-daemon''.
 
 You can do this in one step, by issuing this command:
