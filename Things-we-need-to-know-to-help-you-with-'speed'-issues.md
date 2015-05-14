@@ -47,7 +47,7 @@ If a specific loaded task is a problem, please provide;
 
 The status of the task.
 
-Seed and Peer counts in bracketed form x(n) ... The number in the bracket is potential, the number outside is actual. 
+Seed and Peer counts in bracketed form x(n) ... The number in the bracket is possible, the number outside is actual. 
 
 Tracker status information.
 
