@@ -31,7 +31,7 @@ to
 # Download source
  
  1. Download main source from [qBittorrent's](http://www.qbittorrent.org/download.php) download page, extract the tarball.
- 2. Optional: Download the [geoip dat](http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz) file and extract it to qbittorrent's src/geoip folder.
+ 2. Optional: Download the [geoip dat](http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz) file and extract it to qbittorrent's src/gui/geoip folder.
 
 # Compilation
 
@@ -104,7 +104,7 @@ qbittorrent-3.1.9.tar.gz   GeoP.dat.gz
 
 -- Unpack qbittorrent's source code and GeoIP.dat data file into proper locations as follows:  
 % gzip -cd qbittorrent-3.1.9.tar.gz | tar -xvf -  
-% gzip -cd GeoIP.dat.gz > qbittorrent-3.1.9/src/geoip/GeoIP.dat  
+% gzip -cd GeoIP.dat.gz > qbittorrent-3.1.9/src/gui/geoip/GeoIP.dat  
 
 -- Modify path settings in configuration file macxconf.pri (backup file: macxconf.pri.backup)  
 % sed -i '.backup' '/^INCLUDEPATH/,/^LIBS/ s:/opt/local:/usr/local:g' qbittorrent-3.1.9/macxconf.pri  
