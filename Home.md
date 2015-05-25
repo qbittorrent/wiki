@@ -9,7 +9,7 @@ Welcome to the qBittorrent wiki!
 
 ## Troubleshooting
 * [I forgot my UI lock password](wiki/I-forgot-my-UI-lock-password)
-* [qBittorrent Support Forom](http://forum.qbittorrent.org/)
+* [qBittorrent Support Forum](http://forum.qbittorrent.org/)
 * [Speed issues](https://github.com/qbittorrent/qBittorrent/wiki/Things-we-need-to-know-to-help-you-with-'speed'-issues)
 
 ## Search plugins
