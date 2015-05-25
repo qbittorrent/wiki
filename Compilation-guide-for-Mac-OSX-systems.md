@@ -111,7 +111,7 @@ qbittorrent-3.1.9.tar.gz   GeoP.dat.gz
 
 -- Change directory to create Make file and initiate compilation, the resultant qbittorrent application file will be located in src directory.  
 % cd qbittorrent-3.1.9  
-% qmake abittorrent.pro  
+% qmake qbittorrent.pro  
 % make  
 
 -- Optional steps to package and create disk image file for future distribution:  
