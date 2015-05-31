@@ -17,13 +17,15 @@ This is essential. Also before asking, please ensure that you are using the late
 
 Connections: Global maximum and per torrent.
 
+Listening port
+
 Upload slots: Global maximum and per torrent
 
 Half-open connection value.
 
 Is uTP on or off?
 
-Rate limit uTP?
+Rate limiting uTP?
 
 Encryption on or off?
 
@@ -31,7 +33,9 @@ IPv6 on or off?
 
 Connection status? (the icon on the status bar will tell you)
 
-Are you using a proxy?
+DHT node count (on the status bar)
+
+Are you using a proxy or a VPN?
 
 ## What type of user profile are you?
 
