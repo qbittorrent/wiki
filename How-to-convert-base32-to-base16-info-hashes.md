@@ -4,14 +4,14 @@ When interfacing qBittorrent through the WebUI api, there are cases when you add
 
 ### Special case: base32 encoded info-hashes.
 
-For compatibility reasons, the same document states that clients should also support the 32 character base32 encoded info-hash. When adding such a magnet link, qBittorrent will automatically convert it to a base16 hash, and you end up with a mismatching handle (the original base32 encoded info-hash and the base16 one used by qBittorrent). In this situation it's necesary to previously re-encode the hash yourself. Basically you need to decode the base32 hash and then re-encode it to base16, this way you´ll have the same string as qBittorrent.
+For compatibility reasons, the same document states that clients should also support the 32 character base32 encoded info-hash. When adding such a magnet link, qBittorrent will automatically convert it to a base16 hash, and you end up with a mismatching handle (the original base32 encoded info-hash and the base16 one used by qBittorrent). In this situation it's necessary to previously re-encode the hash yourself. Basically you need to decode the base32 hash and then re-encode it to base16, this way you´ll have the same string as qBittorrent.
 
 ### Example:
-Supose you have the following magnet link:
+Suppose you have the following magnet link:
 
     magnet:?xt=urn:btih:WRN7ZT6NKMA6SSXYKAFRUGDDIFJUNKI2
 
-if it´s added to qBittorrent and then you issue a /query/torrents command, you´ll get a JSON object like this (fields other than "hash" are ommited):
+if it´s added to qBittorrent and then you issue a /query/torrents command, you´ll get a JSON object like this (fields other than "hash" are ommitted):
   
     [{...,"hash":"b45bfccfcd5301e94af8500b1a1863415346a91a",...},...]
 
