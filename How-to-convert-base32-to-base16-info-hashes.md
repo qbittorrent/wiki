@@ -1,4 +1,4 @@
-### Using info-hashes as downloads handles.
+### Using info-hashes as download handles.
 
 When interfacing qBittorrent through the WebUI api, there are cases when you add a download via a magnet URI and then you want to track its state (for instance, to perform certain file operation once it's finished). The problem here is that the /command/download method does not return a handle to the download for you to track it. On the other hand, webUI api methods refer to every download through its info-hash, so it's possible to use that string as a handle. As every magnet URI will contain, al least, the info-hash (as stated in [this](http://www.bittorrent.org/beps/bep_0009.html) document at BitTorrent.org) you can parse the hash string from the uri itself. These hashes are base16 encoded, for a total of 40 characters.  
 
