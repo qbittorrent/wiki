@@ -31,6 +31,8 @@ Encryption on or off?
 
 IPv6 on or off?
 
+libtorrent version Use Help -> About -> Libraries to identify that.
+
 Connection status? (the icon on the status bar will tell you)
 
 DHT node count (on the status bar)
