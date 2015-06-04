@@ -17,7 +17,7 @@ make install
 ln -s /usr/lib/pkgconfig/libtorrent-rasterbar.pc /usr/lib64/pkgconfig/libtorrent-rasterbar.pc
 ln -s /usr/lib/libtorrent-rasterbar.so.8 /usr/lib64/libtorrent-rasterbar.so.8
 
-cd..
+cd ..
 git clone https://github.com/qbittorrent/qBittorrent.git
 cd qBittorrent
 ./configure --prefix=/usr --disable-gui
