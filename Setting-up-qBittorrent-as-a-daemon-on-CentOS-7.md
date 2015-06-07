@@ -3,7 +3,7 @@
 * systemctl
 
 # Install
-Follow this guide https://github.com/qbittorrent/qBittorrent/wiki/Compiling-qbittorrent-nox-for-CentOS-from-source
+Follow this guide [Compiling qbittorrent-nox for CentOS from source](wiki/Compiling-qbittorrent-nox-for-CentOS-from-source)
 
 # Creating a systemctl script
 1. Create a script so that we can control qbittorrent with systemctl  
