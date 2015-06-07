@@ -22,6 +22,7 @@ Welcome to the qBittorrent wiki!
 * [Running qBittorrent without X server](wiki/Running-qBittorrent-without-X-server)
 * [Setting up qBittorrent on Ubuntu server as daemon with Web interface] (wiki/Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface)
 * [Compiling qbittorrent-nox for CentOS from source] (wiki/Compiling-qbittorrent-nox-for-CentOS-from-source)
+* [Setting up qBittorrent as a daemon on CentOS 7] (wiki/Setting-up-qBittorrent-as-a-daemon-on-CentOS-7)
 
 ## Developing
 * [Coding style](wiki/Coding-style)
