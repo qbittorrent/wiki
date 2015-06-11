@@ -18,13 +18,6 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 | [https://github.com/MrNeon/qbittorrent-search-plugins/blob/master/strikesearch.py Download]
 | Tested with qBittorrent 3.2.0
 |-
-| [[https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/demonoid/demonoid.png]] [https://www.demonoid.pw/ Demonoid]
-| custparasite(at)gmx(dot)se
-| 1.1
-| May 09 2015
-| [https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/demonoid/demonoid.py Download]
-| Python3 version is tested with qBittorent 3.2beta
-|-
 | [[https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/torlock/torlock.png]] [http://www.torlock.com/ Torlock]
 | custparasite(at)gmx(dot)se
 | 1.6
