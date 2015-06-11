@@ -95,13 +95,6 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 |  [https://raw.github.com/richardurban/qBittorrent-Search-Plugins/master/limetorrents.py Download]
 |  Bugfix for changed search and result page format
 |-
-|  [[http://www.qbittorrent.org/wiki-images/Tfile.png]] [http://tfile.ru/ tfile.ru]
-|  bnagaev(at)gmail(dot)com
-|  1.0
-|  Dec 8 2011
-|  [https://bitbucket.org/starius/qbittorrent-plugins/downloads/tfile.py Download]
-|  Tested with qbittorrent 2.2.11
-|-
 |  [[http://www.qbittorrent.org/wiki-images/Tfile.png]] [http://tfile.me/ tfile.me]
 |  bnagaev(at)gmail(dot)com, danerde(at)gmail(dot)com
 |  1.0
