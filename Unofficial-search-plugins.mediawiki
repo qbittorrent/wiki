@@ -122,12 +122,6 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 |  Feb 07 2011
 |  [http://sourceforge.net/projects/qbt-extrasearch/files/freetorrent_fr-1.0.tar.gz/download Download]
 |  Tested with qBittorrent >= 2.6.5
-|-
-|  [[http://www.qbittorrent.org/wiki-images/Limetorrents.png]] [http://www.limetorrents.com LimeTorrents]
-|  chris(at)qbittorrent(dot)org
-|  1.0
-|  Dec 29 2010
-|  [https://raw.github.com/cdumez/qBittorrent-Search-Plugins/master/limetorrents.py Download]
 |
 |-
 |}
