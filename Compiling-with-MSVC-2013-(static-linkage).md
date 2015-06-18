@@ -230,7 +230,7 @@ nmake
 
 # Compiling qBittorrent #
 * Extract the **qBittorrent** sources in the working dir(s).
-* Go to [Maxmind](http://www.maxmind.com) and download the [GeoLite Country database](http://dev.maxmind.com/geoip/legacy/geolite/) in binary format. Here is the [link](http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz). Extract the ```GeoIP.dat``` file to: ```src\geoip```
+* Go to [Maxmind](http://www.maxmind.com) and download the [GeoLite Country database](http://dev.maxmind.com/geoip/legacy/geolite/) in binary format. Here is the [link](http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz). Extract the ```GeoIP.dat``` file to: ```src\gui\geoip```
 * Open the ```winconf.pri``` file, edit and adjust the paths:
 	* For **both**:
     	* Replace ```_WIN32_WINNT=0x0500``` with ```_WIN32_WINNT=0x0501```
