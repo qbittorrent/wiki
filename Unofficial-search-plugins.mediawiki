@@ -58,28 +58,12 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 |  1.0
 |  May 29 2014
 |  [https://raw.githubusercontent.com/davy39/qbfrench/master/cpasbien.py Download]
-|  
-|-
-| [[https://raw.githubusercontent.com/davy39/qbfrench/master/omgtorrent.png]] [http://omgtorrent.com]
-|  davy39(at)hmamail(dot)com
-|  1.0
-|  May 29 2014
-|  [https://raw.githubusercontent.com/davy39/qbfrench/master/omgtorrent.py Download]
-|  
 |-
 | [[https://raw.githubusercontent.com/davy39/qbfrench/master/smartorrent.png]] [http://smartorrent.com]
 |  davy39(at)hmamail(dot)com
 |  1.0
 |  May 29 2014
-|  [https://raw.githubusercontent.com/davy39/qbfrench/master/smartorrent.py Download]
-|  
-|-
-| [[https://raw.githubusercontent.com/davy39/qbfrench/master/torrentfrancais.png]] [http://torrentfrancais.com]
-|  davy39(at)hmamail(dot)com
-|  1.0
-|  May 29 2014
-|  [https://raw.githubusercontent.com/davy39/qbfrench/master/torrentfrancais.py Download]
-|  
+|  [https://raw.githubusercontent.com/davy39/qbfrench/master/smartorrent.py Download] 
 |-
 |  [[https://raw.github.com/mr-mmajoR/myrepo/master/rutor.png]] [http://rutor.org/ rutor.org]
 |  mmajor(at)yandex(dot)ru
@@ -107,22 +91,12 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 |  1.2
 |  Nov 13 2011
 |  [https://raw.github.com/cdumez/qBittorrent-Search-Plugins/master/divxtotal.py Download]
-|  
 |-
 |  [[http://www.qbittorrent.org/wiki-images/SumoTorrent.png]] [http://www.sumotorrent.com Sumo Torrent]
 |  chris(at)qbittorrent(dot)org
 |  1.2
 |  Sep 17 2011
 |  [https://raw.github.com/cdumez/qBittorrent-Search-Plugins/master/sumotorrent.py Download]
-|
-|-
-|  [[http://www.qbittorrent.org/wiki-images/Freetorrent.png]] [http://freetorrent.fr/ Free Torrent (FR)]
-|  sinusnco(at)gmail(dot)com
-|  1.0
-|  Feb 07 2011
-|  [http://sourceforge.net/projects/qbt-extrasearch/files/freetorrent_fr-1.0.tar.gz/download Download]
-|  Tested with qBittorrent >= 2.6.5
-|
 |-
 |}
 
@@ -153,27 +127,6 @@ Be careful, these scripts probably require editing before you can use them. Thos
 |May 01 2015
 |[https://github.com/Skymirrh/qBittorent-rutracker-plugin Download]
 |Tested with qBittorrent 3.1.12.
-|-
-|[[http://www.qbittorrent.org/wiki-images/AlloTracker.png]][http://www.allotracker.com AlloTracker]
-|sinusnco(at)gmail(dot)com
-|1.0
-|Feb 04 2011
-|[http://qbt-extrasearch.svn.sourceforge.net/viewvc/qbt-extrasearch/trunk/allotracker_com/allotracker.py Script only] / [http://sourceforge.net/projects/qbt-extrasearch/files/allotracker_com-1.0.tar.gz/download All files]*
-|Tested with qBittorrent >= 2.6.3
-|-
-|[[http://www.qbittorrent.org/wiki-images/Torrent411.png]][http://www.torrent411.com Torrent411]
-|sinusnco(at)gmail(dot)com
-|1.0
-|Jan 23 2011
-|[http://qbt-extrasearch.svn.sourceforge.net/viewvc/qbt-extrasearch/trunk/torrent411_com/torrent411.py Script only] / [http://sourceforge.net/projects/qbt-extrasearch/files/torrent411_com-1.0.tar.gz/download All files]*
-|Tested with qBittorrent >= 2.6.3
-|-
-|[[http://www.qbittorrent.org/wiki-images/Itoma.png]][http://www.itoma.info/tracker/ Itoma]
-|sinusnco(at)gmail(dot)com
-|1.0
-|Jan 22 2011
-|[http://qbt-extrasearch.svn.sourceforge.net/viewvc/qbt-extrasearch/trunk/itoma_info/itoma.py Script only] / [http://sourceforge.net/projects/qbt-extrasearch/files/itoma-1.0.tar.gz/download All files]*
-|Tested with qBittorrent >= 2.6.3
 |-
 |[[http://www.qbittorrent.org/wiki-images/Quebecpartage.png]][http://www.quebec-partage.com/ Quebec-Partage]
 |sinusnco(at)gmail(dot)com
