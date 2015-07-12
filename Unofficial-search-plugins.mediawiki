@@ -13,10 +13,10 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 |-
 | [[https://raw.githubusercontent.com/MrNeon/qbittorrent-search-plugins/master/strikesearch.png]] [https://getstrike.net/torrents/ StrikeSearch]
 | iamtheneon(at)gmail(dot)com
-| 1.01
-| May 10 2015
+| 1.03
+| July 12 2015
 | [https://github.com/MrNeon/qbittorrent-search-plugins/blob/master/strikesearch.py Download]
-| Tested with qBittorrent 3.2.0
+| Tested with qBittorrent 3.2.1
 |-
 | [[https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/torlock/torlock.png]] [http://www.torlock.com/ Torlock]
 | custparasite(at)gmx(dot)se
