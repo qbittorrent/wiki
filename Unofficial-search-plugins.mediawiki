@@ -153,4 +153,4 @@ Be careful, these scripts probably require editing before you can use them. Thos
 
 == Notes ==
 * If you want to write your own search plugins, please follow this [[How-to-write-a-search-plugin|tutorial]].
-* If you experience issues with any of the plugins posted here, please contact their author. In case the author is unresponsive, you can also try to contact the [mailto:chris@qbittorrent.org author of qBittorrent].
+* If you experience issues with any of the plugins posted here, please contact their author. In case the author is unresponsive, you can try to fix it yourself. Then you can edit this wiki page and add your info and new plugin.
