@@ -53,3 +53,7 @@ If you are unsure what url (ip and port and protocol) qtorrent is using, you can
 Alternatively you could run qtorrent-nox in a terminal window and it will print the URL to the screen with:
 
 `sudo qbittorrent-nox`
+
+--------
+
+This guide failed to create usable certs because of the passphrase requirement of `genrsa`. I suggest the following amendment `openssl req -new -x509 -nodes -out server.crt -keyout server.key` for ssl key and cert creation. -CS
