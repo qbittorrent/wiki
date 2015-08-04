@@ -21,7 +21,6 @@ Welcome to the qBittorrent wiki!
 ## Linux
 * [Running qBittorrent without X server](wiki/Running-qBittorrent-without-X-server)
 * [Setting up qBittorrent on Ubuntu server as daemon with Web interface] (wiki/Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface)
-* [Compiling qbittorrent-nox for CentOS from source] (wiki/Compiling-qbittorrent-nox-for-CentOS-from-source)
 * [Setting up qBittorrent as a daemon on CentOS 7] (wiki/Setting-up-qBittorrent-as-a-daemon-on-CentOS-7)
 
 ## Developing
@@ -34,6 +33,7 @@ Welcome to the qBittorrent wiki!
 * [Windows compilation](wiki/Windows-compilation)
 * [Debian / Ubuntu compilation](wiki/Compiling-qBittorrent-on-Debian-and-Ubuntu)
 * [Mac OSX compilation](wiki/Compilation-guide-for-Mac-OSX-systems)
+* [Compiling qbittorrent-nox for CentOS from source] (wiki/Compiling-qbittorrent-nox-for-CentOS-from-source)
 
 ##### WebUI-related
 * [HTTPS with Self Signed SSL Certificates - Linux](wiki/Linux-WebUI-setting-up-HTTPS-with-self-signed-SSL-certificates)
