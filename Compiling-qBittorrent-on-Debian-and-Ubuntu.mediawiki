@@ -41,7 +41,7 @@ Then you can install libtorrent using the following commands:
 
 For more information on building libtorrent, see [http://www.rasterbar.com/products/libtorrent/building.html libtorrent downloading and building]
 
-== Compiling qBittorrent (with the Qt5 graphical interface) ==
+== Compiling qBittorrent (with the GUI) ==
 Now, let's get to the interesting part: compiling qBittorrent.
 <br />Go to our website, download the sources and extract them to another folder.
 <br />Quick link to our releases [http://sourceforge.net/projects/qbittorrent/files/qbittorrent/ here].
@@ -60,7 +60,7 @@ And to install it:
 That's it! qBittorrent should now be installed. You can now run qBittorrent using the following command:
  qbittorrent
 
-== Compiling qBittorrent (without the graphical interface aka nox variant aka headless) ==
+== Compiling qBittorrent (without the GUI aka nox variant aka headless) ==
 Now, let's get to the interesting part: compiling qBittorrent.
 <br />Go to our website, download the sources and extract them to another folder.
 <br />Quick link to our releases [http://sourceforge.net/projects/qbittorrent/files/qbittorrent/ here].
