@@ -42,7 +42,7 @@ Then you can install libtorrent using the following commands:
 For more information on building libtorrent, see [http://www.rasterbar.com/products/libtorrent/building.html libtorrent downloading and building]
 
 == Compiling qBittorrent (with the GUI) ==
-First, obtain the qBittorrent source code. Either download and extract a .tar archive from [http://sourceforge.net/projects/qbittorrent/files/qbittorrent/ Sourceforge] or clone this git repo.
+First, obtain the qBittorrent source code. Either download and extract a .tar archive from [http://sourceforge.net/projects/qbittorrent/files/qbittorrent/ Sourceforge] or clone this git repo(<code>git clone https://github.com/qbittorrent/qBittorrent</code>).
 <br />Enter the folder in a new terminal window and run:
  ./configure --prefix=/usr
  make
@@ -57,7 +57,7 @@ That's it! qBittorrent should now be installed. You can now run qBittorrent usin
  qbittorrent
 
 == Compiling qBittorrent (without the GUI; aka qBittorrent-nox aka headless) ==
-First, obtain the qBittorrent source code. Either download and extract a .tar archive from [http://sourceforge.net/projects/qbittorrent/files/qbittorrent/ Sourceforge] or clone this git repo.
+First, obtain the qBittorrent source code. Either download and extract a .tar archive from [http://sourceforge.net/projects/qbittorrent/files/qbittorrent/ Sourceforge] or clone this git repo (<code>git clone https://github.com/qbittorrent/qBittorrent</code>).
 <br />Enter the folder in a new terminal window and run:
  ./configure --prefix=/usr --disable-gui
  make
