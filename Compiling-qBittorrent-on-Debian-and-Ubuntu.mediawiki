@@ -51,8 +51,8 @@ Now, let's get to the interesting part: compiling qBittorrent.
  ./configure --prefix=/usr
  make
 
-Note1: If you're using libtorrent-rasterbar from the 0.16.x series you need to pass to configure also "--with-libtorrent-rasterbar0.16". v3.3.x has dropped the support of 0.16.x.
-<br />Note2: If you want to compile with qt5 instead of qt4 you need to pass to configure also "--with-qt5"
+'''Note1''': If you're using libtorrent-rasterbar from the 0.16.x series you need to pass to configure also "--with-libtorrent-rasterbar0.16". v3.3.x has dropped the support of 0.16.x.
+<br />'''Note2''': If you want to compile with qt5 instead of qt4 you need to pass to configure also "--with-qt5"
 
 And to install it:
  sudo make install
@@ -70,8 +70,8 @@ Now, let's get to the interesting part: compiling qBittorrent.
  ./configure --prefix=/usr --disable-gui
  make
 
-Note1: If you're using libtorrent-rasterbar from the 0.16.x series you need to pass to configure also "--with-libtorrent-rasterbar0.16". v3.3.x has dropped the support of 0.16.x.
-<br />Note2: If you want to compile with qt5 instead of qt4 you need to pass to configure also "--with-qt5"
+'''Note1''': If you're using libtorrent-rasterbar from the 0.16.x series you need to pass to configure also "--with-libtorrent-rasterbar0.16". v3.3.x has dropped the support of 0.16.x.
+<br />'''Note2''': If you want to compile with qt5 instead of qt4 you need to pass to configure also "--with-qt5"
 
 And to install it:
  sudo make install
