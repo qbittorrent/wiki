@@ -21,12 +21,12 @@ This How to will guide you though the compilation of qBittorrent and libtorrent-
 == Libtorrent ==
 [http://wwww.libtorrent.net Libtorrent] is a library written by Arvid Norberg that qBittorrent uses for the bittorrent part. It is necessary to compile and install libtorrent before compiling qBittorrent.
 If your distro packages at least 0.16.19 or 1.0.6 you can install it. Otherwise you'll need to compile it yourself.
-If it exists in the repos:
+<br />If it exists in the repos:
  sudo apt-get install libtorrent-rasterbar-dev
 
 If you have to compile it:
-First you should get a libtorrent-rasterbar release tarball. Go to [https://github.com/arvidn/libtorrent/releases this] page and download at least 1.0.6 (tar.gz format). Extract the sources and enter the folder from a terminal.
-First you'll need some extra dependencies to be installed:
+<br />First you should get a libtorrent-rasterbar release tarball. Go to [https://github.com/arvidn/libtorrent/releases this] page and download at least 1.0.6 (tar.gz format). Extract the sources and enter the folder from a terminal.
+<br />First you'll need some extra dependencies to be installed:
  sudo apt-get install libboost-system-dev libssl-dev libgeoip-dev pkg-config
 
 Now you're ready to compile:
@@ -43,16 +43,16 @@ For more information on building libtorrent, see [http://www.rasterbar.com/produ
 
 == Compiling qBittorrent (with the Qt5 graphical interface) ==
 Now, let's get to the interesting part: compiling qBittorrent.
-Go to our website, download the sources and extract them to another folder.
-Quick link to our releases [http://sourceforge.net/projects/qbittorrent/files/qbittorrent/ here].
-Enter the folder from a terminal window.
-Or you can use the latest source from our git repo. You should know how to clone a git repo.
-Assuming you have entered the source folder:
+<br />Go to our website, download the sources and extract them to another folder.
+<br />Quick link to our releases [http://sourceforge.net/projects/qbittorrent/files/qbittorrent/ here].
+<br />Enter the folder from a terminal window.
+<br />Or you can use the latest source from our git repo. You should know how to clone a git repo.
+<br />Assuming you have entered the source folder:
  ./configure --prefix=/usr
  make
 
 Note1: If you're using libtorrent-rasterbar from the 0.16.x series you need to pass to configure also "--with-libtorrent-rasterbar0.16". v3.3.x has dropped the support of 0.16.x.
-Note2: If you want to compile with qt5 instead of qt4 you need to pass to configure also "--with-qt5"
+<br />Note2: If you want to compile with qt5 instead of qt4 you need to pass to configure also "--with-qt5"
 
 And to install it:
  sudo make install
@@ -62,16 +62,16 @@ That's it! qBittorrent should now be installed. You can now run qBittorrent usin
 
 == Compiling qBittorrent (without the graphical interface aka nox variant aka headless) ==
 Now, let's get to the interesting part: compiling qBittorrent.
-Go to our website, download the sources and extract them to another folder.
-Quick link to our releases [http://sourceforge.net/projects/qbittorrent/files/qbittorrent/ here].
-Enter the folder from a terminal window.
-Or you can use the latest source from our git repo. You should know how to clone a git repo.
-Assuming you have entered the source folder:
+<br />Go to our website, download the sources and extract them to another folder.
+<br />Quick link to our releases [http://sourceforge.net/projects/qbittorrent/files/qbittorrent/ here].
+<br />Enter the folder from a terminal window.
+<br />Or you can use the latest source from our git repo. You should know how to clone a git repo.
+<br />Assuming you have entered the source folder:
  ./configure --prefix=/usr --disable-gui
  make
 
 Note1: If you're using libtorrent-rasterbar from the 0.16.x series you need to pass to configure also "--with-libtorrent-rasterbar0.16". v3.3.x has dropped the support of 0.16.x.
-Note2: If you want to compile with qt5 instead of qt4 you need to pass to configure also "--with-qt5"
+<br />Note2: If you want to compile with qt5 instead of qt4 you need to pass to configure also "--with-qt5"
 
 And to install it:
  sudo make install
