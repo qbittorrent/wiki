@@ -30,10 +30,10 @@ If you have to compile it:
  sudo apt-get install libboost-system-dev libssl-dev libgeoip-dev pkg-config
 
 Now you're ready to compile:
- ./configure --disable-debug --prefix=/usr --with-geoip=system && make clean && make
+ ./configure --disable-debug --prefix=/usr --with-libgeoip=system && make clean && make
 
 if you get a "configure: error: Boost.System library not found.", try:
- ./configure --disable-debug --prefix=/usr --with-geoip=system --with-boost-libdir=/usr/lib/i386-linux-gnu && make clean && make
+ ./configure --disable-debug --prefix=/usr --with-libgeoip=system --with-boost-libdir=/usr/lib/i386-linux-gnu && make clean && make
 
 Then you can install libtorrent using the following commands:
  sudo make uninstall
