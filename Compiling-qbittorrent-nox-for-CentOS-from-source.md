@@ -1,16 +1,16 @@
 After stumbling for about 3 hours _(not knowing what the distro package names were to install)_ here is the concise list of commands to build as per:
 
-* https://github.com/qbittorrent/qBittorrent/commit/452b643e0c449fdd53e159776f0608e7fb2a4014
+* https://github.com/qbittorrent/qBittorrent/commit/331219dda828cc2bc7d3c80dc4092401ca5e55d4
 * CentOS 7 x64
-* 2015/04/30
+* 2015-08-09 (Aug)
 
 ```
 yum -y groupinstall 'Development Tools'
 yum -y install qt-devel boost-devel openssl-devel
 
-wget http://sourceforge.net/projects/libtorrent/files/libtorrent/libtorrent-rasterbar-1.0.4.tar.gz
-tar -zxf libtorrent-rasterbar-1.0.4.tar.gz
-cd libtorrent-rasterbar-1.0.4
+wget https://github.com/arvidn/libtorrent/releases/download/libtorrent-1_0_6/libtorrent-rasterbar-1.0.6.tar.gz
+tar -zxf libtorrent-rasterbar-1.0.6.tar.gz
+cd libtorrent-rasterbar-1.0.6
 ./configure --prefix=/usr
 make
 make install
@@ -31,6 +31,7 @@ cat > ~/.config/qBittorrent/qBittorrent.conf <<- EOM
 [Preferences]
 WebUI\Enabled=true
 EOM
+// don't do this if you have a working config file
 
 qbittorrent-nox
 ```
