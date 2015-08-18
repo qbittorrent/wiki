@@ -3,11 +3,15 @@
 * systemctl
 
 # Install
-Follow this guide [Compiling qbittorrent-nox for CentOS from source](wiki/Compiling-qbittorrent-nox-for-CentOS-from-source)
+You have two options
+
+*One, follow this guide [Compiling qbittorrent-nox for CentOS from source](wiki/Compiling-qbittorrent-nox-for-CentOS-from-source)
+*Two, install from EPEL [https://fedoraproject.org/wiki/EPEL]
+If you choose to install from EPEL you can simply `sudo yum install qbittorrent-nox.x86_64`
 
 # Creating a systemctl script
 1. Create a script so that we can control qbittorrent with systemctl  
-`sudo vi /usr/lib/systemd/system/qbitorrent.service`  
+`sudo vi /usr/lib/systemd/system/qbittorrent.service`  
 2. Enter`i`to enter insert mode then paste the code below, change **\<username\>** to the user you want to run qbittorrent with    
 ```
     [Unit]
