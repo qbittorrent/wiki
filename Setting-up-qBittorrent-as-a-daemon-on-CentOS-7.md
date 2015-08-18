@@ -5,8 +5,9 @@
 # Install
 You have two options
 
-*One, follow this guide [Compiling qbittorrent-nox for CentOS from source](wiki/Compiling-qbittorrent-nox-for-CentOS-from-source)
-*Two, install from EPEL [https://fedoraproject.org/wiki/EPEL]
+* One, follow this guide [Compiling qbittorrent-nox for CentOS from source](wiki/Compiling-qbittorrent-nox-for-CentOS-from-source)
+* Two, install from EPEL [https://fedoraproject.org/wiki/EPEL](https://fedoraproject.org/wiki/EPEL)
+
 If you choose to install from EPEL you can simply `sudo yum install qbittorrent-nox.x86_64`
 
 # Creating a systemctl script
