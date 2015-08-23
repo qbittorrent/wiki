@@ -16,11 +16,10 @@ locked=true
 ## Linux
 * Kill qBittorrent
 * Edit _~/.config/qBittorrent/qBittorrent.conf_
-* Remove the following lines:
-```c++
-[Locking]
-password=<encrypted_password>
-locked=true
+* Remove the following lines (note they might be anywhere in the file, not necessarily adjacent):
+```
+WebUI\Password_ha1=@ByteArray(####################)
+WebUI\Username=admin
 ```
 * Save the file
 * Start qBittorrent again
