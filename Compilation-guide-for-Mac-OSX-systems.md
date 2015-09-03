@@ -6,8 +6,6 @@ Make sure your system is running the latest xcode build system with the commandl
 ## Custom
 See the [INSTALL](https://github.com/qbittorrent/qBittorrent/blob/master/INSTALL) file for a list of dependencies.
 
-Adjust paths in `macxconf.pri` accordingly. See example using Homebrew
-
 ## Using MacPorts
 [Install MacPorts](http://www.macports.org/install.php)
 
@@ -18,29 +16,19 @@ Adjust paths in `macxconf.pri` accordingly. See example using Homebrew
 
     brew install qt4 libtorrent-rasterbar
 
-Adjust paths in `macxconf.pri` from
-
-    INCLUDEPATH += /usr/include/openssl /usr/include /opt/local/include/boost /opt/local/include
-    LIBS += -L/opt/local/lib
-
-to
-
-    INCLUDEPATH += /usr/include/openssl /usr/include /usr/local/include/boost /usr/local/include
-    LIBS += -L/usr/local/lib
-
 # Download source
  
- 1. Download main source from [qBittorrent's](http://www.qbittorrent.org/download.php) download page, extract the tarball.
- 2. Optional: Download the [geoip dat](http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz) file and extract it to qbittorrent's src/gui/geoip folder.
+ 1. Download main source from [qBittorrent's](http://www.qbittorrent.org/download.php) download page and extract the tarball or grab the HEAD from GitHub (`git clone https://github.com/qbittorrent/qBittorrent.git`).
+ 2. Optional: Download the [geoip dat](http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz) file and extract it to qbittorrent's src/gui/geoip folder using gzip or a similar tool.
 
 # Compilation
 
- 1. Configuration: `qmake qbittorrent.pro`  If this fails, try using `./configure`
+ 1. Configuration `./configure --disable-qt-dbus`
  2. Compilation: `make -j4` where 4 is your number of cores
  3. Packaging: `macdeployqt src/qbittorrent.app` (may require sudo)
  4. Create DMG: `macdeployqt src/qbittorrent.app -dmg` (may require sudo)
 
-# Compilation with MacPorts
+# MacPorts Compilation Notes
 
 -- No Xcode installation is required (ignore it if you have already installed).  
 Download and install Command Line Tools kit available at: https://developer.apple.com/downloads/index.action  
@@ -96,27 +84,3 @@ The following ports are currently installed:
   tiff @4.0.3_2 (active)  
   xz @5.0.5_0 (active)  
   zlib @1.2.8_0 (active)  
-
--- Download qbittorrent 3.1.9 source compressed archive and GeoIP.dat.gz compressed data file and place them in a folder under your home directory:  
-% ls ~/project/qbittorrent  
-qbittorrent-3.1.9.tar.gz   GeoP.dat.gz  
-% cd ~/project/qbittorrent  
-
--- Unpack qbittorrent's source code and GeoIP.dat data file into proper locations as follows:  
-% gzip -cd qbittorrent-3.1.9.tar.gz | tar -xvf -  
-% gzip -cd GeoIP.dat.gz > qbittorrent-3.1.9/src/gui/geoip/GeoIP.dat  
-
--- Modify path settings in configuration file macxconf.pri (backup file: macxconf.pri.backup)  
-% sed -i '.backup' '/^INCLUDEPATH/,/^LIBS/ s:/opt/local:/usr/local:g' qbittorrent-3.1.9/macxconf.pri  
-
--- Change directory to create Make file and initiate compilation, the resultant qbittorrent application file will be located in src directory.  
-% cd qbittorrent-3.1.9  
-% qmake qbittorrent.pro  
-% make  
-
--- Optional steps to package and create disk image file for future distribution:  
-% sudo macdeployqt src/qbittorrent.app  
-% sudo macdeployqt src/qbittorrent.app -dmg  
-
--- Clean up directory to conserve disk space as last step:  
-% make clean  
