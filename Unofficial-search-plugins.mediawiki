@@ -27,10 +27,10 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 |-
 | [[https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/torlock/torlock.png]] [http://www.torlock.com/ Torlock]
 | custparasite(at)gmx(dot)se
-| 1.6
-| Feb 6 2015
+| 1.7
+| Sep 24 2015
 | [https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/torlock/torlock.py Download]
-| Python2 version is tested with qBittorent 3.2alpha
+| Tested with qBittorent 3.2.3
 |-
 | [[https://raw.githubusercontent.com/BrunoReX/qbittorrent-search-plugins/master/yts.png]] [http://yts.re/ YTS]
 | brunorex(at)gmail(dot).com
