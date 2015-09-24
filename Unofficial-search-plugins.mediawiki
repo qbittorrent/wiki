@@ -11,13 +11,6 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 !  Download link
 !  Comment
 |-
-| [[https://raw.githubusercontent.com/ngosang/qBittorrent-plugins/master/tntvillage.png]] [http://www.tntvillage.scambioetico.org/?releaselist TNT Village]
-| diegodelasheras(at)gmail(dot)com
-| 1.00
-| September 17 2015
-| [https://raw.githubusercontent.com/ngosang/qBittorrent-plugins/master/tntvillage.py Download]
-| Python2 & Python3 supported
-|-
 | [[https://raw.githubusercontent.com/MrNeon/qbittorrent-search-plugins/master/strikesearch.png]] [https://getstrike.net/torrents/ StrikeSearch]
 | iamtheneon(at)gmail(dot)com
 | 1.03
@@ -25,86 +18,96 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 | [https://raw.githubusercontent.com/MrNeon/qbittorrent-search-plugins/master/strikesearch.py Download]
 | Python2 & Python3 supported
 |-
+| [[https://raw.githubusercontent.com/ngosang/qBittorrent-plugins/master/tntvillage.png]] [http://www.tntvillage.scambioetico.org/?releaselist TNT Village]
+| diegodelasheras(at)gmail(dot)com
+| 1.00
+| September 17 2015
+| [https://raw.githubusercontent.com/ngosang/qBittorrent-plugins/master/tntvillage.py Download]
+| Python2 & Python3 supported
+|-
 | [[https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/torlock/torlock.png]] [http://www.torlock.com/ Torlock]
 | custparasite(at)gmx(dot)se
 | 1.7
 | Sep 24 2015
 | [https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/torlock/torlock.py Download]
-| Tested with qBittorent 3.2.3
-|-
-| [[https://raw.githubusercontent.com/BrunoReX/qbittorrent-search-plugins/master/yts.png]] [http://yts.re/ YTS]
-| brunorex(at)gmail(dot).com
-| 1.0
-| Oct 8 2014
-| [https://raw.githubusercontent.com/BrunoReX/qbittorrent-search-plugins/master/yts.py Download]
-| Tested with qbittorrent 3.1.10
+| Python2 & Python3 supported
 |-
 | [[https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/tokyotoshokan/tokyotoshokan.png]] [http://tokyotosho.info/index.php Tokyo Toshokan]
 | custparasite(at)gmx(dot)se
 | 2.0
 | Sep 24 2015
 | [https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/tokyotoshokan/tokyotoshokan.py Download]
-| Tested with qBittorent 3.2.3
+| Python2 & Python3 supported
 |-
-|  [[http://www.qbittorrent.org/wiki-images/NyaaTorrents.png]] [http://www.nyaa.se/ NyaaTorrents]
-|  yukariin(at)yandex(dot)ru
-|  2.23
-|  Oct 3 2014
-|  [https://raw.githubusercontent.com/Yukariin/qBittorrent-Search-Plugins/master/nyaatorrents.py Download]
-|  Tested with qbittorrent 3.1.10
+| [[http://www.qbittorrent.org/wiki-images/NyaaTorrents.png]] [http://www.nyaa.se/ NyaaTorrents]
+| yukariin(at)yandex(dot)ru
+| 2.23
+| Oct 3 2014
+| [https://raw.githubusercontent.com/Yukariin/qBittorrent-Search-Plugins/master/nyaatorrents.py Download]
+| Python2 & Python3 supported
 |-
-| [[https://raw.githubusercontent.com/fvisin/qbittorrent_plugins/master/pirateproxy.png]] [http://pirateproxy.bz/]
-|  fab(at)gnux(dot)info
-|  1.53
-|  Sept 30 2014
-|  [https://raw.githubusercontent.com/fvisin/qbittorrent_plugins/master/pirateproxy.py Download]
-|  Piratebay proxy - Original plugin modified by Francesco Visin
+| [[https://raw.githubusercontent.com/BrunoReX/qbittorrent-search-plugins/master/yts.png]] [http://yts.re/ YTS]
+| brunorex(at)gmail(dot).com
+| 1.0
+| Oct 8 2014
+| [https://raw.githubusercontent.com/BrunoReX/qbittorrent-search-plugins/master/yts.py Download]
+| Outdated
 |-
-| [[https://raw.githubusercontent.com/davy39/qbfrench/master/cpasbien.png]] [http://cpasbien.pe]
-|  davy39(at)hmamail(dot)com
-|  1.0
-|  May 29 2014
-|  [https://raw.githubusercontent.com/davy39/qbfrench/master/cpasbien.py Download]
+| [[https://raw.githubusercontent.com/fvisin/qbittorrent_plugins/master/pirateproxy.png]] [http://pirateproxy.bz/ PirateProxy]
+| fab(at)gnux(dot)info
+| 1.53
+| Sept 30 2014
+| [https://raw.githubusercontent.com/fvisin/qbittorrent_plugins/master/pirateproxy.py Download]
+| Outdated
 |-
-| [[https://raw.githubusercontent.com/davy39/qbfrench/master/smartorrent.png]] [http://smartorrent.com]
-|  davy39(at)hmamail(dot)com
-|  1.0
-|  May 29 2014
-|  [https://raw.githubusercontent.com/davy39/qbfrench/master/smartorrent.py Download] 
+| [[https://raw.githubusercontent.com/davy39/qbfrench/master/cpasbien.png]] [http://www.cpasbien.pw/ Cpasbien]
+| davy39(at)hmamail(dot)com
+| 1.0
+| May 29 2014
+| [https://raw.githubusercontent.com/davy39/qbfrench/master/cpasbien.py Download]
+| Outdated
 |-
-|  [[https://raw.github.com/mr-mmajoR/myrepo/master/rutor.png]] [http://rutor.org/ rutor.org]
-|  mmajor(at)yandex(dot)ru
-|  1.20
-|  May 24 2015
-|  [https://raw.githubusercontent.com/kmlebedev/myrepo/master/rutor.py Download]
-|  Tested with qbittorrent 3.2.0
+| [[https://raw.githubusercontent.com/davy39/qbfrench/master/smartorrent.png]] [http://smartorrent.com Smartorrent]
+| davy39(at)hmamail(dot)com
+| 1.0
+| May 29 2014
+| [https://raw.githubusercontent.com/davy39/qbfrench/master/smartorrent.py Download]
+| Outdated
 |-
-|  [[http://www.qbittorrent.org/wiki-images/Limetorrents.png]] [http://www.limetorrents.com LimeTorrents 1.01]
-|  richard(at)richardurban(dot)de
-|  1.01
-|  Feb 02 2013
-|  [https://raw.github.com/richardurban/qBittorrent-Search-Plugins/master/limetorrents.py Download]
-|  Bugfix for changed search and result page format
+| [[https://raw.github.com/mr-mmajoR/myrepo/master/rutor.png]] [http://rutor.org/ rutor.org]
+| mmajor(at)yandex(dot)ru
+| 1.20
+| May 24 2015
+| [https://raw.githubusercontent.com/kmlebedev/myrepo/master/rutor.py Download]
+| Outdated
 |-
-|  [[http://www.qbittorrent.org/wiki-images/Tfile.png]] [http://tfile.me/ tfile.me]
-|  bnagaev(at)gmail(dot)com, danerde(at)gmail(dot)com
-|  1.0
-|  Apr 28 2015
-|  [https://raw.github.com/danerde/qbittorrent-plugins/master/tfile_me.py Download]
-|  Tested with qbittorrent 3.1.8
+| [[http://www.qbittorrent.org/wiki-images/Limetorrents.png]] [https://www.limetorrents.cc/ LimeTorrents]
+| richard(at)richardurban(dot)de
+| 1.01
+| Feb 02 2013
+| [https://raw.github.com/richardurban/qBittorrent-Search-Plugins/master/limetorrents.py Download]
+| Outdated
 |-
-|  [[http://www.qbittorrent.org/wiki-images/Divxtotal.png]] [http://divxtotal.com/ DivxTotal]
-|  hazuki.shiro(at)gmail(dot)com
-|  1.2
-|  Nov 13 2011
-|  [https://raw.github.com/cdumez/qBittorrent-Search-Plugins/master/divxtotal.py Download]
+| [[http://www.qbittorrent.org/wiki-images/Tfile.png]] [http://tfile.me/ tfile.me]
+| bnagaev(at)gmail(dot)com, danerde(at)gmail(dot)com
+| 1.0
+| Apr 28 2015
+| [https://raw.github.com/danerde/qbittorrent-plugins/master/tfile_me.py Download]
+| Outdated
 |-
-|  [[http://www.qbittorrent.org/wiki-images/SumoTorrent.png]] [http://www.sumotorrent.com Sumo Torrent]
-|  chris(at)qbittorrent(dot)org
-|  1.2
-|  Sep 17 2011
-|  [https://raw.github.com/cdumez/qBittorrent-Search-Plugins/master/sumotorrent.py Download]
+| [[http://www.qbittorrent.org/wiki-images/Divxtotal.png]] [http://divxtotal.com/ DivxTotal]
+| hazuki.shiro(at)gmail(dot)com
+| 1.2
+| Nov 13 2011
+| [https://raw.github.com/cdumez/qBittorrent-Search-Plugins/master/divxtotal.py Download]
+| Outdated
 |-
+| [[http://www.qbittorrent.org/wiki-images/SumoTorrent.png]] [http://www.sumotorrent.sx/ Sumo Torrent]
+| chris(at)qbittorrent(dot)org
+| 1.2
+| Sep 17 2011
+| [https://raw.github.com/cdumez/qBittorrent-Search-Plugins/master/sumotorrent.py Download]
+| Outdated
 |}
 
 
