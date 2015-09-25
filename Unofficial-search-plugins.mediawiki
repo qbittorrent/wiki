@@ -46,6 +46,13 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 | [https://raw.githubusercontent.com/Yukariin/qBittorrent-Search-Plugins/master/nyaatorrents.py Download]
 | Python2 & Python3 supported
 |-
+| [[https://raw.githubusercontent.com/ngosang/qBittorrent-plugins/master/sumotorrent.png]] [http://www.sumotorrent.sx/ SumoTorrent]
+| diegodelasheras(at)gmail(dot)com
+| 1.3
+| Sep 25 2015
+| [https://raw.githubusercontent.com/ngosang/qBittorrent-plugins/master/sumotorrent.py Download]
+| Python2 & Python3 supported. qBittorrent 3.3.0+
+|-
 | [[https://raw.githubusercontent.com/BrunoReX/qbittorrent-search-plugins/master/yts.png]] [http://yts.re/ YTS]
 | brunorex(at)gmail(dot).com
 | 1.0
@@ -101,15 +108,7 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 | Nov 13 2011
 | [https://raw.github.com/cdumez/qBittorrent-Search-Plugins/master/divxtotal.py Download]
 | Outdated
-|-
-| [[http://www.qbittorrent.org/wiki-images/SumoTorrent.png]] [http://www.sumotorrent.sx/ Sumo Torrent]
-| chris(at)qbittorrent(dot)org
-| 1.2
-| Sep 17 2011
-| [https://raw.github.com/cdumez/qBittorrent-Search-Plugins/master/sumotorrent.py Download]
-| Outdated
 |}
-
 
 == Plugins for Private sites ==
 
