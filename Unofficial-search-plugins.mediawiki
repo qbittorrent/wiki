@@ -27,8 +27,8 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 |-
 | [[https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/torlock/torlock.png]] [http://www.torlock.com/ Torlock]
 | custparasite(at)gmx(dot)se
-| 1.7
-| Sep 24 2015
+| 1.9
+| Sep 26 2015
 | [https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/torlock/torlock.py Download]
 | Python2 & Python3 supported
 |-
