@@ -793,7 +793,7 @@ HTTP/1.1 200 OK
 ### Pause all torrents ###
 
 ```http
-POST /command/pauseall HTTP/1.1
+POST /command/pauseAll HTTP/1.1
 User-Agent: Fiddler
 Host: 127.0.0.1
 Cookie: SID=your_sid
@@ -830,7 +830,7 @@ HTTP/1.1 200 OK
 ### Resume all torrents ###
 
 ```http
-POST /command/resumeall HTTP/1.1
+POST /command/resumeAll HTTP/1.1
 User-Agent: Fiddler
 Host: 127.0.0.1
 Cookie: SID=your_sid
