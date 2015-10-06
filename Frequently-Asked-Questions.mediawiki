@@ -44,18 +44,26 @@ You are probably using GNOME ≥ 2.28. By default, this window manager is no lon
 Well, actually I lacked inspiration on this one. :P qBittorrent is simply a BitTorrent client written using the [http://qt.digia.com/ Qt4 Framework] for its user interface. Most programs developed with Qt4 toolkit use a 'q' as the first letter of their name. The ''qBT'' abbreviation is also commonly used to refer to the qBittorrent client. However, '''please do not use the abbreviation ''qtorrent''''' since another BitTorrent client with this name already exists. 
 
 == Where does qBittorrent save its settings? ==
-qBittorrent saves its preferences in the '''~/.config/qBittorrent/''' folder.
 
-On OS X, the preferences are stored in:
+Windows:
+* preferences:
+** <code>%APPDATA%\qBittorrent</code> = <code>C:\Users\<username>\AppData\Roaming\qBittorrent</code>
+* .torrent files:
+** <code>%LOCALAPPDATA%\qBittorrent</code> = <code>C:\Users\<username>\AppData\Local\qBittorrent</code>
 
-* '''~/Library/Preferences/com.qbittorrent.qBittorrent.plist''' (actual settings)
-* '''~/Library/Preferences/com.qbittorrent.qBittorrent-resume.plist'''
-* '''~/Library/Preferences/org.qbittorrent.plist'''
+GNU/Linux:
+* preferences:
+** <code>~/.config/qBittorrent/</code>
+* .torrent files (This is the standard  [http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html XDG] data folder):
+** <code>~/.local/share/data/qBittorrent/</code>
 
-The .torrent files are stored in:
-* '''~/.local/share/data/qBittorrent/''' on GNU/Linux. This is the standard  [http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html XDG] data folder.
-* '''~/Library/Application Support/qBittorrent''' on OS X.
-* '''%APPDATA%\qBittorrent''' on Windows.
+OS X:
+* preferences:
+** <code>~/Library/Preferences/com.qbittorrent.qBittorrent.plist</code> (actual settings)
+** <code>~/Library/Preferences/com.qbittorrent.qBittorrent-resume.plist</code>
+** <code>~/Library/Preferences/org.qbittorrent.plist</code>
+* .torrent files:
+** <code>~/Library/Application Support/qBittorrent</code>
 
 == How can I reset the settings to default values on OS X? ==
 
