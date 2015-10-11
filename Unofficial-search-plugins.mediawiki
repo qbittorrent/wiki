@@ -17,7 +17,7 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 | 1.00
 | ?
 | [https://raw.githubusercontent.com/davy39/qbfrench/master/omgtorrent.py Download]
-| ?
+| Doesn't work with Python3
 |-
 | [[https://raw.githubusercontent.com/MrNeon/qbittorrent-search-plugins/master/strikesearch.png]] [https://getstrike.net/torrents/ StrikeSearch]
 | iamtheneon(at)gmail(dot)com
