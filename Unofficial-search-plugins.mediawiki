@@ -11,6 +11,14 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 !  Download link
 !  Comment
 |-
+| [[https://raw.githubusercontent.com/davy39/qbfrench/master/omgtorrent.png]]
+[http://www.omgtorrent.com/ OMG Torrent]
+| davy39(at)hmamail(dot)com
+| 1.00
+| ?
+| [https://raw.githubusercontent.com/davy39/qbfrench/master/omgtorrent.py Download]
+| ?
+|-
 | [[https://raw.githubusercontent.com/MrNeon/qbittorrent-search-plugins/master/strikesearch.png]] [https://getstrike.net/torrents/ StrikeSearch]
 | iamtheneon(at)gmail(dot)com
 | 1.03
