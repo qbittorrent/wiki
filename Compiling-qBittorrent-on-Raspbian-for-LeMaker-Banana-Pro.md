@@ -100,7 +100,9 @@ Either download and extract a .tar archive from [Sourceforge]( http://sourceforg
 
    `qbittorrent`
 
-#Compiling qBittorrent-NOX (aka Without the GUI, also called headless)
+#Compiling qBittorrent-NOX
+###(aka Without the GUI, also called headless) 
+
 
 Now that each prerequisite has been completed you mut obtain the qBittorrent source code. 
 
