@@ -16,6 +16,12 @@ See the [INSTALL](https://github.com/qbittorrent/qBittorrent/blob/master/INSTALL
 
     brew install qt4 libtorrent-rasterbar
 
+## Attention
+This is tested in Homebrew but Macports might need it too. When doing the "macdeployqt" step (see below), it will not find the necessary qt plugins to copy inside the application bundle (qbittorrent.app). This is because `macdeployqt` expects to find them in `/usr/local/plugins/` but they are not there. They are installed under `/usr/local/Cellar/qt/<version>/plugins/`.<br/>The easiest way to fix this is to issue (don't forget to correct the version):
+```
+ln -s /usr/local/Cellar/qt/4.8.7_1/plugins /usr/local
+```
+
 # Download source
  
  1. Download main source from [qBittorrent's](http://www.qbittorrent.org/download.php) download page and extract the tarball or grab the HEAD from GitHub (`git clone https://github.com/qbittorrent/qBittorrent.git`).
