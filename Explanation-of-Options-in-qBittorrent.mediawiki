@@ -97,4 +97,7 @@ Here, you can configure to what ratio (amount uploaded/amount uploaded) the torr
 You can use a remote control with qBittorrent. For more information, go [https://github.com/qbittorrent/qBittorrent/wiki#webui-related here].
 
 = Advanced =
-Help for this topic is not available at present. Sorry.
+To be completed.
+
+* '''Strict super seeding''' - activate libtorrent's strict mode for super seeding ("when this is set to true, a piece has to have been forwarded to a third peer before another one is handed out. This is the traditional definition of super seeding.").
+* '''Display program on-screen notifications''' - display system tray notifications for various events (download completed, search finished, an error occurred).
