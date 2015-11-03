@@ -71,11 +71,11 @@ OS X:
 
 Windows:
 
-* Remove all files in the [[Frequently-Asked-Questions#where-does-qbittorrent-save-its-settings|preference folder]].
+* Remove all files in the [[Frequently-Asked-Questions#where-does-qbittorrent-save-its-settings|preferences folder]].
 
 GNU/Linux:
 
-* Remove all files in the [[Frequently-Asked-Questions#where-does-qbittorrent-save-its-settings|preference folder]].
+* Remove all files in the [[Frequently-Asked-Questions#where-does-qbittorrent-save-its-settings|preferences folder]].
 
 OS X:
 
