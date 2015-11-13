@@ -140,10 +140,10 @@ Be careful, these scripts probably require editing before you can use them. Thos
 |-
 |[[https://raw.githubusercontent.com/Skymirrh/qBittorent-rutracker-plugin/master/rutracker.png]][http://rutracker.org/ rutracker.org]
 |skymirrh(at)skymirrh(dot)net
-|1.01
-|May 01 2015
-|[https://github.com/Skymirrh/qBittorent-rutracker-plugin Download]
-|Tested with qBittorrent 3.1.12.
+|1.02
+|November 13 2015
+|[https://github.com/Skymirrh/qBittorent-rutracker-plugin Download / README]
+|Tested with qBittorrent 3.2.5.
 |-
 |[[http://www.qbittorrent.org/wiki-images/Quebecpartage.png]][http://www.quebec-partage.com/ Quebec-Partage]
 |sinusnco(at)gmail(dot)com
