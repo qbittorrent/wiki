@@ -30,7 +30,7 @@ _[ at the time of this writing, Qt5 libraries were not available for Raspbian on
 
 # Libtorrent
 
-[Libtorrent](http://wwww.libtorrent.net ) is a library written by Arvid Norberg that qBittorrent depends on. It is necessary to compile and install libtorrent before compiling qBittorrent.
+[Libtorrent](http://wwww.libtorrent.org ) is a library written by Arvid Norberg that qBittorrent depends on. It is necessary to compile and install libtorrent before compiling qBittorrent.
 
 Default Raspbian distro packages a very old _(and very unstable)_ version of  libtorrent, hence you will need to compile it yourself.
 
@@ -45,10 +45,10 @@ The procedure for compiling and installing Libtorrent on B-Pro is derived from t
    Your system might be configured with some option that might interfere with checkinstall.
    If previous installation fails then procede manually:
 
-   `sudo apt-get install build-essential checkinstall libboost-system-dev libboost-python-dev libssl-dev libgeoip- dev`
+   `sudo apt-get install build-essential checkinstall libboost-system-dev libboost-python-dev libssl-dev libgeoip-dev`
 
 ## Download ​libtorrent and extract:
-`   wget https://github.com/arvidn/libtorrent/releases/download/libtorrent-1_0_6/libtorrent-rasterbar-1.0.6.tar.gz`
+`   wget https://github.com/arvidn/libtorrent/releases/download/libtorrent-1_0_7/libtorrent-rasterbar-1.0.7.tar.gz`
 
    `tar xf libtorrent-rasterbar-1.0.6.tar.gz`
 
