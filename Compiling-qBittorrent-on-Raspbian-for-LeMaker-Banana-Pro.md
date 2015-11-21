@@ -50,9 +50,9 @@ The procedure for compiling and installing Libtorrent on B-Pro is derived from t
 ## Download ​libtorrent and extract:
 `   wget https://github.com/arvidn/libtorrent/releases/download/libtorrent-1_0_7/libtorrent-rasterbar-1.0.7.tar.gz`
 
-   `tar xf libtorrent-rasterbar-1.0.6.tar.gz`
+   `tar xf libtorrent-rasterbar-1.0.7.tar.gz`
 
-   `cd libtorrent-rasterbar-1.0.6`
+   `cd libtorrent-rasterbar-1.0.7`
 
 ## Configure:
 
