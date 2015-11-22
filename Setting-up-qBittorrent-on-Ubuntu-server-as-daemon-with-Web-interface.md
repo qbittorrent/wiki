@@ -103,7 +103,7 @@ do_start()
         #   1 if daemon was already running
         #   2 if daemon could not be started
 
-	start-stop-daemon --start --chuid $USER --test --quiet --make-pidfile --pidfile $PIDFILE -background --exec /bin/bash -- -c "$DAEMONSTRING" || return 1
+	start-stop-daemon --start --chuid $USER --test --quiet --make-pidfile --pidfile $PIDFILE --background --exec /bin/bash -- -c "$DAEMONSTRING" || return 1
 
 	start-stop-daemon --start --chuid $USER --make-pidfile --pidfile $PIDFILE --background --exec /bin/bash -- -c "$DAEMONSTRING" || return 2
 	sleep 1
