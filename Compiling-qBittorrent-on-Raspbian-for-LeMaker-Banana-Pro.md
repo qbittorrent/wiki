@@ -56,7 +56,7 @@ The procedure for compiling and installing Libtorrent on B-Pro is derived from t
 
 ## Configure:
 
-   `./configure --enable-python-binding --with-libgeoip --with-libiconv`
+   `./configure --enable-python-binding --with-libgeoip --with-libiconv --with-qt4`
 
 ## WARNING: Users with Debian 8 "Jessie"
 If you have upodated your Raspbian to the latest version "Jessie" then you will most certainly face an error with _libboost library_ while using the ._/configure_
@@ -100,11 +100,11 @@ To overcome this error and configure correctly you must issue the following comm
 
     sudo apt-get install libboost-dev-all
 
-    ./configure --enable-python-binding --with-libgeoip --with-libiconv --with-boost-libdir=/usr/lib/arm-linux-gnueabihf
+    ./configure --enable-python-binding --with-libgeoip --with-libiconv --with-boost-libdir=/usr/lib/arm-linux-gnueabihf --with-qt4
 
    `cd qBittorrent/`
 
-   `./configure --prefix=/usr`
+   `./configure --prefix=/usr --with-qt4`
 
    `make`
 
@@ -132,7 +132,7 @@ Either download and extract a .tar archive from [Sourceforge]( http://sourceforg
 
    `cd qBittorrent/`
 
-   `./configure --prefix=/usr --disable-gui`
+   `./configure --prefix=/usr --disable-gui --with-qt4`
 
 ## WARNING: Users with Debian 8 "Jessie"
 If you have upodated your Raspbian to the latest version "Jessie" then you will most certainly face an error with _libboost library_ while using the ._/configure_
@@ -141,7 +141,7 @@ To overcome this error and configure correctly you must issue the following comm
 
     sudo apt-get install libboost-dev-all
 
-    ./configure --enable-python-binding --with-libgeoip --with-libiconv --with-boost-libdir=/usr/lib/arm-linux-gnueabihf
+    ./configure --enable-python-binding --with-libgeoip --with-libiconv --with-boost-libdir=/usr/lib/arm-linux-gnueabihf --with-qt4
 
    `make`
 
