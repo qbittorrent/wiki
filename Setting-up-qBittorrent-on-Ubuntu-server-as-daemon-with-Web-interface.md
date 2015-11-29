@@ -251,7 +251,7 @@ If you would like qbittorrent to run at startup, update the initscripts with:
 To uninstall qbittorrent-nox:
 ```
 sudo update-rc.d -f qbittorrent remove #Disables the startup scrupt from startup
-sudo apt-get remove --purge qbittorrent* #Removes the filles installed with qbittorrent
+sudo apt-get remove --purge "qbittorrent*" #Removes the filles installed with qbittorrent
 sudo rm /etc/init.d/qbittorrent #Removes the init script
 sudo rm /var/log/qbittorrent-nox.log #Removes the log file
 sudo rm -R /home/qbtuser/.config/qBittorrent #Removes config. You may have reason to keep this
