@@ -63,7 +63,7 @@ If you have upodated your Raspbian to the latest version "Jessie" then you will 
 
 To overcome this error and configure correctly you must issue the following commands:
 
-    sudo apt-get install libboost-dev-all
+    sudo apt-get install libboost-all-dev
 
     ./configure --enable-python-binding --with-libgeoip --with-libiconv --with-boost-libdir=/usr/lib/arm-linux-gnueabihf
 
@@ -139,7 +139,7 @@ If you have upodated your Raspbian to the latest version "Jessie" then you will 
 
 To overcome this error and configure correctly you must issue the following commands:
 
-    sudo apt-get install libboost-dev-all
+    sudo apt-get install libboost-all-dev
 
     ./configure --enable-python-binding --with-libgeoip --with-libiconv --with-boost-libdir=/usr/lib/arm-linux-gnueabihf --with-qt4
 
