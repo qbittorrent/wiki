@@ -143,7 +143,7 @@ Be careful, these scripts probably require editing before you can use them. Thos
 |1.03
 |November 21 2015
 |[https://github.com/Skymirrh/qBittorent-rutracker-plugin Download / README]
-|Tested with qBittorrent 3.2.5.
+|Tested with qBittorrent 3.3.1. Doesn't work? Post an issue [https://github.com/Skymirrh/qBittorent-rutracker-plugin/issues here].
 |-
 |[[http://www.qbittorrent.org/wiki-images/Quebecpartage.png]][http://www.quebec-partage.com/ Quebec-Partage]
 |sinusnco(at)gmail(dot)com
