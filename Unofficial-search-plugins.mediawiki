@@ -13,105 +13,105 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 |-
 | [[https://raw.githubusercontent.com/davy39/qbfrench/master/omgtorrent.png]]
 [http://www.omgtorrent.com/ OMG Torrent]
-| davy39(at)hmamail(dot)com
+| davy39(at) hmamail(dot)com
 | 1.00
 | ?
 | [https://raw.githubusercontent.com/davy39/qbfrench/master/omgtorrent.py Download]
 | Doesn't work with Python3
 |-
 | [[https://raw.githubusercontent.com/MrNeon/qbittorrent-search-plugins/master/strikesearch.png]] [https://getstrike.net/torrents/ StrikeSearch]
-| iamtheneon(at)gmail(dot)com
+| iamtheneon(at) gmail(dot)com
 | 1.03
 | July 12 2015
 | [https://raw.githubusercontent.com/MrNeon/qbittorrent-search-plugins/master/strikesearch.py Download]
 | Python2 & Python3 supported
 |-
 | [[https://raw.githubusercontent.com/ngosang/qBittorrent-plugins/master/tntvillage.png]] [http://www.tntvillage.scambioetico.org/?releaselist TNT Village]
-| ngosang(at)hotmail(dot)es
+| ngosang(at) hotmail(dot)es
 | 1.00
 | September 17 2015
 | [https://raw.githubusercontent.com/ngosang/qBittorrent-plugins/master/tntvillage.py Download]
 | Python2 & Python3 supported
 |-
 | [[https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/torlock/torlock.png]] [http://www.torlock.com/ Torlock]
-| custparasite(at)gmx(dot)se
+| custparasite(at) gmx(dot)se
 | 1.9
 | Sep 26 2015
 | [https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/torlock/torlock.py Download]
 | Python2 & Python3 supported
 |-
 | [[https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/tokyotoshokan/tokyotoshokan.png]] [http://tokyotosho.info/index.php Tokyo Toshokan]
-| custparasite(at)gmx(dot)se
+| custparasite(at) gmx(dot)se
 | 2.0
 | Sep 24 2015
 | [https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/tokyotoshokan/tokyotoshokan.py Download]
 | Python2 & Python3 supported
 |-
 | [[http://www.qbittorrent.org/wiki-images/NyaaTorrents.png]] [http://www.nyaa.se/ NyaaTorrents]
-| yukariin(at)yandex(dot)ru
+| yukariin(at) yandex(dot)ru
 | 2.23
 | Oct 3 2014
 | [https://raw.githubusercontent.com/Yukariin/qBittorrent-Search-Plugins/master/nyaatorrents.py Download]
 | Python2 & Python3 supported
 |-
 | [[https://raw.githubusercontent.com/ngosang/qBittorrent-plugins/master/sumotorrent.png]] [http://www.sumotorrent.sx/ SumoTorrent]
-| ngosang(at)hotmail(dot)es
+| ngosang(at) hotmail(dot)es
 | 1.3
 | Sep 25 2015
 | [https://raw.githubusercontent.com/ngosang/qBittorrent-plugins/master/sumotorrent.py Download]
 | Python2 & Python3 supported. qBittorrent 3.3.0+
 |-
 | [[https://raw.githubusercontent.com/BrunoReX/qbittorrent-search-plugins/master/yts.png]] [http://yts.re/ YTS]
-| brunorex(at)gmail(dot).com
+| brunorex(at) gmail(dot).com
 | 1.0
 | Oct 8 2014
 | [https://raw.githubusercontent.com/BrunoReX/qbittorrent-search-plugins/master/yts.py Download]
 | Outdated
 |-
 | [[https://raw.githubusercontent.com/fvisin/qbittorrent_plugins/master/pirateproxy.png]] [http://pirateproxy.bz/ PirateProxy]
-| fab(at)gnux(dot)info
+| fab(at) gnux(dot)info
 | 1.53
 | Sept 30 2014
 | [https://raw.githubusercontent.com/fvisin/qbittorrent_plugins/master/pirateproxy.py Download]
 | Outdated
 |-
 | [[https://raw.githubusercontent.com/davy39/qbfrench/master/cpasbien.png]] [http://www.cpasbien.pw/ Cpasbien]
-| davy39(at)hmamail(dot)com
+| davy39(at) hmamail(dot)com
 | 1.0
 | May 29 2014
 | [https://raw.githubusercontent.com/davy39/qbfrench/master/cpasbien.py Download]
 | Outdated
 |-
 | [[https://raw.githubusercontent.com/davy39/qbfrench/master/smartorrent.png]] [http://smartorrent.com Smartorrent]
-| davy39(at)hmamail(dot)com
+| davy39(at) hmamail(dot)com
 | 1.0
 | May 29 2014
 | [https://raw.githubusercontent.com/davy39/qbfrench/master/smartorrent.py Download]
 | Outdated
 |-
 | [[https://raw.github.com/mr-mmajoR/myrepo/master/rutor.png]] [http://rutor.org/ rutor.org]
-| mmajor(at)yandex(dot)ru
+| mmajor(at) yandex(dot)ru
 | 1.20
 | May 24 2015
 | [https://raw.githubusercontent.com/kmlebedev/myrepo/master/rutor.py Download]
 | Outdated
 |-
 | [[http://www.qbittorrent.org/wiki-images/Limetorrents.png]] [https://www.limetorrents.cc/ LimeTorrents]
-| richard(at)richardurban(dot)de
+| richard(at) richardurban(dot)de
 | 1.01
 | Feb 02 2013
 | [https://raw.github.com/richardurban/qBittorrent-Search-Plugins/master/limetorrents.py Download]
 | Outdated
 |-
 | [[http://www.qbittorrent.org/wiki-images/Tfile.png]] [http://tfile.me/ tfile.me]
-| bnagaev(at)gmail(dot)com, danerde(at)gmail(dot)com
+| bnagaev(at) gmail(dot)com, danerde(at) gmail(dot)com
 | 1.0
 | Apr 28 2015
 | [https://raw.github.com/danerde/qbittorrent-plugins/master/tfile_me.py Download]
 | Outdated
 |-
 | [[http://www.qbittorrent.org/wiki-images/Divxtotal.png]] [http://divxtotal.com/ DivxTotal]
-| hazuki.shiro(at)gmail(dot)com
+| hazuki.shiro(at) gmail(dot)com
 | 1.2
 | Nov 13 2011
 | [https://raw.github.com/cdumez/qBittorrent-Search-Plugins/master/divxtotal.py Download]
@@ -132,35 +132,35 @@ Be careful, these scripts probably require editing before you can use them. Thos
 !  Comment
 |-
 |[[https://raw.githubusercontent.com/davy39/qbfrench/master/t411.png]][http://www.t411.me T411]
-|davy39(at)hmamail(dot)com
+|davy39(at) hmamail(dot)com
 |1.0
 |May 29 2014
 |[https://raw.githubusercontent.com/davy39/qbfrench/master/t411.py Script only] / [https://github.com/davy39/qbfrench/wiki README]*
 |
 |-
 |[[https://raw.githubusercontent.com/Skymirrh/qBittorent-rutracker-plugin/master/rutracker.png]][http://rutracker.org/ rutracker.org]
-|skymirrh(at)skymirrh(dot)net
+|skymirrh(at) skymirrh(dot)net
 |1.03
 |November 21 2015
 |[https://github.com/Skymirrh/qBittorent-rutracker-plugin Download]
 |Python2 & Python3 supported. Tested with qBittorrent 3.3.1.
 |-
 |[[http://www.qbittorrent.org/wiki-images/Quebecpartage.png]][http://www.quebec-partage.com/ Quebec-Partage]
-|sinusnco(at)gmail(dot)com
+|sinusnco(at) gmail(dot)com
 |1.0
 |Jan 19 2011
 |[http://qbt-extrasearch.svn.sourceforge.net/viewvc/qbt-extrasearch/trunk/quebecpartage_com/quebecpartage.py Script only] / [http://sourceforge.net/projects/qbt-extrasearch/files/quebecpartage_com-1.0.tar.gz/download All files]*
 |Tested with qBittorrent >= 2.6.3
 |-
 |[[http://www.qbittorrent.org/wiki-images/Smartorrent.png]][http://smartorrent.com/ Smartorrent]
-|sinusnco(at)gmail(dot)com
+|sinusnco(at) gmail(dot)com
 |1.0
 |Jan 18 2011
 |[http://qbt-extrasearch.svn.sourceforge.net/viewvc/qbt-extrasearch/trunk/smartorrent_com/smartorrent.py Script only] / [http://sourceforge.net/projects/qbt-extrasearch/files/smartorrent_com-1.0.tar.gz/download All files]*
 |Tested with qBittorrent >= 2.6.3
 |-
 |[[https://github.com/adrianmocan/qbittorrent_plugin_filelist.ro/blob/master/favicon.png]][http://filelist.ro/ FileList]
-|adrian.mocan(at)gmail(dot)com
+|adrian.mocan(at) gmail(dot)com
 |1.0
 |Jun 07 2015
 |[https://github.com/adrianmocan/qbittorrent_plugin_filelist.ro/blob/master/filelist_ro/filelist.py Script only] / [https://github.com/adrianmocan/qbittorrent_plugin_filelist.ro/blob/master/filelist_ro.zip All files]*
