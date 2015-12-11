@@ -2,7 +2,7 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 
 == Plugins for Public sites ==
 
-{| class="wikitable" border="1"
+{|
 |-
 !  Search engine name / URL
 !  Plugin author name / e-mail
@@ -122,7 +122,7 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 
 Be careful, these scripts probably require editing before you can use them. Those sites require an account and your username/password need to be added into the script.
 
-{| class="wikitable" border="1"
+{|
 |-
 !  Search engine name / URL
 !  Plugin author name / e-mail
@@ -142,8 +142,8 @@ Be careful, these scripts probably require editing before you can use them. Thos
 |skymirrh(at)skymirrh(dot)net
 |1.03
 |November 21 2015
-|[https://github.com/Skymirrh/qBittorent-rutracker-plugin Download / README]
-|Tested with qBittorrent 3.3.1. Doesn't work? Post an issue [https://github.com/Skymirrh/qBittorent-rutracker-plugin/issues here].
+|[https://github.com/Skymirrh/qBittorent-rutracker-plugin Download]
+|Python2 & Python3 supported. Tested with qBittorrent 3.3.1.
 |-
 |[[http://www.qbittorrent.org/wiki-images/Quebecpartage.png]][http://www.quebec-partage.com/ Quebec-Partage]
 |sinusnco(at)gmail(dot)com
