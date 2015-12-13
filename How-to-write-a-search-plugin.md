@@ -129,7 +129,7 @@ Do not hesitate to use the official search engine plugins as an example. They ar
 
 ## Test your plugin
 
-It is better to test your plugin while developing it, before installing it in qBittorrent. Hence, we advise that you download [this archive](http://hydr0g3n.free.fr/search_engine.zip). Unzip it and you will get the following structure:
+It is better to test your plugin while developing it, before installing it in qBittorrent. Hence, we advise that you download [these files](https://github.com/qbittorrent/qBittorrent/tree/master/src/searchengine/nova). You will get the following structure:
 
 ```
  search_engine
