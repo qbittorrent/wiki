@@ -61,6 +61,13 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 | [https://raw.githubusercontent.com/ngosang/qBittorrent-plugins/master/sumotorrent.py Download]
 | Python2 & Python3 supported. qBittorrent 3.3.0+
 |-
+| [[http://www.qbittorrent.org/wiki-images/Tfile.png]] [http://tfile.me/ tfile.me]
+| bnagaev(at) gmail(dot)com, danerde(at) gmail(dot)com
+| 2.03
+| Dec 13 2015
+| [https://raw.githubusercontent.com/starius/qbittorrent-plugins/master/tfile_me.py Download]
+| Python2 & Python3 supported 
+|-
 | [[https://raw.githubusercontent.com/BrunoReX/qbittorrent-search-plugins/master/yts.png]] [http://yts.re/ YTS]
 | brunorex(at) gmail(dot).com
 | 1.0
@@ -101,13 +108,6 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 | 1.01
 | Feb 02 2013
 | [https://raw.github.com/richardurban/qBittorrent-Search-Plugins/master/limetorrents.py Download]
-| Outdated
-|-
-| [[http://www.qbittorrent.org/wiki-images/Tfile.png]] [http://tfile.me/ tfile.me]
-| bnagaev(at) gmail(dot)com, danerde(at) gmail(dot)com
-| 2.03
-| Dec 13 2015
-| [https://raw.githubusercontent.com/starius/qbittorrent-plugins/master/tfile_me.py Download]
 | Outdated
 |-
 | [[http://www.qbittorrent.org/wiki-images/Divxtotal.png]] [http://divxtotal.com/ DivxTotal]
