@@ -7,6 +7,9 @@ The qBittorrent issue tracker is located right [https://github.com/qbittorrent/q
 == There is a feature I would like to see in qBittorrent, where can I make a request? ==
 On our issue tracker [https://github.com/qbittorrent/qBittorrent/issues here]. All ideas and feedback are welcome. Just know that we want qBittorrent to remain low-footprint software and that we do not want to integrate “heavy” features that are not really useful to most people.
 
+==Why can't I set a priority on completed files or folders?==
+The simple answer is that 'priority' has no significance for payloads, or part thereof that are completed. **Priority** is there to arrange in numerical order the **requests** for pieces that **your** client makes to other peer nodes in the swarm for pieces that are still required by your client to complete the selected payload. It has no relevance to other peers as it is purely a 'local' setting. Because of this it is excluded from the context menu that is accessed via a 'right click' or 'menu' button on a keyboard. 
+
 == How can I turn off the "Splash Screen" / "Loading Icon"? ==
 You can turn this off by Unchecking "[ ] Show splash screen on start up" in Tools -> Options -> Behaviour. That will make qBittorrent start "silently".
 
