@@ -56,5 +56,6 @@ To set up qbittorrent as a deamon see: https://github.com/qbittorrent/qBittorren
 
 or else just run `qbittorrent-nox`
 
-Kudos to @SoreGums
-ref for qmake bug on centos: https://github.com/qbittorrent/qBittorrent/issues/4197#issuecomment-160654335
+>Kudos to @SoreGums
+
+>ref for qmake bug on centos: https://github.com/qbittorrent/qBittorrent/issues/4197#issuecomment-160654335
