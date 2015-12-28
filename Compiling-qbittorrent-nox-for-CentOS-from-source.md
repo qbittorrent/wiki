@@ -1,39 +1,57 @@
-After stumbling for about 3 hours _(not knowing what the distro package names were to install)_ here is the concise list of commands to build as per:
+After stumbling for about 2 hours _(getting Qt5 to work)_ here is the how to build qbittorrent as per:
 
-* https://github.com/qbittorrent/qBittorrent/commit/331219dda828cc2bc7d3c80dc4092401ca5e55d4
+**Update for Qt5**
+
+* https://github.com/qbittorrent/qBittorrent/releases/tag/release-3.3.1
 * CentOS 7 x64
-* 2015-08-09 (Aug)
+* 2015-12-28 (Dec)
 
+Install Dependencies 
 ```
 yum -y groupinstall 'Development Tools'
-yum -y install qt-devel boost-devel openssl-devel
+yum -y install qt-devel boost-devel openssl-devel qt-5-qtbase-devel
+```
 
-wget https://github.com/arvidn/libtorrent/releases/download/libtorrent-1_0_6/libtorrent-rasterbar-1.0.6.tar.gz
-tar -zxf libtorrent-rasterbar-1.0.6.tar.gz
-cd libtorrent-rasterbar-1.0.6
+Grab latest libtorrent release
+* libtorrent-1.0.7 at the time of writing
+
+> https://github.com/arvidn/libtorrent/releases check for updates and replace as needed
+
+```
+wget https://github.com/arvidn/libtorrent/releases/download/libtorrent-1_0_7/libtorrent-rasterbar-1.0.7.tar.gz
+tar -zxf libtorrent-rasterbar-1.0.7.tar.gz
+cd libtorrent-rasterbar-1.0.7
 ./configure --prefix=/usr
 make
 make install
 ln -s /usr/lib/pkgconfig/libtorrent-rasterbar.pc /usr/lib64/pkgconfig/libtorrent-rasterbar.pc
 ln -s /usr/lib/libtorrent-rasterbar.so.8 /usr/lib64/libtorrent-rasterbar.so.8
+```
 
-cd ..
+Grab latest qbittorrent
+```
+cd 
 git clone https://github.com/qbittorrent/qBittorrent.git
 cd qBittorrent
-./configure --prefix=/usr --disable-gui
+./configure --prefix=/usr --disable-gui CPPFLAGS=-I/usr/include/qt5
 make
 make install
 cd
+```
 
-// don't do this if you have a working config file
+***
+
+**Don't do this if you have a working config file ie. you are upgrading**
+```
 mkdir -p ~/.config/qBittorrent
 cat > ~/.config/qBittorrent/qBittorrent.conf <<- EOM
 [Preferences]
 WebUI\Enabled=true
 EOM
-// don't do this if you have a working config file
-
-qbittorrent-nox
 ```
 
-You're welcome @SoreGums
+***
+
+To set up qbittorrent as a deamon see: https://github.com/qbittorrent/qBittorrent/wiki/Setting-up-qBittorrent-as-a-daemon-on-CentOS-7
+
+or else just run `qbittorrent-nox`
