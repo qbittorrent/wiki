@@ -6,7 +6,7 @@ After stumbling for about 2 hours _(getting Qt5 to work)_ here is the how to bui
 * CentOS 7 x64
 * 2015-12-28 (Dec)
 
-Install Dependencies 
+Install Dependencies (make sure you have epel repo enabled)
 ```
 yum -y groupinstall 'Development Tools'
 yum -y install qt-devel boost-devel openssl-devel qt-5-qtbase-devel
@@ -55,3 +55,6 @@ EOM
 To set up qbittorrent as a deamon see: https://github.com/qbittorrent/qBittorrent/wiki/Setting-up-qBittorrent-as-a-daemon-on-CentOS-7
 
 or else just run `qbittorrent-nox`
+
+Kudos to @SoreGums
+ref for qmake bug on centos: https://github.com/qbittorrent/qBittorrent/issues/4197#issuecomment-160654335
