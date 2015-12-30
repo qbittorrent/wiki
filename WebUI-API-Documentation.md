@@ -41,6 +41,7 @@
   1. [Set torrent download limit](#set-torrent-download-limit)
   1. [Get torrent upload limit](#get-torrent-upload-limit)
   1. [Set torrent upload limit](#set-torrent-upload-limit)
+  1. [Set torrent label](#set-torrent-label)
   1. [Set qBittorrent preferences](#set-qbittorrent-preferences)
   1. [Get alternative speed limits state](#get-alternative-speed-limits-state)
   1. [Toggle alternative speed limits](#toggle-alternative-speed-limits)
@@ -1217,6 +1218,10 @@ No matter if successful or not server will return the following reply:
 ```http
 HTTP/1.1 200 OK
 ```
+
+### Set torrent label ###
+
+TODO
 
 ### Set qBittorrent preferences ###
 
