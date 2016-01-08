@@ -49,8 +49,8 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 |-
 | [[http://www.qbittorrent.org/wiki-images/NyaaTorrents.png]] [http://www.nyaa.se/ NyaaTorrents]
 | yukariin(at) yandex(dot)ru
-| 2.23
-| Oct 3 2014
+| 2.26
+| Jan 8 2016
 | [https://raw.githubusercontent.com/Yukariin/qBittorrent-Search-Plugins/master/nyaatorrents.py Download]
 | Python2 & Python3 supported
 |-
