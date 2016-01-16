@@ -94,7 +94,7 @@ Either download and extract a .tar archive from [Sourceforge]( http://sourceforg
 ## Configure qBittorrent
 
 ## WARNING: Users with Debian 8 "Jessie"
-If you have upodated your Raspbian to the latest version "Jessie" then you will most certainly face an error with _libboost library_ while using the ._/configure_
+If you have updated your Raspbian to the latest version "Jessie" then you will most certainly face an error with _libboost library_ while using the ._/configure_
 
 To overcome this error and configure correctly you must issue the following commands:
 
@@ -135,7 +135,7 @@ Either download and extract a .tar archive from [Sourceforge]( http://sourceforg
    `./configure --prefix=/usr --disable-gui --with-qt4`
 
 ## WARNING: Users with Debian 8 "Jessie"
-If you have upodated your Raspbian to the latest version "Jessie" then you will most certainly face an error with _libboost library_ while using the ._/configure_
+If you have updated your Raspbian to the latest version "Jessie" then you will most certainly face an error with _libboost library_ while using the ._/configure_
 
 To overcome this error and configure correctly you must issue the following commands:
 
