@@ -194,7 +194,7 @@ By doing so you will not need to keep open a terminal window in order to execute
 _**Please Note:**_ **the following solution is based upon personal research** and days of testing. I am aware that it might not be the nicest solution available, but if your are **running qBittorrent-nox on B-Pro with Raspbian** chances are that you too noticed how **impredictible **and **unstable **is its behaviour when using **`update-rc.d` method.**
 
 _The following commands are based upon the assumption that you are running qBittorrent under a dedicated user._ 
-If you are running it under the 'bananapi' root user you need to execute the following with ' root privileges'.
+If you are running it under the 'bananapi' root user you need to execute the following with 'root privileges'.
 
 ###Exceute the following command:
 
