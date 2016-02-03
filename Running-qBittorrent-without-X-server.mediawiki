@@ -10,7 +10,8 @@ Please refer to the updated guide [[Setting-up-qBittorrent-on-Ubuntu-server-as-d
 
 On OpenSUSE:  
 
-You have to install the same named package (as of 13.1):
+You have to install the same named package (as of 13.1):  
+
 `sudo zypper in qbittorrent-nox`
 
 There is no PPA for OpenSUSE, but you can check the [https://build.opensuse.org/ Build Service] (OBS in short) for new packages.
