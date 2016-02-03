@@ -1,34 +1,36 @@
-**Introduction:**
+**Introduction:**  
 qBittorrent has a feature-rich Web UI allowing users to control qBittorrent remotely. This is ideal for headless servers without the X window system such as Ubuntu Server.
 
-**Note:** Since Ubuntu server 15.04 replaced upstart for systemd, this guide only applies to Ubuntu 15.04 and newer. This change only affects how qbittorrent is started (init scripts) and how logging happens.
+**Note:**    
+Since Ubuntu server 15.04 replaced upstart for systemd, this guide only applies to Ubuntu 15.04 and newer. This change only affects how qbittorrent is started (init scripts) and how logging happens.
 
-**A little about qBittorent-nox vs qBittorrent:**
+**A little about qBittorent-nox vs qBittorrent:**  
 The main binary file (executable file) for The qBittorrent has two variants and is usually located at /usr/bin/:
 * qbittorrent which is qBittorrent WITH Graphical user interface and 
 * qbittorrent-nox which is same as the above but compiled WITHOUT the desktop graphical user interface, and only a web-interface.
 Since this guide focusses on servers that normally don't have a desktop user interface, we will use the qbittorrent-nox binary, but we still call it by it's regular name - qbittorrent.
 
-**Install**
+**Install**  
 qBittorrent-nox is already included in the official Ubuntu repositories. Install with:
 
 `sudo apt-get update && sudo apt-get install qbittorrent-nox`
 
-**User**
+**User**  
 Now let's create the user qbittorrent will run under:
 
 `sudo useradd qbtuser -m`
 
 (The -m option creates the home directory under /home with the correct name and permissions. This directory will house our configuration files. /home/qbtuser/.config/qBittorrent/ to be precise.
 
-**Init script**
-First we create a file under /etc/systemd/system/ called qbittorrent.service:
+**Init script**  
+First we create a file under /etc/systemd/system/ called qbittorrent.service:  
 `sudo touch /etc/systemd.system/qbittorrent.service`
 
-Open with text editor:
-'sudo nano /etc/systemd.system/qbittorrent.service'
+Open with text editor:  
+`sudo nano /etc/systemd.system/qbittorrent.service`
 
-Copy and paste the following into the file:
+Copy and paste the following into the file:  
+
     [Unit]
     Description=qBittorrent Daemon Service
     After=network.target
