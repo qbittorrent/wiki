@@ -45,12 +45,12 @@ Copy and paste the following into the file:
 
 Save and close the file pressing ctrl+x then press y for yes, followed by ENTER.
 
-Before we continue, let's run qbittorrent so that it can ask us to accept the disclaimer, and save and create the config file to remember this setting:
+Before we continue, let's run qbittorrent so that it can ask us to accept the disclaimer, and save and create the config file to remember this setting:  
 
-First we impersonate the qbtuser:
-`sudo su qbtuser`
-And run qbittorrent:
-`qbittorrent-nox`
+First we impersonate the qbtuser:  
+`sudo su qbtuser`  
+And run qbittorrent:  
+`qbittorrent-nox`  
 
 You should see the following:  
 
@@ -72,7 +72,7 @@ Press y key and you should see:
     03/02/2016 15:51:03 - The Web UI is listening on port 8080
     03/02/2016 15:51:04 - qBittorrent is successfully listening on ...
 
-Without doing anything further, you should be able to point a web browser (on the same network) to the IP of your server: http://ip-of-server/8080 and log in with 
+Without doing anything further, you should be able to point a web browser (on the same network) to the IP of your server: http://ip-of-server:8080 and log in with  
     user: admin
     password: adminadmin
 
