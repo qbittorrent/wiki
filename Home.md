@@ -19,8 +19,8 @@ Welcome to the qBittorrent wiki!
 * [How to translate qBittorrent](wiki/How-to-translate-qBittorrent)
 
 ## Linux
-* [Setting up qBittorrent on Ubuntu server/headless server as daemon with Web interface (15.04 and newer)] (wiki/Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface-(15.04-and-newer))
-* [Setting up qBittorrent on Ubuntu server/headless server as daemon with Web interface (14.04 and older)] (wiki/Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface-(14.04-and-older))
+* [qBittorrent on Ubuntu server (headless) with Web interface (15.04 - newer)] (wiki/Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface-(15.04-and-newer))
+* [qBittorrent on Ubuntu server (headless) with Web interface (14.04 - older)] (wiki/Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface-(14.04-and-older))
 * [Running qBittorrent without X server - Generic ](wiki/Running-qBittorrent-without-X-server)
 * [Setting up qBittorrent as a daemon on CentOS 7] (wiki/Setting-up-qBittorrent-as-a-daemon-on-CentOS-7)
 
