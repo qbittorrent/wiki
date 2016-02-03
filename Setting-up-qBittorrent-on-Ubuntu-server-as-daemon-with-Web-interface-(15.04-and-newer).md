@@ -48,7 +48,9 @@ Save and close the file pressing ctrl+x then press y for yes, followed by ENTER.
 Before we continue, let's run qbittorrent so that it can ask us to accept the disclaimer, and save and create the config file to remember this setting:  
 
 First we impersonate the qbtuser:  
+
 `sudo su qbtuser`  
+
 And run qbittorrent:  
 `qbittorrent-nox`  
 
@@ -95,10 +97,11 @@ After the above, systemd should have indexed and invoked our init script so qbit
 **Stopping qBittorrent:**  
 'sudo systemctl stop qbittorrent.service'
 
-Check status:  
+**Check status:**  
 `sudo systemctl status qbittorrent.service`
 
 This should yield something like this:  
+
     ● qbittorrent.service - qBittorrent Daemon Service
        Loaded: loaded (/etc/systemd/system/qbittorrent.service; disabled; vendor preset: enabled)
        Active: active (running) since Wed 2016-02-03 16:02:06 SAST; 6s ago
