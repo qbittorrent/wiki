@@ -178,8 +178,6 @@ Go back to the top of the file and edit the user that qbittorrent will run as. R
 
 `sudo useradd qbtuser` 
 
-now save and exit by pressing CTRL + X, then press 'y' and ENTER.
-
 **Initialization with first start**
 
 Now you'll want to run qbittorrent to get it to generate the config file and show its disclaimer, which you'll need to read and accept in order to continue. This command should be run as the user that will run the init script (qbtuser in our example):
