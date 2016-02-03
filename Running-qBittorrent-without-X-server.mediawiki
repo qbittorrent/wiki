@@ -1,6 +1,6 @@
 qBittorrent has a feature-rich Web UI allowing users to control qBittorrent remotely. Up until v2.1.0, qBittorrent required a X server to run because its Qt4 graphical user interface could not be disabled. However, it is often the case that Linux servers are not running any X server. To allow users to run qBittorrent v2 on a computer without X we separated the GUI code from the core in qBittorrent v2.1.0.
 
-'''Please note, a more comprehensive guide for Ubuntu server is available [[Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface|here]].'''
+'''Please note, a more comprehensive guide for Ubuntu server is available [[Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface-(15.04-and-newer)|here]].'''
 
 == Install qBittorrent-nox (from binary package) ==
 Many distributions package qBittorrent-nox into a different package, such as Ubuntu.
