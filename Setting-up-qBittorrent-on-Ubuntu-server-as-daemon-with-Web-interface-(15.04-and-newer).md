@@ -21,7 +21,7 @@ Now let's create the user qbittorrent will run under:
 
 (The -m option creates the home directory under /home with the correct name and permissions. This directory will house our configuration files. /home/qbtuser/.config/qBittorrent/ to be precise.
 
-**Initscript**
+**Init script**
 First we create a file under /etc/systemd/system/ called qbittorrent.service:
 `sudo touch /etc/systemd.system/qbittorrent.service`
 
@@ -50,9 +50,10 @@ First we impersonate the qbtuser:
 And run qbittorrent:
 `qbittorrent-nox`
 
-You should see the following:
+You should see the following:  
+
     *** Legal Notice ***
-    qBittorrent is a file sharing program. When you run a torrent, its data will be made available to others by means     of upload. Any content you share is your sole responsibility.
+    qBittorrent is a file sharing program. When you run a torrent, its data will be made available to others by means of upload. Any content you share is your sole responsibility.
     
     No further notices will be issued.
     
