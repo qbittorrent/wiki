@@ -48,7 +48,6 @@ Save and close the file pressing ctrl+x then press y for yes, followed by ENTER.
 Before we continue, let's run qbittorrent so that it can ask us to accept the disclaimer, and save and create the config file to remember this setting:  
 
 First we impersonate the qbtuser:  
-
 `sudo su qbtuser`  
 
 And run qbittorrent:  
@@ -131,16 +130,16 @@ This will show the live version of the log file as things are happening:
 **Uninstalling qBittorrent:**  
 
 Remove the startup script:  
-'sudo rm /etc/systemd/qbittorrent.service'
+`sudo rm /etc/systemd/qbittorrent.service`
 
 Remove the qBittorrent package:  
-'sudo apt-get remove --purge "qbittorrent*"'
+`sudo apt-get remove --purge "qbittorrent*"`
 
 Remove log files:  
-'sudo rm /var/log/qbittorrent.log'
+`sudo rm /var/log/qbittorrent.log`
 
 Remove qbtuser home folder and config files. If you want to re-install qbittorrent or something you might want to keep this or back it up:  
-'sudo rm -R /home/qbtuser/.config/qBittorrent'
+`sudo rm -R /home/qbtuser/.config/qBittorrent`
 
 Remove qbtuser:  
 'sudo userdel qbtuser'
