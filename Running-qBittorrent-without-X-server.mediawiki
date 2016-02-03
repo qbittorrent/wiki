@@ -7,7 +7,8 @@ On OpenSUSE, you have to install the same named package (as of 13.1):
  sudo zypper in qbittorrent-nox
 
 
-'''For Ubuntu please refer to the updated guides [[Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface-(15.04-and-newer)|here]].'''
+For Ubuntu:  
+Please refer to the updated guide [[Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface-(15.04-and-newer)|here]].'''
 
 
 There is no PPA for OpenSUSE, but you can check the [https://build.opensuse.org/ Build Service] (OBS in short) for new packages.
