@@ -184,7 +184,7 @@ Now you'll want to run qbittorrent to get it to generate the config file and sho
 
 ```
 sudo su qbtuser
-sudo qbittorrent-nox
+qbittorrent-nox
 ```
 
 You'll see the following:
