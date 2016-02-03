@@ -72,31 +72,33 @@ Press y key and you should see:
     03/02/2016 15:51:03 - The Web UI is listening on port 8080
     03/02/2016 15:51:04 - qBittorrent is successfully listening on ...
 
-Without doing anything further, you should be able to point a web browser (on the same network) to the IP of your server: http://ip-of-server:8080 and log in with  
-    user: admin
-    password: adminadmin
+Without doing anything further, you should be able to point a web browser (on the same network) to the IP of your server: http://ip-of-server:8080 and log in with:  
+
+    User: admin
+    Password: adminadmin
 
 You should now see the web interface.
 
 Back at the server's command line, exit out of qbittorrent-nox instance with Ctrl+c
 
-**Updating systemd:**
+**Updating systemd:**  
 Now update systemd to include the new script:
 `sudo systemd daemon-reload`
 
-**That's it, were done!**
+**That's it, were done!**  
 After the above, systemd should have indexed and invoked our init script so qbittorrent should be running. qBittorrent should now start automatically with reboots.
 
 
-**Starting qBittorrent:**
+**Starting qBittorrent:**  
 'sudo systemctl start qbittorrent.service'
 
-**Stopping qBittorrent:**
+**Stopping qBittorrent:**  
 'sudo systemctl stop qbittorrent.service'
 
-Check status:
-'sudo systemctl status qbittorrent.service'
-This should yield something like this:
+Check status:  
+`sudo systemctl status qbittorrent.service`
+
+This should yield something like this:  
     ● qbittorrent.service - qBittorrent Daemon Service
        Loaded: loaded (/etc/systemd/system/qbittorrent.service; disabled; vendor preset: enabled)
        Active: active (running) since Wed 2016-02-03 16:02:06 SAST; 6s ago
@@ -105,37 +107,37 @@ This should yield something like this:
        CGroup: /system.slice/qbittorrent.service
                └─15470 /usr/bin/qbittorrent-nox -d
 
-To determine the status of qBittorrent, pay special attention to:
-'
+To determine the status of qBittorrent, pay special attention to:  
+
        Active: active (running) since Wed 2016-02-03 16:02:06 SAST; 6s ago'
 
 
 
-**Logging and debugging:**
+**Logging and debugging:**  
 With the advent of systemd replacing upstart, logging also changed. qbittorrent doesn't have a straight forward logging facility. When it runs it outputs to syslog, but when it doesn't run, like if the disclaimer hasn't been answered yet, you won't see anything in the log files. The best to see this is to impersonate the qbtuser and run qbittorent-nox to see if the disclaimer comes up again.
 
 Another way of working around how qbittorrent logs/doesn't log is to modify the init script as a 'oneshot' command execution and pipe the output to a file such as /var/log/qbittorrent.log, but I haven't tried this yet. Possibly the proccess identifier will need to be specified as well as the stop command so that status and stop commands also work. This is still a work in progress and I'll update this guide when I have it working.
 
-You can also view output of qbittorrent with journalctl:
+You can also view output of qbittorrent with journalctl:  
 This will show the entire log in a pager that can be scrolled through:
 `sudo journalctl -u qbittorrent.service`
 
-This will show the live version of the log file as things are happening:
+This will show the live version of the log file as things are happening:  
 `sudo journalctl -f -u qbittorrent.service`
 
-**Uninstalling qBittorrent:**
+**Uninstalling qBittorrent:**  
 
-Remove the startup script:
+Remove the startup script:  
 'sudo rm /etc/systemd/qbittorrent.service'
 
-Remove the qBittorrent package:
+Remove the qBittorrent package:  
 'sudo apt-get remove --purge "qbittorrent*"'
 
-Remove log files:
+Remove log files:  
 'sudo rm /var/log/qbittorrent.log'
 
-Remove qbtuser home folder and config files. If you want to re-install qbittorrent or something you might want to keep this or back it up.
+Remove qbtuser home folder and config files. If you want to re-install qbittorrent or something you might want to keep this or back it up:  
 'sudo rm -R /home/qbtuser/.config/qBittorrent'
 
-Remove qbtuser:
+Remove qbtuser:  
 'sudo userdel qbtuser'
