@@ -160,7 +160,7 @@ case "$1" in
 	;;
   *)
 	#echo "Usage: $SCRIPTNAME {start|stop|restart|reload|force-reload}" >&2
-	echo "Usage: $SCRIPTNAME {start|stop|status|restart|force-reload}" >&2
+	echo "Usage: service qbittorrent {start|stop|status|restart|force-reload}" >&2
 	exit 3
 	;;
 esac
