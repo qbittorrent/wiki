@@ -176,7 +176,7 @@ sudo chown root:root /etc/init.d/qbittorrent
 
 Go back to the top of the file and edit the user that qbittorrent will run as. Replace qbtuser with the user you would like qbittorrent to run as. Alternatively you could create the user qbtuser by issuing this command: 
 
-`sudo useradd qbtuser` 
+`sudo useradd qbtuser -m` 
 
 **Initialization with first start**
 
