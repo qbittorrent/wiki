@@ -29,17 +29,17 @@ Open with text editor:
 'sudo nano /etc/systemd.system/qbittorrent.service'
 
 Copy and paste the following into the file:
-> [Unit]
-> Description=qBittorrent Daemon Service
-> After=network.target
+    [Unit]
+    Description=qBittorrent Daemon Service
+    After=network.target
 
-> [Service]
-> Type=forking
-> User=qbtuser
-> ExecStart=/usr/bin/qbittorrent-nox -d
+    [Service]
+    Type=forking
+    User=qbtuser
+    ExecStart=/usr/bin/qbittorrent-nox -d
 
-> [Install]
-> WantedBy=multi-user.target
+    [Install]
+    WantedBy=multi-user.target
 
 Save and close the file pressing ctrl+x then press y for yes, followed by ENTER.
 
@@ -51,27 +51,27 @@ And run qbittorrent:
 `qbittorrent-nox`
 
 You should see the following:
-> *** Legal Notice ***
-> qBittorrent is a file sharing program. When you run a torrent, its data will be made available to others by means > of upload. Any content you share is your sole responsibility.
-> 
-> No further notices will be issued.
-> 
-> Press 'y' key to accept and continue...
-> '
+    *** Legal Notice ***
+    qBittorrent is a file sharing program. When you run a torrent, its data will be made available to others by means     of upload. Any content you share is your sole responsibility.
+    
+    No further notices will be issued.
+    
+    Press 'y' key to accept and continue...
+    '
 
 Press y key and you should see:
 
-> ******** Information ********
-> To control qBittorrent, access the Web UI at http://localhost:8080
-> The Web UI administrator user name is: admin
-> The Web UI administrator password is still the default one: adminadmin
-> This is a security risk, please consider changing your password from program preferences.
-> 03/02/2016 15:51:03 - The Web UI is listening on port 8080
-> 03/02/2016 15:51:04 - qBittorrent is successfully listening on ...
+    ******** Information ********
+    To control qBittorrent, access the Web UI at http://localhost:8080
+    The Web UI administrator user name is: admin
+    The Web UI administrator password is still the default one: adminadmin
+    This is a security risk, please consider changing your password from program preferences.
+    03/02/2016 15:51:03 - The Web UI is listening on port 8080
+    03/02/2016 15:51:04 - qBittorrent is successfully listening on ...
 
 Without doing anything further, you should be able to point a web browser (on the same network) to the IP of your server: http://ip-of-server/8080 and log in with 
-> user: admin
-> password: adminadmin
+    user: admin
+    password: adminadmin
 
 You should now see the web interface.
 
