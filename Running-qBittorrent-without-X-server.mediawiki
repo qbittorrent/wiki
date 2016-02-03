@@ -5,13 +5,13 @@ Many distributions package qBittorrent-nox into a different package.
 
 For Ubuntu:  
 
-Please refer to the updated guide [[Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface-(15.04-and-newer)|here]].
+Please refer to the updated guide [[Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface-(15.04-and-newer)|here]].  
+
 
 On OpenSUSE:  
 
 You have to install the same named package (as of 13.1):
 `sudo zypper in qbittorrent-nox`
-
 
 There is no PPA for OpenSUSE, but you can check the [https://build.opensuse.org/ Build Service] (OBS in short) for new packages.
 Use these only on your own risk. Those are not our packages, we don't check them.
