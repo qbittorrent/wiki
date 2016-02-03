@@ -58,7 +58,7 @@ You should see the following:
     No further notices will be issued.
     
     Press 'y' key to accept and continue...
-    '
+
 
 Press y key and you should see:
 
