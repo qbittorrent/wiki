@@ -1,17 +1,12 @@
 qBittorrent has a feature-rich Web UI allowing users to control qBittorrent remotely. Up until v2.1.0, qBittorrent required a X server to run because its Qt4 graphical user interface could not be disabled. However, it is often the case that Linux servers are not running any X server. To allow users to run qBittorrent v2 on a computer without X we separated the GUI code from the core in qBittorrent v2.1.0.
 
-'''Please note, a more comprehensive guide for Ubuntu server is available [[Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface-(15.04-and-newer)|here]].'''
-
 == Install qBittorrent-nox (from binary package) ==
-Many distributions package qBittorrent-nox into a different package, such as Ubuntu.
-So you have to install the package by issuing the following command:
- sudo apt-get update
- sudo apt-get install qbittorrent-nox
-
-You may want to use our [http://www.qbittorrent.org/download.php PPA] as well. Instructions can be found on bottom of the page, after selecting Linux.
+Many distributions package qBittorrent-nox into a different package.
 
 On OpenSUSE, you have to install the same named package (as of 13.1):
  sudo zypper in qbittorrent-nox
+
+For Ubuntu please refer to the updated guides [[Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface-(15.04-and-newer)|here]].
 
 There is no PPA for OpenSUSE, but you can check the [https://build.opensuse.org/ Build Service] (OBS in short) for new packages.
 Use these only on your own risk. Those are not our packages, we don't check them.
