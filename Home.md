@@ -20,7 +20,8 @@ Welcome to the qBittorrent wiki!
 
 ## Linux
 * [Running qBittorrent without X server](wiki/Running-qBittorrent-without-X-server)
-* [Setting up qBittorrent on Ubuntu server as daemon with Web interface] (wiki/Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface)
+* [Setting up qBittorrent on Ubuntu server as daemon with Web interface (15.04 and newer)] (wiki/Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface-(15.04-and-newer))
+* [Setting up qBittorrent on Ubuntu server as daemon with Web interface (14.04 and older)] (wiki/Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface-(14.04-and-older))
 * [Setting up qBittorrent as a daemon on CentOS 7] (wiki/Setting-up-qBittorrent-as-a-daemon-on-CentOS-7)
 
 ## Developing
