@@ -84,29 +84,29 @@ Now update systemd to include the new script:
 **That's it, were done!**
 After the above, systemd should have indexed and invoked our init script so qbittorrent should be running. qBittorrent should now start automatically with reboots.
 
-Starting, checking status, stopping qBittorrent
-Starting qBittorrent:
+
+**Starting qBittorrent:**
 'sudo systemctl start qbittorrent.service'
 
-Stopping qBittorrent:
+**Stopping qBittorrent:**
 'sudo systemctl stop qbittorrent.service'
 
 Check status:
 'sudo systemctl status qbittorrent.service'
 This should yield something like this:
-'● qbittorrent.service - qBittorrent Daemon Service
-   Loaded: loaded (/etc/systemd/system/qbittorrent.service; disabled; vendor preset: enabled)
-   Active: active (running) since Wed 2016-02-03 16:02:06 SAST; 6s ago
-  Process: 15469 ExecStart=/usr/bin/qbittorrent-nox -d (code=exited, status=0/SUCCESS)
- Main PID: 15470 (qbittorrent-nox)
-   CGroup: /system.slice/qbittorrent.service
-           └─15470 /usr/bin/qbittorrent-nox -d
-'
-Pay special attention to:
-'
-   Active: active (running) since Wed 2016-02-03 16:02:06 SAST; 6s ago'
+    ● qbittorrent.service - qBittorrent Daemon Service
+       Loaded: loaded (/etc/systemd/system/qbittorrent.service; disabled; vendor preset: enabled)
+       Active: active (running) since Wed 2016-02-03 16:02:06 SAST; 6s ago
+      Process: 15469 ExecStart=/usr/bin/qbittorrent-nox -d (code=exited, status=0/SUCCESS)
+     Main PID: 15470 (qbittorrent-nox)
+       CGroup: /system.slice/qbittorrent.service
+               └─15470 /usr/bin/qbittorrent-nox -d
 
-to determine the status of qBittorrent
+To determine the status of qBittorrent, pay special attention to:
+'
+       Active: active (running) since Wed 2016-02-03 16:02:06 SAST; 6s ago'
+
+
 
 **Logging and debugging:**
 With the advent of systemd replacing upstart, logging also changed. qbittorrent doesn't have a straight forward logging facility. When it runs it outputs to syslog, but when it doesn't run, like if the disclaimer hasn't been answered yet, you won't see anything in the log files. The best to see this is to impersonate the qbtuser and run qbittorent-nox to see if the disclaimer comes up again.
@@ -115,12 +115,12 @@ Another way of working around how qbittorrent logs/doesn't log is to modify the 
 
 You can also view output of qbittorrent with journalctl:
 This will show the entire log in a pager that can be scrolled through:
-'sudo journalctl -u qbittorrent.service'
+`sudo journalctl -u qbittorrent.service`
 
 This will show the live version of the log file as things are happening:
-'sudo journalctl -f -u qbittorrent.service'
+`sudo journalctl -f -u qbittorrent.service`
 
-Uninstalling qBittorrent:
+**Uninstalling qBittorrent:**
 
 Remove the startup script:
 'sudo rm /etc/systemd/qbittorrent.service'
