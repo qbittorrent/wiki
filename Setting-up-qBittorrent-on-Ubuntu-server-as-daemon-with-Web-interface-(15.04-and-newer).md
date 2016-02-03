@@ -127,6 +127,8 @@ This will show the entire log in a pager that can be scrolled through:
 This will show the live version of the log file as things are happening:  
 `sudo journalctl -f -u qbittorrent.service`
 
+
+
 **Uninstalling qBittorrent:**  
 
 Remove the startup script:  
