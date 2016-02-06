@@ -4,10 +4,10 @@ This how-to will guide you though the compilation of qBittorrent and libtorrent-
 * General required dependencies
  sudo apt-get install libboost-dev libboost-system-dev
 
-* Qt4 libraries
+* Qt4 libraries (optional and only if it exists in your distro's repo)
  sudo apt-get install libqt4-dev
 
-* Qt5 libraries (optional and only if it exists in your distro's repo)
+* Qt5 libraries
  sudo apt-get install qtbase5-dev
 
 * Python (Run time only dependency, for the search engine)
@@ -48,7 +48,7 @@ First, obtain the qBittorrent source code. Either download and extract a .tar ar
  make
 
 '''Note1''': If you're using libtorrent-rasterbar from the 0.16.x series, you also need to pass the "--with-libtorrent-rasterbar0.16" option to configure. qBittorrent v3.3.x has dropped the support of libtorrent 0.16.x.
-<br />'''Note2''': If you want to compile with qt5 instead of qt4, you also need to pass the "--with-qt5" option to configure.
+<br />'''Note2''': If you want to compile with qt4 instead of qt5, you also need to pass the "--with-qt4" option to configure.
 
 And finally to install qBittorrent:
  sudo make install
@@ -63,7 +63,7 @@ First, obtain the qBittorrent source code. Either download and extract a .tar ar
  make
 
 '''Note1''': If you're using libtorrent-rasterbar from the 0.16.x series, you also need to pass the "--with-libtorrent-rasterbar0.16" option to configure. qBittorrent v3.3.x has dropped the support of libtorrent 0.16.x.
-<br />'''Note2''': If you want to compile with qt5 instead of qt4, you also need to pass the "--with-qt5" option to configure.
+<br />'''Note2''': If you want to compile with qt4 instead of qt5, you also need to pass the "--with-qt4" option to configure.
 
 And finally to install qBittorrent:
  sudo make install
