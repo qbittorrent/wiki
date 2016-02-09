@@ -19,13 +19,6 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 | [https://raw.githubusercontent.com/davy39/qbfrench/master/omgtorrent.py Download]
 | Doesn't work with Python3
 |-
-| [[https://raw.githubusercontent.com/MrNeon/qbittorrent-search-plugins/master/strikesearch.png]] [https://getstrike.net/torrents/ StrikeSearch]
-| iamtheneon(at) gmail(dot)com
-| 1.03
-| July 12 2015
-| [https://raw.githubusercontent.com/MrNeon/qbittorrent-search-plugins/master/strikesearch.py Download]
-| Python2 & Python3 supported
-|-
 | [[https://raw.githubusercontent.com/ngosang/qBittorrent-plugins/master/tntvillage.png]] [http://www.tntvillage.scambioetico.org/?releaselist TNT Village]
 | ngosang(at) hotmail(dot)es
 | 1.00
