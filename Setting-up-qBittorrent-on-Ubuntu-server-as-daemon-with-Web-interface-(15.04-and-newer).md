@@ -24,10 +24,10 @@ Now let's create the user qbittorrent will run under:
 
 **Init script**  
 First we create a file under /etc/systemd/system/ called qbittorrent.service:  
-`sudo touch /etc/systemd.system/qbittorrent.service`
+`sudo touch /etc/systemd/system/qbittorrent.service`
 
 Open with text editor:  
-`sudo nano /etc/systemd.system/qbittorrent.service`
+`sudo nano /etc/systemd/system/qbittorrent.service`
 
 Copy and paste the following into the file:  
 
@@ -84,17 +84,17 @@ Back at the server's command line, exit out of qbittorrent-nox instance with Ctr
 
 **Updating systemd:**  
 Now update systemd to include the new script:
-`sudo systemd daemon-reload`
+`sudo systemctl daemon-reload`
 
 **That's it, were done!**  
 After the above, systemd should have indexed and invoked our init script so qbittorrent should be running. qBittorrent should now start automatically with reboots.
 
 
 **Starting qBittorrent:**  
-'sudo systemctl start qbittorrent.service'
+`sudo systemctl start qbittorrent.service`
 
 **Stopping qBittorrent:**  
-'sudo systemctl stop qbittorrent.service'
+`sudo systemctl stop qbittorrent.service`
 
 **Check status:**  
 `sudo systemctl status qbittorrent.service`
@@ -144,4 +144,4 @@ Remove qbtuser home folder and config files. If you want to re-install qbittorre
 `sudo rm -R /home/qbtuser/.config/qBittorrent`
 
 Remove qbtuser:  
-'sudo userdel qbtuser'
+`sudo userdel qbtuser`
