@@ -82,22 +82,26 @@ You should now see the web interface.
 
 Back at the server's command line, exit out of qbittorrent-nox instance with Ctrl+c
 
-**Updating systemd:**  
-Now update systemd to include the new script:
-`sudo systemctl daemon-reload`
+**Enable service:**
+
+Now start the service, verify it is running and enable it to start up on boot:
+
+sudo systemctl start qbittorrent
+sudo systemctl status qbittorrent
+sudo systemctl enable qbittorrent
 
 **That's it, were done!**  
 After the above, systemd should have indexed and invoked our init script so qbittorrent should be running. qBittorrent should now start automatically with reboots.
 
 
 **Starting qBittorrent:**  
-`sudo systemctl start qbittorrent.service`
+`sudo systemctl start qbittorrent`
 
 **Stopping qBittorrent:**  
-`sudo systemctl stop qbittorrent.service`
+`sudo systemctl stop qbittorrent`
 
 **Check status:**  
-`sudo systemctl status qbittorrent.service`
+`sudo systemctl status qbittorrent`
 
 This should yield something like this:  
 
