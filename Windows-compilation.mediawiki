@@ -1,7 +1,10 @@
-qBittorrent is officially supported on Windows and installers are available on [http://sourceforge.net/projects/qbittorrent/files/qbittorrent-win32/ Sourceforge].
+qBittorrent officially support Windows
 
-* [[Compiling with MSVC 2008(static linkage)]] - method used for the official installer
+Current:
 * [[Compiling with MSVC 2013 (static linkage)]] - for x86 and x64
-* [[Compiling with MSVC 10.0(dynamic linkage)]] - old method of packaging the official installer. '''outdated'''
-* [[Compiling with MSVC 2010 for x86_64 (dynamic linkage)]] '''outdated'''
-* [[Compiling with MSVC 2013 for x86_64 (dynamic linkage)]] '''outdated'''
+
+Obsolete:
+* [[Compiling with MSVC 10.0 (dynamic linkage)]] - old method of packaging the official installer
+* [[Compiling with MSVC 2008 (static linkage)]] - old method used for the official installer
+* [[Compiling with MSVC 2010 for x86_64 (dynamic linkage)]]
+* [[Compiling with MSVC 2013 for x86_64 (dynamic linkage)]]
