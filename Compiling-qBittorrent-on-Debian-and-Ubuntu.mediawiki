@@ -8,7 +8,7 @@ This how-to will guide you though the compilation of qBittorrent and libtorrent-
  sudo apt-get install libqt4-dev
 
 * Qt5 libraries
- sudo apt-get install qtbase5-dev
+ sudo apt-get install qtbase5-dev qttools5-dev-tools
 
 * Python (Run time only dependency, for the search engine)
  sudo apt-get install python
