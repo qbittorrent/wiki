@@ -91,7 +91,7 @@ For those of you whose internet connectivity is limited during specific hours (f
 These options allow you to control the number of torrents being downloaded and uploaded. Refer to the documentation [http://www.rasterbar.com/products/libtorrent/manual.html here] for information on ''slow torrents''.
 
 == Share Ratio Limiting ==
-Here, you can configure to what ratio (amount uploaded/amount uploaded) the torrent should be seeded. You can also configure on whether you want them to be paused or removed after this.
+Here, you can configure to what ratio (amount uploaded/amount downloaded) the torrent should be seeded. You can also configure on whether you want them to be paused or removed after this.
 
 = Web UI =
 You can use a remote control with qBittorrent. For more information, go [https://github.com/qbittorrent/qBittorrent/wiki#webui-related here].
