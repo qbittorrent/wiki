@@ -84,10 +84,19 @@ Back at the server's command line, exit out of qbittorrent-nox instance with Ctr
 
 **Enable service:**
 
-Now start the service, verify it is running and enable it to start up on boot:
+Now start the service,  
+
 
     sudo systemctl start qbittorrent
+
+Verify it is running:
+
+
     sudo systemctl status qbittorrent
+
+Enable it to start up on boot:
+
+
     sudo systemctl enable qbittorrent
 
 **That's it, were done!**  
