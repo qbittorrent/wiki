@@ -50,7 +50,8 @@ Normally after editing services we'd issue a reaload command but since it will a
      sudo systemctl daemon-reload
 
 
-**Initializing Configuration**
+**Initializing Configuration**     
+
 Before we continue, let's run qbittorrent so that it can ask us to accept the disclaimer, and save and create the config file to remember this setting. Doing this will create and save the configuration files under:
 
      /home/qbtuser/.config/qbittorrent/
