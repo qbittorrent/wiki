@@ -45,7 +45,15 @@ Copy and paste the following into the file:
 
 Save and close the file pressing ctrl+x then press y for yes, followed by ENTER.
 
-Before we continue, let's run qbittorrent so that it can ask us to accept the disclaimer, and save and create the config file to remember this setting:  
+Normally after editing services we'd issue a reaload command but since it will also invoke qbittorrent before we initialized the configuration, we'll give it a skip for now. If you ever make changes to the services file, update systemctl with:
+
+     sudo systemctl daemon-reload
+
+
+**Initializing Configuration**
+Before we continue, let's run qbittorrent so that it can ask us to accept the disclaimer, and save and create the config file to remember this setting. Doing this will create and save the configuration files under:
+
+     /home/qbtuser/.config/qbittorrent/
 
 First we impersonate the qbtuser:  
 `sudo su qbtuser`  
