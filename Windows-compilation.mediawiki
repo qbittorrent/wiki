@@ -4,7 +4,7 @@ Current:
 * [[Compiling with MSVC 2013 (static linkage)]] - for x86 and x64
 
 Obsolete:
-* [[Compiling with MSVC 10.0 (dynamic linkage)]] - old method of packaging the official installer
-* [[Compiling with MSVC 2008 (static linkage)]] - old method used for the official installer
+* [[Compiling with MSVC 10.0(dynamic linkage)]] - old method of packaging the official installer
+* [[Compiling with MSVC 2008(static linkage)]] - old method used for the official installer
 * [[Compiling with MSVC 2010 for x86_64 (dynamic linkage)]]
 * [[Compiling with MSVC 2013 for x86_64 (dynamic linkage)]]
