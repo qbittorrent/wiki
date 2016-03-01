@@ -9,7 +9,7 @@ After stumbling for about 2 hours _(getting Qt5 to work)_ here is the how to bui
 Install Dependencies (make sure you have epel repo enabled)
 ```
 yum -y groupinstall 'Development Tools'
-yum -y install qt-devel boost-devel openssl-devel qt5-qtbase-devel
+yum -y install qt-devel boost-devel openssl-devel qt5-qtbase-devel qt5-linguist
 ```
 
 Grab latest libtorrent release
