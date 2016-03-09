@@ -3,16 +3,16 @@ qBittorrent has a feature-rich Web UI allowing users to control qBittorrent remo
 == Install qBittorrent-nox (from binary package) ==
 Many distributions package qBittorrent-nox into a different package.
 
-For Ubuntu:  
+For Ubuntu:
 
-Please refer to the updated guide [[Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface-(15.04-and-newer)|here]].  
+Please refer to the updated guide [[Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface-(15.04-and-newer)|here]].
 
 
-On OpenSUSE:  
+On OpenSUSE:
 
-You have to install the same named package (as of 13.1):  
+You have to install the same named package (as of 13.1):
 
-`sudo zypper in qbittorrent-nox`
+ sudo zypper in qbittorrent-nox
 
 There is no PPA for OpenSUSE, but you can check the [https://build.opensuse.org/ Build Service] (OBS in short) for new packages.
 Use these only on your own risk. Those are not our packages, we don't check them.
@@ -59,7 +59,7 @@ qBittorrent-nox does not need as many dependencies as standard qBittorrent becau
 == How to run qbittorrent-nox on startup ==
 Warning! Ubuntu 15.04 switched to Systemd. Please refer to the Ubuntu server Guide mentioned at the top of this article.
 
-A qBittorrent user (Jakster) wrote an init script for Debian to run qbittorrent-nox on startup.<br />This script can be found [http://launchpadlibrarian.net/38905385/qbittorrent here] | [http://pastebin.com/nvMZiAxQ mirror] | [https://qbforums.shiki.hu/index.php/topic,3483.0.html mirror2]. 
+A qBittorrent user (Jakster) wrote an init script for Debian to run qbittorrent-nox on startup.<br />This script can be found [http://launchpadlibrarian.net/38905385/qbittorrent here] | [http://pastebin.com/nvMZiAxQ mirror] | [https://qbforums.shiki.hu/index.php/topic,3483.0.html mirror2].
 Save it in ''/etc/init.d/'' folder, under the name ''qbittorrent-nox-daemon''.
 
 You can do this in one step, by issuing this command:
