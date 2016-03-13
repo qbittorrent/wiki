@@ -42,7 +42,6 @@ This page describes how to compile 32-bit qBittorrent using MSVC 2015 under Wind
  xcopy zlib.h G:\QBITTORRENT\install_msvc\base\include\
  xcopy zconf.h G:\QBITTORRENT\install_msvc\base\include\
  xcopy zlib.lib G:\QBITTORRENT\install_msvc\base\lib\
- xcopy zlib.pdb G:\QBITTORRENT\install_msvc\base\lib\
 
 === Compiling OpenSSL ===
 * Make sure you have installed perl and nasm.
