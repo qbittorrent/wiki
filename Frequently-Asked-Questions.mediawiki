@@ -209,4 +209,4 @@ When restoring qBittorrent from the tray in an Openbox desktop environment, it d
 This is if you desire to have qBittorrent to be maximized on the whole screen. If you want to have the window restored to a specific size, obapps can be used. You can copy the class and name from the above XML code and set it according to how you like it. obapps can be launched from the terminal.
 
 == Where are the qBittorrent tutorials?  ==
-A Dutch step by step tutorial van be found on: http://www.duken.nl/forums/handleidingen/downloaden/downloaden-met-qbittorrent-en-gebruik-maken-van-de-interne-torrent-zoekmachine-r26/ .
+A Dutch step by step tutorial can be found on: http://www.duken.nl/forums/handleidingen/downloaden/downloaden-met-qbittorrent-en-gebruik-maken-van-de-interne-torrent-zoekmachine-r26/ .
