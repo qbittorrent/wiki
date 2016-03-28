@@ -19,11 +19,11 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 | [https://raw.githubusercontent.com/davy39/qbfrench/master/omgtorrent.py Download]
 | Doesn't work with Python3
 |-
-| [[https://raw.githubusercontent.com/ngosang/qBittorrent-plugins/master/tntvillage.png]] [http://www.tntvillage.scambioetico.org/?releaselist TNT Village]
+| [[https://raw.githubusercontent.com/ngosang/qBittorrent-plugins/master/tntvillage/tntvillage.png]] [http://www.tntvillage.scambioetico.org/?releaselist TNT Village]
 | ngosang(at) hotmail(dot)es
 | 1.00
 | September 17 2015
-| [https://raw.githubusercontent.com/ngosang/qBittorrent-plugins/master/tntvillage.py Download]
+| [https://github.com/ngosang/qBittorrent-plugins Download]
 | Python2 & Python3 supported
 |-
 | [[https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/torlock/torlock.png]] [http://www.torlock.com/ Torlock]
@@ -47,11 +47,11 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 | [https://raw.githubusercontent.com/Yukariin/qBittorrent-Search-Plugins/master/nyaatorrents.py Download]
 | Python2 & Python3 supported
 |-
-| [[https://raw.githubusercontent.com/ngosang/qBittorrent-plugins/master/sumotorrent.png]] [http://www.sumotorrent.sx/ SumoTorrent]
+| [[https://raw.githubusercontent.com/ngosang/qBittorrent-plugins/master/sumotorrent/sumotorrent.png]] [https://www.sumotorrent.sx/ SumoTorrent]
 | ngosang(at) hotmail(dot)es
 | 1.3
 | Sep 25 2015
-| [https://raw.githubusercontent.com/ngosang/qBittorrent-plugins/master/sumotorrent.py Download]
+| [https://github.com/ngosang/qBittorrent-plugins Download]
 | Python2 & Python3 supported. qBittorrent 3.3.0+
 |-
 | [[http://www.qbittorrent.org/wiki-images/Tfile.png]] [http://tfile.me/ tfile.me]
