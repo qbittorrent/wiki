@@ -26,13 +26,6 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 | [https://github.com/ngosang/qBittorrent-plugins Download]
 | Python2 & Python3 supported
 |-
-| [[https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/torlock/torlock.png]] [http://www.torlock.com/ Torlock]
-| custparasite(at) gmx(dot)se
-| 1.9
-| Sep 26 2015
-| [https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/torlock/torlock.py Download]
-| Python2 & Python3 supported
-|-
 | [[https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/tokyotoshokan/tokyotoshokan.png]] [http://tokyotosho.info/index.php Tokyo Toshokan]
 | custparasite(at) gmx(dot)se
 | 2.0
