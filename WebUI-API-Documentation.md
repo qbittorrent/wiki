@@ -695,8 +695,45 @@ Property                      | Type    | Description
 
 ### Download torrent from URL ###
 
-This method can add torrents from urls and magnet links. BC links are also supported.
+This method can add torrents from URLs. `http://`, `https://`, `magnet:` and `bc://bt/` links are supported.
 
+**After qBittorrent v3.3.1 `API7` (included):**
+```http
+POST /command/download HTTP/1.1
+User-Agent: Fiddler
+Host: 127.0.0.1
+Cookie: SID=your_sid
+Content-Type: multipart/form-data; boundary=---------------------------6688794727912
+Content-Length: length
+
+-----------------------------6688794727912
+Content-Disposition: form-data; name="urls"
+
+https://torcache.net/torrent/3B1A1469C180F447B77021074DBBCCAEF62611E7.torrent
+https://torcache.net/torrent/3B1A1469C180F447B77021074DBBCCAEF62611E8.torrent
+-----------------------------6688794727912
+Content-Disposition: form-data; name="savepath"
+
+C:/Users/qBit/Downloads
+-----------------------------6688794727912
+Content-Disposition: form-data; name="cookie"
+
+ui=28979218048197
+-----------------------------6688794727912
+Content-Disposition: form-data; name="label"
+
+movies
+-----------------------------6688794727912--
+```
+
+Property                      | Type    | Description
+------------------------------|---------|------------
+`urls`                        | string  | URLs separated with newlines
+`savepath`                    | string  | (optional) Download folder
+`cookie`                      | string  | (optional) Cookie sent to download the .torrent file
+`label`                       | string  | (optional) Label for the torrent
+
+**Before qBittorrent v3.3.1 `API6`:**
 ```http
 POST /command/download HTTP/1.1
 User-Agent: Fiddler
@@ -707,12 +744,10 @@ Content-Length: length
 
 urls=http://www.nyaa.eu/?page=download%26tid=305093%0Ahttp://www.nyaa.eu/?page=download%26tid=305255%0Amagnet:?xt=urn:btih:4c284ebef5bf0d967e2e174cfe825d9fb40ae5e1%26dn=QBittorrent+2.8.4+Win7+Vista+64+working+version%26tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80%26tr=udp%3A%2F%2Ftracker.publicbt.com%3A80%26tr=udp%3A%2F%2Ftracker.istole.it%3A6969%26tr=udp%3A%2F%2Ftracker.ccc.de%3A80
 ```
-
 Please note that:
 
 1. `Content-Type: application/x-www-form-urlencoded` is required
 1. `urls` contains a list of links; links are separated with `%0A` (LF newline)
-1. `http://`, `https://`, `magnet:` and `bc://bt/` links are supported
 1. Links' contents must be escaped, e.g. `&` becomes `%26` (don't know about other characters but ampersand **MUST** be escaped)
 
 No matter if successful or not server will return the following reply:
