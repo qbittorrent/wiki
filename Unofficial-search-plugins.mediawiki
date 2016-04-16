@@ -58,7 +58,7 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 | fsantos.pt (at) hotmail (dot) com
 | 1.00
 | Apr 17 2016
-| [https://github.com/b0nk/qbittorrent-search-plugins/raw/master/rarbg.py Download]
+| [https://raw.githubusercontent.com/b0nk/qbittorrent-search-plugins/master/rarbg.py Download]
 | Python2 supported / Python3 untested
 |-
 | [[https://raw.githubusercontent.com/BrunoReX/qbittorrent-search-plugins/master/yts.png]] [http://yts.re/ YTS]
