@@ -1256,7 +1256,28 @@ HTTP/1.1 200 OK
 
 ### Set torrent label ###
 
-TODO
+Requires known torrent hash, get 'em from [torrent list](#torrentlist).
+
+```http
+POST /command/setLabel HTTP/1.1
+User-Agent: Fiddler
+Host: 127.0.0.1
+Cookie: SID=your_sid
+Content-Type: application/x-www-form-urlencoded
+Content-Length: length
+
+hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5d7cc2ba0&label=LabelName
+```
+
+`hashes` can contain multiple hashes separated by `|`
+
+`label` is the torrent label you want to set. If the label doesn't exist, a new label is created.
+
+No matter if successful or not server will return the following reply:
+
+```http
+HTTP/1.1 200 OK
+```
 
 ### Set qBittorrent preferences ###
 
