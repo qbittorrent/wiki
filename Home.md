@@ -7,8 +7,9 @@ Welcome to the qBittorrent wiki!
 * [Anonymous Mode](wiki/Anonymous-Mode)
 
 ## Troubleshooting
-* [I forgot my UI lock password](wiki/I-forgot-my-UI-lock-password)
 * [qBittorrent Support Forum](http://forum.qbittorrent.org/)
+* [I forgot my UI lock password](wiki/I-forgot-my-UI-lock-password)
+* [I forgot my Web UI password](https://github.com/qbittorrent/qBittorrent/wiki/Web-UI-password-locked-on-qBittorrent-NO-X-%28qbittorrent-nox%29)
 * [Speed issues](https://github.com/qbittorrent/qBittorrent/wiki/Things-we-need-to-know-to-help-you-with-'speed'-issues)
 
 ## Search plugins
