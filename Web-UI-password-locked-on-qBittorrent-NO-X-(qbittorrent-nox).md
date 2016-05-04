@@ -1,6 +1,4 @@
-Relevant to all client versions running on a Linux OS without a GUI (No X-Windows)
-
-If your user name and password is locked out of the Web UI and the default user name (admin) and password (adminadmin) is also failing the steps to recover access are:
+If your user name and password is locked out of the Web UI and the default user name `admin` and password `adminadmin` is also failing, the steps to recover access are:
 
 1. Log in to the machine the client is on as the user that qbittorrent runs as, either at the console or over a SSH connection.
 2. Navigate to `~/.config/qBittorrent/` and edit the qBittorrent configuration file `qBittorrent.conf`.
