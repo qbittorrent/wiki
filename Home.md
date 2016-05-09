@@ -37,6 +37,7 @@ Welcome to the qBittorrent wiki!
 * [Compiling qbittorrent-nox for CentOS from source] (wiki/Compiling-qbittorrent-nox-for-CentOS-from-source)
 
 ##### WebUI-related
+* [Disable Authentification] (wiki/Disable-authentification-of-webGUI)
 * [HTTPS with Self Signed SSL Certificates - Linux](wiki/Linux-WebUI-setting-up-HTTPS-with-self-signed-SSL-certificates)
 * [API Documentation](wiki/WebUI-API-Documentation)
 * [API Documentation (qBittorrent v3.1.x)](wiki/WebUI-API-Documentation-(qBittorrent-v3.1.x))
