@@ -52,14 +52,14 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 | 2.03
 | Dec 13 2015
 | [https://raw.githubusercontent.com/starius/qbittorrent-plugins/master/tfile_me.py Download]
-| Python2 & Python3 supported 
+| Python2 & Python3 supported
 |-
 | [[https://raw.githubusercontent.com/b0nk/qbittorrent-search-plugins/master/rarbg.png]] [https://rarbg.to/ rarbg.to]
 | fsantos.pt (at) hotmail (dot) com
-| 1.10
-| Apr 18 2016
+| 1.12
+| May 25 2016
 | [https://raw.githubusercontent.com/b0nk/qbittorrent-search-plugins/master/rarbg.py Download]
-| Python2 supported / Python3 untested
+| Python2 & Python3 supported
 |-
 | [[https://raw.githubusercontent.com/BrunoReX/qbittorrent-search-plugins/master/yts.png]] [http://yts.re/ YTS]
 | brunorex(at) gmail(dot).com
