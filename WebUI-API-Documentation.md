@@ -246,7 +246,7 @@ Property          | Type    | Description
 `state`           | string  | Torrent state. See table here below for the possible values
 `seq_dl`          | bool    | True if sequential download is enabled
 `f_l_piece_prio`  | bool    | True if first last piece are prioritized
-`label`           | string  | Label of the torrent
+`category`           | string  | Category of the torrent
 `super_seeding`   | bool    | True if super seeding is enabled
 `force_start`     | bool    | True if force start is enabled for this torrent
 
