@@ -23,7 +23,7 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 | ngosang(at) hotmail(dot)es
 | 1.00
 | September 17 2015
-| [https://github.com/ngosang/qBittorrent-plugins Download]
+| [https://raw.githubusercontent.com/ngosang/qBittorrent-plugins/master/tntvillage/tntvillage.py Download]
 | Python2 & Python3 supported
 |-
 | [[https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/tokyotoshokan/tokyotoshokan.png]] [http://tokyotosho.info/index.php Tokyo Toshokan]
@@ -51,7 +51,7 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 | ngosang(at) hotmail(dot)es
 | 1.3
 | Sep 25 2015
-| [https://github.com/ngosang/qBittorrent-plugins Download]
+| [https://raw.githubusercontent.com/ngosang/qBittorrent-plugins/master/sumotorrent/sumotorrent.py Download]
 | Python2 & Python3 supported. qBittorrent 3.3.0+
 |-
 | [[http://www.qbittorrent.org/wiki-images/Tfile.png]] [http://tfile.me/ tfile.me]
