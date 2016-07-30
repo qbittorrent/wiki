@@ -22,6 +22,15 @@ Now let's create the user qbittorrent will run under:
 
 (The -m option creates the home directory under /home with the correct name and permissions. This directory will house our configuration files. /home/qbtuser/.config/qBittorrent/ to be precise.
 
+Create a password:
+`sudo passwd qbtuser`
+`Enter new UNIX password:`
+`Retype new UNIX password:`
+`passwd: password updated successfully`
+
+Allow sudo permissions:
+`sudo usermod -aG sudo,adm qbtuser`
+
 **Init script**  
 First we create a file under /etc/systemd/system/ called qbittorrent.service:  
 `sudo touch /etc/systemd/system/qbittorrent.service`
