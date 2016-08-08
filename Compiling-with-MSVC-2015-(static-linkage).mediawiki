@@ -15,7 +15,7 @@ This page describes how to compile 32-bit qBittorrent using MSVC 2015 under Wind
 === Info that applies to all steps ===
 * Let's assume that the working directory for our compilation will be <code>G:\QBITTORRENT</code>
 * You need to use the '''32-bit''' version of the compiler. All commands will be issued in that command shell. Open it via <code>Start->All Programs->Visual Studio 2015->Visual Studio Tools->Windows Desktop Command Prompts->VS2015 x86 Native Tools Command Prompt</code>
-* The above prompt will open and will use a path under the <code>C:\</code> drive. If you want to use another drive for compilation (like mentioned above) you need to switch to that. Simply issuing <code>G:\</code> (or any other drive letter) will switch there.
+* The above prompt will open and will use a path under the <code>C:\</code> drive. If you want to use another drive for compilation (like mentioned above) you need to switch to that. Simply issuing <code>G:</code> (or any other drive letter) will switch there.
 * When you want to change paths in the prompt you do it by issuing <code>cd new-path</code>. '''NOTE:''' If the path starts with a different drive letter you need to switch to that first. The <code>cd</code> command doesn't do it automatically.
 * We will use 3 installation paths:
 ** <code>G:\QBITTORRENT\install_msvc\base</code> will be used for installing all necessary libs except Qt5 and Qt4
