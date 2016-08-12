@@ -11,14 +11,6 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 !  Download link
 !  Comment
 |-
-| [[https://raw.githubusercontent.com/davy39/qbfrench/master/omgtorrent.png]]
-[http://www.omgtorrent.com/ OMG Torrent]
-| davy39(at) hmamail(dot)com
-| 1.00
-| ?
-| [https://raw.githubusercontent.com/davy39/qbfrench/master/omgtorrent.py Download]
-| Doesn't work with Python3
-|-
 | [[https://raw.githubusercontent.com/ngosang/qBittorrent-plugins/master/tntvillage/tntvillage.png]] [http://www.tntvillage.scambioetico.org/?releaselist TNT Village]
 | ngosang(at) hotmail(dot)es
 | 1.00
@@ -68,6 +60,20 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 | [https://raw.githubusercontent.com/b0nk/qbittorrent-search-plugins/master/rarbg.py Download]
 | Python2 & Python3 supported
 |-
+| [[https://raw.githubusercontent.com/davy39/qbfrench/master/torrent9.png|16px]] [http://www.torrent9.tv/ Torrent9]
+| davy39(at) hmamail(dot)com
+| 1.1
+| Aug 11 2016
+| [https://raw.githubusercontent.com/davy39/qbfrench/master/torrent9.py Download]
+| Python2 & Python3 supported
+|-
+| [[https://raw.githubusercontent.com/davy39/qbfrench/master/smartorrent.png]] [http://smartorrent.com Smartorrent]
+| davy39(at) hmamail(dot)com
+| 1.1
+| Aug 11 2016
+| [https://raw.githubusercontent.com/davy39/qbfrench/master/smartorrent.py Download]
+| Python2 & Python3 supported
+|-
 | [[https://raw.githubusercontent.com/BrunoReX/qbittorrent-search-plugins/master/yts.png]] [http://yts.re/ YTS]
 | brunorex(at) gmail(dot).com
 | 1.0
@@ -80,20 +86,6 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 | 1.53
 | Sept 30 2014
 | [https://raw.githubusercontent.com/fvisin/qbittorrent_plugins/master/pirateproxy.py Download]
-| Outdated
-|-
-| [[https://raw.githubusercontent.com/davy39/qbfrench/master/cpasbien.png]] [http://www.cpasbien.pw/ Cpasbien]
-| davy39(at) hmamail(dot)com
-| 1.0
-| May 29 2014
-| [https://raw.githubusercontent.com/davy39/qbfrench/master/cpasbien.py Download]
-| Outdated
-|-
-| [[https://raw.githubusercontent.com/davy39/qbfrench/master/smartorrent.png]] [http://smartorrent.com Smartorrent]
-| davy39(at) hmamail(dot)com
-| 1.0
-| May 29 2014
-| [https://raw.githubusercontent.com/davy39/qbfrench/master/smartorrent.py Download]
 | Outdated
 |-
 | [[https://raw.github.com/mr-mmajoR/myrepo/master/rutor.png]] [http://rutor.org/ rutor.org]
@@ -131,12 +123,12 @@ Be careful, these scripts probably require editing before you can use them. Thos
 !  Download link
 !  Comment
 |-
-|[[https://raw.githubusercontent.com/davy39/qbfrench/master/t411.png]][http://www.t411.me T411]
+|[[https://raw.githubusercontent.com/davy39/qbfrench/master/t411.png]][http://www.t411.ch T411]
 |davy39(at) hmamail(dot)com
-|1.0
-|May 29 2014
+|1.2
+|Aug 11 2016
 |[https://raw.githubusercontent.com/davy39/qbfrench/master/t411.py Script only] / [https://github.com/davy39/qbfrench/wiki README]*
-|
+|Python2 & Python3 supported
 |-
 |[[https://raw.githubusercontent.com/Skymirrh/qBittorrent-rutracker-plugin/master/rutracker.png]][http://rutracker.org/ rutracker.org]
 |skymirrh(at) gmail(dot)com
