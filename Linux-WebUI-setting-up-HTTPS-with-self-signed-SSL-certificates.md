@@ -15,7 +15,7 @@ cd ~/.config/qBittorrent/ssl
 ```
 Now we generate the key and certificate pair:
 
-openssl req -new -x509 -nodes -out server.crt -keyout server.key
+`openssl req -new -x509 -nodes -out server.crt -keyout server.key`
 
 Answer the questions or press enter to leave blank.
 
