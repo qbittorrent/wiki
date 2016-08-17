@@ -3,7 +3,8 @@ Setting up HTTPS for the web interface involves creating a key and certificate p
 The following guide assumes you have a setup as mentioned in [this](Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface) article. Change qbtuser with the user you have qbittorrent-nox running under.
 
 
-Impersonate the qbittorent user:
+Impersonate the qbittorent user:  
+
 `sudo su qbtuser`
 
 Create neccesary folders:  
