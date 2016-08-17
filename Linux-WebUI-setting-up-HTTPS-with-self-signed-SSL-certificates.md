@@ -30,7 +30,7 @@ Now go to your qbittorrent web-interface (http://192.168.0.1:8080 if you haven't
 cat server.key
 ```
 Copy the contents of the entire file (including -----BEGIN PRIVATE KEY----- and -----END PRIVATE KEY-----)
-into the 'key' field of the WebUI and proceed to do the same with the certificate by issueing:
+into the 'key' field of the WebUI and proceed to do the same with the certificate by issuing:
 ```
 cat server.crt
 ```
