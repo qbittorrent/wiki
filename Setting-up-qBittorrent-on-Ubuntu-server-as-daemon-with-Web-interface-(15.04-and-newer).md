@@ -18,23 +18,40 @@ qBittorrent-nox is already included in the official Ubuntu repositories. Install
 **User**  
 Assuming you want qbittorent to run as it's own user (better for security purposes), let's create the user qbittorrent will run under and give it a password when prompted. Just press enter for values you want to leave blank:
 
-`sudo adduser qbtuser`
-`Adding user `qbtuser' ...`
-`Adding new group `qbtuser' (1003) ...`
-`Adding new user `qbtuser' (1003) with group `qbtuser' ...`
-`Creating home directory `/home/qbtuser' ...`
-`Copying files from `/etc/skel' ...`
-`Enter new UNIX password:`
-`Retype new UNIX password:`
-`passwd: password updated successfully`
-`Changing the user information for qbtuser`
-`Enter the new value, or press ENTER for the default`
-`        Full Name []:`
-`        Room Number []:`
-`        Work Phone []:`
-`        Home Phone []:`
-`        Other []:`
-`Is the information correct? [Y/n] y`
+`sudo adduser qbtuser`   
+
+`Adding user `qbtuser' ...`   
+
+`Adding new group `qbtuser' (1003) ...`   
+
+`Adding new user `qbtuser' (1003) with group `qbtuser' ...`   
+
+`Creating home directory `/home/qbtuser' ...`   
+
+`Copying files from `/etc/skel' ...`   
+
+`Enter new UNIX password:`   
+
+`Retype new UNIX password:`   
+
+`passwd: password updated successfully`   
+
+`Changing the user information for qbtuser`   
+
+`Enter the new value, or press ENTER for the default`   
+
+`        Full Name []:`   
+
+`        Room Number []:`   
+
+`        Work Phone []:`   
+
+`        Home Phone []:`   
+
+`        Other []:`   
+
+`Is the information correct? [Y/n] y`   
+
 
 You may also want to issue the following command to disable login for the account for security reasons:
 'sudo usermod -s /usr/sbin/nologin qbtuser'
