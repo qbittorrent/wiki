@@ -2,7 +2,7 @@
 qBittorrent has a feature-rich Web UI allowing users to control qBittorrent remotely. This is ideal for headless servers without the X window system such as Ubuntu Server.
 
 **Note:**    
-Since Ubuntu server 15.04 replaced upstart for systemd, this guide only applies to Ubuntu 15.04 and newer. This change only affects how qbittorrent is started (init scripts) and how logging happens.
+Since Ubuntu (Server) 15.04, upstart was replaced with systemd. Thus, this guide only applies to Ubuntu 15.04 and newer. This change only affects how qbittorrent is started (init scripts) and how logging happens.
 
 **A little about qBittorent-nox vs qBittorrent:**  
 The main binary file (executable file) for The qBittorrent has two variants and is usually located at /usr/bin/:
@@ -193,4 +193,4 @@ Remove qbtuser home folder and config files. If you want to re-install qbittorre
 `sudo rm -R /home/qbtuser/.config/qBittorrent`
 
 Remove qbtuser:  
-`sudo userdel qbtuser`
+`sudo userdel qbtuser`  
