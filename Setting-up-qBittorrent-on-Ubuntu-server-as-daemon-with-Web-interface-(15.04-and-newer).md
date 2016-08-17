@@ -122,13 +122,18 @@ Now start the service,
 
 Verify it is running:
 
+    sudo systemctl status qbittorrent  
 
-    sudo systemctl status qbittorrent
+Quit out of the above screen by pressing 'q'
 
 Enable it to start up on boot:
 
-
     sudo systemctl enable qbittorrent
+
+and you should see:
+
+`Created symlink from /etc/systemd/system/multi-user.target.wants/qbittorrent.service to /etc/systemd/system/qbittorrent.service.`
+
 
 **That's it, were done!**  
 After the above, systemd should have indexed and invoked our init script so qbittorrent should be running. qBittorrent should now start automatically with reboots.
