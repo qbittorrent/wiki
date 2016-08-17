@@ -109,6 +109,10 @@ You should now see the web interface.
 
 Back at the server's command line, exit out of qbittorrent-nox instance with Ctrl+c
 
+Now, stop impersonating the qbittorrent user to return to our account with sudo access:
+
+`$ exit`    
+
 **Enable service:**
 
 Now start the service,  
