@@ -16,23 +16,29 @@ qBittorrent-nox is already included in the official Ubuntu repositories. Install
 `sudo apt-get update && sudo apt-get install qbittorrent-nox`
 
 **User**  
-Now let's create the user qbittorrent will run under:
+Assuming you want qbittorent to run as it's own user (better for security purposes), let's create the user qbittorrent will run under and give it a password when prompted. Just press enter for values you want to leave blank:
 
-`sudo useradd qbtuser -m`
+'sudo adduser qbtuser'
+'Adding user `qbtuser' ...'
+'Adding new group `qbtuser' (1003) ...'
+'Adding new user `qbtuser' (1003) with group `qbtuser' ...'
+'Creating home directory `/home/qbtuser' ...'
+'Copying files from `/etc/skel' ...'
+'Enter new UNIX password:'
+'Retype new UNIX password:'
+'passwd: password updated successfully'
+'Changing the user information for qbtuser'
+'Enter the new value, or press ENTER for the default'
+'        Full Name []:'
+'        Room Number []:'
+'        Work Phone []:'
+'        Home Phone []:'
+'        Other []:'
+'Is the information correct? [Y/n] y'
 
-(The -m option creates the home directory under /home with the correct name and permissions. This directory will house our configuration files. /home/qbtuser/.config/qBittorrent/ to be precise.
+You may also want to issue the following command to disable login for the account for security reasons:
+'sudo usermod -s /usr/sbin/nologin qbtuser'
 
-Create a password: 
-
-`sudo passwd qbtuser`
-
-    Enter new UNIX password
-    Retype new UNIX password
-    passwd: password updated successfully
-
-Allow sudo permissions:
-
-`sudo usermod -aG sudo,adm qbtuser`
 
 **Init script**  
 First we create a file under /etc/systemd/system/ called qbittorrent.service:  
