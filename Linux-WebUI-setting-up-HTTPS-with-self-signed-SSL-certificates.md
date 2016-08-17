@@ -37,7 +37,7 @@ cat server.crt
 
 Now click save to have the changes take effect. 
 
-You should now be able to log in to your qtorrent web-server keeping in mind to change http to https and append the port number with a semicolon :
+You should now be able to log in to your qbittorrent web-server keeping in mind to change http to https and append the port number with a semicolon :
 
 ```
 https://yourserverip:portnumber
