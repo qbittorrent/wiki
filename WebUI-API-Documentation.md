@@ -265,6 +265,7 @@ Value         | Description
 `checkingDL`  | Same as checkingUP, but torrent has NOT finished downloading
 `downloading` | Torrent is being downloaded and data is being transfered
 `stalledDL`   | Torrent is being downloaded, but no connection were made
+`metaDL`      | Torrent has just started downloading and is fetching metadata
 
 ### Get torrent generic properties ###
 
