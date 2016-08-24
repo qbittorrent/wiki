@@ -60,7 +60,14 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 | [https://raw.githubusercontent.com/b0nk/qbittorrent-search-plugins/master/rarbg.py Download]
 | Python2 & Python3 supported
 |-
-| [[https://raw.githubusercontent.com/davy39/qbfrench/master/torrent9.png|16px]] [http://www.torrent9.tv/ Torrent9]
+| [[https://raw.githubusercontent.com/davy39/qbfrench/master/cpasbien.png]] [http://www.cpasbien.cm/ Cpasbien]
+| davy39(at) hmamail(dot)com
+| 1.1
+| Aug 19 2016
+| [https://raw.githubusercontent.com/davy39/qbfrench/master/cpasbien.py Download]
+| Python2 & Python3 supported
+|-
+| [[https://raw.githubusercontent.com/davy39/qbfrench/master/torrent9.png]] [http://www.torrent9.tv/ Torrent9]
 | davy39(at) hmamail(dot)com
 | 1.1
 | Aug 11 2016
