@@ -18,21 +18,21 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 | [https://raw.githubusercontent.com/ngosang/qBittorrent-plugins/master/tntvillage/tntvillage.py Download]
 | Python2 & Python3 supported
 |-
-| [[https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/tokyotoshokan/tokyotoshokan.png]] [http://tokyotosho.info/index.php Tokyo Toshokan]
+| [[https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/tokyotoshokan/tokyotoshokan.png]] [https://tokyotosho.info/index.php Tokyo Toshokan]
 | custparasite(at) gmx(dot)se
 | 2.0
 | Sep 24 2015
 | [https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/tokyotoshokan/tokyotoshokan.py Download]
 | Python2 & Python3 supported
 |-
-| [[http://www.qbittorrent.org/wiki-images/NyaaTorrents.png]] [http://www.nyaa.se/ NyaaTorrents]
+| [[http://www.qbittorrent.org/wiki-images/NyaaTorrents.png]] [https://www.nyaa.se/ NyaaTorrents]
 | yukariin(at) yandex(dot)ru
 | 2.29
 | Mar 17 2016
 | [https://raw.githubusercontent.com/Yukariin/qBittorrent-Search-Plugins/master/nyaatorrents.py Download]
 | Python2 & Python3 supported
 |-
-| [[https://raw.githubusercontent.com/b0nk/qbittorrent-search-plugins/master/nyaasukebei.png]] [http://sukebei.nyaa.se/ Sukebei Nyaa]
+| [[https://raw.githubusercontent.com/b0nk/qbittorrent-search-plugins/master/nyaasukebei.png]] [https://sukebei.nyaa.se/ Sukebei Nyaa]
 | fsantos.pt (at) hotmail (dot) com
 | 1.00
 | Jun 27 2016
@@ -88,7 +88,7 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 | [https://raw.githubusercontent.com/BrunoReX/qbittorrent-search-plugins/master/yts.py Download]
 | Outdated
 |-
-| [[https://raw.githubusercontent.com/fvisin/qbittorrent_plugins/master/pirateproxy.png]] [http://pirateproxy.bz/ PirateProxy]
+| [[https://raw.githubusercontent.com/fvisin/qbittorrent_plugins/master/pirateproxy.png]] [https://pirateproxy.bz/ PirateProxy]
 | fab(at) gnux(dot)info
 | 1.53
 | Sept 30 2014
@@ -148,17 +148,17 @@ Be careful, these scripts probably require editing before you can use them. Thos
 |sinusnco(at) gmail(dot)com
 |1.0
 |Jan 19 2011
-|[http://qbt-extrasearch.svn.sourceforge.net/viewvc/qbt-extrasearch/trunk/quebecpartage_com/quebecpartage.py Script only] / [http://sourceforge.net/projects/qbt-extrasearch/files/quebecpartage_com-1.0.tar.gz/download All files]*
+|[https://qbt-extrasearch.svn.sourceforge.net/viewvc/qbt-extrasearch/trunk/quebecpartage_com/quebecpartage.py Script only] / [https://sourceforge.net/projects/qbt-extrasearch/files/quebecpartage_com-1.0.tar.gz/download All files]*
 |Tested with qBittorrent >= 2.6.3
 |-
 |[[http://www.qbittorrent.org/wiki-images/Smartorrent.png]][http://smartorrent.com/ Smartorrent]
 |sinusnco(at) gmail(dot)com
 |1.0
 |Jan 18 2011
-|[http://qbt-extrasearch.svn.sourceforge.net/viewvc/qbt-extrasearch/trunk/smartorrent_com/smartorrent.py Script only] / [http://sourceforge.net/projects/qbt-extrasearch/files/smartorrent_com-1.0.tar.gz/download All files]*
+|[https://qbt-extrasearch.svn.sourceforge.net/viewvc/qbt-extrasearch/trunk/smartorrent_com/smartorrent.py Script only] / [https://sourceforge.net/projects/qbt-extrasearch/files/smartorrent_com-1.0.tar.gz/download All files]*
 |Tested with qBittorrent >= 2.6.3
 |-
-|[[https://github.com/adrianmocan/qbittorrent_plugin_filelist.ro/blob/master/favicon.png]][http://filelist.ro/ FileList]
+|[[https://github.com/adrianmocan/qbittorrent_plugin_filelist.ro/blob/master/favicon.png]][https://filelist.ro/ FileList]
 |adrian.mocan(at) gmail(dot)com
 |1.0
 |Jun 07 2015
