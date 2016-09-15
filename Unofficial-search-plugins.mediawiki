@@ -144,6 +144,13 @@ Be careful, these scripts probably require editing before you can use them. Thos
 |[https://github.com/Skymirrh/qBittorrent-rutracker-plugin Download]
 |Python2 & Python3 supported. Tested with qBittorrent 3.3.5.
 |-
+|[[https://raw.githubusercontent.com/Skymirrh/qBittorrent-rutracker-plugin/master/rutracker.png]][http://rutracker.org/ rutracker.org]
+|alvin1979(at) mail(dot)ru
+|1.00
+|Sep 14 2016
+|[https://github.com/alvin1979/qbrutracker Download]
+|Python3 supported. Tested with qBittorrent 3.3.6.
+|-
 |[[http://www.qbittorrent.org/wiki-images/Quebecpartage.png]][http://www.quebec-partage.com/ Quebec-Partage]
 |sinusnco(at) gmail(dot)com
 |1.0
