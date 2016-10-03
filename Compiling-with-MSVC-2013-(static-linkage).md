@@ -100,31 +100,14 @@ xcopy zlib.pdb C:\qBittorrent64\install\lib\
 		```
 set "PATH=%PATH%;C:\qBittorrent\nasm"
 perl Configure VC-WIN32 no-shared zlib no-zlib-dynamic threads --prefix=C:\qBittorrent\install -IC:\qBittorrent\install\include -LC:\qBittorrent\install\lib
-
-		```
-For OpenSSL version 1.0.xxx: 
-		```
 ms\do_nasm
 		```
-For OpenSSL version 1.1.xxx:
-		```
-nmake
-		```
-
 	* For **x64**:
 
 		```
 perl Configure VC-WIN64A no-shared zlib no-zlib-dynamic threads --prefix=C:\qBittorrent64\install -IC:\qBittorrent64\install\include -LC:\qBittorrent64\install\lib
-		```
-For OpenSSL version 1.0.xxx: 
-		```
 ms\do_win64a.bat
 		```
-For OpenSSL version 1.1.xxx:
-		```
-nmake
-		```
-
 * Edit the ```ms\nt.mak``` file:
 	* Find the line that starts with: ```EX_LIBS```
     	* Replace ```zlib1.lib``` with ```zlib.lib```
