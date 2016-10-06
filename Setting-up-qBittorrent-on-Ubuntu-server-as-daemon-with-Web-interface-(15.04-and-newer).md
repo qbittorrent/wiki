@@ -36,8 +36,6 @@ Assuming you want qbittorent to run as it's own user (better for security purpos
 `        Other []:`   
 `Is the information correct? [Y/n] y`   
 
-You may also want to issue the following command to disable login for the account for security reasons:
-'sudo usermod -s /usr/sbin/nologin qbtuser'
 
 
 **Init script**  
@@ -134,6 +132,11 @@ and you should see:
 
 `Created symlink from /etc/systemd/system/multi-user.target.wants/qbittorrent.service to /etc/systemd/system/qbittorrent.service.`
 
+
+You may also want to issue the following command to disable login for the account for security reasons:
+'sudo usermod -s /usr/sbin/nologin qbtuser'
+This can be reversed if necessary with the command:
+'sudo usermod -s /bin/bash qbtuser'
 
 **That's it, were done!**  
 After the above, systemd should have indexed and invoked our init script so qbittorrent should be running. qBittorrent should now start automatically with reboots.
