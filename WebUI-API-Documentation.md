@@ -521,7 +521,7 @@ where
 
 Property                          | Type    | Description
 ----------------------------------|---------|------------
-`locale`                          | string  | Currently selected language (e.g. en_GB for english)
+`locale`                          | string  | Currently selected language (e.g. en_GB for English)
 `save_path`                       | string  | Default save path for torrents, separated by slashes
 `temp_path_enabled`               | bool    | True if folder for incomplete torrents is enabled
 `temp_path`                       | string  | Path for incomplete torrents, separated by slashes
@@ -572,7 +572,7 @@ Property                          | Type    | Description
 `dhtSameAsBT`                     | bool    | True if DHT port should match TCP port
 `dht_port`                        | integer | DHT port if `dhtSameAsBT` is false
 `pex`                             | bool    | True if PeX is enabled
-`lsd`                             | bool    | True if LSD is eanbled
+`lsd`                             | bool    | True if LSD is enabled
 `encryption`                      | integer | See list of possible values here below
 `anonymous_mode`                  | bool    | If true anonymous mode will be enabled; read more [here](Anonymous-Mode); this option is only available in qBittorent built against libtorrent version 0.16.X and higher
 `proxy_type`                      | integer | See list of possible values here below
@@ -590,8 +590,8 @@ Property                          | Type    | Description
 `web_ui_upnp` `API4`              | bool    | True if UPnP is used for the WebUI port
 `web_ui_username`                 | string  | WebUI username
 `web_ui_password`                 | string  | MD5 hash of WebUI password; hash is generated from the following string: `username:Web UI Access:plain_text_web_ui_password`
-`bypass_local_auth`               | bool    | True if auithetication challenge for loopback address (127.0.0.1) should be disabled
-`use_https`                       | bool    | True if WebUI HTTPS access is eanbled
+`bypass_local_auth`               | bool    | True if authentication challenge for loopback address (127.0.0.1) should be disabled
+`use_https`                       | bool    | True if WebUI HTTPS access is enabled
 `ssl_key`                         | string  | SSL keyfile contents (this is a not a path)
 `ssl_cert`                        | string  | SSL certificate contents (this is a not a path)
 `dyndns_enabled`                  | bool    | True if server DNS should be updated dynamically
