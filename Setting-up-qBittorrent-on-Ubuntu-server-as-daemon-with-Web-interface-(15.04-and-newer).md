@@ -137,8 +137,9 @@ and you should see:
 After the above, systemd should have indexed and invoked our init script so qbittorrent should be running. qBittorrent should now start automatically with reboots.
 
 **Disable account login**  
-You may also want to issue the following command to disable login for the account for security reasons:  
+You may also want to issue the following command to disable login for the account (from ssh) for security reasons. The account will still be usable locally:  
 `sudo usermod -s /usr/sbin/nologin qbtuser`  
+
 This can be reversed if necessary with the command:  
 `sudo usermod -s /bin/bash qbtuser`
 
