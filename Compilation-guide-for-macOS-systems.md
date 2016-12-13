@@ -1,6 +1,6 @@
 # Install Xcode
 A full installation of Xcode.app is required to compile qt5.<br/>
-Xcode can be installed from the [App Store](https://www.apple.com/appstore).<br/>
+Xcode can be installed from the [App Store](http://www.apple.com/osx/apps/app-store/).<br/>
 
 After installing Xcode you need to do bellow. See [this discussion](http://stackoverflow.com/questions/33728905/qt-creator-project-error-xcode-not-set-up-properly-you-may-need-to-confirm-t).
 
