@@ -33,7 +33,7 @@ Welcome to the qBittorrent wiki!
 ##### Compilation
 * [Windows compilation](wiki/Windows-compilation)
 * [Debian / Ubuntu compilation](wiki/Compiling-qBittorrent-on-Debian-and-Ubuntu)
-* [Mac OSX compilation](wiki/Compilation-guide-for-Mac-OSX-systems)
+* [macOS compilation](wiki/Compilation-guide-for-macOS-systems)
 * [Compiling qbittorrent-nox for CentOS from source] (wiki/Compiling-qbittorrent-nox-for-CentOS-from-source)
 
 ##### WebUI-related
