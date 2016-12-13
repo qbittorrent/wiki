@@ -1,13 +1,12 @@
-# Building system
-A full installation of Xcode.app is required to compile this software.<br/>
-Installing just the Command Line Tools is not sufficient.<br/>
+# Install Xcode
+A full installation of Xcode.app is required to compile qt5.<br/>
 Xcode can be installed from the [App Store](https://www.apple.com/appstore).<br/>
 
 After installing Xcode you need to do bellow. See [this discussion](http://stackoverflow.com/questions/33728905/qt-creator-project-error-xcode-not-set-up-properly-you-may-need-to-confirm-t).
 
 `sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer`
 
-`sudo ln -s /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild /Applications/Xcode.app/Contents/Developer/usr/bin/xcrun`
+`(cd /Applications/Xcode.app/Contents/Developer/usr/bin; sudo ln -s xcodebuild xcrun)`
 
 # Install Homebrew
 See [Install Homebrew](http://brew.sh/).
