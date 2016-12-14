@@ -23,7 +23,7 @@ See [Install Homebrew](http://brew.sh/).
 
 `./autotool.sh`
 
-`CXXFLAGS=-std=c++11 ./configure --disable-dependency-tracking --disable-silent-rules --enable-encryption --prefix=/usr/local --with-boost=/usr/local/opt/boost`<br/>
+`./configure --disable-debug --disable-dependency-tracking --disable-silent-rules --enable-encryption --prefix=/usr/local --with-boost=/usr/local/opt/boost CXXFLAGS=-std=c++11`<br/>
 
 `make && make install`
 
