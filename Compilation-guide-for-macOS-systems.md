@@ -14,7 +14,7 @@ See [Install Homebrew](http://brew.sh/).
 # Install tools and dependencies
 `brew install pkg-config autoconf automake libtool openssl boost`
 
-# Install ibtorrent-rasterbar from source
+# Install [libtorrent-rasterbar](https://github.com/arvidn/libtorrent) from source
 `git clone https://github.com/arvidn/libtorrent.git`
 
 `cd libtorrent`
