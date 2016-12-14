@@ -21,12 +21,9 @@ See [Install Homebrew](http://brew.sh/).
 
 `git checkout RC_1_0`
 
-Edit the src/Makefile.am file. Find the `libtorrent_rasterbar_la_LIBADD =` line and add `@OPENSSL_LDFLAGS@` before `@OPENSSL_LIBS@`.<br/>
-`sed -i “” -e "s/^\(libtorrent_rasterbar_la_LIBADD\)\(.*\)\(@OPENSSL_LIBS@\)/\1\2@OPENSSL_LDFLAGS@  \3/" src/Makefile.am`
-
 `./autotool.sh`
 
-`CXXFLAGS=-std=c++11 ./configure --disable-dependency-tracking --disable-silent-rules --enable-encryption --prefix=/usr/local --with-boost=/usr/local/opt/boost --with-openssl=/usr/local/opt/openssl`<br/>
+`CXXFLAGS=-std=c++11 ./configure --disable-dependency-tracking --disable-silent-rules --enable-encryption --prefix=/usr/local --with-boost=/usr/local/opt/boost`<br/>
 
 `make && make install`
 
