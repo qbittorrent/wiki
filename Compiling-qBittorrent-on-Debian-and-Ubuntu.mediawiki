@@ -19,13 +19,16 @@ This how-to will guide you though the compilation of qBittorrent and libtorrent-
  sudo apt-get install geoip-database
 
 == Libtorrent ==
-[http://wwww.libtorrent.net Libtorrent] is a library written by Arvid Norberg that qBittorrent depends on. It is necessary to compile and install libtorrent before compiling qBittorrent.
+[http://libtorrent.org/ Libtorrent] is a library written by Arvid Norberg that qBittorrent depends on. It is necessary to compile and install libtorrent before compiling qBittorrent.
 If your distro packages at least libtorrent 0.16.19 or 1.0.6 you can install it. Otherwise you'll need to compile it yourself.
+
 <br />If it exists in your distro's repos:
  sudo apt-get install libtorrent-rasterbar-dev
 
 If you have to compile it:
 <br />Go to [https://github.com/arvidn/libtorrent/releases this page] and download at least 1.0.6 (tar.gz format). Extract the archive, and enter the folder from a terminal.
+<br />Note libtorrent 1.1.x series are not officially supported yet. Read [https://github.com/qbittorrent/qBittorrent/issues/5888#issuecomment-257685779 this].
+
 <br />First you'll need some extra dependencies to be installed:
  sudo apt-get install libboost-system-dev libboost-chrono-dev libboost-random-dev libssl-dev libgeoip-dev pkg-config
 
