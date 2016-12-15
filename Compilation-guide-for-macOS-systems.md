@@ -47,12 +47,18 @@ Apply [this patch](https://github.com/Homebrew/homebrew-core/issues/3219#issueco
  2. Optional: Download the [geoip dat](http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz) file and extract it to qbittorrent's src/gui/geoip folder using gzip or a similar tool.
 
 # Compilation
+## With Autotools
+* Set environment variable: `export QT_QMAKE=/usr/local/qt5.7.0/bin`
+* Configuration: `./configure`
+* Compilation: `make -j4` where 4 is your number of cores
+* Packaging: `$QT_QMAKE/macdeployqt src/qbittorrent.app` (may require sudo)
+* Or packaging and create DMG: `$QT_QMAKE/macdeployqt src/qbittorrent.app -dmg` (may require sudo)
 
- 1. Set environment variable: `export QT_QMAKE=/usr/local/qt5.7.0/bin`
- 2. Configuration: `./configure --disable-qt-dbus`
- 3. Compilation: `make -j4` where 4 is your number of cores
- 4. Packaging: `$QT_QMAKE/macdeployqt src/qbittorrent.app` (may require sudo)
- 5. Or packaging and create DMG: `$QT_QMAKE/macdeployqt src/qbittorrent.app -dmg` (may require sudo)
+## With CMake
+* `mkdir build`
+* `cd build`
+* `Qt5_DIR=/usr/local/qt5.7.0/lib/cmake/Qt5 cmake -DDBUS=OFF ..`
+* `/usr/local/qt5.7.0/bin/macdeployqt src/app/qbittorrent.app`
 
 # Optionally install python for the search function
 You can choose python2 or python3.
