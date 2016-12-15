@@ -22,25 +22,32 @@ This how-to will guide you though the compilation of qBittorrent and libtorrent-
 [http://libtorrent.org/ Libtorrent] is a library written by Arvid Norberg that qBittorrent depends on. It is necessary to compile and install libtorrent before compiling qBittorrent.
 If your distro packages at least libtorrent 0.16.19 or 1.0.6 you can install it. Otherwise you'll need to compile it yourself.
 
-<br />If it exists in your distro's repos:
+If it exists in your distro's repos:
  sudo apt-get install libtorrent-rasterbar-dev
 
 If you have to compile it:
-<br />Go to [https://github.com/arvidn/libtorrent/releases this page] and download at least 1.0.6 (tar.gz format). Extract the archive, and enter the folder from a terminal.
-<br />Note libtorrent 1.1.x series are not officially supported yet. Read [https://github.com/qbittorrent/qBittorrent/issues/5888#issuecomment-257685779 this].
-
 <br />First you'll need some extra dependencies to be installed:
- sudo apt-get install libboost-system-dev libboost-chrono-dev libboost-random-dev libssl-dev libgeoip-dev pkg-config
+ sudo apt-get install libboost-system-dev libboost-chrono-dev libboost-random-dev libssl-dev libgeoip-dev pkg-config automake libtool
+
+Clone from the [https://github.com/arvidn/libtorrent repo].
+ git clone https://github.com/arvidn/libtorrent.git
+ cd libtorrent
+
+If you want to use libtorrent 1.0.*.
+ git checkout RC_1_0
+ ./autotool.sh
+ ./configure --disable-debug --enable-encryption --prefix=/usr --with-libgeoip=system
+
+If you want to use libtorrent 1.1.*. Note 1.1.x series are not officially supported yet. Read [https://github.com/qbittorrent/qBittorrent/issues/5888#issuecomment-257685779 this].
+ git checkout RC_1_1
+ ./autotool.sh
+ ./configure --disable-debug --enable-encryption --prefix=/usr --with-libgeoip=system CXXFLAGS=-std=c++11
+
+If you get a "configure: error: Boost.System library not found.", check if you installed all the above dependencies. <br/>If yes, add --with-boost-libdir=/usr/lib/i386-linux-gnu
 
 Now you're ready to compile:
- ./configure --disable-debug --prefix=/usr --with-libgeoip=system && make clean && make
-
-if you get a "configure: error: Boost.System library not found.", check if you installed all the above dependencies. If yes, try:
- ./configure --disable-debug --prefix=/usr --with-libgeoip=system --with-boost-libdir=/usr/lib/i386-linux-gnu && make clean && make
-
-Then you can install libtorrent using the following commands:
- sudo make uninstall
- sudo make install-strip
+ make clean && make
+ sudo make install
 
 For more information on building libtorrent, see [http://www.rasterbar.com/products/libtorrent/building.html libtorrent downloading and building]
 
