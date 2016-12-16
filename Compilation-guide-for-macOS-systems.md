@@ -32,7 +32,7 @@ Or libtorrent 1.1.* <br/>
 `./configure --disable-debug --disable-dependency-tracking --disable-silent-rules --enable-encryption --prefix=/usr/local --with-boost=/usr/local/opt/boost CXXFLAGS=-std=c++11`<br/>
 
 Since libtorrent does not directly call OpenSSL functions, you can delete `-lssl -lcrypto -lz` from the `libtorrent_rasterbar_la_LIBADD =` line in src/Makefile (If you are paranoid).<br/>
-`sed -i “” -e "s/^\(libtorrent_rasterbar_la_LIBADD.*\) -lssl -lcrypto -lz/\1/" src/Makefile`
+`sed -i “” -e "s/^\(libtorrent_rasterbar_la_LIBADD.*\) -lssl.*/\1/" src/Makefile`
 
 `make -j4` where 4 is your number of cores
 
