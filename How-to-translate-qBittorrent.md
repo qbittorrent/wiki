@@ -32,4 +32,4 @@ You can alternatively work locally using tools such as **Qt Linguist** and submi
 # Translating Bittorrent specific terms
 If you need help understanding some Bittorrent specific terms, you can refer to these pages:
 * [Wikipedia - Glossary of BitTorrent terms](https://en.wikipedia.org/wiki/Glossary_of_BitTorrent_terms)
-* [BTFaq - Bittorrent terms](http://btfaq.com/serve/cache/23.html)
+* [BTFaq - Bittorrent terms](http://www.btfaq.com/serve/cache/23.html)
