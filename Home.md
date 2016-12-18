@@ -2,15 +2,15 @@ Welcome to the qBittorrent wiki!
 
 ## General
 * [Frequently Asked Questions (FAQ)](wiki/Frequently-Asked-Questions)
-* [qBittorrent options](https://github.com/qbittorrent/qBittorrent/wiki/Explanation-of-Options-in-qBittorrent)
+* [qBittorrent options](wiki/Explanation-of-Options-in-qBittorrent)
 * [How to use qBittorrent as a tracker](wiki/How-to-use-qBittorrent-as-a-tracker)
 * [Anonymous Mode](wiki/Anonymous-Mode)
 
 ## Troubleshooting
 * [qBittorrent Support Forum](http://forum.qbittorrent.org/)
 * [I forgot my UI lock password](wiki/I-forgot-my-UI-lock-password)
-* [I forgot my Web UI password](https://github.com/qbittorrent/qBittorrent/wiki/Web-UI-password-locked-on-qBittorrent-NO-X-%28qbittorrent-nox%29)
-* [Speed issues](https://github.com/qbittorrent/qBittorrent/wiki/Things-we-need-to-know-to-help-you-with-'speed'-issues)
+* [I forgot my Web UI password](wiki/Web-UI-password-locked-on-qBittorrent-NO-X-%28qbittorrent-nox%29)
+* [Speed issues](wiki/Things-we-need-to-know-to-help-you-with-'speed'-issues)
 
 ## Search plugins
 * [List of unofficial search plugins](wiki/Unofficial-search-plugins)
