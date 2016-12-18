@@ -1,6 +1,5 @@
 qBittorrent is currently translated into approximately 25 languages but we are still looking for new translators to help us make qBittorrent available into as many languages as possible.
 
-== Languages already supported ==
 We are using [https://www.transifex.com/ Transifex] to localize qBittorrent. You can see the current state of the localization by visiting the [https://www.transifex.com/projects/p/qbittorrent/ page of the project].
 
 If you want to help, sign up for free, select the language you want to translate and request to join the translation team.<br>
@@ -27,5 +26,5 @@ Sometimes, it may be important to understand to context in order to translate we
 
 == Translating Bittorrent specific terms ==
 If you need help understanding some Bittorrent specific terms, you can refer to these pages:
-* [http://en.wikipedia.org/wiki/BitTorrent_vocabulary Wikipedia - Bittorrent vocabulary]
+* [https://en.wikipedia.org/wiki/BitTorrent_vocabulary Wikipedia - Bittorrent vocabulary]
 * [http://btfaq.com/serve/cache/23.html BTFaq - Bittorrent terms]
