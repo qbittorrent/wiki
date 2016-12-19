@@ -2,7 +2,7 @@
 A full installation of Xcode.app is required to compile qt5.<br/>
 Xcode can be installed from the [App Store](http://www.apple.com/osx/apps/app-store/).<br/>
 
-After installing Xcode you need to do bellow. See [this discussion](http://stackoverflow.com/questions/33728905/qt-creator-project-error-xcode-not-set-up-properly-you-may-need-to-confirm-t).
+After installing Xcode you need to do below. See [this discussion](http://stackoverflow.com/questions/33728905/qt-creator-project-error-xcode-not-set-up-properly-you-may-need-to-confirm-t).
 
 `sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer`
 
@@ -39,16 +39,16 @@ Since libtorrent does not directly call OpenSSL functions, you can delete `-lssl
 `make install`
 
 # Install qt5 from source
-`curl -L -O https://download.qt.io/official_releases/qt/5.7/5.7.0/single/qt-everywhere-opensource-src-5.7.0.tar.xz`
+`curl -L -O https://download.qt.io/official_releases/qt/5.7/5.7.1/single/qt-everywhere-opensource-src-5.7.1.tar.xz`
 
-`tar xvf qt-everywhere-opensource-src-5.7.0.tar.xz`
+`tar xvf qt-everywhere-opensource-src-5.7.1.tar.xz`
 
-`cd qt-everywhere-opensource-src-5.7.0`
+`cd qt-everywhere-opensource-src-5.7.1`
 
 Apply [this patch](https://github.com/Homebrew/homebrew-core/issues/3219#issuecomment-235820697).<br/>
 `curl https://gist.githubusercontent.com/okeatime/dc2f7dabd9321e8b57cdb27a096e4058/raw/72dc3618423b1e9876d3d4b94412f977b9a2f33e/macdeployqt.patch | patch -p1`
 
-`OPENSSL_LIBS='-L/usr/local/opt/openssl/lib -lssl -lcrypto' ./configure -prefix /usr/local/qt5.7.0 -I/usr/local/opt/openssl/include -no-rpath -opensource -confirm-license -release -openssl-linked -no-securetransport -make libs -make tools -nomake examples -nomake tests -skip qt3d -skip qtactiveqt -skip qtandroidextras -skip qtcanvas3d -skip qtdeclarative -skip qtdoc -skip qtgraphicaleffects -skip qtimageformats -skip qtlocation -skip qtmacextras -skip qtmultimedia -skip qtquickcontrols -skip qtscript -skip qtsensors -skip qtserialport -skip qtsvg -skip qtwayland -skip qtwebchannel -skip qtwebsockets -skip qtwinextras -skip qtx11extras -skip qtxmlpatterns -skip qtwebview -skip qtwebengine -skip qtconnectivity -v`
+`OPENSSL_LIBS='-L/usr/local/opt/openssl/lib -lssl -lcrypto' ./configure -prefix /usr/local/qt5.7.1 -I/usr/local/opt/openssl/include -no-rpath -opensource -confirm-license -release -openssl-linked -no-securetransport -make libs -make tools -nomake examples -nomake tests -skip qt3d -skip qtactiveqt -skip qtandroidextras -skip qtcanvas3d -skip qtdeclarative -skip qtdoc -skip qtgraphicaleffects -skip qtimageformats -skip qtlocation -skip qtmacextras -skip qtmultimedia -skip qtquickcontrols -skip qtscript -skip qtsensors -skip qtserialport -skip qtsvg -skip qtwayland -skip qtwebchannel -skip qtwebsockets -skip qtwinextras -skip qtx11extras -skip qtxmlpatterns -skip qtwebview -skip qtwebengine -skip qtconnectivity -v`
 
 `make -j4 && make install`
 
@@ -59,7 +59,7 @@ Apply [this patch](https://github.com/Homebrew/homebrew-core/issues/3219#issueco
 
 # Compilation
 ## With Autotools
-* Set environment variable: `export QT_QMAKE=/usr/local/qt5.7.0/bin`
+* Set environment variable: `export QT_QMAKE=/usr/local/qt5.7.1/bin`
 * Configuration: `./configure`
 * Compilation: `make -j4`
 * Packaging: `$QT_QMAKE/macdeployqt src/qbittorrent.app` (may require sudo)
@@ -68,9 +68,9 @@ Apply [this patch](https://github.com/Homebrew/homebrew-core/issues/3219#issueco
 ## With CMake
 * `mkdir build`
 * `cd build`
-* `Qt5_DIR=/usr/local/qt5.7.0/lib/cmake/Qt5 cmake -DDBUS=OFF ..`
+* `Qt5_DIR=/usr/local/qt5.7.1/lib/cmake/Qt5 cmake -DDBUS=OFF ..`
 * `make -j4`
-* `/usr/local/qt5.7.0/bin/macdeployqt src/app/qbittorrent.app`
+* `/usr/local/qt5.7.1/bin/macdeployqt src/app/qbittorrent.app`
 
 # Optionally install python for the search function
 You can choose python2 or python3.
