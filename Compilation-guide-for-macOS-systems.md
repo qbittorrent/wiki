@@ -27,7 +27,7 @@ libtorrent 1.0.* <br/>
 Or libtorrent 1.1.* <br/>
 `git checkout RC_1_1`
 
-Edit the src/Makefile.am file. Find the libtorrent_rasterbar_la_LIBADD = line and add `@OPENSSL_LDFLAGS@` before `@OPENSSL_LIBS@`.
+Edit the src/Makefile.am file. Find the libtorrent_rasterbar_la_LIBADD = line and add `@OPENSSL_LDFLAGS@` before `@OPENSSL_LIBS@`.<br/>
 `sed -i “” -e "s/^\(libtorrent_rasterbar_la_LIBADD\)\(.*\)\(@OPENSSL_LIBS@\)/\1\2@OPENSSL_LDFLAGS@ \3/" src/Makefile.am`
 
 `./autotool.sh`
