@@ -27,12 +27,12 @@ libtorrent 1.0.* <br/>
 Or libtorrent 1.1.* <br/>
 `git checkout RC_1_1`
 
+Edit the src/Makefile.am file. Find the libtorrent_rasterbar_la_LIBADD = line and add `@OPENSSL_LDFLAGS@` before `@OPENSSL_LIBS@`.
+`sed -i “” -e "s/^\(libtorrent_rasterbar_la_LIBADD\)\(.*\)\(@OPENSSL_LIBS@\)/\1\2@OPENSSL_LDFLAGS@ \3/" src/Makefile.am`
+
 `./autotool.sh`
 
-`./configure --disable-debug --disable-dependency-tracking --disable-silent-rules --enable-encryption --prefix=/usr/local --with-boost=/usr/local/opt/boost CXXFLAGS=-std=c++11`<br/>
-
-Since libtorrent does not directly call OpenSSL functions, you can delete `-lssl -lcrypto -lz` from the `libtorrent_rasterbar_la_LIBADD =` line in src/Makefile (If you are paranoid).<br/>
-`sed -i ""  -e "s/^\(libtorrent_rasterbar_la_LIBADD.*\) -lssl.*/\1/" src/Makefile`
+`./configure --disable-debug --disable-dependency-tracking --disable-silent-rules --enable-encryption --prefix=/usr/local --with-boost=/usr/local/opt/boost --with-openssl=/usr/local/opt/openssl CXXFLAGS=-std=c++11`<br/>
 
 `make -j4` where 4 is your number of cores
 
