@@ -72,6 +72,20 @@ OS X:
 
 * Remove all files in the [[Frequently-Asked-Questions#where-does-qbittorrent-save-its-settings|preferences folder]].
 
+=== Before qBittorrent v3.3.6 on MacOS ===
+
+You need to delete the qBittorrent .plist files from  ~/Library/Preferences:
+
+* <tt>~/Library/Preferences/org.qbittorrent.*</tt>
+* <tt>~/Library/Preferences/com.qbittorrent.*</tt>
+
+And then do the following to reset the plist cache:
+
+<code>$ killall -u yourname cfprefsd</code>
+
+Where “yourname” is your OS X user name.
+
+
 == I configured qBittorrent to not download some files in a torrent but they still appear on my hard disk, why is that? ==
 As you may know, a torrent is split into pieces of equal size that do not take files into consideration. As a consequence, a piece can contain information relative to more than one file and qBittorrent only operates at piece level. Because of this, if two files are adjacent and you choose to download only one of them, it is likely that the filtered one will be partially downloaded and thus appear on the hard-disk.
 
