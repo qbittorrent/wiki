@@ -1,33 +1,24 @@
 You locked the qBittorrent user interface and forgot the password you used?
 Don't worry, you can recover from this.
 
-## Windows
 1. Exit or kill qBittorrent process
-2. Open `qbittorrent.ini` with a text editor, refer to [here](https://github.com/qbittorrent/qBittorrent/wiki/Frequently-Asked-Questions#Where_does_qBittorrent_save_its_settings) to see where it is located.
-3. Remove the following lines:
+1. Open the preference file with a text editor.<br/>
+Windows<br/>`%APPDATA%\qBittorrent\qbittorrent.ini` = `C:\Users\<username>\AppData\Roaming\qBittorrent\qbittorrent.ini`<br/>
+Linux<br/>`~/.config/qBittorrent/qBittorrent.conf`<br/>
+macOS<br/>`~/.config/qBittorrent/qbittorrent.ini`<br/>
+
+1. Remove the following lines:
 
  ```ini
 [Locking]
 password=<encrypted_password>
 locked=true
 ```
-4. Save the file
-5. Start qBittorrent again
+1. Save the file
+1.  Start qBittorrent again
 
-## Linux
-1. Exit or kill qBittorrent process
-2. Open `qBittorrent.conf` with a text editor, refer to [here](https://github.com/qbittorrent/qBittorrent/wiki/Frequently-Asked-Questions#Where_does_qBittorrent_save_its_settings) to see where it is located.
-3. Remove the following lines:
 
- ```ini
-[Locking]
-password=<encrypted_password>
-locked=true
-```
-4. Save the file
-5. Start qBittorrent again
-
-## Mac OS X
+## Before qBittorrent v3.3.6 on macOS
 1. Exit or kill qBittorrent process
 2. Open a terminal and run the following command:
 
