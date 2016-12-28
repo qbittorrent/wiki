@@ -123,9 +123,9 @@ Here are the options that you can use to change to tune qBittorent build for you
 When configure phase completes successfully, CMake generates build control files for your chosen build tool. Those might be Makefiles, Ninja rules or your IDE project files. At this stage run your tool of choice in the build directory to build qBittorrent or use your IDE command. Take a look at [https://cmake.org/cmake/help/v3.5/variable/CMAKE_BUILD_TYPE.html CMAKE_BUILD_TYPE] variable to control debug/release build kind.
 
 ===Changing build options===   
-If you want to change any of the listed above CMake options, there is no need to run <cmake>cmake</code> again with all the options in the command line. Just use <code>ccmake</code>, <code>cmake-gui</code>, or your IDE to edit those options in the cmake cache (located in the build directory), and the next build command (e.g. <code>make</code>) will run <code>cmake</cmake> to reflect the option change automatically. Alternatively, you may use several build directories with different set op options (and IDEs like KDevelop and QtCreator allows one to switch between build directories).
+If you want to change any of the listed above CMake options, there is no need to run <cmake>cmake</code> again with all the options in the command line. Just use <code>ccmake</code>, <code>cmake-gui</code>, or your IDE to edit those options in the cmake cache (located in the build directory), and the next build command (e.g. <code>make</code>) will run <code>cmake</code> to reflect the option change automatically. Alternatively, you may use several build directories with different set op options (and IDEs like KDevelop and QtCreator allows one to switch between build directories).
 
-== Installing ==
+==Installing==
 To install built software, either use <code>install</code> target (i.e. <code>make install</code>) or your IDE command (or "build" project named 'INSTALL' in Visual Studio).
 
 To control installation dir, use [https://cmake.org/cmake/help/v3.5/variable/CMAKE_INSTALL_PREFIX.html CMAKE_INSTALL_PREFIX] (and <code>DESTDIR</code> for UNIX systems).
