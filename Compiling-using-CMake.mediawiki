@@ -1,0 +1,131 @@
+This guide briefly overviews how to compile (and install) qBittorrent using CMake build system on Linux and Windows. The guide does not go into details how to install particulars software packages or how to compile them. One can gather this information from the other compilation guides in this wiki. This is not a step-by-step guide.
+
+== What you will need: ==
+* A C++ compiler, supported by CMake.
+* CMake, version 3.5 or newer. Get it from your packages repository or download an installer from the CMake [http://cmake.org website]
+* Installed Qt, libtorrent and their dependencies (Boost, zlib, openssl). Please note that Boost support in CMake is version-explicit, and thus CMake version has to be younger than the Boost version or, otherwise, CMake might not recognize boost libraries.
+* Development files (headers and libraries) for Qt, libtorrent, and Boost.
+
+=== Windows-specific installation note. ===
+Things will be easier if you install all the dependencies into the same prefix, for instance into <code>c:\usr</code>. This complicates uninstalling, but you receive the following advantages: <code>%PREFIX%/include</code> and <code>%PREFIX%/lib</code> can be added to your compiler search paths and you don't need to care about every library; CMake can be instructed to look for the libraries in this prefix (once for all of them). You you want to compile qBittorrent against both Qt 4 and 5 versions, you may install both Qt versions into different prefixes, for example <code>%PREFIX%/lib/qt5</code> and <code>%PREFIX%/lib/qt4</code>.
+
+== Out-of-source builds ==
+CMake encourage you to use so called out-of-source builds (i.e. build into a different directory than the one with source files). In fact, CMake does not even provide a "clean" command to remove generated files --- you simply delete the build directory (do not confuse with a "clean" command of the build system, which removes files, generatad during a build, this CMake does provide). You may have different build directories, configured with options (see below). And, of course, you do not pollute your sources, that are always ready for <code>git diff</code>.
+
+== Configuring and generating build files ==
+CMake does not build a project by itself. Instead it generates rules for an actual build software. These generators include traditional makefiles as well as other platform-specific (like XCode or Visual Studio) or not (Ninja) build tools. At the same time CMake projects can be integrated with IDEs. This is done in two ways: either CMake generates project files, which include call to CMake itself to update those files if needed, or an IDE may load CMake project structure directly. The generators for Visual Studio and XCode implement the former approach, while Qt Creator and KDevelop use the latter model. Before continuing you have to decide which generator you will use and will you integrate with an IDE or not. You may get a list of available generators running <code>cmake -G</code> or <code>cmake --help</code>
+=== IDE Support ===
+;Qt Creator
+: This IDE can just open the top-level project <code>CMakeLists.txt</code> file and load the project structure. Then it will ask you where to put build files and which make tool to use. Please note that Ninja will give you significantly shorter rebuild times, as comparing to a regular make. From version 4.3 of Qt Creator and 3.7 of CMake, support is excellent (see this [http://blog.qt.io/blog/2016/11/15/cmake-support-in-qt-creator-and-elsewhere/ blog post] for details).
+;KDevelop
+: KDevelop from version 4 provides excellent support for CMake-based projects, simply open the top-level project <code>CMakeLists.txt</code> file and select a build directory.
+;XCode
+: You have to use "XCode" generator to generate project files. Then when any of the CMake project files get updated, the next build command will re-generate the XCode projects and XCode will reload them.
+;Visual Studio
+: You have to use "Visual Studio" generator to generate project files. Then when any of the CMake project files get updated, the next build command will re-generate the projects files and Visual Studio will ask to reload them.
+
+With the generator selected, you have to do one of the following:
+;No IDE
+: Create build directory. For example, it can be a sub-directory of the source directory, like <code>build/debug</code> for a debug build. Cd into that directory and issue a command:
+: <code>cmake -G <chosen generator> -D<option1> -D<option2> <source directory></code>. If your build directory is as above (<code>build/debug</code>), the command may be:
+: <code>cmake -G Ninja -DCMAKE_BUILD_TYPE=Debug -DQT5=ON -DSYSTEM_QTSINGLEAPPLICATION=ON ../..</code>. For the list of supported by qBittorrent and CMake options (and where to look them up) see below.
+;Visual Studio
+: Create build directory. This directory will contain Visual Studio project files as well. Cd into that directory and issue a command:
+: <code>cmake -G "Visual Studio xxxx" -D<option1> -D<option2> <source directory></code>. If your build directory is as above (<code>build/debug</code>), the command may be:
+: <code>cmake -G "Visual Studio 2015" -DQT5=ON -DSYSTEM_QTSINGLEAPPLICATION=ON ../..</code>. For the list of supported by qBittorrent and CMake options (and where to look them up) see below.
+;XCode
+: Same as for Visual Studio, replace generator with "XCode".
+;KDevelop, Qt Creator
+: Open the top level <code>CMakeLists.txt</code> file. When the IDE asks you for options, enter <code>-D<option1> -D<option2></code> into the input field. The options might be, for instance: <code>-DQT5=ON -DSYSTEM_QTSINGLEAPPLICATION=ON</code>
+=== Configuring ===
+When you run <code>cmake</code> either directly or via an IDE, it will perform tasks similar to those done be automake's <code>configure</code> script: it will detect environment, try to find all the needed dependencies and generate build files. One might get errors from CMake at this step if it is unable to find a package (library file or include headers). In case of UNIX (Linux or OSX) this usually mean that the package is indeed not installed, while on Windows you might need to change configuration options or edit the files manually (see [[Compiling_using_CMake#Configuring on Windows]]
+
+====Configuring on Windows====
+There is no common place for software installation as well as no a common way to share development requirements (like, for instance, pkgconfig). As such, there is no way to pass required information automatically. Therefore, qBittorrent provides a reasonable defaults, and you can override them via CMake options in its cache (via command line or GUI tools) or in the <code>cmake\Modules\winconf.cmake</code> file.
+
+The defaults describe the following build environment:
+# All the prerequisites are installed into the same prefix (same directory) with exception for two versions of Qt installed simultaneously, see below. This path will be referenced as <code>%PREFIX%</code> below
+# <code>%PREFIX%</code> is <code>c:\usr</code> by default.
+# Qt versions 4 an 5 are installed into <code>%PREFIX%\lib\qt5</code> and <code>%PREFIX%\lib\qt4</code> respectively. 
+# Boost libraries are linked statically.
+
+To change these defaults, either pass listed below parameters to <code>cmake</code> for configure state, or edit them in <code>cmake\Modules\winconf.cmake</code> file. CMake variable names are given below:
+# To set boost location, use <code>BOOST_ROOT</code> variable (<code>-DBOST_ROOT=<your_boost_location></code>). Alternatively, you may set include and librariess directories independently(<code>BOOST_INCLUDEDIR</code> and <code>BOOST_LIBRARYDIR</code>. To set libtorrent location, use <code>-DPC_LIBTORRENT_RASTERBAR_INCLUDEDIR=<your_libtorrent_include_dir</code> and <code>-DPC_LIBTORRENT_RASTERBAR_LIBDIR=<your_libtorrent_libraries_dir></code>.
+# Pass <code>-DCOMMON_INSTALL_PREFIX=<your value></code>.
+# Set <code>QT4_INSTALL_PREFIX</code> and <code>QT5_INSTALL_PREFIX</code>.
+# set <code>Boost_USE_STATIC_LIBS</code> to <code>False</code> to change the default setting.
+
+It is recommended to use the single prefix for all libraries, and change only that path when needed.
+
+===Errors during configuration stage===
+CMake may report errors during the configuration stage. Most likely those errors arise when CMake is unable to find a dependency, either because it does not know where to look for it, or it is indeed absent. 
+
+===Summary of qBittorrent configuration options===
+Here are the options that you can use to change to tune qBittorent build for your needs. The options may be passed to <code>cmake</code> via <code>-D<option>=<value></code> as well as may be changed in the build cache later via <code>ccmake</code>, <code>cmake-gui</code>, or your IDE (the build cache is located in your build dir).
+{|
+|+ QBittorrent CMake build options. 
+!Name
+!Type
+!Description
+!Default value
+!Condition if any
+|-
+| <tt>QT5</tt>
+| bool
+| Whether to build against version 5 of the Qt toolkit
+| True
+|
+|-
+| <tt>SYSTEM_QTSINGLEAPPLICATION</tt>
+| bool
+| Whether to link to the system (already installed) qtsingleapplication library, or use the bundled one.
+| False
+|
+|-
+|<tt>SYSTEM_QJSON</tt>
+|bool
+|Use system qjson library or the bundled one
+|False
+|<code>-DQT5=OFF</code>
+|-
+| <tt>GUI</tt>
+| bool
+| Enable graphical user interface
+| True
+|
+|-
+| <tt>WEBUI</tt>
+| bool
+| Enable Web interface
+| True
+|
+|-
+| <tt>STACKTRACE_WIN</tt>
+| bool
+| Enable stacktrace in crash reports
+| False
+| Windows
+|-
+| <tt>SYSTEMD</tt>
+| bool
+| Install the systemd service file
+| False
+| not Windows, <code>-DGUI=OFF</code>, systemd installed
+|-
+| <tt>DBUS</tt>
+| bool
+| Enable use of DBus for various purposes
+| True
+| not Windows, <code>-DGUI=ON</code>
+|}
+
+== Compiling ==
+When configure phase completes successfully, CMake generates build control files for your chosen build tool. Those might be Makefiles, Ninja rules or your IDE project files. At this stage run your tool of choice in the build directory to build qBittorrent or use your IDE command. Take a look at [https://cmake.org/cmake/help/v3.5/variable/CMAKE_BUILD_TYPE.html CMAKE_BUILD_TYPE] variable to control debug/release build kind.
+
+===Changing build options===   
+If you want to change any of the listed above CMake options, there is no need to run <cmake>cmake</code> again with all the options in the command line. Just use <code>ccmake</code>, <code>cmake-gui</code>, or your IDE to edit those options in the cmake cache (located in the build directory), and the next build command (e.g. <code>make</code>) will run <code>cmake</cmake> to reflect the option change automatically. Alternatively, you may use several build directories with different set op options (and IDEs like KDevelop and QtCreator allows one to switch between build directories).
+
+== Installing ==
+To install built software, either use <code>install</code> target (i.e. <code>make install</code>) or your IDE command (or "build" project named 'INSTALL' in Visual Studio).
+
+To control installation dir, use [https://cmake.org/cmake/help/v3.5/variable/CMAKE_INSTALL_PREFIX.html CMAKE_INSTALL_PREFIX] (and <code>DESTDIR</code> for UNIX systems).
