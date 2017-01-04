@@ -25,20 +25,22 @@ If your distro packages at least libtorrent 0.16.19 or 1.0.6 you can install it.
 If it exists in your distro's repos:
  sudo apt-get install libtorrent-rasterbar-dev
 
-If you have to compile it:
-<br />First you'll need some extra dependencies to be installed:
- sudo apt-get install libboost-system-dev libboost-chrono-dev libboost-random-dev libssl-dev libgeoip-dev pkg-config automake libtool
+If you have to compile it:<br/>
+First you'll need some extra dependencies to be installed:
+ sudo apt-get install libboost-system-dev libboost-chrono-dev libboost-random-dev libssl-dev libgeoip-dev
+And tools:
+ sudo apt-get install git pkg-config automake libtool
 
 Clone from the [https://github.com/arvidn/libtorrent repo].
  git clone https://github.com/arvidn/libtorrent.git
  cd libtorrent
 
-If you want to use libtorrent 1.0.*.
+If you want to use libtorrent 1.0.*. (Recommended)
  git checkout RC_1_0
  ./autotool.sh
  ./configure --disable-debug --enable-encryption --prefix=/usr --with-libgeoip=system
 
-If you want to use libtorrent 1.1.*. Note 1.1.x series are not officially supported yet. Read [https://github.com/qbittorrent/qBittorrent/issues/5888#issuecomment-257685779 this].
+If you want to use libtorrent 1.1.*. (Note 1.1.x series are not officially supported yet. Read [https://github.com/qbittorrent/qBittorrent/issues/5888#issuecomment-257685779 this])
  git checkout RC_1_1
  ./autotool.sh
  ./configure --disable-debug --enable-encryption --prefix=/usr --with-libgeoip=system CXXFLAGS=-std=c++11
