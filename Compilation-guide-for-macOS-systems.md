@@ -46,7 +46,7 @@ Edit the src/Makefile.in file. Find the libtorrent_rasterbar_la_LIBADD = line an
 `cd qt-everywhere-opensource-src-5.7.1`
 
 Apply [this patch](https://github.com/Homebrew/homebrew-core/issues/3219#issuecomment-235820697).<br/>
-`curl https://gist.githubusercontent.com/okeatime/dc2f7dabd9321e8b57cdb27a096e4058/raw/72dc3618423b1e9876d3d4b94412f977b9a2f33e/macdeployqt.patch | patch -p1`
+`curl https://github.com/okeatime/qBittorrent/releases/download/depend.tar.ball/macdeployqt.patch | patch -p1`
 
 `OPENSSL_LIBS='-L/usr/local/opt/openssl/lib -lssl -lcrypto' ./configure -prefix /usr/local/qt5.7.1 -I/usr/local/opt/openssl/include -no-rpath -opensource -confirm-license -release -openssl-linked -no-securetransport -make libs -make tools -nomake examples -nomake tests -skip qt3d -skip qtactiveqt -skip qtandroidextras -skip qtcanvas3d -skip qtdeclarative -skip qtdoc -skip qtgraphicaleffects -skip qtimageformats -skip qtlocation -skip qtmacextras -skip qtmultimedia -skip qtquickcontrols -skip qtscript -skip qtsensors -skip qtserialport -skip qtsvg -skip qtwayland -skip qtwebchannel -skip qtwebsockets -skip qtwinextras -skip qtx11extras -skip qtxmlpatterns -skip qtwebview -skip qtwebengine -skip qtconnectivity -v`
 
