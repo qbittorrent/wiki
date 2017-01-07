@@ -44,7 +44,7 @@ You are probably using GNOME ≥ 2.28. By default, this window manager is no lon
  gconftool-2 --type boolean --set /desktop/gnome/interface/menus_have_icons true
 
 == Why the name qBittorrent? ==
-Well, actually I lacked inspiration on this one. :P qBittorrent is simply a BitTorrent client written using the [http://qt.digia.com/ Qt4 Framework] for its user interface. Most programs developed with Qt4 toolkit use a 'q' as the first letter of their name. The ''qBT'' abbreviation is also commonly used to refer to the qBittorrent client. However, '''please do not use the abbreviation ''qtorrent''''' since another BitTorrent client with this name already exists. 
+Well, actually I lacked inspiration on this one. :P qBittorrent is simply a BitTorrent client written using the [ https://www.qt.io/ Qt Framework] for its user interface. Most programs developed with Qt toolkit use a 'q' as the first letter of their name. The ''qBT'' abbreviation is also commonly used to refer to the qBittorrent client. However, '''please do not use the abbreviation ''qtorrent''''' since another BitTorrent client with this name already exists. 
 
 
 == Where does qBittorrent save its settings? ==
