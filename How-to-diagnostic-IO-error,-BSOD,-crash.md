@@ -6,8 +6,13 @@ There are three major things that can cause these symptoms.
 * Your RAM
 * Your HDD/Storage
 * Your Power Supply
+* Something else
 
 # How to check RAM
+
+## Windows
+
+* https://www.cnet.com/how-to/test-your-ram-with-windows-memory-diagnostic-tool/
 
 ## Linux
 In short, on 99% of the Linux distributions out there, there will be a "Memtest", "Check memory", or another similar entry in your boot loader's menu. Select that. 
@@ -33,10 +38,12 @@ There are many great free tools for this.
 * http://crystalmark.info/software/CrystalDiskInfo/index-e.html
 
 ## Ubuntu
-https://askubuntu.com/questions/528072/how-can-i-check-the-smart-status-of-a-drive-on-ubuntu-14-04-through-16-10
+* https://askubuntu.com/questions/528072/how-can-i-check-the-smart-status-of-a-drive-on-ubuntu-14-04-through-16-10
+
+If you can't figure out how to use that tool, read below.
 
 ## Linux / BSD
-https://askubuntu.com/questions/38566/how-can-i-check-the-health-of-my-hard-drive  
+* https://askubuntu.com/questions/38566/how-can-i-check-the-health-of-my-hard-drive  
 
 You want to check:
 * Reallocated_Sector_Ct
@@ -51,3 +58,22 @@ You want to check:
 
 * Power_On_Hours:
 > How many hours your HDD ran. HDDs usually die around 20-30k hours. Some may run up to 60k. It is totally random, and there is no guarantee a hard drive will run to X hours. It's however a good idea to back up more often and worry once you reach a lot of hours.
+
+# How to check PSU
+This one is very tricky.
+The best and easiest method is to switch the PSU to an other one. Use the computer, try every application, game and whatnot. If the computer is now stable, then it was your PSU.
+
+Of course, most people don't have a second PSU lying around.
+In this case it's usually a good test to put load on your PC.
+
+## Windows
+
+Run the two programs at the same time.
+Prime95 stresses your CPU, Furmark stresses your GPU.
+
+If your PC is stable after a few minutes, just close them.
+If you have a BSOD, or the computer restarts/turns off, you have a bad PSU.
+
+# Something else
+Check if the cables to your HDD/things are connected firmly, and nothing is lose. This can also cause trouble.
+If nothing helped, your motherboard can also be faulty.
