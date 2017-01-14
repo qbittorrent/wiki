@@ -99,8 +99,8 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 | mmajor(at) yandex(dot)ru
 | 1.20
 | May 24 2015
-| [https://raw.githubusercontent.com/kmlebedev/myrepo/master/rutor.py Download]
-| Outdated
+| [https://raw.githubusercontent.com/Pireo/hello-world/master/rutor.py Download]
+| Works with Python 3
 |-
 | [[http://www.qbittorrent.org/wiki-images/Limetorrents.png]] [https://www.limetorrents.cc/ LimeTorrents]
 | richard(at) richardurban(dot)de
