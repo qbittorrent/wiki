@@ -74,13 +74,6 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 | [https://raw.githubusercontent.com/davy39/qbfrench/master/torrent9.py Download]
 | Python2 & Python3 supported
 |-
-| [[https://raw.githubusercontent.com/davy39/qbfrench/master/smartorrent.png]] [http://smartorrent.com Smartorrent]
-| davy39(at) hmamail(dot)com
-| 1.1
-| Aug 11 2016
-| [https://raw.githubusercontent.com/davy39/qbfrench/master/smartorrent.py Download]
-| Python2 & Python3 supported
-|-
 | [[https://raw.githubusercontent.com/BrunoReX/qbittorrent-search-plugins/master/yts.png]] [http://yts.re/ YTS]
 | brunorex(at) gmail(dot).com
 | 1.0
@@ -150,20 +143,6 @@ Be careful, these scripts probably require editing before you can use them. Thos
 |Sep 14 2016
 |[https://github.com/alvin1979/qbrutracker Download]
 |Python3 supported. Tested with qBittorrent 3.3.6.
-|-
-|[[http://www.qbittorrent.org/wiki-images/Quebecpartage.png]][http://www.quebec-partage.com/ Quebec-Partage]
-|sinusnco(at) gmail(dot)com
-|1.0
-|Jan 19 2011
-|[https://qbt-extrasearch.svn.sourceforge.net/viewvc/qbt-extrasearch/trunk/quebecpartage_com/quebecpartage.py Script only] / [https://sourceforge.net/projects/qbt-extrasearch/files/quebecpartage_com-1.0.tar.gz/download All files]*
-|Tested with qBittorrent >= 2.6.3
-|-
-|[[http://www.qbittorrent.org/wiki-images/Smartorrent.png]][http://smartorrent.com/ Smartorrent]
-|sinusnco(at) gmail(dot)com
-|1.0
-|Jan 18 2011
-|[https://qbt-extrasearch.svn.sourceforge.net/viewvc/qbt-extrasearch/trunk/smartorrent_com/smartorrent.py Script only] / [https://sourceforge.net/projects/qbt-extrasearch/files/smartorrent_com-1.0.tar.gz/download All files]*
-|Tested with qBittorrent >= 2.6.3
 |-
 |[[https://github.com/adrianmocan/qbittorrent_plugin_filelist.ro/blob/master/favicon.png]][https://filelist.ro/ FileList]
 |adrian.mocan(at) gmail(dot)com
