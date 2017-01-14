@@ -53,7 +53,7 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 | [https://raw.githubusercontent.com/starius/qbittorrent-plugins/master/tfile_me.py Download]
 | Python2 & Python3 supported
 |-
-| [[https://raw.githubusercontent.com/b0nk/qbittorrent-search-plugins/master/rarbg.png]] [https://rarbg.to/ rarbg.to]
+| [[https://raw.githubusercontent.com/b0nk/qbittorrent-search-plugins/master/rarbg.png]] [https://rarbg.to/ RARBG]
 | fsantos.pt (at) hotmail (dot) com
 | 1.12
 | May 25 2016
