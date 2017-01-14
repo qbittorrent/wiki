@@ -91,7 +91,7 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 | [[https://raw.github.com/mr-mmajoR/myrepo/master/rutor.png]] [http://rutor.info/ Rutor]
 | mmajor(at) yandex(dot)ru
 | 1.20
-| May 24 2015
+| January 14 2017
 | [https://raw.githubusercontent.com/Pireo/hello-world/master/rutor.py Download]
 | Works with Python 3
 |-
