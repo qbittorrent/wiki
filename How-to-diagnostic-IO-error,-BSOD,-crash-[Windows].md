@@ -2,7 +2,7 @@
 
 First of all, if you get a BSOD, and it's not `irql_not_less_or_equal`, there is a good chance you will be able to debug the BSOD. It is a very powerful and useful tool to find why your Windows system just crashed.  
 
-Well, the thing is, it was not qBittorrent.
+You must also know that the cause of your lockup/BSOD was not qBittorrent.
 There are four major things that can cause a freeze or BSOD.
 The numbers mean how hard is it to check on a scale of 5.
 
