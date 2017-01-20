@@ -72,7 +72,7 @@ Use the computer, try every application, game and whatnot.
 If the computer is now stable, then it was your PSU.
 
 Of course, most people don't have a second PSU lying around.
-In this case it's usually a good test to put load on your PC.
+In this case, it's usually a good test to put load on your PC.
 
 ## Windows
 
