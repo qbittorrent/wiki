@@ -6,11 +6,11 @@ Well, the thing is, it was not qBittorrent.
 There are four major things that can cause a freeze or BSOD.
 The numbers mean how hard is it to check on a scale of 5.
 
-* Drivers, faulty devices (1/5)
+* [Drivers](#How-to-diagnose-BSOD) (1/5)
 * [Your RAM](#how-to-check-ram) (2/5)
-* Your HDD/Storage (2/5)
-* Your Power Supply (4/5)
-* Something else (5/5)
+* [Your HDD/Storage](targ) (2/5)
+* [Your Power Supply](targ) (4/5)
+* [Something else](targ) (5/5)
 
 ***
 
