@@ -1,7 +1,6 @@
-# This wiki page is still work in progress! Please, check back later.
-Version 0.2.2
-
 ## qBittorrent gave you a lockup or BSOD (Blue Screen of Death). Now what?
+
+First of all, if you get a BSOD, and it's not `irql_not_less_or_equal`, there is a good chance you will be able to debug the BSOD. It is a very powerful and useful tool to find why your Windows system just crashed.  
 
 Well, the thing is, it was not qBittorrent.
 There are four major things that can cause a freeze or BSOD.
@@ -29,6 +28,8 @@ The `c:\symbols` will be your local symbol cache. I would suggest using somethin
 4. File -> Open Crash Dump.
 5. Navigate to `C:\Windows\`
 6. Open `memory.dmp`
+7. Wait. Once you see "Ready", use the `!analyze -v` command.
+8. It will tell you the most likely culprit, but the other loaded things are also suspects. For me, the "most likely" thing was a Windows DLL, but my Avast file scanner service was also there. Removed Avast - boom - no BSOD ever since.
 
 
 ***
@@ -104,4 +105,4 @@ Your PSU might also be able to deliver stable power during stress (not likely), 
 
 ## Something else
 Check if the cables to your HDD/things are connected firmly, and they are not loose. This can also cause trouble.
-If nothing helped, your motherboard can also be faulty.
+If nothing helped, your motherboard can also be faulty. An anti-virus can also cause BSOD, but it will show up with "windbg".
