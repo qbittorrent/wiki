@@ -6,19 +6,19 @@ Well, the thing is, it was not qBittorrent.
 There are four major things that can cause a freeze or BSOD.
 The numbers mean how hard is it to check on a scale of 5.
 
-* [Drivers](#How-to-diagnose-BSOD) (1/5)
+* [Drivers](#how-to-diagnose-bsod) (1/5)
 * [Your RAM](#how-to-check-ram) (2/5)
-* [Your HDD/Storage](targ) (2/5)
-* [Your Power Supply](targ) (4/5)
-* [Something else](targ) (5/5)
+* [Your HDD/Storage](#how-to-check-the-hdd-or-storage) (2/5)
+* [Your Power Supply](#how-to-check-psu) (4/5)
+* [Something else](#something-else) (5/5)
 
 ***
 
 ## How to diagnose BSOD?
 
-0. Take a picture of the BSOD message, every detail. Use your phone, or anything you have at your disposal. You have a few seconds until Windows finishes writing out the memory dump. **Wait until it says 100%/ready, otherwise you will have nothing to work with.**
+! Take a picture of the BSOD message, every detail. Use your phone, or anything you have at your disposal. You have a few seconds until Windows finishes writing out the memory dump. **Wait until it says 100%/ready, otherwise you will have nothing to work with.**
 
-### If you get the `irql_not_less_or_equal`, it is most likely a hardware issue.
+**If you get the `irql_not_less_or_equal`, it is most likely a hardware issue.**
 
 1. Install the [Windows SDK](https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk). You only need to select the "Debugging tools" at the installation, which is only a mere ~250MB.
 2. Launch the freshly installed "windbg" _as Administrator_ tool.
@@ -56,7 +56,7 @@ Download the latest Ubuntu LTS version (16.04 at the moment), and put it on a pe
 ***
 
 
-## How to check the HDD/storage
+## How to check the HDD or storage
 
 ### Windows
 There are many great free tools for this.
