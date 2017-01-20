@@ -14,7 +14,7 @@ The numbers mean how hard is it to check on a scale of 5.
 
 ***
 
-## How to diagnose BSOD?
+## How to diagnose BSOD
 
 ! Take a picture of the BSOD message, every detail. Use your phone, or anything you have at your disposal. You have a few seconds until Windows finishes writing out the memory dump. **Wait until it says 100%/ready, otherwise you will have nothing to work with.**
 
