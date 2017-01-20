@@ -1,14 +1,17 @@
 # This wiki page is still work in progress! Please, check back later.
+# Version 0.2.1
 
-# qBittorrent gave you a BSOD (Blue Screen of Death). Now what?
+## qBittorrent gave you a BSOD (Blue Screen of Death). Now what?
 
 Well, the thing is, it was not qBittorrent.
-There are three major things that can cause these symptoms.
+There are four major things that can cause a freeze or BSOD.
+The numbers mean how hard is it to check on a scale of 5.
 
-* Your RAM
-* Your HDD/Storage
-* Your Power Supply
-* Something else
+* Drivers, faulty devices (1/5)
+* Your RAM (2/5)
+* Your HDD/Storage (2/5)
+* Your Power Supply (4/5)
+* Something else (5/5)
 
 # How to check RAM
 
@@ -16,18 +19,14 @@ There are three major things that can cause these symptoms.
 
 * https://www.cnet.com/how-to/test-your-ram-with-windows-memory-diagnostic-tool/
 
-## Linux
-In short, on 99% of the Linux distributions out there, there will be a "Memtest", "Check memory", or another similar entry in your boot loader's menu. Select that. 
-
-* https://askubuntu.com/questions/343114/how-to-check-for-errors-in-ram-via-linux  
-* https://help.ubuntu.com/community/MemoryTest
-
 ## Any OS
+In case Windows's in-built test does not work for you.
 * http://www.memtest86.com  
 * http://www.howtogeek.com/260813/how-to-test-your-computers-ram-for-problems/
 
-Basically you have to download Memtest86 and put it on a pendrive, CD or DVD.
+You have to download Memtest86 and put it on a pendrive, CD or DVD.
 Boot it, and it will check your RAM.
+I usually stop after 1 PASS, but you can wait until 2 PASS or so. If there are no errors during the test, your ram is OK.
 
 If you can't get Memtest86 to work, a live Ubuntu ISO will work just as well.
 Download the latest Ubuntu LTS version (16.04 at the moment), and put it on a pendrive, CD or DVD.
@@ -40,6 +39,7 @@ There are many great free tools for this.
 * http://crystalmark.info/software/CrystalDiskInfo/index-e.html
 
 ## Ubuntu
+If you can't boot Windows, you can use an [Ubuntu Live CD](http://www.howtogeek.com/191054/how-to-create-bootable-usb-drives-and-sd-cards-for-every-operating-system/) to diagnose your HDD.
 * https://askubuntu.com/questions/528072/how-can-i-check-the-smart-status-of-a-drive-on-ubuntu-14-04-through-16-10
 
 If you can't figure out how to use that tool, read below.
