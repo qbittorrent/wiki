@@ -1,5 +1,5 @@
 # This wiki page is still work in progress! Please, check back later.
-# Version 0.2.2
+Version 0.2.2
 
 ## qBittorrent gave you a lockup or BSOD (Blue Screen of Death). Now what?
 
@@ -15,13 +15,31 @@ The numbers mean how hard is it to check on a scale of 5.
 
 ***
 
-# How to check RAM
+## How to diagnose BSOD?
 
-## Windows in-built tool
+0. Take a picture of the BSOD message, every detail. Use your phone, or anything you have at your disposal. You have a few seconds until Windows finishes writing out the memory dump. **Wait until it says 100%/ready, otherwise you will have nothing to work with.**
+
+### If you get the `irql_not_less_or_equal`, it is most likely a hardware issue.
+
+1. Install the [Windows SDK](https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk). You only need to select the "Debugging tools" at the installation, which is only a mere ~250MB.
+2. Launch the freshly installed "windbg" _as Administrator_ tool.
+3. Add remote symbols. 
+File -> Symbol File Path: `srv*c:\symbols*https://msdl.microsoft.com/download/symbols`
+The `c:\symbols` will be your local symbol cache. I would suggest using something more "writeable".
+4. File -> Open Crash Dump.
+5. Navigate to `C:\Windows\`
+6. Open `memory.dmp`
+
+
+***
+
+## How to check RAM
+
+### Windows in-built tool
 
 * https://www.cnet.com/how-to/test-your-ram-with-windows-memory-diagnostic-tool/
 
-## Alternatives
+### Alternatives
 In case Windows's in-built test does not work for you.
 * http://www.memtest86.com  
 * http://www.howtogeek.com/260813/how-to-test-your-computers-ram-for-problems/
@@ -37,14 +55,14 @@ Download the latest Ubuntu LTS version (16.04 at the moment), and put it on a pe
 ***
 
 
-# How to check the HDD/storage
+## How to check the HDD/storage
 
-## Windows
+### Windows
 There are many great free tools for this.
 * https://hddguardian.codeplex.com  
 * http://crystalmark.info/software/CrystalDiskInfo/index-e.html
 
-## Ubuntu
+### Ubuntu
 If you can't boot Windows, you can use an [Ubuntu Live CD](http://www.howtogeek.com/191054/how-to-create-bootable-usb-drives-and-sd-cards-for-every-operating-system/) to diagnose your HDD.
 * https://askubuntu.com/questions/528072/how-can-i-check-the-smart-status-of-a-drive-on-ubuntu-14-04-through-16-10
 * https://askubuntu.com/questions/38566/how-can-i-check-the-health-of-my-hard-drive  
@@ -65,7 +83,7 @@ You want to check:
 
 ***
 
-# How to check PSU
+## How to check PSU
 This one is very tricky.
 The best and easiest method is to switch the PSU to an other one.
 Use the computer, try every application, game and whatnot.
@@ -74,7 +92,7 @@ If the computer is now stable, then it was your PSU.
 Of course, most people don't have a second PSU lying around.
 In this case, it's usually a good test to put load on your PC.
 
-## Windows
+### Windows
 
 Run the two programs at the same time.
 [Prime95](http://www.mersenne.org/download/) stresses your CPU, [Furmark](http://www.ozone3d.net/benchmarks/fur/) stresses your GPU.
@@ -84,6 +102,6 @@ If you have a BSOD, or the computer restarts/turns off, you have a bad PSU.
 
 Your PSU might also be able to deliver stable power during stress (not likely), so also test some other situations where you had a freeze/lockup.
 
-# Something else
+## Something else
 Check if the cables to your HDD/things are connected firmly, and they are not loose. This can also cause trouble.
 If nothing helped, your motherboard can also be faulty.
