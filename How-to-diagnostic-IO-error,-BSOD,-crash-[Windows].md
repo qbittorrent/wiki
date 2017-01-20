@@ -7,7 +7,7 @@ There are four major things that can cause a freeze or BSOD.
 The numbers mean how hard is it to check on a scale of 5.
 
 * Drivers, faulty devices (1/5)
-* Your RAM (2/5)
+* [Your RAM](How to check RAM) (2/5)
 * Your HDD/Storage (2/5)
 * Your Power Supply (4/5)
 * Something else (5/5)
