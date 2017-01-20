@@ -45,3 +45,7 @@ If you are a GNU/**advanced user**, check if you belong to the same group as the
 ### Hardware problems [Windows]
 
 Check my [[other Wiki article|How to diagnose IO error, BSOD, crash (Windows)]]. See HDD section.
+
+### Hardware problems [Linux]
+
+Check my [[other Wiki article|How to diagnose IO error, BSOD, crash (Linux)]]. See HDD section.
