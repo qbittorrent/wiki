@@ -1280,6 +1280,48 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
+### Add new category ###
+
+```http
+POST /command/addCategory HTTP/1.1
+User-Agent: Fiddler
+Host: 127.0.0.1
+Cookie: SID=your_sid
+Content-Type: application/x-www-form-urlencoded
+Content-Length: length
+
+category=CategoryName
+```
+
+`category` is the category you want to create.
+
+No matter if successful or not server will return the following reply:
+
+```http
+HTTP/1.1 200 OK
+```
+
+### Remove categories ###
+
+```http
+POST /command/removeCategories HTTP/1.1
+User-Agent: Fiddler
+Host: 127.0.0.1
+Cookie: SID=your_sid
+Content-Type: application/x-www-form-urlencoded
+Content-Length: length
+
+categories=Category1%0ACategory2
+```
+
+`categories` can contain multiple cateogies separated by `\n` (%0A urlencoded)
+
+No matter if successful or not server will return the following reply:
+
+```http
+HTTP/1.1 200 OK
+```
+
 ### Set qBittorrent preferences ###
 
 ```http
