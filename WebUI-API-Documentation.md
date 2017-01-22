@@ -269,7 +269,7 @@ Value         | Description
 
 ### Get torrent generic properties ###
 
-Requires known torrent hash, get 'em from [torrent list](#torrentlist).
+Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
 ```http
 GET /query/propertiesGeneral/8c212779b4abde7c6bc608063a0d008b7e40ce32 HTTP/1.1
@@ -337,7 +337,7 @@ NB: `-1` is returned when the value is not known if the type is integer.
 
 ### Get torrent trackers ###
 
-Requires known torrent hash, get 'em from [torrent list](#torrentlist).
+Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
 ```http
 GET /query/propertiesTrackers/8c212779b4abde7c6bc608063a0d008b7e40ce32 HTTP/1.1
@@ -384,7 +384,7 @@ Value               | Description
 
 `API3`
 
-Requires known torrent hash, get 'em from [torrent list](#torrentlist).
+Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
 ```http
 GET /query/propertiesWebSeeds/8c212779b4abde7c6bc608063a0d008b7e40ce32 HTTP/1.1
@@ -407,7 +407,7 @@ Property      | Type     | Description
 
 ### Get torrent contents ###
 
-Requires known torrent hash, get 'em from [torrent list](#torrentlist).
+Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
 ```http
 GET /query/propertiesFiles/8c212779b4abde7c6bc608063a0d008b7e40ce32 HTTP/1.1
@@ -685,7 +685,7 @@ Property                      | Type    | Description
 ------------------------------|---------|------------
 `rid`                         | integer | Response ID
 `full_update`                 | bool    | Whether the response contains all the data or partial data
-`torrents`                    | object  | Property: torrent hash, value: same as [torrent generic properties](#get-torrent-generic-properties)
+`torrents`                    | object  | Property: torrent hash, value: same as [torrent list](#get-torrent-list)
 `torrents_removed`            | array   | List of hashes of torrents removed since last request
 `categories`                  | array   | List of categories added since last request
 `categories_removed`          | array   | List of categories removed since last request
@@ -785,7 +785,7 @@ The above example will add two torrent files. `file_binary_data_goes_here` repre
 
 ### Add trackers to torrent ###
 
-Requires known torrent hash, get 'em from [torrent list](#torrentlist).
+Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
 ```http
 POST /command/addTrackers HTTP/1.1
@@ -808,7 +808,7 @@ HTTP/1.1 200 OK
 
 ### Pause torrent ###
 
-Requires known torrent hash, get 'em from [torrent list](#torrentlist).
+Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
 ```http
 POST /command/pause HTTP/1.1
@@ -845,7 +845,7 @@ HTTP/1.1 200 OK
 
 ### Resume torrent ###
 
-Requires known torrent hash, get 'em from [torrent list](#torrentlist).
+Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
 ```http
 POST /command/resume HTTP/1.1
@@ -882,7 +882,7 @@ HTTP/1.1 200 OK
 
 ### Delete torrent ###
 
-Requires known torrent hash, get 'em from [torrent list](#torrentlist).
+Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
 ```http
 POST /command/delete HTTP/1.1
@@ -905,7 +905,7 @@ HTTP/1.1 200 OK
 
 ### Delete torrent with downloaded data ###
 
-Requires known torrent hash, get 'em from [torrent list](#torrentlist).
+Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
 ```http
 POST /command/deletePerm HTTP/1.1
@@ -928,7 +928,7 @@ HTTP/1.1 200 OK
 
 ### Recheck torrent ###
 
-Requires known torrent hash, get 'em from [torrent list](#torrentlist).
+Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
 ```http
 POST /command/recheck HTTP/1.1
@@ -948,7 +948,7 @@ HTTP/1.1 200 OK
 ```
 ### Increase torrent priority ###
 
-Requires known torrent hash, get 'em from [torrent list](#torrentlist).
+Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
 ```http
 POST /command/increasePrio HTTP/1.1
@@ -971,7 +971,7 @@ HTTP/1.1 200 OK
 
 ### Decrease torrent priority ###
 
-Requires known torrent hash, get 'em from [torrent list](#torrentlist).
+Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
 ```http
 POST /command/decreasePrio HTTP/1.1
@@ -994,7 +994,7 @@ HTTP/1.1 200 OK
 
 ### Maximal torrent priority ###
 
-Requires known torrent hash, get 'em from [torrent list](#torrentlist).
+Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
 ```http
 POST /command/topPrio HTTP/1.1
@@ -1017,7 +1017,7 @@ HTTP/1.1 200 OK
 
 ### Minimal torrent priority ###
 
-Requires known torrent hash, get 'em from [torrent list](#torrentlist).
+Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
 ```http
 POST /command/bottomPrio HTTP/1.1
@@ -1040,7 +1040,7 @@ HTTP/1.1 200 OK
 
 ### Set file priority ###
 
-Requires known torrent hash, get 'em from [torrent list](#torrentlist).
+Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
 ```http
 POST /command/setFilePrio HTTP/1.1
@@ -1149,7 +1149,7 @@ HTTP/1.1 200 OK
 
 ### Get torrent download limit ###
 
-Requires known torrent hash, get 'em from [torrent list](#torrentlist).
+Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
 ```http
 POST /command/getTorrentsDlLimit HTTP/1.1
@@ -1178,7 +1178,7 @@ content-length: length
 
 ### Set torrent download limit ###
 
-Requires known torrent hash, get 'em from [torrent list](#torrentlist).
+Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
 ```http
 POST /command/setTorrentsDlLimit HTTP/1.1
@@ -1203,7 +1203,7 @@ HTTP/1.1 200 OK
 
 ### Get torrent upload limit ###
 
-Requires known torrent hash, get 'em from [torrent list](#torrentlist).
+Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
 ```http
 POST /command/getTorrentsUpLimit HTTP/1.1
@@ -1232,7 +1232,7 @@ content-length: length
 
 ### Set torrent upload limit ###
 
-Requires known torrent hash, get 'em from [torrent list](#torrentlist).
+Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
 ```http
 POST /command/setTorrentsUpLimit HTTP/1.1
@@ -1257,7 +1257,7 @@ HTTP/1.1 200 OK
 
 ### Set torrent category ###
 
-Requires known torrent hash, get 'em from [torrent list](#torrentlist).
+Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
 ```http
 POST /command/setCategory HTTP/1.1
@@ -1384,7 +1384,7 @@ Content-Length: length
 
 ### Toggle sequential download ###
 
-Requires known torrent hash, get 'em from [torrent list](#torrentlist).
+Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
 ```http
 POST /command/toggleSequentialDownload HTTP/1.1
@@ -1407,7 +1407,7 @@ HTTP/1.1 200 OK
 
 ### Set first/last piece priority ###
 
-Requires known torrent hash, get 'em from [torrent list](#torrentlist).
+Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
 ```http
 POST /command/toggleFirstLastPiecePrio HTTP/1.1
@@ -1430,7 +1430,7 @@ HTTP/1.1 200 OK
 
 ### Set force start ###
 
-Requires known torrent hash, get 'em from [torrent list](#torrentlist).
+Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
 ```http
 POST /command/setForceStart HTTP/1.1
@@ -1453,7 +1453,7 @@ HTTP/1.1 200 OK
 
 ### Pause all the torrents ###
 
-Requires known torrent hash, get 'em from [torrent list](#torrentlist).
+Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
 ```http
 POST /command/pauseAll HTTP/1.1
@@ -1466,7 +1466,7 @@ Content-Length: length
 
 ### Resume all the torrents ###
 
-Requires known torrent hash, get 'em from [torrent list](#torrentlist).
+Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
 ```http
 POST /command/resumeAll HTTP/1.1
