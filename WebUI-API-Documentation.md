@@ -207,7 +207,7 @@ Params:
 Param     | Description
 ----------|------------
 `filter`  | Filter torrent list. Allowed filters: `all`, `downloading`, `completed`, `paused`, `active`, `inactive`
-`label`   | Get torrents with the given label (empty string means "unlabeled"; no "label" param means "any label")
+`category`| Get torrents with the given category (empty string means "without category"; no "category" param means "any category")
 `sort`    | Sort torrents by given key. All the possible keys are listed here below
 `reverse` | Enable reverse sorting. Possible values are `true` and `false` (default)
 `limit`   | Limit the number of torrents returned
@@ -215,7 +215,7 @@ Param     | Description
 
 Example:
 ```http
-/query/torrents?filter=downloading&label=sample%20label&sort=ratio
+/query/torrents?filter=downloading&category=sample%20category&sort=ratio
 ```
 
 Server will return the following reply (example):
@@ -225,7 +225,7 @@ HTTP/1.1 200 OK
 content-type: application/json
 content-length: length
 
-[{"dlspeed":9681262,"eta":87,"f_l_piece_prio":false,"force_start":false,"hash":"8c212779b4abde7c6bc608063a0d008b7e40ce32","label":"","name":"debian-8.1.0-amd64-CD-1.iso","num_complete":-1,"num_incomplete":-1,"num_leechs":2,"num_seeds":54,"priority":1,"progress":0.16108787059783936,"ratio":0,"seq_dl":false,"size":657457152,"state":"downloading","super_seeding":false,"upspeed":0},{another_torrent_info}]
+[{"dlspeed":9681262,"eta":87,"f_l_piece_prio":false,"force_start":false,"hash":"8c212779b4abde7c6bc608063a0d008b7e40ce32","category":"","name":"debian-8.1.0-amd64-CD-1.iso","num_complete":-1,"num_incomplete":-1,"num_leechs":2,"num_seeds":54,"priority":1,"progress":0.16108787059783936,"ratio":0,"seq_dl":false,"size":657457152,"state":"downloading","super_seeding":false,"upspeed":0},{another_torrent_info}]
 ```
 
 Property          | Type    | Description
@@ -687,8 +687,8 @@ Property                      | Type    | Description
 `full_update`                 | bool    | Whether the response contains all the data or partial data
 `torrents`                    | object  | Property: torrent hash, value: same as [torrent generic properties](#get-torrent-generic-properties)
 `torrents_removed`            | array   | List of hashes of torrents removed since last request
-`labels`                      | array   | List of labels added since last request
-`labels_removed`              | array   | List of labels removed since last request
+`categories`                  | array   | List of categories added since last request
+`categories_removed`          | array   | List of categories removed since last request
 `queueing`                    | bool    | Priority system usage flag
 `server_state`                | object  | Same as [global transfer info](#get-global-transfer-info)
 
@@ -721,7 +721,7 @@ Content-Disposition: form-data; name="cookie"
 
 ui=28979218048197
 -----------------------------6688794727912
-Content-Disposition: form-data; name="label"
+Content-Disposition: form-data; name="category"
 
 movies
 -----------------------------6688794727912--
@@ -732,7 +732,7 @@ Property                      | Type    | Description
 `urls`                        | string  | URLs separated with newlines
 `savepath`                    | string  | (optional) Download folder
 `cookie`                      | string  | (optional) Cookie sent to download the .torrent file
-`label`                       | string  | (optional) Label for the torrent
+`category`                    | string  | (optional) Category for the torrent
 
 **Before qBittorrent v3.3.1 `API6`:**
 ```http
@@ -1255,7 +1255,7 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
-### Set torrent label ###
+### Set torrent category ###
 
 Requires known torrent hash, get 'em from [torrent list](#torrentlist).
 
