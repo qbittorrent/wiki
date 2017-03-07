@@ -7,7 +7,7 @@ This guide briefly overviews how to compile (and install) qBittorrent using CMak
 * Development files (headers and libraries) for Qt, libtorrent, and Boost.
 
 === Windows-specific installation note. ===
-Things will be easier if you install all the dependencies into the same prefix, for instance into <code>c:\usr</code>. This complicates uninstalling, but you receive the following advantages: <code>%PREFIX%/include</code> and <code>%PREFIX%/lib</code> can be added to your compiler search paths and you don't need to care about every library; CMake can be instructed to look for the libraries in this prefix (once for all of them). If you want to compile qBittorrent against both Qt 4 and 5 versions, you may install both Qt versions into different prefixes, for example <code>%PREFIX%/lib/qt5</code> and <code>%PREFIX%/lib/qt4</code>.
+Things will be easier if you install all the dependencies into the same prefix, for instance into <code>c:\usr</code>. This complicates uninstalling, but you receive the following advantages: <code>%PREFIX%/include</code> and <code>%PREFIX%/lib</code> can be added to your compiler search paths and you don't need to care about every library; CMake can be instructed to look for the libraries in this prefix (once for all of them).
 
 == Out-of-source builds ==
 CMake encourage you to use so called out-of-source builds (i.e. build into a different directory than the one with source files). In fact, CMake does not even provide a "clean" command to remove generated files --- you simply delete the build directory (do not confuse with a "clean" command of the build system, which removes files, generatad during a build, this CMake does provide). You may have different build directories, configured with options (see below). And, of course, you do not pollute your sources, that are always ready for <code>git diff</code>.
@@ -46,13 +46,13 @@ There is no common place for software installation as well as no a common way to
 The defaults describe the following build environment:
 # All the prerequisites are installed into the same prefix (same directory) with exception for two versions of Qt installed simultaneously, see below. This path will be referenced as <code>%PREFIX%</code> below
 # <code>%PREFIX%</code> is <code>c:\usr</code> by default.
-# Qt versions 4 an 5 are installed into <code>%PREFIX%\lib\qt5</code> and <code>%PREFIX%\lib\qt4</code> respectively. 
+# Qt is installed into <code>%PREFIX%\lib\qt5</code>. 
 # Boost libraries are linked statically.
 
 To change these defaults, either pass listed below parameters to <code>cmake</code> for configure state, or edit them in <code>cmake\Modules\winconf.cmake</code> file. CMake variable names are given below:
 # To set boost location, use <code>BOOST_ROOT</code> variable (<code>-DBOST_ROOT=<your_boost_location></code>). Alternatively, you may set include and librariess directories independently(<code>BOOST_INCLUDEDIR</code> and <code>BOOST_LIBRARYDIR</code>. To set libtorrent location, use <code>-DPC_LIBTORRENT_RASTERBAR_INCLUDEDIR=<your_libtorrent_include_dir</code> and <code>-DPC_LIBTORRENT_RASTERBAR_LIBDIR=<your_libtorrent_libraries_dir></code>.
 # Pass <code>-DCOMMON_INSTALL_PREFIX=<your value></code>.
-# Set <code>QT4_INSTALL_PREFIX</code> and <code>QT5_INSTALL_PREFIX</code>.
+# Set <code>QT5_INSTALL_PREFIX</code>.
 # set <code>Boost_USE_STATIC_LIBS</code> to <code>False</code> to change the default setting.
 
 It is recommended to use the single prefix for all libraries, and change only that path when needed.
@@ -68,25 +68,13 @@ Here are the options that you can use to change to tune qBittorent build for you
 !Type
 !Description
 !Default value
-!Condition if any
-|-
-| <tt>QT5</tt>
-| bool
-| Whether to build against version 5 of the Qt toolkit
-| True
-|
+!Conditions if any
 |-
 | <tt>SYSTEM_QTSINGLEAPPLICATION</tt>
 | bool
 | Whether to link to the system (already installed) qtsingleapplication library, or use the bundled one.
 | False
 |
-|-
-|<tt>SYSTEM_QJSON</tt>
-|bool
-|Use system qjson library or the bundled one
-|False
-|<code>-DQT5=OFF</code>
 |-
 | <tt>GUI</tt>
 | bool
