@@ -19,10 +19,10 @@ Welcome to the qBittorrent wiki!
 * [How to translate qBittorrent](wiki/How-to-translate-qBittorrent)
 
 ## Linux
-* [qBittorrent on Ubuntu server (headless) with Web interface (15.04 - newer)] (wiki/Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface-(15.04-and-newer))
-* [qBittorrent on Ubuntu server (headless) with Web interface (14.04 - older)] (wiki/Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface-(14.04-and-older))
+* [qBittorrent on Ubuntu server (headless) with Web interface (15.04 - newer)](wiki/Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface-(15.04-and-newer))
+* [qBittorrent on Ubuntu server (headless) with Web interface (14.04 - older)](wiki/Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface-(14.04-and-older))
 * [Running qBittorrent without X server - Generic ](wiki/Running-qBittorrent-without-X-server)
-* [Setting up qBittorrent as a daemon on CentOS 7] (wiki/Setting-up-qBittorrent-as-a-daemon-on-CentOS-7)
+* [Setting up qBittorrent as a daemon on CentOS 7](wiki/Setting-up-qBittorrent-as-a-daemon-on-CentOS-7)
 
 ## Developing
 * [Coding style](wiki/Coding-style)
@@ -34,10 +34,10 @@ Welcome to the qBittorrent wiki!
 * [Windows compilation](wiki/Windows-compilation)
 * [Debian / Ubuntu compilation](wiki/Compiling-qBittorrent-on-Debian-and-Ubuntu)
 * [macOS compilation](wiki/Compilation-guide-for-macOS-systems)
-* [Compiling qbittorrent-nox for CentOS from source] (wiki/Compiling-qbittorrent-nox-for-CentOS-from-source)
+* [Compiling qbittorrent-nox for CentOS from source](wiki/Compiling-qbittorrent-nox-for-CentOS-from-source)
 
 ##### WebUI-related
-* [Disable Authentication] (wiki/Disable-authentification-of-webGUI)
+* [Disable Authentication](wiki/Disable-authentification-of-webGUI)
 * [HTTPS with Self Signed SSL Certificates - Linux](wiki/Linux-WebUI-setting-up-HTTPS-with-self-signed-SSL-certificates)
 * [API Documentation](wiki/WebUI-API-Documentation)
 * [API Documentation (qBittorrent v3.1.x)](wiki/WebUI-API-Documentation-(qBittorrent-v3.1.x))
