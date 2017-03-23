@@ -1,22 +1,28 @@
-**Introduction:**  
+### Introduction: ###
 qBittorrent has a feature-rich Web UI allowing users to control qBittorrent remotely. This is ideal for headless servers without the X window system such as Ubuntu Server.
 
-**Note:**    
+
+### Note: ###
+Note
 Since Ubuntu (Server) 15.04, upstart was replaced with systemd. Thus, this guide only applies to Ubuntu 15.04 and newer. This change only affects how qbittorrent is started (init scripts) and how logging happens.
 
-**A little about qBittorent-nox vs qBittorrent:**  
+
+### A little about qBittorent-nox vs qBittorrent: ###
 The main binary file (executable file) for The qBittorrent has two variants and is usually located at /usr/bin/:
 * qbittorrent which is qBittorrent WITH Graphical user interface and 
 * qbittorrent-nox which is same as the above but compiled WITHOUT the desktop graphical user interface, and only a web-interface.
-Since this guide focusses on servers that normally don't have a desktop user interface, we will use the qbittorrent-nox binary, but we still call it by it's regular name - qbittorrent.
+Since this guide focuses on servers that normally don't have a desktop user interface, we will use the qbittorrent-nox binary, but we still call it by it's regular name - qbittorrent.
 
-**Install**  
+
+### Install ###
 qBittorrent-nox is already included in the official Ubuntu repositories. Install with:
+```
+$ sudo apt-get update && sudo apt-get install qbittorrent-nox
+```
 
-`sudo apt-get update && sudo apt-get install qbittorrent-nox`
 
-**User**  
-Assuming you want qbittorent to run as it's own user (better for security purposes), let's create the user qbittorrent will run under and give it a password when prompted. Just press enter for values you want to leave blank:
+### User ###
+Assuming you want qbittorent to run as its own user (better for security purposes), let's create the user that qbittorrent will run under and give it a password when prompted. Just press `Return` for values you want to leave blank:
 
 ```
 sudo adduser qbtuser
@@ -39,12 +45,16 @@ Is the information correct? [Y/n] y
 ```
 
 
-**Init script**  
-First we create a file under /etc/systemd/system/ called qbittorrent.service:  
-`sudo touch /etc/systemd/system/qbittorrent.service`
+### Init script ###
+First we create a file under /etc/systemd/system/ called qbittorrent.service:
+```
+$ sudo touch /etc/systemd/system/qbittorrent.service
+```
 
-Open with text editor:  
-`sudo nano /etc/systemd/system/qbittorrent.service`
+Open with text editor:
+```
+$ sudo nano /etc/systemd/system/qbittorrent.service
+```
 
 Copy and paste the following into the file:  
 
@@ -60,24 +70,30 @@ Copy and paste the following into the file:
     [Install]
     WantedBy=multi-user.target
 
-Save and close the file pressing ctrl+x then press y for yes, followed by ENTER.
+Save and close the file pressing `Ctrl-x` then press `y` for yes, followed by `Return`.
 
-Normally after editing services we'd issue a reaload command but since it will also invoke qbittorrent before we initialized the configuration, we'll give it a skip for now. If you ever make changes to the services file, update systemctl with:
+Normally after editing services we'd issue a reload command but since it will also invoke qbittorrent before we initialized the configuration, we'll give it a skip for now. If you ever make changes to the services file, update systemctl with:
+```
+$ sudo systemctl daemon-reload
+```
 
-     sudo systemctl daemon-reload
 
-
-**Initializing Configuration**     
+### Initializing Configuration ###
 
 Before we continue, let's run qbittorrent so that it can ask us to accept the disclaimer, and save and create the config file to remember this setting. Doing this will create and save the configuration files under:
+```
+/home/qbtuser/.config/qbittorrent/
+```
 
-     /home/qbtuser/.config/qbittorrent/
-
-First we impersonate the qbtuser:  
-`sudo su qbtuser`  
+First we impersonate the qbtuser:
+```
+$ sudo su qbtuser
+```
 
 And run qbittorrent:  
-`qbittorrent-nox`  
+```
+$ qbittorrent-nox
+```
 
 You should see the following:  
 
@@ -106,55 +122,71 @@ Without doing anything further, you should be able to point a web browser (on th
 
 You should now see the web interface.
 
-Back at the server's command line, exit out of qbittorrent-nox instance with Ctrl+c
+Back at the server's command line, exit out of qbittorrent-nox instance with `Ctrl-c`
 
 Now, stop impersonating the qbittorrent user to return to our account with sudo access:
+```
+$ exit
+```
 
-`$ exit`    
-
-**Enable service:**
-
-Now start the service,  
-
-
-    sudo systemctl start qbittorrent
+### Enable service: ###
+Now start the service,
+```
+$ sudo systemctl start qbittorrent
+```
 
 Verify it is running:
+```
+$ sudo systemctl status qbittorrent
+```
 
-    sudo systemctl status qbittorrent  
-
-Quit out of the above screen by pressing 'q'
+Quit out of the above screen by pressing `q`
 
 Enable it to start up on boot:
-
-    sudo systemctl enable qbittorrent
+```
+$ sudo systemctl enable qbittorrent
+```
 
 and you should see:
+```
+Created symlink from /etc/systemd/system/multi-user.target.wants/qbittorrent.service to /etc/systemd/system/qbittorrent.service.
+```
 
-`Created symlink from /etc/systemd/system/multi-user.target.wants/qbittorrent.service to /etc/systemd/system/qbittorrent.service.`
 
-
-**That's it, were done!**  
+### That's it, were done! ###
 After the above, systemd should have indexed and invoked our init script so qbittorrent should be running. qBittorrent should now start automatically with reboots.
 
-**Disable account login**  
-You may also want to issue the following command to disable login for the account (from ssh) for security reasons. The account will still be usable locally:  
-`sudo usermod -s /usr/sbin/nologin qbtuser`  
 
-This can be reversed if necessary with the command:  
-`sudo usermod -s /bin/bash qbtuser`
+### Disable account login ###
+You may also want to issue the following command to disable login for the account (from SSH) for security reasons. The account will still be usable locally:
+```
+$ sudo usermod -s /usr/sbin/nologin qbtuser
+```
+
+This can be reversed if necessary with the command:
+```
+$ sudo usermod -s /bin/bash qbtuser
+```
 
 
-**Starting qBittorrent:**  
-`sudo systemctl start qbittorrent`
+### Starting qBittorrent ###
+```
+$ sudo systemctl start qbittorrent
+```
 
-**Stopping qBittorrent:**  
-`sudo systemctl stop qbittorrent`
 
-**Check status:**  
-`sudo systemctl status qbittorrent`
+### Stopping qBittorrent: ###
+```
+$ sudo systemctl stop qbittorrent
+```
 
-This should yield something like this:  
+
+### Check status: ###
+```
+$ sudo systemctl status qbittorrent
+```
+
+This should yield something like this:
 
     ● qbittorrent.service - qBittorrent Daemon Service
        Loaded: loaded (/etc/systemd/system/qbittorrent.service; disabled; vendor preset: enabled)
@@ -164,39 +196,50 @@ This should yield something like this:
        CGroup: /system.slice/qbittorrent.service
                └─15470 /usr/bin/qbittorrent-nox -d
 
-To determine the status of qBittorrent, pay special attention to:  
+To determine the status of qBittorrent, pay special attention to:
 
        Active: active (running) since Wed 2016-02-03 16:02:06 SAST; 6s ago'
 
 
+### Logging and debugging: ###
+With the advent of systemd replacing upstart, logging also changed. qbittorrent doesn't have a straightforward logging facility. When it runs it outputs to syslog, but when it doesn't run, like if the disclaimer hasn't been answered yet, you won't see anything in the log files. The best way to see this is to impersonate the qbtuser and run qbittorent-nox to see if the disclaimer comes up again.
 
-**Logging and debugging:**  
-With the advent of systemd replacing upstart, logging also changed. qbittorrent doesn't have a straight forward logging facility. When it runs it outputs to syslog, but when it doesn't run, like if the disclaimer hasn't been answered yet, you won't see anything in the log files. The best to see this is to impersonate the qbtuser and run qbittorent-nox to see if the disclaimer comes up again.
-
-Another way of working around how qbittorrent logs/doesn't log is to modify the init script as a 'oneshot' command execution and pipe the output to a file such as /var/log/qbittorrent.log, but I haven't tried this yet. Possibly the proccess identifier will need to be specified as well as the stop command so that status and stop commands also work. This is still a work in progress and I'll update this guide when I have it working.
+Another way of working around how qbittorrent logs/doesn't log is to modify the init script as a 'oneshot' command execution and pipe the output to a file such as `/var/log/qbittorrent.log`, but I haven't tried this yet. Possibly the process identifier will need to be specified as well as the stop command so that status and stop commands also work. This is still a work in progress and I'll update this guide when I have it working.
 
 You can also view output of qbittorrent with journalctl:  
 This will show the entire log in a pager that can be scrolled through:
-`sudo journalctl -u qbittorrent.service`
+```
+$ sudo journalctl -u qbittorrent.service
+```
 
-This will show the live version of the log file as things are happening:  
-`sudo journalctl -f -u qbittorrent.service`
+This will show the live version of the log file as things are happening:
+```
+$ sudo journalctl -f -u qbittorrent.service
+```
 
 
+### Uninstalling qBittorrent: ###
+Remove the startup script:
+```
+$ sudo rm /etc/systemd/qbittorrent.service
+```
 
-**Uninstalling qBittorrent:**  
-
-Remove the startup script:  
-`sudo rm /etc/systemd/qbittorrent.service`
-
-Remove the qBittorrent package:  
-`sudo apt-get remove --purge "qbittorrent*"`
+Remove the qBittorrent package:
+```
+$ sudo apt-get remove --purge "qbittorrent*"
+```
 
 Remove log files:  
-`sudo rm /var/log/qbittorrent.log`
+```
+$ sudo rm /var/log/qbittorrent.log
+```
 
-Remove qbtuser home folder and config files. If you want to re-install qbittorrent or something you might want to keep this or back it up:  
-`sudo rm -R /home/qbtuser/.config/qBittorrent`
+Remove qbtuser's home folder and config files. If you want to re-install qbittorrent or something you might want to keep this or back it up:
+```
+$ sudo rm -R /home/qbtuser
+```
 
 Remove qbtuser:  
-`sudo userdel qbtuser`  
+```
+$ sudo userdel qbtuser
+```
