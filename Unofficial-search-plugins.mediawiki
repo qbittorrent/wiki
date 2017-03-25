@@ -115,7 +115,14 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 | Mar 22, 2016
 | [https://raw.githubusercontent.com/ArionMiles/Zooqle-qBittorrent-Plugin/master/zooqle.py Download]
 | Python2 & Python3 supported. qBittorrent 3.3.10+
-|}
+|-
+| [[https://raw.githubusercontent.com/v1k45/1337x-qBittorrent-search-plugin/master/1337.png]] [https://1337x.to/ 1337x]
+| [http://github.com/v1k45 v1k45]
+| 1.00
+| Mar 26, 2017
+| [https://raw.githubusercontent.com/v1k45/1337x-qBittorrent-search-plugin/master/leetx.py Download]
+| Python2 & Python3 supported.
+|-}
 == Plugins for Private sites ==
 
 Be careful, these scripts probably require editing before you can use them. Those sites require an account and your username/password need to be added into the script.
