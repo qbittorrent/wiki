@@ -118,9 +118,9 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 |-
 | [[https://raw.githubusercontent.com/v1k45/1337x-qBittorrent-search-plugin/master/1337.png]] [https://1337x.to/ 1337x]
 | [http://github.com/v1k45 v1k45]
-| 1.00
+| 1.10
 | Mar 26, 2017
-| [https://raw.githubusercontent.com/v1k45/1337x-qBittorrent-search-plugin/master/leetx.py Download]
+| [https://raw.githubusercontent.com/v1k45/1337x-qBittorrent-search-plugin/master/leetx.py Download] / [https://github.com/v1k45/1337x-qBittorrent-search-plugin Github repository]
 | Python2 & Python3 supported.
 |-}
 == Plugins for Private sites ==
