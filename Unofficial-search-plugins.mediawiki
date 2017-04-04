@@ -111,10 +111,10 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 |-
 | [[https://raw.githubusercontent.com/ArionMiles/Zooqle-qBittorrent-Plugin/master/zooqle.png]] [https://zooqle.com/ Zooqle]
 | [https://github.com/ArionMiles Arion_Miles]
-| 1.00
+| 1.11
 | Mar 22, 2016
 | [https://raw.githubusercontent.com/ArionMiles/Zooqle-qBittorrent-Plugin/master/zooqle.py Download] / [https://github.com/ArionMiles/Zooqle-qBittorrent-Plugin GitHub Repository]
-| Python2 supported. qBittorrent 3.3.10+
+| Python2 & Python3 supported. qBittorrent 3.3.10+
 |-
 | [[https://raw.githubusercontent.com/v1k45/1337x-qBittorrent-search-plugin/master/1337.png]] [https://1337x.to/ 1337x]
 | [http://github.com/v1k45 v1k45]
