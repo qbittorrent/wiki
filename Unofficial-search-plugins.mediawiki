@@ -11,6 +11,14 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 !  Download link
 !  Comment
 |-
+| [[https://github.com/Pireo/hello-world/blob/master/Database.png]]
+[https://btdb.in/]
+| ?
+| 1.00
+| April 12 2017
+| [https://raw.githubusercontent.com/Pireo/hello-world/master/btdb.py Download]
+| Python2 supported. Bugged.
+|-
 | [[https://raw.githubusercontent.com/ngosang/qBittorrent-plugins/master/tntvillage/tntvillage.png]] [http://www.tntvillage.scambioetico.org/?releaselist TNT Village]
 | ngosang(at) hotmail(dot)es
 | 1.00
