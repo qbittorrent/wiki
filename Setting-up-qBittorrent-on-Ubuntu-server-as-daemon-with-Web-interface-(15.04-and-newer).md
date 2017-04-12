@@ -10,6 +10,7 @@ Since Ubuntu (Server) 15.04, upstart was replaced with systemd. Thus, this guide
 The main binary file (executable file) for qBittorrent has two variants and is usually located at /usr/bin/:
 * qbittorrent which is qBittorrent *with* Graphical user interface and 
 * qbittorrent-nox which is same as the above but compiled *without* the desktop graphical user interface, and only a web-interface.   
+  
 Since this guide focuses on servers that normally don't have a desktop user interface, we will use the qbittorrent-nox binary, but we still call it by it's regular name - qbittorrent.
 
 
