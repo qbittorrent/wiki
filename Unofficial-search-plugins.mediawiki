@@ -11,8 +11,16 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 !  Download link
 !  Comment
 |-
+| [[https://github.com/Pireo/hello-world/blob/master/tux.png]]
+[http://linuxtracker.org/ Linux Tracker]
+| toost.b@gmail.com
+| 1.00
+| April 12 2017
+| [https://raw.githubusercontent.com/MadeOfMagicAndWires/qBit-plugins/master/engines/linuxtracker.py Download]
+| Python2 & Python3 supported
+|-
 | [[https://github.com/Pireo/hello-world/blob/master/Database.png]]
-[https://btdb.in/]
+[https://btdb.in/ BTDB]
 | ?
 | 1.00
 | April 12 2017
