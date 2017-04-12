@@ -3,14 +3,13 @@ qBittorrent has a feature-rich Web UI allowing users to control qBittorrent remo
 
 
 ### Note: ###
-Note
 Since Ubuntu (Server) 15.04, upstart was replaced with systemd. Thus, this guide only applies to Ubuntu 15.04 and newer. This change only affects how qbittorrent is started (init scripts) and how logging happens.
 
 
 ### A little about qBittorent-nox vs qBittorrent: ###
-The main binary file (executable file) for The qBittorrent has two variants and is usually located at /usr/bin/:
+The main binary file (executable file) for qBittorrent has two variants and is usually located at /usr/bin/:
 * qbittorrent which is qBittorrent *with* Graphical user interface and 
-* qbittorrent-nox which is same as the above but compiled *without* the desktop graphical user interface, and only a web-interface.
+* qbittorrent-nox which is same as the above but compiled *without* the desktop graphical user interface, and only a web-interface.   
 Since this guide focuses on servers that normally don't have a desktop user interface, we will use the qbittorrent-nox binary, but we still call it by it's regular name - qbittorrent.
 
 
