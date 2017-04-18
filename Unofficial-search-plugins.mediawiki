@@ -115,7 +115,7 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 | richard(at) richardurban(dot)de
 | 3.00
 | April 18 2017
-|[https://gist.githubusercontent.com/lima66/62791e081437f9c9885cfba142ab39b3/raw/268a800b5a073e331e81daa9933173cd8580a8aa/limetorrents.py Download] / [https://gist.github.com/lima66/62791e081437f9c9885cfba142ab39b3 GitHub]
+|[https://gist.github.com/lima66/62791e081437f9c9885cfba142ab39b3 GitHub]
 | Python2 & Python3 supported. qBittorrent 3.3.12
 |-
 | [[http://www.qbittorrent.org/wiki-images/Divxtotal.png]] [http://divxtotal.com/ DivxTotal]
