@@ -112,7 +112,7 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 | Works with Python 3
 |-
 | [[http://www.qbittorrent.org/wiki-images/Limetorrents.png]] [https://www.limetorrents.cc/ LimeTorrents]
-| richard(at) richardurban(dot)de
+| [https://github.com/lima66 lima66]
 | 3.01
 | April 18 2017
 |[https://raw.githubusercontent.com/lima66/LimeTorrents_Plugin/master/limetorrents.py Download]/[https://github.com/lima66/LimeTorrents_Plugin/blob/master/limetorrents.py GitHub]
