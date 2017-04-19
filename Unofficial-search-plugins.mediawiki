@@ -151,28 +151,28 @@ Those sites require an account and your username/password need to be added into 
 !  Download link
 !  Comment
 |-
-| [[https://raw.githubusercontent.com/davy39/qbfrench/master/t411.png]][http://www.t411.ch T411]
+| [[https://raw.githubusercontent.com/davy39/qbfrench/master/t411.png]] [http://www.t411.ch T411]
 | davy39(at) hmamail(dot)com
 | 1.2
 | Aug 11 2016
 | [https://raw.githubusercontent.com/davy39/qbfrench/master/t411.py Script only] / [https://github.com/davy39/qbfrench/wiki README]*
 | Python2 & Python3 supported
 |-
-| [[https://raw.githubusercontent.com/Skymirrh/qBittorrent-rutracker-plugin/master/rutracker.png]][http://rutracker.org/ rutracker.org]
+| [[https://raw.githubusercontent.com/Skymirrh/qBittorrent-rutracker-plugin/master/rutracker.png]] [http://rutracker.org/ rutracker.org]
 | skymirrh(at) gmail(dot)com
 | 1.05
 | July 12 2016
 | [https://github.com/Skymirrh/qBittorrent-rutracker-plugin Download]
 | Python2 & Python3 supported. Tested with qBittorrent 3.3.5.
 |-
-| [[https://raw.githubusercontent.com/Skymirrh/qBittorrent-rutracker-plugin/master/rutracker.png]][http://rutracker.org/ rutracker.org]
+| [[https://raw.githubusercontent.com/Skymirrh/qBittorrent-rutracker-plugin/master/rutracker.png]] [http://rutracker.org/ rutracker.org]
 | alvin1979(at) mail(dot)ru
 | 1.00
 | Sep 14 2016
 | [https://github.com/alvin1979/qbrutracker Download]
 | Python3 supported. Tested with qBittorrent 3.3.6.
 |-
-| [[https://github.com/adrianmocan/qbittorrent_plugin_filelist.ro/blob/master/favicon.png]][https://filelist.ro/ FileList]
+| [[https://github.com/adrianmocan/qbittorrent_plugin_filelist.ro/blob/master/favicon.png]] [https://filelist.ro/ FileList]
 | adrian.mocan(at) gmail(dot)com
 | 1.0
 | Jun 07 2015
