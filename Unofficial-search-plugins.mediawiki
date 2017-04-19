@@ -1,7 +1,7 @@
-You can find here unofficial search engine plugins for qBittorrent that are made available by its users. If you wrote one, please add it to these tables.
+You can find here unofficial search engine plugins for qBittorrent that are made available by its users.<br />
+If you wrote one, please add it to these tables.
 
 == Plugins for Public sites ==
-
 {|
 |-
 !  Search engine name / URL
@@ -11,16 +11,14 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 !  Download link
 !  Comment
 |-
-| [[https://github.com/Pireo/hello-world/blob/master/tux.png]]
-[http://linuxtracker.org/ Linux Tracker]
+| [[https://github.com/Pireo/hello-world/blob/master/tux.png]] [http://linuxtracker.org/ Linux Tracker]
 | toost.b@gmail.com
 | 1.00
 | April 12 2017
 | [https://raw.githubusercontent.com/MadeOfMagicAndWires/qBit-plugins/master/engines/linuxtracker.py Download]
 | Python2 & Python3 supported
 |-
-| [[https://github.com/Pireo/hello-world/blob/master/Database.png]]
-[https://btdb.in/ BTDB]
+| [[https://github.com/Pireo/hello-world/blob/master/Database.png]] [https://btdb.in/ BTDB]
 | ?
 | 1.00
 | April 12 2017
@@ -41,7 +39,7 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 | [https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/tokyotoshokan/tokyotoshokan.py Download]
 | Python2 & Python3 supported
 |-
-| [[http://www.qbittorrent.org/wiki-images/NyaaTorrents.png]] [https://www.nyaa.se/ NyaaTorrents]
+| [https://www.nyaa.se/ NyaaTorrents]
 | yukariin(at) yandex(dot)ru
 | 2.29
 | Mar 17 2016
@@ -62,7 +60,7 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 | [https://raw.githubusercontent.com/ngosang/qBittorrent-plugins/master/sumotorrent/sumotorrent.py Download]
 | Python2 & Python3 supported. qBittorrent 3.3.0+
 |-
-| [[http://www.qbittorrent.org/wiki-images/Tfile.png]] [http://tfile.me/ tfile.me]
+| [http://tfile.me/ tfile.me]
 | bnagaev(at) gmail(dot)com, danerde(at) gmail(dot)com
 | 2.03
 | Dec 13 2015
@@ -111,14 +109,14 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 | [https://raw.githubusercontent.com/Pireo/hello-world/master/rutor.py Download]
 | Works with Python 3
 |-
-| [[http://www.qbittorrent.org/wiki-images/Limetorrents.png]] [https://www.limetorrents.cc/ LimeTorrents]
+| [https://www.limetorrents.cc/ LimeTorrents]
 | [https://github.com/lima66 lima66]
 | 3.01
 | April 18 2017
-|[https://raw.githubusercontent.com/lima66/LimeTorrents_Plugin/master/limetorrents.py Download]/[https://github.com/lima66/LimeTorrents_Plugin/blob/master/limetorrents.py GitHub]
+| [https://raw.githubusercontent.com/lima66/LimeTorrents_Plugin/master/limetorrents.py Download] / [https://github.com/lima66/LimeTorrents_Plugin/blob/master/limetorrents.py GitHub]
 | Python2 & Python3 supported. qBittorrent 3.3.12
 |-
-| [[http://www.qbittorrent.org/wiki-images/Divxtotal.png]] [http://divxtotal.com/ DivxTotal]
+| [http://divxtotal.com/ DivxTotal]
 | hazuki.shiro(at) gmail(dot)com
 | 1.2
 | Nov 13 2011
@@ -129,19 +127,20 @@ You can find here unofficial search engine plugins for qBittorrent that are made
 | [https://github.com/ArionMiles Arion_Miles]
 | 1.11
 | Mar 22, 2016
-| [https://raw.githubusercontent.com/ArionMiles/Zooqle-qBittorrent-Plugin/master/zooqle.py Download] / [https://github.com/ArionMiles/Zooqle-qBittorrent-Plugin GitHub Repository]
+| [https://raw.githubusercontent.com/ArionMiles/Zooqle-qBittorrent-Plugin/master/zooqle.py Download] / [https://github.com/ArionMiles/Zooqle-qBittorrent-Plugin GitHub repository]
 | Python2 & Python3 supported. qBittorrent 3.3.10+
 |-
 | [[https://raw.githubusercontent.com/v1k45/1337x-qBittorrent-search-plugin/master/1337.png]] [https://1337x.to/ 1337x]
-| [http://github.com/v1k45 v1k45]
+| [https://github.com/v1k45 v1k45]
 | 1.10
 | Mar 26, 2017
 | [https://raw.githubusercontent.com/v1k45/1337x-qBittorrent-search-plugin/master/leetx.py Download] / [https://github.com/v1k45/1337x-qBittorrent-search-plugin Github repository]
 | Python2 & Python3 supported.
-|-}
-== Plugins for Private sites ==
+|}
 
-Be careful, these scripts probably require editing before you can use them. Those sites require an account and your username/password need to be added into the script.
+== Plugins for Private sites ==
+Be careful, these scripts probably require editing before you can use them.<br />
+Those sites require an account and your username/password need to be added into the script.
 
 {|
 |-
@@ -152,41 +151,41 @@ Be careful, these scripts probably require editing before you can use them. Thos
 !  Download link
 !  Comment
 |-
-|[[https://raw.githubusercontent.com/davy39/qbfrench/master/t411.png]][http://www.t411.ch T411]
-|davy39(at) hmamail(dot)com
-|1.2
-|Aug 11 2016
-|[https://raw.githubusercontent.com/davy39/qbfrench/master/t411.py Script only] / [https://github.com/davy39/qbfrench/wiki README]*
-|Python2 & Python3 supported
+| [[https://raw.githubusercontent.com/davy39/qbfrench/master/t411.png]][http://www.t411.ch T411]
+| davy39(at) hmamail(dot)com
+| 1.2
+| Aug 11 2016
+| [https://raw.githubusercontent.com/davy39/qbfrench/master/t411.py Script only] / [https://github.com/davy39/qbfrench/wiki README]*
+| Python2 & Python3 supported
 |-
-|[[https://raw.githubusercontent.com/Skymirrh/qBittorrent-rutracker-plugin/master/rutracker.png]][http://rutracker.org/ rutracker.org]
-|skymirrh(at) gmail(dot)com
-|1.05
-|July 12 2016
-|[https://github.com/Skymirrh/qBittorrent-rutracker-plugin Download]
-|Python2 & Python3 supported. Tested with qBittorrent 3.3.5.
+| [[https://raw.githubusercontent.com/Skymirrh/qBittorrent-rutracker-plugin/master/rutracker.png]][http://rutracker.org/ rutracker.org]
+| skymirrh(at) gmail(dot)com
+| 1.05
+| July 12 2016
+| [https://github.com/Skymirrh/qBittorrent-rutracker-plugin Download]
+| Python2 & Python3 supported. Tested with qBittorrent 3.3.5.
 |-
-|[[https://raw.githubusercontent.com/Skymirrh/qBittorrent-rutracker-plugin/master/rutracker.png]][http://rutracker.org/ rutracker.org]
-|alvin1979(at) mail(dot)ru
-|1.00
-|Sep 14 2016
-|[https://github.com/alvin1979/qbrutracker Download]
-|Python3 supported. Tested with qBittorrent 3.3.6.
+| [[https://raw.githubusercontent.com/Skymirrh/qBittorrent-rutracker-plugin/master/rutracker.png]][http://rutracker.org/ rutracker.org]
+| alvin1979(at) mail(dot)ru
+| 1.00
+| Sep 14 2016
+| [https://github.com/alvin1979/qbrutracker Download]
+| Python3 supported. Tested with qBittorrent 3.3.6.
 |-
-|[[https://github.com/adrianmocan/qbittorrent_plugin_filelist.ro/blob/master/favicon.png]][https://filelist.ro/ FileList]
-|adrian.mocan(at) gmail(dot)com
-|1.0
-|Jun 07 2015
-|[https://github.com/adrianmocan/qbittorrent_plugin_filelist.ro/blob/master/filelist_ro/filelist.py Script only] / [https://github.com/adrianmocan/qbittorrent_plugin_filelist.ro/blob/master/filelist_ro.zip All files]*
-|Tested with qBittorrent >= 3.1.9
+| [[https://github.com/adrianmocan/qbittorrent_plugin_filelist.ro/blob/master/favicon.png]][https://filelist.ro/ FileList]
+| adrian.mocan(at) gmail(dot)com
+| 1.0
+| Jun 07 2015
+| [https://github.com/adrianmocan/qbittorrent_plugin_filelist.ro/blob/master/filelist_ro/filelist.py Script only] / [https://github.com/adrianmocan/qbittorrent_plugin_filelist.ro/blob/master/filelist_ro.zip All files]*
+| Tested with qBittorrent >= 3.1.9
 |-
-|[[https://github.com/MadeOfMagicAndWires/qBit-plugin/raw/master/favicon.png]] [https://bakabt.me BakaBT]
-|toost.b@gmail.com
-|1.0.2
-|2017-03-13
-|[https://github.com/MadeOfMagicAndWires/qBit-plugin/blob/master/engines/bakabt.py Script] / [https://raw.githubusercontent.com/MadeOfMagicAndWires/qBit-plugin/master/README.md README]
-|Python 2 & 3 supported.
-|-}
+| [[https://github.com/MadeOfMagicAndWires/qBit-plugin/raw/master/favicon.png]] [https://bakabt.me BakaBT]
+| toost.b@gmail.com
+| 1.0.2
+| 2017-03-13
+| [https://github.com/MadeOfMagicAndWires/qBit-plugin/blob/master/engines/bakabt.py Script] / [https://raw.githubusercontent.com/MadeOfMagicAndWires/qBit-plugin/master/README.md README]
+| Python 2 & 3 supported.
+|}
 ''*All files'' is a tarball (.tar.gz) containing script, icon, README & INSTALL files.
 
 == Notes ==
