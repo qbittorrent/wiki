@@ -11,14 +11,14 @@ If you wrote one, please add it to these tables.
 !  Download link
 !  Comment
 |-
-| [[https://github.com/Pireo/hello-world/blob/master/tux.png]] [http://linuxtracker.org/ Linux Tracker]
+| [[https://raw.githubusercontent.com/Pireo/hello-world/master/tux.png]] [http://linuxtracker.org/ Linux Tracker]
 | toost.b@gmail.com
 | 1.00
 | April 12 2017
 | [https://raw.githubusercontent.com/MadeOfMagicAndWires/qBit-plugins/master/engines/linuxtracker.py Download]
 | Python2 & Python3 supported
 |-
-| [[https://github.com/Pireo/hello-world/blob/master/Database.png]] [https://btdb.in/ BTDB]
+| [[https://raw.githubusercontent.com/Pireo/hello-world/master/Database.png]] [https://btdb.in/ BTDB]
 | ?
 | 1.00
 | April 12 2017
@@ -102,7 +102,7 @@ If you wrote one, please add it to these tables.
 | [https://raw.githubusercontent.com/fvisin/qbittorrent_plugins/master/pirateproxy.py Download]
 | Outdated
 |-
-| [[https://raw.github.com/mr-mmajoR/myrepo/master/rutor.png]] [http://rutor.info/ Rutor]
+| [[https://raw.githubusercontent.com/mr-mmajoR/myrepo/master/rutor.png]] [http://rutor.info/ Rutor]
 | mmajor(at) yandex(dot)ru
 | 1.20
 | January 14 2017
@@ -172,14 +172,14 @@ Those sites require an account and your username/password need to be added into 
 | [https://github.com/alvin1979/qbrutracker Download]
 | Python3 supported. Tested with qBittorrent 3.3.6.
 |-
-| [[https://github.com/adrianmocan/qbittorrent_plugin_filelist.ro/blob/master/favicon.png]] [https://filelist.ro/ FileList]
+| [[https://raw.githubusercontent.com/adrianmocan/qbittorrent_plugin_filelist.ro/master/favicon.png]] [https://filelist.ro/ FileList]
 | adrian.mocan(at) gmail(dot)com
 | 1.0
 | Jun 07 2015
 | [https://github.com/adrianmocan/qbittorrent_plugin_filelist.ro/blob/master/filelist_ro/filelist.py Script only] / [https://github.com/adrianmocan/qbittorrent_plugin_filelist.ro/blob/master/filelist_ro.zip All files]*
 | Tested with qBittorrent >= 3.1.9
 |-
-| [[https://github.com/MadeOfMagicAndWires/qBit-plugin/raw/master/favicon.png]] [https://bakabt.me BakaBT]
+| [[https://raw.githubusercontent.com/MadeOfMagicAndWires/qBit-plugins/master/favicon.png]] [https://bakabt.me BakaBT]
 | toost.b@gmail.com
 | 1.0.2
 | 2017-03-13
