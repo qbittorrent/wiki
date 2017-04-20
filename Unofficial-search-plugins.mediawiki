@@ -18,13 +18,6 @@ If you wrote one, please add it to these tables.
 | [https://raw.githubusercontent.com/MadeOfMagicAndWires/qBit-plugins/master/engines/linuxtracker.py Download]
 | Python2 & Python3 supported
 |-
-| [[https://raw.githubusercontent.com/Pireo/hello-world/master/Database.png]] [https://btdb.in/ BTDB]
-| ?
-| 1.00
-| April 12 2017
-| [https://raw.githubusercontent.com/Pireo/hello-world/master/btdb.py Download]
-| Python2 supported. Bugged.
-|-
 | [[https://raw.githubusercontent.com/ngosang/qBittorrent-plugins/master/tntvillage/tntvillage.png]] [http://www.tntvillage.scambioetico.org/?releaselist TNT Village]
 | ngosang(at) hotmail(dot)es
 | 1.00
