@@ -111,7 +111,7 @@ If you wrote one, please add it to these tables.
 |-
 | [https://www.limetorrents.cc/ LimeTorrents]
 | [https://github.com/lima66 lima66]
-| 3.01
+| 3.06
 | April 18 2017
 | [https://raw.githubusercontent.com/lima66/LimeTorrents_Plugin/master/limetorrents.py Download] / [https://github.com/lima66/LimeTorrents_Plugin/blob/master/limetorrents.py GitHub]
 | Python2 & Python3 supported. qBittorrent 3.3.12
