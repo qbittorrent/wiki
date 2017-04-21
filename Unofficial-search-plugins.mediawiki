@@ -104,7 +104,7 @@ If you wrote one, please add it to these tables.
 |-
 | [https://www.limetorrents.cc/ LimeTorrents]
 | [https://github.com/lima66 lima66]
-| 3.06
+| 3.07
 | April 18 2017
 | [https://raw.githubusercontent.com/lima66/Torrents_Plugin/master/limetorrents.py Download] / [https://github.com/lima66/Torrents_Plugin/blob/master/limetorrents.py GitHub]
 | Python2 & Python3 supported. qBittorrent 3.3.12
@@ -129,6 +129,13 @@ If you wrote one, please add it to these tables.
 | Mar 26, 2017
 | [https://raw.githubusercontent.com/v1k45/1337x-qBittorrent-search-plugin/master/leetx.py Download] / [https://github.com/v1k45/1337x-qBittorrent-search-plugin Github repository]
 | Python2 & Python3 supported.
+|-
+| [https://katcr.co/ KickAss]
+| [https://github.com/lima66 lima66]
+| 1.00
+| April 21 2017
+| [https://raw.githubusercontent.com/lima66/Torrents_Plugin/master/kickass.py Download] / [https://github.com/lima66/Torrents_Plugin/blob/master/kickass.py GitHub]
+| Python2 & Python3 supported. qBittorrent 3.3.12
 |}
 
 == Plugins for Private sites ==
