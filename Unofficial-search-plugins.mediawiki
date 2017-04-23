@@ -143,6 +143,20 @@ If you wrote one, please add it to these tables.
 | April 21 2017
 | [https://raw.githubusercontent.com/lima66/Torrents_Plugin/master/btetree.py Download] / [https://github.com/lima66/Torrents_Plugin/blob/master/btetree.py GitHub]
 | Python2 & Python3 supported. qBittorrent 3.3.12
+|-
+| [http://psychocydd.co.uk psychocydd]
+| [https://github.com/lima66 lima66]
+| 1.00
+| April 23 2017
+| [https://raw.githubusercontent.com/lima66/Torrents_Plugin/master/psychocydd.py Download] / [https://github.com/lima66/Torrents_Plugin/blob/master/psychocydd.py GitHub]
+| Python2 & Python3 supported. qBittorrent 3.3.12
+|-
+| [http://ilcorsaronero.info IlCorsaroNero]
+| [https://github.com/lima66 lima66]
+| 1.00
+| April 23 2017
+| [https://raw.githubusercontent.com/lima66/Torrents_Plugin/master/ilcorsaronero.py Download] / [https://github.com/lima66/Torrents_Plugin/blob/master/ilcorsaronero.py GitHub]
+| Python2 & Python3 supported. qBittorrent 3.3.12
 |}
 
 == Plugins for Private sites ==
