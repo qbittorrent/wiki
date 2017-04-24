@@ -102,7 +102,7 @@ If you wrote one, please add it to these tables.
 | [https://raw.githubusercontent.com/Pireo/hello-world/master/rutor.py Download]
 | Works with Python 3
 |-
-| [https://www.limetorrents.cc/ LimeTorrents]
+| [[https://raw.githubusercontent.com/Pireo/hello-world/2481f766470d6d512432f56c2595147ce298237a/untitled.png]][https://www.limetorrents.cc/ LimeTorrents]
 | [https://github.com/lima66 lima66]
 | 3.07
 | April 18 2017
