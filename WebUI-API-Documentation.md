@@ -724,6 +724,14 @@ ui=28979218048197
 Content-Disposition: form-data; name="category"
 
 movies
+-----------------------------6688794727912
+Content-Disposition: form-data; name="skip_checking"
+
+true
+-----------------------------6688794727912
+Content-Disposition: form-data; name="paused"
+
+true
 -----------------------------6688794727912--
 ```
 
@@ -733,6 +741,8 @@ Property                      | Type    | Description
 `savepath`                    | string  | (optional) Download folder
 `cookie`                      | string  | (optional) Cookie sent to download the .torrent file
 `category`                    | string  | (optional) Category for the torrent
+`skip_checking`  `API13`      | string  | (optional) Skip hash checking. Possible values are `true` and `false` (default)
+`paused`  `API13`             | string  | (optional) Add torrents in the paused state. Possible values are `true` and `false` (default)
 
 **Before qBittorrent v3.3.1 `API6`:**
 ```http
@@ -782,6 +792,15 @@ file_binary_data_goes_here
 ```
 
 The above example will add two torrent files. `file_binary_data_goes_here` represents raw data of torrent file (basically a byte array).
+
+Property                      | Type    | Description
+------------------------------|---------|------------
+`torrents`                    | raw     | Raw data of torrent file. `torrents` can be presented multiple times.
+`savepath`                    | string  | (optional) Download folder
+`cookie`                      | string  | (optional) Cookie sent to download the .torrent file
+`category`                    | string  | (optional) Category for the torrent
+`skip_checking`  `API13`      | string  | (optional) Skip hash checking. Possible values are `true` and `false` (default)
+`paused`  `API13`             | string  | (optional) Add torrents in the paused state. Possible values are `true` and `false` (default)
 
 ### Add trackers to torrent ###
 
