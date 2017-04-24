@@ -155,7 +155,7 @@ If you wrote one, please add it to these tables.
 | [https://github.com/lima66 lima66]
 | 1.00
 | April 23 2017
-| [https://raw.githubusercontent.com/lima66/Torrents_Plugin/master/ilcorsaronero.py Download] / [https://github.com/lima66/Torrents_Plugin/blob/master/ilcorsaronero.py GitHub]
+| [[https://raw.githubusercontent.com/Pireo/hello-world/23513d5befe55a84a6f969e7888a3d084d0b54bf/images.png]][https://raw.githubusercontent.com/lima66/Torrents_Plugin/master/ilcorsaronero.py Download] / [https://github.com/lima66/Torrents_Plugin/blob/master/ilcorsaronero.py GitHub]
 | Python2 & Python3 supported. qBittorrent 3.3.12
 |}
 
