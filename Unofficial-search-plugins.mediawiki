@@ -109,14 +109,7 @@ If you wrote one, please add it to these tables.
 | [https://raw.githubusercontent.com/lima66/Torrents_Plugin/master/limetorrents.py Download] / [https://github.com/lima66/Torrents_Plugin/blob/master/limetorrents.py GitHub]
 | Python2 & Python3 supported. qBittorrent 3.3.12
 |-
-| [http://divxtotal.com/ DivxTotal]
-| hazuki.shiro(at) gmail(dot)com
-| 1.2
-| Nov 13 2011
-| [https://raw.github.com/cdumez/qBittorrent-Search-Plugins/master/divxtotal.py Download]
-| Outdated
-|-
-| [[https://raw.githubusercontent.com/ArionMiles/Zooqle-qBittorrent-Plugin/master/zooqle.png]] [https://zooqle.com/ Zooqle]
+| [[https://github.com/Pireo/hello-world/blob/master/favicons5.png]] [https://zooqle.com/ Zooqle]
 | [https://github.com/ArionMiles Arion_Miles]
 | 1.11
 | Mar 22, 2016
