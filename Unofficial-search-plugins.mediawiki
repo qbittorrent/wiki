@@ -53,13 +53,6 @@ If you wrote one, please add it to these tables.
 | [https://raw.githubusercontent.com/ngosang/qBittorrent-plugins/master/sumotorrent/sumotorrent.py Download]
 | Python2 & Python3 supported. qBittorrent 3.3.0+
 |-
-| [[https://github.com/Pireo/hello-world/blob/master/favicons4.png]] [http://tfile.me/ tfile.me]
-| bnagaev(at) gmail(dot)com, danerde(at) gmail(dot)com
-| 2.03
-| Dec 13 2015
-| [https://raw.githubusercontent.com/starius/qbittorrent-plugins/master/tfile_me.py Download]
-| Python2 & Python3 supported
-|-
 | [[https://raw.githubusercontent.com/b0nk/qbittorrent-search-plugins/master/rarbg.png]] [https://rarbg.to/ RARBG]
 | fsantos.pt (at) hotmail (dot) com
 | 1.12
