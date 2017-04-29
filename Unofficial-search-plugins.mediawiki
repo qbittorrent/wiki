@@ -32,7 +32,7 @@ If you wrote one, please add it to these tables.
 | [https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/tokyotoshokan/tokyotoshokan.py Download]
 | Python2 & Python3 supported
 |-
-| [[https://github.com/Pireo/hello-world/blob/master/favicons3.png]][https://www.nyaa.se/ NyaaTorrents]
+| [[https://raw.githubusercontent.com/Pireo/hello-world/master/favicons3.png]][https://www.nyaa.se/ NyaaTorrents]
 | yukariin(at) yandex(dot)ru
 | 2.29
 | Mar 17 2016
@@ -102,7 +102,7 @@ If you wrote one, please add it to these tables.
 | [https://raw.githubusercontent.com/lima66/Torrents_Plugin/master/limetorrents.py Download] / [https://github.com/lima66/Torrents_Plugin/blob/master/limetorrents.py GitHub]
 | Python2 & Python3 supported. qBittorrent 3.3.12
 |-
-| [[https://github.com/Pireo/hello-world/blob/master/favicons5.png]] [https://zooqle.com/ Zooqle]
+| [[https://raw.githubusercontent.com/Pireo/hello-world/master/favicons5.png]] [https://zooqle.com/ Zooqle]
 | [https://github.com/ArionMiles Arion_Miles]
 | 1.11
 | Mar 22, 2016
@@ -116,21 +116,21 @@ If you wrote one, please add it to these tables.
 | [https://raw.githubusercontent.com/v1k45/1337x-qBittorrent-search-plugin/master/leetx.py Download] / [https://github.com/v1k45/1337x-qBittorrent-search-plugin Github repository]
 | Python2 & Python3 supported.
 |-
-| [[https://github.com/Pireo/hello-world/blob/master/favicons2.png]] [https://katcr.co/ KickAss]
+| [[https://raw.githubusercontent.com/Pireo/hello-world/master/favicons2.png]] [https://katcr.co/ KickAss]
 | [https://github.com/lima66 lima66]
 | 1.00
 | April 21 2017
 | [https://raw.githubusercontent.com/lima66/Torrents_Plugin/master/kickass.py Download] / [https://github.com/lima66/Torrents_Plugin/blob/master/kickass.py GitHub]
 | Python2 & Python3 supported. qBittorrent 3.3.12
 |-
-| [[https://github.com/Pireo/hello-world/blob/master/favicons.png]] [http://bt.etree.org/ bt.etree.org]
+| [[https://raw.githubusercontent.com/Pireo/hello-world/master/favicons.png]] [http://bt.etree.org/ bt.etree.org]
 | [https://github.com/lima66 lima66]
 | 1.00
 | April 21 2017
 | [https://raw.githubusercontent.com/lima66/Torrents_Plugin/master/btetree.py Download] / [https://github.com/lima66/Torrents_Plugin/blob/master/btetree.py GitHub]
 | Python2 & Python3 supported. qBittorrent 3.3.12
 |-
-| [[https://github.com/Pireo/hello-world/blob/master/favicons1.png]] [http://psychocydd.co.uk RockBox]
+| [[https://raw.githubusercontent.com/Pireo/hello-world/master/favicons1.png]] [http://psychocydd.co.uk RockBox]
 | [https://github.com/lima66 lima66]
 | 1.01
 | April 23 2017
@@ -144,7 +144,7 @@ If you wrote one, please add it to these tables.
 | [https://raw.githubusercontent.com/lima66/Torrents_Plugin/master/ilcorsaronero.py Download] / [https://github.com/lima66/Torrents_Plugin/blob/master/ilcorsaronero.py GitHub]
 | Python2 & Python3 supported. qBittorrent 3.3.12
 |-
-| [[]][http://torrentproject.se/ TorrentProject]
+| [[]] [https://torrentproject.se/ TorrentProject]
 | [https://github.com/lima66 lima66]
 | 1.00
 | April 29 2017
