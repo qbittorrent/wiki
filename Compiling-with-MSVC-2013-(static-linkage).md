@@ -54,34 +54,33 @@ Let's assume that the working directory(ies) for our compilation will be:
 * Issue the following commands:
 
 	* For **x86**:
+        ```
+        nmake -f win32/Makefile.msc LOC="-DASMV -DASMINF -DNDEBUG -I." OBJA="inffas32.obj match686.obj"
+        ```
 
-		```
-nmake -f win32/Makefile.msc LOC="-DASMV -DASMINF -DNDEBUG -I." OBJA="inffas32.obj match686.obj"
-		```
 	* For **x64**:
-
-		```
-nmake -f win32/Makefile.msc AS=ml64 LOC="-DASMV -DASMINF -DNDEBUG -I." OBJA="inffasx64.obj gvmat64.obj inffas8664.obj"
-		```
+        ```
+        nmake -f win32/Makefile.msc AS=ml64 LOC="-DASMV -DASMINF -DNDEBUG -I." OBJA="inffasx64.obj gvmat64.obj inffas8664.obj"
+        ```
 
 
 * Copy **zlib.h**, **zconf.h**, **zlib.lib**, **zlib.pdb** to our install dir.
 
 	* For **x86**:
-		```
-xcopy zlib.h C:\qBittorrent\install\include\
-xcopy zconf.h C:\qBittorrent\install\include\
-xcopy zlib.lib C:\qBittorrent\install\lib\
-xcopy zlib.pdb C:\qBittorrent\install\lib\
-		```
+        ```
+        xcopy zlib.h C:\qBittorrent\install\include\
+        xcopy zconf.h C:\qBittorrent\install\include\
+        xcopy zlib.lib C:\qBittorrent\install\lib\
+        xcopy zlib.pdb C:\qBittorrent\install\lib\
+        ```
 
 	* For **x64**:
-		```
-xcopy zlib.h C:\qBittorrent64\install\include\
-xcopy zconf.h C:\qBittorrent64\install\include\
-xcopy zlib.lib C:\qBittorrent64\install\lib\
-xcopy zlib.pdb C:\qBittorrent64\install\lib\
-		```
+        ```
+        xcopy zlib.h C:\qBittorrent64\install\include\
+        xcopy zconf.h C:\qBittorrent64\install\include\
+        xcopy zlib.lib C:\qBittorrent64\install\lib\
+        xcopy zlib.pdb C:\qBittorrent64\install\lib\
+        ```
 
 # Compiling OpenSSL #
 * Make sure you have installed **Perl** and **NASM** (for **x86**).
@@ -96,18 +95,18 @@ xcopy zlib.pdb C:\qBittorrent64\install\lib\
 * Now we will build a static version of **OpenSSL**. Issue the following commands:
 
 	* For **x86**:
+        ```
+        set "PATH=%PATH%;C:\qBittorrent\nasm"
+        perl Configure VC-WIN32 no-shared zlib no-zlib-dynamic threads --prefix=C:\qBittorrent\install -IC:\qBittorrent\install\include -LC:\qBittorrent\install\lib
+        ms\do_nasm
+        ```
 
-		```
-set "PATH=%PATH%;C:\qBittorrent\nasm"
-perl Configure VC-WIN32 no-shared zlib no-zlib-dynamic threads --prefix=C:\qBittorrent\install -IC:\qBittorrent\install\include -LC:\qBittorrent\install\lib
-ms\do_nasm
-		```
 	* For **x64**:
+        ```
+        perl Configure VC-WIN64A no-shared zlib no-zlib-dynamic threads --prefix=C:\qBittorrent64\install -IC:\qBittorrent64\install\include -LC:\qBittorrent64\install\lib
+        ms\do_win64a.bat
+        ```
 
-		```
-perl Configure VC-WIN64A no-shared zlib no-zlib-dynamic threads --prefix=C:\qBittorrent64\install -IC:\qBittorrent64\install\include -LC:\qBittorrent64\install\lib
-ms\do_win64a.bat
-		```
 * Edit the ```ms\nt.mak``` file:
 	* Find the line that starts with: ```EX_LIBS```
     	* Replace ```zlib1.lib``` with ```zlib.lib```
@@ -117,10 +116,10 @@ ms\do_win64a.bat
 		* Replace ```/debug``` with ```/incremental:no /opt:icf /dynamicbase /nxcompat /ltcg /nodefaultlib:msvcrt```
 	* Then issue the following:
 
-		```
-nmake -f ms\nt.mak
-nmake -f ms\nt.mak install
-		```
+        ```
+        nmake -f ms\nt.mak
+        nmake -f ms\nt.mak install
+        ```
 
 # Compiling Boost #
 * Extract the **Boost** sources in the working dir(s).
@@ -136,15 +135,14 @@ nmake -f ms\nt.mak install
 * Compile a static version of **Boost**. Issue the following command (if you want to set how many threads b2 uses when compiling, add ```-j N``` to the end of the command, where ```N``` is the number of threads; the ```toolset``` parameter is needed for the correct choice of ```msvc-12.0``` if other versions are installed):
 
 	* For **x86**:
+        ```
+        b2 -q --with-system --toolset=msvc-12.0 variant=release link=static runtime-link=static debug-symbols=off warnings=off warnings-as-errors=off
+        ```
 
-		```
-b2 -q --with-system --toolset=msvc-12.0 variant=release link=static runtime-link=static debug-symbols=off warnings=off warnings-as-errors=off
-		```
 	* For **x64**:
-
-		```
-b2 -q --with-system --toolset=msvc-12.0 variant=release link=static runtime-link=static debug-symbols=off warnings=off warnings-as-errors=off architecture=x86 address-model=64
-		```
+        ```
+        b2 -q --with-system --toolset=msvc-12.0 variant=release link=static runtime-link=static debug-symbols=off warnings=off warnings-as-errors=off architecture=x86 address-model=64
+        ```
 
 # Compiling libtorrent #
 * Extract the **libtorrent** sources in the working dir(s).
@@ -157,15 +155,15 @@ b2 -q --with-system --toolset=msvc-12.0 variant=release link=static runtime-link
 	* For **x64**: ```pushd C:\qBittorrent64\libtorrent```
 * Compile a static version of **libtorrent**. Issue the following command (if you want to set how many threads b2 uses when compiling, add ```-j N``` to the end of the command, where ```N``` is the number of threads):
 	* For **x86**:
+        ```
+        ..\boost\b2 -q --prefix="stage" --without-python --toolset=msvc-12.0 variant=release link=static runtime-link=static encryption=openssl logging=none geoip=static dht-support=on boost=source character-set=unicode boost-link=static -sBOOST_ROOT="C:\qBittorrent\boost" include="C:\qBittorrent\install\include" library-path="C:\qBittorrent\install\lib" install
+        ```
 
-		```
-..\boost\b2 -q --prefix="stage" --without-python --toolset=msvc-12.0 variant=release link=static runtime-link=static encryption=openssl logging=none geoip=static dht-support=on boost=source character-set=unicode boost-link=static -sBOOST_ROOT="C:\qBittorrent\boost" include="C:\qBittorrent\install\include" library-path="C:\qBittorrent\install\lib" install
-		```
 	* For **x64**:
+        ```
+        ..\boost\b2 -q --prefix="stage" --without-python --toolset=msvc-12.0 variant=release link=static runtime-link=static encryption=openssl logging=none geoip=static dht-support=on boost=source character-set=unicode boost-link=static -sBOOST_ROOT="C:\qBittorrent64\boost" include="C:\qBittorrent64\install\include" library-path="C:\qBittorrent64\install\lib" architecture=x86 address-model=64 install
+        ```
 
-		```
-..\boost\b2 -q --prefix="stage" --without-python --toolset=msvc-12.0 variant=release link=static runtime-link=static encryption=openssl logging=none geoip=static dht-support=on boost=source character-set=unicode boost-link=static -sBOOST_ROOT="C:\qBittorrent64\boost" include="C:\qBittorrent64\install\include" library-path="C:\qBittorrent64\install\lib" architecture=x86 address-model=64 install
-		```
 	* Note: When you use **libtorrent-rasterbar-1.0.4**: 
 		change ```dht-support=on``` to ```dht=on```
 		see [libtorrent manual](http://www.libtorrent.org/building.html)
@@ -193,19 +191,18 @@ b2 -q --with-system --toolset=msvc-12.0 variant=release link=static runtime-link
 	* Replace ```zdll.lib``` with ```zlib.lib```
 * Issue the following commands:
 	* For **x86**:
+        ```
+        configure.exe -release -opensource -confirm-license -static -ltcg -fast -system-zlib -no-qt3support -no-opengl -no-openvg -no-dsp -no-vcproj -no-dbus -no-phonon -no-phonon-backend -no-multimedia -no-audio-backend -no-webkit -no-script -no-scripttools -no-declarative -no-declarative-debug -mp -arch windows -qt-style-windowsxp -nomake examples -nomake demos -platform win32-msvc2013 -openssl-linked -largefile -I "C:\qBittorrent\install\include" -L "C:\qBittorrent\install\lib"
+        bin\qmake.exe projects.pro QT_BUILD_PARTS="libs translations"
+        nmake
+        ```
 
-		```
-configure.exe -release -opensource -confirm-license -static -ltcg -fast -system-zlib -no-qt3support -no-opengl -no-openvg -no-dsp -no-vcproj -no-dbus -no-phonon -no-phonon-backend -no-multimedia -no-audio-backend -no-webkit -no-script -no-scripttools -no-declarative -no-declarative-debug -mp -arch windows -qt-style-windowsxp -nomake examples -nomake demos -platform win32-msvc2013 -openssl-linked -largefile -I "C:\qBittorrent\install\include" -L "C:\qBittorrent\install\lib"
-bin\qmake.exe projects.pro QT_BUILD_PARTS="libs translations"
-nmake
-		```
 	* For **x64**:
-
-		```
-configure.exe -release -opensource  -confirm-license -static -ltcg -fast -system-zlib -no-qt3support -no-opengl -no-openvg -no-dsp -no-vcproj -no-dbus -no-phonon -no-phonon-backend -no-multimedia -no-audio-backend -no-webkit -no-script -no-scripttools -no-declarative -no-declarative-debug -mp -arch windows -qt-style-windowsxp -nomake examples -nomake demos -platform win32-msvc2013 -openssl-linked -largefile -I "C:\qBittorrent64\install\include" -L "C:\qBittorrent64\install\lib"
-bin\qmake.exe projects.pro QT_BUILD_PARTS="libs translations"
-nmake
-		```
+        ```
+        configure.exe -release -opensource  -confirm-license -static -ltcg -fast -system-zlib -no-qt3support -no-opengl -no-openvg -no-dsp -no-vcproj -no-dbus -no-phonon -no-phonon-backend -no-multimedia -no-audio-backend -no-webkit -no-script -no-scripttools -no-declarative -no-declarative-debug -mp -arch windows -qt-style-windowsxp -nomake examples -nomake demos -platform win32-msvc2013 -openssl-linked -largefile -I "C:\qBittorrent64\install\include" -L "C:\qBittorrent64\install\lib"
+        bin\qmake.exe projects.pro QT_BUILD_PARTS="libs translations"
+        nmake
+        ```
 
 * You can close the command prompt now.
 
