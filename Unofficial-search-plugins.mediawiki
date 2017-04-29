@@ -123,7 +123,7 @@ If you wrote one, please add it to these tables.
 | [https://raw.githubusercontent.com/lima66/Torrents_Plugin/master/kickass.py Download] / [https://github.com/lima66/Torrents_Plugin/blob/master/kickass.py GitHub]
 | Python2 & Python3 supported. qBittorrent 3.3.12
 |-
-| [[https://raw.githubusercontent.com/Pireo/hello-world/master/favicons.png]] [http://bt.etree.org/ bt.etree.org]
+| [[https://github.com/Pireo/hello-world/blob/master/etree.png]] [http://bt.etree.org/ bt.etree.org]
 | [https://github.com/lima66 lima66]
 | 1.00
 | April 21 2017
