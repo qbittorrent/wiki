@@ -144,7 +144,7 @@ If you wrote one, please add it to these tables.
 | [https://raw.githubusercontent.com/lima66/Torrents_Plugin/master/ilcorsaronero.py Download] / [https://github.com/lima66/Torrents_Plugin/blob/master/ilcorsaronero.py GitHub]
 | Python2 & Python3 supported. qBittorrent 3.3.12
 |-
-| [[]] [https://torrentproject.se/ TorrentProject]
+| [[https://github.com/Pireo/hello-world/blob/master/favicons.png]] [https://torrentproject.se/ TorrentProject]
 | [https://github.com/lima66 lima66]
 | 1.00
 | April 29 2017
