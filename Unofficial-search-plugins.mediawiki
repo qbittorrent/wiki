@@ -130,7 +130,7 @@ If you wrote one, please add it to these tables.
 | [https://raw.githubusercontent.com/lima66/Torrents_Plugin/master/btetree.py Download] / [https://github.com/lima66/Torrents_Plugin/blob/master/btetree.py GitHub]
 | Python2 & Python3 supported. qBittorrent 3.3.12
 |-
-| [[https://raw.githubusercontent.com/Pireo/hello-world/master/favicons1.png]] [http://psychocydd.co.uk RockBox]
+| [[https://github.com/Pireo/hello-world/blob/master/rockbox.png]] [http://psychocydd.co.uk RockBox]
 | [https://github.com/lima66 lima66]
 | 1.01
 | April 23 2017
