@@ -11,7 +11,7 @@ macOS<br/>`~/.config/qBittorrent/qbittorrent.ini`<br/>
 
  ```ini
 [Locking]
-password=<encrypted_password>
+password=<encrypted_password> (this can be decrypted at http://www.md5online.org/)
 locked=true
 ```
 1. Save the file
