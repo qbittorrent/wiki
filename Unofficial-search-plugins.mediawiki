@@ -155,7 +155,7 @@ If you wrote one, please add it to these tables.
 | hazuki.shiro@gmail.com
 | 1.2
 | May 04 2017
-[https://raw.githubusercontent.com/Pireo/hello-world/master/divxtotal.py Download]
+| [https://raw.githubusercontent.com/Pireo/hello-world/master/divxtotal.py Download]
 | Python2 & Python3 supported
 |-
 |}
