@@ -152,11 +152,12 @@ If you wrote one, please add it to these tables.
 | Python2 & Python3 supported. qBittorrent 3.3.12
 |-
 | [http://www.divxtotal.com/ DivxTotal]
-| [hazuki.shiro@gmail.com]
+| hazuki.shiro@gmail.com
 | 1.2
 | May 04 2017
 [https://raw.githubusercontent.com/Pireo/hello-world/master/divxtotal.py Download]
 | Python2 & Python3 supported
+|-
 |}
 
 == Plugins for Private sites ==
