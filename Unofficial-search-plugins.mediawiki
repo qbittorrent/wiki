@@ -151,11 +151,11 @@ If you wrote one, please add it to these tables.
 | [https://raw.githubusercontent.com/lima66/Torrents_Plugin/master/torrentproject.py Download] / [https://github.com/lima66/Torrents_Plugin/blob/master/torrentproject.py GitHub]
 | Python2 & Python3 supported. qBittorrent 3.3.12
 |-
-| [http://www.divxtotal.com/ DivxTotal
+| [http://www.divxtotal.com/ DivxTotal]
 | [hazuki.shiro@gmail.com]
 | 1.2
 | May 04 2017
-| https://raw.githubusercontent.com/Pireo/hello-world/master/divxtotal.py Download]
+[https://raw.githubusercontent.com/Pireo/hello-world/master/divxtotal.py Download]
 | Python2 & Python3 supported
 |}
 
