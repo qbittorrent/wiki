@@ -2,6 +2,7 @@ qBittorrent officially support Windows
 
 Current:
 * [[Compiling with MSVC 2015 (static linkage)]] - method used for the official installer (32-bit)
+* [[Compiling with MSVC 2017 x64 (static linkage)]] - semi-official method for 64-bit
 * [[Compiling with MSVC 2013 (static linkage)]] - for x86 and x64
 
 Obsolete:
