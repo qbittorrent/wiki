@@ -25,27 +25,6 @@ If you wrote one, please add it to these tables.
 | [https://raw.githubusercontent.com/ngosang/qBittorrent-plugins/master/tntvillage/tntvillage.py Download]
 | Python2 & Python3 supported
 |-
-| [[https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/tokyotoshokan/tokyotoshokan.png]] [https://tokyotosho.info/index.php Tokyo Toshokan]
-| custparasite(at) gmx(dot)se
-| 2.0
-| Sep 24 2015
-| [https://raw.githubusercontent.com/DoumanAsh/qBittorrent-Search-Plugins/master/tokyotoshokan/tokyotoshokan.py Download]
-| Python2 & Python3 supported
-|-
-| [[https://raw.githubusercontent.com/Pireo/hello-world/master/favicons3.png]][https://www.nyaa.se/ NyaaTorrents]
-| yukariin(at) yandex(dot)ru
-| 2.29
-| Mar 17 2016
-| [https://raw.githubusercontent.com/Yukariin/qBittorrent-Search-Plugins/master/nyaatorrents.py Download]
-| Python2 & Python3 supported
-|-
-| [[https://raw.githubusercontent.com/b0nk/qbittorrent-search-plugins/master/nyaasukebei.png]] [https://sukebei.nyaa.se/ Sukebei Nyaa]
-| fsantos.pt (at) hotmail (dot) com
-| 1.00
-| Jun 27 2016
-| [https://raw.githubusercontent.com/b0nk/qbittorrent-search-plugins/master/nyaasukebei.py Download]
-| Python2 & Python3 supported
-|-
 | [[https://raw.githubusercontent.com/ngosang/qBittorrent-plugins/master/sumotorrent/sumotorrent.png]] [https://www.sumotorrent.sx/ SumoTorrent]
 | ngosang(at) hotmail(dot)es
 | 1.3
