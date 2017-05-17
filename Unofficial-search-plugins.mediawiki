@@ -144,6 +144,20 @@ If you wrote one, please add it to these tables.
 | [https://raw.githubusercontent.com/kenken28/NyaaPantsu-qBittorrent-Plugin/master/nyaapantsu.py Download]
 | Python2 & Python3 supported
 |-
+| [[https://raw.githubusercontent.com/4chenz/pantsu-plugin/master/pantsu.png]][https://sukebei.pantsu.cat/ Sukebei.Pantsu]
+| 
+| 1.03
+| May 17 2017
+| [https://raw.githubusercontent.com/4chenz/pantsu-plugin/master/sukebei.py Download]
+| Python2 & Python3 supported
+|-
+| [[https://raw.githubusercontent.com/4chenz/pantsu-plugin/master/pantsu.png]][https://nyaa.pantsu.cat/ Nyaa.Pantsu]
+| 
+| 1.03
+| May 17 2017
+| [https://raw.githubusercontent.com/4chenz/pantsu-plugin/master/pantsu.py Download]
+| Python2 & Python3 supported
+|-
 |}
 
 == Plugins for Private sites ==
