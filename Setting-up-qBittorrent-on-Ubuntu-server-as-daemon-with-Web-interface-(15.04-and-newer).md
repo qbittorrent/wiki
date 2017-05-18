@@ -45,32 +45,22 @@ Is the information correct? [Y/n] y
 ```
 
 
-### Init script ###
-First we create a file under /etc/systemd/system/ called qbittorrent.service:
+### Create Service ###
+First, create a file:
+`/etc/systemd/system/qbittorrent.service`
 ```
-$ sudo touch /etc/systemd/system/qbittorrent.service
+[Unit]
+Description=qBittorrent Daemon Service
+After=network.target
+
+[Service]
+Type=forking
+User=qbtuser
+ExecStart=/usr/bin/qbittorrent-nox -d
+
+[Install]
+WantedBy=multi-user.target
 ```
-
-Open with text editor:
-```
-$ sudo nano /etc/systemd/system/qbittorrent.service
-```
-
-Copy and paste the following into the file:  
-
-    [Unit]
-    Description=qBittorrent Daemon Service
-    After=network.target
-
-    [Service]
-    Type=forking
-    User=qbtuser
-    ExecStart=/usr/bin/qbittorrent-nox -d
-
-    [Install]
-    WantedBy=multi-user.target
-
-Save and close the file pressing `Ctrl-x` then press `y` for yes, followed by `Return`.
 
 Normally after editing services we'd issue a reload command but since it will also invoke qbittorrent before we initialized the configuration, we'll give it a skip for now. If you ever make changes to the services file, update systemctl with:
 ```
