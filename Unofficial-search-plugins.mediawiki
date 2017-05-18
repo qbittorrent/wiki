@@ -158,6 +158,13 @@ If you wrote one, please add it to these tables.
 | [https://raw.githubusercontent.com/4chenz/pantsu-plugin/master/pantsu.py Download]
 | Python2 & Python3 supported
 |-
+| [https://sukebei.nyaa.si/ Sukebei Nyaa]
+| phuongtm6994 (at) gmail (dot) com
+| 1.00
+| May 19 2017
+| [https://raw.githubusercontent.com/phuongtailtranminh/qBittorrent-Nyaa-Search-Plugin/master/nyaa.py Download]
+| Python2 supported
+|-
 |}
 
 == Plugins for Private sites ==
