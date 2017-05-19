@@ -165,11 +165,20 @@ If you wrote one, please add it to these tables.
 | [https://raw.githubusercontent.com/phuongtailtranminh/qBittorrent-Nyaa-Search-Plugin/master/nyaa.py Download]
 | Python2 supported
 |-
-| [https://nyaa.si/ Nyaa.si]
+| [[https://raw.githubusercontent.com/MadeOfMagicAndWires/qBit-plugins/master/engines/nyaasi.png]] 
+[https://nyaa.si/ Nyaa.si]
 | [https://github.com/MadeOfMagicAndWires/ Made of Magic and Wires]
 | 1.0
 | May 19 2017
 | [https://raw.githubusercontent.com/MadeOfMagicAndWires/qBit-plugins/master/engines/nyaasi.py Download]
+| Python3 & Python2 supported
+|-
+| [[https://raw.githubusercontent.com/MadeOfMagicAndWires/qBit-plugins/master/engines/skytorrents.png]] 
+[https://skytorrents.in/ Sky Torrents]
+| [https://github.com/MadeOfMagicAndWires/ Made of Magic and Wires]
+| 1.0
+| May 19 2017
+| [https://raw.githubusercontent.com/MadeOfMagicAndWires/qBit-plugins/master/engines/skytorrents.py Download]
 | Python3 & Python2 supported
 |-
 |}
@@ -215,7 +224,7 @@ Those sites require an account and your username/password need to be added into 
 | [https://github.com/adrianmocan/qbittorrent_plugin_filelist.ro/blob/master/filelist_ro/filelist.py Script only] / [https://github.com/adrianmocan/qbittorrent_plugin_filelist.ro/blob/master/filelist_ro.zip All files]*
 | Tested with qBittorrent >= 3.1.9
 |-
-| [[https://raw.githubusercontent.com/MadeOfMagicAndWires/qBit-plugins/master/favicon.png]] [https://bakabt.me BakaBT]
+| [[https://raw.githubusercontent.com/MadeOfMagicAndWires/qBit-plugins/master/engines/bakabt.png]] [https://bakabt.me BakaBT]
 | [https://github.com/MadeOfMagicAndWires/ Made of Magic and Wires]
 | 1.0.2
 | 2017-03-13
