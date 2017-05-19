@@ -158,12 +158,19 @@ If you wrote one, please add it to these tables.
 | [https://raw.githubusercontent.com/4chenz/pantsu-plugin/master/pantsu.py Download]
 | Python2 & Python3 supported
 |-
-| [https://sukebei.nyaa.si/ Sukebei Nyaa]
+| [https://sukebei.nyaa.si/ Sukebei Nyaa.si]
 | phuongtm6994 (at) gmail (dot) com
 | 1.01
 | May 19 2017
 | [https://raw.githubusercontent.com/phuongtailtranminh/qBittorrent-Nyaa-Search-Plugin/master/nyaa.py Download]
 | Python2 supported
+|-
+| [https://nyaa.si/ Nyaa.si]
+| toost.b@gmail.com
+| 1.0
+| May 19 2017
+| [https://raw.githubusercontent.com/MadeOfMagicAndWires/qBit-plugins/master/engines/nyaasi.py Download]
+| Python3 & Python2 supported
 |-
 |}
 
