@@ -139,8 +139,8 @@ If you wrote one, please add it to these tables.
 |-
 | [[https://github.com/kenken28/NyaaPantsu-qBittorrent-Plugin/raw/master/nyaapantsu.png]][https://nyaa.pantsu.cat/ NyaaPantsu]
 | xux (at) live (dot) ca
-| 1.01
-| May 14 2017
+| 1.04
+| May 21 2017
 | [https://raw.githubusercontent.com/kenken28/NyaaPantsu-qBittorrent-Plugin/master/nyaapantsu.py Download]
 | Python2 & Python3 supported
 |-
