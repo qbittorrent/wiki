@@ -14,7 +14,7 @@ Now go to [qBittorrent GitHup page](https://github.com/qbittorrent/qBittorrent) 
 During life time of your PR you might be asked to make changes to it or qBittorrent code base might be updated and your changes will be in conflict with its code base and you will be asked to "rebase your PR".
 
 ### Making changes to your pull request ###
-If you are asked to make corrections to your changes, you may either amend your commits (works best with small pull requests) or add additional fixup commits to `my-feature` branch. When your PR is large, it will be simpler for reviewers to get new changes in new commits. For that, create new commits using [`--fixup=` or `--squash=` git parameters](https://robots.thoughtbot.com/autosquashing-git-commits). When your pull request is accepted, you will need to squash all these commits and `--fixup` & `--squash` parameters will make it much simpler for you.
+If you are asked to make corrections to your changes, you may either amend your commits (works best with small pull requests) or add additional fixup commits to `my-feature` branch. When your PR is large, it will be simpler for reviewers to get new changes in new commits. For that, create new commits using [`--fixup=` or `--squash=` git parameters](https://robots.thoughtbot.com/autosquashing-git-commits). When your pull request is accepted, you will need to squash all these commits and `--fixup` & `--squash` parameters will make it much simpler for you. Note, you can create fixup commits to fixup commits, and that will allow git to arrange all of them properly when squashing.
 
 ### Rebasing your pull request ###
 
