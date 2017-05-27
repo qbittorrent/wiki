@@ -100,7 +100,7 @@ Example showing how to login and execute a command that requires authentication 
 ```sh
 $ curl -i --data "username=admin&password=admin" http://localhost:8080/login
 HTTP/1.1 200 OK
-Content-Encoding: 
+Content-Encoding:
 Content-Length: 3
 Content-Type: text/plain; charset=UTF-8
 Set-Cookie: SID=hBc7TxF76ERhvIw0jQQ4LZ7Z1jQUV0tQ; path=/
@@ -133,7 +133,7 @@ Host: 127.0.0.1
 Server reply (example):
 ```http
 HTTP/1.1 200 OK
-Content-Encoding: 
+Content-Encoding:
 Content-Length: 1
 Content-Type: text/plain; charset=UTF-8
 
@@ -153,7 +153,7 @@ Host: 127.0.0.1
 Server reply (example):
 ```http
 HTTP/1.1 200 OK
-Content-Encoding: 
+Content-Encoding:
 Content-Length: 1
 Content-Type: text/plain; charset=UTF-8
 
@@ -171,7 +171,7 @@ Host: 127.0.0.1
 Server reply (example):
 ```http
 HTTP/1.1 200 OK
-Content-Encoding: 
+Content-Encoding:
 Content-Length: 1
 Content-Type: text/plain; charset=UTF-8
 
