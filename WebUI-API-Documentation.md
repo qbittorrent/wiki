@@ -14,6 +14,7 @@
   1. [Get torrent trackers](#get-torrent-trackers)
   1. [Get torrent web seeds](#get-torrent-web-seeds)
   1. [Get torrent contents](#get-torrent-contents)
+  1. [Get torrent pieces' states](#get-torrent-pieces-states)
   1. [Get global transfer info](#get-global-transfer-info)
   1. [Get qBittorrent preferences](#get-qbittorrent-preferences)
   1. [Get partial data](#get-partial-data)
@@ -450,6 +451,45 @@ Value      | Description
 `1`        | Normal priority
 `2`        | High priority
 `7`        | Maximal priority
+
+### Get torrent pieces' states ###
+
+Returns an array of states (integers) of pieces in order of a specific torrent.
+
+Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
+
+```http
+GET /query/getPieceStates/8c212779b4abde7c6bc608063a0d008b7e40ce32 HTTP/1.1
+User-Agent: Fiddler
+Host: 127.0.0.1
+Cookie: SID=your_sid
+```
+
+If your torrent hash is invalid server will reply with:
+
+```http
+HTTP/1.1 200 OK
+content-type: application/json
+content-length: 0
+```
+
+Otherwise server will return the following reply (example):
+
+```http
+HTTP/1.1 200 OK
+content-type: application/json
+content-length: length
+
+[0,0,2,1,0,0,2,1]
+```
+
+Value meanings are defined as below:
+
+Value      | Description
+-----------|------------
+`0`        | Not downloaded yet
+`1`        | Now downloading
+`2`        | Already downloaded
 
 ### Get global transfer info ###
 
