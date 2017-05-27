@@ -15,6 +15,7 @@
   1. [Get torrent web seeds](#get-torrent-web-seeds)
   1. [Get torrent contents](#get-torrent-contents)
   1. [Get torrent pieces' states](#get-torrent-pieces-states)
+  1. [Get torrent pieces' hashes](#get-torrent-pieces-hashes)
   1. [Get global transfer info](#get-global-transfer-info)
   1. [Get qBittorrent preferences](#get-qbittorrent-preferences)
   1. [Get partial data](#get-partial-data)
@@ -454,7 +455,7 @@ Value      | Description
 
 ### Get torrent pieces' states ###
 
-Returns an array of states (integers) of pieces in order of a specific torrent.
+Returns an array of states (integers) of all pieces (in order) of a specific torrent.
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -490,6 +491,37 @@ Value      | Description
 `0`        | Not downloaded yet
 `1`        | Now downloading
 `2`        | Already downloaded
+
+### Get torrent pieces' hashes ###
+
+Returns an array of hashes (strings) of all pieces (in order) of a specific torrent.
+
+Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
+
+```http
+GET /query/getPieceHashes/8c212779b4abde7c6bc608063a0d008b7e40ce32 HTTP/1.1
+User-Agent: Fiddler
+Host: 127.0.0.1
+Cookie: SID=your_sid
+```
+
+If your torrent hash is invalid server will reply with:
+
+```http
+HTTP/1.1 200 OK
+content-type: application/json
+content-length: 0
+```
+
+Otherwise server will return the following reply (example):
+
+```http
+HTTP/1.1 200 OK
+content-type: application/json
+content-length: length
+
+["17604390e8f39d75a8f982006708ddea5ae74fa4","f2355fb026ae2d2f304a75e7a91673a7c2278c18","1d8f0f7d290c424dabad906877ef68d6b4fe35ed"]
+```
 
 ### Get global transfer info ###
 
