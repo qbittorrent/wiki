@@ -11,4 +11,4 @@ the password will be set to `secret`.
 4. You should then be able to login the WebUI using your usual username and the password `secret`. Remember to change it back to your preferred password.
 
 
-You could also try copy/pasting the existing value in WebUI\Password_ha1=@ByteArray(value) into https://isc.sans.edu/tools/reversehash.html and that could possibly reveal what the original password was.
+You could also try copy/pasting the existing value from WebUI\Password_ha1=@ByteArray(value) into https://isc.sans.edu/tools/reversehash.html and that could possibly reveal what the original password was.
