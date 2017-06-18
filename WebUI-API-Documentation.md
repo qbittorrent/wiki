@@ -74,6 +74,9 @@
 * Changes between `API3` and `API4`:
   * `application/json` is the MIME type of the replies that had `text/javascript` as MIME type.
 
+* Changes in `API14`:
+  * The `Referer` header is now expected in all HTTP requests. qBittorrent will drop any request sent without the referer header.
+
 # Authorization #
 
 qBittorrent uses a cookie based authentication.
