@@ -41,3 +41,4 @@ Welcome to the qBittorrent wiki!
 * [HTTPS with Self Signed SSL Certificates - Linux](wiki/Linux-WebUI-setting-up-HTTPS-with-self-signed-SSL-certificates)
 * [API Documentation](wiki/WebUI-API-Documentation)
 * [API Documentation (qBittorrent v3.1.x)](wiki/WebUI-API-Documentation-(qBittorrent-v3.1.x))
+* [NGINX reverse proxy for WebUI](wiki/NGINX-Reverse-Proxy-for-Web-UI)
