@@ -103,7 +103,7 @@ You must supply the cookie whenever you want to perform an operation that requir
 
 Example showing how to login and execute a command that requires authentication using `curl`:
 ```sh
-$ curl -i --data "username=admin&password=admin" http://localhost:8080/login
+$ curl -i --header 'Referer: http://localhost:8080' --data 'username=admin&password=adminadmin' http://localhost:8080/login
 HTTP/1.1 200 OK
 Content-Encoding:
 Content-Length: 3
@@ -111,6 +111,8 @@ Content-Type: text/plain; charset=UTF-8
 Set-Cookie: SID=hBc7TxF76ERhvIw0jQQ4LZ7Z1jQUV0tQ; path=/
 $ curl http://localhost:8080/query/torrents --cookie "SID=hBc7TxF76ERhvIw0jQQ4LZ7Z1jQUV0tQ"
 ```
+
+Note: Set `Referer` or `Origin` header to the exact same domain and port as used in the HTTP query `Host` header.
 
 ### Logout ###
 
