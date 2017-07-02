@@ -6,19 +6,19 @@ Welcome to the qBittorrent wiki!
 * [How to use qBittorrent as a tracker](wiki/How-to-use-qBittorrent-as-a-tracker)
 * [Anonymous Mode](wiki/Anonymous-Mode)
 
-## Troubleshooting
+#### Troubleshooting
 * [qBittorrent Support Forum](http://forum.qbittorrent.org/)
 * [I forgot my UI lock password](wiki/I-forgot-my-UI-lock-password)
 * [I forgot my Web UI password](wiki/Web-UI-password-locked-on-qBittorrent-NO-X-%28qbittorrent-nox%29)
 * [Speed issues](wiki/Things-we-need-to-know-to-help-you-with-'speed'-issues)
 
-## Search plugins
+#### Search plugins
 * [List of unofficial search plugins](wiki/Unofficial-search-plugins)
 
-## Translation
+#### Translation
 * [How to translate qBittorrent](wiki/How-to-translate-qBittorrent)
 
-## Linux
+#### Linux
 * [qBittorrent on Ubuntu server (headless) with Web interface (15.04 - newer)](wiki/Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface-(15.04-and-newer))
 * [qBittorrent on Ubuntu server (headless) with Web interface (14.04 - older)](wiki/Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface-(14.04-and-older))
 * [Running qBittorrent without X server - Generic ](wiki/Running-qBittorrent-without-X-server)
