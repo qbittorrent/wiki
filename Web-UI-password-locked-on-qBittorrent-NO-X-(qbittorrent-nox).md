@@ -8,6 +8,7 @@ If your user name and password is locked out of the Web UI and the default user 
 WebUI\Password_ha1=@ByteArray(5ebe2294ecd0e0f08eab7690d2a6ee69)
 ```
 the password will be set to `secret`.
+
 4. You should then be able to login the WebUI using your usual username and the password `secret`. Remember to change it back to your preferred password.
 
 
