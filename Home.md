@@ -13,7 +13,7 @@ Welcome to the qBittorrent wiki!
 * [Speed issues](wiki/Things-we-need-to-know-to-help-you-with-'speed'-issues)
 
 #### Search plugins
-* [List of unofficial search plugins](wiki/Unofficial-search-plugins)
+* [List of unofficial search plugins](https://github.com/qbittorrent/search-plugins/wiki/Unofficial-search-plugins)
 
 #### Translation
 * [How to translate qBittorrent](wiki/How-to-translate-qBittorrent)
@@ -28,7 +28,7 @@ Welcome to the qBittorrent wiki!
 * [Coding style](wiki/Coding-style)
 
 ##### Search plugins
-* [How to write a search plugin](wiki/How-to-write-a-search-plugin)
+* [How to write a search plugin](https://github.com/qbittorrent/search-plugins/wiki/How-to-write-a-search-plugin)
 
 ##### Compilation
 * [Windows compilation](wiki/Windows-compilation)
