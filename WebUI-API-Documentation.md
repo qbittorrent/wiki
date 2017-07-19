@@ -43,7 +43,12 @@
    1. [Set torrent download limit](#set-torrent-download-limit)
    1. [Get torrent upload limit](#get-torrent-upload-limit)
    1. [Set torrent upload limit](#set-torrent-upload-limit)
+   1. [Set torrent location](#set-torrent-location)
+   1. [Set torrent name](#set-torrent-name)
    1. [Set torrent category](#set-torrent-category)
+   1. [Add new category](#add-new-category)
+   1. [Remove categories](#remove-categories)
+   1. [Set automatic torrent management](#set-automatic-torrent-management)
    1. [Set qBittorrent preferences](#set-qbittorrent-preferences)
    1. [Get alternative speed limits state](#get-alternative-speed-limits-state)
    1. [Toggle alternative speed limits](#toggle-alternative-speed-limits)
@@ -1351,6 +1356,58 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
+### Set torrent location ###
+
+Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
+
+```http
+POST /command/setLocation HTTP/1.1
+User-Agent: Fiddler
+Host: 127.0.0.1
+Cookie: SID=your_sid
+Content-Type: application/x-www-form-urlencoded
+Content-Length: length
+
+hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5d7cc2ba0&location=/mnt/nfs/media
+```
+
+`hashes` can contain multiple hashes separated by `|`
+
+`location` is the location to download the torrent to. If the location doesn't exist, the torrent's location is unchanged.
+
+No matter if successful or not server will return the following reply:
+
+```http
+HTTP/1.1 200 OK
+```
+
+### Set torrent name ###
+
+Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
+
+```http
+POST /command/rename HTTP/1.1
+User-Agent: Fiddler
+Host: 127.0.0.1
+Cookie: SID=your_sid
+Content-Type: application/x-www-form-urlencoded
+Content-Length: length
+
+hash=8c212779b4abde7c6bc608063a0d008b7e40ce32&name=This%20is%20a%20test
+```
+
+If your torrent hash is invalid or the name is empty, the server will reply with:
+
+```http
+HTTP/1.1 400 Incorrect torrent hash or name
+```
+
+Otherwise, the server will reply with:
+
+```http
+HTTP/1.1 200 OK
+```
+
 ### Set torrent category ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
@@ -1411,6 +1468,31 @@ categories=Category1%0ACategory2
 ```
 
 `categories` can contain multiple cateogies separated by `\n` (%0A urlencoded)
+
+No matter if successful or not server will return the following reply:
+
+```http
+HTTP/1.1 200 OK
+```
+
+### Set automatic torrent management ###
+
+Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
+
+```http
+POST /command/setAutoTMM HTTP/1.1
+User-Agent: Fiddler
+Host: 127.0.0.1
+Cookie: SID=your_sid
+Content-Type: application/x-www-form-urlencoded
+Content-Length: length
+
+hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5d7cc2ba0&enable=true
+```
+
+`hashes` can contain multiple hashes separated by `|`
+
+`enable` is a boolean value. If the value is invalid, it is treated as false.
 
 No matter if successful or not server will return the following reply:
 
