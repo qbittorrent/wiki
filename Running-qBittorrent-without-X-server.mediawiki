@@ -52,10 +52,10 @@ It is only required to pass --webui-port parameter once because qBittorrent-nox 
 '''If you want to further configure it, have a look at: ".config/qBittorrent/qBittorent.conf" in your executing users home directory.'''
 
 == Useless dependencies ==
-qBittorrent-nox does not need as many dependencies as standard qBittorrent because its Qt4 GUI is disabled.<br />The following dependencies are no longer useful:
+qBittorrent-nox does not need as many dependencies as standard qBittorrent because its Qt GUI is disabled.<br />The following dependencies are no longer useful:
 * geoip-database
 * libnotify
-* QtGui, QtXml
+* QtGui, QtSvg, QtXml,
 * Python
 
 == How to run qbittorrent-nox on startup ==
