@@ -271,11 +271,11 @@ Value         | Description
 `pausedDL`    | Torrent is paused and has NOT finished downloading
 `queuedUP`    | Queuing is enabled and torrent is queued for upload
 `queuedDL`    | Queuing is enabled and torrent is queued for download
-`uploading`   | Torrent is being seeded and data is being transfered
+`uploading`   | Torrent is being seeded and data is being transferred
 `stalledUP`   | Torrent is being seeded, but no connection were made
 `checkingUP`  | Torrent has finished downloading and is being checked; this status also applies to preallocation (if enabled) and checking resume data on qBt startup
 `checkingDL`  | Same as checkingUP, but torrent has NOT finished downloading
-`downloading` | Torrent is being downloaded and data is being transfered
+`downloading` | Torrent is being downloaded and data is being transferred
 `stalledDL`   | Torrent is being downloaded, but no connection were made
 `metaDL`      | Torrent has just started downloading and is fetching metadata
 
