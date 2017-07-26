@@ -1524,7 +1524,7 @@ HTTP/1.1 200 OK
   1. Paths in `scan_dirs` must exist, otherwise this option will have no effect
   1. String values must be quoted; integer and boolean values must never be quoted
 
-For a list of possible preference options see [Get qBittorrent preferences](#prefget)
+For a list of possible preference options see [Get qBittorrent preferences](#get-qbittorrent-preferences)
 
 ### Get alternative speed limits state ###
 
