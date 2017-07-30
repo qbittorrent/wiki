@@ -3,6 +3,8 @@ This how-to will guide you though the compilation of qBittorrent and libtorrent-
 == Required dependencies ==
 * General required dependencies
  sudo apt-get install libboost-dev libboost-system-dev build-essential
+ sudo apt-get install libboost-system-dev libboost-chrono-dev libboost-random-dev libssl-dev libgeoip-dev
+ sudo apt-get install git pkg-config automake libtool
 
 * Qt4 libraries (optional and only if it exists in your distro's repo)
  sudo apt-get install libqt4-dev
@@ -23,11 +25,6 @@ This how-to will guide you though the compilation of qBittorrent and libtorrent-
 
 Right now libtorrent-rasterbar-dev is built from the [https://github.com/arvidn/libtorrent/releases/tag/libtorrent-1_1_1 official tar ball 1.1.1] which is incompatible with current qBittorrent.
 You have to compile 1.0.10 from the [https://github.com/arvidn/libtorrent repo].
-
-First you'll need some extra dependencies to be installed:
- sudo apt-get install libboost-system-dev libboost-chrono-dev libboost-random-dev libssl-dev libgeoip-dev
-And tools:
- sudo apt-get install git pkg-config automake libtool
 
 Clone from the repo.
  sudo git clone https://github.com/arvidn/libtorrent.git
