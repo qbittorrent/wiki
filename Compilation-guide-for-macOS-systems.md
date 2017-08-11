@@ -68,7 +68,7 @@ Apply [this patch](https://github.com/Homebrew/homebrew-core/issues/3219#issueco
 ## With CMake
 * `mkdir build`
 * `cd build`
-* `Qt5_DIR=/usr/local/qt5.7.1/lib/cmake/Qt5 cmake -DDBUS=OFF ..`
+* `OPENSSL_ROOT_DIR=/usr/local/opt/openssl Qt5_DIR=/usr/local/qt5.7.1/lib/cmake/Qt5 cmake -DDBUS=OFF ..`
 * `make -j4`
 * `/usr/local/qt5.7.1/bin/macdeployqt src/app/qbittorrent.app`
 
