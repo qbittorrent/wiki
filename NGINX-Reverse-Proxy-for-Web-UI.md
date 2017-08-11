@@ -4,9 +4,9 @@ If you're using NGINX as a reverse proxy for Web UI, as of version 3.3.15, assum
 ```
     location / { 
 ...
-        proxy_pass          http://127.0.0.1:<port>/;
+        proxy_pass          http://127.0.0.1:<webUI port>/;
 ...
-        proxy_set_header    X-Forwarded-Host        127.0.0.1:<port>;
+        proxy_set_header    X-Forwarded-Host        127.0.0.1:<webUI port>;
 ...
         proxy_hide_header   Referer;
         proxy_hide_header   Origin;
