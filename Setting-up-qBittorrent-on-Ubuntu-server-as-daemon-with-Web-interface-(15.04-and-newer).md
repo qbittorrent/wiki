@@ -71,7 +71,7 @@ $ sudo systemctl daemon-reload
 
 Before we continue, let's run qbittorrent so that it can ask us to accept the disclaimer, and save and create the config file to remember this setting. Doing this will create and save the configuration files under:
 ```
-/home/qbtuser/.config/qbittorrent/
+/home/qbtuser/.config/qBittorrent/
 ```
 
 First we impersonate the qbtuser:
