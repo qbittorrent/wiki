@@ -50,7 +50,7 @@ Apply [this patch](https://github.com/Homebrew/homebrew-core/issues/3219#issueco
 
 `OPENSSL_LIBS='-L/usr/local/opt/openssl/lib -lssl -lcrypto' ./configure -prefix /usr/local/qt5.7.1 -I/usr/local/opt/openssl/include -no-rpath -opensource -confirm-license -release -openssl-linked -no-securetransport -make libs -make tools -nomake examples -nomake tests -skip qt3d -skip qtactiveqt -skip qtandroidextras -skip qtcanvas3d -skip qtdeclarative -skip qtdoc -skip qtgraphicaleffects -skip qtimageformats -skip qtlocation -skip qtmacextras -skip qtmultimedia -skip qtquickcontrols -skip qtscript -skip qtsensors -skip qtserialport -skip qtsvg -skip qtwayland -skip qtwebchannel -skip qtwebsockets -skip qtwinextras -skip qtx11extras -skip qtxmlpatterns -skip qtwebview -skip qtwebengine -skip qtconnectivity -v`
 
-`make -j4 && make install`
+`make -j4 && sudo make install`
 
 # Download qBittorrent source
  
