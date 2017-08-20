@@ -12,7 +12,7 @@ For users that run qBittorrent via Microsoft IIS as a reverse proxy an extra hea
 
     Value: **{HTTP_HOST}:{SERVER_PORT}**
 
-The code is automatically created in the web.config file and looks like this (note you must use the GUI first so reverse proxy support is enabled):
+The code is automatically created in the web.config file and looks like this (you must use the GUI first so reverse proxy support is enabled):
 
     <rule name="Qbittorrent" stopProcessing="true">
     <match url="qbweb/(.*)" />
@@ -22,6 +22,6 @@ The code is automatically created in the web.config file and looks like this (no
     </serverVariables>
 </rule>
 
-Note you can use HTTPS to access the URL via IIS and it will use HTTP to communicate with qBittorrent. 
+You can use HTTPS to access the URL via IIS and it will use HTTP to communicate with qBittorrent. There is no need for HTTPS on localhost. 
  
 The tutorial is based on the assistance of Chocobo1 in [this thread](https://github.com/qbittorrent/qBittorrent/issues/7311). A temp exe is provided in that thread for 3.3.15 for a bug that will hopefully be fixed in the next version.
