@@ -42,3 +42,4 @@ Welcome to the qBittorrent wiki!
 * [API Documentation](wiki/WebUI-API-Documentation)
 * [API Documentation (qBittorrent v3.1.x)](wiki/WebUI-API-Documentation-(qBittorrent-v3.1.x))
 * [NGINX reverse proxy for WebUI](wiki/NGINX-Reverse-Proxy-for-Web-UI)
+* [IIS ARR Reverse Proxy for WebUI](wiki/IIS-ARR-Reverse-Proxy)
