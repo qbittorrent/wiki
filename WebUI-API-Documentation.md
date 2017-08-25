@@ -460,7 +460,7 @@ Value      | Description
 -----------|------------
 `0`        | Do not download
 `1`        | Normal priority
-`2`        | High priority
+`6`        | High priority
 `7`        | Maximal priority
 
 ### Get torrent pieces' states ###
