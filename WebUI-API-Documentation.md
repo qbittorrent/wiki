@@ -814,6 +814,10 @@ true
 Content-Disposition: form-data; name="paused"
 
 true
+-----------------------------6688794727912
+Content-Disposition: form-data; name="root_folder"
+
+true
 -----------------------------6688794727912--
 ```
 
@@ -825,6 +829,7 @@ Property                      | Type    | Description
 `category`                    | string  | (optional) Category for the torrent
 `skip_checking`  `API13`      | string  | (optional) Skip hash checking. Possible values are `true` and `false` (default)
 `paused`  `API13`             | string  | (optional) Add torrents in the paused state. Possible values are `true` and `false` (default)
+`root_folder`  `API15`        | string  | (optional) Create the root folder. Possible values are `true` (default) and `false`
 
 **Before qBittorrent v3.3.1 `API6`:**
 ```http
@@ -883,6 +888,7 @@ Property                      | Type    | Description
 `category`                    | string  | (optional) Category for the torrent
 `skip_checking`  `API13`      | string  | (optional) Skip hash checking. Possible values are `true` and `false` (default)
 `paused`  `API13`             | string  | (optional) Add torrents in the paused state. Possible values are `true` and `false` (default)
+`root_folder`  `API15`        | string  | (optional) Create the root folder. Possible values are `true` (default) and `false`
 
 ### Add trackers to torrent ###
 
