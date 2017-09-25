@@ -1,5 +1,5 @@
 == What are the terms of use for qBittorrent ? ==
-'''qBittorrent is [http://www.gnu.org/philosophy/free-sw.html Free Software]''' (more than just freeware! Free as in Freedom) released under the [http://www.gnu.org/copyleft/gpl.html GNU GPLv2] license. You don't have to pay for it and this won't change. Its [https://github.com/qbittorrent/qBittorrent code] is open and available to everyone and reusable under certain conditions (see the license text for more information). qBittorrent – of course – does not contain any malware, spyware, advertisements or undesired third-party programs.
+'''qBittorrent is [https://www.gnu.org/philosophy/free-sw.html Free Software]''' (more than just freeware! Free as in Freedom) released under the [https://www.gnu.org/copyleft/gpl.html GNU GPLv2] license. You don't have to pay for it and this won't change. Its [https://github.com/qbittorrent/qBittorrent code] is open and available to everyone and reusable under certain conditions (see the license text for more information). qBittorrent – of course – does not contain any malware, spyware, advertisements or undesired third-party programs.
 
 == I found a bug in the software, where can I report it? ==
 The qBittorrent issue tracker is located right [https://github.com/qbittorrent/qBittorrent/issues here], on the top bar of this page. Please do not hesitate to report any problem you may experience with qBittorrent. We will do our best to address it.
@@ -17,7 +17,7 @@ You can turn this off by Unchecking "[ ] Show splash screen on start up" in Tool
 You can either fork our GitHub repository and make a pull request (highly recommended) or send patches to the following address: sledgehammer999(at)qbittorrent(dot)org. We will review them promptly.
 
 == Who is developing qBittorrent? ==
-qBittorrent was created in March 2006 by [mailto:chris@qbittorrent.org Christophe Dumez], and was actively maintained/developed by him until July 2013. After that [mailto:sledgehammer999@qbittorrent.org sledgehammer999] is maintaining the project. Several other people (Arnaud Demaiziere, Ishan Arora, Stephanos Antaris, Mohammad Dib, Gelmir (Dayman)) have contributed or are still contributing to the project. If you like the software and you would like to help the project to subsist by giving some money, please do so [http://sourceforge.net/donate/index.php?group_id=163414 here]. '''We thank you in advance.'''
+qBittorrent was created in March 2006 by [mailto:chris@qbittorrent.org Christophe Dumez], and was actively maintained/developed by him until July 2013. After that [mailto:sledgehammer999@qbittorrent.org sledgehammer999] is maintaining the project. Several other people (Arnaud Demaiziere, Ishan Arora, Stephanos Antaris, Mohammad Dib, Gelmir (Dayman)) have contributed or are still contributing to the project. If you like the software and you would like to help the project to subsist by giving some money, please do so [https://www.qbittorrent.org/donate here]. '''We thank you in advance.'''
 
 == Which operating systems are currently supported by qBittorrent? ==
 qBittorrent code compiles on Unix-like systems (GNU/Linux, BSD, OS X, …) and Windows. Windows is officially supported as of qBittorrent 2.2.9.
@@ -31,7 +31,7 @@ qBittorrent is a ''peer to peer'' (P2P) file sharing software. Although the soft
 == Why use qBittorrent instead of another client? ==
 A lot of other BitTorrent clients exist but qBittorrent has several advantages: 
 * It is Free/Libre Software (you can see the code and see what qBittorrent is doing).
-* It is the closest open-source equivalent to the extremely popular (and Windows only) BitTorrent client: [http://www.utorrent.com µTorrent].  
+* It is the closest open-source equivalent to the extremely popular (and Windows only) BitTorrent client: [https://www.utorrent.com µTorrent].  
 * Its development team is very active and friendly.
 * It is stable and it has a low footprint (generally, 20-60 MiB of RAM used), whilst providing all the features you may need.
 * It uses the high-tech [http://libtorrent.org/ libtorrent (Rasterbar)] library, which means greater download and upload speed as well as excellent support of the latest features of the BitTorrent protocol.
@@ -44,7 +44,7 @@ You are probably using GNOME ≥ 2.28. By default, this window manager is no lon
  gconftool-2 --type boolean --set /desktop/gnome/interface/menus_have_icons true
 
 == Why the name qBittorrent? ==
-Well, actually I lacked inspiration on this one. :P qBittorrent is simply a BitTorrent client written using the [ https://www.qt.io/ Qt Framework] for its user interface. Most programs developed with Qt toolkit use a 'q' as the first letter of their name. The ''qBT'' abbreviation is also commonly used to refer to the qBittorrent client. However, '''please do not use the abbreviation ''qtorrent''''' since another BitTorrent client with this name already exists. 
+Well, actually I lacked inspiration on this one. :P qBittorrent is simply a BitTorrent client written using the [https://www.qt.io/ Qt Framework] for its user interface. Most programs developed with Qt toolkit use a 'q' as the first letter of their name. The ''qBT'' abbreviation is also commonly used to refer to the qBittorrent client. However, '''please do not use the abbreviation ''qtorrent''''' since another BitTorrent client with this name already exists. 
 
 
 == Where does qBittorrent save its settings? ==
@@ -58,7 +58,7 @@ Windows:
 GNU/Linux:
 * preferences:
 ** <code>~/.config/qBittorrent/</code>
-* .torrent files (This is the standard [http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html XDG] data folder):
+* .torrent files (This is the standard [https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html XDG] data folder):
 ** <code>~/.local/share/data/qBittorrent/</code>
 
 OS X:
@@ -201,4 +201,4 @@ When restoring qBittorrent from the tray in an Openbox desktop environment, it d
 This is if you desire to have qBittorrent to be maximized on the whole screen. If you want to have the window restored to a specific size, obapps can be used. You can copy the class and name from the above XML code and set it according to how you like it. obapps can be launched from the terminal.
 
 == Where are the qBittorrent tutorials?  ==
-A Dutch step by step tutorial can be found on: http://www.duken.nl/forums/handleidingen/downloaden/downloaden-met-qbittorrent-en-gebruik-maken-van-de-interne-torrent-zoekmachine-r26/ .
+A Dutch step by step tutorial can be found on: https://www.duken.nl/forums/handleidingen/downloaden/downloaden-met-qbittorrent-en-gebruik-maken-van-de-interne-torrent-zoekmachine-r26/ .
