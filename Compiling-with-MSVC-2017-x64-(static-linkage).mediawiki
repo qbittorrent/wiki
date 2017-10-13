@@ -49,7 +49,7 @@ This page describes how to compile 64-bit qBittorrent using MSVC 2017 under Wind
  EX_LIBS=/libpath::\QBITTORRENT\install_msvc\base\lib ws2_32.lib gdi32.lib advapi32.lib crypt32.lib user32.lib zlib1.lib
 * Replace '''zlib1.lib''' with '''zlib.lib'''
 * Find the '''CFLAG''' variable and append:
-  O1 -Gy -Gw -GL -MT
+  -O1 -Gy -Gw -GL -MT
 * Delete the values of '''APP_CFLAG''' and '''LIB_CFLAG'''
 * Find line that says:
  LFLAGS=/nologo /subsystem:console /opt:ref /debug
