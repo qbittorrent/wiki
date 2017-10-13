@@ -443,16 +443,17 @@ HTTP/1.1 200 OK
 content-type: application/json
 content-length: length
 
-[{"is_seed":true,"name":"debian-8.1.0-amd64-CD-1.iso","priority":1,"progress":1,"size":657457152},{another_file}]
+[{"is_seed":false,"name":"debian-8.1.0-amd64-CD-1.iso","piece_range":[0,1253],"priority":4,"progress":0,"size":657457152}]
 ```
 
-Property       | Type    | Description
----------------|---------|-------------
-`name`         | string  | File name (including relative path)
-`size`         | integer | File size (bytes)
-`progress`     | float   | File progress (percentage/100)
-`priority`     | integer | File priority. See possible values here below
-`is_seed`      | bool    | True if file is seeding/complete
+Property       | Type          | Description
+---------------|---------------|-------------
+`name`         | string        | File name (including relative path)
+`size`         | integer       | File size (bytes)
+`progress`     | float         | File progress (percentage/100)
+`priority`     | integer       | File priority. See possible values here below
+`is_seed`      | bool          | True if file is seeding/complete
+`piece_range`  | integer array | The first number is the starting piece index and the second number is the ending piece index (inclusive)
 
 Possible values of `priority`:
 
