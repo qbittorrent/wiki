@@ -28,7 +28,7 @@ This page describes how to compile 64-bit qBittorrent using MSVC 2017 under Wind
 * Extract the Zlib source inside our working dir.
 * Navigate to the Zlib source folder. eg <code>cd G:\QBITTORRENT\zlib-1.2.11</code>
 * Edit the '''win32/Makefile.msc''' file. Find the CFLAGS and LDFLAGS variables and replace them with these:
- CFLAGS  = -nologo O1 -Gy -Gw -GL -MT $(LOC)
+ CFLAGS  = -nologo -O1 -Gy -Gw -GL -MT $(LOC)
  LDFLAGS = /NOLOGO /DYNAMICBASE /NXCOMPAT /LTCG /OPT:REF /OPT:ICF /MANIFEST:EMBED /INCREMENTAL:NO /NODEFAULTLIB:MSVCRT
 * Issue the following commands:
  nmake -f win32/Makefile.msc AS=ml64 LOC="-DASMV -DASMINF -I." OBJA="inffasx64.obj gvmat64.obj inffas8664.obj"
