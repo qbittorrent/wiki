@@ -2,7 +2,7 @@ This page describes how to compile 64-bit qBittorrent using MSVC 2017 under Wind
 
 === What you will need: ===
 * The MSVC 2017 compiler. The Community Edition(free) will do fine.
-* Latest release of python [https://www.python.org/downloads/windows/ python]. Make sure it is added to the path.
+* A [https://www.python.org/downloads/windows/ python] interpreter. Make sure it is added to the path.
 * A [http://www.perl.org/ Perl language] interpreter. [http://strawberryperl.com/ Strawberry Perl] will do fine.
 * Latest release of the [http://www.nasm.us/ NASM assembler].
 * Latest release of [http://www.zlib.net/ Zlib].
