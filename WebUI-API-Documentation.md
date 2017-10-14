@@ -55,6 +55,7 @@
    1. [Toggle sequential download](#toggle-sequential-download)
    1. [Set first/last piece priority](#set-firstlast-piece-priority)
    1. [Set force start](#set-force-start)
+   1. [Set super seeding](#set-super-seeding)
    1. [Pause all the torrents](#pause-all-the-torrents)
    1. [Resume all the torrents](#resume-all-the-torrents)
 
@@ -1620,6 +1621,29 @@ Requires knowing the torrent hash. You can get it from [torrent list](#get-torre
 
 ```http
 POST /command/setForceStart HTTP/1.1
+User-Agent: Fiddler
+Host: 127.0.0.1
+Cookie: SID=your_sid
+Content-Type: application/x-www-form-urlencoded
+Content-Length: length
+
+hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32value=true
+```
+
+`hashes` can contain multiple hashes separated by `|`
+
+No matter if successful or not server will return the following reply:
+
+```http
+HTTP/1.1 200 OK
+```
+
+### Set super seeding ###
+
+Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
+
+```http
+POST /command/setSuperSeeding HTTP/1.1
 User-Agent: Fiddler
 Host: 127.0.0.1
 Cookie: SID=your_sid
