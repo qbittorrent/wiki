@@ -54,6 +54,7 @@
    1. [Toggle alternative speed limits](#toggle-alternative-speed-limits)
    1. [Toggle sequential download](#toggle-sequential-download)
    1. [Set first/last piece priority](#set-firstlast-piece-priority)
+   1. [Set force start](#set-force-start)
    1. [Pause all the torrents](#pause-all-the-torrents)
    1. [Resume all the torrents](#resume-all-the-torrents)
 
