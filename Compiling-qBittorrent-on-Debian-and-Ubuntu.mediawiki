@@ -33,12 +33,12 @@ Clone from the repo.
 If you want to use libtorrent 1.0.*. (recommended)
  git checkout RC_1_0
  ./autotool.sh
- ./configure --disable-debug --enable-encryption --prefix=/usr --with-libgeoip=system
+ ./configure --disable-debug --enable-encryption --with-libgeoip=system
 
 If you want to use libtorrent 1.1.*. (Note 1.1.x series are not officially supported yet and have several [https://github.com/qbittorrent/qBittorrent/issues/6132 issues].)
  git checkout RC_1_1
  ./autotool.sh
- ./configure --disable-debug --enable-encryption --prefix=/usr --with-libgeoip=system CXXFLAGS=-std=c++11
+ ./configure --disable-debug --enable-encryption --with-libgeoip=system CXXFLAGS=-std=c++11
 
 If you get a "configure: error: Boost.System library not found.", check if you installed all the above dependencies. <br/>If yes, add --with-boost-libdir=/usr/lib/i386-linux-gnu
 
@@ -51,7 +51,7 @@ For more information on building libtorrent, see [http://www.rasterbar.com/produ
 == Compiling qBittorrent (with the GUI) ==
 First, obtain the qBittorrent source code. Either download and extract a .tar archive from [http://sourceforge.net/projects/qbittorrent/files/qbittorrent/ Sourceforge] or clone this git repo (<code>git clone https://github.com/qbittorrent/qBittorrent</code>).
 <br />Enter the folder in a new terminal window and run:
- ./configure --prefix=/usr
+ ./configure
  make
 
 '''Note1''': If you're using libtorrent-rasterbar from the 0.16.x series, you also need to pass the "--with-libtorrent-rasterbar0.16" option to configure. qBittorrent v3.3.x has dropped the support of libtorrent 0.16.x.
@@ -66,7 +66,7 @@ That's it! qBittorrent should now be installed. You can now run qBittorrent usin
 == Compiling qBittorrent (without the GUI; aka qBittorrent-nox aka headless) ==
 First, obtain the qBittorrent source code. Either download and extract a .tar archive from [http://sourceforge.net/projects/qbittorrent/files/qbittorrent/ Sourceforge] or clone this git repo (<code>git clone https://github.com/qbittorrent/qBittorrent</code>).
 <br />Enter the folder in a new terminal window and run:
- ./configure --prefix=/usr --disable-gui
+ ./configure --disable-gui
  make
 
 '''Note1''': If you're using libtorrent-rasterbar from the 0.16.x series, you also need to pass the "--with-libtorrent-rasterbar0.16" option to configure. qBittorrent v3.3.x has dropped the support of libtorrent 0.16.x.
