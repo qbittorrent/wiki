@@ -18,6 +18,14 @@ Welcome to the qBittorrent wiki!
 #### Translation
 * [How to translate qBittorrent](wiki/How-to-translate-qBittorrent)
 
+##### WebUI-related
+* [Disable Authentication](wiki/Disable-authentification-of-webGUI)
+* [HTTPS with Self Signed SSL Certificates - Linux](wiki/Linux-WebUI-setting-up-HTTPS-with-self-signed-SSL-certificates)
+* [API Documentation](wiki/WebUI-API-Documentation)
+* [API Documentation (qBittorrent v3.1.x)](wiki/WebUI-API-Documentation-(qBittorrent-v3.1.x))
+* [NGINX reverse proxy for WebUI](wiki/NGINX-Reverse-Proxy-for-Web-UI)
+* [IIS ARR Reverse Proxy for WebUI](wiki/IIS-ARR-Reverse-Proxy)
+
 #### Linux
 * [qBittorrent on Ubuntu server (headless) with Web interface (15.04 - newer)](wiki/Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface-(15.04-and-newer))
 * [qBittorrent on Ubuntu server (headless) with Web interface (14.04 - older)](wiki/Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface-(14.04-and-older))
@@ -35,11 +43,3 @@ Welcome to the qBittorrent wiki!
 * [Debian / Ubuntu compilation](wiki/Compiling-qBittorrent-on-Debian-and-Ubuntu)
 * [macOS compilation](wiki/Compilation-guide-for-macOS-systems)
 * [Compiling qbittorrent-nox for CentOS from source](wiki/Compiling-qbittorrent-nox-for-CentOS-from-source)
-
-##### WebUI-related
-* [Disable Authentication](wiki/Disable-authentification-of-webGUI)
-* [HTTPS with Self Signed SSL Certificates - Linux](wiki/Linux-WebUI-setting-up-HTTPS-with-self-signed-SSL-certificates)
-* [API Documentation](wiki/WebUI-API-Documentation)
-* [API Documentation (qBittorrent v3.1.x)](wiki/WebUI-API-Documentation-(qBittorrent-v3.1.x))
-* [NGINX reverse proxy for WebUI](wiki/NGINX-Reverse-Proxy-for-Web-UI)
-* [IIS ARR Reverse Proxy for WebUI](wiki/IIS-ARR-Reverse-Proxy)
