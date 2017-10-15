@@ -936,9 +936,14 @@ Property                      | Type    | Description
 `savepath`                    | string  | (optional) Download folder
 `cookie`                      | string  | (optional) Cookie sent to download the .torrent file
 `category`                    | string  | (optional) Category for the torrent
-`skip_checking`  `API13`      | string  | (optional) Skip hash checking. Possible values are `true` and `false` (default)
-`paused`  `API13`             | string  | (optional) Add torrents in the paused state. Possible values are `true` and `false` (default)
+`skip_checking`  `API13`      | string  | (optional) Skip hash checking. Possible values are `true`, `false` (default)
+`paused`  `API13`             | string  | (optional) Add torrents in the paused state. Possible values are `true`, `false` (default)
 `root_folder`  `API15`        | string  | (optional) Create the root folder. Possible values are `true`, `false`, unset (default)
+`rename`                      | string  | (optional) Rename torrent
+`upLimit`                     | integer | (optional) Set torrent upload speed limit. Unit in bytes/second
+`dlLimit`                     | integer | (optional) Set torrent download speed limit. Unit in bytes/second
+`sequentialDownload`          | string  | (optional) Enable sequential download. Possible values are `true`, `false` (default)
+`firstLastPiecePrio`          | string  | (optional) Prioritize download first last piece. Possible values are `true`, `false` (default)
 
 ### Add trackers to torrent ###
 
