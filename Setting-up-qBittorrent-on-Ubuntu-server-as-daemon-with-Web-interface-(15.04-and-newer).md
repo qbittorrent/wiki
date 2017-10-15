@@ -55,7 +55,7 @@ After=network.target
 
 [Service]
 User=qbtuser
-ExecStart=/usr/bin/qbittorrent-nox --webui-port=8080
+ExecStart=/usr/bin/qbittorrent-nox
 
 [Install]
 WantedBy=multi-user.target
