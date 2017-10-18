@@ -1,4 +1,4 @@
-This how-to will guide you through the **compilation **of # qBittorrent and **libtorrent-rasterbar** on **LeMaker Banana Pro** with **Raspbian **as Operative System.
+This how-to will guide you through the **compilation** of **qBittorrent** and **libtorrent-rasterbar** on **LeMaker Banana Pro** with **Raspbian** as Operative System.
 
 This guide is written for Raspbian _(which is based upon Debian)_ and BananaPRO, but the process should be similar for BananaPi and other Debian distributions.
 
@@ -118,8 +118,7 @@ To overcome this error and configure correctly you must issue the following comm
 
    `qbittorrent`
 
-#Compiling qBittorrent-NOX
-###(aka Without the GUI, also called headless) 
+# Compiling qBittorrent-NOX _(aka Without the GUI, also called headless)_
 
 
 Now that each prerequisite has been completed you mut obtain the qBittorrent source code. 
@@ -196,7 +195,7 @@ _**Please Note:**_ **the following solution is based upon personal research** an
 _The following commands are based upon the assumption that you are running qBittorrent under a dedicated user._ 
 If you are running it under the 'bananapi' root user you need to execute the following with 'root privileges'.
 
-###Exceute the following command:
+Exceute the following command:
 
    `crontab -e`
 
