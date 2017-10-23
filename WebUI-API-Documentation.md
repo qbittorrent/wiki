@@ -1682,7 +1682,7 @@ Content-Length: length
 hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32?value=true
 ```
 
-`hashes` can contain multiple hashes separated by `|`
+`hashes` can contain multiple hashes separated by `|`<br />
 `value` is a boolean value, default is `false`
 
 No matter if successful or not server will return the following reply:
@@ -1706,7 +1706,7 @@ Content-Length: length
 hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32?value=true
 ```
 
-`hashes` can contain multiple hashes separated by `|`
+`hashes` can contain multiple hashes separated by `|`<br />
 `value` is a boolean value, default is `false`
 
 No matter if successful or not server will return the following reply:
