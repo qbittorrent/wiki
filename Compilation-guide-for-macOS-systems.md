@@ -1,5 +1,5 @@
 # Install Xcode
-A full installation of Xcode.app is required to compile qt5.<br/>
+A full installation of Xcode.app is required to compile Qt.<br/>
 Xcode can be installed from the [App Store](http://www.apple.com/osx/apps/app-store/).<br/>
 
 After installing Xcode you need to do below. See [this discussion](https://stackoverflow.com/questions/33728905/qt-creator-project-error-xcode-not-set-up-properly-you-may-need-to-confirm-t).
@@ -53,10 +53,11 @@ make -j2  # where 2 is your number of cores
 make install
 ```
 
-# Install qt5
+# Install Qt
 ## From brew
 ```shell
 brew install qt
+brew link --force qt
 ```
 
 ## From source
