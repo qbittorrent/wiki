@@ -10,24 +10,24 @@ As a default, the tracker URL is:<br />
 If you want your tracker to be accessible from Internet (i.e. outside your LAN), you will probably have to configure your router to forward the tracker port to your machine (default: <code>9000</code>).
 
 Once you have configure your router, you can test that your configuration is working by:
-* Running qBittorrent
-* Enabling the embedded tracker
-* Go to [[http://www.canyouseeme.org/]]:
-** Type in your tracker port (e.g. <code>9000</code>)
-** Press the "Check" button
-* You should get a position result or this means that your router is not properly configured.
+# Running qBittorrent
+# Enabling the embedded tracker
+# Go to [[http://www.canyouseeme.org/]]:
+## Type in your tracker port (e.g. <code>9000</code>)
+## Press the "Check" button
+# You should get a position result or this means that your router is not properly configured.
 
 === How to share files with my friends using qBittorrent? ===
 
-* Enable the embedded tracker in advanced preferences
-* Run the "Torrent creation tool" in qBittorrent
-* Select the local files you wish to share
-* Type in the URL of your local tracker in the tracker list (<code>http://your_public_ip:9000/announce</code>)
-** You can check [[http://www.whatsmyip.org/]] to know your public IP address
-* Check the "Start seeding after creation" box
-* Press the "Create and save..." button
-** Save the torrent file wherever you like
-* Send this newly created .torrent file to your friends and they will be able the download the files you are sharing using any Bittorrent client.
+# Enable the embedded tracker in advanced preferences
+# Run the "Torrent creation tool" in qBittorrent
+# Select the local files you wish to share
+# Type in the URL of your local tracker in the tracker list (<code>http://your_public_ip:9000/announce</code>)
+## You can check [[http://www.whatsmyip.org/]] to know your public IP address
+# Check the "Start seeding after creation" box
+# Press the "Create and save..." button
+## Save the torrent file wherever you like
+# Send this newly created .torrent file to your friends and they will be able the download the files you are sharing using any Bittorrent client.
 
 === If you are using qBittorrent without X ===
 Stop qBittorrent and add the following lines to ''~/.config/qBittorrent/qBittorrent.conf'':
