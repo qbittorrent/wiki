@@ -1353,8 +1353,7 @@ Content-Length: length
 hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5d7cc2ba0&limit=131072
 ```
 
-`hashes` can contain multiple hashes separated by `|`
-
+`hashes` can contain multiple hashes separated by `|`<br />
 `limit` is the download speed limit in bytes per second you want to set.
 
 No matter if successful or not server will return the following reply:
@@ -1407,8 +1406,7 @@ Content-Length: length
 hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5d7cc2ba0&limit=131072
 ```
 
-`hashes` can contain multiple hashes separated by `|`
-
+`hashes` can contain multiple hashes separated by `|`<br />
 `limit` is the upload speed limit in bytes per second you want to set.
 
 No matter if successful or not server will return the following reply:
@@ -1432,8 +1430,7 @@ Content-Length: length
 hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5d7cc2ba0&location=/mnt/nfs/media
 ```
 
-`hashes` can contain multiple hashes separated by `|`
-
+`hashes` can contain multiple hashes separated by `|`<br />
 `location` is the location to download the torrent to. If the location doesn't exist, the torrent's location is unchanged.
 
 No matter if successful or not server will return the following reply:
@@ -1484,8 +1481,7 @@ Content-Length: length
 hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5d7cc2ba0&category=CategoryName
 ```
 
-`hashes` can contain multiple hashes separated by `|`
-
+`hashes` can contain multiple hashes separated by `|`<br />
 `category` is the torrent category you want to set. If the category doesn't exist, a new category is created.
 
 No matter if successful or not server will return the following reply:
@@ -1551,9 +1547,8 @@ Content-Length: length
 hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5d7cc2ba0&enable=true
 ```
 
-`hashes` can contain multiple hashes separated by `|`
-
-`enable` is a boolean value. If the value is invalid, it is treated as false.
+`hashes` can contain multiple hashes separated by `|`<br />
+`enable` is a boolean, affects the torrents listed in `hashes`, default is `false`
 
 No matter if successful or not server will return the following reply:
 
@@ -1683,7 +1678,7 @@ hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32?value=true
 ```
 
 `hashes` can contain multiple hashes separated by `|`<br />
-`value` is a boolean value, default is `false`
+`value` is a boolean, affects the torrents listed in `hashes`, default is `false`
 
 No matter if successful or not server will return the following reply:
 
@@ -1707,7 +1702,7 @@ hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32?value=true
 ```
 
 `hashes` can contain multiple hashes separated by `|`<br />
-`value` is a boolean value, default is `false`
+`value` is a boolean, affects the torrents listed in `hashes`, default is `false`
 
 No matter if successful or not server will return the following reply:
 
