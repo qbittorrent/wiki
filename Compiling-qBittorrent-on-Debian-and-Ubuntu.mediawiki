@@ -5,14 +5,14 @@ This how-to will guide you though the compilation of qBittorrent and libtorrent-
 This guide is written for Debian/Ubuntu, but the process should be similar for other Debian-derivatives distributions.
 
 == Required dependencies ==
- # General required dependencies
+* General required dependencies
  sudo apt-get install build-essential pkg-config automake libtool git
  sudo apt-get install libboost-dev libboost-system-dev libboost-chrono-dev libboost-random-dev libssl-dev
 
- # Qt libraries
+* Qt libraries
  sudo apt-get install qtbase5-dev qttools5-dev-tools
 
- # Python (Run time only dependency, for the search engine)
+* Python (Run time only dependency, for the search engine)
  sudo apt-get install python3
 
 == Libtorrent ==
@@ -63,7 +63,7 @@ First, obtain the qBittorrent source code.<br />
 Either download and extract a .tar archive from [https://sourceforge.net/projects/qbittorrent/files/qbittorrent/ Sourceforge] or clone this git repo: <code>git clone https://github.com/qbittorrent/qBittorrent</code><br />
 Enter the folder in a new terminal window and run:
  ./configure --disable-gui
- make
+ make -j2
 
 * Note 1: If you're using libtorrent-rasterbar from the 0.16.x series, you also need to pass the <code>--with-libtorrent-rasterbar0.16</code> option to configure. qBittorrent v3.3.x has dropped the support of libtorrent 0.16.x.
 * Note 2: If you want to compile with qt4 instead of qt5, you also need to pass the <code>--with-qt4</code> option to configure.
