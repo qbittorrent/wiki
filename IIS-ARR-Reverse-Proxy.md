@@ -13,17 +13,16 @@ For users that run qBittorrent via Microsoft IIS as a reverse proxy an extra hea
 11. Enter the server IP:Port without `http://` (for example `127.0.0.1:8080`), then click **OK**
 12. Open the new rule and change the path to a subdirectory if needed (for example **qbweb/(.*)** = http://domain.tld/qbweb/)
 13. Under **Server Variables** add the following 3 rules:
-```  
-     Server variable name                          Value
 
-    HTTP_X-Forwarded-Host                `{HTTP_HOST}:{SERVER_PORT}`
-        HTTP_REFERER                               `0`
-        HTTP_ORIGIN                                `0`
-```
+    | Server variable name  | Value                     |
+    | --------------------- | ------------------------- |
+    | HTTP_X-Forwarded-Host | {HTTP_HOST}:{SERVER_PORT} |
+    | HTTP_REFERER          | 0                         |
+    | HTTP_ORIGIN           | 0                         |
 
 14. In the IIS Manager, right click on the site name and select **Explore**
 15. Look for the `web.config` file and open it your text editor of choice
-16. Find the lines `<set name="HTTP_REFERER" value="0" />` and `<set name="HTTP_ORIGIN" value="0" />` and delete *0* from the **value** of both.
+16. Find the lines `<set name="HTTP_REFERER" value="0" />` and `<set name="HTTP_ORIGIN" value="0" />` and delete `0` from the **value** of both.
 
 The result should look similar to this (Note: you must use the GUI first so reverse proxy support is enabled in IIS):
 ```xml
