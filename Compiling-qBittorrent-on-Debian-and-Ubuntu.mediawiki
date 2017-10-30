@@ -1,61 +1,56 @@
-This how-to will guide you though the compilation of qBittorrent and libtorrent-rasterbar.<br />This guide is written for Ubuntu/Debian, but the process should be similar for other Linux distributions.<br /><br />Only follow this guide if you know what you are doing, and this is what you really want.<br />If you are looking only for the latest version of qBittorrent, just head to the download page and use our PPAs.
+Only follow this guide if you know what you are doing and this is what you really want.<br />
+If you are looking only for the latest version of qBittorrent, just head to the [https://www.qbittorrent.org/download.php download page] and use our [https://launchpad.net/~qbittorrent-team/+archive/ubuntu/qbittorrent-stable PPAs].
+
+This how-to will guide you though the compilation of qBittorrent and libtorrent-rasterbar.<br />
+This guide is written for Debian/Ubuntu, but the process should be similar for other Debian-derivatives distributions.
 
 == Required dependencies ==
-* General required dependencies
- sudo apt-get install libboost-dev libboost-system-dev build-essential
- sudo apt-get install libboost-chrono-dev libboost-random-dev libssl-dev libgeoip-dev
- sudo apt-get install git pkg-config automake libtool
+ # General required dependencies
+ sudo apt-get install build-essential pkg-config automake libtool git
+ sudo apt-get install libboost-dev libboost-system-dev libboost-chrono-dev libboost-random-dev libssl-dev
 
-* Qt4 libraries (optional and only if it exists in your distro's repo)
- sudo apt-get install libqt4-dev
-
-* Qt5 libraries
+ # Qt libraries
  sudo apt-get install qtbase5-dev qttools5-dev-tools
 
-* Python (Run time only dependency, for the search engine)
- sudo apt-get install python
-
-== Optional dependencies ==
-
-* Geoip Database (For peer country resolution, strongly advised)
- sudo apt-get install geoip-database
+ # Python (Run time only dependency, for the search engine)
+ sudo apt-get install python3
 
 == Libtorrent ==
-[http://libtorrent.org/ Libtorrent] is a library written by Arvid Norberg that qBittorrent depends on. It is necessary to compile and install libtorrent before compiling qBittorrent.
+[http://libtorrent.org/ Libtorrent] is a library written by Arvid Norberg that qBittorrent depends on.<br />
+It is necessary to compile and install libtorrent before compiling qBittorrent.
 
-Right now libtorrent-rasterbar-dev is built from the [https://github.com/arvidn/libtorrent/releases/tag/libtorrent-1_1_1 official tar ball 1.1.1] which is incompatible with current qBittorrent.
-You have to compile 1.0.10 from the [https://github.com/arvidn/libtorrent repo].
-
-Clone from the repo.
+Clone from the repo
  git clone https://github.com/arvidn/libtorrent.git
  cd libtorrent
 
-If you want to use libtorrent 1.0.*. (recommended)
- git checkout RC_1_0
- ./autotool.sh
- ./configure --disable-debug --enable-encryption --with-libgeoip=system
-
-If you want to use libtorrent 1.1.*. (Note 1.1.x series are not officially supported yet and have several [https://github.com/qbittorrent/qBittorrent/issues/6132 issues].)
+If you want to use libtorrent 1.1.* (Also see: [https://github.com/qbittorrent/qBittorrent/issues/6132 issue 6132])
  git checkout RC_1_1
  ./autotool.sh
  ./configure --disable-debug --enable-encryption --with-libgeoip=system CXXFLAGS=-std=c++11
 
-If you get a "configure: error: Boost.System library not found.", check if you installed all the above dependencies. <br/>If yes, add --with-boost-libdir=/usr/lib/i386-linux-gnu
+If you want to use libtorrent 1.0.*
+ git checkout RC_1_0
+ ./autotool.sh
+ ./configure --disable-debug --enable-encryption --with-libgeoip=system CXXFLAGS=-std=c++11
+
+If you get a <code>configure: error: Boost.System library not found</code>, check if you installed all the above dependencies.<br/>
+If yes, add <code>--with-boost-libdir=/usr/lib/i386-linux-gnu</code>
 
 Now you're ready to compile:
- make clean && make
+ make clean && make -j2
  sudo make install
 
-For more information on building libtorrent, see [http://www.rasterbar.com/products/libtorrent/building.html libtorrent downloading and building]
+For more information on building libtorrent, see [http://www.libtorrent.org/building.html libtorrent downloading and building].
 
 == Compiling qBittorrent (with the GUI) ==
-First, obtain the qBittorrent source code. Either download and extract a .tar archive from [http://sourceforge.net/projects/qbittorrent/files/qbittorrent/ Sourceforge] or clone this git repo (<code>git clone https://github.com/qbittorrent/qBittorrent</code>).
-<br />Enter the folder in a new terminal window and run:
+First, obtain the qBittorrent source code.<br />
+Either download and extract a .tar archive from [https://sourceforge.net/projects/qbittorrent/files/qbittorrent/ Sourceforge] or clone this git repo: <code>git clone https://github.com/qbittorrent/qBittorrent</code><br />
+Enter the folder in a new terminal window and run:
  ./configure
- make
+ make -j2
 
-'''Note1''': If you're using libtorrent-rasterbar from the 0.16.x series, you also need to pass the "--with-libtorrent-rasterbar0.16" option to configure. qBittorrent v3.3.x has dropped the support of libtorrent 0.16.x.
-<br />'''Note2''': If you want to compile with qt4 instead of qt5, you also need to pass the "--with-qt4" option to configure. 
+* Note 1: If you're using libtorrent-rasterbar from the 0.16.x series, you also need to pass the <code>--with-libtorrent-rasterbar0.16</code> option to configure. qBittorrent v3.3.x has dropped the support of libtorrent 0.16.x.
+* Note 2: If you want to compile with qt4 instead of qt5, you also need to pass the <code>--with-qt4</code> option to configure.
 
 And finally to install qBittorrent:
  sudo make install
@@ -64,14 +59,15 @@ That's it! qBittorrent should now be installed. You can now run qBittorrent usin
  qbittorrent
 
 == Compiling qBittorrent (without the GUI; aka qBittorrent-nox aka headless) ==
-First, obtain the qBittorrent source code. Either download and extract a .tar archive from [http://sourceforge.net/projects/qbittorrent/files/qbittorrent/ Sourceforge] or clone this git repo (<code>git clone https://github.com/qbittorrent/qBittorrent</code>).
-<br />Enter the folder in a new terminal window and run:
+First, obtain the qBittorrent source code.<br />
+Either download and extract a .tar archive from [https://sourceforge.net/projects/qbittorrent/files/qbittorrent/ Sourceforge] or clone this git repo: <code>git clone https://github.com/qbittorrent/qBittorrent</code><br />
+Enter the folder in a new terminal window and run:
  ./configure --disable-gui
  make
 
-'''Note1''': If you're using libtorrent-rasterbar from the 0.16.x series, you also need to pass the "--with-libtorrent-rasterbar0.16" option to configure. qBittorrent v3.3.x has dropped the support of libtorrent 0.16.x.
-<br />'''Note2''': If you want to compile with qt4 instead of qt5, you also need to pass the "--with-qt4" option to configure.
-<br />'''Note3''': If you want to disable ALL authentification on the WebGUI, change some lines as explained [https://github.com/qbittorrent/qBittorrent/wiki/Disable-authentification-of-webGUI/ here.]
+* Note 1: If you're using libtorrent-rasterbar from the 0.16.x series, you also need to pass the <code>--with-libtorrent-rasterbar0.16</code> option to configure. qBittorrent v3.3.x has dropped the support of libtorrent 0.16.x.
+* Note 2: If you want to compile with qt4 instead of qt5, you also need to pass the <code>--with-qt4</code> option to configure.
+* Note 3: If you want to disable ALL authentication in the WebUI, change some lines as explained [https://github.com/qbittorrent/qBittorrent/wiki/Disable-authentification-of-webGUI/ here].
 
 And finally to install qBittorrent:
  sudo make install
@@ -79,7 +75,7 @@ And finally to install qBittorrent:
 That's it! qBittorrent-nox should now be installed. You can now run qBittorrent-nox using the following command:
  qbittorrent-nox
 
-Since you disabled the graphical user interface, qBittorrent can only be controlled via its Web UI. If you haven' t disabled authentification, as a default, you can access it from:
+Since you disabled the graphical user interface, qBittorrent can only be controlled via its WebUI. If you haven't disabled authentication, as a default, you can access it at:
  http://localhost:8080
  Username: admin
  Password: adminadmin
