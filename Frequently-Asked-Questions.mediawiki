@@ -228,3 +228,20 @@ obapps can be launched from the terminal.
 
 == Where are the qBittorrent tutorials?  ==
 A Dutch step by step tutorial can be found [https://www.duken.nl/forums/handleidingen/downloaden/downloaden-met-qbittorrent-en-gebruik-maken-van-de-interne-torrent-zoekmachine-r26/ here].
+
+== What do all those flags in the Flags column mean? ==
+
+    D = Currently downloading (interested and not choked)
+    d = Your client wants to download, but peer doesn't want to send (interested and choked)
+    U = Currently uploading (interested and not choked)
+    u = Peer wants your client to upload, but your client doesn't want to (interested and choked)
+    O = Optimistic unchoke
+    S = Peer is snubbed
+    I = Peer is an incoming connection
+    K = Peer is unchoking your client, but your client is not interested
+    ? = Your client unchoked the peer but the peer is not interested
+    X = Peer was included in peerlists obtained through Peer Exchange (PEX)
+    H = Peer was obtained through DHT.
+    E = Peer is using Protocol Encryption (all traffic)
+    e = Peer is using Protocol Encryption (handshake)
+    L = Peer is local (discovered through network broadcast, or in reserved local IP ranges) 
