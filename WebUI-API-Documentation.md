@@ -677,6 +677,8 @@ Property                          | Type    | Description
 `web_ui_username`                 | string  | WebUI username
 `web_ui_password`                 | string  | MD5 hash of WebUI password; hash is generated from the following string: `username:Web UI Access:plain_text_web_ui_password`
 `bypass_local_auth`               | bool    | True if authentication challenge for loopback address (127.0.0.1) should be disabled
+`bypass_auth_subnet_whitelist_enabled` | bool | True if webui authentication should be bypassed for clients whose ip resides within (at least) one of the subnets on the whitelist
+`bypass_auth_subnet_whitelist` | string | (White)list of ipv4/ipv6 subnets for which webui authentication should be bypassed; list entries are separated by commas
 `use_https`                       | bool    | True if WebUI HTTPS access is enabled
 `ssl_key`                         | string  | SSL keyfile contents (this is a not a path)
 `ssl_cert`                        | string  | SSL certificate contents (this is a not a path)
