@@ -10,7 +10,7 @@ This guide is written for Debian/Ubuntu, but the process should be similar for o
  sudo apt-get install libboost-dev libboost-system-dev libboost-chrono-dev libboost-random-dev libssl-dev
 
 * Qt libraries
- sudo apt-get install qtbase5-dev qttools5-dev-tools
+ sudo apt-get install qtbase5-dev qttools5-dev-tools libqt5svg5-dev
 
 * Python (Run time only dependency, for the search engine)
  sudo apt-get install python3
