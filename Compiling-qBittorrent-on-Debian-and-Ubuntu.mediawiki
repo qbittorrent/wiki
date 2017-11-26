@@ -37,8 +37,10 @@ If you get a <code>configure: error: Boost.System library not found</code>, chec
 If yes, add <code>--with-boost-libdir=/usr/lib/i386-linux-gnu</code>
 
 Now you're ready to compile:
- make clean && make -j2
+ make clean && make -j$(nproc)
  sudo make install
+
+See note in the next section regarding the build jobs.
 
 For more information on building libtorrent, see [http://www.libtorrent.org/building.html libtorrent downloading and building].
 
@@ -47,10 +49,11 @@ First, obtain the qBittorrent source code.<br />
 Either download and extract a .tar archive from [https://sourceforge.net/projects/qbittorrent/files/qbittorrent/ Sourceforge] or clone this git repo: <code>git clone https://github.com/qbittorrent/qBittorrent</code><br />
 Enter the folder in a new terminal window and run:
  ./configure
- make -j2
+ make -j$(nproc)
 
 * Note 1: If you're using libtorrent-rasterbar from the 0.16.x series, you also need to pass the <code>--with-libtorrent-rasterbar0.16</code> option to configure. qBittorrent v3.3.x has dropped the support of libtorrent 0.16.x.
 * Note 2: If you want to compile with qt4 instead of qt5, you also need to pass the <code>--with-qt4</code> option to configure.
+* Note 3: This build uses a conservative number of jobs (equal to the threads available); increasing it may make the build faster, but an eye must be kept on the memory usage.
 
 And finally to install qBittorrent:
  sudo make install
@@ -63,11 +66,12 @@ First, obtain the qBittorrent source code.<br />
 Either download and extract a .tar archive from [https://sourceforge.net/projects/qbittorrent/files/qbittorrent/ Sourceforge] or clone this git repo: <code>git clone https://github.com/qbittorrent/qBittorrent</code><br />
 Enter the folder in a new terminal window and run:
  ./configure --disable-gui
- make -j2
+ make -j$(nproc)
 
 * Note 1: If you're using libtorrent-rasterbar from the 0.16.x series, you also need to pass the <code>--with-libtorrent-rasterbar0.16</code> option to configure. qBittorrent v3.3.x has dropped the support of libtorrent 0.16.x.
 * Note 2: If you want to compile with qt4 instead of qt5, you also need to pass the <code>--with-qt4</code> option to configure.
 * Note 3: If you want to disable ALL authentication in the WebUI, change some lines as explained [https://github.com/qbittorrent/qBittorrent/wiki/Disable-authentification-of-webGUI/ here].
+* Note 4: This build uses a conservative number of jobs (equal to the threads available); increasing it may make the build faster, but an eye must be kept on the memory usage.
 
 And finally to install qBittorrent:
  sudo make install
