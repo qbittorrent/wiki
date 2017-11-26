@@ -23,7 +23,6 @@ Welcome to the qBittorrent wiki!
   * [API documentation (obsolete, qBittorrent v3.1.x)](wiki/WebUI-API-Documentation-(qBittorrent-v3.1.x))
 * [NGINX reverse proxy for WebUI](wiki/NGINX-Reverse-Proxy-for-Web-UI)
 * [IIS ARR reverse proxy for WebUI](wiki/IIS-ARR-Reverse-Proxy)
-* [Disable authentication](wiki/Disable-authentification-of-webGUI)
 * [HTTPS with self-signed SSL certificates - Linux](wiki/Linux-WebUI-setting-up-HTTPS-with-self-signed-SSL-certificates)
 
 ### Linux
