@@ -24,12 +24,12 @@ Clone from the repo
  cd libtorrent
 
 If you want to use libtorrent 1.1.* (Also see: [https://github.com/qbittorrent/qBittorrent/issues/6132 issue 6132])
- git checkout RC_1_1
+ git checkout $(git tag | grep libtorrent-1_1_ | sort -t _ -n -k 3 | tail -n 1)
  ./autotool.sh
  ./configure --disable-debug --enable-encryption --with-libgeoip=system CXXFLAGS=-std=c++11
 
 If you want to use libtorrent 1.0.*
- git checkout RC_1_0
+ git checkout $(git tag | grep libtorrent-1_0_ | sort -t _ -n -k 3 | tail -n 1)
  ./autotool.sh
  ./configure --disable-debug --enable-encryption --with-libgeoip=system CXXFLAGS=-std=c++11
 
