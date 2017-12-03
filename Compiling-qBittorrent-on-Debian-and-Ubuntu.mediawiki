@@ -52,7 +52,7 @@ Enter the folder in a new terminal window and run:
  make -j$(nproc)
 
 * Note 1: If you're using libtorrent-rasterbar from the 0.16.x series, you also need to pass the <code>--with-libtorrent-rasterbar0.16</code> option to configure. qBittorrent v3.3.x has dropped the support of libtorrent 0.16.x.
-* Note 2: If you want to compile with qt4 instead of qt5, you also need to pass the <code>--with-qt4</code> option to configure. qBittorrent v4.0.x has dropped the support of libtorrent qt4
+* Note 2: If you want to compile with qt4 instead of qt5, you also need to pass the <code>--with-qt4</code> option to configure. qBittorrent v4.0.x has dropped the support of qt4
 * Note 3: This build uses a conservative number of jobs (equal to the threads available); increasing it may make the build faster, but an eye must be kept on the memory usage.
 
 And finally to install qBittorrent:
