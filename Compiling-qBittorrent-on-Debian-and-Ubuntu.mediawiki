@@ -19,7 +19,7 @@ This guide is written for Debian/Ubuntu, but the process should be similar for o
 [http://libtorrent.org/ Libtorrent] is a library written by Arvid Norberg that qBittorrent depends on.<br />
 It is necessary to compile and install libtorrent before compiling qBittorrent.
 
-Install Libtorrent from repository
+Install Libtorrent dev pkg from repository
  sudo apt-get install libtorrent-rasterbar-dev
 
 or use git repo and compile Libtorrent yourself.
