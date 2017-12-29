@@ -1,5 +1,7 @@
 Welcome to the qBittorrent wiki!
 
+Everyone is welcome to edit and improve the wiki!
+
 # General
 * [Frequently Asked Questions (FAQ)](wiki/Frequently-Asked-Questions)
 * [qBittorrent options](wiki/Explanation-of-Options-in-qBittorrent)
