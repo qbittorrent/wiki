@@ -9,3 +9,6 @@ location / {
     proxy_set_header   Origin            '';
 }
 ```
+For some users, several windows in the Web UI will still be blank, such as when adding a new torrent from a URL/magnet or local file. If so, try adding the following line to the location block:
+
+`add_header  X-Frame-Options "SAMEORIGIN";`
