@@ -1,4 +1,4 @@
-qBittorrent supports a feature called "Disable connections not supported by proxies." 
+qBittorrent supports a feature called "Disable connections not supported by proxies"
 
 This feature attempts to enhance privacy by only allowing network traffic to flow via a configured proxy. When enabled, the following configuration is used:
 
