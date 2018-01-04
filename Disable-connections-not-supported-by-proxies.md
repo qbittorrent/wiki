@@ -1,6 +1,6 @@
 **Note**: a proxy must be configured in order to make use of this feature.
 
-This feature attempts to enhance client privacy by disallowing any traffic that doesn't flow through a configured proxy. If enabling this option, you may also be interested in [Anonymous Mode](wiki/Anonymous-Mode).
+This feature attempts to enhance client privacy by disallowing any traffic that doesn't flow through a configured proxy. If enabling this option, you may also be interested in [Anonymous Mode](Anonymous-Mode).
 
 ## Features
 * Disables Local Peer Discovery
