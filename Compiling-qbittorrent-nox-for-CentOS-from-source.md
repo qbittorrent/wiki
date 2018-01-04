@@ -2,9 +2,9 @@ After stumbling for about 2 hours _(getting Qt5 to work)_ here is the how to bui
 
 **Update for Qt5**
 
-* https://github.com/qbittorrent/qBittorrent/releases/tag/release-3.3.1
+* https://github.com/qbittorrent/qBittorrent/releases/tag/release-4.0.3
 * CentOS 7 x64
-* 2015-12-28 (Dec)
+* 2018-01-04 (Jan 4th)
 
 Install Dependencies (make sure you have epel repo enabled)
 ```
@@ -13,25 +13,25 @@ yum -y install qt-devel boost-devel openssl-devel qt5-qtbase-devel qt5-linguist
 ```
 
 Grab latest libtorrent release
-* libtorrent-1.0.7 at the time of writing
+* libtorrent-1.1.6 at the time of last update
 
 > https://github.com/arvidn/libtorrent/releases check for updates and replace as needed
 
 ```
-wget https://github.com/arvidn/libtorrent/releases/download/libtorrent-1_0_7/libtorrent-rasterbar-1.0.7.tar.gz
-tar -zxf libtorrent-rasterbar-1.0.7.tar.gz
-cd libtorrent-rasterbar-1.0.7
+wget https://github.com/arvidn/libtorrent/releases/download/libtorrent-1_1_6/libtorrent-rasterbar-1.1.6.tar.gz
+tar -zxf libtorrent-rasterbar-1.1.6.tar.gz
+cd libtorrent-rasterbar-1.1.6
 ./configure --prefix=/usr
 make
 make install
 ln -s /usr/lib/pkgconfig/libtorrent-rasterbar.pc /usr/lib64/pkgconfig/libtorrent-rasterbar.pc
-ln -s /usr/lib/libtorrent-rasterbar.so.8 /usr/lib64/libtorrent-rasterbar.so.8
+ln -s /usr/lib/libtorrent-rasterbar.so.9 /usr/lib64/libtorrent-rasterbar.so.9
 ```
 
 Grab latest qbittorrent
 ```
 cd 
-git clone https://github.com/qbittorrent/qBittorrent.git
+git clone https://github.com/qbittorrent/qBittorrent.git (or git pull if already cloned)
 cd qBittorrent
 ./configure --prefix=/usr --disable-gui CPPFLAGS=-I/usr/include/qt5
 make
