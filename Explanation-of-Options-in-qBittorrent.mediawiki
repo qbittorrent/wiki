@@ -67,6 +67,9 @@ This allows you to run a program on finishing certain types of torrents in a cer
 * '''Maximum number of upload slots''' sets the maximum of upload slots for ''each'' torrent.
 == Proxy server ==
 These options allow you to set up a proxy server to use when downloading torrents. A tutorial of sorts can be accessed [https://kickass.to/community/show/41088/ here] (for µTorrent, but can be used for qBittorrent as well).
+
+Disable connections not supported by proxies: [[Disable-connections-not-supported-by-proxies|link]]
+
 == IP filtering ==
 This is a feature which allows you to block certain ''bad peers''. Didn't understand a word? More information about that [http://www.techzilo.com/ban-utorrent-peers-ip-address/ here].
 
@@ -85,7 +88,7 @@ For those of you whose internet connectivity is limited during specific hours (f
 ** '''Use a different port for DHT and BitTorrent''' allows the port that DHT and BitTorrent use to be different.
 * '''Enable Peer Exchange (PeX) to find more peers''' - another alternative to enable lesser dependency on trackers. More information [http://wiki.vuze.com/w/Peer_Exchange here].
 * '''Enable Local Peer Discovery to find more peers''' - an extension to the BitTorrent protocol to enable communication via LAN. More information [https://en.wikipedia.org/wiki/Local_Peer_Discovery here].
-* '''Enable anonymous mode''' - in simple terms, qBittorrent tries to maintain a certain degree of anonymity while using this function. Detailed explanation [https://github.com/qbittorrent/qBittorrent/wiki/Anonymous-Mode here].
+* '''Enable anonymous mode''' - in simple terms, qBittorrent tries to maintain a certain degree of anonymity while using this function. Detailed explanation [[Anonymous-Mode|here]].
 
 == Torrent Queuing ==
 These options allow you to control the number of torrents being downloaded and uploaded. Refer to the documentation [http://www.rasterbar.com/products/libtorrent/manual.html here] for information on ''slow torrents''.
