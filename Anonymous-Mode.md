@@ -8,7 +8,7 @@ If you're using VPN, proxy or I2P, you probably want to enable Anonymous Mode.
 * The user-agent will be reset to an empty string
 * Other identifying information will not be exposed, such as IP, listening port, etc.
 
-You may enable additional identity-masking features with the ["Disable connections not supported by proxies"](wiki/Disable-connections-not-supported-by-proxies) option.
+You may enable additional identity-masking features with the ["Disable connections not supported by proxies"](Disable-connections-not-supported-by-proxies) option.
 
 ## qBittorrent v2.9.0 - v3.2.5
 
