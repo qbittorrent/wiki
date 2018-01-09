@@ -56,6 +56,7 @@ After=network.target
 [Service]
 User=qbtuser
 ExecStart=/usr/bin/qbittorrent-nox
+ExecStop=/usr/bin/killall -w qbittorrent-nox
 
 [Install]
 WantedBy=multi-user.target
