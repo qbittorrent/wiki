@@ -49,7 +49,7 @@ For example, to run qBittorrent-nox Web UI on port 8181 instead of 8080, use:
 
 It is only required to pass --webui-port parameter once because qBittorrent-nox will remember the new port upon restart.
 
-'''If you want to further configure it, have a look at: ".config/qBittorrent/qBittorent.conf" in your executing users home directory.'''
+'''If you want to further configure it, have a look at: ".config/qBittorrent/qBittorrent.conf" in your executing users home directory.'''
 
 == Useless dependencies ==
 qBittorrent-nox does not need as many dependencies as standard qBittorrent because its Qt GUI is disabled.<br />The following dependencies are no longer useful:
