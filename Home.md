@@ -43,3 +43,4 @@ Everyone is welcome to edit and improve the wiki!
 * [macOS compilation](wiki/Compilation-guide-for-macOS-systems)
 * [Debian / Ubuntu compilation](wiki/Compiling-qBittorrent-on-Debian-and-Ubuntu)
 * [Compiling qbittorrent-nox for CentOS from source](wiki/Compiling-qbittorrent-nox-for-CentOS-from-source)
+* [Compilation on FreeBSD (no gui)](wiki/Compilation-on-FreeBSD-(no-gui))
