@@ -27,7 +27,7 @@ Everyone is welcome to edit and improve the wiki!
   * [NGINX](wiki/NGINX-Reverse-Proxy-for-Web-UI)
   * [Microsoft IIS ARR](wiki/IIS-ARR-Reverse-Proxy)
 * [HTTPS with self-signed SSL certificates - Linux](wiki/Linux-WebUI-setting-up-HTTPS-with-self-signed-SSL-certificates)
-* [Linux Web UI setting up HTTPS with Let's Encrypt certificates](https://github.com/qbittorrent/qBittorrent/wiki/Linux-Web-UI-setting-up-HTTPS-with-Let's-Encrypt-certificates)
+* [HTTPS with Let's Encrypt certificates - Linux](https://github.com/qbittorrent/qBittorrent/wiki/Linux-Web-UI-setting-up-HTTPS-with-Let's-Encrypt-certificates)
 
 ### Linux
 * [qBittorrent on Ubuntu server (headless) with WebUI (15.04 - newer)](wiki/Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface-(15.04-and-newer))
