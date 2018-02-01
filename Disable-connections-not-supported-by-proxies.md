@@ -4,7 +4,6 @@ This feature attempts to enhance client privacy by disallowing any traffic that 
 
 ## Features
 * Disables Local Peer Discovery
-* Disables DHT
 * Disables UPnP & NAT-PMP
 * Only talks to http(s) trackers via (any) proxy
 * Only talks to udp trackers via SOCKS5/I2P proxy
