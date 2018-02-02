@@ -82,9 +82,9 @@ And finally to install qBittorrent:
 
 If everything went fine, there is one last thing you need to do (see https://github.com/qbittorrent/qBittorrent/issues/8047):
 
-Check if your LD_LIBRARY_PATH environment variable is set and the path `/usr/local/lib` is included.
+Check if your <code>LD_LIBRARY_PATH</code> environment variable is set and the path <code>/usr/local/lib</code> is included.
 
-Simply run `env` in your terminal and look for `LD_LIBRARY_PATH`.
+Simply run <code>env</code> in your terminal and look for <code>LD_LIBRARY_PATH</code>.
 If so, you are good to go. If not, add the path to the variable:
   export LD_LIBRARY_PATH=/usr/local/lib:${LD_LIBRARY_PATH}
 
