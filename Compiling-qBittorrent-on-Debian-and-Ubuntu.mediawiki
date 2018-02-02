@@ -81,7 +81,9 @@ And finally to install qBittorrent:
  sudo make install
 
 If everything went fine, there is one last thing you need to do (see https://github.com/qbittorrent/qBittorrent/issues/8047):
+
 Check if your LD_LIBRARY_PATH environment variable is set and the path `/usr/local/lib` is included.
+
 Simply run `env` in your terminal and look for `LD_LIBRARY_PATH`.
 If so, you are good to go. If not, add the path to the variable:
   export LD_LIBRARY_PATH=/usr/local/lib:${LD_LIBRARY_PATH}
