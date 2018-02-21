@@ -1,3 +1,6 @@
+## Note
+This WebUI API documentation applies qBittorrent v3.2.0+, for previous API version read its documentation at [here](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-Documentation-(qBittorrent-v3.1.x)).
+
 # Table of Contents #
 
 1. [Changes](#changes)
