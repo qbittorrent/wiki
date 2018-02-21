@@ -6,8 +6,7 @@ Also, this mechanism is controlled via configuration options (via the core UI or
 
 --- private and public files separation
 
---- config entries
-
+### Config entries
 WebUI\AlternativeUIEnabled=`<true>/<false>`
 
 WebUI\RootFolder `<path>`
