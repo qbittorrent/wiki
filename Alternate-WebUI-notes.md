@@ -7,8 +7,8 @@ Also, this mechanism is controlled via configuration options (via the core UI or
 --- private and public files separation
 
 --- config entries
-WebUI\AlternativeUIEnabled=<true>/<false>
-WebUI\RootFolder <path>
+WebUI\AlternativeUIEnabled=`<true>/<false>`
+WebUI\RootFolder `path`
 
 ### First steps to an alternate webUI:
 Copy the files on XYZ to a <new folder>, enable altwebUI on the options and point the entry ABC to <new folder>, then launch qBittorrent.
