@@ -15,5 +15,5 @@ Copy the files on XYZ to a <new folder>, enable altwebUI on the options and poin
 Access the webUI as always, modify the files at <new folder> according to your needs and refresh the browser to see the changes reflected.
 
 ### References:
-* PR: https://github.com/qbittorrent/qBittorrent/pull/7610
+* Main webUI PR: https://github.com/qbittorrent/qBittorrent/pull/7610
 
