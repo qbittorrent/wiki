@@ -4,6 +4,12 @@ From qBittorrent v4.0.5 and on, the webUI architecture was expanded to allow the
 
 Also, this mechanism is controlled via configuration options (via the core UI or config file), and the webUI files (html, css, js, ...) are external to the program so it's easier than ever to test and mofify the webUI functionality, look and feel without need of rebuilding the project.
 
+*** private and public files separation
+
+### First steps to an alternate webUI:
+Copy the files on XYZ to a <new folder>, enable altwebUI on the options and point the entry ABC to <new folder>, then launch qBittorrent.
+Access the webUI as always, modify the files at <new folder> according to your needs and refresh the browser to see the changes reflected.
+
 ### References:
 * PR: https://github.com/qbittorrent/qBittorrent/pull/7610
 
