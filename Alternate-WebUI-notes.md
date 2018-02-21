@@ -9,6 +9,7 @@ Also, this mechanism is controlled via configuration options (via the core UI or
 --- config entries
 
 WebUI\AlternativeUIEnabled=`<true>/<false>`
+
 WebUI\RootFolder `<path>`
 
 ### First steps to an alternate webUI:
