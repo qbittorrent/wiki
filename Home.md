@@ -21,7 +21,7 @@ Everyone is welcome to edit and improve the wiki!
 * [How to translate qBittorrent](wiki/How-to-translate-qBittorrent)
 
 ### WebUI Related
-* [API documentation (current, qBittorrent v3.2.0+)](wiki/WebUI-API-Documentation-(qBittorrent-v3.2.0-))
+* [API documentation (current, qBittorrent v3.2.0+)](wiki/WebUI-API-Documentation-(qBittorrent-v3.2.0))
   * [API documentation (obsolete, qBittorrent v3.1.x)](wiki/WebUI-API-Documentation-(qBittorrent-v3.1.x))
 * Reverse proxy setup for WebUI
   * [NGINX](wiki/NGINX-Reverse-Proxy-for-Web-UI)
