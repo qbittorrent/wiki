@@ -24,6 +24,7 @@ Everyone is welcome to edit and improve the wiki!
 * API documentation (by versions)
   * [API documentation (current, qBittorrent v3.2.0+)](wiki/WebUI-API-Documentation-(qBittorrent-v3.2.0))
   * [API documentation (obsolete, qBittorrent v3.1.x)](wiki/WebUI-API-Documentation-(qBittorrent-v3.1.x))
+* [Alternate webUI notes (WIP)](wiki/Alternate-WebUI-notes)
 * Reverse proxy setup for WebUI
   * [NGINX](wiki/NGINX-Reverse-Proxy-for-Web-UI)
   * [Microsoft IIS ARR](wiki/IIS-ARR-Reverse-Proxy)
