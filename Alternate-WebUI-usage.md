@@ -4,7 +4,7 @@ From qBittorrent v4.0.5 and on, the WebUI architecture was expanded to allow the
 
 Also, this mechanism is controlled via configuration options (via the core UI or config file), and the WebUI files (html, css, js, ...) are external to the program so it's easier than ever to test and modify the WebUI functionality, look and feel without need of rebuilding the project.
 
-### Public and Private webUI files separation
+### Public and Private WebUI files separation
 In order to increase security, a `public` (login process handling) and `private` (WebUI functionality) separation of the files is implemented (see core WebUI files' segregation as ref: https://github.com/qbittorrent/qBittorrent/tree/master/src/webui/www)
 
 ### Config entries
