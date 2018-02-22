@@ -1,11 +1,11 @@
 # ## **WIP**
 
-From qBittorrent v4.0.5 and on, the WebUI architecture was expanded to allow the use of alternate set of files, allowing customization of the WebUI separated from the evolution of the core qBittorrent code.
+From qBittorrent v4.1.0 and on, the WebUI architecture was expanded to allow the use of alternate set of HTML files, allowing customization of the WebUI separated from the evolution of the core qBittorrent code.
 
-Also, this mechanism is controlled via configuration options (via the core UI or config file), and the WebUI files (html, css, js, ...) are external to the program so it's easier than ever to test and modify the WebUI functionality, look and feel without need of rebuilding the project.
+Also, this mechanism is controlled via configuration options (core UI preferences window or config file), and the WebUI files (html, css, js, ...) are external to the program so it's easier than ever to test and modify the WebUI's functionality, look and feel without need of rebuilding the executable.
 
 ### Public and Private WebUI files separation
-In order to increase security, a `public` (login process handling) and `private` (WebUI functionality) separation of the files is implemented (see core WebUI files' segregation as ref: https://github.com/qbittorrent/qBittorrent/tree/master/src/webui/www)
+In order to increase security, a `public` (login process handling) and `private` (WebUI functionality) separation of files is implemented (see core WebUI files' segregation as ref: https://github.com/qbittorrent/qBittorrent/tree/master/src/webui/www)
 
 ### Config entries
 * WebUI\AlternativeUIEnabled=`<true>/<false>`
