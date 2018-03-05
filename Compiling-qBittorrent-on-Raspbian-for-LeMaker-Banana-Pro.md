@@ -30,7 +30,7 @@ _[ at the time of this writing, Qt5 libraries were not available for Raspbian on
 
 # Libtorrent
 
-[Libtorrent](http://wwww.libtorrent.org ) is a library written by Arvid Norberg that qBittorrent depends on. It is necessary to compile and install libtorrent before compiling qBittorrent.
+[Libtorrent](http://www.libtorrent.org ) is a library written by Arvid Norberg that qBittorrent depends on. It is necessary to compile and install libtorrent before compiling qBittorrent.
 
 Default Raspbian distro packages a very old _(and very unstable)_ version of  libtorrent, hence you will need to compile it yourself.
 
