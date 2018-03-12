@@ -68,7 +68,7 @@ This Web API documentation applies qBittorrent v4.0.5+, for previous API version
 
 * Changes in `API v2.0`:
   * New version naming scheme: X.Y.Z (where X - major version, Y - minor version, Z - release version)
-  * New API pathes. All API methods are under `api/vN/` (where N is API major version)
+  * New API pathes. All API methods are under `api/vX/` (where X is API major version)
   * API methods are under new scopes
 
 # Authorization #
