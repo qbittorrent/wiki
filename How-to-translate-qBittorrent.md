@@ -1,14 +1,4 @@
-qBittorrent is currently translated into approximately 25 languages but we are still looking for new translators to help us make qBittorrent available into as many languages as possible.
-
-# Proceed with the translation
-We are using [Transifex](https://www.transifex.com/) to localize qBittorrent. You can see the current state of the localization by visiting the [page of the project](https://www.transifex.com/sledgehammer999/qbittorrent/).
-
-If you want to help, sign up for free, select the language you want to translate and request to join the translation team.
-Once you are accepted as member of the team, you can proceed with the translation.
-
-Transifex provides an easy to use web interface to work on the translation.
-
-You can alternatively work locally using tools such as **Qt Linguist** and submit your changes using the web interface or the Transifex client. Make sure your local files are updated before pushing changes or you may override the work of others.
+qBittorrent is currently translated into approximately 25 languages but we are still looking for new translators to help us make qBittorrent available into as many languages as possible.guist** and submit your changes using the web interface or the Transifex client. Make sure your local files are updated before pushing changes or you may override the work of others.
 
 # Things you need to pay attention to
 * HTML tags<br>
