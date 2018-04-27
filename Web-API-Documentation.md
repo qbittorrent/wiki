@@ -218,7 +218,7 @@ Property                          | Type    | Description
 `max_active_downloads`            | integer | Maximum number of active simultaneous downloads
 `max_active_torrents`             | integer | Maximum number of active simultaneous downloads and uploads
 `max_active_uploads`              | integer | Maximum number of active simultaneous uploads
-`dont_count_slow_torrents`        | bool    | If true torrents w/o any activity (stalled ones) will not be counted towards `max_active_*` limits; see [dont_count_slow_torrents](http://www.rasterbar.com/products/libtorrent/manual.html#session-customization) for more information
+`dont_count_slow_torrents`        | bool    | If true torrents w/o any activity (stalled ones) will not be counted towards `max_active_*` limits; see [dont_count_slow_torrents](https://www.libtorrent.org/reference-Settings.html#dont_count_slow_torrents) for more information
 `max_ratio_enabled` `API3`        | bool    | True if share ratio limit is enabled
 `max_ratio` `API3`                | float   | Get the global share ratio limit
 `max_ratio_act` `API3`            | bool    | Action performed when a torrent reaches the maximum share ratio. See list of possible values here below.
