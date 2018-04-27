@@ -1,7 +1,7 @@
 qBittorrent has a feature-rich Web UI allowing users to control qBittorrent remotely. This is ideal for headless servers without the X window system such as Ubuntu Server.
 
 Note: This guide is intended for Ubuntu 12.04 - 14.04. From Ubuntu 15.04 the startup scripts have changed from upstart to systemd. More info here:
-http://askubuntu.com/questions/613366/rationale-for-switching-from-upstart-to-systemd
+https://askubuntu.com/questions/613366/rationale-for-switching-from-upstart-to-systemd
 
 **Install**
 

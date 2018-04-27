@@ -2,7 +2,7 @@ This guide briefly overviews how to compile (and install) qBittorrent using CMak
 
 == What you will need: ==
 * A C++ compiler, supported by CMake.
-* CMake, version 3.5 or newer. Get it from your packages repository or download an installer from the CMake [http://cmake.org website]
+* CMake, version 3.5 or newer. Get it from your packages repository or download an installer from the CMake [https://cmake.org website]
 * Installed Qt, libtorrent and their dependencies (Boost, zlib, openssl). Please note that Boost support in CMake is version-explicit, and thus CMake version has to be younger than the Boost version or, otherwise, CMake might not recognize boost libraries.
 * Development files (headers and libraries) for Qt, libtorrent, and Boost.
 
@@ -16,7 +16,7 @@ CMake encourage you to use so called out-of-source builds (i.e. build into a dif
 CMake does not build a project by itself. Instead it generates rules for an actual build software. These generators include traditional makefiles as well as other platform-specific (like XCode or Visual Studio) or not (Ninja) build tools. At the same time CMake projects can be integrated with IDEs. This is done in two ways: either CMake generates project files, which include call to CMake itself to update those files if needed, or an IDE may load CMake project structure directly. The generators for Visual Studio and XCode implement the former approach, while Qt Creator, KDevelop and Visual Studio 2017 use the latter model. Before continuing you have to decide which generator you will use and will you integrate with an IDE or not. You may get a list of available generators running <code>cmake -G</code> or <code>cmake --help</code>
 === IDE Support ===
 ;Qt Creator
-: This IDE can just open the top-level project <code>CMakeLists.txt</code> file and load the project structure. Then it will ask you where to put build files and which make tool to use. Please note that Ninja will give you significantly shorter rebuild times, as comparing to a regular make. From version 4.3 of Qt Creator and 3.7 of CMake, support is excellent (see this [http://blog.qt.io/blog/2016/11/15/cmake-support-in-qt-creator-and-elsewhere/ blog post] for details).
+: This IDE can just open the top-level project <code>CMakeLists.txt</code> file and load the project structure. Then it will ask you where to put build files and which make tool to use. Please note that Ninja will give you significantly shorter rebuild times, as comparing to a regular make. From version 4.3 of Qt Creator and 3.7 of CMake, support is excellent (see this [https://blog.qt.io/blog/2016/11/15/cmake-support-in-qt-creator-and-elsewhere/ blog post] for details).
 ;KDevelop
 : KDevelop from version 4 provides excellent support for CMake-based projects, simply open the top-level project <code>CMakeLists.txt</code> file and select a build directory.
 ;XCode

@@ -3,7 +3,7 @@ Here you will find explanation for various settings found under the options in q
 = Behaviour =
 
 == Language ==
-This is used to set the language qBittorrent uses in it's GUI (Graphical User Interface). If you want to provide another language, or update an already existing one, you may do so through Transifex. [http://qbforums.shiki.hu/index.php/topic,2134.0.html Here] is the corresponding forum topic.
+This is used to set the language qBittorrent uses in it's GUI (Graphical User Interface). If you want to provide another language, or update an already existing one, you may do so through Transifex. [https://qbforums.shiki.hu/index.php/topic,2134.0.html Here] is the corresponding forum topic.
 
 == Transfer lists ==
 *'''Use alternating row colors''' - using alternating row colors makes it easier for the human eye to read lists from a short distance. It is enabled by default, disable it if you choose.
@@ -56,8 +56,8 @@ This allows you to run a program on finishing certain types of torrents in a cer
 = Connection =
 
 == Listening Port ==
-* '''Port used for incoming connections''' - either specify the [http://whatismyipaddress.com/port port] or choose a random one.
-* '''Use UPnP/ NAT-PMP port forwarding from my router''' - for a helpful introduction to port forwarding, go [https://en.wikipedia.org/wiki/Port_forwarding here], or [http://netforbeginners.about.com/od/p/f/What-Is-Port-Forwarding.htm here].
+* '''Port used for incoming connections''' - either specify the [https://whatismyipaddress.com/port port] or choose a random one.
+* '''Use UPnP/ NAT-PMP port forwarding from my router''' - for a helpful introduction to port forwarding, go [https://en.wikipedia.org/wiki/Port_forwarding here], or [https://www.lifewire.com/what-is-port-forwarding-2483494 here].
 * '''Use different port on each startup''' voids the first option, and randomly assigns a different port every time qBittorrent starts up.
 
 == Connection Limits ==

@@ -29,7 +29,7 @@ Then compile qBittorrent as usual:
 qBittorrent-nox can be launched as usual with the following command:
  qbittorrent-nox
 
-Note that qBittorrent-nox is a terminal application and it will not run as a daemon. As a consequence, it is advised to run qBittorrent-nox within [http://www.gnu.org/software/screen/ GNU Screen], using '''detach''' feature so that the user can conveniently logout from the system while keeping the file transfers active.
+Note that qBittorrent-nox is a terminal application and it will not run as a daemon. As a consequence, it is advised to run qBittorrent-nox within [https://www.gnu.org/software/screen/ GNU Screen], using '''detach''' feature so that the user can conveniently logout from the system while keeping the file transfers active.
 
 == Control qBittorrent-nox ==
 qBittorrent-nox ships a feature-rich Web UI that is almost identical to qBittorrent graphical user interface. The Web UI can be accessed via most Web Browsers (including Firefox, Chromium, IE7/8).
@@ -61,11 +61,11 @@ qBittorrent-nox does not need as many dependencies as standard qBittorrent becau
 == How to run qbittorrent-nox on startup ==
 Warning! Ubuntu 15.04 switched to Systemd. Please refer to the Ubuntu server Guide mentioned at the top of this article.
 
-A qBittorrent user (Jakster) wrote an init script for Debian to run qbittorrent-nox on startup.<br />This script can be found [http://launchpadlibrarian.net/38905385/qbittorrent here] | [http://pastebin.com/nvMZiAxQ mirror] | [https://qbforums.shiki.hu/index.php/topic,3483.0.html mirror2].
+A qBittorrent user (Jakster) wrote an init script for Debian to run qbittorrent-nox on startup.<br />This script can be found [https://launchpadlibrarian.net/38905385/qbittorrent here] | [https://pastebin.com/nvMZiAxQ mirror] | [https://qbforums.shiki.hu/index.php/topic,3483.0.html mirror2].
 Save it in ''/etc/init.d/'' folder, under the name ''qbittorrent-nox-daemon''.
 
 You can do this in one step, by issuing this command:
- sudo wget -O /etc/init.d/qbittorrent-nox-daemon http://launchpadlibrarian.net/38905385/qbittorrent
+ sudo wget -O /etc/init.d/qbittorrent-nox-daemon https://launchpadlibrarian.net/38905385/qbittorrent
 
 However, always make sure you got the proper content. Check the link and the mirror.<br />Make sure the downloaded file is correct as well, by opening it in the text editor 'nano'.
  nano -w /etc/init.d/qbittorrent-nox-daemon

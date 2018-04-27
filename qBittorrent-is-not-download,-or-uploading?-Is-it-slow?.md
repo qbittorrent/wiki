@@ -1,5 +1,5 @@
 **First and foremost**: Make sure you are using the latest qBittorrent available for your system.  
-You can download the latest version from here: http://qbittorrent.org/   
+You can download the latest version from here: https://qbittorrent.org/   
   
 With that out of the way, let's see what can go wrong.  
 The easiest way to see where the problem lies is, disabling everything in between your PC and your Internet Modem. So basically bring your PC to the modem, hook up directly without any router, wifi, anything. Disable Proxy and VPN if you have any and test. Does it work? No? Then try it with a second PC. Still not? Head to our forums and we will help you.

@@ -48,7 +48,7 @@ A lot of other BitTorrent clients exist but qBittorrent has several advantages:
 * It is the closest open-source equivalent to the extremely popular (and Windows only) BitTorrent client: [https://www.utorrent.com µTorrent].
 * Its development team is very active and friendly.
 * It is stable and it has a low footprint (generally, 20-60 MiB of RAM used), whilst providing all the features you may need.
-* It uses the high-tech [http://libtorrent.org/ libtorrent-rasterbar] library, which means greater download and upload speed as well as excellent support of the latest features of the BitTorrent protocol.
+* It uses the high-tech [https://libtorrent.org/ libtorrent-rasterbar] library, which means greater download and upload speed as well as excellent support of the latest features of the BitTorrent protocol.
 * It is easy to use and all of its features are well documented.
 * It is an international program, supporting Unicode and containing translations into more than 70 languages.
 
