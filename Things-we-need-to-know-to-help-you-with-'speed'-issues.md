@@ -11,7 +11,7 @@ Turn off any and all BitTorrent clients that are running, open [Speedtest.net](h
 
 ## Version and Operating System
 
-This is essential. Also before asking, please ensure that you are using the latest release for your OS. See the [news page](http://www.qbittorrent.org/news.php) first, as we do not support older versions of qBittorrent.
+This is essential. Also before asking, please ensure that you are using the latest release for your OS. See the [news page](https://www.qbittorrent.org/news.php) first, as we do not support older versions of qBittorrent.
 
 ## qBittorrent Settings Information
 

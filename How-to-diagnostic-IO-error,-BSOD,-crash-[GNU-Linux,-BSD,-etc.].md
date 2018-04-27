@@ -26,8 +26,8 @@ In short, on 99% of the Linux distributions out there, there will be a "Memtest"
 * https://help.ubuntu.com/community/MemoryTest
 
 ## Any OS
-* http://www.memtest86.com  
-* http://www.howtogeek.com/260813/how-to-test-your-computers-ram-for-problems/
+* https://www.memtest86.com  
+* https://www.howtogeek.com/260813/how-to-test-your-computers-ram-for-problems/
 
 Basically you have to download Memtest86 and put it on a pendrive, CD or DVD.
 Boot it, and it will check your RAM.
@@ -40,7 +40,7 @@ Download the latest Ubuntu LTS version (16.04 at the moment), and put it on a pe
 ## Windows
 There are many great free tools for this.
 * https://hddguardian.codeplex.com  
-* http://crystalmark.info/software/CrystalDiskInfo/index-e.html
+* https://crystalmark.info/en/software/crystaldiskinfo/
 
 ## Ubuntu
 * https://askubuntu.com/questions/528072/how-can-i-check-the-smart-status-of-a-drive-on-ubuntu-14-04-through-16-10

@@ -2,14 +2,14 @@ This page describes how to compile 32-bit qBittorrent using MSVC 2015 under Wind
 
 === What you will need: ===
 * The MSVC 2015 compiler. The Community Edition(free) will do fine.
-* A [http://www.perl.org/ Perl language] interpreter. [http://strawberryperl.com/ Strawberry Perl] will do fine.
-* Latest release of the [http://www.nasm.us/ NASM assembler].
-* Latest release of [http://www.zlib.net/ Zlib].
-* Latest release of [http://www.openssl.org/ OpenSSL].
-* Latest release of the [http://www.boost.org/ Boost libraries].
-* Latest release of [http://www.libtorrent.com/ libtorrent(rasterbar)].
+* A [https://www.perl.org/ Perl language] interpreter. [http://strawberryperl.com/ Strawberry Perl] will do fine.
+* Latest release of the [https://www.nasm.us/ NASM assembler].
+* Latest release of [https://www.zlib.net/ Zlib].
+* Latest release of [https://www.openssl.org/ OpenSSL].
+* Latest release of the [https://www.boost.org/ Boost libraries].
+* Latest release of [https://www.libtorrent.com/ libtorrent(rasterbar)].
 * Latest release of the [https://www.qt.io/ Qt libraries] source. Both Qt5 and Qt4 is supported. But the official builds use Qt5.
-* Latest release of [http://www.qbittorrent.org qBittorrent].
+* Latest release of [https://www.qbittorrent.org qBittorrent].
 * [https://www.qt.io/download-open-source/#section-6 Qt Creator].
 
 === Info that applies to all steps ===

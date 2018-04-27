@@ -16,7 +16,7 @@ We tried not to put much html code in the translatable strings but some of them 
 
 * `%1`, `%2`, `%3`...<br>
 These were introduced to give the translator more flexibility. They must appear *as is* in the translated string but their location *can* change (this is the point). Some languages require that some words are moved in the sentence in order to be understandable. (i.e.: `Finished to download %1.` can be translated in french as `Le téléchargement de %1 est terminé.`)<br>
-![Percentages.png](http://www.qbittorrent.org/wiki-images/Percentages.png)
+![Percentages.png](https://www.qbittorrent.org/wiki-images/Percentages.png)
 
 * Keyboard shortcuts: `&`<br>
 They should be present in the translation too. Just recopy them at the same location.

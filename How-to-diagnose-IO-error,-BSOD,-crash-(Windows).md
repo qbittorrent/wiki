@@ -42,8 +42,8 @@ The `c:\symbols` will be your local symbol cache. I would suggest using somethin
 
 ### Alternatives
 In case Windows's in-built test does not work for you.
-* http://www.memtest86.com  
-* http://www.howtogeek.com/260813/how-to-test-your-computers-ram-for-problems/
+* https://www.memtest86.com  
+* https://www.howtogeek.com/260813/how-to-test-your-computers-ram-for-problems/
 
 You have to download Memtest86 and put it on a pendrive, CD or DVD.
 Boot it, and it will check your RAM.
@@ -61,10 +61,10 @@ Download the latest Ubuntu LTS version (16.04 at the moment), and put it on a pe
 ### Windows
 There are many great free tools for this.
 * https://hddguardian.codeplex.com  
-* http://crystalmark.info/software/CrystalDiskInfo/index-e.html
+* https://crystalmark.info/en/software/crystaldiskinfo/
 
 ### Ubuntu
-If you can't boot Windows, you can use an [Ubuntu Live CD](http://www.howtogeek.com/191054/how-to-create-bootable-usb-drives-and-sd-cards-for-every-operating-system/) to diagnose your HDD.
+If you can't boot Windows, you can use an [Ubuntu Live CD](https://www.howtogeek.com/191054/how-to-create-bootable-usb-drives-and-sd-cards-for-every-operating-system/) to diagnose your HDD.
 * https://askubuntu.com/questions/528072/how-can-i-check-the-smart-status-of-a-drive-on-ubuntu-14-04-through-16-10
 * https://askubuntu.com/questions/38566/how-can-i-check-the-health-of-my-hard-drive  
 
@@ -96,7 +96,7 @@ In this case, it's usually a good test to put load on your PC.
 ### Windows
 
 Run the two programs at the same time.
-[Prime95](http://www.mersenne.org/download/) stresses your CPU, [Furmark](http://www.ozone3d.net/benchmarks/fur/) stresses your GPU.
+[Prime95](https://www.mersenne.org/download/) stresses your CPU, [FurMark](http://www.ozone3d.net/benchmarks/fur/) stresses your GPU.
 
 If your PC is stable after a few minutes, just close them.
 If you have a BSOD, or the computer restarts/turns off, you have a bad PSU.

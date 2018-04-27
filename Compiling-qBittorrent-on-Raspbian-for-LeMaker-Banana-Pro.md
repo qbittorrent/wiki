@@ -30,13 +30,13 @@ _[ at the time of this writing, Qt5 libraries were not available for Raspbian on
 
 # Libtorrent
 
-[Libtorrent](http://www.libtorrent.org ) is a library written by Arvid Norberg that qBittorrent depends on. It is necessary to compile and install libtorrent before compiling qBittorrent.
+[Libtorrent](https://www.libtorrent.org ) is a library written by Arvid Norberg that qBittorrent depends on. It is necessary to compile and install libtorrent before compiling qBittorrent.
 
 Default Raspbian distro packages a very old _(and very unstable)_ version of  libtorrent, hence you will need to compile it yourself.
 
 ### Notes:
 
-The procedure for compiling and installing Libtorrent on B-Pro is derived from the [Deluge Wiki](http://dev.deluge-torrent.org/wiki/Building/libtorrent): some minor adjustments have been made to the procedure in order to work correctly on B-Pro.
+The procedure for compiling and installing Libtorrent on B-Pro is derived from the [Deluge Wiki](https://dev.deluge-torrent.org/wiki/Building/libtorrent): some minor adjustments have been made to the procedure in order to work correctly on B-Pro.
 
 ## Install dependencies for libtorrent build automatically, using build-dep:
     sudo apt-get build-dep libtorrent-rasterbar
@@ -87,7 +87,7 @@ To overcome this error and configure correctly you must issue the following comm
 
 Now that each prerequisite has been completed you mut obtain the qBittorrent source code. 
 
-Either download and extract a .tar archive from [Sourceforge]( http://sourceforge.net/projects/qbittorrent/files/qbittorrent/) or use the following commands to speed-up the process.
+Either download and extract a .tar archive from [Sourceforge]( https://sourceforge.net/projects/qbittorrent/files/qbittorrent/) or use the following commands to speed-up the process.
 
 `   git clone https://github.com/qbittorrent/qBittorrent`
 
@@ -123,7 +123,7 @@ To overcome this error and configure correctly you must issue the following comm
 
 Now that each prerequisite has been completed you mut obtain the qBittorrent source code. 
 
-Either download and extract a .tar archive from [Sourceforge]( http://sourceforge.net/projects/qbittorrent/files/qbittorrent/) or use the following commands to speed-up the process.
+Either download and extract a .tar archive from [Sourceforge]( https://sourceforge.net/projects/qbittorrent/files/qbittorrent/) or use the following commands to speed-up the process.
 
 `   git clone https://github.com/qbittorrent/qBittorrent`
 
@@ -219,4 +219,4 @@ This work has been realized putting togheter personal knowledge and information 
 
 **Thanks to** [**SledgeHammer**](https://github.com/qbittorrent/qBittorrent/wiki/Compiling-qBittorrent-on-Debian-and-Ubuntu) for providing a solid template for compiling and running qBittorrent under Debian. 
 
-**Thanks to** [**Cas**](http://dev.deluge-torrent.org/wiki/Building/libtorrent) from Deluge Wiki for explaining how to compile libtorrent_rastebar under Debian with the use of checkinstall.
+**Thanks to** [**Cas**](https://dev.deluge-torrent.org/wiki/Building/libtorrent) from Deluge Wiki for explaining how to compile libtorrent_rastebar under Debian with the use of checkinstall.

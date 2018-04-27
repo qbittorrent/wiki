@@ -3,14 +3,14 @@ This page describes how to compile 64-bit qBittorrent using MSVC 2017 under Wind
 === What you will need: ===
 * The MSVC 2017 compiler. The Community Edition(free) will do fine.
 * A [https://www.python.org/downloads/windows/ python] interpreter. Make sure it is added to the path.
-* A [http://www.perl.org/ Perl language] interpreter. [http://strawberryperl.com/ Strawberry Perl] will do fine.
-* Latest release of the [http://www.nasm.us/ NASM assembler].
-* Latest release of [http://www.zlib.net/ Zlib].
-* Latest release of [http://www.openssl.org/ OpenSSL].
-* Latest release of the [http://www.boost.org/ Boost libraries].  Currently tested only with boost 1.64.
-* Latest release of [http://www.libtorrent.com/ libtorrent(rasterbar)].
+* A [https://www.perl.org/ Perl language] interpreter. [http://strawberryperl.com/ Strawberry Perl] will do fine.
+* Latest release of the [https://www.nasm.us/ NASM assembler].
+* Latest release of [https://www.zlib.net/ Zlib].
+* Latest release of [https://www.openssl.org/ OpenSSL].
+* Latest release of the [https://www.boost.org/ Boost libraries].  Currently tested only with boost 1.64.
+* Latest release of [https://www.libtorrent.com/ libtorrent(rasterbar)].
 * Latest release of the [https://www.qt.io/ Qt libraries] source. Currently tested only with Qt Everywhere '''5.9.0 beta3'''. 
-* Latest release of [http://www.qbittorrent.org qBittorrent].
+* Latest release of [https://www.qbittorrent.org qBittorrent].
 * [https://www.qt.io/download-open-source/#section-6 Qt Creator].
 
 === Info that applies to all steps ===
