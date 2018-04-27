@@ -389,7 +389,7 @@ where
 `max_active_downloads` - maximum number of active simultaneous downloads<br/>
 `max_active_torrents` - maximum number of active simultaneous downloads and uploads<br/>
 `max_active_uploads` - maximum number of active simultaneous uploads<br/>
-`dont_count_slow_torrents` - if true torrents w/o any activity (stalled ones) will not be counted towards `max_active_*` limits; see [dont_count_slow_torrents](http://www.rasterbar.com/products/libtorrent/manual.html#session-customization) for more information<br/>
+`dont_count_slow_torrents` - if true torrents w/o any activity (stalled ones) will not be counted towards `max_active_*` limits; see [dont_count_slow_torrents](https://www.libtorrent.org/reference-Settings.html#dont_count_slow_torrents) for more information<br/>
 `incomplete_files_ext` - if true `.!qB` extension will be appended to incomplete files<br/>
 `listen_port` - port for incoming connections<br/>
 `upnp` - true if UPnP/NAT-PMP is enabled<br/>
