@@ -8,7 +8,7 @@ This page describes how to compile 64-bit qBittorrent using MSVC 2017 under Wind
 * Latest release of [https://www.zlib.net/ Zlib].
 * Latest release of [https://www.openssl.org/ OpenSSL].
 * Latest release of the [https://www.boost.org/ Boost libraries].  Currently tested only with boost 1.64.
-* Latest release of [https://www.libtorrent.com/ libtorrent(rasterbar)].
+* Latest release of [https://www.libtorrent.org/ libtorrent(rasterbar)].
 * Latest release of the [https://download.qt.io/official_releases/qt/ Qt libraries] source. Currently tested only with Qt Everywhere '''5.9.0 beta3'''. 
 * Latest release of [https://www.qbittorrent.org qBittorrent].
 * [https://download.qt.io/official_releases/qtcreator/ Qt Creator].
