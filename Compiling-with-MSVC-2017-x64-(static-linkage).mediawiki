@@ -9,9 +9,9 @@ This page describes how to compile 64-bit qBittorrent using MSVC 2017 under Wind
 * Latest release of [https://www.openssl.org/ OpenSSL].
 * Latest release of the [https://www.boost.org/ Boost libraries].  Currently tested only with boost 1.64.
 * Latest release of [https://www.libtorrent.com/ libtorrent(rasterbar)].
-* Latest release of the [https://www.qt.io/ Qt libraries] source. Currently tested only with Qt Everywhere '''5.9.0 beta3'''. 
+* Latest release of the [https://download.qt.io/official_releases/qt/ Qt libraries] source. Currently tested only with Qt Everywhere '''5.9.0 beta3'''. 
 * Latest release of [https://www.qbittorrent.org qBittorrent].
-* [https://www.qt.io/download-open-source/#section-6 Qt Creator].
+* [https://download.qt.io/official_releases/qtcreator/ Qt Creator].
 
 === Info that applies to all steps ===
 * Let's assume that the working directory for our compilation will be <code>G:\QBITTORRENT</code>
@@ -113,7 +113,7 @@ This page describes how to compile 64-bit qBittorrent using MSVC 2017 under Wind
 * Extract the qBittorrent sources in the working dir.
 * Launch Qt Creator and open the ''qbittorrent.pro'' file in ''G:\QBITTORRENT\qbittorrent-3.3.12''
 * From the Window that pops up select the Qt version you added above and specify '''release''' version. Also check the ''Use Shadow Building'' checkbox. You can also select where qBittorrent will be built if you want.
-* Open the ''winconf.pri'' file and adjust the paths. Disregard most of the file comments(read next step).
+* If you are compiling qBittorrent <code>v3_3_x</code> branch, open the ''winconf.pri'' file and adjust the paths. If <code>v4_0_x</code> branch is used, open ''conf.pri.windows'', save it as ''conf.pri'' and adjust the paths. Disregard most of the file comments(read next step).
 * Edit the first INCLUDEPATH to look like this:
  INCLUDEPATH += $$quote(G:/qBittorrent/install_msvc64/base/include)
 * Edit the second INCLUDEPATH to look like this(adjust for actual boost name):
@@ -122,6 +122,8 @@ This page describes how to compile 64-bit qBittorrent using MSVC 2017 under Wind
 * Edit the first LIBS to look like this:
  LIBS += $$quote(-LG:/qBittorrent/install_msvc64/base/lib)
 * Comment the other 3 LIBS lines by putting # in front of them.
-* Open the ''winconf-msvc.pri'' file and adjust the filename of the lib of Boost.
+* If you are compiling <code>v3_3_x</code> branch, open the ''winconf-msvc.pri'' file and adjust the filename of the lib of Boost. If <code>v4_0_x</code> branch is used, adjust it in ''conf.pri''.
+* If you are compiling <code>v4_0_x</code> branch against libtorrent 1.0.x, uncomment the following line in ''conf.pri''
+ DEFINES += BOOST_ASIO_SEPARATE_COMPILATION
 * Select Build->Build All
 * After the compilation ends you should have ''qbittorrent.exe'' in <code><build folder>\src\release</code>. "build folder" is where you chose qBittorrent to be build in the popup window.
