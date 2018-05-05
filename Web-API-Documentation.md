@@ -1,5 +1,5 @@
 ## Note
-This Web API documentation applies qBittorrent v4.0.5+, for previous API version read its documentation at [here](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-Documentation).
+This Web API documentation applies qBittorrent v4.1+, for previous API version read its documentation at [here](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-Documentation).
 
 # Table of Contents #
 
