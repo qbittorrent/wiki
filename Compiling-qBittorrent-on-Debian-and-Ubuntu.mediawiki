@@ -7,7 +7,7 @@ This guide is written for Debian/Ubuntu, but the process should be similar for o
 == Required dependencies ==
 * General required dependencies
  sudo apt-get install build-essential pkg-config automake libtool git
- sudo apt-get install libboost-dev libboost-system-dev libboost-chrono-dev libboost-random-dev libssl-dev
+ sudo apt-get install libboost-dev libboost-system-dev libboost-chrono-dev libboost-random-dev libssl-dev libgeoip-dev
 
 * Qt libraries
  sudo apt-get install qtbase5-dev qttools5-dev-tools libqt5svg5-dev
