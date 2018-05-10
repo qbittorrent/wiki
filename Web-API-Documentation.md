@@ -1842,3 +1842,30 @@ Parameter                         | Type    | Description
 ----------------------------------|---------|------------
 `ruleName`                        | string  | Rule name (e.g. "Punisher")
 
+### Get all auto-downloading rules ###
+
+Name: `rules`
+
+Returns all auto-downloading rules in JSON format, e.g.:
+```json
+{
+    "The Punisher": {
+        "enabled": false,
+        "mustContain": "The *Punisher*",
+        "mustNotContain": "",
+        "useRegex": false,
+        "episodeFilter": "1x01-;",
+        "smartFilter": false,
+        "previouslyMatchedEpisodes": [
+        ],
+        "affectedFeeds": [
+            "http://showrss.info/user/134567.rss?magnets=true"
+        ],
+        "ignoreDays": 0,
+        "lastMatch": "20 Nov 2017 09:05:11",
+        "addPaused": true,
+        "assignedCategory": "",
+        "savePath": "C:/Users/JohnDoe/Downloads/Punisher"
+    }
+}
+```
