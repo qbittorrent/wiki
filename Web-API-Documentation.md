@@ -1691,3 +1691,17 @@ No matter if successful or not server will return the following reply:
 ```http
 HTTP/1.1 200 OK
 ```
+
+# RSS (Experimental) #
+
+All RSS API methods are under "rss", e.g.: `/api/v2/rss/methodName`.
+
+### Add folder ###
+
+Name: `addFolder`
+Parameters:
+Parameter                         | Type    | Description
+----------------------------------|---------|------------
+`path`                            | string  | Full path of added folder (e.g. "AllNewMovies/Actions")
+
+
