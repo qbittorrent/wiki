@@ -1699,7 +1699,9 @@ All RSS API methods are under "rss", e.g.: `/api/v2/rss/methodName`.
 ### Add folder ###
 
 Name: `addFolder`
+
 Parameters:
+
 Parameter                         | Type    | Description
 ----------------------------------|---------|------------
 `path`                            | string  | Full path of added folder (e.g. "AllNewMovies/Actions")
