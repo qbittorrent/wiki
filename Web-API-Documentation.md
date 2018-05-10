@@ -61,6 +61,12 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
    1. [Set first/last piece priority](#set-firstlast-piece-priority)
    1. [Set force start](#set-force-start)
    1. [Set super seeding](#set-super-seeding)
+1. [RSS (experimental)](#rss-experimental)
+   1. [Add folder](#add-folder)
+   1. [Add feed](#add-feed)
+   1. [Remove item](#remove-item)
+   1. [Move item](#move-item)
+   1. [Get all items](#get-all-items)
 
 ***
 
@@ -1692,7 +1698,7 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
-# RSS (Experimental) #
+# RSS (experimental) #
 
 All RSS API methods are under "rss", e.g.: `/api/v2/rss/methodName`.
 
@@ -1704,6 +1710,62 @@ Parameters:
 
 Parameter                         | Type    | Description
 ----------------------------------|---------|------------
-`path`                            | string  | Full path of added folder (e.g. "AllNewMovies/Actions")
+`path`                            | string  | Full path of added folder (e.g. "The Pirate Bay/Top100")
 
+### Add feed ###
 
+Name: `addFeed`
+
+Parameters:
+
+Parameter                         | Type    | Description
+----------------------------------|---------|------------
+`url`                             | string  | URL of RSS feed (e.g. "http://thepiratebay.org/rss//top100/200")
+`path` *optional*                 | string  | Full path of added folder (e.g. "The Pirate Bay/Top100/Video")
+
+### Remove item ###
+
+Removes folder or feed.
+
+Name: `removeItem`
+
+Parameters:
+
+Parameter                         | Type    | Description
+----------------------------------|---------|------------
+`path`                            | string  | Full path of removed item (e.g. "The Pirate Bay/Top100")
+
+### Move item ###
+
+Moves/renames folder or feed.
+
+Name: `moveItem`
+
+Parameters:
+
+Parameter                         | Type    | Description
+----------------------------------|---------|------------
+`itemPath`                        | string  | Current full path of item (e.g. "The Pirate Bay/Top100")
+`destPath`                        | string  | New full path of item (e.g. "The Pirate Bay")
+
+### Get all items ###
+
+Returns all RSS items in JSON format, e.g.:
+```JSON
+{
+    "HD-Torrents.org": "https://hd-torrents.org/rss.php",
+    "PowerfulJRE": "https://www.youtube.com/feeds/videos.xml?channel_id=UCzQUP1qoWDoEbmsQxvdjxgQ",
+    "The Pirate Bay": {
+        "Audio": "https://thepiratebay.org/rss//top100/100",
+        "Video": "https://thepiratebay.org/rss//top100/200"
+    }
+}
+```
+
+Name: `items`
+
+Parameters:
+
+Parameter                         | Type    | Description
+----------------------------------|---------|------------
+`withData`                        | bool    | True if you need current feed articles
