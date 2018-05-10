@@ -67,6 +67,10 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
    1. [Remove item](#remove-item)
    1. [Move item](#move-item)
    1. [Get all items](#get-all-items)
+   1. [Set auto-downloading rule](#set-auto-downloading-rule)
+   1. [Rename auto-downloading rule](#rename-auto-downloading-rule)
+   1. [Remove auto-downloading rule](#remove-auto-downloading-rule)
+   1. [Get all auto-downloading rules](#get-all-auto-downloading-rules)
 
 ***
 
