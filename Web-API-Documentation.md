@@ -1750,6 +1750,14 @@ Parameter                         | Type    | Description
 
 ### Get all items ###
 
+Name: `items`
+
+Parameters:
+
+Parameter                         | Type    | Description
+----------------------------------|---------|------------
+`withData` *optional*             | bool    | True if you need current feed articles
+
 Returns all RSS items in JSON format, e.g.:
 ```JSON
 {
@@ -1762,10 +1770,75 @@ Returns all RSS items in JSON format, e.g.:
 }
 ```
 
-Name: `items`
+### Set auto-downloading rule ###
+
+Name: `setRule`
 
 Parameters:
 
 Parameter                         | Type    | Description
 ----------------------------------|---------|------------
-`withData`                        | bool    | True if you need current feed articles
+`ruleName`                        | string  | Rule name (e.g. "Punisher")
+`ruleDef`                         | string  | JSON encoded rule definition
+
+Rule definition is JSON encoded dictionary with the following fields:
+
+Field                             | Type    | Description
+----------------------------------|---------|------------
+`enabled`                         | bool    | Whether the rule is enabled
+`mustContain`                     | string  | The substring that the torrent name must contain
+`mustNotContain`                  | string  | The substring that the torrent name must not contain
+`useRegex`                        | bool    | Enable regex mode in "mustContain" and "mustNotContain"
+`episodeFilter`                   | string  | Episode filter definition
+`smartFilter`                     | bool    | Enable smart episode filter
+`previouslyMatchedEpisodes`       | list    | The list of episode IDs already matched by smart filter
+`affectedFeeds`                   | list    | The feed URLs the rule applied to
+`ignoreDays`                      | number  | Ignore sunsequent rule matches
+`lastMatch`                       | string  | The rule last match time
+`addPaused`                       | bool    | Add matched torrent in paused mode
+`assignedCategory`                | string  | Assign category to the torrent
+`savePath`                        | string  | Save torrent to the given directory
+
+E.g.:
+```json
+{
+    "enabled": false,
+    "mustContain": "The *Punisher*",
+    "mustNotContain": "",
+    "useRegex": false,
+    "episodeFilter": "1x01-;",
+    "smartFilter": false,
+    "previouslyMatchedEpisodes": [
+    ],
+    "affectedFeeds": [
+        "http://showrss.info/user/134567.rss?magnets=true"
+    ],
+    "ignoreDays": 0,
+    "lastMatch": "20 Nov 2017 09:05:11",
+    "addPaused": true,
+    "assignedCategory": "",
+    "savePath": "C:/Users/JohnDoe/Downloads/Punisher"
+}
+```
+
+### Rename auto-downloading rule ###
+
+Name: `renameRule`
+
+Parameters:
+
+Parameter                         | Type    | Description
+----------------------------------|---------|------------
+`ruleName`                        | string  | Rule name (e.g. "Punisher")
+`newRuleName`                     | string  | New rule name (e.g. "The Punisher")
+
+### Remove auto-downloading rule ###
+
+Name: `removeRule`
+
+Parameters:
+
+Parameter                         | Type    | Description
+----------------------------------|---------|------------
+`ruleName`                        | string  | Rule name (e.g. "Punisher")
+
