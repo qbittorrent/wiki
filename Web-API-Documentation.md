@@ -706,6 +706,7 @@ Param     | Description
 `reverse` | Enable reverse sorting. Possible values are `true` and `false` (default)
 `limit`   | Limit the number of torrents returned
 `offset`  | Set offset (if less than 0, offset from end)
+`hashes`  | Filter by hashes. Can contain multiple hashes separated by `\|`
 
 Example:
 ```http
