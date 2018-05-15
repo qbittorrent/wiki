@@ -286,6 +286,10 @@ Property                          | Type    | Description
 `dyndns_username`                 | string  | Username for DDNS service
 `dyndns_password`                 | string  | Password for DDNS service
 `dyndns_domain`                   | string  | Your DDNS domain name
+`rss_refresh_interval`            | integer | RSS refresh interval
+`rss_max_articles_per_feed`       | integer | Max stored articles per RSS feed
+`rss_processing_enabled`          | bool    | Enable processing of RSS feeds
+`rss_auto_downloading_enabled`    | bool    | Enable auto-downloading of torrents from the RSS feeds
 
 Possible values of `scheduler_days`:
 
