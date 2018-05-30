@@ -275,7 +275,7 @@ Property                          | Type    | Description
 `web_ui_upnp`                     | bool    | True if UPnP is used for the WebUI port
 `web_ui_username`                 | string  | WebUI username
 `web_ui_password`                 | string  | MD5 hash of WebUI password; hash is generated from the following string: `username:Web UI Access:plain_text_web_ui_password`
-`web_ui_csrf_protection_enabled` | bool | True if WebUI CSRF protection is enabled
+`web_ui_csrf_protection_enabled`  | bool    | True if WebUI CSRF protection is enabled
 `web_ui_clickjacking_protection_enabled` | bool | True if WebUI clickjacking protection is enabled
 `bypass_local_auth`               | bool    | True if authentication challenge for loopback address (127.0.0.1) should be disabled
 `bypass_auth_subnet_whitelist_enabled` | bool | True if webui authentication should be bypassed for clients whose ip resides within (at least) one of the subnets on the whitelist
