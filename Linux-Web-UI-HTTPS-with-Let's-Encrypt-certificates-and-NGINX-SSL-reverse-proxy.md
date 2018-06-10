@@ -1,7 +1,7 @@
 # Introduction
 This is probably the easiest, most extensible and trouble-free way of setting up qBittorrent's WebUI with SSL. It combines ideas from these other articles of the wiki: [1][qbt-webui-https], [2][qbt-reverse-proxy].
 
-The benefit of this setup is that with one single domain and certificate you are able to setup access to various different services in your server alongside one another. For example, you may have qBittorrent's WebUI accessible at `yourdomain.com/qbt`, your Nextcloud instance at `yourdomain.com/nextcloud`, etc.
+The benefit of this setup is that with one single domain and certificate you are able to setup secure HTTPS access to various different services in your server alongside one another. For example, you may have qBittorrent's WebUI accessible at `yourdomain.com/qbt`, a simple homepage served with Apache at `yourdomain.com`, your Nextcloud instance at `yourdomain.com/nextcloud`, etc.
 
 This guide assumes you have a working qbitorrent-nox setup (check [this][qbt-nox-wiki-setup] article if you haven't).
 This guide also assumes that:
@@ -19,13 +19,13 @@ You <-------HTTPS (secure)-------|->  NGINX <----HTTP-----> qbittorrent WebUI   
 
 # Install the prerequisites
 ## Install `certbot`
-[`certbot`][certbot-url] is the recommended ACME client for requesting and managing Let's Encrypt certificates. It is available on the official Ubuntu repositories, but there is an official PPA always updated with the most recent stable version, so that is the one to install. You will also need the `niginx` plugin.
+[`certbot`][certbot-url] is the recommended ACME client for requesting and managing Let's Encrypt certificates. It is available on the official Ubuntu repositories, but there is an official PPA always updated with the most recent stable version, so that is the one to install. You will also need the `nginx` plugin.
 ```shell
 sudo apt update && sudo apt upgrade -y # first update all packages in the system
 sudo add-apt-repository ppa:certbot/certbot
 sudo apt update
 sudo apt install certbot 
-sudo apt install python-certbot-nginx # this is the nginx plugin
+sudo apt install python-certbot-nginx # this is needed for the nginx plugin
 ```
 
 ## Install `nginx`
@@ -40,8 +40,8 @@ sudo apt install nginx
 
 ## Setup the Web UI
 
-Access your WebUI, and go to Tools->Options->WebUI
-Change the following settings if they are not already like so:
+1. Access your WebUI, and go to Tools -> Options -> WebUI
+2. Change the following settings if they are not already like so:
 * Server domains: 127.0.0.1
 * Port: some free port on your system that is NOT accessible through the outside world. In this case we will use 30000
 * Use UPnP / NAT-PMP to forward the port from my router: unchecked.
@@ -53,22 +53,21 @@ Change the following settings if they are not already like so:
 1. Forward ports 80 and 443 in your router, and let the them through your firewall.
 If you have `ufw` as your system firewall, it is as simple as `sudo ufw allow 80 && sudo ufw allow 443 && sudo ufw reload`
 
-1. Clear the default files
+2. Clear the default files
 ```shell
 sudo rm /etc/nginx/sites-available/*
 sudo rm /etc/nginx/sites-enabled/*
 ```
-
-1. Stop the `nginx` if it is running
+3. Stop the `nginx` if it is running
 `sudo systemctl stop nginx.service`
 
-1. Create a config file for your reverse proxy
+4. Create a config file for your reverse proxy
 ```shell
 sudo touch /etc/nginx/sites-available/yoursite
 cd /etc/nginx/sites-enabled/
 sudo ln -s /etc/nginx/sites-available/yoursite yoursite 
 ```
-1. Open the file with your favourite text editor and paste something like the following (read the comments, which start with `#` to know what you have to change):
+5. Open the file with your favourite text editor and paste something like the following (read the comments, which start with `#` to know what you have to change):
 ```shell
 # change "yourdomain.com" and similar to your actual domain
 server {
@@ -141,7 +140,7 @@ Note: the following five options used above are optional, but good for hardened 
 * --uir
 * --staple-ocsp
 
-Refer to the [documentation][certbot-docs-cmd-opt] for more info
+Refer to the [documentation][certbot-docs-cmd-opt] for more info.
 
 # Test your setup
 
@@ -171,7 +170,7 @@ Example for a simple homepage with Apache:
 ```
 Don't forget to create the symbolic link at `/etc/apache2/sites-enabled`.
 
-Restart nginx and apache. You should now have:
+4. Restart nginx and apache. You should now have:
 * A simple homepage, at `yourdomain.com`
 * qBittorrent WebUI at `yourdomain.com/qbt`
 
