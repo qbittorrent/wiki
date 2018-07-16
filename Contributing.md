@@ -7,7 +7,7 @@ If you want to contribute code to the project, you are going to need your own co
 To make it easier for you, create a git branch for your new code from the very beginning (if you didn't, create a branch right now and cherry-pick your commits into the new branch).
 
 Then make your changes, commit them to your feature branch (let's call it `my-feature`). You may split your changes on several commits if that makes sense. When you are done, push your changes into your fork (this remote repository will be named `origin` in your local repository by default). So, push your changes via `git push`.
-Now go to [qBittorrent GitHup page](https://github.com/qbittorrent/qBittorrent) and create your pull request.
+Now go to [qBittorrent GitHub page](https://github.com/qbittorrent/qBittorrent) and create your pull request.
 
 ## Updating your pull request ##
 
