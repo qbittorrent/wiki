@@ -48,4 +48,4 @@ Check my [[other Wiki article|How to diagnose IO error, BSOD, crash (Windows)]].
 
 ### Hardware problems [Linux]
 
-Check my [[other Wiki article|How to diagnose IO error, BSOD, crash (Linux)]]. See HDD section.
+Check my [other Wiki article](https://github.com/qbittorrent/qBittorrent/wiki/How-to-diagnostic-IO-error,-BSOD,-crash-%5BGNU-Linux,-BSD,-etc.%5D). See HDD section.
