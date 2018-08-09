@@ -40,6 +40,7 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
    1. [Resume torrents](#resume-torrents)
    1. [Delete torrents](#delete-torrents)
    1. [Recheck torrents](#recheck-torrents)
+   1. [Reannounce torrents](#reannounce-torrents)
    1. [Add new torrent](#add-new-torrent)
    1. [Add trackers to torrent](#add-trackers-to-torrent)
    1. [Increase torrent priority](#increase-torrent-priority)
@@ -1100,6 +1101,30 @@ Requires knowing the torrent hashes. You can get it from [torrent list](#get-tor
 
 ```http
 POST /api/v2/torrents/recheck HTTP/1.1
+User-Agent: Fiddler
+Host: 127.0.0.1
+Cookie: SID=your_sid
+Content-Type: application/x-www-form-urlencoded
+Content-Length: length
+
+hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32
+```
+
+`hashes` can contain multiple hashes separated by `|` or set to `all`
+If `hashes=all` it will recheck all torrents
+
+No matter if successful or not server will return the following reply:
+
+```http
+HTTP/1.1 200 OK
+```
+
+### Reannounce torrents ###
+
+Requires knowing the torrent hashes. You can get it from [torrent list](#get-torrent-list).
+
+```http
+POST /api/v2/torrents/reannounce HTTP/1.1
 User-Agent: Fiddler
 Host: 127.0.0.1
 Cookie: SID=your_sid
