@@ -7,9 +7,9 @@ This page describes how to compile 64-bit qBittorrent using MSVC 2017 under Wind
 * Latest release of the [https://www.nasm.us/ NASM assembler].
 * Latest release of [https://www.zlib.net/ Zlib].
 * Latest release of [https://www.openssl.org/ OpenSSL].
-* Latest release of the [https://www.boost.org/ Boost libraries].  Currently tested only with boost 1.64.
-* Latest release of [https://www.libtorrent.org/ libtorrent(rasterbar)].
-* Latest release of the [https://download.qt.io/official_releases/qt/ Qt libraries] source. Currently tested only with Qt Everywhere '''5.9.0 beta3'''. 
+* Latest release of the [https://www.boost.org/ Boost libraries].  Currently tested only with boost 1.68.
+* Latest release of [https://www.libtorrent.org/ libtorrent(rasterbar)]. Currently tested with libtorrent(rasterbar) 1.1.9
+* Latest release of the [https://download.qt.io/official_releases/qt/ Qt libraries] source. Currently tested only with Qt Everywhere '''5.9.6'''. 
 * Latest release of [https://www.qbittorrent.org qBittorrent].
 * [https://download.qt.io/official_releases/qtcreator/ Qt Creator].
 
@@ -62,27 +62,27 @@ This page describes how to compile 64-bit qBittorrent using MSVC 2017 under Wind
 
 === Compiling Boost ===
 * Extract the Boost sources in the working dir.
-* Navigate to the Boost source folder. eg ''cd G:\QBITTORRENT\boost_1_64_0''
+* Navigate to the Boost source folder. eg ''cd G:\QBITTORRENT\boost_1_68_0''
 * Now you will need to bootstrap Boost so it will build b2.exe(previously bjam.exe). Issue the following command:
  bootstrap.bat 
 * Compile a static version of Boost. Issue the following command. You can replace %NUMBER_OF_PROCESSORS% in <code>-j %NUMBER_OF_PROCESSORS%</code> with a different number of threads you want b2 to use when compiling:
- b2 -q --with-system --toolset=msvc-15.1 address-model=64 variant=release link=static runtime-link=static include="G:\QBITTORRENT\install_msvc64\base\include" library-path="G:\QBITTORRENT\install_msvc64\base\lib" --prefix="G:\QBITTORRENT\install_msvc64\base" cxxflags="-O1 -Gy -Gw -GL" linkflags="/NOLOGO /DYNAMICBASE /NXCOMPAT /LTCG /OPT:REF /OPT:ICF /MANIFEST:EMBED /INCREMENTAL:NO" --hash -j %NUMBER_OF_PROCESSORS%
+ b2 -q --toolset=msvc-14.1 address-model=64 variant=release link=static runtime-link=static include="G:\QBITTORRENT\install_msvc64\base\include" library-path="G:\QBITTORRENT\install_msvc64\base\lib" --prefix="G:\QBITTORRENT\install_msvc64\base" cxxflags="-O1 -Gy -Gw -GL" linkflags="/NOLOGO /DYNAMICBASE /NXCOMPAT /LTCG /OPT:REF /OPT:ICF /MANIFEST:EMBED /INCREMENTAL:NO" --hash -j %NUMBER_OF_PROCESSORS%
 * Install (it take a while to copy the numerous files):
- b2 -q --with-system --toolset=msvc-15.1 address-model=64 variant=release link=static runtime-link=static include="G:\QBITTORRENT\install_msvc64\base\include" library-path="G:\QBITTORRENT\install_msvc64\base\lib" --prefix="G:\QBITTORRENT\install_msvc64\base" cxxflags="-O1 -Gy -Gw -GL" linkflags="/NOLOGO /DYNAMICBASE /NXCOMPAT /LTCG /OPT:REF /OPT:ICF /MANIFEST:EMBED /INCREMENTAL:NO" --hash -j %NUMBER_OF_PROCESSORS% install
+ b2 -q --toolset=msvc-14.1 address-model=64 variant=release link=static runtime-link=static include="G:\QBITTORRENT\install_msvc64\base\include" library-path="G:\QBITTORRENT\install_msvc64\base\lib" --prefix="G:\QBITTORRENT\install_msvc64\base" cxxflags="-O1 -Gy -Gw -GL" linkflags="/NOLOGO /DYNAMICBASE /NXCOMPAT /LTCG /OPT:REF /OPT:ICF /MANIFEST:EMBED /INCREMENTAL:NO" --hash -j %NUMBER_OF_PROCESSORS% install
 
 === Compiling Libtorrent ===
 * Extract the Libtorrent sources in the working dir.
-* Navigate to the Libtorrent source folder. eg ''cd G:\qBittorrent\libtorrent-rasterbar-1.0.11''
+* Navigate to the Libtorrent source folder. eg ''cd G:\QBITTORRENT\libtorrent-rasterbar-1.1.9''
 * Copy the b2.exe from the Boost directory to the Libtorrent directory
- copy ..\boost_1_64_0\b2.exe b2.exe
+ copy ..\boost_1_68_0\b2.exe b2.exe
 * Compile a static version of Libtorrent. Issue the following command. You can replace %NUMBER_OF_PROCESSORS% in <code>-j %NUMBER_OF_PROCESSORS%</code> with a different number of threads you want b2 to use when compiling:
- b2 -q --without-python --toolset=msvc-15.1 address-model=64 variant=release link=static runtime-link=static debug-symbols=on encryption=openssl logging=none geoip=off resolve-countries=off dht=on boost=source character-set=unicode boost-link=static -sBOOST_ROOT="G:\qBittorrent\boost_1_64_0" include="G:\QBITTORRENT\install_msvc64\base\include" library-path="G:\QBITTORRENT\install_msvc64\base\lib" --prefix="G:\QBITTORRENT\install_msvc64\base" cxxflags="-O1 -Gy -Gw -GL" define=BOOST_ASIO_DISABLE_CONNECTEX linkflags="/NOLOGO /DYNAMICBASE /NXCOMPAT /LTCG /OPT:REF /OPT:ICF /MANIFEST:EMBED /INCREMENTAL:NO" --hash -j %NUMBER_OF_PROCESSORS%
+ b2 -q --without-python --toolset=msvc-14.1 address-model=64 variant=release link=static runtime-link=static debug-symbols=on encryption=on logging=of resolve-countries=off dht=on character-set=unicode boost-link=static -sBOOST_ROOT="G:\QBITTORRENT\boost_1_68_0" include="G:\QBITTORRENT\install_msvc64\base\include" library-path="G:\QBITTORRENT\install_msvc64\base\lib" --prefix="G:\QBITTORRENT\install_msvc64\base" cxxflags="-O1 -Gy -Gw -GL" define=BOOST_ASIO_DISABLE_CONNECTEX linkflags="/NOLOGO /DYNAMICBASE /NXCOMPAT /LTCG /OPT:REF /OPT:ICF /MANIFEST:EMBED /INCREMENTAL:NO" --hash -j %NUMBER_OF_PROCESSORS%
 * Install:
- b2 -q --without-python --toolset=msvc-15.1 address-model=64 variant=release link=static runtime-link=static debug-symbols=on encryption=openssl logging=none geoip=off resolve-countries=off dht=on boost=source character-set=unicode boost-link=static -sBOOST_ROOT="G:\qBittorrent\boost_1_64_0" include="G:\QBITTORRENT\install_msvc64\base\include" library-path="G:\QBITTORRENT\install_msvc64\base\lib" --prefix="G:\QBITTORRENT\install_msvc64\base" cxxflags="-O1 -Gy -Gw -GL" define=BOOST_ASIO_DISABLE_CONNECTEX linkflags="/NOLOGO /DYNAMICBASE /NXCOMPAT /LTCG /OPT:REF /OPT:ICF /MANIFEST:EMBED /INCREMENTAL:NO" --hash -j %NUMBER_OF_PROCESSORS% install
+ b2 -q --without-python --toolset=msvc-14.1 address-model=64 variant=release link=static runtime-link=static debug-symbols=on encryption=on logging=off resolve-countries=off dht=on character-set=unicode boost-link=static -sBOOST_ROOT="G:\QBITTORRENT\boost_1_68_0" include="G:\QBITTORRENT\install_msvc64\base\include" library-path="G:\QBITTORRENT\install_msvc64\base\lib" --prefix="G:\QBITTORRENT\install_msvc64\base" cxxflags="-O1 -Gy -Gw -GL" define=BOOST_ASIO_DISABLE_CONNECTEX linkflags="/NOLOGO /DYNAMICBASE /NXCOMPAT /LTCG /OPT:REF /OPT:ICF /MANIFEST:EMBED /INCREMENTAL:NO" --hash -j %NUMBER_OF_PROCESSORS% install
 
 === Compiling Qt5 ===
 * Extract the Qt sources in the working dir.
-* Navigate to the Qt source folder. eg ''cd G:\QBITTORRENT\qt-everywhere-opensource-src-5.9.0-beta3'' 
+* Navigate to the Qt source folder. eg ''cd G:\QBITTORRENT\qt-everywhere-opensource-src-5.9.6'' 
 * Now we will build a static version of Qt and make it as small as possible.
 * Open '''qtbase/mkspecs/common/msvc-desktop.conf''' and replace the  relevant lines with:
  QMAKE_CFLAGS_RELEASE = -O1 -Gy -Gw -GL -MT
@@ -111,19 +111,28 @@ This page describes how to compile 64-bit qBittorrent using MSVC 2017 under Wind
 
 === Compiling qBittorrent ===
 * Extract the qBittorrent sources in the working dir.
-* Launch Qt Creator and open the ''qbittorrent.pro'' file in ''G:\QBITTORRENT\qbittorrent-3.3.12''
+* Launch Qt Creator and open the ''qbittorrent.pro'' file in ''G:\QBITTORRENT\qbittorrent-4.1.2''
 * From the Window that pops up select the Qt version you added above and specify '''release''' version. Also check the ''Use Shadow Building'' checkbox. You can also select where qBittorrent will be built if you want.
 * If you are compiling qBittorrent <code>v3_3_x</code> branch, open the ''winconf.pri'' file and adjust the paths. If <code>v4_0_x</code> branch is used, open ''conf.pri.windows'', save it as ''conf.pri'' and adjust the paths. Disregard most of the file comments(read next step).
 * Edit the first INCLUDEPATH to look like this:
  INCLUDEPATH += $$quote(G:/qBittorrent/install_msvc64/base/include)
 * Edit the second INCLUDEPATH to look like this(adjust for actual boost name):
- INCLUDEPATH += $$quote(G:/qBittorrent/install_msvc64/base/include/boost-1_64)
+ INCLUDEPATH += $$quote(G:/qBittorrent/install_msvc64/base/include/boost-1_68)
 * Comment the other 2 INCLUDEPATH lines by putting # in front of them.
 * Edit the first LIBS to look like this:
  LIBS += $$quote(-LG:/qBittorrent/install_msvc64/base/lib)
 * Comment the other 3 LIBS lines by putting # in front of them.
 * If you are compiling <code>v3_3_x</code> branch, open the ''winconf-msvc.pri'' file and adjust the filename of the lib of Boost. If <code>v4_0_x</code> branch is used, adjust it in ''conf.pri''.
 * If you are compiling <code>v4_0_x</code> branch against libtorrent 1.0.x, uncomment the following line in ''conf.pri''
+ DEFINES += BOOST_ALL_NO_LIB
+and comment
  DEFINES += BOOST_ASIO_SEPARATE_COMPILATION
+
+change: 
+ libboost_system-vc140-mt-sgd-1_68.lib
+ libboost_system-vc141-mt-sgd-x64-1_68.lib
+
+ libboost_system-vc140-mt-s-1_68.lib to
+ libboost_system-vc141-mt-s-x64-1_68.lib
 * Select Build->Build All
 * After the compilation ends you should have ''qbittorrent.exe'' in <code><build folder>\src\release</code>. "build folder" is where you chose qBittorrent to be build in the popup window.
