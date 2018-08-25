@@ -139,12 +139,12 @@ change:
  }
  else {
      LIBS += libtorrent.lib \
-            libboost_system-vc140-mt-s-1_68.lib
+            libboost_system-vc140-mt-s-1_64.lib
  }
 to
  CONFIG(debug, debug|release) {
      LIBS += libtorrentd.lib \
-             libboost_system-vc141-mt-sgd-x64-1_68.lib
+             libboost_system-vc141-mt-sgd-x64-1_64.lib
  }
  else {
      LIBS += libtorrent.lib \
