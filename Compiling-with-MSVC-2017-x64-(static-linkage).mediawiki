@@ -129,10 +129,22 @@ and comment
  DEFINES += BOOST_ASIO_SEPARATE_COMPILATION
 
 change: 
- libboost_system-vc140-mt-sgd-1_68.lib
- libboost_system-vc141-mt-sgd-x64-1_68.lib
-
- libboost_system-vc140-mt-s-1_68.lib to
- libboost_system-vc141-mt-s-x64-1_68.lib
+ CONFIG(debug, debug|release) {
+     LIBS += libtorrentd.lib \
+             libboost_system-vc140-mt-sgd-1_68.lib
+ }
+ else {
+     LIBS += libtorrent.lib \
+            libboost_system-vc140-mt-s-1_68.lib
+ }
+to
+ CONFIG(debug, debug|release) {
+     LIBS += libtorrentd.lib \
+             libboost_system-vc141-mt-sgd-x64-1_68.lib
+ }
+ else {
+     LIBS += libtorrent.lib \
+             libboost_system-vc141-mt-s-x64-1_68.lib
+ }
 * Select Build->Build All
 * After the compilation ends you should have ''qbittorrent.exe'' in <code><build folder>\src\release</code>. "build folder" is where you chose qBittorrent to be build in the popup window.
