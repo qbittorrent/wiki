@@ -135,7 +135,7 @@ and comment
 change: 
  CONFIG(debug, debug|release) {
      LIBS += libtorrentd.lib \
-             libboost_system-vc140-mt-sgd-1_68.lib
+             libboost_system-vc140-mt-sgd-1_64.lib
  }
  else {
      LIBS += libtorrent.lib \
@@ -144,7 +144,7 @@ change:
 to
  CONFIG(debug, debug|release) {
      LIBS += libtorrentd.lib \
-             libboost_system-vc141-mt-sgd-x64-1_64.lib
+             libboost_system-vc141-mt-sgd-x64-1_68.lib
  }
  else {
      LIBS += libtorrent.lib \
