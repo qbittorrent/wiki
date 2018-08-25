@@ -40,6 +40,10 @@ This page describes how to compile 64-bit qBittorrent using MSVC 2017 under Wind
 
 === Compiling OpenSSL ===
 * Make sure you have installed perl and nasm.
+
+``use nasm -v to check version NASM, if nasm not found:
+ "C:\Program Files\NASM\nasmpath.bat"
+
 * Extract the OpenSSL source inside our working dir.
 * Navigate to the OpenSSL source folder. eg ''cd G:\QBITTORRENT\openssl-1.0.2k''
 * Now we will build a static version of OpenSSL. Issue the following commands:
