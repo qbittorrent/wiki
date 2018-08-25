@@ -129,7 +129,7 @@ This page describes how to compile 64-bit qBittorrent using MSVC 2017 under Wind
 * If you are compiling <code>v3_3_x</code> branch, open the ''winconf-msvc.pri'' file and adjust the filename of the lib of Boost. If <code>v4_0_x</code> branch is used, adjust it in ''conf.pri''.
 * If you are compiling <code>v4_0_x</code> branch against libtorrent 1.0.x, uncomment the following line in ''conf.pri''
  DEFINES += BOOST_ALL_NO_LIB
-and comment
+and comment line by putting # in front of them.
  DEFINES += BOOST_ASIO_SEPARATE_COMPILATION
 
 change: 
