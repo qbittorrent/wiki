@@ -18,10 +18,10 @@ Grab latest libtorrent release
 > https://github.com/arvidn/libtorrent/releases check for updates and replace as needed
 
 ```
-wget https://github.com/arvidn/libtorrent/releases/download/libtorrent-1_1_6/libtorrent-rasterbar-1.1.6.tar.gz
-tar -zxf libtorrent-rasterbar-1.1.6.tar.gz
-cd libtorrent-rasterbar-1.1.6
-./configure --prefix=/usr
+wget https://github.com/arvidn/libtorrent/releases/download/libtorrent-1_1_9/libtorrent-rasterbar-1.1.9.tar.gz
+tar -zxf libtorrent-rasterbar-1.1.9.tar.gz
+cd libtorrent-rasterbar-1.1.9
+./configure --prefix=/usr CXXFLAGS=-std=c++11
 make
 make install
 ln -s /usr/lib/pkgconfig/libtorrent-rasterbar.pc /usr/lib64/pkgconfig/libtorrent-rasterbar.pc
