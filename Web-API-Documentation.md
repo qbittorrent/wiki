@@ -496,7 +496,7 @@ Property                      | Type    | Description
 `full_update`                 | bool    | Whether the response contains all the data or partial data
 `torrents`                    | object  | Property: torrent hash, value: same as [torrent list](#get-torrent-list)
 `torrents_removed`            | array   | List of hashes of torrents removed since last request
-`categories`                  | array   | List of categories added since last request
+`categories`                  | object  | Info for categories added since last request
 `categories_removed`          | array   | List of categories removed since last request
 `queueing`                    | bool    | Priority system usage flag
 `server_state`                | object  | Global transfer info
