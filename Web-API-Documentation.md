@@ -82,6 +82,15 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
   * New API paths. All API methods are under `api/vX/` (where X is API major version)
   * API methods are under new scopes
 
+* Changes in `API v2.0.1`:
+  * Add `hashes` field to `/torrents/info` (#8782)
+
+* Changes in `API v2.0.2`:
+  * Add `/torrents/reannounce` method (#9229)
+
+* Changes in `API v2.1.0`:
+  * Change `/sync/maindata` `categories` property from `array` to `object` (#9228)
+
 # Authorization #
 
 qBittorrent uses a cookie based authentication.
