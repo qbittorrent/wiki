@@ -77,21 +77,21 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
 
 # Changes #
 
-* Changes in `API v2.0`:
+## API v2.0 ##
   * New version naming scheme: X.Y.Z (where X - major version, Y - minor version, Z - release version)
   * New API paths. All API methods are under `api/vX/` (where X is API major version)
   * API methods are under new scopes
 
-* Changes in `API v2.0.1`:
-  * Add `hashes` field to `/torrents/info` (#8782)
+## API v2.0.1 ##
+  * Add `hashes` field to `/torrents/info` ([#8782](https://github.com/qbittorrent/qBittorrent/pull/8782))
 
-* Changes in `API v2.0.2`:
-  * Add `/torrents/reannounce` method (#9229)
+## API v2.0.2 ##
+  * Add `/torrents/reannounce` method ([#9229](https://github.com/qbittorrent/qBittorrent/pull/9229))
 
-* Changes in `API v2.1.0`:
-  * Change `/sync/maindata` `categories` property from `array` to `object` (#9228)
-  * Add `savePath` field to `/torrents/setCategory` (#9228)
-  * Add `/torrents/editCategory` method (#9228)
+## API v2.1.0 ##
+  * Change `/sync/maindata` `categories` property from `array` to `object` ([#9228](https://github.com/qbittorrent/qBittorrent/pull/9228))
+  * Add `savePath` field to `/torrents/setCategory` ([#9228](https://github.com/qbittorrent/qBittorrent/pull/9228))
+  * Add `/torrents/editCategory` method ([#9228](https://github.com/qbittorrent/qBittorrent/pull/9228))
 
 # Authorization #
 
