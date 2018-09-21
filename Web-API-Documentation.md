@@ -4,6 +4,7 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
 # Table of Contents #
 
 1. [Changes](#changes)
+   1. [API v2.0](#api-v20)
    1. [API v2.0.1](#api-v201)
    1. [API v2.0.2](#api-v202)
    1. [API v2.1.0](#api-v210)
