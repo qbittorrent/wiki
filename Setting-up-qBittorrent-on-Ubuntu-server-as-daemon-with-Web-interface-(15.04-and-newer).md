@@ -17,6 +17,7 @@ Since this guide focuses on servers that normally don't have a desktop user inte
 ### Install ###
 qBittorrent-nox is already included in the official Ubuntu repositories. Install with:
 ```
+$ sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable
 $ sudo apt-get update && sudo apt-get install qbittorrent-nox
 ```
 
