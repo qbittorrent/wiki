@@ -15,9 +15,20 @@ Since this guide focuses on servers that normally don't have a desktop user inte
 
 
 ### Install ###
-qBittorrent-nox is already included in the official Ubuntu repositories. Install with:
+qBittorrent is now available in official Ubuntu repositories.
+More up-to-date packages are published on our [stable](https://launchpad.net/~qbittorrent-team/+archive/ubuntu/qbittorrent-stable) and [unstable](https://launchpad.net/~qbittorrent-team/+archive/ubuntu/qbittorrent-unstable) PPAs. 
+The stable PPA supports Ubuntu 14.04 LTS (only the libtorrent-rasterbar package), 16.04 LTS, 17.04, 17.10 and 18.04 LTS. 
+
+Quick instructions
+To use these PPAs please use the following command and make sure your version is supported:
+
+qBittorrent Stable
 ```
 $ sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable
+```
+
+Then install qBittorrent by doing this:
+```
 $ sudo apt-get update && sudo apt-get install qbittorrent-nox
 ```
 
