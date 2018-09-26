@@ -74,7 +74,13 @@ That's it! qBittorrent should now be installed. You can now run qBittorrent usin
 
 == Compiling qBittorrent (without the GUI; aka qBittorrent-nox aka headless) ==
 First, obtain the qBittorrent source code.<br />
-Either download and extract a .tar archive from [https://sourceforge.net/projects/qbittorrent/files/qbittorrent/ Sourceforge] or clone this git repo: <code>git clone https://github.com/qbittorrent/qBittorrent</code><br />
+Either download and extract a .tar archive from [https://sourceforge.net/projects/qbittorrent/files/qbittorrent/ Sourceforge] or clone the git repository:
+  git clone https://github.com/qbittorrent/qBittorrent
+  cd qBittorrent
+If you clone the git repository and want to use the stable current version (rather than the development version), you need to checkout the stable branch. 
+ git checkout v4_1_x
+(Note: When the stable version changes to 4.2.0, the stable branch will change to v4_2_x.)
+
 Enter the folder in a new terminal window and run:
  ./configure --disable-gui
  make -j$(nproc)
