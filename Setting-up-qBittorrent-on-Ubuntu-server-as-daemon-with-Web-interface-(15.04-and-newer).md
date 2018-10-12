@@ -155,7 +155,7 @@ Created symlink from /etc/systemd/system/multi-user.target.wants/qbittorrent.ser
 ```
 
 
-### That's it, were done! ###
+### That's it, we are done! ###
 After the above, systemd should have indexed and invoked our init script so qbittorrent should be running. qBittorrent should now start automatically with reboots.
 
 
