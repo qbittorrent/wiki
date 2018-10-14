@@ -216,7 +216,7 @@ HTTP/1.1 200 OK
 content-type: application/json
 content-length: length
 
-{"locale":"ru_RU","save_path":"C:/Users/Dayman/Downloads","temp_path_enabled":false,"temp_path":"C:/Users/Dayman/Documents/Downloads/temp","scan_dirs":["D:/Browser Downloads"],"download_in_scan_dirs":[false],"export_dir_enabled":false,"export_dir":"","mail_notification_enabled":false,"mail_notification_email":"","mail_notification_smtp":"smtp.changeme.com","mail_notification_ssl_enabled":false,"mail_notification_auth_enabled":false,"mail_notification_username":"","mail_notification_password":"","autorun_enabled":false,"autorun_program":"","preallocate_all":false,"queueing_enabled":true,"max_active_downloads":2,"max_active_torrents":200,"max_active_uploads":200,"dont_count_slow_torrents":false,"incomplete_files_ext":false,"listen_port":31498,"upnp":false,"dl_limit":3072,"up_limit":3072,"max_connec":500,"max_connec_per_torrent":100,"max_uploads_per_torrent":15,"enable_utp":true,"limit_utp_rate":false,"limit_tcp_overhead":true,"alt_dl_limit":1024,"alt_up_limit":2048,"scheduler_enabled":false,"schedule_from_hour":8,"schedule_from_min":0,"schedule_to_hour":20,"schedule_to_min":0,"scheduler_days":0,"dht":true,"dhtSameAsBT":true,"dht_port":6881,"pex":true,"lsd":true,"encryption":0,"anonymous_mode":false,"proxy_type":-1,"proxy_ip":"0.0.0.0","proxy_port":8080,"proxy_peer_connections":false,"proxy_auth_enabled":false,"proxy_username":"","proxy_password":"","ip_filter_enabled":false,"ip_filter_path":null,"web_ui_port":80,"web_ui_username":"admin","web_ui_password":"8888efb275743684292cff99f57867a9","bypass_local_auth":false,"use_https":false,"ssl_key":"","ssl_cert":"","dyndns_enabled":false,"dyndns_service":0,"dyndns_username":"","dyndns_password":"","dyndns_domain":"changeme.dyndns.org"}
+{"locale":"ru_RU","save_path":"C:/Users/Dayman/Downloads","temp_path_enabled":false,"temp_path":"C:/Users/Dayman/Documents/Downloads/temp","scan_dirs":{"C:/Games": 0,"D:/Downloads": 1},"export_dir":"C:/Users/Dayman/Downloads/Torrents/All","export_dir_fin":"C:/Users/Dayman/Downloads/Torrents/Completed","mail_notification_enabled":false,"mail_notification_email":"","mail_notification_smtp":"smtp.changeme.com","mail_notification_ssl_enabled":false,"mail_notification_auth_enabled":false,"mail_notification_username":"","mail_notification_password":"","autorun_enabled":false,"autorun_program":"","preallocate_all":false,"queueing_enabled":true,"max_active_downloads":2,"max_active_torrents":200,"max_active_uploads":200,"dont_count_slow_torrents":false,"incomplete_files_ext":false,"listen_port":31498,"upnp":false,"dl_limit":3072,"up_limit":3072,"max_connec":500,"max_connec_per_torrent":100,"max_uploads_per_torrent":15,"enable_utp":true,"limit_utp_rate":false,"limit_tcp_overhead":true,"alt_dl_limit":1024,"alt_up_limit":2048,"scheduler_enabled":false,"schedule_from_hour":8,"schedule_from_min":0,"schedule_to_hour":20,"schedule_to_min":0,"scheduler_days":0,"dht":true,"dhtSameAsBT":true,"dht_port":6881,"pex":true,"lsd":true,"encryption":0,"anonymous_mode":false,"proxy_type":-1,"proxy_ip":"0.0.0.0","proxy_port":8080,"proxy_peer_connections":false,"proxy_auth_enabled":false,"proxy_username":"","proxy_password":"","ip_filter_enabled":false,"ip_filter_path":null,"web_ui_port":80,"web_ui_username":"admin","web_ui_password":"8888efb275743684292cff99f57867a9","bypass_local_auth":false,"use_https":false,"ssl_key":"","ssl_cert":"","dyndns_enabled":false,"dyndns_service":0,"dyndns_username":"","dyndns_password":"","dyndns_domain":"changeme.dyndns.org"}
 ```
 where
 
@@ -226,10 +226,9 @@ Property                          | Type    | Description
 `save_path`                       | string  | Default save path for torrents, separated by slashes
 `temp_path_enabled`               | bool    | True if folder for incomplete torrents is enabled
 `temp_path`                       | string  | Path for incomplete torrents, separated by slashes
-`scan_dirs`                       | string  | List of watch folders to add torrent automatically; slashes are used as path separators; list entries are separated by commas
-`download_in_scan_dirs`           | bool    | True if torrents should be downloaded to watch folder; list entries are separated by commas
-`export_dir_enabled`              | bool    | True if .torrent file should be copied to export directory upon adding
-`export_dir`                      | string  | Path to directory to copy .torrent files if `export_dir_enabled` is enabled; path is separated by slashes
+`scan_dirs`                       | object  | Property: directory to watch for torrent files, value: where torrents loaded from this directory should be downloaded to (see list of possible values below). Slashes are used as path separators; multiple key/value pairs can be specified
+`export_dir`                      | string  | Path to directory to copy .torrent files to. Slashes are used as path separators
+`export_dir_fin`                  | string  | Path to directory to copy .torrent files of completed downloads to. Slashes are used as path separators
 `mail_notification_enabled`       | bool    | True if e-mail notification should be enabled
 `mail_notification_email`         | string  | e-mail to send notifications to
 `mail_notification_smtp`          | string  | smtp server for e-mail notifications
@@ -309,6 +308,14 @@ Property                          | Type    | Description
 `rss_processing_enabled`          | bool    | Enable processing of RSS feeds
 `rss_auto_downloading_enabled`    | bool    | Enable auto-downloading of torrents from the RSS feeds
 
+Possible values of `scan_dirs`:
+
+Value                       | Description
+----------------------------|------------
+`0`                         | Download to the monitored folder
+`1`                         | Download to the default save path
+`"/path/to/download/to"`    | Download to this path
+
 Possible values of `scheduler_days`:
 
 Value  | Description
@@ -369,7 +376,7 @@ Cookie: SID=your_sid
 Content-Type: application/x-www-form-urlencoded
 Content-Length: length
 
-json={"save_path":"C:/Users/Dayman/Downloads","queueing_enabled":false,"scan_dirs":["C:/Games","D:/Downloads"],"download_in_scan_dirs":[false,true]}
+json={"save_path":"C:/Users/Dayman/Downloads","queueing_enabled":false,"scan_dirs":{"C:/Games": 0,"D:/Downloads": 1}}
 ```
 
 No matter if successful or not server will return the following reply:
@@ -379,7 +386,6 @@ HTTP/1.1 200 OK
 ```
 
   1. There is no need to pass all possible preferences' `token:value` pairs if you only want to change one option
-  1. When setting preferences `scan_dirs` must **always** be accompanied with `download_in_scan_dirs`
   1. Paths in `scan_dirs` must exist, otherwise this option will have no effect
   1. String values must be quoted; integer and boolean values must never be quoted
 
