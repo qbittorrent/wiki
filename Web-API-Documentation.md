@@ -23,7 +23,7 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
    1. [Get peer log](#get-peer-log)
 1. [Sync](#sync)
    1. [Get main data](#get-main-data)
-   1. [Get torrent peers data](get-torrent-peers-data)
+   1. [Get torrent peers data](#get-torrent-peers-data)
 1. [Transfer info](#transfer-info)
    1. [Get global transfer info](#get-global-transfer-info)
    1. [Get alternative speed limits state](#get-alternative-speed-limits-state)
