@@ -540,7 +540,7 @@ Param  | Description
 
 Example:
 ```http
-http://127.0.0.1/api/v2/sync/torrentPeers?rid=14
+http://127.0.0.1/api/v2/sync/torrentPeers?hash=8c212779b4abde7c6bc608063a0d008b7e40ce32?rid=14
 ```
 
 # Transfer info #
