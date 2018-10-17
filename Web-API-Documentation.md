@@ -94,7 +94,7 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
 
 ## API v2.1.0 ##
   * Change `/sync/maindata` `categories` property from `array` to `object` ([#9228](https://github.com/qbittorrent/qBittorrent/pull/9228))
-  * Add `savePath` field to `/torrents/setCategory` ([#9228](https://github.com/qbittorrent/qBittorrent/pull/9228))
+  * Add `savePath` field to `/torrents/setCategory` ([#9228](https://github.com/qbittorrent/qBittorrent/pull/9228)). This method now requires the category to already exist and will not create new categories.
   * Add `/torrents/editCategory` method ([#9228](https://github.com/qbittorrent/qBittorrent/pull/9228))
 
 # Authorization #
@@ -1575,9 +1575,9 @@ hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5
 ```
 
 `hashes` can contain multiple hashes separated by `|` or set to `all`<br />
-`category` is the torrent category you want to set. If the category doesn't exist, a new category is created.
+`category` is the torrent category you want to set.
 
-If given category name is invalid, the server will reply with:
+If given category name does not exist, the server will reply with:
 
 ```http
 HTTP/1.1 409 Conflict
