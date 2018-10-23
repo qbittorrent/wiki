@@ -54,6 +54,7 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
    1. [Set file priority](#set-file-priority)
    1. [Get torrent download limit](#get-torrent-download-limit)
    1. [Set torrent download limit](#set-torrent-download-limit)
+   1. [Set torrent share limit](#set-torrent-share-limit)
    1. [Get torrent upload limit](#get-torrent-upload-limit)
    1. [Set torrent upload limit](#set-torrent-upload-limit)
    1. [Set torrent location](#set-torrent-location)
@@ -88,6 +89,7 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
 
 ## API v2.0.1 ##
   * Add `hashes` field to `/torrents/info` ([#8782](https://github.com/qbittorrent/qBittorrent/pull/8782))
+  * Add `/torrents/setShareLimits/` method ([#8598](https://github.com/qbittorrent/qBittorrent/pull/8598))
 
 ## API v2.0.2 ##
   * Add `/torrents/reannounce` method ([#9229](https://github.com/qbittorrent/qBittorrent/pull/9229))
@@ -1442,6 +1444,31 @@ hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5
 
 `hashes` can contain multiple hashes separated by `|` or set to `all`<br />
 `limit` is the download speed limit in bytes per second you want to set.
+
+No matter if successful or not server will return the following reply:
+
+```http
+HTTP/1.1 200 OK
+```
+
+### Set torrent share limit ###
+
+Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
+
+```http
+POST /api/v2/torrents/setShareLimits HTTP/1.1
+User-Agent: Fiddler
+Host: 127.0.0.1
+Cookie: SID=your_sid
+Content-Type: application/x-www-form-urlencoded
+Content-Length: length
+
+hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5d7cc2ba0&ratioLimit=1.0&seedingTimeLimit=60
+```
+
+`hashes` can contain multiple hashes separated by `|` or set to `all`<br />
+`ratioLimit` is the max ratio the torrent should be seeded until. `-2` means the global limit should be used, `-1` means no limit.<br />
+`seedingTimeLimit` is the max amount of time the torrent should be seeded. `-2` means the global limit should be used, `-1` means no limit.
 
 No matter if successful or not server will return the following reply:
 
