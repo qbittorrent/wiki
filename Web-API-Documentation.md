@@ -1390,7 +1390,7 @@ Content-Length: length
 hash=8c212779b4abde7c6bc608063a0d008b7e40ce32&id=0&priority=7
 ```
 
-Please consult [torrent contents API](#propscont) for possible `priority` values. `id` values coresspond to contents returned by [torrent contents API](#propscont), e.g. `id=0` for first file, `id=1` for second file, etc.
+Please consult [torrent contents API](#get-torrent-contents) for possible `priority` values. `id` values coresspond to contents returned by [torrent contents API](#get-torrent-contents), e.g. `id=0` for first file, `id=1` for second file, etc.
 
 No matter if successful or not server will return the following reply:
 
