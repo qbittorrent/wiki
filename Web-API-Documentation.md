@@ -77,6 +77,18 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
    1. [Rename auto-downloading rule](#rename-auto-downloading-rule)
    1. [Remove auto-downloading rule](#remove-auto-downloading-rule)
    1. [Get all auto-downloading rules](#get-all-auto-downloading-rules)
+1. [Search](#search)
+   1. [Start search](#start-search)
+   1. [Stop search](#stop-search)
+   1. [Get search status](#get-search-status)
+   1. [Get search results](#get-search-results)
+   1. [Delete search](#delete-search)
+   1. [Get search categories](#get-search-categories)
+   1. [Get search plugins](#get-search-plugins)
+   1. [Install search plugin](#install-search-plugin)
+   1. [Uninstall search plugin](#uninstall-search-plugin)
+   1. [Enable search plugin](#enable-search-plugin)
+   1. [Update search plugins](#update-search-plugins)
 
 ***
 
@@ -99,9 +111,13 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
   * Add `savePath` field to `/torrents/setCategory` ([#9228](https://github.com/qbittorrent/qBittorrent/pull/9228)). This method now requires the category to already exist and will not create new categories.
   * Add `/torrents/editCategory` method ([#9228](https://github.com/qbittorrent/qBittorrent/pull/9228))
 
+## API v2.1.1 ##
+  * Add `/torrents/categories` method ([#9586](https://github.com/qbittorrent/qBittorrent/pull/9586))
+  * Add `/search/` methods ([#8584](https://github.com/qbittorrent/qBittorrent/pull/8584))
+
 # Authorization #
 
-qBittorrent uses a cookie based authentication.
+qBittorrent uses cookie-based authentication.
 
 ### Login ###
 
@@ -1953,3 +1969,315 @@ Returns all auto-downloading rules in JSON format, e.g.:
     }
 }
 ```
+
+# Search #
+
+All Search API methods are under "search", e.g.: /api/v2/search/methodName.
+
+### Start search ###
+
+Name: `start`
+
+**Parameters:**
+
+Parameter                         | Type    | Description
+----------------------------------|---------|------------
+`pattern`                         | string  | Pattern to search for (e.g. "Ubuntu 18.04")
+`plugins`                         | string  | Plugins to use for searching (e.g. "legittorrents"). Supports multiple plugins separated by `\|`. Also supports `all` and `enabled`
+`category`                        | string  | Categories to limit your search to (e.g. "legittorrents"). Available categories depend on the specified `plugins`. Also supports `all`
+
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+409                               | User has reached the limit of max `Running` searches (currently set to 5)
+200                               | All other scenarios- see JSON below
+
+The response is a JSON object with the following fields
+
+Field                             | Type    | Description
+----------------------------------|---------|------------
+`id`                              | number  | ID of the search job
+
+Example:
+```JSON
+{
+    "id": 12345
+}
+```
+
+### Stop search ###
+
+Name: `stop`
+
+**Parameters:**
+
+Parameter                         | Type    | Description
+----------------------------------|---------|------------
+`id`                              | number  | ID of the search job
+
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+404                               | Search job was not found
+200                               | All other scenarios
+
+### Get search status ###
+
+Name: `status`
+
+**Parameters:**
+
+Parameter                         | Type    | Description
+----------------------------------|---------|------------
+`id`                              | number  | (optional) ID of the search job. If not specified, all search jobs are returned
+
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+404                               | Search job was not found
+200                               | All other scenarios- see JSON below
+
+The response is a JSON array of objects containing the following fields
+
+Field                             | Type    | Description
+----------------------------------|---------|------------
+`id`                              | number  | ID of the search job
+`status`                          | string  | Current status of the search job (either `Running` or `Stopped`)
+`total`                           | number  | Total number of results. If the status is `Running` this number may contineu to increase
+
+Example:
+```JSON
+[
+    {
+        "id": 12345,
+        "status": "Running",
+        "total": 170
+    }
+]
+```
+
+### Get search results ###
+
+Name: `results`
+
+**Parameters:**
+
+Parameter                         | Type    | Description
+----------------------------------|---------|------------
+`id`                              | number  | ID of the search job
+`limit`                           | number  | (optional) max number of results to return. 0 or negative means no limit
+`offset`                          | number  | (optional) result to start at. A negative number means count backwards (e.g. `-2` returns the 2 most recent results)
+
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+404                               | Search job was not found
+409                               | Offset is too large, or too small (e.g. absolute value of negative number is greater than # results)
+200                               | All other scenarios- see JSON below
+
+The response is a JSON object with the following fields
+
+Field                             | Type    | Description
+----------------------------------|---------|------------
+`results`                         | array   | Array of `result` objects- see table below
+`status`                          | string  | Current status of the search job (either `Running` or `Stopped`)
+`total`                           | number  | Total number of results. If the status is `Running` this number may continue to increase
+
+*Result object*
+
+Field                             | Type    | Description
+----------------------------------|---------|------------
+`descrLink`                       | string  | URL of the torrent's description page
+`fileName`                        | string  | Name of the file
+`fileSize`                        | number  | Size of the file in Bytes
+`fileUrl`                         | string  | Torrent download link (usually either .torrent file or magnet link)
+`nbLeechers`                      | number  | Number of leechers
+`nbSeeders`                       | number  | Number of seeders
+`siteUrl`                         | string  | URL of the torrent site
+
+Example:
+```JSON
+{
+    "results": [
+        {
+            "descrLink": "http://www.legittorrents.info/index.php?page=torrent-details&id=8d5f512e1acb687029b8d7cc6c5a84dce51d7a41",
+            "fileName": "Ubuntu-10.04-32bit-NeTV.ova",
+            "fileSize": -1,
+            "fileUrl": "http://www.legittorrents.info/download.php?id=8d5f512e1acb687029b8d7cc6c5a84dce51d7a41&f=Ubuntu-10.04-32bit-NeTV.ova.torrent",
+            "nbLeechers": 1,
+            "nbSeeders": 0,
+            "siteUrl": "http://www.legittorrents.info"
+        },
+        {
+            "descrLink": "http://www.legittorrents.info/index.php?page=torrent-details&id=d5179f53e105dc2c2401bcfaa0c2c4936a6aa475",
+            "fileName": "mangOH-Legato-17_06-Ubuntu-16_04.ova",
+            "fileSize": -1,
+            "fileUrl": "http://www.legittorrents.info/download.php?id=d5179f53e105dc2c2401bcfaa0c2c4936a6aa475&f=mangOH-Legato-17_06-Ubuntu-16_04.ova.torrent",
+            "nbLeechers": 0,
+            "nbSeeders": 59,
+            "siteUrl": "http://www.legittorrents.info"
+        }
+    ],
+    "status": "Running",
+    "total": 2
+}
+```
+
+### Delete search ###
+
+Name: `delete`
+
+**Parameters:**
+
+Parameter                         | Type    | Description
+----------------------------------|---------|------------
+`id`                              | number  | ID of the search job
+
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+404                               | Search job was not found
+200                               | All other scenarios
+
+### Get search categories ###
+
+Name: `categories`
+
+**Parameters:**
+
+Parameter                         | Type    | Description
+----------------------------------|---------|------------
+`pluginName`                      | string  | (optional) name of the plugin (e.g. "legittorrents"). Also supports `all` and `enabled`
+
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios- see JSON below
+
+The response is a JSON array containing a list of categories as strings
+
+```JSON
+[
+    "All categories",
+    "TV shows",
+    "Books",
+    "Games",
+    "Movies",
+    "Music",
+    "Anime"
+]
+```
+
+### Get search plugins ###
+
+Name: `plugins`
+
+**Parameters:**
+
+None
+
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios- see JSON below
+
+The response is a JSON array of objects containing the following fields
+
+Field                             | Type    | Description
+----------------------------------|---------|------------
+`enabled`                         | bool    | Whether the plugin is enabled
+`fullName`                        | string  | Full name of the plugin
+`name`                            | string  | Short name of the plugin
+`supportedCategories`             | array   | List of supported categories as strings
+`url`                             | string  | URL of the torrent site
+`version`                         | string  | Installed version of the plugin
+
+```JSON
+[
+    {
+        "enabled": true,
+        "fullName": "Legit Torrents",
+        "name": "legittorrents",
+        "supportedCategories": [
+            "tv",
+            "books",
+            "games",
+            "movies",
+            "music",
+            "anime"
+        ],
+        "url": "http://www.legittorrents.info",
+        "version": "2.3"
+    }
+]
+```
+
+### Install search plugin ###
+
+Name: `installPlugin`
+
+**Parameters:**
+
+Parameter                         | Type    | Description
+----------------------------------|---------|------------
+`sources`                         | string  | Url or file path of the plugin to install (e.g. "https://raw.githubusercontent.com/qbittorrent/search-plugins/master/nova3/engines/legittorrents.py"). Supports multiple sources separaed by `\|`
+
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios
+
+### Uninstall search plugin ###
+
+Name: `uninstallPlugin`
+
+**Parameters:**
+
+Parameter                         | Type    | Description
+----------------------------------|---------|------------
+`names`                           | string  | Name of the plugin to uninstall (e.g. "legittorrents"). Supports multiple names separaed by `\|`
+
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios
+
+### Enable search plugin ###
+
+Name: `enablePlugin`
+
+**Parameters:**
+
+Parameter                         | Type    | Description
+----------------------------------|---------|------------
+`names`                           | string  | Name of the plugin to enable/disable (e.g. "legittorrents"). Supports multiple names separaed by `\|`
+`enable`                          | bool    | Whether the plugins should be enabled
+
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios
+
+### Update search plugins ###
+
+Name: `updatePlugins`
+
+**Parameters:**
+
+None
+
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios
