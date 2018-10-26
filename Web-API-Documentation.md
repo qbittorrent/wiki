@@ -458,14 +458,11 @@ All Log API methods are under "log", e.g.: `/api/v2/log/methodName`.
 
 ### Get log ###
 
-```http
-GET /api/v2/log/main HTTP/1.1
-User-Agent: Fiddler
-Host: 127.0.0.1
-Cookie: SID=your_sid
-```
+Name: `main`
 
-Params:
+Requires authentication: Yes
+
+**Parameters:**
 
 Param           | Type    | Description
 ----------------|---------|------------
@@ -476,19 +473,20 @@ Param           | Type    | Description
 `last_known_id` | integer | Exclude messages with "message id" <= `last_known_id` (default: `-1`)
 
 Example:
+
 ```http
 /api/v2/log/main?normal=true&info=true&warning=true&critical=true&last_known_id=-1
 ```
 
-Server will return the following reply (example):
+**Returns:**
 
-```http
-HTTP/1.1 200 OK
-content-type: application/json
-content-length: length
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+TODO                              | TODO
 
-[{"id":0,"message":"qBittorrent v3.4.0 started","timestamp":1507969127860,"type":1},{"id":1,"message":"qBittorrent is trying to listen on any interface port: 19036","timestamp":1507969127869,"type":2},{"id":2,"message":"Peer ID: -qB3400-","timestamp":1507969127870,"type":1},{"id":3,"message":"HTTP User-Agent is 'qBittorrent/3.4.0'","timestamp":1507969127870,"type":1},{"id":4,"message":"DHT support [ON]","timestamp":1507969127871,"type":2},{"id":5,"message":"Local Peer Discovery support [ON]","timestamp":1507969127871,"type":2},{"id":6,"message":"PeX support [ON]","timestamp":1507969127871,"type":2},{"id":7,"message":"Anonymous mode [OFF]","timestamp":1507969127871,"type":2},{"id":8,"message":"Encryption support [ON]","timestamp":1507969127871,"type":2},{"id":9,"message":"Embedded Tracker [OFF]","timestamp":1507969127871,"type":2},{"id":10,"message":"UPnP / NAT-PMP support [ON]","timestamp":1507969127873,"type":2},{"id":11,"message":"Web UI: Now listening on port 8080","timestamp":1507969127883,"type":1},{"id":12,"message":"Options were saved successfully.","timestamp":1507969128055,"type":1},{"id":13,"message":"qBittorrent is successfully listening on interface :: port: TCP/19036","timestamp":1507969128270,"type":2},{"id":14,"message":"qBittorrent is successfully listening on interface 0.0.0.0 port: TCP/19036","timestamp":1507969128271,"type":2},{"id":15,"message":"qBittorrent is successfully listening on interface 0.0.0.0 port: UDP/19036","timestamp":1507969128272,"type":2}]
-```
+The response is a JSON array in which each element is an entry of the log.
+
+Each element of the array has the following properties:
 
 Property    | Type    | Description
 ------------|---------|------------
@@ -497,23 +495,48 @@ Property    | Type    | Description
 `timestamp` | integer | Milliseconds since epoch
 `type`      | integer | Type of the message: Log::NORMAL: `1`, Log::INFO: `2`, Log::WARNING: `4`, Log::CRITICAL: `8`
 
-### Get peer log ###
+Example:
 
-```http
-GET /api/v2/log/peers HTTP/1.1
-User-Agent: Fiddler
-Host: 127.0.0.1
-Cookie: SID=your_sid
+```JSON
+[
+    {"id":0,"message":"qBittorrent v3.4.0 started","timestamp":1507969127860,"type":1},
+    {"id":1,"message":"qBittorrent is trying to listen on any interface port: 19036","timestamp":1507969127869,"type":2},
+    {"id":2,"message":"Peer ID: -qB3400-","timestamp":1507969127870,"type":1},
+    {"id":3,"message":"HTTP User-Agent is 'qBittorrent/3.4.0'","timestamp":1507969127870,"type":1},
+    {"id":4,"message":"DHT support [ON]","timestamp":1507969127871,"type":2},
+    {"id":5,"message":"Local Peer Discovery support [ON]","timestamp":1507969127871,"type":2},
+    {"id":6,"message":"PeX support [ON]","timestamp":1507969127871,"type":2},
+    {"id":7,"message":"Anonymous mode [OFF]","timestamp":1507969127871,"type":2},
+    {"id":8,"message":"Encryption support [ON]","timestamp":1507969127871,"type":2},
+    {"id":9,"message":"Embedded Tracker [OFF]","timestamp":1507969127871,"type":2},
+    {"id":10,"message":"UPnP / NAT-PMP support [ON]","timestamp":1507969127873,"type":2},
+    {"id":11,"message":"Web UI: Now listening on port 8080","timestamp":1507969127883,"type":1},
+    {"id":12,"message":"Options were saved successfully.","timestamp":1507969128055,"type":1},
+    {"id":13,"message":"qBittorrent is successfully listening on interface :: port: TCP/19036","timestamp":1507969128270,"type":2},
+    {"id":14,"message":"qBittorrent is successfully listening on interface 0.0.0.0 port: TCP/19036","timestamp":1507969128271,"type":2},
+    {"id":15,"message":"qBittorrent is successfully listening on interface 0.0.0.0 port: UDP/19036","timestamp":1507969128272,"type":2}
+]
 ```
 
-Params:
+### Get peer log ###
+
+Name: `peers`
+
+Requires authentication: Yes
+
+**Parameters:**
 
 Param           | Type    | Description
 ----------------|---------|------------
 `last_known_id` | integer | Exclude messages with "message id" <= `last_known_id` (default: `-1`)
 
-Returns the peer log in JSON format.
-The return value is an array of dictionaries.
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+TODO                              | TODO
+
+The response a JSON array. Each element of the array of objects (each object the information relative to a peer) containing the following fields
 
 Property    | Type    | Description
 ------------|---------|------------
@@ -530,32 +553,29 @@ All Sync API methods are under "sync", e.g.: `/api/v2/sync/methodName`.
 
 ### Get main data ###
 
-```http
-GET /api/v2/sync/maindata HTTP/1.1
-User-Agent: Fiddler
-Host: 127.0.0.1
-Cookie: SID=your_sid
-```
+Name: `maindata`
 
-Params:
+Requires authentication: Yes
+
+**Parameters:**
 
 Param | Description
 ------|------------
 `rid` | Response ID. If not provided, `rid=0` will be assumed. If the given `rid` is different from the one of last server reply, `full_update` will be `true` (see the server reply details for more info)
 
 Example:
+
 ```http
-http://127.0.0.1/api/v2/sync/maindata?rid=14
+/api/v2/sync/maindata?rid=14
 ```
 
-Server reply (example):
-```http
-HTTP/1.1 200 OK
-content-type: application/json
-content-length: length
+**Returns:**
 
-{"rid":15,"torrents":{"8c212779b4abde7c6bc608063a0d008b7e40ce32":{"state":"pausedUP"}}}
-```
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+TODO                              | TODO
+
+The response is a JSON object with the following possible fields
 
 Property                      | Type    | Description
 ------------------------------|---------|------------
@@ -568,16 +588,19 @@ Property                      | Type    | Description
 `queueing`                    | bool    | Priority system usage flag
 `server_state`                | object  | Global transfer info
 
-### Get torrent peers data ###
+Example:
 
-```http
-GET /api/v2/sync/torrentPeers HTTP/1.1
-User-Agent: Fiddler
-Host: 127.0.0.1
-Cookie: SID=your_sid
+```JSON
+{"rid":15,"torrents":{"8c212779b4abde7c6bc608063a0d008b7e40ce32":{"state":"pausedUP"}}}
 ```
 
-Params:
+### Get torrent peers data ###
+
+Name: `torrentPeers`
+
+Requires authentication: Yes
+
+**Parameters:**
 
 Param  | Description
 -------|------------
@@ -586,8 +609,14 @@ Param  | Description
 
 Example:
 ```http
-http://127.0.0.1/api/v2/sync/torrentPeers?hash=8c212779b4abde7c6bc608063a0d008b7e40ce32?rid=14
+/api/v2/sync/torrentPeers?hash=8c212779b4abde7c6bc608063a0d008b7e40ce32?rid=14
 ```
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+TODO                              | TODO
+
+The response is TODO
 
 # Transfer info #
 
