@@ -130,23 +130,22 @@ qBittorrent uses cookie-based authentication.
 
 ### Login ###
 
-```http
-POST /api/v2/auth/login HTTP/1.1
-User-Agent: Fiddler
-Host: 127.0.0.1
-Content-Type: application/x-www-form-urlencoded
-Content-Length: length
+Name: `login`
 
-username=admin&password=admin
-```
+**Parameters:**
 
-Server reply (example):
-```http
-Content-Length: 3
-Content-Type: text/plain; charset=UTF-8
-Set-Cookie: SID=3133exaykXDX0mUQRDukIr9YUi0EchFY; path=/
-```
-You must supply the cookie whenever you want to perform an operation that requires authentication.
+Parameter                         | Type    | Description
+----------------------------------|---------|------------
+`username`                        | string  | Username used to access the WebUI
+`password`                        | string  | Password used to access the WebUI
+
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+TODO                              | TODO
+
+Upon success, the response will contain a cookie with your SID. You must supply the cookie whenever you want to perform an operation that requires authentication.
 
 Example showing how to login and execute a command that requires authentication using `curl`:
 ```sh
@@ -163,14 +162,19 @@ Note: Set `Referer` or `Origin` header to the exact same domain and port as used
 
 ### Logout ###
 
-```http
-POST /api/v2/auth/logout HTTP/1.1
-User-Agent: Fiddler
-Host: 127.0.0.1
-Cookie: SID=your_sid
-Content-Type: application/x-www-form-urlencoded
-Content-Length: length
-```
+Name: `logout`
+
+Requires authentication: Yes
+
+**Parameters:**
+
+None
+
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+TODO                              | TODO
 
 # Application #
 
@@ -178,76 +182,75 @@ All Application API methods are under "app", e.g.: `/api/v2/app/methodName`.
 
 ### Get application version ###
 
-```http
-GET /api/v2/app/version HTTP/1.1
-User-Agent: Fiddler
-Host: 127.0.0.1
-```
+Name: `version`
 
-Server reply (example):
-```http
-HTTP/1.1 200 OK
-Content-Encoding:
-Content-Length: 1
-Content-Type: text/plain; charset=UTF-8
+Requires authentication: No
 
-v4.0.5
-```
+**Parameters:**
+
+None
+
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+TODO                              | TODO
+
+The response is a string with the application version, e.g. `v4.1.3`
 
 ### Get API version ###
 
-Get the current API version
+Name: `webapiVersion`
 
-```http
-GET /api/v2/app/webapiVersion HTTP/1.1
-User-Agent: Fiddler
-Host: 127.0.0.1
-```
+Requires authentication: No
 
-Server reply (example):
-```http
-HTTP/1.1 200 OK
-Content-Encoding:
-Content-Length: 1
-Content-Type: text/plain; charset=UTF-8
+**Parameters:**
 
-2.0
-```
+None
+
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+TODO                              | TODO
+
+The response is a string with the WebAPI version, e.g. `2.0`
 
 ### Shutdown application ###
 
-```http
-GET /api/v2/app/shutdown HTTP/1.1
-User-Agent: Fiddler
-Host: 127.0.0.1
-Cookie: SID=your_sid
-```
+Name: `shutdown`
 
-Server reply (example):
-```http
-HTTP/1.1 200 OK
-Content-Encoding:
-```
+Requires authentication: Yes
+
+**Parameters:**
+
+None
+
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+TODO                              | TODO
 
 ### Get application preferences ###
 
-```http
-GET /api/v2/app/preferences HTTP/1.1
-User-Agent: Fiddler
-Host: 127.0.0.1
-Cookie: SID=your_sid
-```
+Name: `preferences`
 
-Server reply; contents may vary depending on which settings are present in qBittorrent.ini (example):
+Requires authentication: Yes
 
-```http
-HTTP/1.1 200 OK
-content-type: application/json
-content-length: length
+**Parameters:**
 
-{"locale":"ru_RU","save_path":"C:/Users/Dayman/Downloads","temp_path_enabled":false,"temp_path":"C:/Users/Dayman/Documents/Downloads/temp","scan_dirs":{"C:/Games": 0,"D:/Downloads": 1},"export_dir":"C:/Users/Dayman/Downloads/Torrents/All","export_dir_fin":"C:/Users/Dayman/Downloads/Torrents/Completed","mail_notification_enabled":false,"mail_notification_email":"","mail_notification_smtp":"smtp.changeme.com","mail_notification_ssl_enabled":false,"mail_notification_auth_enabled":false,"mail_notification_username":"","mail_notification_password":"","autorun_enabled":false,"autorun_program":"","preallocate_all":false,"queueing_enabled":true,"max_active_downloads":2,"max_active_torrents":200,"max_active_uploads":200,"dont_count_slow_torrents":false,"incomplete_files_ext":false,"listen_port":31498,"upnp":false,"dl_limit":3072,"up_limit":3072,"max_connec":500,"max_connec_per_torrent":100,"max_uploads_per_torrent":15,"enable_utp":true,"limit_utp_rate":false,"limit_tcp_overhead":true,"alt_dl_limit":1024,"alt_up_limit":2048,"scheduler_enabled":false,"schedule_from_hour":8,"schedule_from_min":0,"schedule_to_hour":20,"schedule_to_min":0,"scheduler_days":0,"dht":true,"dhtSameAsBT":true,"dht_port":6881,"pex":true,"lsd":true,"encryption":0,"anonymous_mode":false,"proxy_type":-1,"proxy_ip":"0.0.0.0","proxy_port":8080,"proxy_peer_connections":false,"proxy_auth_enabled":false,"proxy_username":"","proxy_password":"","ip_filter_enabled":false,"ip_filter_path":null,"web_ui_port":80,"web_ui_username":"admin","web_ui_password":"8888efb275743684292cff99f57867a9","bypass_local_auth":false,"use_https":false,"ssl_key":"","ssl_cert":"","dyndns_enabled":false,"dyndns_service":0,"dyndns_username":"","dyndns_password":"","dyndns_domain":"changeme.dyndns.org"}
-```
-where
+None
+
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+TODO                              | TODO
+
+The response is a JSON object with several fields (key-value) pairs representing the application's settings. The contents may vary depending on which settings are present in qBittorrent.ini.
+
+Possible fields:
 
 Property                          | Type    | Description
 ----------------------------------|---------|------------
@@ -395,24 +398,35 @@ Value | Description
 `0`   | Pause torrent
 `1`   | Remove torrent
 
+Example:
+
+```JSON
+{"locale":"ru_RU","save_path":"C:/Users/Dayman/Downloads","temp_path_enabled":false,"temp_path":"C:/Users/Dayman/Documents/Downloads/temp","scan_dirs":{"C:/Games": 0,"D:/Downloads": 1},"export_dir":"C:/Users/Dayman/Downloads/Torrents/All","export_dir_fin":"C:/Users/Dayman/Downloads/Torrents/Completed","mail_notification_enabled":false,"mail_notification_email":"","mail_notification_smtp":"smtp.changeme.com","mail_notification_ssl_enabled":false,"mail_notification_auth_enabled":false,"mail_notification_username":"","mail_notification_password":"","autorun_enabled":false,"autorun_program":"","preallocate_all":false,"queueing_enabled":true,"max_active_downloads":2,"max_active_torrents":200,"max_active_uploads":200,"dont_count_slow_torrents":false,"incomplete_files_ext":false,"listen_port":31498,"upnp":false,"dl_limit":3072,"up_limit":3072,"max_connec":500,"max_connec_per_torrent":100,"max_uploads_per_torrent":15,"enable_utp":true,"limit_utp_rate":false,"limit_tcp_overhead":true,"alt_dl_limit":1024,"alt_up_limit":2048,"scheduler_enabled":false,"schedule_from_hour":8,"schedule_from_min":0,"schedule_to_hour":20,"schedule_to_min":0,"scheduler_days":0,"dht":true,"dhtSameAsBT":true,"dht_port":6881,"pex":true,"lsd":true,"encryption":0,"anonymous_mode":false,"proxy_type":-1,"proxy_ip":"0.0.0.0","proxy_port":8080,"proxy_peer_connections":false,"proxy_auth_enabled":false,"proxy_username":"","proxy_password":"","ip_filter_enabled":false,"ip_filter_path":null,"web_ui_port":80,"web_ui_username":"admin","web_ui_password":"8888efb275743684292cff99f57867a9","bypass_local_auth":false,"use_https":false,"ssl_key":"","ssl_cert":"","dyndns_enabled":false,"dyndns_service":0,"dyndns_username":"","dyndns_password":"","dyndns_domain":"changeme.dyndns.org"}
+```
+
 ### Set application preferences ###
 
-```http
-POST /api/v2/app/setPreferences HTTP/1.1
-User-Agent: Fiddler
-Host: 127.0.0.1
-Cookie: SID=your_sid
-Content-Type: application/x-www-form-urlencoded
-Content-Length: length
+Name: `setPreferences`
 
+Requires authentication: Yes
+
+**Parameters:**
+
+A json object with key-value pairs of the settings you want to change and their new values.
+
+Example:
+
+```JSON
 json={"save_path":"C:/Users/Dayman/Downloads","queueing_enabled":false,"scan_dirs":{"C:/Games": 0,"D:/Downloads": 1}}
 ```
 
-No matter if successful or not server will return the following reply:
+**Returns:**
 
-```http
-HTTP/1.1 200 OK
-```
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios
+
+**Notes**:
 
   1. There is no need to pass all possible preferences' `token:value` pairs if you only want to change one option
   1. Paths in `scan_dirs` must exist, otherwise this option will have no effect
@@ -422,21 +436,21 @@ For a list of possible preference options see [Get application preferences](#get
 
 ### Get default save path ###
 
-```http
-GET /api/v2/app/defaultSavePath HTTP/1.1
-User-Agent: Fiddler
-Host: 127.0.0.1
-```
+Name: `defaultSavePath`
 
-Server reply (example):
-```http
-HTTP/1.1 200 OK
-Content-Encoding:
-Content-Length: 1
-Content-Type: text/plain; charset=UTF-8
+Requires authentication: TODO
 
-C:/Users/Dayman/Downloads
-```
+**Parameters:**
+
+None
+
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+TODO                              | TODO
+
+The response is a string with the default save path, e.g. `C:/Users/Dayman/Downloads`.
 
 # Log #
 
