@@ -406,7 +406,11 @@ Example:
     "save_path":"C:/Users/Dayman/Downloads",
     "temp_path_enabled":false,
     "temp_path":"C:/Users/Dayman/Documents/Downloads/temp",
-    "scan_dirs":{"C:/Games": 0,"D:/Downloads": 1},
+    "scan_dirs":
+    {
+        "C:/Games": 0,
+        "D:/Downloads": 1
+    },
     "export_dir":"C:/Users/Dayman/Downloads/Torrents/All",
     "export_dir_fin":"C:/Users/Dayman/Downloads/Torrents/Completed",
     "mail_notification_enabled":false,
@@ -459,8 +463,8 @@ Example:
     "ip_filter_path":null,
     "web_ui_port":80,
     "web_ui_username":"admin",
-    "web_ui_password":"8888efb275743684292cff99f57867a9","
-    bypass_local_auth":false,
+    "web_ui_password":"8888efb275743684292cff99f57867a9",
+    "bypass_local_auth":false,
     "use_https":false,
     "ssl_key":"",
     "ssl_cert":"",
