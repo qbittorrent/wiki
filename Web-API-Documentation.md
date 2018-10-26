@@ -401,7 +401,75 @@ Value | Description
 Example:
 
 ```JSON
-{"locale":"ru_RU","save_path":"C:/Users/Dayman/Downloads","temp_path_enabled":false,"temp_path":"C:/Users/Dayman/Documents/Downloads/temp","scan_dirs":{"C:/Games": 0,"D:/Downloads": 1},"export_dir":"C:/Users/Dayman/Downloads/Torrents/All","export_dir_fin":"C:/Users/Dayman/Downloads/Torrents/Completed","mail_notification_enabled":false,"mail_notification_email":"","mail_notification_smtp":"smtp.changeme.com","mail_notification_ssl_enabled":false,"mail_notification_auth_enabled":false,"mail_notification_username":"","mail_notification_password":"","autorun_enabled":false,"autorun_program":"","preallocate_all":false,"queueing_enabled":true,"max_active_downloads":2,"max_active_torrents":200,"max_active_uploads":200,"dont_count_slow_torrents":false,"incomplete_files_ext":false,"listen_port":31498,"upnp":false,"dl_limit":3072,"up_limit":3072,"max_connec":500,"max_connec_per_torrent":100,"max_uploads_per_torrent":15,"enable_utp":true,"limit_utp_rate":false,"limit_tcp_overhead":true,"alt_dl_limit":1024,"alt_up_limit":2048,"scheduler_enabled":false,"schedule_from_hour":8,"schedule_from_min":0,"schedule_to_hour":20,"schedule_to_min":0,"scheduler_days":0,"dht":true,"dhtSameAsBT":true,"dht_port":6881,"pex":true,"lsd":true,"encryption":0,"anonymous_mode":false,"proxy_type":-1,"proxy_ip":"0.0.0.0","proxy_port":8080,"proxy_peer_connections":false,"proxy_auth_enabled":false,"proxy_username":"","proxy_password":"","ip_filter_enabled":false,"ip_filter_path":null,"web_ui_port":80,"web_ui_username":"admin","web_ui_password":"8888efb275743684292cff99f57867a9","bypass_local_auth":false,"use_https":false,"ssl_key":"","ssl_cert":"","dyndns_enabled":false,"dyndns_service":0,"dyndns_username":"","dyndns_password":"","dyndns_domain":"changeme.dyndns.org"}
+{
+    "locale":"ru_RU",
+    "save_path":"C:/Users/Dayman/Downloads",
+    "temp_path_enabled":false,
+    "temp_path":"C:/Users/Dayman/Documents/Downloads/temp",
+    "scan_dirs":{"C:/Games": 0,"D:/Downloads": 1},
+    "export_dir":"C:/Users/Dayman/Downloads/Torrents/All",
+    "export_dir_fin":"C:/Users/Dayman/Downloads/Torrents/Completed",
+    "mail_notification_enabled":false,
+    "mail_notification_email":"",
+    "mail_notification_smtp":"smtp.changeme.com",
+    "mail_notification_ssl_enabled":false,
+    "mail_notification_auth_enabled":false,
+    "mail_notification_username":"",
+    "mail_notification_password":"",
+    "autorun_enabled":false,
+    "autorun_program":"",
+    "preallocate_all":false,
+    "queueing_enabled":true,
+    "max_active_downloads":2,
+    "max_active_torrents":200,
+    "max_active_uploads":200,
+    "dont_count_slow_torrents":false,
+    "incomplete_files_ext":false,
+    "listen_port":31498,
+    "upnp":false,"dl_limit":3072,
+    "up_limit":3072,
+    "max_connec":500,
+    "max_connec_per_torrent":100,
+    "max_uploads_per_torrent":15,
+    "enable_utp":true,
+    "limit_utp_rate":false,
+    "limit_tcp_overhead":true,
+    "alt_dl_limit":1024,
+    "alt_up_limit":2048,
+    "scheduler_enabled":false,
+    "schedule_from_hour":8,
+    "schedule_from_min":0,
+    "schedule_to_hour":20,
+    "schedule_to_min":0,
+    "scheduler_days":0,
+    "dht":true,
+    "dhtSameAsBT":true,
+    "dht_port":6881,
+    "pex":true,"lsd":true,
+    "encryption":0,
+    "anonymous_mode":false,
+    "proxy_type":-1,
+    "proxy_ip":"0.0.0.0",
+    "proxy_port":8080,
+    "proxy_peer_connections":false,
+    "proxy_auth_enabled":false,
+    "proxy_username":"",
+    "proxy_password":"",
+    "ip_filter_enabled":false,
+    "ip_filter_path":null,
+    "web_ui_port":80,
+    "web_ui_username":"admin",
+    "web_ui_password":"8888efb275743684292cff99f57867a9","
+    bypass_local_auth":false,
+    "use_https":false,
+    "ssl_key":"",
+    "ssl_cert":"",
+    "dyndns_enabled":false,
+    "dyndns_service":0,
+    "dyndns_username":"",
+    "dyndns_password":"",
+    "dyndns_domain":"changeme.dyndns.org"
+}
 ```
 
 ### Set application preferences ###
@@ -536,7 +604,7 @@ HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
 TODO                              | TODO
 
-The response a JSON array. Each element of the array of objects (each object the information relative to a peer) containing the following fields
+The response a JSON array. Each element of the array of objects (each object is the information relative to a peer) containing the following fields
 
 Property    | Type    | Description
 ------------|---------|------------
@@ -591,7 +659,16 @@ Property                      | Type    | Description
 Example:
 
 ```JSON
-{"rid":15,"torrents":{"8c212779b4abde7c6bc608063a0d008b7e40ce32":{"state":"pausedUP"}}}
+{
+    "rid":15,
+    "torrents":
+    {
+        "8c212779b4abde7c6bc608063a0d008b7e40ce32":
+        {
+            "state":"pausedUP"
+        }
+    }
+}
 ```
 
 ### Get torrent peers data ###
