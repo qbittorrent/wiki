@@ -9,6 +9,7 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
    1. [API v2.0.2](#api-v202)
    1. [API v2.1.0](#api-v210)
    1. [API v2.1.1](#api-v211)
+1. [General information](#general-information)
 1. [Authorization](#authorization)
    1. [Login](#login)
    1. [Logout](#logout)
@@ -116,7 +117,14 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
   * Add `/torrents/categories` method ([#9586](https://github.com/qbittorrent/qBittorrent/pull/9586))
   * Add `/search/` methods ([#8584](https://github.com/qbittorrent/qBittorrent/pull/8584))
 
+# General Information #
+
+- All API methods are under `/api/v2/APIName/methodName`, where `APIName` is a certain subgroup of API methods whose functionality is related.
+- Either `GET` or `POST` can be used as the request type for all API methods.
+
 # Authorization #
+
+All Authorization API methods are under "auth", e.g.: `/api/v2/auth/methodName`.
 
 qBittorrent uses cookie-based authentication.
 
@@ -165,6 +173,8 @@ Content-Length: length
 ```
 
 # Application #
+
+All Application API methods are under "app", e.g.: `/api/v2/app/methodName`.
 
 ### Get application version ###
 
@@ -430,6 +440,8 @@ C:/Users/Dayman/Downloads
 
 # Log #
 
+All Log API methods are under "log", e.g.: `/api/v2/log/methodName`.
+
 ### Get log ###
 
 ```http
@@ -500,6 +512,7 @@ Property    | Type    | Description
 # Sync #
 
 Sync API implements requests for obtaining changes since the last request.
+All Sync API methods are under "sync", e.g.: `/api/v2/sync/methodName`.
 
 ### Get main data ###
 
@@ -563,6 +576,8 @@ http://127.0.0.1/api/v2/sync/torrentPeers?hash=8c212779b4abde7c6bc608063a0d008b7
 ```
 
 # Transfer info #
+
+All Transfer info API methods are under "transfer", e.g.: `/api/v2/transfer/methodName`.
 
 ### Get global transfer info ###
 
@@ -732,7 +747,9 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
-# Torrents management #
+# Torrent management #
+
+All Torrent management API methods are under "torrents", e.g.: `/api/v2/torrents/methodName`.
 
 ### Get torrent list ###
 
@@ -1973,7 +1990,7 @@ Returns all auto-downloading rules in JSON format, e.g.:
 
 # Search #
 
-All Search API methods are under "search", e.g.: /api/v2/search/methodName.
+All Search API methods are under "search", e.g.: `/api/v2/search/methodName`.
 
 ### Start search ###
 
