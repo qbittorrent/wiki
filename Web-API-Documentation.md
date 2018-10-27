@@ -1400,11 +1400,11 @@ hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|54eddd830a5b58480a6143d616a97e3a
 `hashes` can contain multiple hashes separated by `|` or set to `all`
 If `hashes=all` it will pause all torrents
 
-No matter if successful or not server will return the following reply:
+**Returns:**
 
-```http
-HTTP/1.1 200 OK
-```
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios
 
 ### Resume torrents ###
 
@@ -1424,11 +1424,11 @@ hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|54eddd830a5b58480a6143d616a97e3a
 `hashes` can contain multiple hashes separated by `|` or set to `all`
 If `hashes=all` it will resume all torrents
 
-No matter if successful or not server will return the following reply:
+**Returns:**
 
-```http
-HTTP/1.1 200 OK
-```
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios
 
 ### Delete torrents ###
 
@@ -1449,11 +1449,11 @@ hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32&deleteFiles=false
 If `hashes=all` it will delete all torrents
 If `deleteFiles=true` it will delete torrent with downloaded data
 
-No matter if successful or not server will return the following reply:
+**Returns:**
 
-```http
-HTTP/1.1 200 OK
-```
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios
 
 ### Recheck torrents ###
 
@@ -1473,11 +1473,11 @@ hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32
 `hashes` can contain multiple hashes separated by `|` or set to `all`
 If `hashes=all` it will recheck all torrents
 
-No matter if successful or not server will return the following reply:
+**Returns:**
 
-```http
-HTTP/1.1 200 OK
-```
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios
 
 ### Reannounce torrents ###
 
@@ -1497,11 +1497,11 @@ hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32
 `hashes` can contain multiple hashes separated by `|` or set to `all`
 If `hashes=all` it will recheck all torrents
 
-No matter if successful or not server will return the following reply:
+**Returns:**
 
-```http
-HTTP/1.1 200 OK
-```
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios
 
 ### Add new torrent ###
 
@@ -1591,11 +1591,11 @@ Property                      | Type    | Description
 `sequentialDownload`          | string  | (optional) Enable sequential download. Possible values are `true`, `false` (default)
 `firstLastPiecePrio`          | string  | (optional) Prioritize download first last piece. Possible values are `true`, `false` (default)
 
-No matter if successful or not server will return the following reply:
+**Returns:**
 
-```http
-HTTP/1.1 200 OK
-```
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios
 
 ### Add trackers to torrent ###
 
@@ -1614,11 +1614,11 @@ hash=8c212779b4abde7c6bc608063a0d008b7e40ce32&urls=http://192.168.0.1/announce%0
 
 This adds two trackers to torrent with hash `8c212779b4abde7c6bc608063a0d008b7e40ce32`. Note `%0A` (aka LF newline) between trackers. Ampersand in tracker urls **MUST** be escaped.
 
-No matter if successful or not server will return the following reply:
+**Returns:**
 
-```http
-HTTP/1.1 200 OK
-```
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios
 
 ### Increase torrent priority ###
 
@@ -1637,11 +1637,11 @@ hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32
 
 `hashes` can contain multiple hashes separated by `|` or set to `all` or set to `all`
 
-No matter if successful or not server will return the following reply:
+**Returns:**
 
-```http
-HTTP/1.1 200 OK
-```
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios
 
 ### Decrease torrent priority ###
 
@@ -1660,11 +1660,11 @@ hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32
 
 `hashes` can contain multiple hashes separated by `|` or set to `all` or set to `all`
 
-No matter if successful or not server will return the following reply:
+**Returns:**
 
-```http
-HTTP/1.1 200 OK
-```
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios
 
 ### Maximal torrent priority ###
 
@@ -1683,11 +1683,11 @@ hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32
 
 `hashes` can contain multiple hashes separated by `|` or set to `all`
 
-No matter if successful or not server will return the following reply:
+**Returns:**
 
-```http
-HTTP/1.1 200 OK
-```
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios
 
 ### Minimal torrent priority ###
 
@@ -1706,11 +1706,11 @@ hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32
 
 `hashes` can contain multiple hashes separated by `|` or set to `all`
 
-No matter if successful or not server will return the following reply:
+**Returns:**
 
-```http
-HTTP/1.1 200 OK
-```
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios
 
 ### Set file priority ###
 
@@ -1729,11 +1729,11 @@ hash=8c212779b4abde7c6bc608063a0d008b7e40ce32&id=0&priority=7
 
 Please consult [torrent contents API](#get-torrent-contents) for possible `priority` values. `id` values coresspond to contents returned by [torrent contents API](#get-torrent-contents), e.g. `id=0` for first file, `id=1` for second file, etc.
 
-No matter if successful or not server will return the following reply:
+**Returns:**
 
-```http
-HTTP/1.1 200 OK
-```
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios
 
 ### Get torrent download limit ###
 
@@ -1782,11 +1782,11 @@ hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5
 `hashes` can contain multiple hashes separated by `|` or set to `all`<br />
 `limit` is the download speed limit in bytes per second you want to set.
 
-No matter if successful or not server will return the following reply:
+**Returns:**
 
-```http
-HTTP/1.1 200 OK
-```
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios
 
 ### Set torrent share limit ###
 
@@ -1807,11 +1807,11 @@ hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5
 `ratioLimit` is the max ratio the torrent should be seeded until. `-2` means the global limit should be used, `-1` means no limit.<br />
 `seedingTimeLimit` is the max amount of time the torrent should be seeded. `-2` means the global limit should be used, `-1` means no limit.
 
-No matter if successful or not server will return the following reply:
+**Returns:**
 
-```http
-HTTP/1.1 200 OK
-```
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios
 
 ### Get torrent upload limit ###
 
@@ -1860,11 +1860,11 @@ hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5
 `hashes` can contain multiple hashes separated by `|` or set to `all`<br />
 `limit` is the upload speed limit in bytes per second you want to set.
 
-No matter if successful or not server will return the following reply:
+**Returns:**
 
-```http
-HTTP/1.1 200 OK
-```
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios
 
 ### Set torrent location ###
 
@@ -1884,11 +1884,11 @@ hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5
 `hashes` can contain multiple hashes separated by `|` or set to `all`<br />
 `location` is the location to download the torrent to. If the location doesn't exist, the torrent's location is unchanged.
 
-No matter if successful or not server will return the following reply:
+**Returns:**
 
-```http
-HTTP/1.1 200 OK
-```
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios
 
 ### Set torrent name ###
 
@@ -1995,11 +1995,11 @@ categories=Category1%0ACategory2
 
 `categories` can contain multiple cateogies separated by `\n` (%0A urlencoded)
 
-No matter if successful or not server will return the following reply:
+**Returns:**
 
-```http
-HTTP/1.1 200 OK
-```
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios
 
 ### Set automatic torrent management ###
 
@@ -2019,11 +2019,11 @@ hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5
 `hashes` can contain multiple hashes separated by `|` or set to `all`<br />
 `enable` is a boolean, affects the torrents listed in `hashes`, default is `false`
 
-No matter if successful or not server will return the following reply:
+**Returns:**
 
-```http
-HTTP/1.1 200 OK
-```
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios
 
 ### Toggle sequential download ###
 
@@ -2042,11 +2042,11 @@ hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32
 
 `hashes` can contain multiple hashes separated by `|` or set to `all`
 
-No matter if successful or not server will return the following reply:
+**Returns:**
 
-```http
-HTTP/1.1 200 OK
-```
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios
 
 ### Set first/last piece priority ###
 
@@ -2065,11 +2065,11 @@ hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32
 
 `hashes` can contain multiple hashes separated by `|` or set to `all`
 
-No matter if successful or not server will return the following reply:
+**Returns:**
 
-```http
-HTTP/1.1 200 OK
-```
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios
 
 ### Set force start ###
 
@@ -2089,11 +2089,11 @@ hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32?value=true
 `hashes` can contain multiple hashes separated by `|` or set to `all`<br />
 `value` is a boolean, affects the torrents listed in `hashes`, default is `false`
 
-No matter if successful or not server will return the following reply:
+**Returns:**
 
-```http
-HTTP/1.1 200 OK
-```
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios
 
 ### Set super seeding ###
 
@@ -2113,11 +2113,11 @@ hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32?value=true
 `hashes` can contain multiple hashes separated by `|` or set to `all`<br />
 `value` is a boolean, affects the torrents listed in `hashes`, default is `false`
 
-No matter if successful or not server will return the following reply:
+**Returns:**
 
-```http
-HTTP/1.1 200 OK
-```
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios
 
 # RSS (experimental) #
 
