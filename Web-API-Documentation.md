@@ -1260,30 +1260,25 @@ Example:
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
-```http
-GET /api/v2/torrents/files?hash=8c212779b4abde7c6bc608063a0d008b7e40ce32 HTTP/1.1
-User-Agent: Fiddler
-Host: 127.0.0.1
-Cookie: SID=your_sid
-```
+Name: `files`
 
-If your torrent hash is invalid server will reply with:
+Requires authentication: Yes
 
-```http
-HTTP/1.1 200 OK
-content-type: application/json
-content-length: 0
-```
+**Parameters:**
 
-Otherwise server will return the following reply (example):
+Param     | Description
+----------|------------
+`hash`    | The hash of the torrent you want to get the contents of
 
-```http
-HTTP/1.1 200 OK
-content-type: application/json
-content-length: length
+**Returns:**
 
-[{"is_seed":false,"name":"debian-8.1.0-amd64-CD-1.iso","piece_range":[0,1253],"priority":4,"progress":0,"size":657457152}]
-```
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+TODO                              | TODO
+
+The response is:
+- empty, if the torrent hash is invalid
+- otherwise, a JSON array, where each element contains info about one file, with the following fields
 
 Property       | Type          | Description
 ---------------|---------------|-------------
@@ -1303,36 +1298,45 @@ Value      | Description
 `6`        | High priority
 `7`        | Maximal priority
 
-### Get torrent pieces' states ###
+Example:
 
-Returns an array of states (integers) of all pieces (in order) of a specific torrent.
+```JSON
+
+[
+    {
+        "is_seed":false,
+        "name":"debian-8.1.0-amd64-CD-1.iso",
+        "piece_range":[0,1253],
+        "priority":4,
+        "progress":0,
+        "size":657457152
+    }
+]
+```
+
+### Get torrent pieces' states ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
-```http
-GET /api/v2/torrents/pieceStates?hash=8c212779b4abde7c6bc608063a0d008b7e40ce32 HTTP/1.1
-User-Agent: Fiddler
-Host: 127.0.0.1
-Cookie: SID=your_sid
-```
+Name: `pieceStates`
 
-If your torrent hash is invalid server will reply with:
+Requires authentication: Yes
 
-```http
-HTTP/1.1 200 OK
-content-type: application/json
-content-length: 0
-```
+**Parameters:**
 
-Otherwise server will return the following reply (example):
+Param     | Description
+----------|------------
+`hash`    | The hash of the torrent you want to get the pieces' states of
 
-```http
-HTTP/1.1 200 OK
-content-type: application/json
-content-length: length
+**Returns:**
 
-[0,0,2,1,0,0,2,1]
-```
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+TODO                              | TODO
+
+The response is:
+- empty, if the torrent hash is invalid
+- otherwise, an array of states (integers) of all pieces (in order) of a specific torrent.
 
 Value meanings are defined as below:
 
@@ -1342,34 +1346,39 @@ Value      | Description
 `1`        | Now downloading
 `2`        | Already downloaded
 
-### Get torrent pieces' hashes ###
+Example:
 
-Returns an array of hashes (strings) of all pieces (in order) of a specific torrent.
+```JSON
+[0,0,2,1,0,0,2,1]
+```
+
+### Get torrent pieces' hashes ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
-```http
-GET /api/v2/torrents/pieceHashes?hash=8c212779b4abde7c6bc608063a0d008b7e40ce32 HTTP/1.1
-User-Agent: Fiddler
-Host: 127.0.0.1
-Cookie: SID=your_sid
-```
+Name: `pieceHashes`
 
-If your torrent hash is invalid server will reply with:
+Requires authentication: Yes
 
-```http
-HTTP/1.1 200 OK
-content-type: application/json
-content-length: 0
-```
+**Parameters:**
 
-Otherwise server will return the following reply (example):
+Param     | Description
+----------|------------
+`hash`    | The hash of the torrent you want to get the pieces' hashes of
 
-```http
-HTTP/1.1 200 OK
-content-type: application/json
-content-length: length
+**Returns:**
 
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+TODO                              | TODO
+
+The response is:
+- empty, if the torrent hash is invalid
+- otherwise, an array of hashes (strings) of all pieces (in order) of a specific torrent.
+
+Example:
+
+```JSON
 ["54eddd830a5b58480a6143d616a97e3a6c23c439","f8a99d225aa4241db100f88407fc3bdaead583ab","928fb615b9bd4dd8f9e9022552c8f8f37ef76f58"]
 ```
 
