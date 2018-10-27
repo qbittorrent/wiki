@@ -964,17 +964,15 @@ Requires authentication: Yes
 
 **Parameters:**
 
-All of the following parameters are optional
-
-Param     | Description
-----------|------------
-`filter`  | Filter torrent list. Allowed filters: `all`, `downloading`, `completed`, `paused`, `active`, `inactive`
-`category`| Get torrents with the given category (empty string means "without category"; no "category" param means "any category")
-`sort`    | Sort torrents by given key. All the possible keys are listed here below
-`reverse` | Enable reverse sorting. Possible values are `true` and `false` (default)
-`limit`   | Limit the number of torrents returned
-`offset`  | Set offset (if less than 0, offset from end)
-`hashes`  | Filter by hashes. Can contain multiple hashes separated by `\|`
+Param                 | Description
+----------------------|------------
+`filter`  _optional_  | Filter torrent list. Allowed filters: `all`, `downloading`, `completed`, `paused`, `active`, `inactive`
+`category` _optional_ | Get torrents with the given category (empty string means "without category"; no "category" param means "any category")
+`sort` _optional_     | Sort torrents by given key. All the possible keys are listed here below
+`reverse` _optional_  | Enable reverse sorting. Possible values are `true` and `false` (default)
+`limit` _optional_    | Limit the number of torrents returned
+`offset` _optional_   | Set offset (if less than 0, offset from end)
+`hashes` _optional_   | Filter by hashes. Can contain multiple hashes separated by `\|`
 
 Example:
 ```http
@@ -1575,21 +1573,21 @@ file_binary_data_goes_here
 
 The above example will add two torrent files. `file_binary_data_goes_here` represents raw data of torrent file (basically a byte array).
 
-Property                      | Type    | Description
-------------------------------|---------|------------
-`urls`                        | string  | URLs separated with newlines
-`torrents`                    | raw     | Raw data of torrent file. `torrents` can be presented multiple times.
-`savepath`                    | string  | (optional) Download folder
-`cookie`                      | string  | (optional) Cookie sent to download the .torrent file
-`category`                    | string  | (optional) Category for the torrent
-`skip_checking`               | string  | (optional) Skip hash checking. Possible values are `true`, `false` (default)
-`paused`                      | string  | (optional) Add torrents in the paused state. Possible values are `true`, `false` (default)
-`root_folder`  `API15`        | string  | (optional) Create the root folder. Possible values are `true`, `false`, unset (default)
-`rename`                      | string  | (optional) Rename torrent
-`upLimit`                     | integer | (optional) Set torrent upload speed limit. Unit in bytes/second
-`dlLimit`                     | integer | (optional) Set torrent download speed limit. Unit in bytes/second
-`sequentialDownload`          | string  | (optional) Enable sequential download. Possible values are `true`, `false` (default)
-`firstLastPiecePrio`          | string  | (optional) Prioritize download first last piece. Possible values are `true`, `false` (default)
+Property                        | Type    | Description
+--------------------------------|---------|------------
+`urls`                          | string  | URLs separated with newlines
+`torrents`                      | raw     | Raw data of torrent file. `torrents` can be presented multiple times.
+`savepath` _optional_           | string  | Download folder
+`cookie` _optional_             | string  | Cookie sent to download the .torrent file
+`category` _optional_           | string  | Category for the torrent
+`skip_checking` _optional_      | string  | Skip hash checking. Possible values are `true`, `false` (default)
+`paused` _optional_             | string  | Add torrents in the paused state. Possible values are `true`, `false` (default)
+`root_folder` _optional_        | string  | Create the root folder. Possible values are `true`, `false`, unset (default)
+`rename` _optional_             | string  | Rename torrent
+`upLimit` _optional_            | integer | Set torrent upload speed limit. Unit in bytes/second
+`dlLimit` _optional_            | integer | Set torrent download speed limit. Unit in bytes/second
+`sequentialDownload` _optional_ | string  | Enable sequential download. Possible values are `true`, `false` (default)
+`firstLastPiecePrio` _optional_ | string  | Prioritize download first last piece. Possible values are `true`, `false` (default)
 
 **Returns:**
 
@@ -2142,7 +2140,7 @@ Parameters:
 Parameter                         | Type    | Description
 ----------------------------------|---------|------------
 `url`                             | string  | URL of RSS feed (e.g. "http://thepiratebay.org/rss//top100/200")
-`path` *optional*                 | string  | Full path of added folder (e.g. "The Pirate Bay/Top100/Video")
+`path` _optional_                 | string  | Full path of added folder (e.g. "The Pirate Bay/Top100/Video")
 
 ### Remove item ###
 
@@ -2177,7 +2175,7 @@ Parameters:
 
 Parameter                         | Type    | Description
 ----------------------------------|---------|------------
-`withData` *optional*             | bool    | True if you need current feed articles
+`withData` _optional_             | bool    | True if you need current feed articles
 
 Returns all RSS items in JSON format, e.g.:
 ```JSON
@@ -2352,7 +2350,7 @@ Name: `status`
 
 Parameter                         | Type    | Description
 ----------------------------------|---------|------------
-`id`                              | number  | (optional) ID of the search job. If not specified, all search jobs are returned
+`id` _optional_                   | number  | ID of the search job. If not specified, all search jobs are returned
 
 **Returns:**
 
@@ -2389,8 +2387,8 @@ Name: `results`
 Parameter                         | Type    | Description
 ----------------------------------|---------|------------
 `id`                              | number  | ID of the search job
-`limit`                           | number  | (optional) max number of results to return. 0 or negative means no limit
-`offset`                          | number  | (optional) result to start at. A negative number means count backwards (e.g. `-2` returns the 2 most recent results)
+`limit` _optional_                | number  | max number of results to return. 0 or negative means no limit
+`offset` _optional_               | number  | result to start at. A negative number means count backwards (e.g. `-2` returns the 2 most recent results)
 
 **Returns:**
 
@@ -2473,7 +2471,7 @@ Name: `categories`
 
 Parameter                         | Type    | Description
 ----------------------------------|---------|------------
-`pluginName`                      | string  | (optional) name of the plugin (e.g. "legittorrents"). Also supports `all` and `enabled`
+`pluginName` _optional_           | string  | name of the plugin (e.g. "legittorrents"). Also supports `all` and `enabled`
 
 **Returns:**
 
