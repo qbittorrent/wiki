@@ -772,6 +772,8 @@ Example:
 /api/v2/sync/torrentPeers?hash=8c212779b4abde7c6bc608063a0d008b7e40ce32?rid=14
 ```
 
+**Returns:**
+
 HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
 TODO                              | TODO
@@ -786,22 +788,21 @@ All Transfer info API methods are under "transfer", e.g.: `/api/v2/transfer/meth
 
 This method returns info you usually see in qBt status bar.
 
-```http
-GET /api/v2/transfer/info HTTP/1.1
-User-Agent: Fiddler
-Host: 127.0.0.1
-Cookie: SID=your_sid
-```
+Name: `info`
 
-Server reply (example):
+Requires authentication: Yes
 
-```http
-HTTP/1.1 200 OK
-content-type: application/json
-content-length: length
+**Parameters:**
 
-{"connection_status":"connected","dht_nodes":386,"dl_info_data":681521119,"dl_info_speed":0,"dl_rate_limit":0,"up_info_data":10747904,"up_info_speed":0,"up_rate_limit":1048576}
-```
+None
+
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+TODO                              | TODO
+
+The response is a JSON object with the following fields
 
 Property            | Type    | Description
 --------------------|---------|------------
@@ -830,125 +831,126 @@ Value               |
 `firewalled`        |
 `disconnected`      |
 
+Example:
+
+```JSON
+{
+    "connection_status":"connected",
+    "dht_nodes":386,
+    "dl_info_data":681521119,
+    "dl_info_speed":0,
+    "dl_rate_limit":0,
+    "up_info_data":10747904,
+    "up_info_speed":0,
+    "up_rate_limit":1048576
+}
+```
+
 ### Get alternative speed limits state ###
 
-Get the state of the alternative speed limits. `1` is returned if enabled, `0` otherwise.
-```http
-POST /api/v2/transfer/speedLimitsMode HTTP/1.1
-User-Agent: Fiddler
-Host: 127.0.0.1
-Cookie: SID=your_sid
-Content-Type: application/x-www-form-urlencoded
-Content-Length: length
-```
+Name: `speedLimitsMode`
 
-Server reply (example):
-```http
-HTTP/1.1 200 OK
-content-type: text/plain
-content-length: length
+Requires authentication: Yes
 
-1
-```
+**Parameters:**
+
+None
+
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+TODO                              | TODO
+
+The response is `1` if alternative speed limits are enabled, `0` otherwise.
 
 ### Toggle alternative speed limits ###
 
-Toggle the state of the alternative speed limits
+Name: `toggleSpeedLimitsMode`
 
-```http
-POST /api/v2/transfer/toggleSpeedLimitsMode HTTP/1.1
-User-Agent: Fiddler
-Host: 127.0.0.1
-Cookie: SID=your_sid
-Content-Type: application/x-www-form-urlencoded
-Content-Length: length
-```
+Requires authentication: Yes
+
+**Parameters:**
+
+None
+
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+TODO                              | TODO
 
 ### Get global download limit ###
 
-```http
-POST /api/v2/transfer/downloadLimit HTTP/1.1
-User-Agent: Fiddler
-Host: 127.0.0.1
-Cookie: SID=your_sid
-Content-Length: 0
-```
+Name: `downloadLimit`
 
-Server reply (example):
+Requires authentication: Yes
 
-```http
-HTTP/1.1 200 OK
-content-type: text/plain
-content-length: length
+**Parameters:**
 
-3145728
-```
+None
 
-`3145728` is the value of current global download speed limit in bytes; this value will be zero if no limit is applied.
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+TODO                              | TODO
+
+The response is the value of current global download speed limit in bytes/second; this value will be zero if no limit is applied.
 
 ### Set global download limit ###
 
-```http
-POST /api/v2/transfer/setDownloadLimit HTTP/1.1
-User-Agent: Fiddler
-Host: 127.0.0.1
-Cookie: SID=your_sid
-Content-Type: application/x-www-form-urlencoded
-Content-Length: length
+Name: `setDownloadLimit`
 
-limit=4194304
-```
+Requires authentication: Yes
 
-`limit` is global download speed limit you want to set in bytes.
+**Parameters:**
 
-No matter if successful or not server will return the following reply:
+Parameter                         | Type    | Description
+----------------------------------|---------|------------
+`limit`                           | integer | The global download speed limit to set in bytes/second
 
-```http
-HTTP/1.1 200 OK
-```
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios
 
 ### Get global upload limit ###
 
-```http
-POST /api/v2/transfer/uploadLimit HTTP/1.1
-User-Agent: Fiddler
-Host: 127.0.0.1
-Cookie: SID=your_sid
-Content-Length: 0
-```
+Name: `uploadLimit`
 
-Server reply (example):
+Requires authentication: Yes
 
-```http
-HTTP/1.1 200 OK
-content-type: text/plain
-content-length: length
+**Parameters:**
 
-3145728
-```
+None
 
-`3145728` is the value of current global upload speed limit in bytes; this value will be zero if no limit is applied.
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+TODO                              | TODO
+
+The response is the value of current global upload speed limit in bytes/second; this value will be zero if no limit is applied.
 
 ### Set global upload limit ###
 
-```http
-POST /api/v2/transfer/setUploadLimit HTTP/1.1
-User-Agent: Fiddler
-Host: 127.0.0.1
-Cookie: SID=your_sid
-Content-Type: application/x-www-form-urlencoded
-Content-Length: length
+Name: `setUploadLimit`
 
-limit=4194304
-```
+Requires authentication: Yes
 
-`limit` is global upload speed limit you want to set in bytes.
+**Parameters:**
 
-No matter if successful or not server will return the following reply:
+Parameter                         | Type    | Description
+----------------------------------|---------|------------
+`limit`                           | integer | The global upload speed limit to set in bytes/second
 
-```http
-HTTP/1.1 200 OK
-```
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios
 
 # Torrent management #
 
