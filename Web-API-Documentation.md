@@ -958,14 +958,13 @@ All Torrent management API methods are under "torrents", e.g.: `/api/v2/torrents
 
 ### Get torrent list ###
 
-```http
-GET /api/v2/torrents/info HTTP/1.1
-User-Agent: Fiddler
-Host: 127.0.0.1
-Cookie: SID=your_sid
-```
+Name: `info`
 
-Params:
+Requires authentication: Yes
+
+**Parameters:**
+
+All of the following parameters are optional
 
 Param     | Description
 ----------|------------
@@ -982,15 +981,13 @@ Example:
 /api/v2/torrents/info?filter=downloading&category=sample%20category&sort=ratio
 ```
 
-Server will return the following reply (example):
+**Returns:**
 
-```http
-HTTP/1.1 200 OK
-content-type: application/json
-content-length: length
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+TODO                              | TODO
 
-[{"dlspeed":9681262,"eta":87,"f_l_piece_prio":false,"force_start":false,"hash":"8c212779b4abde7c6bc608063a0d008b7e40ce32","category":"","name":"debian-8.1.0-amd64-CD-1.iso","num_complete":-1,"num_incomplete":-1,"num_leechs":2,"num_seeds":54,"priority":1,"progress":0.16108787059783936,"ratio":0,"seq_dl":false,"size":657457152,"state":"downloading","super_seeding":false,"upspeed":0},{another_torrent_info}]
-```
+The response is a JSON array with the following fields
 
 Property          | Type    | Description
 ------------------|---------|------------
@@ -1031,34 +1028,60 @@ Value         | Description
 `stalledDL`   | Torrent is being downloaded, but no connection were made
 `metaDL`      | Torrent has just started downloading and is fetching metadata
 
+Example:
+
+```JSON
+[
+    {
+        "dlspeed":9681262,
+        "eta":87,
+        "f_l_piece_prio":false,
+        "force_start":false,
+        "hash":"8c212779b4abde7c6bc608063a0d008b7e40ce32",
+        "category":"",
+        "name":"debian-8.1.0-amd64-CD-1.iso",
+        "num_complete":-1,
+        "num_incomplete":-1,
+        "num_leechs":2,
+        "num_seeds":54,
+        "priority":1,
+        "progress":0.16108787059783936,
+        "ratio":0,
+        "seq_dl":false,
+        "size":657457152,
+        "state":"downloading",
+        "super_seeding":false,
+        "upspeed":0
+    },
+    {
+        another_torrent_info
+    }
+]
+```
+
 ### Get torrent generic properties ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
-```http
-GET /api/v2/torrents/properties?hash=8c212779b4abde7c6bc608063a0d008b7e40ce32 HTTP/1.1
-User-Agent: Fiddler
-Host: 127.0.0.1
-Cookie: SID=your_sid
-```
+Name: `properties`
 
-If your torrent hash is invalid server will reply with:
+Requires authentication: Yes
 
-```http
-HTTP/1.1 200 OK
-content-type: application/json
-content-length: 0
-```
+**Parameters:**
 
-Otherwise server will return the following reply (example):
+Param     | Description
+----------|------------
+`hash`    | The hash of the torrent you want to get the generic properties of
 
-```http
-HTTP/1.1 200 OK
-content-type: application/json
-content-length: length
+**Returns:**
 
-{"addition_date":1438429165,"comment":"\"Debian CD from cdimage.debian.org\"","completion_date":1438429234,"created_by":"","creation_date":1433605214,"dl_limit":-1,"dl_speed":0,"dl_speed_avg":9736015,"eta":8640000,"last_seen":1438430354,"nb_connections":3,"nb_connections_limit":250,"peers":1,"peers_total":89,"piece_size":524288,"pieces_have":1254,"pieces_num":1254,"reannounce":672,"save_path":"/Downloads/debian-8.1.0-amd64-CD-1.iso","seeding_time":1128,"seeds":1,"seeds_total":254,"share_ratio":0.00072121022562178299,"time_elapsed":1197,"total_downloaded":681521119,"total_downloaded_session":681521119,"total_size":657457152,"total_uploaded":491520,"total_uploaded_session":491520,"total_wasted":23481724,"up_limit":-1,"up_speed":0,"up_speed_avg":410}
-```
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+TODO                              | TODO
+
+The response is:
+- empty, if the torrent hash is invalid
+- otherwise, a JSON object with the following fields
 
 Property                  | Type    | Description
 --------------------------|---------|------------
@@ -1096,37 +1119,71 @@ Property                  | Type    | Description
 `up_speed_avg`            | integer | Torrent average upload speed (bytes/second)
 `up_speed`                | integer | Torrent upload speed (bytes/second)
 
+NB: `-1` is returned if the type of the property is integer but its value is not known.
 
-NB: `-1` is returned when the value is not known if the type is integer.
+Example:
+
+```JSON
+{
+    "addition_date":1438429165,
+    "comment":"\"Debian CD from cdimage.debian.org\"",
+    "completion_date":1438429234,
+    "created_by":"",
+    "creation_date":1433605214,
+    "dl_limit":-1,
+    "dl_speed":0,
+    "dl_speed_avg":9736015,
+    "eta":8640000,
+    "last_seen":1438430354,
+    "nb_connections":3,
+    "nb_connections_limit":250,
+    "peers":1,
+    "peers_total":89,
+    "piece_size":524288,
+    "pieces_have":1254,
+    "pieces_num":1254,
+    "reannounce":672,
+    "save_path":"/Downloads/debian-8.1.0-amd64-CD-1.iso",
+    "seeding_time":1128,
+    "seeds":1,
+    "seeds_total":254,
+    "share_ratio":0.00072121022562178299,
+    "time_elapsed":1197,
+    "total_downloaded":681521119,
+    "total_downloaded_session":681521119,
+    "total_size":657457152,
+    "total_uploaded":491520,
+    "total_uploaded_session":491520,
+    "total_wasted":23481724,
+    "up_limit":-1,
+    "up_speed":0,
+    "up_speed_avg":410
+}
+```
 
 ### Get torrent trackers ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
-```http
-GET /api/v2/torrents/trackers?hash=8c212779b4abde7c6bc608063a0d008b7e40ce32 HTTP/1.1
-User-Agent: Fiddler
-Host: 127.0.0.1
-Cookie: SID=your_sid
-```
+Name: `trackers`
 
-If your torrent hash is invalid server will reply with:
+Requires authentication: Yes
 
-```http
-HTTP/1.1 200 OK
-content-type: application/json
-content-length: 2
-```
+**Parameters:**
 
-Otherwise server will return the following reply (example):
+Param     | Description
+----------|------------
+`hash`    | The hash of the torrent you want to get the trackers of
 
-```http
-HTTP/1.1 200 OK
-content-type: application/json
-content-length: length
+**Returns:**
 
-[{"msg":"","num_peers":100,"status":"Working","url":"http://bttracker.debian.org:6969/announce"},{another_tracker_info}]
-```
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+TODO                              | TODO
+
+The response is:
+- empty, if the torrent hash is invalid
+- otherwise, a JSON array, where each element contains info about one tracker, with the following fields
 
 Property      | Type     | Description
 --------------|----------|-------------
@@ -1144,28 +1201,60 @@ Value               | Description
 `Not working`       | Tracker has been contacted, but it is not working (or doesn't send proper replies)
 `Not contacted yet` | Tracker has not been contacted yet
 
+Example:
+
+```JSON
+[
+    {
+        "msg":"",
+        "num_peers":100,
+        "status":"Working",
+        "url":"http://bttracker.debian.org:6969/announce"
+    },
+    {
+        another_tracker_info
+    }
+]
+```
+
 ### Get torrent web seeds ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
-```http
-GET /api/v2/torrents/webseeds?hash=8c212779b4abde7c6bc608063a0d008b7e40ce32 HTTP/1.1
-User-Agent: Fiddler
-Host: 127.0.0.1
-Cookie: SID=your_sid
-```
+Name: `webseeds`
 
-```http
-HTTP/1.1 200 OK
-content-type: application/json
-content-length: length
+Requires authentication: Yes
 
-[{"url":"http://some_url/"},{"url":"http://some_other_url/"}]
-```
+**Parameters:**
+
+Param     | Description
+----------|------------
+`hash`    | The hash of the torrent you want to get the webseeds of
+
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+TODO                              | TODO
+
+The response is a JSON array, where each element is information about one webseed, with the following fields
 
 Property      | Type     | Description
 --------------|----------|------------
 `url`         | string   | URL of the web seed
+
+Example:
+
+```JSON
+[
+    {
+        "url":"http://some_url/"
+    },
+    {
+        "url":"http://some_other_url/"
+    }
+]
+```
 
 ### Get torrent contents ###
 
