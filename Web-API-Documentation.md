@@ -34,7 +34,7 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
    1. [Set global download limit](#set-global-download-limit)
    1. [Get global upload limit](#get-global-upload-limit)
    1. [Set global upload limit](#set-global-upload-limit)
-1. [Torrents management](#torrents-management)
+1. [Torrent management](#torrent-management)
    1. [Get torrent list](#get-torrent-list)
    1. [Get torrent generic properties](#get-torrent-generic-properties)
    1. [Get torrent trackers](#get-torrent-trackers)
