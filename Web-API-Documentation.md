@@ -276,18 +276,18 @@ Property                          | Type    | Description
 `max_active_torrents`             | integer | Maximum number of active simultaneous downloads and uploads
 `max_active_uploads`              | integer | Maximum number of active simultaneous uploads
 `dont_count_slow_torrents`        | bool    | If true torrents w/o any activity (stalled ones) will not be counted towards `max_active_*` limits; see [dont_count_slow_torrents](https://www.libtorrent.org/reference-Settings.html#dont_count_slow_torrents) for more information
-`max_ratio_enabled` `API3`        | bool    | True if share ratio limit is enabled
-`max_ratio` `API3`                | float   | Get the global share ratio limit
-`max_ratio_act` `API3`            | bool    | Action performed when a torrent reaches the maximum share ratio. See list of possible values here below.
+`max_ratio_enabled`               | bool    | True if share ratio limit is enabled
+`max_ratio`                       | float   | Get the global share ratio limit
+`max_ratio_act`                   | bool    | Action performed when a torrent reaches the maximum share ratio. See list of possible values here below.
 `incomplete_files_ext`            | bool    | If true `.!qB` extension will be appended to incomplete files
 `listen_port`                     | integer | Port for incoming connections
 `upnp`                            | bool    | True if UPnP/NAT-PMP is enabled
-`random_port` `API3`              | bool    | True if the port is randomly selected
+`random_port`                     | bool    | True if the port is randomly selected
 `dl_limit`                        | integer | Global download speed limit in KiB/s; `-1` means no limit is applied
 `up_limit`                        | integer | Global upload speed limit in KiB/s; `-1` means no limit is applied
 `max_connec`                      | integer | Maximum global number of simultaneous connections
 `max_connec_per_torrent`          | integer | Maximum number of simultaneous connections per torrent
-`max_uploads` `API3`              | integer | Maximum number of upload slots
+`max_uploads`                     | integer | Maximum number of upload slots
 `max_uploads_per_torrent`         | integer | Maximum number of upload slots per torrent
 `enable_utp`                      | bool    | True if uTP protocol should be enabled; this option is only available in qBittorent built against libtorrent version 0.16.X and higher
 `limit_utp_rate`                  | bool    | True if `[du]l_limit` should be applied to uTP connections; this option is only available in qBittorent built against libtorrent version 0.16.X and higher
@@ -311,13 +311,13 @@ Property                          | Type    | Description
 `proxy_ip`                        | string  | Proxy IP address or domain name
 `proxy_port`                      | integer | Proxy port
 `proxy_peer_connections`          | bool    | True if peer and web seed connections should be proxified; this option will have any effect only in qBittorent built against libtorrent version 0.16.X and higher
-`force_proxy` `API3`              | bool    | True if the connections not supported by the proxy are disabled
+`force_proxy`                     | bool    | True if the connections not supported by the proxy are disabled
 `proxy_auth_enabled`              | bool    | True proxy requires authentication; doesn't apply to SOCKS4 proxies
 `proxy_username`                  | string  | Username for proxy authentication
 `proxy_password`                  | string  | Password for proxy authentication
 `ip_filter_enabled`               | bool    | True if external IP filter should be enabled
 `ip_filter_path`                  | string  | Path to IP filter file (.dat, .p2p, .p2b files are supported); path is separated by slashes
-`ip_filter_trackers` `API3`       | bool    | True if IP filters are applied to trackers
+`ip_filter_trackers`              | bool    | True if IP filters are applied to trackers
 `web_ui_port`                     | integer | WebUI port
 `web_ui_upnp`                     | bool    | True if UPnP is used for the WebUI port
 `web_ui_username`                 | string  | WebUI username
