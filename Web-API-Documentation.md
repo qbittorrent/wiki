@@ -536,7 +536,7 @@ Requires authentication: Yes
 
 **Parameters:**
 
-Param           | Type    | Description
+Parameter       | Type    | Description
 ----------------|---------|------------
 `normal`        | bool    | Include normal messages (default: `true`)
 `info`          | bool    | Include info messages (default: `true`)
@@ -677,7 +677,7 @@ Requires authentication: Yes
 
 **Parameters:**
 
-Param           | Type    | Description
+Parameter       | Type    | Description
 ----------------|---------|------------
 `last_known_id` | integer | Exclude messages with "message id" <= `last_known_id` (default: `-1`)
 
@@ -710,9 +710,9 @@ Requires authentication: Yes
 
 **Parameters:**
 
-Param | Description
-------|------------
-`rid` | Response ID. If not provided, `rid=0` will be assumed. If the given `rid` is different from the one of last server reply, `full_update` will be `true` (see the server reply details for more info)
+Parameter | Description
+----------|------------
+`rid`     | Response ID. If not provided, `rid=0` will be assumed. If the given `rid` is different from the one of last server reply, `full_update` will be `true` (see the server reply details for more info)
 
 Example:
 
@@ -762,10 +762,10 @@ Requires authentication: Yes
 
 **Parameters:**
 
-Param  | Description
--------|------------
-`hash` | Torrent hash
-`rid`  | Response ID. If not provided, `rid=0` will be assumed. If the given `rid` is different from the one of last server reply, `full_update` will be `true` (see the server reply details for more info)
+Parameter | Description
+----------|------------
+`hash`    | Torrent hash
+`rid`     | Response ID. If not provided, `rid=0` will be assumed. If the given `rid` is different from the one of last server reply, `full_update` will be `true` (see the server reply details for more info)
 
 Example:
 ```http
@@ -964,10 +964,10 @@ Requires authentication: Yes
 
 **Parameters:**
 
-Param                 | Description
+Parameter             | Description
 ----------------------|------------
 `filter`  _optional_  | Filter torrent list. Allowed filters: `all`, `downloading`, `completed`, `paused`, `active`, `inactive`
-`category` _optional_ | Get torrents with the given category (empty string means "without category"; no "category" param means "any category")
+`category` _optional_ | Get torrents with the given category (empty string means "without category"; no "category" parameter means "any category")
 `sort` _optional_     | Sort torrents by given key. All the possible keys are listed here below
 `reverse` _optional_  | Enable reverse sorting. Possible values are `true` and `false` (default)
 `limit` _optional_    | Limit the number of torrents returned
@@ -1067,7 +1067,7 @@ Requires authentication: Yes
 
 **Parameters:**
 
-Param     | Description
+Parameter | Description
 ----------|------------
 `hash`    | The hash of the torrent you want to get the generic properties of
 
@@ -1169,7 +1169,7 @@ Requires authentication: Yes
 
 **Parameters:**
 
-Param     | Description
+Parameter | Description
 ----------|------------
 `hash`    | The hash of the torrent you want to get the trackers of
 
@@ -1225,7 +1225,7 @@ Requires authentication: Yes
 
 **Parameters:**
 
-Param     | Description
+Parameter | Description
 ----------|------------
 `hash`    | The hash of the torrent you want to get the webseeds of
 
@@ -1264,7 +1264,7 @@ Requires authentication: Yes
 
 **Parameters:**
 
-Param     | Description
+Parameter | Description
 ----------|------------
 `hash`    | The hash of the torrent you want to get the contents of
 
@@ -1322,7 +1322,7 @@ Requires authentication: Yes
 
 **Parameters:**
 
-Param     | Description
+Parameter | Description
 ----------|------------
 `hash`    | The hash of the torrent you want to get the pieces' states of
 
@@ -1360,7 +1360,7 @@ Requires authentication: Yes
 
 **Parameters:**
 
-Param     | Description
+Parameter | Description
 ----------|------------
 `hash`    | The hash of the torrent you want to get the pieces' hashes of
 
@@ -1390,9 +1390,9 @@ Requires authentication: Yes
 
 **Parameters:**
 
-Param       | Description
-------------|------------
-`hashes`    | The hashes of the torrents you want to pause. `hashes` can contain multiple hashes separated by `\|`, to pause multiple torrents, or set to `all`, to pause all torrents.
+Parameter | Description
+----------|------------
+`hashes`  | The hashes of the torrents you want to pause. `hashes` can contain multiple hashes separated by `\|`, to pause multiple torrents, or set to `all`, to pause all torrents.
 
 Example:
 
@@ -1416,9 +1416,9 @@ Requires authentication: Yes
 
 **Parameters:**
 
-Param       | Description
-------------|------------
-`hashes`    | The hashes of the torrents you want to resume. `hashes` can contain multiple hashes separated by `\|`, to resume multiple torrents, or set to `all`, to resume all torrents.
+Parameter | Description
+----------|------------
+`hashes`  | The hashes of the torrents you want to resume. `hashes` can contain multiple hashes separated by `\|`, to resume multiple torrents, or set to `all`, to resume all torrents.
 
 Example:
 
@@ -1442,10 +1442,10 @@ Requires authentication: Yes
 
 **Parameters:**
 
-Param                    | Description
--------------------------|------------
-`hashes`                 | The hashes of the torrents you want to delete. `hashes` can contain multiple hashes separated by `\|`, to delete multiple torrents, or set to `all`, to delete all torrents.
-`deleteFiles`            | If set to `true`, the downloaded data will also be deleted, otherwise has no effect.
+Parameter     | Description
+--------------|------------
+`hashes`      | The hashes of the torrents you want to delete. `hashes` can contain multiple hashes separated by `\|`, to delete multiple torrents, or set to `all`, to delete all torrents.
+`deleteFiles` | If set to `true`, the downloaded data will also be deleted, otherwise has no effect.
 
 Example:
 
@@ -1469,9 +1469,9 @@ Requires authentication: Yes
 
 **Parameters:**
 
-Param       | Description
-------------|------------
-`hashes`    | The hashes of the torrents you want to recheck. `hashes` can contain multiple hashes separated by `\|`, to recheck multiple torrents, or set to `all`, to recheck all torrents.
+Parameter | Description
+----------|------------
+`hashes`  | The hashes of the torrents you want to recheck. `hashes` can contain multiple hashes separated by `\|`, to recheck multiple torrents, or set to `all`, to recheck all torrents.
 
 Example:
 
@@ -1495,9 +1495,9 @@ Requires authentication: Yes
 
 **Parameters:**
 
-Param       | Description
-------------|------------
-`hashes`    | The hashes of the torrents you want to reannounce. `hashes` can contain multiple hashes separated by `\|`, to reannounce multiple torrents, or set to `all`, to reannounce all torrents.
+Parameter | Description
+----------|------------
+`hashes`  | The hashes of the torrents you want to reannounce. `hashes` can contain multiple hashes separated by `\|`, to reannounce multiple torrents, or set to `all`, to reannounce all torrents.
 
 Example:
 
@@ -1638,9 +1638,9 @@ Requires authentication: Yes
 
 **Parameters:**
 
-Param       | Description
-------------|------------
-`hashes`    | The hashes of the torrents you want to increase the priority of. `hashes` can contain multiple hashes separated by `\|`, to increase the priority of multiple torrents, or set to `all`, to increase the priority of all torrents.
+Parameter | Description
+----------|------------
+`hashes`  | The hashes of the torrents you want to increase the priority of. `hashes` can contain multiple hashes separated by `\|`, to increase the priority of multiple torrents, or set to `all`, to increase the priority of all torrents.
 
 Example:
 
@@ -1664,9 +1664,9 @@ Requires authentication: Yes
 
 **Parameters:**
 
-Param       | Description
-------------|------------
-`hashes`    | The hashes of the torrents you want to decrease the priority of. `hashes` can contain multiple hashes separated by `\|`, to decrease the priority of multiple torrents, or set to `all`, to decrease the priority of all torrents.
+Parameter | Description
+----------|------------
+`hashes`  | The hashes of the torrents you want to decrease the priority of. `hashes` can contain multiple hashes separated by `\|`, to decrease the priority of multiple torrents, or set to `all`, to decrease the priority of all torrents.
 
 Example:
 
@@ -1690,9 +1690,9 @@ Requires authentication: Yes
 
 **Parameters:**
 
-Param       | Description
-------------|------------
-`hashes`    | The hashes of the torrents you want to set to the maximum priority. `hashes` can contain multiple hashes separated by `\|`, to set multiple torrents to the maximum priority, or set to `all`, to set all torrents to the maximum priority.
+Parameter | Description
+----------|------------
+`hashes`  | The hashes of the torrents you want to set to the maximum priority. `hashes` can contain multiple hashes separated by `\|`, to set multiple torrents to the maximum priority, or set to `all`, to set all torrents to the maximum priority.
 
 Example:
 
@@ -1716,9 +1716,9 @@ Requires authentication: Yes
 
 **Parameters:**
 
-Param       | Description
-------------|------------
-`hashes`    | The hashes of the torrents you want to set to the minimum priority. `hashes` can contain multiple hashes separated by `\|`, to set multiple torrents to the minimum priority, or set to `all`, to set all torrents to the minimum priority.
+Parameter | Description
+----------|------------
+`hashes`  | The hashes of the torrents you want to set to the minimum priority. `hashes` can contain multiple hashes separated by `\|`, to set multiple torrents to the minimum priority, or set to `all`, to set all torrents to the minimum priority.
 
 Example:
 
@@ -2055,9 +2055,9 @@ Requires authentication: Yes
 
 **Parameters:**
 
-Param       | Description
-------------|------------
-`hashes`    | The hashes of the torrents you want to toggle sequential download for. `hashes` can contain multiple hashes separated by `\|`, to toggle sequential download for multiple torrents, or set to `all`, to toggle sequential download for all torrents.
+Parameter | Description
+----------|------------
+`hashes`  | The hashes of the torrents you want to toggle sequential download for. `hashes` can contain multiple hashes separated by `\|`, to toggle sequential download for multiple torrents, or set to `all`, to toggle sequential download for all torrents.
 
 Example:
 
@@ -2081,9 +2081,9 @@ Requires authentication: Yes
 
 **Parameters:**
 
-Param       | Description
-------------|------------
-`hashes`    | The hashes of the torrents you want to toggle the first/last piece priority for. `hashes` can contain multiple hashes separated by `\|`, to toggle the first/last piece priority for multiple torrents, or set to `all`, to toggle the first/last piece priority for all torrents.
+Parameter | Description
+----------|------------
+`hashes`  | The hashes of the torrents you want to toggle the first/last piece priority for. `hashes` can contain multiple hashes separated by `\|`, to toggle the first/last piece priority for multiple torrents, or set to `all`, to toggle the first/last piece priority for all torrents.
 
 Example:
 
