@@ -1384,19 +1384,21 @@ Example:
 
 Requires knowing the torrent hashes. You can get it from [torrent list](#get-torrent-list).
 
+Name: `pause`
+
+Requires authentication: Yes
+
+**Parameters:**
+
+Param       | Description
+------------|------------
+`hashes`    | The hashes of the torrents you want to pause. `hashes` can contain multiple hashes separated by `\|`, to pause multiple torrents, or set to `all`, to pause all torrents.
+
+Example:
+
 ```http
-POST /api/v2/torrents/pause HTTP/1.1
-User-Agent: Fiddler
-Host: 127.0.0.1
-Cookie: SID=your_sid
-Content-Type: application/x-www-form-urlencoded
-Content-Length: length
-
-hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|54eddd830a5b58480a6143d616a97e3a6c23c439
+/api/v2/torrents/pause&hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|54eddd830a5b58480a6143d616a97e3a6c23c439
 ```
-
-`hashes` can contain multiple hashes separated by `|` or set to `all`
-If `hashes=all` it will pause all torrents
 
 **Returns:**
 
@@ -1408,19 +1410,21 @@ HTTP Status Code                  | Scenario
 
 Requires knowing the torrent hashes. You can get it from [torrent list](#get-torrent-list).
 
+Name: `resume`
+
+Requires authentication: Yes
+
+**Parameters:**
+
+Param       | Description
+------------|------------
+`hashes`    | The hashes of the torrents you want to resume. `hashes` can contain multiple hashes separated by `\|`, to resume multiple torrents, or set to `all`, to resume all torrents.
+
+Example:
+
 ```http
-POST /api/v2/torrents/resume HTTP/1.1
-User-Agent: Fiddler
-Host: 127.0.0.1
-Cookie: SID=your_sid
-Content-Type: application/x-www-form-urlencoded
-Content-Length: length
-
-hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|54eddd830a5b58480a6143d616a97e3a6c23c439
+/api/v2/torrents/resume&hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|54eddd830a5b58480a6143d616a97e3a6c23c439
 ```
-
-`hashes` can contain multiple hashes separated by `|` or set to `all`
-If `hashes=all` it will resume all torrents
 
 **Returns:**
 
@@ -1432,20 +1436,22 @@ HTTP Status Code                  | Scenario
 
 Requires knowing the torrent hashes. You can get it from [torrent list](#get-torrent-list).
 
+Name: `delete`
+
+Requires authentication: Yes
+
+**Parameters:**
+
+Param                    | Description
+-------------------------|------------
+`hashes`                 | The hashes of the torrents you want to delete. `hashes` can contain multiple hashes separated by `\|`, to delete multiple torrents, or set to `all`, to delete all torrents.
+`deleteFiles`            | If set to `true`, the downloaded data will also be deleted, otherwise has no effect.
+
+Example:
+
 ```http
-POST /api/v2/torrents/delete HTTP/1.1
-User-Agent: Fiddler
-Host: 127.0.0.1
-Cookie: SID=your_sid
-Content-Type: application/x-www-form-urlencoded
-Content-Length: length
-
-hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32&deleteFiles=false
+/api/v2/torrents/delete&hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32&deleteFiles=false
 ```
-
-`hashes` can contain multiple hashes separated by `|` or set to `all`
-If `hashes=all` it will delete all torrents
-If `deleteFiles=true` it will delete torrent with downloaded data
 
 **Returns:**
 
@@ -1457,19 +1463,21 @@ HTTP Status Code                  | Scenario
 
 Requires knowing the torrent hashes. You can get it from [torrent list](#get-torrent-list).
 
+Name: `recheck`
+
+Requires authentication: Yes
+
+**Parameters:**
+
+Param       | Description
+------------|------------
+`hashes`    | The hashes of the torrents you want to recheck. `hashes` can contain multiple hashes separated by `\|`, to recheck multiple torrents, or set to `all`, to recheck all torrents.
+
+Example:
+
 ```http
-POST /api/v2/torrents/recheck HTTP/1.1
-User-Agent: Fiddler
-Host: 127.0.0.1
-Cookie: SID=your_sid
-Content-Type: application/x-www-form-urlencoded
-Content-Length: length
-
-hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32
+/api/v2/torrents/recheck&hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|54eddd830a5b58480a6143d616a97e3a6c23c439
 ```
-
-`hashes` can contain multiple hashes separated by `|` or set to `all`
-If `hashes=all` it will recheck all torrents
 
 **Returns:**
 
@@ -1481,19 +1489,21 @@ HTTP Status Code                  | Scenario
 
 Requires knowing the torrent hashes. You can get it from [torrent list](#get-torrent-list).
 
+Name: `reannounce`
+
+Requires authentication: Yes
+
+**Parameters:**
+
+Param       | Description
+------------|------------
+`hashes`    | The hashes of the torrents you want to reannounce. `hashes` can contain multiple hashes separated by `\|`, to reannounce multiple torrents, or set to `all`, to reannounce all torrents.
+
+Example:
+
 ```http
-POST /api/v2/torrents/reannounce HTTP/1.1
-User-Agent: Fiddler
-Host: 127.0.0.1
-Cookie: SID=your_sid
-Content-Type: application/x-www-form-urlencoded
-Content-Length: length
-
-hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32
+/api/v2/torrents/reannounce&hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|54eddd830a5b58480a6143d616a97e3a6c23c439
 ```
-
-`hashes` can contain multiple hashes separated by `|` or set to `all`
-If `hashes=all` it will recheck all torrents
 
 **Returns:**
 
@@ -1622,18 +1632,21 @@ HTTP Status Code                  | Scenario
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
+Name: `increasePrio`
+
+Requires authentication: Yes
+
+**Parameters:**
+
+Param       | Description
+------------|------------
+`hashes`    | The hashes of the torrents you want to increase the priority of. `hashes` can contain multiple hashes separated by `\|`, to increase the priority of multiple torrents, or set to `all`, to increase the priority of all torrents.
+
+Example:
+
 ```http
-POST /api/v2/torrents/increasePrio HTTP/1.1
-User-Agent: Fiddler
-Host: 127.0.0.1
-Cookie: SID=your_sid
-Content-Type: application/x-www-form-urlencoded
-Content-Length: length
-
-hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32
+/api/v2/torrents/increasePrio&hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|54eddd830a5b58480a6143d616a97e3a6c23c439
 ```
-
-`hashes` can contain multiple hashes separated by `|` or set to `all` or set to `all`
 
 **Returns:**
 
@@ -1645,18 +1658,21 @@ HTTP Status Code                  | Scenario
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
+Name: `decreasePrio`
+
+Requires authentication: Yes
+
+**Parameters:**
+
+Param       | Description
+------------|------------
+`hashes`    | The hashes of the torrents you want to decrease the priority of. `hashes` can contain multiple hashes separated by `\|`, to decrease the priority of multiple torrents, or set to `all`, to decrease the priority of all torrents.
+
+Example:
+
 ```http
-POST /api/v2/torrents/decreasePrio HTTP/1.1
-User-Agent: Fiddler
-Host: 127.0.0.1
-Cookie: SID=your_sid
-Content-Type: application/x-www-form-urlencoded
-Content-Length: length
-
-hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32
+/api/v2/torrents/decreasePrio&hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|54eddd830a5b58480a6143d616a97e3a6c23c439
 ```
-
-`hashes` can contain multiple hashes separated by `|` or set to `all` or set to `all`
 
 **Returns:**
 
@@ -1668,18 +1684,21 @@ HTTP Status Code                  | Scenario
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
+Name: `topPrio`
+
+Requires authentication: Yes
+
+**Parameters:**
+
+Param       | Description
+------------|------------
+`hashes`    | The hashes of the torrents you want to set to the maximum priority. `hashes` can contain multiple hashes separated by `\|`, to set multiple torrents to the maximum priority, or set to `all`, to set all torrents to the maximum priority.
+
+Example:
+
 ```http
-POST /api/v2/torrents/topPrio HTTP/1.1
-User-Agent: Fiddler
-Host: 127.0.0.1
-Cookie: SID=your_sid
-Content-Type: application/x-www-form-urlencoded
-Content-Length: length
-
-hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32
+/api/v2/torrents/topPrio&hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|54eddd830a5b58480a6143d616a97e3a6c23c439
 ```
-
-`hashes` can contain multiple hashes separated by `|` or set to `all`
 
 **Returns:**
 
@@ -1691,18 +1710,21 @@ HTTP Status Code                  | Scenario
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
+Name: `bottomPrio`
+
+Requires authentication: Yes
+
+**Parameters:**
+
+Param       | Description
+------------|------------
+`hashes`    | The hashes of the torrents you want to set to the minimum priority. `hashes` can contain multiple hashes separated by `\|`, to set multiple torrents to the minimum priority, or set to `all`, to set all torrents to the minimum priority.
+
+Example:
+
 ```http
-POST /api/v2/torrents/bottomPrio HTTP/1.1
-User-Agent: Fiddler
-Host: 127.0.0.1
-Cookie: SID=your_sid
-Content-Type: application/x-www-form-urlencoded
-Content-Length: length
-
-hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32
+/api/v2/torrents/bottomPrio&hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|54eddd830a5b58480a6143d616a97e3a6c23c439
 ```
-
-`hashes` can contain multiple hashes separated by `|` or set to `all`
 
 **Returns:**
 
@@ -2027,18 +2049,21 @@ HTTP Status Code                  | Scenario
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
+Name: `toggleSequentialDownload`
+
+Requires authentication: Yes
+
+**Parameters:**
+
+Param       | Description
+------------|------------
+`hashes`    | The hashes of the torrents you want to toggle sequential download for. `hashes` can contain multiple hashes separated by `\|`, to toggle sequential download for multiple torrents, or set to `all`, to toggle sequential download for all torrents.
+
+Example:
+
 ```http
-POST /api/v2/torrents/toggleSequentialDownload HTTP/1.1
-User-Agent: Fiddler
-Host: 127.0.0.1
-Cookie: SID=your_sid
-Content-Type: application/x-www-form-urlencoded
-Content-Length: length
-
-hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32
+/api/v2/torrents/toggleSequentialDownload&hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|54eddd830a5b58480a6143d616a97e3a6c23c439
 ```
-
-`hashes` can contain multiple hashes separated by `|` or set to `all`
 
 **Returns:**
 
@@ -2050,18 +2075,21 @@ HTTP Status Code                  | Scenario
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
+Name: `toggleFirstLastPiecePrio`
+
+Requires authentication: Yes
+
+**Parameters:**
+
+Param       | Description
+------------|------------
+`hashes`    | The hashes of the torrents you want to toggle the first/last piece priority for. `hashes` can contain multiple hashes separated by `\|`, to toggle the first/last piece priority for multiple torrents, or set to `all`, to toggle the first/last piece priority for all torrents.
+
+Example:
+
 ```http
-POST /api/v2/torrents/toggleFirstLastPiecePrio HTTP/1.1
-User-Agent: Fiddler
-Host: 127.0.0.1
-Cookie: SID=your_sid
-Content-Type: application/x-www-form-urlencoded
-Content-Length: length
-
-hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32
+/api/v2/torrents/toggleFirstLastPiecePrio&hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|54eddd830a5b58480a6143d616a97e3a6c23c439
 ```
-
-`hashes` can contain multiple hashes separated by `|` or set to `all`
 
 **Returns:**
 
