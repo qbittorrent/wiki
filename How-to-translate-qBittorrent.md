@@ -1,4 +1,4 @@
-qBittorrent is currently translated into approximately 25 languages but we are still looking for new translators to help us make qBittorrent available into as many languages as possible.
+qBittorrent is currently translated into approximately ~70 languages but we are still looking for new translators to help us make qBittorrent available into as many languages as possible.
 
 # Proceed with the translation
 We are using [Transifex](https://www.transifex.com/) to localize qBittorrent. You can see the current state of the localization by visiting the [page of the project](https://www.transifex.com/sledgehammer999/qbittorrent/).
