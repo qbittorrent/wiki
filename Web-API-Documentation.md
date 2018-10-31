@@ -64,6 +64,7 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
    1. [Set torrent name](#set-torrent-name)
    1. [Set torrent category](#set-torrent-category)
    1. [Add new category](#add-new-category)
+   1. [Edit category](#edit-category)
    1. [Remove categories](#remove-categories)
    1. [Set automatic torrent management](#set-automatic-torrent-management)
    1. [Toggle sequential download](#toggle-sequential-download)
@@ -2008,6 +2009,27 @@ HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
 400                               | Category name is empty
 409                               | Category name is invalid
+200                               | All other scenarios
+
+## Edit category ##
+
+```http
+POST /api/v2/torrents/editCategory HTTP/1.1
+User-Agent: Fiddler
+Host: 127.0.0.1
+Cookie: SID=your_sid
+Content-Type: application/x-www-form-urlencoded
+Content-Length: length
+
+category=CategoryName&savePath=/path/to/save/torrents/to
+```
+
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+400                               | Category name is empty
+409                               | Category editing failed
 200                               | All other scenarios
 
 ## Remove categories ##
