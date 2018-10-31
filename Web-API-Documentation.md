@@ -1624,7 +1624,7 @@ Property                        | Type    | Description
 HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
 415                               | Torrent file is not valid
-200                               | All scenarios
+200                               | All other scenarios
 
 ## Add trackers to torrent ##
 
@@ -1673,7 +1673,8 @@ Example:
 
 HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
-200                               | All scenarios
+409                               | Torrent queueing is not enabled
+200                               | All other scenarios
 
 ## Decrease torrent priority ##
 
@@ -1699,7 +1700,8 @@ Example:
 
 HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
-200                               | All scenarios
+409                               | Torrent queueing is not enabled
+200                               | All other scenarios
 
 ## Maximal torrent priority ##
 
@@ -1725,7 +1727,8 @@ Example:
 
 HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
-200                               | All scenarios
+409                               | Torrent queueing is not enabled
+200                               | All other scenarios
 
 ## Minimal torrent priority ##
 
@@ -1751,7 +1754,8 @@ Example:
 
 HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
-200                               | All scenarios
+409                               | Torrent queueing is not enabled
+200                               | All other scenarios
 
 ## Set file priority ##
 
@@ -1929,7 +1933,10 @@ hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5
 
 HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
-200                               | All scenarios
+400                               | Save path is empty
+403                               | User does not have write access to directory
+409                               | Unable to create save path directory
+200                               | All other scenarios
 
 ## Set torrent name ##
 
@@ -1950,8 +1957,8 @@ hash=8c212779b4abde7c6bc608063a0d008b7e40ce32&name=This%20is%20a%20test
 
 HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
-409                               | The given torrent name is invalid
-404                               | The given torrent hash is invalid
+404                               | Torrent hash is invalid
+409                               | Torrent name is empty
 200                               | All other scenarios
 
 ## Set torrent category ##
@@ -1970,13 +1977,14 @@ hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5
 ```
 
 `hashes` can contain multiple hashes separated by `|` or set to `all`
+
 `category` is the torrent category you want to set.
 
 **Returns:**
 
 HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
-409                               | The given category name does not exist
+409                               | Category name does not exist
 200                               | All other scenarios
 
 ## Add new category ##
@@ -1998,7 +2006,8 @@ category=CategoryName
 
 HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
-409                               | The given category name is invalid
+400                               | Category name is empty
+409                               | Category name is invalid
 200                               | All other scenarios
 
 ## Remove categories ##
