@@ -149,7 +149,8 @@ Parameter                         | Type    | Description
 
 HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
-TODO                              | TODO
+403                               | User banned for too many failed login attempts
+200                               | All other scenarios
 
 Upon success, the response will contain a cookie with your SID. You must supply the cookie whenever you want to perform an operation that requires authentication.
 
@@ -181,7 +182,7 @@ None
 
 HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
-TODO                              | TODO
+200                               | All scenarios
 
 # Application #
 
@@ -201,7 +202,7 @@ None
 
 HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
-TODO                              | TODO
+200                               | All scenarios
 
 The response is a string with the application version, e.g. `v4.1.3`
 
@@ -219,7 +220,7 @@ None
 
 HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
-TODO                              | TODO
+200                               | All scenarios
 
 The response is a string with the WebAPI version, e.g. `2.0`
 
@@ -237,7 +238,7 @@ None
 
 HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
-TODO                              | TODO
+200                               | All scenarios
 
 ## Get application preferences ##
 
@@ -253,7 +254,7 @@ None
 
 HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
-TODO                              | TODO
+200                               | All scenarios- see JSON below
 
 The response is a JSON object with several fields (key-value) pairs representing the application's settings. The contents may vary depending on which settings are present in qBittorrent.ini.
 
@@ -527,7 +528,7 @@ None
 
 HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
-TODO                              | TODO
+200                               | All scenarios
 
 The response is a string with the default save path, e.g. `C:/Users/Dayman/Downloads`.
 
@@ -561,7 +562,7 @@ Example:
 
 HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
-TODO                              | TODO
+200                               | All scenarios- see JSON below
 
 The response is a JSON array in which each element is an entry of the log.
 
@@ -693,7 +694,7 @@ Parameter       | Type    | Description
 
 HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
-TODO                              | TODO
+200                               | All scenarios- see JSON below
 
 The response a JSON array. Each element of the array of objects (each object is the information relative to a peer) containing the following fields
 
@@ -732,7 +733,7 @@ Example:
 
 HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
-TODO                              | TODO
+200                               | All scenarios- see JSON below
 
 The response is a JSON object with the following possible fields
 
@@ -785,7 +786,8 @@ Example:
 
 HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
-TODO                              | TODO
+404                               | Torrent hash was not found
+200                               | All other scenarios- see JSON below
 
 The response is TODO
 
@@ -809,7 +811,7 @@ None
 
 HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
-TODO                              | TODO
+200                               | All scenarios- see JSON below
 
 The response is a JSON object with the following fields
 
@@ -869,7 +871,7 @@ None
 
 HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
-TODO                              | TODO
+200                               | All scenarios
 
 The response is `1` if alternative speed limits are enabled, `0` otherwise.
 
@@ -887,7 +889,7 @@ None
 
 HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
-TODO                              | TODO
+200                               | All scenarios
 
 ## Get global download limit ##
 
@@ -903,7 +905,7 @@ None
 
 HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
-TODO                              | TODO
+200                               | All scenarios
 
 The response is the value of current global download speed limit in bytes/second; this value will be zero if no limit is applied.
 
@@ -939,7 +941,7 @@ None
 
 HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
-TODO                              | TODO
+200                               | All scenarios
 
 The response is the value of current global upload speed limit in bytes/second; this value will be zero if no limit is applied.
 
@@ -993,7 +995,7 @@ Example:
 
 HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
-TODO                              | TODO
+200                               | All scenarios- see JSON below
 
 The response is a JSON array with the following fields
 
@@ -1085,7 +1087,8 @@ Parameter | Description
 
 HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
-TODO                              | TODO
+404                               | Torrent hash was not found
+200                               | All other scenarios- see JSON below
 
 The response is:
 
@@ -1188,12 +1191,10 @@ Parameter | Description
 
 HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
-TODO                              | TODO
+404                               | Torrent hash was not found
+200                               | All other scenarios- see JSON below
 
-The response is:
-
-- empty, if the torrent hash is invalid
-- otherwise, a JSON array, where each element contains info about one tracker, with the following fields
+The response is a JSON array, where each element contains info about one tracker, with the following fields
 
 Property      | Type     | Description
 --------------|----------|-------------
@@ -1245,7 +1246,8 @@ Parameter | Description
 
 HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
-TODO                              | TODO
+404                               | Torrent hash was not found
+200                               | All other scenarios- see JSON below
 
 The response is a JSON array, where each element is information about one webseed, with the following fields
 
@@ -1284,7 +1286,8 @@ Parameter | Description
 
 HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
-TODO                              | TODO
+404                               | Torrent hash was not found
+200                               | All other scenarios- see JSON below
 
 The response is:
 
@@ -1343,7 +1346,8 @@ Parameter | Description
 
 HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
-TODO                              | TODO
+404                               | Torrent hash was not found
+200                               | All other scenarios- see JSON below
 
 The response is:
 
@@ -1382,7 +1386,8 @@ Parameter | Description
 
 HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
-TODO                              | TODO
+404                               | Torrent hash was not found
+200                               | All other scenarios- see JSON below
 
 The response is:
 
