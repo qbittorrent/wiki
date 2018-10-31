@@ -149,7 +149,7 @@ Parameter                         | Type    | Description
 
 HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
-403                               | User banned for too many failed login attempts
+403                               | User's IP is banned for too many failed login attempts
 200                               | All other scenarios
 
 Upon success, the response will contain a cookie with your SID. You must supply the cookie whenever you want to perform an operation that requires authentication.
