@@ -519,7 +519,7 @@ For a list of possible preference options see [Get application preferences](#get
 
 Name: `defaultSavePath`
 
-Requires authentication: TODO
+Requires authentication: Yes
 
 **Parameters:**
 
