@@ -1623,6 +1623,7 @@ Property                        | Type    | Description
 
 HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
+415                               | Torrent file is not valid
 200                               | All scenarios
 
 ## Add trackers to torrent ##
