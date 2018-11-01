@@ -173,8 +173,6 @@ Note: Set `Referer` or `Origin` header to the exact same domain and port as used
 
 Name: `logout`
 
-Requires authentication: Yes
-
 **Parameters:**
 
 None
@@ -193,8 +191,6 @@ All Application API methods are under "app", e.g.: `/api/v2/app/methodName`.
 
 Name: `version`
 
-Requires authentication: No
-
 **Parameters:**
 
 None
@@ -210,8 +206,6 @@ The response is a string with the application version, e.g. `v4.1.3`
 ## Get API version ##
 
 Name: `webapiVersion`
-
-Requires authentication: No
 
 **Parameters:**
 
@@ -229,8 +223,6 @@ The response is a string with the WebAPI version, e.g. `2.0`
 
 Name: `shutdown`
 
-Requires authentication: Yes
-
 **Parameters:**
 
 None
@@ -244,8 +236,6 @@ HTTP Status Code                  | Scenario
 ## Get application preferences ##
 
 Name: `preferences`
-
-Requires authentication: Yes
 
 **Parameters:**
 
@@ -489,8 +479,6 @@ Example:
 
 Name: `setPreferences`
 
-Requires authentication: Yes
-
 **Parameters:**
 
 A json object with key-value pairs of the settings you want to change and their new values.
@@ -519,8 +507,6 @@ For a list of possible preference options see [Get application preferences](#get
 
 Name: `defaultSavePath`
 
-Requires authentication: Yes
-
 **Parameters:**
 
 None
@@ -540,8 +526,6 @@ All Log API methods are under "log", e.g.: `/api/v2/log/methodName`.
 ## Get log ##
 
 Name: `main`
-
-Requires authentication: Yes
 
 **Parameters:**
 
@@ -683,8 +667,6 @@ Example:
 
 Name: `peers`
 
-Requires authentication: Yes
-
 **Parameters:**
 
 Parameter       | Type    | Description
@@ -715,8 +697,6 @@ All Sync API methods are under "sync", e.g.: `/api/v2/sync/methodName`.
 ## Get main data ##
 
 Name: `maindata`
-
-Requires authentication: Yes
 
 **Parameters:**
 
@@ -768,8 +748,6 @@ Example:
 
 Name: `torrentPeers`
 
-Requires authentication: Yes
-
 **Parameters:**
 
 Parameter | Description
@@ -801,8 +779,6 @@ All Transfer info API methods are under "transfer", e.g.: `/api/v2/transfer/meth
 This method returns info you usually see in qBt status bar.
 
 Name: `info`
-
-Requires authentication: Yes
 
 **Parameters:**
 
@@ -862,8 +838,6 @@ Example:
 
 Name: `speedLimitsMode`
 
-Requires authentication: Yes
-
 **Parameters:**
 
 None
@@ -880,8 +854,6 @@ The response is `1` if alternative speed limits are enabled, `0` otherwise.
 
 Name: `toggleSpeedLimitsMode`
 
-Requires authentication: Yes
-
 **Parameters:**
 
 None
@@ -895,8 +867,6 @@ HTTP Status Code                  | Scenario
 ## Get global download limit ##
 
 Name: `downloadLimit`
-
-Requires authentication: Yes
 
 **Parameters:**
 
@@ -914,8 +884,6 @@ The response is the value of current global download speed limit in bytes/second
 
 Name: `setDownloadLimit`
 
-Requires authentication: Yes
-
 **Parameters:**
 
 Parameter                         | Type    | Description
@@ -932,8 +900,6 @@ HTTP Status Code                  | Scenario
 
 Name: `uploadLimit`
 
-Requires authentication: Yes
-
 **Parameters:**
 
 None
@@ -949,8 +915,6 @@ The response is the value of current global upload speed limit in bytes/second; 
 ## Set global upload limit ##
 
 Name: `setUploadLimit`
-
-Requires authentication: Yes
 
 **Parameters:**
 
@@ -971,8 +935,6 @@ All Torrent management API methods are under "torrents", e.g.: `/api/v2/torrents
 ## Get torrent list ##
 
 Name: `info`
-
-Requires authentication: Yes
 
 **Parameters:**
 
@@ -1076,8 +1038,6 @@ Requires knowing the torrent hash. You can get it from [torrent list](#get-torre
 
 Name: `properties`
 
-Requires authentication: Yes
-
 **Parameters:**
 
 Parameter | Description
@@ -1180,8 +1140,6 @@ Requires knowing the torrent hash. You can get it from [torrent list](#get-torre
 
 Name: `trackers`
 
-Requires authentication: Yes
-
 **Parameters:**
 
 Parameter | Description
@@ -1235,8 +1193,6 @@ Requires knowing the torrent hash. You can get it from [torrent list](#get-torre
 
 Name: `webseeds`
 
-Requires authentication: Yes
-
 **Parameters:**
 
 Parameter | Description
@@ -1274,8 +1230,6 @@ Example:
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
 Name: `files`
-
-Requires authentication: Yes
 
 **Parameters:**
 
@@ -1335,8 +1289,6 @@ Requires knowing the torrent hash. You can get it from [torrent list](#get-torre
 
 Name: `pieceStates`
 
-Requires authentication: Yes
-
 **Parameters:**
 
 Parameter | Description
@@ -1375,8 +1327,6 @@ Requires knowing the torrent hash. You can get it from [torrent list](#get-torre
 
 Name: `pieceHashes`
 
-Requires authentication: Yes
-
 **Parameters:**
 
 Parameter | Description
@@ -1407,8 +1357,6 @@ Requires knowing the torrent hashes. You can get it from [torrent list](#get-tor
 
 Name: `pause`
 
-Requires authentication: Yes
-
 **Parameters:**
 
 Parameter | Description
@@ -1433,8 +1381,6 @@ Requires knowing the torrent hashes. You can get it from [torrent list](#get-tor
 
 Name: `resume`
 
-Requires authentication: Yes
-
 **Parameters:**
 
 Parameter | Description
@@ -1458,8 +1404,6 @@ HTTP Status Code                  | Scenario
 Requires knowing the torrent hashes. You can get it from [torrent list](#get-torrent-list).
 
 Name: `delete`
-
-Requires authentication: Yes
 
 **Parameters:**
 
@@ -1486,8 +1430,6 @@ Requires knowing the torrent hashes. You can get it from [torrent list](#get-tor
 
 Name: `recheck`
 
-Requires authentication: Yes
-
 **Parameters:**
 
 Parameter | Description
@@ -1511,8 +1453,6 @@ HTTP Status Code                  | Scenario
 Requires knowing the torrent hashes. You can get it from [torrent list](#get-torrent-list).
 
 Name: `reannounce`
-
-Requires authentication: Yes
 
 **Parameters:**
 
@@ -1656,8 +1596,6 @@ Requires knowing the torrent hash. You can get it from [torrent list](#get-torre
 
 Name: `increasePrio`
 
-Requires authentication: Yes
-
 **Parameters:**
 
 Parameter | Description
@@ -1682,8 +1620,6 @@ HTTP Status Code                  | Scenario
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
 Name: `decreasePrio`
-
-Requires authentication: Yes
 
 **Parameters:**
 
@@ -1710,8 +1646,6 @@ Requires knowing the torrent hash. You can get it from [torrent list](#get-torre
 
 Name: `topPrio`
 
-Requires authentication: Yes
-
 **Parameters:**
 
 Parameter | Description
@@ -1736,8 +1670,6 @@ HTTP Status Code                  | Scenario
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
 Name: `bottomPrio`
-
-Requires authentication: Yes
 
 **Parameters:**
 
@@ -2083,8 +2015,6 @@ Requires knowing the torrent hash. You can get it from [torrent list](#get-torre
 
 Name: `toggleSequentialDownload`
 
-Requires authentication: Yes
-
 **Parameters:**
 
 Parameter | Description
@@ -2108,8 +2038,6 @@ HTTP Status Code                  | Scenario
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
 Name: `toggleFirstLastPiecePrio`
-
-Requires authentication: Yes
 
 **Parameters:**
 
