@@ -11,7 +11,7 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
    1. [API v2.1.0](#api-v210)
    1. [API v2.1.1](#api-v211)
 1. [General information](#general-information)
-1. [Authorization](#authorization)
+1. [Authentication](#authentication)
    1. [Login](#login)
    1. [Logout](#logout)
 1. [Application](#application)
@@ -128,10 +128,11 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
 
 - All API methods are under `/api/v2/APIName/methodName`, where `APIName` is a certain subgroup of API methods whose functionality is related.
 - Either `GET` or `POST` can be used as the request type for all API methods.
+- All API methods require [authentication](#authentication) (except the `/api/v2/auth/login` method itself, obviously).
 
-# Authorization #
+# Authentication #
 
-All Authorization API methods are under "auth", e.g.: `/api/v2/auth/methodName`.
+All Authentication API methods are under "auth", e.g.: `/api/v2/auth/methodName`.
 
 qBittorrent uses cookie-based authentication.
 
