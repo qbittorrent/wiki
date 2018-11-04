@@ -116,7 +116,7 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
 ## API v2.1.0 ##
 
 - Change `/sync/maindata` `categories` property from `array` to `object` ([#9228](https://github.com/qbittorrent/qBittorrent/pull/9228))
-- Add `savePath` field to `/torrents/setCategory` ([#9228](https://github.com/qbittorrent/qBittorrent/pull/9228)). This method now requires the category to already exist and will notcreate new categories.
+- Add `savePath` field to `/torrents/setCategory` ([#9228](https://github.com/qbittorrent/qBittorrent/pull/9228)). This method now requires the category to already exist and will not create new categories.
 - Add `/torrents/editCategory` method ([#9228](https://github.com/qbittorrent/qBittorrent/pull/9228))
 
 ## API v2.1.1 ##
