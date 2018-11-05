@@ -1,6 +1,6 @@
 Here you will find explanation for various settings found under the options in qBittorrent, grouped by the tab. The options can be accessed by hitting '''Alt''' + '''O''' or going to ''Tools'' and clicking on ''Options''. Some of these options are pretty self explanatory, so detailed explanations for these have been omitted. For additional clarification or explanation, please visit the [http://forum.qbittorrent.org qBittorrent forum].
 
-= Behaviour =
+= Behavior =
 
 == Language ==
 This is used to set the language qBittorrent uses in it's GUI (Graphical User Interface). If you want to provide another language, or update an already existing one, you may do so through Transifex. [https://qbforums.shiki.hu/index.php/topic,2134.0.html Here] is the corresponding forum topic.
