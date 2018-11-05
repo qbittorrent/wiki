@@ -121,6 +121,7 @@ The following settings are also documented in qBittorrent and libtorrent, respec
 * '''Save path history length''' — this controls how many recent paths qBittorrent will remember.
 
 === libtorrent–specific configuration ===
+A complete list of libtorrent configuration may be found [https://www.libtorrent.org/reference-Settings.html#guided_read_cache here].
 * '''Asynchronous I/O threads''' — ''TBA''
 * '''Disk cache''' — amount of data that will remain in RAM before being written to disk.  If set to `0`, no data will be kept in RAM and instead it will be immediately written to disk (you might see performance impact.)
 * '''Disk cache expiry interval''' — is the number of seconds from the last cached write to a piece in the write cache, to when it's forcefully flushed to disk.  Default: `60 seconds`.
