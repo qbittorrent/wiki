@@ -101,6 +101,8 @@ You can use a remote control with qBittorrent. For more information, go [https:/
 
 = Advanced =
 
+The following settings are also documented in qBittorrent and libtorrent, respectively [https://github.com/qbittorrent/qBittorrent/blob/master/src/gui/advancedsettings.cpp here] and [https://github.com/arvidn/libtorrent/blob/master/include/libtorrent/settings_pack.hpp here].
+
 === qBittorrent–specific configuration ===
 * '''Network interface''' — specifies which network interfaces qBittorrent listens on. On multi-nic systems (e.g. device has an ethernet port and wifi) you may limit which interface should be used to send and transmit data.
 * '''Optional IP address to bind to''' — ''TBA''
