@@ -121,7 +121,7 @@ You can use a remote control with qBittorrent. For more information, go [https:/
 === libtorrent–specific configuration ===
 * '''Asynchronous I/O threads''' — ''TBA''
 * '''Disk cache''' — amount of data that will remain in RAM before being written to disk.  If set to `0`, no data will be kept in RAM and instead it will be immediately written to disk (you might see performance impact.)
-* '''Disk cache expiry interval''' — ''TBA''
+* '''Disk cache expiry interval''' — is the number of seconds from the last cached write to a piece in the write cache, to when it's forcefully flushed to disk.  Default: `60 seconds`.
 * '''Enable OS cache''' — ''TBA''
 * '''Guided read cache''' — ''TBA''
 * '''Coalesce reads & writes''' — ''TBA''
