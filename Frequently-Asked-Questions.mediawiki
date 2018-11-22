@@ -259,7 +259,7 @@ See [https://web.archive.org/web/20090320211618/http://btfaq.com:80/serve/cache/
     Return = Double click action
 
     Alt+O = Options
-    Ctrl+N = Torrent Creater
+    Ctrl+N = Torrent Creator
 
     Alt+G = General widget
     Alt+C = Trackers widget
