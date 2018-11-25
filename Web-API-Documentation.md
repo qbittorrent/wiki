@@ -123,6 +123,7 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
 
 - Add `/torrents/categories` method ([#9586](https://github.com/qbittorrent/qBittorrent/pull/9586))
 - Add `/search/` methods ([#8584](https://github.com/qbittorrent/qBittorrent/pull/8584))
+- Add `free_space_on_disk` field to `/sync/maindata` ([#8217](https://github.com/qbittorrent/qBittorrent/pull/8217))
 
 # General Information #
 
