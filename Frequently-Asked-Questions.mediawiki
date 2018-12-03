@@ -149,6 +149,9 @@ Here is how you should proceed:
 * Edit the download path in the torrent addition dialog and choose the path where the original torrents were being downloaded/seeded.
 * For the torrents that are complete, you can select the ''Skip file checking and start seeding immediately'' option in the torrent addition dialog in order to save time and CPU. Basically, qBittorrent will trust that the local files are not corrupt and will start seeding them without rechecking all the files.
 
+== What does the settings in the Options → Advanced menu do? ==
+We have written a full explanation describing the advanced options in the guide <a href="https://github.com/qbittorrent/qBittorrent/wiki/Explanation-of-Options-in-qBittorrent#Advanced">here</a>.
+
 == Can I run qBittorrent on a remote computer? Without X server? ==
 Yes and Yes!<br />
 qBittorrent can be run on your server and controlled remotely through its WebUI. As a default, the WebUI is running on <code>http://server-ip:8080 (user: admin, password: adminadmin)</code>.
