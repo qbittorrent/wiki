@@ -1175,7 +1175,7 @@ Property         | Type     | Description
 `num_downloaded` | integer  | Number of completed downlods for current torrent, as reported by the tracker
 `msg`            | string   | Tracker message (there is no way of knowing what this message is - it's up to tracker admins)
 
-Possible values of `status` (translated):
+Possible values of `status`:
 
 Value  | Description
 -------|------------
@@ -1603,7 +1603,49 @@ This adds two trackers to torrent with hash `8c212779b4abde7c6bc608063a0d008b7e4
 
 HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
-200                               | All scenarios
+404                               | Torrent hash was not found
+200                               | All other scenarios
+
+## Edit trackers ##
+
+Name: `editTrackers`
+
+**Parameters:**
+
+Parameter                         | Type    | Description
+----------------------------------|---------|------------
+`hash`                            | string  | The hash of the torrent
+`origUrl`                         | string  | The tracker URL you want to edit
+`newUrl`                          | string  | The new URL to replace the `origUrl`
+
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+404                               | Torrent hash was not found
+400                               | `newUrl` is not a valid URL
+409                               | `newUrl` already exists for the torrent
+409                               | `origUrl` was not found
+200                               | All other scenarios
+
+## Remove trackers ##
+
+Name: `removeTrackers`
+
+**Parameters:**
+
+Parameter                         | Type    | Description
+----------------------------------|---------|------------
+`hash`                            | string  | The hash of the torrent
+`urls`                            | array   | List of URLs to remove
+
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+404                               | Torrent hash was not found
+409                               | All `urls` were not found
+200                               | All other scenarios
 
 ## Increase torrent priority ##
 
