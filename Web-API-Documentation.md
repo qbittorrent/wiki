@@ -1639,7 +1639,7 @@ Name: `removeTrackers`
 Parameter                         | Type    | Description
 ----------------------------------|---------|------------
 `hash`                            | string  | The hash of the torrent
-`urls`                            | string  | URLs to remove, separated by `|`
+`urls`                            | string  | URLs to remove, separated by `\|`
 
 **Returns:**
 
@@ -1758,7 +1758,7 @@ Name: `filePrio`
 Parameter                         | Type    | Description
 ----------------------------------|---------|------------
 `hash`                            | string  | The hash of the torrent
-`id`                              | string  | File ids, separated by `|`
+`id`                              | string  | File ids, separated by `\|`
 `priority`                        | number  | File priority to set
 
 Please consult the [torrent contents API](#get-torrent-contents) for possible `priority` values. `id` values coresspond to contents returned by [torrent contents API](#get-torrent-contents), e.g. `id=0` for first file, `id=1` for second file, etc.
