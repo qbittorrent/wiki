@@ -133,7 +133,7 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
 - Change `status` field from translated string to an integer for `/torrents/trackers` ([#9375](https://github.com/qbittorrent/qBittorrent/pull/9375))
 - Change `/torrents/filePrio` `id` field to accept multiple ids ([#9541](https://github.com/qbittorrent/qBittorrent/pull/9541))
 - Throw additional errors for failed requests to `/torrents/filePrio` ([#9541](https://github.com/qbittorrent/qBittorrent/pull/9541))
-- Add `useAutoTM` field to `/torrents/add` ([#9752](https://github.com/qbittorrent/qBittorrent/pull/9752))
+- Add `useAutoTMM` field to `/torrents/add` ([#9752](https://github.com/qbittorrent/qBittorrent/pull/9752))
 
 # General Information #
 
