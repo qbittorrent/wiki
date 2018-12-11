@@ -116,7 +116,7 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
 
 ## API v2.1.0 ##
 
-- Change `/sync/maindata` `categories` property from `array` to `object` ([#9228](https://github.com/qbittorrent/qBittorrent/pull/9228))
+- Change `/sync/maindata` `categories` field from `array` to `object` ([#9228](https://github.com/qbittorrent/qBittorrent/pull/9228))
 - Add `savePath` field to `/torrents/setCategory` ([#9228](https://github.com/qbittorrent/qBittorrent/pull/9228)). This method now requires the category to already exist and will not create new categories.
 - Add `/torrents/editCategory` method ([#9228](https://github.com/qbittorrent/qBittorrent/pull/9228))
 
@@ -131,6 +131,8 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
 - Add `/torrents/editTrackers` and `/torrents/removeTrackers` methods ([#9375](https://github.com/qbittorrent/qBittorrent/pull/9375))
 - Add `tier`, `num_seeds`, `num_leeches`, and `num_downloaded` fields to `/torrents/trackers` ([#9375](https://github.com/qbittorrent/qBittorrent/pull/9375))
 - Change `status` field from translated string to an integer for `/torrents/trackers` ([#9375](https://github.com/qbittorrent/qBittorrent/pull/9375))
+- Change `/torrents/filePrio` `id` field to accept multiple ids ([#9541](https://github.com/qbittorrent/qBittorrent/pull/9541))
+- Throw additional errors for failed requests to `/torrents/filePrio` ([#9541](https://github.com/qbittorrent/qBittorrent/pull/9541))
 
 # General Information #
 
@@ -1622,8 +1624,8 @@ Parameter                         | Type    | Description
 
 HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
-404                               | Torrent hash was not found
 400                               | `newUrl` is not a valid URL
+404                               | Torrent hash was not found
 409                               | `newUrl` already exists for the torrent
 409                               | `origUrl` was not found
 200                               | All other scenarios
@@ -1637,7 +1639,7 @@ Name: `removeTrackers`
 Parameter                         | Type    | Description
 ----------------------------------|---------|------------
 `hash`                            | string  | The hash of the torrent
-`urls`                            | array   | List of URLs to remove
+`urls`                            | string  | URLs to remove, separated by `|`
 
 **Returns:**
 
@@ -1749,26 +1751,28 @@ HTTP Status Code                  | Scenario
 
 ## Set file priority ##
 
-Requires knowing the torrent hashes. You can get it from [torrent list](#get-torrent-list).
+Name: `filePrio`
 
-```http
-POST /api/v2/torrents/filePrio HTTP/1.1
-User-Agent: Fiddler
-Host: 127.0.0.1
-Cookie: SID=your_sid
-Content-Type: application/x-www-form-urlencoded
-Content-Length: length
+**Parameters:**
 
-hash=8c212779b4abde7c6bc608063a0d008b7e40ce32&id=0&priority=7
-```
+Parameter                         | Type    | Description
+----------------------------------|---------|------------
+`hash`                            | string  | The hash of the torrent
+`id`                              | string  | File ids, separated by `|`
+`priority`                        | number  | File priority to set
 
-Please consult [torrent contents API](#get-torrent-contents) for possible `priority` values. `id` values coresspond to contents returned by [torrent contents API](#get-torrent-contents), e.g. `id=0` for first file, `id=1` for second file, etc.
+Please consult the [torrent contents API](#get-torrent-contents) for possible `priority` values. `id` values coresspond to contents returned by [torrent contents API](#get-torrent-contents), e.g. `id=0` for first file, `id=1` for second file, etc.
 
 **Returns:**
 
 HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
-200                               | All scenarios
+400                               | Priority is invalid
+400                               | At least one file `id` is not a valid integer
+404                               | Torrent hash was not found
+409                               | Torrent metadata hasn't downloaded yet
+409                               | At least one file `id` was not found
+200                               | All other scenarios
 
 ## Get torrent download limit ##
 
