@@ -133,6 +133,7 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
 - Change `status` field from translated string to an integer for `/torrents/trackers` ([#9375](https://github.com/qbittorrent/qBittorrent/pull/9375))
 - Change `/torrents/filePrio` `id` field to accept multiple ids ([#9541](https://github.com/qbittorrent/qBittorrent/pull/9541))
 - Throw additional errors for failed requests to `/torrents/filePrio` ([#9541](https://github.com/qbittorrent/qBittorrent/pull/9541))
+- Add `useAutoTM` field to `/torrents/add` ([#9752](https://github.com/qbittorrent/qBittorrent/pull/9752))
 
 # General Information #
 
@@ -1574,6 +1575,7 @@ Property                        | Type    | Description
 `rename` _optional_             | string  | Rename torrent
 `upLimit` _optional_            | integer | Set torrent upload speed limit. Unit in bytes/second
 `dlLimit` _optional_            | integer | Set torrent download speed limit. Unit in bytes/second
+`useAutoTMM` _optional_         | bool    | Whether Automatic Torrent Management should be used
 `sequentialDownload` _optional_ | string  | Enable sequential download. Possible values are `true`, `false` (default)
 `firstLastPiecePrio` _optional_ | string  | Prioritize download first last piece. Possible values are `true`, `false` (default)
 
@@ -2601,7 +2603,7 @@ Name: `installPlugin`
 
 Parameter                         | Type    | Description
 ----------------------------------|---------|------------
-`sources`                         | string  | Url or file path of the plugin to install (e.g. "[https://raw.githubusercontent.com/qbittorrent/search-plugins/master/nova3/engines/legittorrents.py](https://raw.githubusercontent.com/qbittorrent/search-plugins/master/nova3/engines/legittorrents.py)"). Supports multiple sources separaed by `\|`
+`sources`                         | string  | Url or file path of the plugin to install (e.g. "[https://raw.githubusercontent.com/qbittorrent/search-plugins/master/nova3/engines/legittorrents.py](https://raw.githubusercontent.com/qbittorrent/search-plugins/master/nova3/engines/legittorrents.py)"). Supports multiple sources separated by `\|`
 
 **Returns:**
 
@@ -2617,7 +2619,7 @@ Name: `uninstallPlugin`
 
 Parameter                         | Type    | Description
 ----------------------------------|---------|------------
-`names`                           | string  | Name of the plugin to uninstall (e.g. "legittorrents"). Supports multiple names separaed by `\|`
+`names`                           | string  | Name of the plugin to uninstall (e.g. "legittorrents"). Supports multiple names separated by `\|`
 
 **Returns:**
 
@@ -2633,7 +2635,7 @@ Name: `enablePlugin`
 
 Parameter                         | Type    | Description
 ----------------------------------|---------|------------
-`names`                           | string  | Name of the plugin to enable/disable (e.g. "legittorrents"). Supports multiple names separaed by `\|`
+`names`                           | string  | Name of the plugin to enable/disable (e.g. "legittorrents"). Supports multiple names separated by `\|`
 `enable`                          | bool    | Whether the plugins should be enabled
 
 **Returns:**
