@@ -1639,7 +1639,7 @@ Name: `removeTrackers`
 Parameter                         | Type    | Description
 ----------------------------------|---------|------------
 `hash`                            | string  | The hash of the torrent
-`urls`                            | string  | URLs to remove, separated by `\|`
+`urls`                            | string  | URLs to remove, separated by `|`
 
 **Returns:**
 
@@ -1758,7 +1758,7 @@ Name: `filePrio`
 Parameter                         | Type    | Description
 ----------------------------------|---------|------------
 `hash`                            | string  | The hash of the torrent
-`id`                              | string  | File ids, separated by `\|`
+`id`                              | string  | File ids, separated by `|`
 `priority`                        | number  | File priority to set
 
 Please consult the [torrent contents API](#get-torrent-contents) for possible `priority` values. `id` values coresspond to contents returned by [torrent contents API](#get-torrent-contents), e.g. `id=0` for first file, `id=1` for second file, etc.
@@ -1789,7 +1789,7 @@ Content-Length: length
 hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5d7cc2ba0
 ```
 
-`hashes` can contain multiple hashes separated by `\|` or set to `all`
+`hashes` can contain multiple hashes separated by `|` or set to `all`
 
 Server reply (example):
 
@@ -1818,7 +1818,7 @@ Content-Length: length
 hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5d7cc2ba0&limit=131072
 ```
 
-`hashes` can contain multiple hashes separated by `\|` or set to `all`
+`hashes` can contain multiple hashes separated by `|` or set to `all`
 `limit` is the download speed limit in bytes per second you want to set.
 
 **Returns:**
@@ -1842,7 +1842,7 @@ Content-Length: length
 hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5d7cc2ba0&ratioLimit=1.0&seedingTimeLimit=60
 ```
 
-`hashes` can contain multiple hashes separated by `\|` or set to `all`
+`hashes` can contain multiple hashes separated by `|` or set to `all`
 `ratioLimit` is the max ratio the torrent should be seeded until. `-2` means the global limit should be used, `-1` means no limit.
 `seedingTimeLimit` is the max amount of time the torrent should be seeded. `-2` means the global limit should be used, `-1` means no limit.
 
@@ -1867,7 +1867,7 @@ Content-Length: length
 hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5d7cc2ba0
 ```
 
-`hashes` can contain multiple hashes separated by `\|` or set to `all`
+`hashes` can contain multiple hashes separated by `|` or set to `all`
 
 Server reply (example):
 
@@ -1896,7 +1896,7 @@ Content-Length: length
 hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5d7cc2ba0&limit=131072
 ```
 
-`hashes` can contain multiple hashes separated by `\|` or set to `all`
+`hashes` can contain multiple hashes separated by `|` or set to `all`
 `limit` is the upload speed limit in bytes per second you want to set.
 
 **Returns:**
@@ -1920,7 +1920,7 @@ Content-Length: length
 hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5d7cc2ba0&location=/mnt/nfs/media
 ```
 
-`hashes` can contain multiple hashes separated by `\|` or set to `all`
+`hashes` can contain multiple hashes separated by `|` or set to `all`
 `location` is the location to download the torrent to. If the location doesn't exist, the torrent's location is unchanged.
 
 **Returns:**
@@ -1970,7 +1970,7 @@ Content-Length: length
 hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5d7cc2ba0&category=CategoryName
 ```
 
-`hashes` can contain multiple hashes separated by `\|` or set to `all`
+`hashes` can contain multiple hashes separated by `|` or set to `all`
 
 `category` is the torrent category you want to set.
 
@@ -2061,7 +2061,7 @@ Content-Length: length
 hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5d7cc2ba0&enable=true
 ```
 
-`hashes` can contain multiple hashes separated by `\|` or set to `all`
+`hashes` can contain multiple hashes separated by `|` or set to `all`
 `enable` is a boolean, affects the torrents listed in `hashes`, default is `false`
 
 **Returns:**
@@ -2133,7 +2133,7 @@ Content-Length: length
 hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32?value=true
 ```
 
-`hashes` can contain multiple hashes separated by `\|` or set to `all`
+`hashes` can contain multiple hashes separated by `|` or set to `all`
 `value` is a boolean, affects the torrents listed in `hashes`, default is `false`
 
 **Returns:**
@@ -2157,7 +2157,7 @@ Content-Length: length
 hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32?value=true
 ```
 
-`hashes` can contain multiple hashes separated by `\|` or set to `all`
+`hashes` can contain multiple hashes separated by `|` or set to `all`
 `value` is a boolean, affects the torrents listed in `hashes`, default is `false`
 
 **Returns:**
