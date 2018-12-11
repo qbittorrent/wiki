@@ -10,6 +10,7 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
    1. [API v2.0.2](#api-v202)
    1. [API v2.1.0](#api-v210)
    1. [API v2.1.1](#api-v211)
+   1. [API v2.2.0](#api-v220)
 1. [General information](#general-information)
 1. [Authentication](#authentication)
    1. [Login](#login)
@@ -124,6 +125,12 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
 - Add `/torrents/categories` method ([#9586](https://github.com/qbittorrent/qBittorrent/pull/9586))
 - Add `/search/` methods ([#8584](https://github.com/qbittorrent/qBittorrent/pull/8584))
 - Add `free_space_on_disk` field to `/sync/maindata` ([#8217](https://github.com/qbittorrent/qBittorrent/pull/8217))
+
+## API v2.2.0 ##
+
+- Add `/torrents/editTrackers` and `/torrents/removeTrackers` methods ([#9375](https://github.com/qbittorrent/qBittorrent/pull/9375))
+- Add `tier`, `num_seeds`, `num_leeches`, and `num_downloaded` fields to `/torrents/trackers` ([#9375](https://github.com/qbittorrent/qBittorrent/pull/9375))
+- Change `status` field from translated string to an integer for `/torrents/trackers` ([#9375](https://github.com/qbittorrent/qBittorrent/pull/9375))
 
 # General Information #
 
@@ -1157,21 +1164,26 @@ HTTP Status Code                  | Scenario
 
 The response is a JSON array, where each element contains info about one tracker, with the following fields
 
-Property      | Type     | Description
---------------|----------|-------------
-`url`         | string   | Tracker url
-`status`      | string   | Tracker status (translated string). See the table here below for the possible values
-`num_peers`   | integer  | Number of peers for current torrent reported by the tracker
-`msg`         | string   | Tracker message (there is no way of knowing what this message is - it's up to tracker admins)
+Property         | Type     | Description
+-----------------|----------|-------------
+`url`            | string   | Tracker url
+`status`         | integer  | Tracker status. See the table below for possible values
+`tier`           | integer  | Tracker priority tier. Lower tier trackers are tried before higher tiers
+`num_peers`      | integer  | Number of peers for current torrent, as reported by the tracker
+`num_seeds`      | integer  | Number of seeds for current torrent, asreported by the tracker
+`num_leeches`    | integer  | Number of leeches for current torrent, as reported by the tracker
+`num_downloaded` | integer  | Number of completed downlods for current torrent, as reported by the tracker
+`msg`            | string   | Tracker message (there is no way of knowing what this message is - it's up to tracker admins)
 
 Possible values of `status` (translated):
 
-Value               | Description
---------------------|------------
-`Working`           | Tracker has been contacted and is working
-`Updating...`       | Tracker is currently being updated
-`Not working`       | Tracker has been contacted, but it is not working (or doesn't send proper replies)
-`Not contacted yet` | Tracker has not been contacted yet
+Value  | Description
+-------|------------
+0      | Tracker is disabled (used for DHT, PeX, and LSD)
+1      | Tracker has been contacted and is working
+2      | Tracker is currently being updated
+3      | Tracker has been contacted, but it is not working (or doesn't send proper replies)
+4      | Tracker has not been contacted yet
 
 Example:
 
