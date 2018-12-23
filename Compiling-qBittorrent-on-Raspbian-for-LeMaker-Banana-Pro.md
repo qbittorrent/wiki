@@ -48,7 +48,7 @@ The procedure for compiling and installing Libtorrent on B-Pro is derived from t
     sudo apt-get install build-essential checkinstall libboost-system-dev libboost-python-dev libssl-dev libgeoip-dev
 
 ## Download ​libtorrent and extract:
-`   wget https://github.com/arvidn/libtorrent/releases/download/libtorrent-1_0_10/libtorrent-rasterbar-1.0.10.tar.gz`
+`   wget https://github.com/arvidn/libtorrent/releases/download/libtorrent_1_1_11/libtorrent-rasterbar-1.1.11.tar.gz`
 
    `tar xf libtorrent-rasterbar-1.0.10.tar.gz`
 
