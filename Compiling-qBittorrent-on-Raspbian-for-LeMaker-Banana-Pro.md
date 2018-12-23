@@ -58,12 +58,12 @@ The procedure for compiling and installing Libtorrent on B-Pro is derived from t
 
    `./configure --enable-python-binding --with-libgeoip --with-libiconv --with-qt4`
 
-## WARNING: Users with Debian 8 "Jessie"
+## WARNING: Users with Debian 8 "Jessie" or "Stretch"
 If you have updated your Raspbian to the latest version "Jessie" then you will most certainly face an error with _libboost library_ while using the ._/configure_
 
 To overcome this error and configure correctly you must issue the following commands:
 
-    sudo apt-get install libboost-all-dev
+    sudo apt-get install libboost-chrono-dev libboost-random-dev
 
     ./configure --enable-python-binding --with-libgeoip --with-libiconv --with-boost-libdir=/usr/lib/arm-linux-gnueabihf
 
