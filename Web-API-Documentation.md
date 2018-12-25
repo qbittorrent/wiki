@@ -11,6 +11,7 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
    1. [API v2.1.0](#api-v210)
    1. [API v2.1.1](#api-v211)
    1. [API v2.2.0](#api-v220)
+   1. [API v2.3.0](#api-v230)
 1. [General information](#general-information)
 1. [Authentication](#authentication)
    1. [Login](#login)
@@ -134,6 +135,10 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
 - Change `/torrents/filePrio` `id` field to accept multiple ids ([#9541](https://github.com/qbittorrent/qBittorrent/pull/9541))
 - Throw additional errors for failed requests to `/torrents/filePrio` ([#9541](https://github.com/qbittorrent/qBittorrent/pull/9541))
 - Add `useAutoTMM` field to `/torrents/add` ([#9752](https://github.com/qbittorrent/qBittorrent/pull/9752))
+
+## API v2.3.0 ##
+
+- Remove `web_ui_password` field from `/api/v2/app/preferences` ([#9942](https://github.com/qbittorrent/qBittorrent/pull/9942))
 
 # General Information #
 
@@ -347,7 +352,7 @@ Property                          | Type    | Description
 `web_ui_port`                     | integer | WebUI port
 `web_ui_upnp`                     | bool    | True if UPnP is used for the WebUI port
 `web_ui_username`                 | string  | WebUI username
-`web_ui_password`                 | string  | MD5 hash of WebUI password; hash is generated from the following string: `username:Web UI Access:plain_text_web_ui_password`
+`web_ui_password`                 | string  | This field is removed in API v2.3.0. MD5 hash of WebUI password, hash is generated from the following string: `username:Web UI Access:plain_text_web_ui_password`
 `web_ui_csrf_protection_enabled`  | bool    | True if WebUI CSRF protection is enabled
 `web_ui_clickjacking_protection_enabled` | bool | True if WebUI clickjacking protection is enabled
 `bypass_local_auth`               | bool    | True if authentication challenge for loopback address (127.0.0.1) should be disabled
@@ -506,7 +511,6 @@ Example:
     "web_ui_address":"192.168.1.32",
     "web_ui_port":80,
     "web_ui_username":"admin",
-    "web_ui_password":"8888efb275743684292cff99f57867a9",
     "bypass_local_auth":false,
     "bypass_auth_subnet_whitelist_enabled":false,
     "bypass_auth_subnet_whitelist":"",
