@@ -266,6 +266,15 @@ Possible fields:
 Property                          | Type    | Description
 ----------------------------------|---------|------------
 `locale`                          | string  | Currently selected language (e.g. en_GB for English)
+`create_subfolder_enabled`        | bool    | True if a subfolder should be created when adding a torrent
+`start_paused_enabled`            | bool    | True if torrents should be added in a Paused state
+`auto_delete_mode`                | integer | TODO
+`preallocate_all`                 | bool    | True if disk space should be pre-allocated for all files
+`incomplete_files_ext`            | bool    | True if ".!qB" should be appended to incomplete files
+`auto_tmm_enabled`                | bool    | True if Automatic Torrent Management is enabled by default
+`torrent_changed_tmm_enabled`     | bool    | True if torrent should be relocated when its Category changes
+`save_path_changed_tmm_enabled`   | bool    | True if torrent should be relocated when the default save path changes
+`category_changed_tmm_enabled`    | bool    | True if torrent should be relocated when its Category's save path changes
 `save_path`                       | string  | Default save path for torrents, separated by slashes
 `temp_path_enabled`               | bool    | True if folder for incomplete torrents is enabled
 `temp_path`                       | string  | Path for incomplete torrents, separated by slashes
@@ -273,6 +282,7 @@ Property                          | Type    | Description
 `export_dir`                      | string  | Path to directory to copy .torrent files to. Slashes are used as path separators
 `export_dir_fin`                  | string  | Path to directory to copy .torrent files of completed downloads to. Slashes are used as path separators
 `mail_notification_enabled`       | bool    | True if e-mail notification should be enabled
+`mail_notification_sender`        | string  | e-mail where notifications should originate from
 `mail_notification_email`         | string  | e-mail to send notifications to
 `mail_notification_smtp`          | string  | smtp server for e-mail notifications
 `mail_notification_ssl_enabled`   | bool    | True if smtp server requires SSL connection
@@ -287,6 +297,9 @@ Property                          | Type    | Description
 `max_active_torrents`             | integer | Maximum number of active simultaneous downloads and uploads
 `max_active_uploads`              | integer | Maximum number of active simultaneous uploads
 `dont_count_slow_torrents`        | bool    | If true torrents w/o any activity (stalled ones) will not be counted towards `max_active_*` limits; see [dont_count_slow_torrents](https://www.libtorrent.org/reference-Settings.html#dont_count_slow_torrents) for more information
+`slow_torrent_dl_rate_threshold`  | integer | Download rate in KiB/s for a torrent to be considered "slow"
+`slow_torrent_ul_rate_threshold`  | integer | Upload rate in KiB/s for a torrent to be considered "slow"
+`slow_torrent_inactive_timer`     | integer | Seconds a torrent should be inactive before considered "slow"
 `max_ratio_enabled`               | bool    | True if share ratio limit is enabled
 `max_ratio`                       | float   | Get the global share ratio limit
 `max_ratio_act`                   | bool    | Action performed when a torrent reaches the maximum share ratio. See list of possible values here below.
@@ -303,6 +316,7 @@ Property                          | Type    | Description
 `enable_utp`                      | bool    | True if uTP protocol should be enabled; this option is only available in qBittorent built against libtorrent version 0.16.X and higher
 `limit_utp_rate`                  | bool    | True if `[du]l_limit` should be applied to uTP connections; this option is only available in qBittorent built against libtorrent version 0.16.X and higher
 `limit_tcp_overhead`              | bool    | True if `[du]l_limit` should be applied to estimated TCP overhead (service data: e.g. packet headers)
+`limit_lan_peers`                 | bool    | True if `[du]l_limit` should be applied to peers on the LAN
 `alt_dl_limit`                    | integer | Alternative global download speed limit in KiB/s
 `alt_up_limit`                    | integer | Alternative global upload speed limit in KiB/s
 `scheduler_enabled`               | bool    | True if alternative limits should be applied according to schedule
@@ -329,6 +343,8 @@ Property                          | Type    | Description
 `ip_filter_enabled`               | bool    | True if external IP filter should be enabled
 `ip_filter_path`                  | string  | Path to IP filter file (.dat, .p2p, .p2b files are supported); path is separated by slashes
 `ip_filter_trackers`              | bool    | True if IP filters are applied to trackers
+`web_ui_domain_list`              | string  | Comma-separated list of domains to accept when performing Host header validation
+`web_ui_address`                  | string  | IP address to use for the WebUI
 `web_ui_port`                     | integer | WebUI port
 `web_ui_upnp`                     | bool    | True if UPnP is used for the WebUI port
 `web_ui_username`                 | string  | WebUI username
@@ -338,6 +354,8 @@ Property                          | Type    | Description
 `bypass_local_auth`               | bool    | True if authentication challenge for loopback address (127.0.0.1) should be disabled
 `bypass_auth_subnet_whitelist_enabled` | bool | True if webui authentication should be bypassed for clients whose ip resides within (at least) one of the subnets on the whitelist
 `bypass_auth_subnet_whitelist` | string | (White)list of ipv4/ipv6 subnets for which webui authentication should be bypassed; list entries are separated by commas
+`alternative_webui_enabled`       | bool    | True if an alternative WebUI should be used
+`alternative_webui_path`          | string  | File path to the alternative WebUI
 `use_https`                       | bool    | True if WebUI HTTPS access is enabled
 `ssl_key`                         | string  | SSL keyfile contents (this is a not a path)
 `ssl_cert`                        | string  | SSL certificate contents (this is a not a path)
