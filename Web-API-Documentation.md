@@ -303,7 +303,6 @@ Property                          | Type    | Description
 `max_ratio_enabled`               | bool    | True if share ratio limit is enabled
 `max_ratio`                       | float   | Get the global share ratio limit
 `max_ratio_act`                   | bool    | Action performed when a torrent reaches the maximum share ratio. See list of possible values here below.
-`incomplete_files_ext`            | bool    | If true `.!qB` extension will be appended to incomplete files
 `listen_port`                     | integer | Port for incoming connections
 `upnp`                            | bool    | True if UPnP/NAT-PMP is enabled
 `random_port`                     | bool    | True if the port is randomly selected
@@ -432,6 +431,15 @@ Example:
 ```JSON
 {
     "locale":"ru_RU",
+    "create_subfolder_enabled":true,
+    "start_paused_enabled":true,
+    "auto_delete_mode":1,
+    "preallocate_all":true,
+    "incomplete_files_ext":true,
+    "auto_tmm_enabled":true,
+    "torrent_changed_tmm_enabled":true,
+    "save_path_changed_tmm_enabled":true,
+    "category_changed_tmm_enabled":true,
     "save_path":"C:/Users/Dayman/Downloads",
     "temp_path_enabled":false,
     "temp_path":"C:/Users/Dayman/Documents/Downloads/temp",
@@ -443,6 +451,7 @@ Example:
     "export_dir":"C:/Users/Dayman/Downloads/Torrents/All",
     "export_dir_fin":"C:/Users/Dayman/Downloads/Torrents/Completed",
     "mail_notification_enabled":false,
+    "mail_notification_sender":"",
     "mail_notification_email":"",
     "mail_notification_smtp":"smtp.changeme.com",
     "mail_notification_ssl_enabled":false,
@@ -457,7 +466,9 @@ Example:
     "max_active_torrents":200,
     "max_active_uploads":200,
     "dont_count_slow_torrents":false,
-    "incomplete_files_ext":false,
+    "slow_torrent_dl_rate_threshold":10,
+    "slow_torrent_ul_rate_threshold":10,
+    "slow_torrent_inactive_timer":60,
     "listen_port":31498,
     "upnp":false,"dl_limit":3072,
     "up_limit":3072,
@@ -467,6 +478,7 @@ Example:
     "enable_utp":true,
     "limit_utp_rate":false,
     "limit_tcp_overhead":true,
+    "limit_lan_peers":false,
     "alt_dl_limit":1024,
     "alt_up_limit":2048,
     "scheduler_enabled":false,
@@ -490,10 +502,16 @@ Example:
     "proxy_password":"",
     "ip_filter_enabled":false,
     "ip_filter_path":null,
+    "web_ui_domain_list":"example.com",
+    "web_ui_address":"192.168.1.32",
     "web_ui_port":80,
     "web_ui_username":"admin",
     "web_ui_password":"8888efb275743684292cff99f57867a9",
     "bypass_local_auth":false,
+    "bypass_auth_subnet_whitelist_enabled":false,
+    "bypass_auth_subnet_whitelist":"",
+    "alternative_webui_enabled":true,
+    "alternative_webui_path":"C:/Users/Dayman/Documents/qbit-webui",
     "use_https":false,
     "ssl_key":"",
     "ssl_cert":"",
