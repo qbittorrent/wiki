@@ -139,7 +139,7 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
 
 ## API v2.3.0 ##
 
-- Remove `web_ui_password` field from `/app/preferences` ([#9942](https://github.com/qbittorrent/qBittorrent/pull/9942)). This field is still writable in `/app/setPreferences` method
+- Remove `web_ui_password` field from `/app/preferences`, this field is still writable in `/app/setPreferences` method ([#9942](https://github.com/qbittorrent/qBittorrent/pull/9942))
 
 # General Information #
 
