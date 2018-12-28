@@ -39,9 +39,7 @@ This page describes how to compile 64-bit qBittorrent using MSVC 2017 under Wind
  xcopy zlib.lib G:\QBITTORRENT\install_msvc64\base\lib\
 
 === Compiling OpenSSL ===
-* Make sure you have installed perl and nasm.
-
-``use nasm -v to check version NASM, if nasm not found:
+* Make sure you have installed perl and nasm. Use <code>nasm -v</code> to check NASM version, then if not found:
  "C:\Program Files\NASM\nasmpath.bat"
 
 * Extract the OpenSSL source inside our working dir.
