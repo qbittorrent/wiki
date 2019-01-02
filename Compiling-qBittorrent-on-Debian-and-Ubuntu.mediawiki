@@ -53,9 +53,18 @@ For more information on building libtorrent, see [https://www.libtorrent.org/bui
 First, obtain the qBittorrent source code.<br />
 Either download and extract a .tar archive from [https://sourceforge.net/projects/qbittorrent/files/qbittorrent/ Sourceforge] or clone the git repository:
   git clone https://github.com/qbittorrent/qBittorrent
+
+If you clone the git repository and want to use the stable current version (rather than the development version which may not work), you need to checkout the stable branch. You can do this in two ways:
+
+By checking out the stable branch (4.1.x at the time of writing):
+
   cd qBittorrent
-If you clone the git repository and want to use the stable current version (rather than the development version), you need to checkout the stable branch (4.1.5 as of writing). 
- git checkout release-4.1.5
+  git checkout v4_1_x
+
+Or by checking out the latest tagged stable release (4.1.5 at the time of writing):
+
+  cd qBittorrent
+  git checkout release-4.1.5
 
 Enter the folder in a new terminal window and run:
  ./configure
