@@ -1,1 +1,0 @@
-the fucking username password admin:adminadmin doesnt fucking work on a default install u idiots
