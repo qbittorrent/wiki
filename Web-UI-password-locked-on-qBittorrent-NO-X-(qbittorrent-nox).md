@@ -11,6 +11,6 @@ If your user name and password is locked out of the Web UI and the default user 
 
 4. You should then be able to login the WebUI using your usual username and the default password `adminadmin`.
 
-5. If you are still unable to login check if your antivirus is not blocking sending password via unencrypted connection (http). Bitdefender may do it by default
+5. If you are still unable to login check if your antivirus is not blocking sending password via unencrypted connection (http). Bitdefender seems to do it by default, you need to whitelist qbittorrent server url
 
 **Remember to change it back to your preferred password.**
