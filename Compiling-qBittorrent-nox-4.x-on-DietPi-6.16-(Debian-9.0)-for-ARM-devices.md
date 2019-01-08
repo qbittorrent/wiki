@@ -55,7 +55,7 @@ That path above should be the only thing in the libtorrent.conf file. Run the `l
 **Clone 4.1.x branch**
 ~~~~
 git clone -b v4_1_x https://github.com/qbittorrent/qBittorrent
-cd qbittorrent
+cd qBittorrent
 ~~~~~
 NOTE: You can select the branch version on [this](https://github.com/qbittorrent/qBittorrent/branches) page. 
 
