@@ -84,7 +84,7 @@ useradd -rm qbittorrent -G dietpi -s /usr/sbin/nologin
 **Create the service file**
 ~~~~
 cd /etc/systemd/system/
-nano etc/systemd/system/qbittorrent.service
+nano qbittorrent.service
 ~~~~~
 **Add service template** 
 ~~~~
