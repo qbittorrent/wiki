@@ -74,7 +74,7 @@ You can run qBittorrent-nox using the `qbittorrent-nox` command. The binary is l
 * Username: admin
 * Password: adminadmin
 
-qBittorent-nox is currently installed as a terminal application, which is not optimal for headless use. We now will add qBittorent-nox as a service.     
+qBittorrent-nox is currently installed as a terminal application, which is not optimal for headless use. We now will add qBittorrent-nox as a service.     
 
 ##  Running qBittorrent-nox on boot <a name="onboot"></a>          
 **Create the service file**
