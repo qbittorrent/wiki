@@ -77,6 +77,10 @@ You can run qBittorrent-nox using the `qbittorrent-nox` command. The binary is l
 qBittorrent-nox is currently installed as a terminal application, which is not optimal for headless use. We now will add qBittorrent-nox as a service.     
 
 ##  Running qBittorrent-nox on boot <a name="onboot"></a>          
+**Add user for qBittorrent-nox service**
+~~~~
+useradd -rm qbittorrent -G dietpi -s /usr/sbin/nologin
+~~~~
 **Create the service file**
 ~~~~
 cd /etc/systemd/system/
@@ -88,7 +92,8 @@ Description=qBittorrent Daemon Service
 After=network.target
 
 [Service]
-User=root
+User=qbittorrent
+Group=dietpi
 ExecStart=/usr/local/bin/qbittorrent-nox
 ExecStop=/usr/bin/killall -w qbittorrent-nox
 
