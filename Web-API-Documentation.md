@@ -139,7 +139,10 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
 
 ## API v2.3.0 ##
 
+*(unconfirmed version, pending release of qBittorrent v4.2.0)*
+
 - Remove `web_ui_password` field from `/app/preferences`, this field is still writable in `/app/setPreferences` method ([#9942](https://github.com/qbittorrent/qBittorrent/pull/9942))
+- Add `/app/buildInfo` method ([#10096](https://github.com/qbittorrent/qBittorrent/pull/10096))
 
 # General Information #
 
@@ -236,6 +239,30 @@ HTTP Status Code                  | Scenario
 200                               | All scenarios
 
 The response is a string with the WebAPI version, e.g. `2.0`
+
+## Get build info ##
+
+Name: `buildInfo`
+
+**Parameters:**
+
+None
+
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios- see JSON below
+
+The response is a JSON object containing the following fields
+
+Property     | Type    | Description
+-------------|---------|------------
+`qt`         | string  | QT version
+`libtorrent` | string  | libtorrent version
+`boost`      | string  | Boost version
+`openssl`    | string  | OpenSSL version
+`bitness`    | string  | Application bitness (e.g. 64-bit)
 
 ## Shutdown application ##
 
