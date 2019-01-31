@@ -19,6 +19,7 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
 1. [Application](#application)
    1. [Get application version](#get-application-version)
    1. [Get API version](#get-api-version)
+   1. [Get build info](#get-build-info)
    1. [Shutdown application](#shutdown-application)
    1. [Get application preferences](#get-application-preferences)
    1. [Set application preferences](#set-application-preferences)
