@@ -1453,7 +1453,7 @@ Parameter | Description
 Example:
 
 ```http
-/api/v2/torrents/pause&hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|54eddd830a5b58480a6143d616a97e3a6c23c439
+/api/v2/torrents/pause?hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|54eddd830a5b58480a6143d616a97e3a6c23c439
 ```
 
 **Returns:**
@@ -1477,7 +1477,7 @@ Parameter | Description
 Example:
 
 ```http
-/api/v2/torrents/resume&hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|54eddd830a5b58480a6143d616a97e3a6c23c439
+/api/v2/torrents/resume?hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|54eddd830a5b58480a6143d616a97e3a6c23c439
 ```
 
 **Returns:**
@@ -1502,7 +1502,7 @@ Parameter     | Description
 Example:
 
 ```http
-/api/v2/torrents/delete&hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32&deleteFiles=false
+/api/v2/torrents/delete?hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32&deleteFiles=false
 ```
 
 **Returns:**
@@ -1526,7 +1526,7 @@ Parameter | Description
 Example:
 
 ```http
-/api/v2/torrents/recheck&hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|54eddd830a5b58480a6143d616a97e3a6c23c439
+/api/v2/torrents/recheck?hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|54eddd830a5b58480a6143d616a97e3a6c23c439
 ```
 
 **Returns:**
@@ -1550,7 +1550,7 @@ Parameter | Description
 Example:
 
 ```http
-/api/v2/torrents/reannounce&hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|54eddd830a5b58480a6143d616a97e3a6c23c439
+/api/v2/torrents/reannounce?hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|54eddd830a5b58480a6143d616a97e3a6c23c439
 ```
 
 **Returns:**
@@ -1735,7 +1735,7 @@ Parameter | Description
 Example:
 
 ```http
-/api/v2/torrents/increasePrio&hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|54eddd830a5b58480a6143d616a97e3a6c23c439
+/api/v2/torrents/increasePrio?hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|54eddd830a5b58480a6143d616a97e3a6c23c439
 ```
 
 **Returns:**
@@ -1760,7 +1760,7 @@ Parameter | Description
 Example:
 
 ```http
-/api/v2/torrents/decreasePrio&hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|54eddd830a5b58480a6143d616a97e3a6c23c439
+/api/v2/torrents/decreasePrio?hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|54eddd830a5b58480a6143d616a97e3a6c23c439
 ```
 
 **Returns:**
@@ -1785,7 +1785,7 @@ Parameter | Description
 Example:
 
 ```http
-/api/v2/torrents/topPrio&hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|54eddd830a5b58480a6143d616a97e3a6c23c439
+/api/v2/torrents/topPrio?hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|54eddd830a5b58480a6143d616a97e3a6c23c439
 ```
 
 **Returns:**
@@ -1810,7 +1810,7 @@ Parameter | Description
 Example:
 
 ```http
-/api/v2/torrents/bottomPrio&hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|54eddd830a5b58480a6143d616a97e3a6c23c439
+/api/v2/torrents/bottomPrio?hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|54eddd830a5b58480a6143d616a97e3a6c23c439
 ```
 
 **Returns:**
@@ -2156,7 +2156,7 @@ Parameter | Description
 Example:
 
 ```http
-/api/v2/torrents/toggleSequentialDownload&hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|54eddd830a5b58480a6143d616a97e3a6c23c439
+/api/v2/torrents/toggleSequentialDownload?hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|54eddd830a5b58480a6143d616a97e3a6c23c439
 ```
 
 **Returns:**
@@ -2180,7 +2180,7 @@ Parameter | Description
 Example:
 
 ```http
-/api/v2/torrents/toggleFirstLastPiecePrio&hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|54eddd830a5b58480a6143d616a97e3a6c23c439
+/api/v2/torrents/toggleFirstLastPiecePrio?hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|54eddd830a5b58480a6143d616a97e3a6c23c439
 ```
 
 **Returns:**
