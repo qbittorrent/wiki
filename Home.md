@@ -10,7 +10,6 @@ Everyone is welcome to edit and improve the wiki!
 
 ### Troubleshooting
 * [qBittorrent support forum](http://forum.qbittorrent.org/)
-* * CANNOT REGISTER : 3 QUESTIONS AND ONE EMPTY. THE RECAPTCHA IS BORING AS HELL ! THIS IS NOT THE NSA FFS !!!
 * [I forgot my GUI lock password](wiki/I-forgot-my-UI-lock-password)
 * [I forgot my WebUI password](wiki/Web-UI-password-locked-on-qBittorrent-NO-X-%28qbittorrent-nox%29)
 * [Speed issues](wiki/Things-we-need-to-know-to-help-you-with-'speed'-issues)
