@@ -119,13 +119,15 @@ systemctl enable qbittorrent
 git clone -b v4_1_x https://github.com/qbittorrent/qBittorrent
 cd qBittorrent
 ~~~~~
-NOTE: The instructions above refer to the latest version in the 4.1.x branch. 
+NOTE: The instructions above refer to the latest version in the 4.1.x branch.
+
 **Compile qBittorrent-nox**
 ~~~~
 ./configure --disable-gui --with-boost-libdir=/usr/lib/arm-linux-gnueabihf --prefix=/usr/local/
 make -j$(nproc) 
 ~~~~~
 Stop the qBittorrent service by running the following command `systemctl stop qbittorrent`.
+
 **Install the new version of  qBittorrent-nox**
 ~~~~
 sudo make install
