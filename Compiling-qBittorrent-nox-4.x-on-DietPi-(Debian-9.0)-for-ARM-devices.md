@@ -134,4 +134,4 @@ sudo make install
 ~~~~~
 Start the qBittorrent service by running the following command `systemctl start qbittorrent`.
 
-You should be running the latest version of qBittorrent!
+You should be running the latest version of qBittorrent-nox!
