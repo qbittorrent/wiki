@@ -114,7 +114,7 @@ Finally, enable starting the service on boot.
 systemctl enable qbittorrent
 ~~~~~
 ## Updating qBittorrent-nox <a name="upqbt"></a>
-**Get a copy of the latest qBittorrent release version**
+**Get a copy of the latest qBittorrent release version.**
 ~~~~
 git clone -b v4_1_x https://github.com/qbittorrent/qBittorrent
 cd qBittorrent
@@ -125,11 +125,11 @@ NOTE: The instructions above refer to the latest version in the 4.1.x branch.
 ./configure --disable-gui --with-boost-libdir=/usr/lib/arm-linux-gnueabihf --prefix=/usr/local/
 make -j$(nproc) 
 ~~~~~
-Stop the qBittorrent service by running the following command `systemctl stop qbittorrent`
+Stop the qBittorrent service by running the following command `systemctl stop qbittorrent`.
 **Install the new version of  qBittorrent-nox**
 ~~~~
 sudo make install
 ~~~~~
-Start the qBittorrent service by running the following command `systemctl start qbittorrent`
+Start the qBittorrent service by running the following command `systemctl start qbittorrent`.
 
 You should be running the latest version of qBittorrent!
