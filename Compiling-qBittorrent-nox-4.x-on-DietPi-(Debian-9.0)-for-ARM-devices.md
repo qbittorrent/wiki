@@ -18,7 +18,7 @@ You will first need to install various tools and libraries needed for compilatio
 `apt-get install build-essential pkg-config automake libtool git libboost-dev libboost-system-dev libboost-chrono-dev libboost-random-dev libssl-dev libgeoip-dev qtbase5-dev qttools5-dev-tools libqt5svg5-dev zlib1g-dev`
 
 ## Compiling Libtorrent <a name="libtorrent"></a>
-DietPi's repositories include an older version of [Libtorrent](https://dietpi.com/ "Libtorrent"). You will need to compile Libtorrent 1.1.x to get qBittorrent-nox 4.x running. 
+DietPi's repositories include an older version of [Libtorrent](https://libtorrent.org/ "Libtorrent"). You will need to compile Libtorrent 1.1.x to get qBittorrent-nox 4.x running. 
 
 **Clone from repo**
 ~~~~
