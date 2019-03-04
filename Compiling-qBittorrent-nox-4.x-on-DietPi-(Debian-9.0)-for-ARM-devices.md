@@ -113,6 +113,7 @@ Finally, enable starting the service on boot.
 ~~~~
 systemctl enable qbittorrent
 ~~~~~
+
 ## Updating qBittorrent-nox <a name="upqbt"></a>
 **Get a copy of the latest qBittorrent release version**
 ~~~~
