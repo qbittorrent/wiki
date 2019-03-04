@@ -10,6 +10,7 @@ This guide was made possible by the authors of the [Debian/Ubuntu compilation gu
     1. [Add Libtorrent as system library](#systemlibrary)
 3. [Compiling qBittorrent-nox](#qbittorrentnox)
 4. [Running qBittorrent-nox on boot](#onboot)
+5. [Updating qBittorrent-nox](#upqbt)
 
 ## Dependencies <a name="dependencies"></a>
 You will first need to install various tools and libraries needed for compilation. 
@@ -112,3 +113,23 @@ Finally, enable starting the service on boot.
 ~~~~
 systemctl enable qbittorrent
 ~~~~~
+## Updating qBittorrent-nox <a name="upqbt"></a>
+**Get a copy of the latest qBittorrent release version**
+~~~~
+git clone -b v4_1_x https://github.com/qbittorrent/qBittorrent
+cd qBittorrent
+~~~~~
+NOTE: The instructions above refer to the latest version in the 4.1.x branch. 
+**Compile qBittorrent-nox**
+~~~~
+./configure --disable-gui --with-boost-libdir=/usr/lib/arm-linux-gnueabihf --prefix=/usr/local/
+make -j$(nproc) 
+~~~~~
+Stop the qBittorrent service by running the following command `systemctl stop qbittorrent`
+**Install the new version of  qBittorrent-nox**
+~~~~
+sudo make install
+~~~~~
+Start the qBittorrent service by running the following command `systemctl start qbittorrent`
+
+You should be running the latest version of qBittorrent!
