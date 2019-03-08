@@ -129,11 +129,8 @@ systemctl enable qbittorrent
 
 ## Updating qBittorrent-nox <a name="upqbt"></a>
 **Get a copy of the latest qBittorrent release version**
-~~~~
-git clone -b v4_1_x https://github.com/qbittorrent/qBittorrent
-cd qBittorrent
-~~~~~
-NOTE: The instructions above refer to the latest version in the 4.1.x branch.
+
+Either `git clone ...` or `wget ...` the particular repository version.  Instructions are in a previous step.
 
 **Compile the latest version of qBittorrent-nox**
 ~~~~
