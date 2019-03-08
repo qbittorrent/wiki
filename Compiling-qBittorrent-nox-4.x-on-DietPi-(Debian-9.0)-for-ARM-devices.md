@@ -94,7 +94,7 @@ A. compile a cloned git repository _or_
 
 B. download a release source code.
 
-### A. Clone 4.1.x branch
+### A. `git clone` from repository
 
 ~~~~
 git clone -b v4_1_x https://github.com/qbittorrent/qBittorrent
@@ -103,7 +103,7 @@ cd qBittorrent
 
 You may select the branch version on the [branches page](https://github.com/qbittorrent/qBittorrent/branches). 
 
-### B. Download a [release source code](https://github.com/qbittorrent/qBittorrent/releases)
+### B. Download the [release source code](https://github.com/qbittorrent/qBittorrent/releases)
 
 Using release *release-4.1.5* in this example,
 
