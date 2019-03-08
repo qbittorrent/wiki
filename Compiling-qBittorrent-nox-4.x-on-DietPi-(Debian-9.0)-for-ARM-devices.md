@@ -46,7 +46,7 @@ Create file `/etc/ld.so.conf.d/libtorrent.conf` with contents
 ~~~~~
 /usr/local/lib
 ~~~~~
-Run the `ldconfig` command creating the file.
+Run `ldconfig` afterward.
 
 ##  Compiling qBittorrent-nox <a name="qbittorrentnox"></a>
 
