@@ -197,5 +197,5 @@ If the version has changed then the new version was successfully compiled and in
 Restart the `qbittorrent` service.
 
 ~~~~
-systemctl start qbittorrent
+sudo systemctl start qbittorrent
 ~~~~
