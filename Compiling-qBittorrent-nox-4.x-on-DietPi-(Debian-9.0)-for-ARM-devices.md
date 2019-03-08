@@ -4,13 +4,27 @@ This guide outlines the steps needed to compile qBittorrent-nox 4.1.x on DietPi 
 
 This guide was made possible by the authors of the [Debian/Ubuntu compilation guide](https://github.com/qbittorrent/qBittorrent/wiki/Compiling-qBittorrent-on-Debian-and-Ubuntu "Debian/Ubuntu compilation guide") and [Guide on running qBittorrent as a service](https://github.com/qbittorrent/qBittorrent/wiki/Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface-(15.04-and-newer) "Guide on running qBittorrent as a service"). A few DietPi-specific amendments are included. 
     
-# Table of contents
-1. [Dependencies](#dependencies)
-2. [Compiling Libtorrent](#libtorrent)
-    1. [Add Libtorrent as system library](#systemlibrary)
-3. [Compiling qBittorrent-nox](#qbittorrentnox)
-4. [Running qBittorrent-nox on boot](#onboot)
-5. [Updating qBittorrent-nox](#upqbt)
+# Table of Contents
+
+* [Table of contents](#table-of-contents)
+* [Dependencies ](#dependencies-)
+* [Compiling Libtorrent ](#compiling-libtorrent-)
+        * [A. git clone from repository](#a-git-clone-from-repository)
+        * [B. download the latest release](https://github.com/arvidn/libtorrent/releases)
+    * [Compile Libtorrent 1.1.x](#compile-libtorrent-11x)
+    * [Add Libtorrent as system library ](#add-libtorrent-as-system-library-)
+* [Compiling qBittorrent-nox ](#compiling-qbittorrent-nox-)
+    * [Compile 4.1.x version](#compile-41x-version)
+        * [A. Clone 4.1.x branch](#a-clone-41x-branch)
+        * [B. Download a release source code](https://github.com/qbittorrent/qBittorrent/releases)
+    * [Compile qBittorrent-nox](#compile-qbittorrent-nox)
+    * [Running qBittorrent-nox on boot ](#running-qbittorrent-nox-on-boot-)
+        * [Add user for qBittorrent-nox service](#add-user-for-qbittorrent-nox-service)
+        * [Create the service file](#create-the-service-file)
+        * [Run and check service status](#run-and-check-service-status)
+* [Updating qBittorrent-nox ](#updating-qbittorrent-nox-)
+    * [Get a copy of the latest qBittorrent release version](#get-a-copy-of-the-latest-qbittorrent-release-version)
+    * [check version, install, check version](#check-version-install-check-version)
 
 # Dependencies <a name="dependencies"></a>
 You will first need to install various tools and libraries needed for compilation. 
