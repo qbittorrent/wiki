@@ -42,15 +42,11 @@ This will require five to six hours to compile on Raspberry Pi hardware.
 You will need to add Libtorrent as a system library or qBittorrent-nox won't run after you compile it.
  
 **Add Libtorrent as a system library** 
-~~~~
-cd /etc/ld.so.conf.d/
-nano libtorrent.conf
+Create file `/etc/ld.so.conf.d/libtorrent.conf` with contents
 ~~~~~
-**Add Libttorrent's location** 
-~~~~
 /usr/local/lib
 ~~~~~
-That path above should be the only thing in the libtorrent.conf file. Run the `ldconfig` command after exiting nano. Now proceed to compiling qBittorrent-nox.  
+Run the `ldconfig` command creating the file.
 
 ##  Compiling qBittorrent-nox <a name="qbittorrentnox"></a>
 
