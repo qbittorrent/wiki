@@ -6,7 +6,8 @@ This guide was made possible by the authors of the [Debian/Ubuntu compilation gu
     
 # Table of Contents
 
-* [Table of contents](#table-of-contents)
+# Table of Contents
+
 * [Dependencies ](#dependencies-)
 * [Compiling Libtorrent ](#compiling-libtorrent-)
     * Either
@@ -16,8 +17,8 @@ This guide was made possible by the authors of the [Debian/Ubuntu compilation gu
     * [Add Libtorrent as system library ](#add-libtorrent-as-system-library-)
 * [Compiling qBittorrent-nox ](#compiling-qbittorrent-nox-)
     * [Compile 4.1.x version](#compile-41x-version)
-        * [A. Clone 4.1.x branch](#a-clone-41x-branch)
-        * [B. Download a release source code](https://github.com/qbittorrent/qBittorrent/releases)
+        * [A. `git clone` from repository](#a-git-clone-from-repository-1)
+        * [B. Download the release source code](https://github.com/qbittorrent/qBittorrent/releases)
     * [Compile qBittorrent-nox](#compile-qbittorrent-nox)
     * [Running qBittorrent-nox on boot ](#running-qbittorrent-nox-on-boot-)
         * [Add user for qBittorrent-nox service](#add-user-for-qbittorrent-nox-service)
