@@ -47,7 +47,7 @@ B. `wget ...`
 ~~~~
 git clone https://github.com/arvidn/libtorrent.git
 cd libtorrent
-# select the particular release tag
+# select the latest release tag
 git checkout $(git tag | grep libtorrent-1_1_ | sort -t _ -n -k 3 | tail -n 1)
 ~~~~~
 
