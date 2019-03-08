@@ -35,7 +35,6 @@ sudo apt-get install \
     pkg-config \
     automake \
     libtool \
-    git \
     libc6-dev \
     libboost-dev \
     libboost-system-dev \
@@ -48,6 +47,8 @@ sudo apt-get install \
     libqt5svg5-dev \
     zlib1g-dev
 ~~~~
+
+If you choose to retrieve source code using `git clone` then also `sudo apt-get install git`.
 
 # Compiling Libtorrent <a name="libtorrent"></a>
 DietPi's repositories include an older version of [Libtorrent](https://libtorrent.org/ "Libtorrent"). You will need to compile Libtorrent 1.1.x to get qBittorrent-nox 4.x running. 
