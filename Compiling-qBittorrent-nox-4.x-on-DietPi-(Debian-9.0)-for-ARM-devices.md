@@ -51,29 +51,42 @@ Run `ldconfig` afterward.
 
 ##  Compiling qBittorrent-nox <a name="qbittorrentnox"></a>
 
-**Clone 4.1.x branch**
+**Compile 4.1.x version**
+
+Either
+A. compile a cloned git repository _or_
+B. download a release source code.
+
+***A. Clone 4.1.x branch***
 ~~~~
 git clone -b v4_1_x https://github.com/qbittorrent/qBittorrent
 cd qBittorrent
 ~~~~~
-NOTE: You can select the branch version on [this](https://github.com/qbittorrent/qBittorrent/branches) page. 
+You may select the branch version on the [branches page](https://github.com/qbittorrent/qBittorrent/branches). 
+
+***B. Download release source code***
+~~~~
+wget https://github.com/qbittorrent/qBittorrent/archive/release-4.1.x.zip
+unzip release-4.1.x.zip
+~~~~~
+Select the specific release version from the [releases page](https://github.com/qbittorrent/qBittorrent/releases). 
 
 **Compile qBittorrent-nox**
 ~~~~
 ./configure --disable-gui --with-boost-libdir=/usr/lib/arm-linux-gnueabihf
-make -j$(nproc) 
+make -j$(nproc)
 make install
 ~~~~~
 NOTE: Consult the [Ubuntu/Debian compilation guide](https://github.com/qbittorrent/qBittorrent/wiki/Compiling-qBittorrent-on-Debian-and-Ubuntu#Compiling_qBittorrent_with_the_GUI) if you want to run qBittorrent with a GUI.
 
-You can run qBittorrent-nox using the `qbittorrent-nox` command. The binary is located in `/usr/local/bin/`. 
+You can run qBittorrent-nox using `qbittorrent-nox` command. The binary is located in `/usr/local/bin/`.
 
 **WebUI access information**
 * http://localhost:8080
 * Username: admin
 * Password: adminadmin
 
-qBittorrent-nox is currently installed as a terminal application, which is not optimal for headless use. We now will add qBittorrent-nox as a service.     
+qBittorrent-nox is currently installed as a terminal application, which is not optimal for headless use. We now will add qBittorrent-nox as a service.
 
 ##  Running qBittorrent-nox on boot <a name="onboot"></a>          
 **Add user for qBittorrent-nox service**
