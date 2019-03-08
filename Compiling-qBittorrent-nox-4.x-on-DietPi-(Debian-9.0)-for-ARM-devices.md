@@ -129,9 +129,9 @@ NOTE: Review [Ubuntu/Debian compilation guide](https://github.com/qbittorrent/qB
 The binary should be located at `/usr/local/bin/qbittorrent-nox`.
 
 **WebUI access information**
-* http://localhost:8080
-* Username: admin
-* Password: adminadmin
+* _http://localhost:8080_
+* Username: _admin_
+* Password: _adminadmin_
 
 qBittorrent-nox is currently installed as a terminal application, which is not optimal for headless use. We now will add qBittorrent-nox as a service.
 
