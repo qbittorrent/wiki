@@ -9,6 +9,7 @@ This guide was made possible by the authors of the [Debian/Ubuntu compilation gu
 * [Table of contents](#table-of-contents)
 * [Dependencies ](#dependencies-)
 * [Compiling Libtorrent ](#compiling-libtorrent-)
+    * Either
         * [A. git clone from repository](#a-git-clone-from-repository)
         * [B. download the latest release](https://github.com/arvidn/libtorrent/releases)
     * [Compile Libtorrent 1.1.x](#compile-libtorrent-11x)
