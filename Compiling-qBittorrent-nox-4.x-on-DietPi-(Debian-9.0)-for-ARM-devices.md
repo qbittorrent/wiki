@@ -112,7 +112,7 @@ sudo make install
 
 NOTE: Review [Ubuntu/Debian compilation guide](https://github.com/qbittorrent/qBittorrent/wiki/Compiling-qBittorrent-on-Debian-and-Ubuntu#Compiling_qBittorrent_with_the_GUI) if you want to run qBittorrent with a GUI.
 
-You can run qBittorrent-nox using `qbittorrent-nox` command. The binary is located in `/usr/local/bin/`.
+The binary should be located at `/usr/local/bin/qbittorrent-nox`.
 
 **WebUI access information**
 * http://localhost:8080
