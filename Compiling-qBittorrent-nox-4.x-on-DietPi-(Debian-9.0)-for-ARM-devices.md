@@ -20,7 +20,7 @@ You will first need to install various tools and libraries needed for compilatio
 ## Compiling Libtorrent <a name="libtorrent"></a>
 DietPi's repositories include an older version of [Libtorrent](https://libtorrent.org/ "Libtorrent"). You will need to compile Libtorrent 1.1.x to get qBittorrent-nox 4.x running. 
 
-Either
+To get the Libtorrent 1.1.x source code, either
 
 A. `git clone ...`
 
@@ -77,7 +77,7 @@ Run `sudo ldconfig` afterward.
 
 **Compile 4.1.x version**
 
-Either
+To get the qBittorrent-nox source code, either
 
 A. compile a cloned git repository _or_
 
@@ -109,6 +109,8 @@ cd qBittorrent-release-4.1.5
 make -j$(nproc)
 sudo make install
 ~~~~~
+
+This will require several hours to compile on Raspberry Pi hardware.
 
 NOTE: Review [Ubuntu/Debian compilation guide](https://github.com/qbittorrent/qBittorrent/wiki/Compiling-qBittorrent-on-Debian-and-Ubuntu#Compiling_qBittorrent_with_the_GUI) if you want to run qBittorrent with a GUI.
 
