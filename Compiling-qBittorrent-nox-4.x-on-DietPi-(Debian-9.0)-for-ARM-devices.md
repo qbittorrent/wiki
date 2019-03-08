@@ -41,7 +41,6 @@ sudo apt-get install \
     libboost-chrono-dev \
     libboost-random-dev \
     libssl-dev \
-    libgeoip-dev \
     qtbase5-dev \
     qttools5-dev-tools \
     libqt5svg5-dev \
@@ -85,7 +84,6 @@ cd libtorrent-libtorrent_1_2_0
 ./configure \
     --disable-debug \
     --enable-encryption \
-    --with-libgeoip=system \
     CXXFLAGS=-std=c++11 \
     --with-boost-libdir=/usr/lib/arm-linux-gnueabihf 
     --with-libiconv
