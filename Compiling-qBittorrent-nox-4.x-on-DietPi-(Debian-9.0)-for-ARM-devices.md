@@ -126,7 +126,7 @@ This will require several hours to compile on Raspberry Pi hardware.
 
 NOTE: Review [Ubuntu/Debian compilation guide](https://github.com/qbittorrent/qBittorrent/wiki/Compiling-qBittorrent-on-Debian-and-Ubuntu#Compiling_qBittorrent_with_the_GUI) if you want to run qBittorrent with a GUI.
 
-The binary should be located at `/usr/local/bin/qbittorrent-nox`.
+The binary should be located at `/usr/local/bin/qbittorrent-nox`.  If you have installed `qbittorrent-nox` using `apt` it will be at `/usr/bin/qbittorrent-nox`.  Do not confuse them!
 
 **WebUI access information**
 * _http://localhost:8080_
@@ -172,7 +172,7 @@ The `systemctl status` command should show qBittorrent-nox is active and running
 Enable `qbittorrent` service during boot.
 
 ~~~~
-systemctl enable qbittorrent
+sudo systemctl enable qbittorrent
 ~~~~~
 
 # Updating qBittorrent-nox <a name="upqbt"></a>
@@ -188,13 +188,11 @@ Then stop the service, check the version before install, install, and check the 
 ~~~~
 sudo systemctl stop qbittorrent
 
-which qbittorrent-nox  # should be /usr/local/bin/qbittorrent-nox
-qbittorrent-nox --version
+/usr/local/bin/qbittorrent-nox --version
 
 sudo make install
 
-which qbittorrent-nox  # should still be /usr/local/bin/qbittorrent-nox
-qbittorrent-nox --version
+/usr/local/bin/qbittorrent-nox --version
 ~~~~
 
 If the version has changed then the new version was successfully compiled and installed!
