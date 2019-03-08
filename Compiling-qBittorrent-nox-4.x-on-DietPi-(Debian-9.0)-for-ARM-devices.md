@@ -183,7 +183,7 @@ Repeat prior steps for downloading the source code and compiling it.
 
 ## check version, install, check version
 
-Then stop the service, check the version before install, install, and check the version.
+Then stop the service, check the version before install, install, and check the version after install.
 
 ~~~~
 sudo systemctl stop qbittorrent
