@@ -6,12 +6,10 @@ This guide was made possible by the authors of the [Debian/Ubuntu compilation gu
     
 # Table of Contents
 
-# Table of Contents
-
 * [Dependencies ](#dependencies-)
 * [Compiling Libtorrent ](#compiling-libtorrent-)
     * Either
-        * [A. git clone from repository](#a-git-clone-from-repository)
+        * [A. `git clone` from repository](#a-git-clone-from-repository)
         * [B. download the latest release](https://github.com/arvidn/libtorrent/releases)
     * [Compile Libtorrent 1.1.x](#compile-libtorrent-11x)
     * [Add Libtorrent as system library ](#add-libtorrent-as-system-library-)
@@ -20,10 +18,10 @@ This guide was made possible by the authors of the [Debian/Ubuntu compilation gu
         * [A. `git clone` from repository](#a-git-clone-from-repository-1)
         * [B. Download the release source code](https://github.com/qbittorrent/qBittorrent/releases)
     * [Compile qBittorrent-nox](#compile-qbittorrent-nox)
-    * [Running qBittorrent-nox on boot ](#running-qbittorrent-nox-on-boot-)
-        * [Add user for qBittorrent-nox service](#add-user-for-qbittorrent-nox-service)
-        * [Create the service file](#create-the-service-file)
-        * [Run and check service status](#run-and-check-service-status)
+* [Running qBittorrent-nox on boot ](#running-qbittorrent-nox-on-boot-)
+    * [Add user for qBittorrent-nox service](#add-user-for-qbittorrent-nox-service)
+    * [Create systemd service file](#create-systemd-service-file)
+    * [Run and check systemd service status](#run-and-check-systemd-service-status)
 * [Updating qBittorrent-nox ](#updating-qbittorrent-nox-)
     * [Get a copy of the latest qBittorrent release version](#get-a-copy-of-the-latest-qbittorrent-release-version)
     * [check version, install, check version](#check-version-install-check-version)
@@ -42,7 +40,7 @@ A. `git clone ...`
 
 B. `wget ...`
 
-### A. git clone from repository
+### A. `git clone` from repository
 
 ~~~~
 git clone https://github.com/arvidn/libtorrent.git
