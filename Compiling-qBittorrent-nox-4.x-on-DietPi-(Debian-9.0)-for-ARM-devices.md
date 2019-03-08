@@ -33,7 +33,8 @@ git checkout $(git tag | grep libtorrent-1_1_ | sort -t _ -n -k 3 | tail -n 1)
 ~~~~~ 
 **Start Compilation**
 ~~~~
-make clean && make -j$(nproc)
+make clean
+make -j$(nproc)
 make install
 ~~~~~
 This will require five to six hours to compile on Raspberry Pi hardware.
