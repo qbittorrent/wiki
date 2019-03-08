@@ -39,9 +39,9 @@ make install
 This will require five to six hours to compile on Raspberry Pi hardware.
 
 ### Add Libtorrent as system library <a name="systemlibrary"></a>
+
 You will need to add Libtorrent as a system library or qBittorrent-nox won't run after you compile it.
- 
-**Add Libtorrent as a system library** 
+
 Create file `/etc/ld.so.conf.d/libtorrent.conf` with contents
 ~~~~~
 /usr/local/lib
