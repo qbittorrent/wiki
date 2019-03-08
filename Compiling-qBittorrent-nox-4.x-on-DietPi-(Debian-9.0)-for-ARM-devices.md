@@ -35,7 +35,8 @@ git checkout $(git tag | grep libtorrent-1_1_ | sort -t _ -n -k 3 | tail -n 1)
 ~~~~
 make clean && make -j$(nproc)
 make install
-~~~~~ 
+~~~~~
+This will require several hours to compile on Raspberry Pi hardware.
 
 ### Add Libtorrent as system library <a name="systemlibrary"></a>
 You will need to add Libtorrent as a system library or qBittorrent-nox won't run after you compile it.
