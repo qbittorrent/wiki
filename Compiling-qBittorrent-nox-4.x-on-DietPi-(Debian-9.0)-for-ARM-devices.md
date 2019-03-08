@@ -126,7 +126,7 @@ This will require several hours to compile on Raspberry Pi hardware.
 
 NOTE: Review [Ubuntu/Debian compilation guide](https://github.com/qbittorrent/qBittorrent/wiki/Compiling-qBittorrent-on-Debian-and-Ubuntu#Compiling_qBittorrent_with_the_GUI) if you want to run qBittorrent with a GUI.
 
-The binary should be located at `/usr/local/bin/qbittorrent-nox`.  If you have installed `qbittorrent-nox` using `apt` it will be at `/usr/bin/qbittorrent-nox`.  Do not confuse them!
+The binary should be located at `/usr/local/bin/qbittorrent-nox`.  If installed `qbittorrent-nox` was installed using `apt` then that binary will be at `/usr/bin/qbittorrent-nox`.  _Do not confuse them!_
 
 **WebUI access information**
 * _http://localhost:8080_
