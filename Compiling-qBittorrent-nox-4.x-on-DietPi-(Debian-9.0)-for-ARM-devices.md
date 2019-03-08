@@ -29,7 +29,25 @@ This guide was made possible by the authors of the [Debian/Ubuntu compilation gu
 # Dependencies <a name="dependencies"></a>
 You will first need to install various tools and libraries needed for compilation. 
 
-`apt-get install build-essential pkg-config automake libtool git libboost-dev libboost-system-dev libboost-chrono-dev libboost-random-dev libssl-dev libgeoip-dev qtbase5-dev qttools5-dev-tools libqt5svg5-dev zlib1g-dev`
+~~~~
+sudo apt-get install \
+    build-essential \
+    pkg-config \
+    automake \
+    libtool \
+    git \
+    libc6-dev \
+    libboost-dev \
+    libboost-system-dev \
+    libboost-chrono-dev \
+    libboost-random-dev \
+    libssl-dev \
+    libgeoip-dev \
+    qtbase5-dev \
+    qttools5-dev-tools \
+    libqt5svg5-dev \
+    zlib1g-dev
+~~~~
 
 # Compiling Libtorrent <a name="libtorrent"></a>
 DietPi's repositories include an older version of [Libtorrent](https://libtorrent.org/ "Libtorrent"). You will need to compile Libtorrent 1.1.x to get qBittorrent-nox 4.x running. 
@@ -63,8 +81,13 @@ cd libtorrent-libtorrent_1_2_0
 
 ~~~~
 ./autotool.sh
-./configure --disable-debug --enable-encryption --with-libgeoip=system CXXFLAGS=-std=c++11 --with-boost-libdir=/usr/lib/arm-linux-gnueabihf 
-make clean
+./configure \
+    --disable-debug \
+    --enable-encryption \
+    --with-libgeoip=system \
+    CXXFLAGS=-std=c++11 \
+    --with-boost-libdir=/usr/lib/arm-linux-gnueabihf 
+    --with-libiconv
 make -j$(nproc)
 sudo make install
 ~~~~~
