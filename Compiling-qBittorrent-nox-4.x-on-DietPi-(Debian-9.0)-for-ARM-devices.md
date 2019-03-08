@@ -186,6 +186,7 @@ Repeat prior steps for downloading the source code and compiling it.
 Then stop the service, check the version before install, install, and check the version after install.
 
 ~~~~
+which qbittorrent-nox  # should be /usr/local/bin/qbittorrent-nox
 sudo systemctl stop qbittorrent
 qbittorrent-nox --version
 sudo make install
