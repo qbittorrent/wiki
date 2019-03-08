@@ -135,17 +135,18 @@ The binary should be located at `/usr/local/bin/qbittorrent-nox`.  If `qbittorre
 
 qBittorrent-nox is currently installed as a terminal application, which is not optimal for headless use. We now will add qBittorrent-nox as a service.
 
-## Running qBittorrent-nox on boot <a name="onboot"></a>
+# Running qBittorrent-nox on boot <a name="onboot"></a>
 
-### Add user for qBittorrent-nox service
+## Add user for qBittorrent-nox service
 
 ~~~~
 sudo useradd -rm qbittorrent -G dietpi -s /usr/sbin/nologin
 ~~~~
 
-### Create the service file
+## Create systemd service file
 
-Create a service file at `/etc/systemd/system/qbittorrent.service`.  Contents are:
+Create a systemd service file at `/etc/systemd/system/qbittorrent.service`.  Contents are:
+
 ~~~~
 Description=qBittorrent Daemon Service
 After=network.target
@@ -160,7 +161,7 @@ ExecStop=/usr/bin/killall -w qbittorrent-nox
 WantedBy=multi-user.target
 ~~~~~   
 
-### Run and check service status
+## Run and check systemd service status
 ~~~~
 sudo systemctl daemon-reload
 sudo systemctl start qbittorrent
