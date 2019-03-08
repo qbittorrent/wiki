@@ -54,7 +54,9 @@ Run `ldconfig` afterward.
 **Compile 4.1.x version**
 
 Either
+
 A. compile a cloned git repository _or_
+
 B. download a release source code.
 
 ***A. Clone 4.1.x branch***
