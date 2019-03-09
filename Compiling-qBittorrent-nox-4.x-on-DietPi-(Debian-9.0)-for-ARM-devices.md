@@ -110,7 +110,7 @@ sudo rm /.swapfile
 
 (These steps are copied from [here](https://dev.deluge-torrent.org/wiki/Building/libtorrent#TemporarySwapFileforRasperryPiorlowmemorysystems)).
 
-One example manifestation of an out of memory error looks like
+One example manifestation of an out of memory error on Raspbian OS looks like
 
 ~~~~~
 $ make
