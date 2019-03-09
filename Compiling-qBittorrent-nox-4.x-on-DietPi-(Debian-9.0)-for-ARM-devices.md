@@ -93,9 +93,9 @@ sudo make install
 
 This will require five to six hours to compile on Raspberry Pi hardware.
 
-#### out of memory
+#### out of memory (OOM)
 
-If out-of-memory errors occur then add a swap file.
+If OOM errors occur then add a swap file.
 
 ~~~~~
 sudo dd if=/dev/zero of=/.swapfile bs=1M count=1024
@@ -110,7 +110,7 @@ sudo rm /.swapfile
 
 (These steps are copied from [here](https://dev.deluge-torrent.org/wiki/Building/libtorrent#TemporarySwapFileforRasperryPiorlowmemorysystems)).
 
-One example manifestation of an out of memory error on Raspbian OS looks like
+One example manifestation of an OOM error on Raspbian OS looks like
 
 ~~~~~
 $ make
