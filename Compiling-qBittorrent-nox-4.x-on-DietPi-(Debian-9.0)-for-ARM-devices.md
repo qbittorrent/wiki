@@ -93,6 +93,31 @@ sudo make install
 
 This will require five to six hours to compile on Raspberry Pi hardware.
 
+#### out of memory
+
+If out-of-memory errors occur then add a swap file.
+
+~~~~~
+sudo dd if=/dev/zero of=/.swapfile bs=1M count=1024
+sudo mkswap /.swapfile
+sudo swapon /.swapfile
+sudo swapon -s  # check swap is activated
+sudo swapoff /.swapfile
+sudo rm /.swapfile
+~~~~~
+
+(These steps are copied from [here](https://dev.deluge-torrent.org/wiki/Building/libtorrent#TemporarySwapFileforRasperryPiorlowmemorysystems)).
+
+One example manifestation of an out of memory error looks like
+
+~~~~~
+$ make
+...
+make[1]: Entering directory '/tmp/libtorrent-libtorrent_1_2_0/src'
+  CXX      libtorrent_rasterbar_la-session_impl.lo
+g++: internal compiler error: Killed (program cc1plus)
+~~~~~
+
 ## Add Libtorrent as system library <a name="systemlibrary"></a>
 
 You will need to add Libtorrent as a system library or qBittorrent-nox won't run after you compile it.
