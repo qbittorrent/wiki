@@ -102,6 +102,8 @@ sudo dd if=/dev/zero of=/.swapfile bs=1M count=1024
 sudo mkswap /.swapfile
 sudo swapon /.swapfile
 sudo swapon -s  # check swap is activated
+make
+# assuming the prior command succeeded
 sudo swapoff /.swapfile
 sudo rm /.swapfile
 ~~~~~
