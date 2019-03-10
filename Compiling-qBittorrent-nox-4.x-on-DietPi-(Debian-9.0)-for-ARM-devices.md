@@ -108,7 +108,7 @@ sudo swapoff /.swapfile
 sudo rm /.swapfile
 ~~~~~
 
-(These steps are copied from [here](https://dev.deluge-torrent.org/wiki/Building/libtorrent#TemporarySwapFileforRasperryPiorlowmemorysystems)).
+(Those commands were copied from [here](https://dev.deluge-torrent.org/wiki/Building/libtorrent#TemporarySwapFileforRasperryPiorlowmemorysystems)).
 
 One example manifestation of an OOM error on Raspbian OS looks like
 
