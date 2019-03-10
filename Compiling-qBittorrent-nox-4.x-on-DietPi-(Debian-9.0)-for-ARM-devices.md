@@ -81,10 +81,10 @@ cd libtorrent-libtorrent_1_2_0
 
 ~~~~
 ./autotool.sh
+export CXXFLAGS=-std=c++11
 ./configure \
     --disable-debug \
     --enable-encryption \
-    CXXFLAGS=-std=c++11 \
     --with-boost-libdir=/usr/lib/arm-linux-gnueabihf 
     --with-libiconv
 make
