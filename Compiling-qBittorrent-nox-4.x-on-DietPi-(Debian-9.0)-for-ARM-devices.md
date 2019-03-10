@@ -87,7 +87,7 @@ cd libtorrent-libtorrent_1_2_0
     CXXFLAGS=-std=c++11 \
     --with-boost-libdir=/usr/lib/arm-linux-gnueabihf 
     --with-libiconv
-make -j$(nproc)
+make
 sudo make install
 ~~~~~
 
@@ -165,7 +165,7 @@ cd qBittorrent-release-4.1.5
 
 ~~~~
 ./configure --disable-gui --with-boost-libdir=/usr/lib/arm-linux-gnueabihf
-make -j$(nproc)
+make
 sudo make install
 ~~~~~
 
