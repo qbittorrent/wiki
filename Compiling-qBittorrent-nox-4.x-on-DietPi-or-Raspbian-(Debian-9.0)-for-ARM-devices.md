@@ -1,6 +1,6 @@
-[Raspbian](https://www.raspbian.org/) is the popular Linux that is built for Raspberry Pi hardware.
+[Raspbian](https://www.raspbian.org/) is the most popular Linux distribution built for Raspberry Pi hardware.
 
-[DietPi](https://dietpi.com/ "DietPi Homepage") is a lightweight Debian distro for ARM SoCs such as Raspberry Pi 3 B+ and ASUS Tinker Board.
+[DietPi](https://dietpi.com/ "DietPi Homepage") is a refined Linux distribution for ARM SoCs such as Raspberry Pi 3 B+ and ASUS Tinker Board.
 
 Both are based on Debian.  Debian 9.0 ships with a patched version of an older qBittorrent-nox release (3.3.7). qBittorrent 4.x has many improvements to the webUI component which are of particular use for headless operation.
 
