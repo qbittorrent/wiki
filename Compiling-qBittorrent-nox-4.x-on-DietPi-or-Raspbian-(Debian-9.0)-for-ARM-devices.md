@@ -168,7 +168,7 @@ cd qBittorrent-release-4.1.5
 ## Compile qBittorrent-nox
 
 ~~~~
-./configure --disable-gui --with-boost-libdir=/usr/lib/arm-linux-gnueabihf
+./configure --disable-gui --enable-systemd --with-boost-libdir=/usr/lib/arm-linux-gnueabihf
 make
 sudo make install
 ~~~~~
@@ -195,6 +195,8 @@ sudo useradd -rm qbittorrent -G dietpi -s /usr/sbin/nologin
 ~~~~
 
 ## Create systemd service file
+
+_UPDATE:_ this may not be necessary if qBittorrent compilation was configured with flag `--enable-systemd`.
 
 Create a systemd service file at `/etc/systemd/system/qbittorrent.service`.  Contents are:
 
