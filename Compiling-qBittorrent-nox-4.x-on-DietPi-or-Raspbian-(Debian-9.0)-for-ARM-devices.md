@@ -91,11 +91,9 @@ export CXXFLAGS=-std=c++11
     --enable-encryption \
     --with-boost-libdir=/usr/lib/arm-linux-gnueabihf 
     --with-libiconv
-make
+make -j$(nproc)
 sudo make install
 ~~~~~
-
-This will require five to six hours to compile on Raspberry Pi hardware.
 
 #### out of memory (OOM)
 
@@ -169,11 +167,9 @@ cd qBittorrent-release-4.1.5
 
 ~~~~
 ./configure --disable-gui --enable-systemd --with-boost-libdir=/usr/lib/arm-linux-gnueabihf
-make
+make -j$(nproc)
 sudo make install
 ~~~~~
-
-This will require several hours to compile on Raspberry Pi hardware.
 
 NOTE: Review [Ubuntu/Debian compilation guide](https://github.com/qbittorrent/qBittorrent/wiki/Compiling-qBittorrent-on-Debian-and-Ubuntu#Compiling_qBittorrent_with_the_GUI) if you want to run qBittorrent with a GUI.
 
@@ -233,18 +229,18 @@ sudo systemctl enable qbittorrent
 
 ## Get a copy of the latest qBittorrent release version
 
-Repeat prior steps for downloading the source code and compiling it.
+On DietPi, you will need to run the following commands to update an already compiled version of qBittorrent-nox:
+~~~~
+systemctl stop qbittorrent
+./configure --disable-gui --with-boost-libdir=/usr/lib/arm-linux-gnueabihf --prefix=/usr/local/bin/
+sudo make -j$(nproc)
+make install
+~~~~
 
-## check version, install, check version
-
-Then stop the service, check the version before install, install, and check the version after install.
+## check version to verify that the binary got updated. 
 
 ~~~~
 sudo systemctl stop qbittorrent
-
-/usr/local/bin/qbittorrent-nox --version
-
-sudo make install
 
 /usr/local/bin/qbittorrent-nox --version
 ~~~~
