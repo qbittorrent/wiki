@@ -12,7 +12,13 @@ In order to increase security, a `public` (login process handling) and `private`
 * WebUI\RootFolder=`<path>`
 
 ### First steps to an alternate WebUI:
-Copy the files on https://github.com/qbittorrent/qBittorrent/tree/master/src/webui/www to a `<new folder>`, enable AltWebUI on the options and point the entry `WebUI\RootFolder` to `<new folder>`, then launch qBittorrent.
+Copy the files:  
+https://github.com/qbittorrent/qBittorrent/tree/master/src/webui/www to a `<new folder>`  
+https://github.com/qbittorrent/qBittorrent/tree/master/src/icons/skins to `<new folder>/public/images`  
+https://github.com/qbittorrent/qBittorrent/tree/master/src/icons/skins to `<new folder>/private/images`  
+https://github.com/qbittorrent/qBittorrent/tree/master/src/icons/qbt-theme to `<new folder>/private/images`  
+
+Enable AltWebUI on the options and point the entry `WebUI\RootFolder` to `<new folder>`, then launch qBittorrent.
 Access the WebUI as always, modify the files at `<new folder>` according to your needs and refresh the browser to see the changes reflected.
 
 ### References:
