@@ -4,9 +4,7 @@
 
 Both are based on Debian.  Debian 9.0 ships with a patched version of an older qBittorrent-nox release (3.3.7). qBittorrent 4.x has many improvements to the webUI component which are of particular use for headless operation.
 
-This guide outlines the steps needed to compile qBittorrent-nox 4.1.x and run it as a service.  If you'd like to use the distribution provided qBittorrent then
-- DietPi use `dietpi-software`
-- Raspian use `apt install`
+This guide outlines the steps needed to compile qBittorrent-nox 4.1.x and run it as a service.  Both DietPi and Raspbian provide pre-compiled qBittorrent using either `dietpi-software` or `apt`.
 
 This guide was made possible by the authors of the [Debian/Ubuntu compilation guide](https://github.com/qbittorrent/qBittorrent/wiki/Compiling-qBittorrent-on-Debian-and-Ubuntu "Debian/Ubuntu compilation guide") and [Guide on running qBittorrent as a service](https://github.com/qbittorrent/qBittorrent/wiki/Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface-(15.04-and-newer) "Guide on running qBittorrent as a service"). A few DietPi-specific amendments are included. 
 
