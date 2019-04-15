@@ -31,12 +31,12 @@ Clone from the repo
 If you want to use libtorrent 1.1.* (Also see: [https://github.com/qbittorrent/qBittorrent/issues/6132 issue 6132])
  git checkout $(git tag | grep libtorrent_1_1_ | sort -t _ -n -k 4 | tail -n 1)
  ./autotool.sh
- ./configure --disable-debug --enable-encryption --with-libgeoip=system CXXFLAGS=-std=c++11
+ ./configure --disable-debug --enable-encryption CXXFLAGS=-std=c++11
 
 If you want to use libtorrent 1.0.*
  git checkout $(git tag | grep libtorrent-1_0_ | sort -t _ -n -k 3 | tail -n 1)
  ./autotool.sh
- ./configure --disable-debug --enable-encryption --with-libgeoip=system CXXFLAGS=-std=c++11
+ ./configure --disable-debug --enable-encryption CXXFLAGS=-std=c++11
 
 If you get a <code>configure: error: Boost.System library not found</code>, check if you installed all the above dependencies.<br/>
 If yes, add <code>--with-boost-libdir=/usr/lib/i386-linux-gnu</code>
