@@ -17,6 +17,8 @@ CMake does not build a project by itself. Instead it generates rules for an actu
 === IDE Support ===
 ;Qt Creator
 : This IDE can just open the top-level project <code>CMakeLists.txt</code> file and load the project structure. Then it will ask you where to put build files and which make tool to use. Please note that Ninja will give you significantly shorter rebuild times, as comparing to a regular make. From version 4.3 of Qt Creator and 3.7 of CMake, support is excellent (see this [https://blog.qt.io/blog/2016/11/15/cmake-support-in-qt-creator-and-elsewhere/ blog post] for details).
+;Clion
+: Same as Qt Creator.
 ;KDevelop
 : KDevelop from version 4 provides excellent support for CMake-based projects, simply open the top-level project <code>CMakeLists.txt</code> file and select a build directory.
 ;XCode
