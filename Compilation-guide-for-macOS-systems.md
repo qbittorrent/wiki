@@ -60,6 +60,14 @@ brew install qt
 brew link --force qt
 ```
 
+## Optionally
+Instead of force linking qt:
+```shell
+# use ~/.bashrc if you are using bash
+echo export Qt5_DIR=\"/usr/local/opt/qt\" >> ~/.zshrc
+source ~/.zshrc
+```
+
 ## From source
 ```shell
 curl -L -O https://download.qt.io/official_releases/qt/5.7/5.7.1/single/qt-everywhere-opensource-src-5.7.1.tar.xz
@@ -98,6 +106,13 @@ mkdir build && cd build
 OPENSSL_ROOT_DIR=/usr/local/opt/openssl Qt5_DIR=/usr/local/qt5.7.1/lib/cmake/Qt5 cmake -DDBUS=OFF ..
 make -j2
 /usr/local/qt5.7.1/bin/macdeployqt src/app/qbittorrent.app
+```
+
+### Optional OpenSSL Linking
+```
+# use ~/.bashrc if you are using bash
+echo export OPENSSL_ROOT_DIR=\"/usr/local/opt/openssl\" >> ~/.zshrc
+source ~/.zshrc
 ```
 
 # Optionally install python for the search function
