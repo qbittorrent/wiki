@@ -60,7 +60,7 @@ brew install qt
 brew link --force qt
 ```
 
-## Optionally
+### Optionally
 Instead of force linking qt:
 ```shell
 # use ~/.bashrc if you are using bash
