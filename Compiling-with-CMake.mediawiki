@@ -60,7 +60,7 @@ To change these defaults, either pass listed below parameters to <code>cmake</co
 It is recommended to use the single prefix for all libraries, and change only that path when needed.
 
 ====Configuring on macOS====
-If you are using [homebrew](https://brew.sh/), then chances are some of the libraries that are dependencies will not be linked to your `usr/local/*`. In this case, you will need to add some environment variables to your shell profile.
+If you are using [https://brew.sh homebrew], then chances are some of the libraries that are dependencies will not be linked to your `usr/local/*`. In this case, you will need to add some environment variables to your shell profile.
 
 E.g.
 ```
