@@ -1263,6 +1263,7 @@ Value  | Description
 2      | Tracker has been contacted and is working
 3      | Tracker is updating
 4      | Tracker has been contacted, but it is not working (or doesn't send proper replies)
+
 Example:
 
 ```JSON
