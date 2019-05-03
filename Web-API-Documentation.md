@@ -1259,11 +1259,10 @@ Possible values of `status`:
 Value  | Description
 -------|------------
 0      | Tracker is disabled (used for DHT, PeX, and LSD)
-1      | Tracker has been contacted and is working
-2      | Tracker is currently being updated
-3      | Tracker has been contacted, but it is not working (or doesn't send proper replies)
-4      | Tracker has not been contacted yet
-
+1      | Tracker has not been contacted yet
+2      | Tracker has been contacted and is working
+3      | Tracker is updating
+4      | Tracker has been contacted, but it is not working (or doesn't send proper replies)
 Example:
 
 ```JSON
@@ -1271,7 +1270,7 @@ Example:
     {
         "msg":"",
         "num_peers":100,
-        "status":"Working",
+        "status":2,
         "url":"http://bttracker.debian.org:6969/announce"
     },
     {
