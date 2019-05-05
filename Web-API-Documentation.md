@@ -2256,7 +2256,7 @@ Parameters:
 
 Parameter                         | Type    | Description
 ----------------------------------|---------|------------
-`path`                            | string  | Full path of added folder (e.g. "The Pirate Bay/Top100")
+`path`                            | string  | Full path of added folder (e.g. "The Pirate Bay\Top100")
 
 ## Add feed ##
 
@@ -2267,7 +2267,7 @@ Parameters:
 Parameter                         | Type    | Description
 ----------------------------------|---------|------------
 `url`                             | string  | URL of RSS feed (e.g. "[http://thepiratebay.org/rss//top100/200](http://thepiratebay.org/rss//top100/200)")
-`path` _optional_                 | string  | Full path of added folder (e.g. "The Pirate Bay/Top100/Video")
+`path` _optional_                 | string  | Full path of added folder (e.g. "The Pirate Bay\Top100\Video")
 
 ## Remove item ##
 
@@ -2279,7 +2279,7 @@ Parameters:
 
 Parameter                         | Type    | Description
 ----------------------------------|---------|------------
-`path`                            | string  | Full path of removed item (e.g. "The Pirate Bay/Top100")
+`path`                            | string  | Full path of removed item (e.g. "The Pirate Bay\Top100")
 
 ## Move item ##
 
@@ -2291,7 +2291,7 @@ Parameters:
 
 Parameter                         | Type    | Description
 ----------------------------------|---------|------------
-`itemPath`                        | string  | Current full path of item (e.g. "The Pirate Bay/Top100")
+`itemPath`                        | string  | Current full path of item (e.g. "The Pirate Bay\Top100")
 `destPath`                        | string  | New full path of item (e.g. "The Pirate Bay")
 
 ## Get all items ##
