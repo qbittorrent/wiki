@@ -2069,7 +2069,7 @@ Cookie: SID=your_sid
 Content-Type: application/x-www-form-urlencoded
 Content-Length: length
 
-category=CategoryName
+category=CategoryName&savePath=/path/to/dir
 ```
 
 `category` is the category you want to create.
