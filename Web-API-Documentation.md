@@ -66,6 +66,7 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
    1. [Set torrent location](#set-torrent-location)
    1. [Set torrent name](#set-torrent-name)
    1. [Set torrent category](#set-torrent-category)
+   1. [Get all categories](#get-all-categories)
    1. [Add new category](#add-new-category)
    1. [Edit category](#edit-category)
    1. [Remove categories](#remove-categories)
@@ -2058,6 +2059,29 @@ HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
 409                               | Category name does not exist
 200                               | All other scenarios
+
+## Get all categories ##
+
+Name: `categories`
+
+Parameters:
+
+None
+
+Returns all categories in JSON format, e.g.:
+
+```JSON
+{
+    "Video": {
+        "name": "Video",
+        "savePath": "/home/user/torrents/video/"
+    }
+    "eBooks": {
+        "name": "eBooks",
+        "savePath": "/home/user/torrents/eBooks/"
+    }
+}
+```
 
 ## Add new category ##
 
