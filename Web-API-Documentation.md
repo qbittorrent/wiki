@@ -131,7 +131,7 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
 
 ## API v2.2.0 ##
 
-- Add `/torrents/editTrackers` and `/torrents/removeTrackers` methods ([#9375](https://github.com/qbittorrent/qBittorrent/pull/9375))
+- Add `/torrents/editTracker` and `/torrents/removeTracker` methods ([#9375](https://github.com/qbittorrent/qBittorrent/pull/9375))
 - Add `tier`, `num_seeds`, `num_leeches`, and `num_downloaded` fields to `/torrents/trackers` ([#9375](https://github.com/qbittorrent/qBittorrent/pull/9375))
 - Change `status` field from translated string to an integer for `/torrents/trackers` ([#9375](https://github.com/qbittorrent/qBittorrent/pull/9375))
 - Change `/torrents/filePrio` `id` field to accept multiple ids ([#9541](https://github.com/qbittorrent/qBittorrent/pull/9541))
@@ -1689,7 +1689,7 @@ HTTP Status Code                  | Scenario
 
 ## Edit trackers ##
 
-Name: `editTrackers`
+Name: `editTracker`
 
 **Parameters:**
 
