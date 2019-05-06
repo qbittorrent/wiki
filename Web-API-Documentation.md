@@ -2258,6 +2258,13 @@ Parameter                         | Type    | Description
 ----------------------------------|---------|------------
 `path`                            | string  | Full path of added folder (e.g. "The Pirate Bay\Top100")
 
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+409                               | Failure to add folder
+200                               | All other scenarios
+
 ## Add feed ##
 
 Name: `addFeed`
@@ -2268,6 +2275,13 @@ Parameter                         | Type    | Description
 ----------------------------------|---------|------------
 `url`                             | string  | URL of RSS feed (e.g. "[http://thepiratebay.org/rss//top100/200](http://thepiratebay.org/rss//top100/200)")
 `path` _optional_                 | string  | Full path of added folder (e.g. "The Pirate Bay\Top100\Video")
+
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+409                               | Failure to add feed
+200                               | All other scenarios
 
 ## Remove item ##
 
@@ -2281,6 +2295,13 @@ Parameter                         | Type    | Description
 ----------------------------------|---------|------------
 `path`                            | string  | Full path of removed item (e.g. "The Pirate Bay\Top100")
 
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+409                               | Failure to remove item
+200                               | All other scenarios
+
 ## Move item ##
 
 Moves/renames folder or feed.
@@ -2293,6 +2314,13 @@ Parameter                         | Type    | Description
 ----------------------------------|---------|------------
 `itemPath`                        | string  | Current full path of item (e.g. "The Pirate Bay\Top100")
 `destPath`                        | string  | New full path of item (e.g. "The Pirate Bay")
+
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+409                               | Failure to move item
+200                               | All other scenarios
 
 ## Get all items ##
 
@@ -2380,6 +2408,12 @@ Parameter                         | Type    | Description
 `ruleName`                        | string  | Rule name (e.g. "Punisher")
 `newRuleName`                     | string  | New rule name (e.g. "The Punisher")
 
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios
+
 ## Remove auto-downloading rule ##
 
 Name: `removeRule`
@@ -2389,6 +2423,13 @@ Parameters:
 Parameter                         | Type    | Description
 ----------------------------------|---------|------------
 `ruleName`                        | string  | Rule name (e.g. "Punisher")
+
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios
+
 
 ## Get all auto-downloading rules ##
 
@@ -2418,6 +2459,12 @@ Returns all auto-downloading rules in JSON format, e.g.:
     }
 }
 ```
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios
+
 
 # Search #
 
