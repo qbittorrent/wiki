@@ -2082,6 +2082,11 @@ Returns all categories in JSON format, e.g.:
     }
 }
 ```
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios
 
 ## Add new category ##
 
