@@ -134,6 +134,12 @@ Create file `/etc/ld.so.conf.d/libtorrent.conf` with contents
 
 Run `sudo ldconfig` afterward.
 
+Check if your <code>LD_LIBRARY_PATH</code> environment variable is set and the path <code>/usr/local/lib</code> is included.
+
+Simply run <code>env</code> in your terminal and look for <code>LD_LIBRARY_PATH</code>.
+If so, you are good to go. If not, add the path to the variable:
+  export LD_LIBRARY_PATH=/usr/local/lib:${LD_LIBRARY_PATH}
+
 #  Compiling qBittorrent-nox <a name="qbittorrentnox"></a>
 
 ## Compile 4.1.x version
