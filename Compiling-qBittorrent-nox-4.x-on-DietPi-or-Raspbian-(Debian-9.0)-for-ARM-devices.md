@@ -238,7 +238,7 @@ sudo systemctl enable qbittorrent
 On DietPi, you will need to run the following commands to update an already compiled version of qBittorrent-nox:
 ~~~~
 systemctl stop qbittorrent
-./configure --disable-gui --with-boost-libdir=/usr/lib/arm-linux-gnueabihf --prefix=/usr/local/bin/
+./configure --disable-gui --with-boost-libdir=/usr/lib/arm-linux-gnueabihf
 sudo make -j$(nproc)
 make install
 ~~~~
