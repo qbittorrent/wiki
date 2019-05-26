@@ -1682,7 +1682,7 @@ Cookie: SID=your_sid
 Content-Type: application/x-www-form-urlencoded
 Content-Length: length
 
-hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32?value=true
+hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32&value=true
 ```
 
 `hashes` can contain multiple hashes separated by `|`<br />
@@ -1706,7 +1706,7 @@ Cookie: SID=your_sid
 Content-Type: application/x-www-form-urlencoded
 Content-Length: length
 
-hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32?value=true
+hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32&value=true
 ```
 
 `hashes` can contain multiple hashes separated by `|`<br />
