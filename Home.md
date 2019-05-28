@@ -41,7 +41,7 @@ Everyone is welcome to edit and improve the wiki!
 * [Setting up qBittorrent as a daemon - CentOS 7](wiki/Setting-up-qBittorrent-as-a-daemon-on-CentOS-7)
 
 # Developing
-* [Coding style](wiki/Coding-style)
+* [Coding style](https://github.com/qbittorrent/qBittorrent/blob/master/CODING_GUIDELINES.md)
 * [How to write a search plugin](https://github.com/qbittorrent/search-plugins/wiki/How-to-write-a-search-plugin)
 
 ### Compilation
