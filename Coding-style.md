@@ -1,2 +1,0 @@
-Up to date coding style guidelines are in the following file. Click on the link and github will render it as a wiki page.<br/>
-Link: https://github.com/qbittorrent/qBittorrent/blob/master/CODING_GUIDELINES.md
