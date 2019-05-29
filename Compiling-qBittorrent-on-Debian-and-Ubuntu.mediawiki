@@ -100,11 +100,9 @@ Enter the folder in a new terminal window and run:
 And finally to install qBittorrent:
  sudo make install
 
-The following method is too complex, just simply run:
+If everything went fine, there is one last thing you need to do, just simply run:
  ldconfig
-But if you want to know what's going on, then you can read the following method.
-
-If everything went fine, there is one last thing you need to do (see https://github.com/qbittorrent/qBittorrent/issues/8047):
+The following method is too complex, but if you want to know what's going on, then you can read the following method (see https://github.com/qbittorrent/qBittorrent/issues/8047):
 
 Check if your <code>LD_LIBRARY_PATH</code> environment variable is set and the path <code>/usr/local/lib</code> is included.
 
