@@ -44,7 +44,6 @@ If yes, add <code>--with-boost-libdir=/usr/lib/i386-linux-gnu</code>
 Now you're ready to compile:
  make clean && make -j$(nproc)
  sudo make install
- ldconfig
 
 See note in the next section regarding the build jobs.
 
@@ -100,6 +99,10 @@ Enter the folder in a new terminal window and run:
 
 And finally to install qBittorrent:
  sudo make install
+
+The following method is too complex, just simply run:
+ ldconfig
+But if you want to know what's going on, then you can read the following method.
 
 If everything went fine, there is one last thing you need to do (see https://github.com/qbittorrent/qBittorrent/issues/8047):
 
