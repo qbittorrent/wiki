@@ -30,8 +30,8 @@ Everyone is welcome to edit and improve the wiki!
   * [NGINX](wiki/NGINX-Reverse-Proxy-for-Web-UI)
   * [Microsoft IIS ARR](wiki/IIS-ARR-Reverse-Proxy)
 * Setting up HTTPS
-  * [Let's Encrypt certificates + NGINX reverse proxy - Linux](wiki/Linux-Web-UI-HTTPS-with-Let's-Encrypt-certificates-and-NGINX-SSL-reverse-proxy)
-  * [Let's Encrypt certificates - Linux](wiki/Linux-Web-UI-setting-up-HTTPS-with-Let's-Encrypt-certificates)
+  * [Let's Encrypt certificates + NGINX reverse proxy - Linux](wiki/Linux-WebUI-HTTPS-with-Let's-Encrypt-certificates-and-NGINX-SSL-reverse-proxy)
+  * [Let's Encrypt certificates - Linux](wiki/Linux-WebUI-setting-up-HTTPS-with-Let's-Encrypt-certificates)
   * [Self-signed SSL certificates - Linux](wiki/Linux-WebUI-setting-up-HTTPS-with-self-signed-SSL-certificates)
 
 ### Linux
