@@ -44,6 +44,7 @@ If yes, add <code>--with-boost-libdir=/usr/lib/i386-linux-gnu</code>
 Now you're ready to compile:
  make clean && make -j$(nproc)
  sudo make install
+ ldconfig
 
 See note in the next section regarding the build jobs.
 
