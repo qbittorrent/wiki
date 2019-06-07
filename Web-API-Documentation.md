@@ -1154,7 +1154,7 @@ Property                  | Type    | Description
 `total_wasted`            | integer | Total data wasted for torrent (bytes)
 `total_uploaded`          | integer | Total data uploaded for torrent (bytes)
 `total_uploaded_session`  | integer | Total data uploaded this session (bytes)
-`total_downloaded`        | integer | Total data uploaded for torrent (bytes)
+`total_downloaded`        | integer | Total data downloaded for torrent (bytes)
 `total_downloaded_session`| integer | Total data downloaded this session (bytes)
 `up_limit`                | integer | Torrent upload limit (bytes/s)
 `dl_limit`                | integer | Torrent download limit (bytes/s)
