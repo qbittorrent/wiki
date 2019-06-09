@@ -223,7 +223,7 @@ $ sudo journalctl -f -u qbittorrent.service
 ### Uninstalling qBittorrent: ###
 Remove the startup script:
 ```
-$ sudo rm /etc/systemd/qbittorrent.service
+$ sudo rm /etc/systemd/system/qbittorrent.service
 ```
 
 Remove the qBittorrent package:
