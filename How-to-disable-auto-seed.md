@@ -5,7 +5,7 @@ How to stop qbittorrent continuing to seed after whatever ratio limit that you w
 Open the client settings:
 Select the BitTorrent panel:
 In **Share Ratio Limiting**
-check the box "[ ] Seed torrents until their ration reaches;
+check the box "[ ] Seed torrents until their ratio reaches;
 Set the value;
 Choose the action from Pause them | Remove them
 
