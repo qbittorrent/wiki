@@ -27,7 +27,7 @@ Once you have configure your router, you can test that your configuration is wor
 # Check the "Start seeding after creation" box
 # Press the "Create and save..." button
 ## Save the torrent file wherever you like
-# Send this newly created .torrent file to your friends and they will be able the download the files you are sharing using any Bittorrent client.
+# Send this newly created .torrent file to your friends and they will be able to download the files you are sharing using any Bittorrent client.
 
 === If you are using qBittorrent without X ===
 Stop qBittorrent and add the following lines to ''~/.config/qBittorrent/qBittorrent.conf'':
