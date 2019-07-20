@@ -78,7 +78,7 @@ This WebUI API documentation applies to qBittorrent v3.2.0-v4.0.4. For newer API
   * The authentication is now cookie based
   * Sizes are expressed in bytes, speed rates in bytes per seconds, dates as unix timestamps and are all reported as integers with no hardcoded unit
   * `/json/` was replaced with `/query/` in all the requests
-  * `/command/getTorrentUpLimit|getTorrentDlLimit|setTorrentUpLimit|setTorrentDlLimit` were replaced by `/command/getTorrentsUpLimit|getTorrentsDlLimit|setTorrentsUpLimit|setTorrentsDllLimit` to handle multiple torrents
+  * `/command/getTorrentUpLimit|getTorrentDlLimit|setTorrentUpLimit|setTorrentDlLimit` were replaced by `/command/getTorrentsUpLimit|getTorrentsDlLimit|setTorrentsUpLimit|setTorrentsDlLimit` to handle multiple torrents
   * URIs/parameters are case sensitive
   * The server replies with an error in case of bad requests, unless differently stated.
 
