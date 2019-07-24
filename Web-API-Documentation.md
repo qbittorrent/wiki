@@ -2091,7 +2091,7 @@ Returns all categories in JSON format, e.g.:
     "Video": {
         "name": "Video",
         "savePath": "/home/user/torrents/video/"
-    }
+    },
     "eBooks": {
         "name": "eBooks",
         "savePath": "/home/user/torrents/eBooks/"
