@@ -1,6 +1,6 @@
 ## Note ##
 
-This Web API documentation applies qBittorrent v4.1+, for previous API version read its documentation at [here](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-Documentation).
+This Web API documentation applies qBittorrent v4.1+, for previous API version read its documentation [here](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-Documentation).
 
 # Table of Contents #
 
@@ -11,6 +11,7 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
    1. [API v2.1.0](#api-v210)
    1. [API v2.1.1](#api-v211)
    1. [API v2.2.0](#api-v220)
+   1. [API v2.2.1](#api-v221)
    1. [API v2.3.0](#api-v230)
 1. [General information](#general-information)
 1. [Authentication](#authentication)
@@ -70,6 +71,11 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
    1. [Add new category](#add-new-category)
    1. [Edit category](#edit-category)
    1. [Remove categories](#remove-categories)
+   1. [Add torrent tags](#add-torrent-tags)
+   1. [Remove torrent tags](#remove-torrent-tags)
+   1. [Get all tags](#get-all-tags)
+   1. [Create tags](#create-tags)
+   1. [Delete tags](#delete-tags)
    1. [Set automatic torrent management](#set-automatic-torrent-management)
    1. [Toggle sequential download](#toggle-sequential-download)
    1. [Set first/last piece priority](#set-firstlast-piece-priority)
@@ -138,6 +144,12 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
 - Throw additional errors for failed requests to `/torrents/filePrio` ([#9541](https://github.com/qbittorrent/qBittorrent/pull/9541))
 - Add `useAutoTMM` field to `/torrents/add` ([#9752](https://github.com/qbittorrent/qBittorrent/pull/9752))
 - Add various fields to `/app/getPreferences` and `/app/setPreferences` (`create_subfolder_enabled`, `start_paused_enabled`, `auto_delete_mode`, `preallocate_all`, `incomplete_files_ext`, `auto_tmm_enabled`, `torrent_changed_tmm_enabled`, `save_path_changed_tmm_enabled`, `category_changed_tmm_enabled`, `mail_notification_sender`, `limit_lan_peers`, `slow_torrent_dl_rate_threshold`, `slow_torrent_ul_rate_threshold`, `slow_torrent_inactive_timer`, `alternative_webui_enabled`, `alternative_webui_path`) ([#9752](https://github.com/qbittorrent/qBittorrent/pull/9752))
+
+## API v2.2.1 ##
+
+*(unconfirmed version)*
+
+- Add `/torrents/addTags`, `/torrents/removeTags`, `/torrents/tags`, `/torrents/createTags`, `/torrents/deleteTags` methods ([#10527](https://github.com/qbittorrent/qBittorrent/pull/10527))
 
 ## API v2.3.0 ##
 
@@ -808,6 +820,8 @@ Property                      | Type    | Description
 `torrents_removed`            | array   | List of hashes of torrents removed since last request
 `categories`                  | object  | Info for categories added since last request
 `categories_removed`          | array   | List of categories removed since last request
+`tags`                        | array   | List of tags added since last request
+`tags_removed`                | array   | List of tags removed since last request
 `queueing`                    | bool    | Priority system usage flag
 `server_state`                | object  | Global transfer info
 
@@ -1062,7 +1076,8 @@ Property          | Type    | Description
 `state`           | string  | Torrent state. See table here below for the possible values
 `seq_dl`          | bool    | True if sequential download is enabled
 `f_l_piece_prio`  | bool    | True if first last piece are prioritized
-`category`           | string  | Category of the torrent
+`category`        | string  | Category of the torrent
+`tags`            | string  | Comma-concatenated tag list of the torrent
 `super_seeding`   | bool    | True if super seeding is enabled
 `force_start`     | bool    | True if force start is enabled for this torrent
 
@@ -1101,6 +1116,7 @@ Example:
         "force_start":false,
         "hash":"8c212779b4abde7c6bc608063a0d008b7e40ce32",
         "category":"",
+        "tags": "",
         "name":"debian-8.1.0-amd64-CD-1.iso",
         "num_complete":-1,
         "num_incomplete":-1,
@@ -2146,6 +2162,121 @@ categories=Category1%0ACategory2
 ```
 
 `categories` can contain multiple cateogies separated by `\n` (%0A urlencoded)
+
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios
+
+## Add torrent tags ##
+
+Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
+
+```http
+POST /api/v2/torrents/addTags HTTP/1.1
+User-Agent: Fiddler
+Host: 127.0.0.1
+Cookie: SID=your_sid
+Content-Type: application/x-www-form-urlencoded
+Content-Length: length
+
+hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5d7cc2ba0&tags=TagName1,TagName2
+```
+
+`hashes` can contain multiple hashes separated by `|` or set to `all`
+
+`tags` is the list of tags you want to add to passed torrents.
+
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios
+
+## Remove torrent tags ##
+
+Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
+
+```http
+POST /api/v2/torrents/removeTags HTTP/1.1
+User-Agent: Fiddler
+Host: 127.0.0.1
+Cookie: SID=your_sid
+Content-Type: application/x-www-form-urlencoded
+Content-Length: length
+
+hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5d7cc2ba0&tags=TagName1,TagName2
+```
+
+`hashes` can contain multiple hashes separated by `|` or set to `all`
+
+`tags` is the list of tags you want to remove from passed torrents.
+
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios
+
+## Get all tags ##
+
+Name: `tags`
+
+Parameters:
+
+None
+
+Returns all tags in JSON format, e.g.:
+
+```JSON
+[
+    "Tag 1",
+    "Tag 2"
+]
+```
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios
+
+## Create tags ##
+
+```http
+POST /api/v2/torrents/createTags HTTP/1.1
+User-Agent: Fiddler
+Host: 127.0.0.1
+Cookie: SID=your_sid
+Content-Type: application/x-www-form-urlencoded
+Content-Length: length
+
+tags=TagName1,TagName2
+```
+`tags` is a list of tags you want to create.
+Can contain multiple tags separated by `,`.
+
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios
+
+## Delete tags ##
+
+```http
+POST /api/v2/torrents/deleteTags HTTP/1.1
+User-Agent: Fiddler
+Host: 127.0.0.1
+Cookie: SID=your_sid
+Content-Type: application/x-www-form-urlencoded
+Content-Length: length
+
+tags=TagName1,TagName2
+```
+
+`tags` is a list of tags you want to delete.
+Can contain multiple tags separated by `,`.
 
 **Returns:**
 
