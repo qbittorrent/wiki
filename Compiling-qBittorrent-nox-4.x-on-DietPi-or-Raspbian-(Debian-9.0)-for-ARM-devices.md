@@ -80,6 +80,7 @@ unzip libtorrent_1_2_0.zip
 cd libtorrent-libtorrent_1_2_0
 ~~~~~
 
+NOTE: libtorrent 1.2 is reported to not work with the current release version of qBittorrent (4.1.6). You need to use libtorrent 1.1.x.
 
 ## Compile Libtorrent 1.1.x
 
