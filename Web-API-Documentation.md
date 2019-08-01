@@ -2212,6 +2212,7 @@ hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5
 `hashes` can contain multiple hashes separated by `|` or set to `all`
 
 `tags` is the list of tags you want to remove from passed torrents.
+Empty list removes all tags from relevant torrents.
 
 **Returns:**
 
