@@ -338,7 +338,6 @@ Property                          | Type    | Description
 `mail_notification_password`      | string  | Password for smtp authentication
 `autorun_enabled`                 | bool    | True if external program should be run after torrent has finished downloading
 `autorun_program`                 | string  | Program path/name/arguments to run if `autorun_enabled` is enabled; path is separated by slashes; you can use `%f` and `%n` arguments, which will be expanded by qBittorent as path_to_torrent_file and torrent_name (from the GUI; not the .torrent file name) respectively
-`preallocate_all`                 | bool    | True if file preallocation should take place, otherwise sparse files are used
 `queueing_enabled`                | bool    | True if torrent queuing is enabled
 `max_active_downloads`            | integer | Maximum number of active simultaneous downloads
 `max_active_torrents`             | integer | Maximum number of active simultaneous downloads and uploads
