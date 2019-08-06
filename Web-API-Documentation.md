@@ -39,6 +39,7 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
    1. [Set global download limit](#set-global-download-limit)
    1. [Get global upload limit](#get-global-upload-limit)
    1. [Set global upload limit](#set-global-upload-limit)
+   1. [Ban peers](#ban-peers)
 1. [Torrent management](#torrent-management)
    1. [Get torrent list](#get-torrent-list)
    1. [Get torrent generic properties](#get-torrent-generic-properties)
@@ -52,6 +53,9 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
    1. [Delete torrents](#delete-torrents)
    1. [Recheck torrents](#recheck-torrents)
    1. [Reannounce torrents](#reannounce-torrents)
+   1. [Edit trackers](#edit-trackers)
+   1. [Remove trackers](#remove-trackers)
+   1. [Add peers](#add-peers)
    1. [Add new torrent](#add-new-torrent)
    1. [Add trackers to torrent](#add-trackers-to-torrent)
    1. [Increase torrent priority](#increase-torrent-priority)
@@ -158,6 +162,7 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
 - Remove `web_ui_password` field from `/app/preferences`, this field is still writable in `/app/setPreferences` method ([#9942](https://github.com/qbittorrent/qBittorrent/pull/9942))
 - Add `/app/buildInfo` method ([#10096](https://github.com/qbittorrent/qBittorrent/pull/10096))
 - Always use `/` as path separator in `/torrents/files` response ([#10153](https://github.com/qbittorrent/qBittorrent/pull/10153/))
+- Add `/torrents/addPeers` and `/transfer/banPeers` methods ([#10158](https://github.com/qbittorrent/qBittorrent/pull/10158))
 
 # General Information #
 
@@ -1024,6 +1029,22 @@ HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
 200                               | All scenarios
 
+## Ban peers ##
+
+Name: `banPeers`
+
+**Parameters:**
+
+Parameter                         | Type    | Description
+----------------------------------|---------|------------
+`peers`                           | string  | The peer to ban, or multiple peers separated by a pipe `\|`. Each peer is a colon-separated `host:port`
+
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios
+
 # Torrent management #
 
 All Torrent management API methods are under "torrents", e.g.: `/api/v2/torrents/methodName`.
@@ -1742,6 +1763,24 @@ HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
 404                               | Torrent hash was not found
 409                               | All `urls` were not found
+200                               | All other scenarios
+
+## Add peers ##
+
+Name: `addPeers`
+
+**Parameters:**
+
+Parameter                         | Type    | Description
+----------------------------------|---------|------------
+`hashes`                          | string  | The hash of the torrent, or multiple hashes separated by a pipe `\|`
+`peers`                           | string  | The peer to add, or multiple peers separated by a pipe `\|`. Each peer is a colon-separated `host:port`
+
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+400                               | None of the supplied peers are valid
 200                               | All other scenarios
 
 ## Increase torrent priority ##
