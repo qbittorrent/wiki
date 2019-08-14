@@ -151,9 +151,9 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
 
 ## API v2.2.1 ##
 
-*(unconfirmed version)*
+*(unconfirmed version presuming 4.1.8 bumps API version to 2.2.1)*
 
-- Add `/torrents/addTags`, `/torrents/removeTags`, `/torrents/tags`, `/torrents/createTags`, `/torrents/deleteTags` methods ([#10527](https://github.com/qbittorrent/qBittorrent/pull/10527))
+- Add rss/refreshItem ([#11067](https://github.com/qbittorrent/qBittorrent/pull/11067)
 
 ## API v2.3.0 ##
 
@@ -163,6 +163,7 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
 - Add `/app/buildInfo` method ([#10096](https://github.com/qbittorrent/qBittorrent/pull/10096))
 - Always use `/` as path separator in `/torrents/files` response ([#10153](https://github.com/qbittorrent/qBittorrent/pull/10153/))
 - Add `/torrents/addPeers` and `/transfer/banPeers` methods ([#10158](https://github.com/qbittorrent/qBittorrent/pull/10158))
+- Add `/torrents/addTags`, `/torrents/removeTags`, `/torrents/tags`, `/torrents/createTags`, `/torrents/deleteTags` methods ([#10527](https://github.com/qbittorrent/qBittorrent/pull/10527))
 
 # General Information #
 
