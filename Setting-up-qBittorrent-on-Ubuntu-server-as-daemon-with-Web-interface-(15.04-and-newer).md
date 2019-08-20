@@ -67,6 +67,7 @@ After=network.target
 
 [Service]
 User=qbtuser
+Group=qbtuser
 ExecStart=/usr/bin/qbittorrent-nox
 ExecStop=/usr/bin/killall -w qbittorrent-nox
 
@@ -265,6 +266,7 @@ BindsTo=media-volume.mount
 
 [Service]
 User=qbtuser
+Group=qbtuser
 ExecStart=/usr/bin/qbittorrent-nox
 ExecStop=/usr/bin/killall -w qbittorrent-nox
 
