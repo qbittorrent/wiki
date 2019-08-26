@@ -146,7 +146,7 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
 - Change `status` field from translated string to an integer for `/torrents/trackers` ([#9375](https://github.com/qbittorrent/qBittorrent/pull/9375))
 - Change `/torrents/filePrio` `id` field to accept multiple ids ([#9541](https://github.com/qbittorrent/qBittorrent/pull/9541))
 - Throw additional errors for failed requests to `/torrents/filePrio` ([#9541](https://github.com/qbittorrent/qBittorrent/pull/9541))
-- Add `useAutoTMM` field to `/torrents/add` ([#9752](https://github.com/qbittorrent/qBittorrent/pull/9752))
+- Add `autoTMM` field to `/torrents/add` ([#9752](https://github.com/qbittorrent/qBittorrent/pull/9752))
 - Add various fields to `/app/getPreferences` and `/app/setPreferences` (`create_subfolder_enabled`, `start_paused_enabled`, `auto_delete_mode`, `preallocate_all`, `incomplete_files_ext`, `auto_tmm_enabled`, `torrent_changed_tmm_enabled`, `save_path_changed_tmm_enabled`, `category_changed_tmm_enabled`, `mail_notification_sender`, `limit_lan_peers`, `slow_torrent_dl_rate_threshold`, `slow_torrent_ul_rate_threshold`, `slow_torrent_inactive_timer`, `alternative_webui_enabled`, `alternative_webui_path`) ([#9752](https://github.com/qbittorrent/qBittorrent/pull/9752))
 
 ## API v2.2.1 ##
@@ -1690,7 +1690,7 @@ Property                        | Type    | Description
 `rename` _optional_             | string  | Rename torrent
 `upLimit` _optional_            | integer | Set torrent upload speed limit. Unit in bytes/second
 `dlLimit` _optional_            | integer | Set torrent download speed limit. Unit in bytes/second
-`useAutoTMM` _optional_         | bool    | Whether Automatic Torrent Management should be used
+`autoTMM` _optional_         | bool    | Whether Automatic Torrent Management should be used
 `sequentialDownload` _optional_ | string  | Enable sequential download. Possible values are `true`, `false` (default)
 `firstLastPiecePrio` _optional_ | string  | Prioritize download first last piece. Possible values are `true`, `false` (default)
 
