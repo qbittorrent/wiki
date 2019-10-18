@@ -27,4 +27,4 @@ Sometimes, it may be important to understand to context in order to translate we
 # Translating Bittorrent specific terms
 If you need help understanding some Bittorrent specific terms, you can refer to these pages:
 * [Wikipedia - Glossary of BitTorrent terms](https://en.wikipedia.org/wiki/Glossary_of_BitTorrent_terms)
-* [BTFaq - Bittorrent terms](http://www.btfaq.com/serve/cache/23.html)
+* [BTFaq - Bittorrent terms](https://web.archive.org/web/20101120190033/http://www.dessent.net/btfaq/#terms)
