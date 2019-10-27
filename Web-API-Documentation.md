@@ -151,8 +151,6 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
 
 ## API v2.2.1 ##
 
-*(unconfirmed version presuming 4.1.8 bumps API version to 2.2.1)*
-
 - Add rss/refreshItem ([#11067](https://github.com/qbittorrent/qBittorrent/pull/11067))
 
 ## API v2.3.0 ##
