@@ -826,7 +826,6 @@ Property                      | Type    | Description
 `categories_removed`          | array   | List of categories removed since last request
 `tags`                        | array   | List of tags added since last request
 `tags_removed`                | array   | List of tags removed since last request
-`queueing`                    | bool    | Priority system usage flag
 `server_state`                | object  | Global transfer info
 
 Example:
