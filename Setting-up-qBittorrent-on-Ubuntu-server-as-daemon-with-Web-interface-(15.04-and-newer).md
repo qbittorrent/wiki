@@ -17,7 +17,7 @@ Since this guide focuses on servers that normally don't have a desktop user inte
 ### Install ###
 qBittorrent is now available in official Ubuntu repositories.
 More up-to-date packages are published on our [stable](https://launchpad.net/~qbittorrent-team/+archive/ubuntu/qbittorrent-stable) and [unstable](https://launchpad.net/~qbittorrent-team/+archive/ubuntu/qbittorrent-unstable) PPAs. 
-The stable PPA supports Ubuntu 14.04 LTS (only the libtorrent-rasterbar package), 16.04 LTS, 17.04, 17.10 and 18.04 LTS. 
+The stable PPA supports Ubuntu 14.04 LTS (only the libtorrent-rasterbar package), 16.04 LTS, 17.04, 17.10, 18.04 LTS, and 19.10. 
 
 Quick instructions
 To use these PPAs please use the following command and make sure your version is supported:
