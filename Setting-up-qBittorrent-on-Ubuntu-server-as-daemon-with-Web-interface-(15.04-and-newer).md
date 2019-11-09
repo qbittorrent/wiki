@@ -69,7 +69,7 @@ After=network.target
 User=qbtuser
 Group=qbtuser
 ExecStart=/usr/bin/qbittorrent-nox
-ExecStop=/usr/bin/killall -w qbittorrent-nox
+TimeoutStopSec=infinity
 
 [Install]
 WantedBy=multi-user.target
@@ -268,7 +268,7 @@ BindsTo=media-volume.mount
 User=qbtuser
 Group=qbtuser
 ExecStart=/usr/bin/qbittorrent-nox
-ExecStop=/usr/bin/killall -w qbittorrent-nox
+TimeoutStopSec=infinity
 
 [Install]
 WantedBy=multi-user.target
