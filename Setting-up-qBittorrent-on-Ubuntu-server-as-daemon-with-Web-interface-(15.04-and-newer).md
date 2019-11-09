@@ -63,13 +63,13 @@ First, create a file:
 ```
 [Unit]
 Description=qBittorrent Daemon Service
-Documentation=https://github.com/qbittorrent/qBittorrent/wiki
 After=network.target
 
 [Service]
 User=qbtuser
 Group=qbtuser
 ExecStart=/usr/bin/qbittorrent-nox
+ExecStop=/usr/bin/killall -w qbittorrent-nox
 
 [Install]
 WantedBy=multi-user.target
