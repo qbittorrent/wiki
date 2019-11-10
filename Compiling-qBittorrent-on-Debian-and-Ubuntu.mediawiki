@@ -10,7 +10,20 @@ This guide is written for Debian/Ubuntu, but the process should be similar for o
  sudo apt-get install libboost-dev libboost-system-dev libboost-chrono-dev libboost-random-dev libssl-dev libgeoip-dev
 
 * Qt libraries
+qBittorrent 4.0 - 4.1.x requires at least Qt 5.5.1, and qBittorrent 4.2 and later requires at least Qt 5.9.<br /><br />
+
+Note that Qt libraries in Debian 8/9 repository is too old for compiling newer qBittorrent, you need to upgrade your system to Debian 10, or install newer Qt libraries by the other way.<br />
+
+If you were using Ubuntu 16.04 LTS, you could add this PPA:
+ sudo add-apt-repository ppa:beineri/opt-qt597-xenial
+ sudo apt-get update
+ sudo apt-get install qt59base qt59svg qt59tools
+ export PATH=/opt/qt59/bin:$PATH
+ export PKG_CONFIG_PATH=/opt/qt59/lib/pkgconfig:$PKG_CONFIG_PATH
+
+For Debian 10, Ubuntu 18.04 LTS or later, just install Qt from repository
  sudo apt-get install qtbase5-dev qttools5-dev-tools libqt5svg5-dev
+
 
 * Python (Run time only dependency, for the search engine)
  sudo apt-get install python3
@@ -28,13 +41,18 @@ Clone from the repo
  git clone https://github.com/arvidn/libtorrent.git
  cd libtorrent
 
-If you want to use libtorrent 1.1.* (Also see: [https://github.com/qbittorrent/qBittorrent/issues/6132 issue 6132])
- git checkout $(git tag | grep libtorrent_1_1_ | sort -t _ -n -k 4 | tail -n 1)
+If you want to use libtorrent 1.2.* (only qBittorrent 4.2.0 and later supports libtorrent 1.2)
+ git checkout RC_1_2
  ./autotool.sh
  ./configure --disable-debug --enable-encryption
 
-If you want to use libtorrent 1.0.*
- git checkout $(git tag | grep libtorrent-1_0_ | sort -t _ -n -k 3 | tail -n 1)
+If you want to use libtorrent 1.1.*
+ git checkout RC_1_1
+ ./autotool.sh
+ ./configure --disable-debug --enable-encryption
+
+If you want to use libtorrent 1.0.* (support of libtorrent 1.0 has been dropped after qBittorrent 4.1.5)
+ git checkout RC_1_0
  ./autotool.sh
  ./configure --disable-debug --enable-encryption
 
