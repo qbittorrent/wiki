@@ -63,11 +63,14 @@ First, create a file:
 ```
 [Unit]
 Description=qBittorrent Daemon Service
-After=network.target
+Documentation=man:qbittorrent-nox(1)
+Wants=network-online.target
+After=network-online.target nss-lookup.target
 
 [Service]
+# if you have systemd >= 240, you probably want to use Type=exec instead
+Type=simple
 User=qbtuser
-Group=qbtuser
 ExecStart=/usr/bin/qbittorrent-nox
 TimeoutStopSec=infinity
 
