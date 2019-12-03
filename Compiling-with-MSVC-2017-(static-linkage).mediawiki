@@ -1,0 +1,163 @@
+This page describes how to compile 32-bit and 64-bit qBittorrent using MSVC 2017 under Windows. This is tested under Windows 7 SP1 64-bit but it should work the same under any other Windows version. Here the Community Edition of MSVC 2017 was used but any other edition must behave the same.
+
+=== What you will need: ===
+* The MSVC 2017 compiler. The Community Edition(free) will do fine.
+* A [https://www.perl.org/ Perl language] interpreter. [http://strawberryperl.com/ Strawberry Perl] will do fine.
+* Latest release of the [https://www.nasm.us/ NASM assembler].
+* Latest release of [https://www.zlib.net/ Zlib].
+* Latest release of [https://www.openssl.org/ OpenSSL].
+* Latest release of the [https://www.boost.org/ Boost libraries].
+* Latest release of [https://www.libtorrent.com/ libtorrent(rasterbar)].
+* Latest release of the [https://www.qt.io/ Qt libraries] source.
+* Latest release of [https://www.qbittorrent.org qBittorrent].
+* [https://www.qt.io/download-open-source/#section-6 Qt Creator].
+
+=== Info that applies to all steps ===
+* Let's assume that the working directory for our compilation will be <code>G:\QBITTORRENT</code>
+* For 32-bit or 64-bit you need to use the appropriate version of the compiler. All commands will be issued from the appropriate compiler command prompt. Open it via <code>Start->All Programs->Visual Studio 2017->Visual Studio Tools->VC</code>. For '''32-bit''' use <code>x86 Native Tools Command Prompt for VS 2017</code> and for '''64-bit''' use <code>x64 Native Tools Command Prompt for VS 2017</code>
+* The above prompt will open and will use a path under the <code>C:\</code> drive. If you want to use another drive for compilation (like mentioned above) you need to switch to that. Simply issuing <code>G:</code> (or any other drive letter) will switch there.
+* When you want to change paths in the prompt you do it by issuing <code>cd new-path</code>. '''NOTE:''' If the path starts with a different drive letter you need to switch to that first. The <code>cd</code> command doesn't do it automatically.
+* We will use 2 installation paths
+: '''32-bit:'''
+:* <code>G:\QBITTORRENT\install_msvc32\base</code> will be used for installing all necessary libs except Qt
+:* <code>G:\QBITTORRENT\install_msvc32\base\qt5</code> will be used for installing Qt
+: '''64-bit:'''
+:* <code>G:\QBITTORRENT\install_msvc64\base</code> will be used for installing all necessary libs except Qt
+:* <code>G:\QBITTORRENT\install_msvc64\base\qt5</code> will be used for installing Qt
+* In general these compiler/linker flags will be used (at some places below there are deviations):
+** '''Compiler (32-bit):''' -O1 -Oy- -Gy -Gw -GL -MT
+** '''Compiler (64-bit):''' -O1 -Gy -Gw -GL -MT
+** '''Linker:''' /NOLOGO /DYNAMICBASE /NXCOMPAT /LTCG /DEBUG /OPT:REF /OPT:ICF=5 /MANIFEST:EMBED /INCREMENTAL:NO /NODEFAULTLIB:MSVCRT
+
+=== Compiling Zlib ===
+* Extract the Zlib source inside our working dir.
+* Navigate to the Zlib source folder. eg <code>cd G:\QBITTORRENT\zlib-1.2.11</code>
+* Edit the '''win32/Makefile.msc''' file. Find the CFLAGS, ASFLAGS and LDFLAGS variables and replace them with these:
+ 32-bit: CFLAGS  = -nologo -O1 -Oy- -Gy -Gw -GL -MT $(LOC)
+ 64-bit: CFLAGS  = -nologo -O1 -Gy -Gw -GL -MT $(LOC)
+ LDFLAGS =  /NOLOGO /DYNAMICBASE /NXCOMPAT /LTCG /OPT:REF /OPT:ICF=5 /MANIFEST:EMBED /INCREMENTAL:NO /NODEFAULTLIB:MSVCRT
+: From ASFLAGS delete "/Zi"
+* Issue the following command:
+ nmake -f win32/Makefile.msc
+* Copy zlib.h, zconf.h, zlib.lib to our install dir.
+:'''32-bit'''
+ xcopy zlib.h G:\QBITTORRENT\install_msvc32\base\include\
+ xcopy zconf.h G:\QBITTORRENT\install_msvc32\base\include\
+ xcopy zlib.lib G:\QBITTORRENT\install_msvc32\base\lib\
+:'''64-bit'''
+ xcopy zlib.h G:\QBITTORRENT\install_msvc64\base\include\
+ xcopy zconf.h G:\QBITTORRENT\install_msvc64\base\include\
+ xcopy zlib.lib G:\QBITTORRENT\install_msvc64\base\lib\
+
+=== Compiling OpenSSL ===
+* Make sure you have installed perl and nasm.
+* Extract the OpenSSL source inside our working dir.
+* Navigate to the OpenSSL source folder. eg ''cd G:\QBITTORRENT\openssl-1.1.1d''
+* Now we will build a static version of OpenSSL. Issue the following commands:
+:'''32-bit'''
+ perl Configure VC-WIN32 no-shared no-zlib no-zlib-dynamic threads --release --openssldir=C:\openssl --prefix=G:\QBITTORRENT\install_msvc32\base -IG:\QBITTORRENT\install_msvc32\base\include -LG:\QBITTORRENT\install_msvc32\base\lib --with-zlib-lib=G:\QBITTORRENT\install_msvc32\base\lib\zlib.lib
+:'''64-bit'''
+ perl Configure VC-WIN64A no-shared no-zlib no-zlib-dynamic threads --release --openssldir=C:\openssl --prefix=G:\QBITTORRENT\install_msvc64\base -IG:\QBITTORRENT\install_msvc64\base\include -LG:\QBITTORRENT\install_msvc64\base\lib --with-zlib-lib=G:\QBITTORRENT\install_msvc64\base\lib\zlib.lib
+* '''NOTE:''' Using the <code>--openssldir</code> switch is very important. It controls the path that will get hardcoded into openssl when it looks for the file <code>openssl.cnf</code>. Otherwise openssl will use the prefix path. If that path is on any other drive other than C: it will cause weird problems for '''some''' of the end users. If users have assigned to G: (or any other letter you used) a card reader/cdrom/dvdrom that doesn't have a card/cd/dvd plugged in they will get a cryptic message saying <code>There is no disk in the drive. Please insert a disk into drive G:</code>. See issue [https://github.com/qbittorrent/qBittorrent/issues/4190 #4190]. So for that reason we use a dummy path under drive C: which is always available. 
+* Edit the generated ''makefile'' file.
+* At the end of the CFLAGS variable append:
+:'''32-bit'''
+ -Oy- -Gy -Gw -GL -MT
+:'''64-bit'''
+ -Gy -Gw -GL -MT
+: Don't use "-O1" because it makes one openssl test fail which might indicate a general problem with the openssl build
+* Find the LDFLAGS variable and replace it with:
+ LDFLAGS=/NOLOGO /SUBSYSTEM:CONSOLE /DYNAMICBASE /NXCOMPAT /LTCG /OPT:REF /OPT:ICF=5 /MANIFEST:EMBED /INCREMENTAL:NO /NODEFAULTLIB:MSVCRT
+* Then issue the following:
+ nmake
+ nmake test
+ nmake install_sw
+
+=== Compiling Boost ===
+* Extract the Boost sources in the working dir.
+* Navigate to the Boost source folder. eg ''cd G:\QBITTORRENT\boost_1_71_0''
+* Now you will need to bootstrap Boost so it will build b2.exe(previously bjam.exe). Issue the following command:
+ bootstrap.bat 
+* Compile a static version of Boost. Issue the following command. Replace N in <code>-j N</code> with the number of CPU cores you have or how many threads you want b2 to use when compiling:
+:'''32-bit'''
+ b2 -q --with-system --toolset=msvc-14.1 variant=release link=static runtime-link=static include="G:\QBITTORRENT\install_msvc32\base\include" library-path="G:\QBITTORRENT\install_msvc32\base\lib" define=BOOST_ASIO_DISABLE_CONNECTEX cxxflags="-O1 -Oy- -Gy -Gw -GL" linkflags="/NOLOGO /DYNAMICBASE /NXCOMPAT /LTCG /OPT:REF /OPT:ICF=5 /MANIFEST:EMBED /INCREMENTAL:NO" --hash -j N
+:'''64-bit'''
+ b2 -q --with-system --toolset=msvc-14.1 address-model=64 variant=release link=static runtime-link=static include="G:\QBITTORRENT\install_msvc64\base\include" library-path="G:\QBITTORRENT\install_msvc64\base\lib" --prefix="G:\QBITTORRENT\install_msvc64\base" cxxflags="-O1 -Gy -Gw -GL" linkflags="/NOLOGO /DYNAMICBASE /NXCOMPAT /LTCG /OPT:REF /OPT:ICF=5 /MANIFEST:EMBED /INCREMENTAL:NO" --hash -j N
+
+=== Compiling Libtorrent ===
+* Extract the Libtorrent sources in the working dir.
+* Navigate to the Libtorrent source folder. eg ''cd G:\qBittorrent\libtorrent-rasterbar-1.2.2''
+* Copy the b2.exe from the Boost directory to the Libtorrent directory
+ copy ..\boost_1_71_0\b2.exe b2.exe
+* Compile a static version of Libtorrent. Issue the following command. Replace N in <code>-j N</code> with the number of CPU cores you have or how many threads you want b2 to use when compiling:
+:'''32-bit'''
+ b2 -q --without-python --toolset=msvc-14.1 variant=release link=static runtime-link=static debug-symbols=on encryption=on crypto=openssl openssl-version=1.1 logging=off dht=on windows-version=win7 deprecated-functions=off boost-link=static -sBOOST_ROOT="G:\qBittorrent\boost_1_71_0" include="G:\QBITTORRENT\install_msvc32\base\include" include="G:\QBITTORRENT\boost_1_71_0" library-path="G:\QBITTORRENT\install_msvc32\base\lib" library-path="G:\QBITTORRENT\boost_1_71_0\stage\lib" --prefix="G:\QBITTORRENT\install_msvc32\base" define=BOOST_ASIO_DISABLE_CONNECTEX cxxflags="-O1 -Oy- -Gy -Gw -GL" linkflags="/NOLOGO /DYNAMICBASE /NXCOMPAT /LTCG /OPT:REF /OPT:ICF=5 /MANIFEST:EMBED /INCREMENTAL:NO" --hash -j N
+:'''64-bit'''
+ b2 -q --without-python --toolset=msvc-14.1 address-model=64 variant=release link=static runtime-link=static debug-symbols=on encryption=on crypto=openssl openssl-version=1.1 logging=off dht=on windows-version=win7 deprecated-functions=off boost-link=static -sBOOST_ROOT="G:\qBittorrent\boost_1_71_0" include="G:\QBITTORRENT\install_msvc64\base\include" include="G:\QBITTORRENT\boost_1_71_0" library-path="G:\QBITTORRENT\install_msvc64\base\lib" library-path="G:\QBITTORRENT\boost_1_71_0\stage\lib" --prefix="G:\QBITTORRENT\install_msvc64\base" cxxflags="-O1 -Gy -Gw -GL" define=BOOST_ASIO_DISABLE_CONNECTEX linkflags="/NOLOGO /DYNAMICBASE /NXCOMPAT /LTCG /OPT:REF /OPT:ICF=5 /MANIFEST:EMBED /INCREMENTAL:NO" --hash -j N
+* Install:
+:'''32-bit'''
+ b2 -q --without-python --toolset=msvc-14.1 variant=release link=static runtime-link=static debug-symbols=on encryption=on crypto=openssl openssl-version=1.1 logging=off dht=on windows-version=win7 deprecated-functions=off boost-link=static -sBOOST_ROOT="G:\qBittorrent\boost_1_71_0" include="G:\QBITTORRENT\install_msvc32\base\include" include="G:\QBITTORRENT\boost_1_71_0" library-path="G:\QBITTORRENT\install_msvc32\base\lib" library-path="G:\QBITTORRENT\boost_1_71_0\stage\lib" --prefix="G:\QBITTORRENT\install_msvc32\base" define=BOOST_ASIO_DISABLE_CONNECTEX cxxflags="-O1 -Oy- -Gy -Gw -GL" linkflags="/NOLOGO /DYNAMICBASE /NXCOMPAT /LTCG /OPT:REF /OPT:ICF=5 /MANIFEST:EMBED /INCREMENTAL:NO" --hash -j N install
+:'''64-bit'''
+ b2 -q --without-python --toolset=msvc address-model=64 variant=release link=static runtime-link=static debug-symbols=on encryption=on crypto=openssl openssl-version=1.1 logging=off dht=on windows-version=win7 deprecated-functions=off boost-link=static -sBOOST_ROOT="G:\qBittorrent\boost_1_71_0" include="G:\QBITTORRENT\install_msvc64\base\include" include="G:\QBITTORRENT\boost_1_71_0" library-path="G:\QBITTORRENT\install_msvc64\base\lib" library-path="G:\QBITTORRENT\boost_1_71_0\stage\lib" --prefix="G:\QBITTORRENT\install_msvc64\base" cxxflags="-O1 -Gy -Gw -GL" define=BOOST_ASIO_DISABLE_CONNECTEX linkflags="/NOLOGO /DYNAMICBASE /NXCOMPAT /LTCG /OPT:REF /OPT:ICF=5 /MANIFEST:EMBED /INCREMENTAL:NO" --hash -j N install
+
+=== Compiling Qt5 ===
+* Extract the Qt sources in the working dir.
+* Navigate to the Qt source folder. eg ''cd G:\QBITTORRENT\qt-everywhere-src-5.13.2'' 
+* Now we will build a static version of Qt and make it as small as possible.
+* Open '''qtbase/mkspecs/common/msvc-desktop.conf''' and replace the  relevant lines with:
+:'''32-bit'''
+ QMAKE_CFLAGS_RELEASE = -O1 -Oy- -Gy -Gw -GL -MT
+ QMAKE_CFLAGS_RELEASE_WITH_DEBUGINFO += -O1 -Oy- -Gy -Gw -GL -MT -Zi
+:'''64-bit'''
+ QMAKE_CFLAGS_RELEASE = -O1 -Gy -Gw -GL -MT
+ QMAKE_CFLAGS_RELEASE_WITH_DEBUGINFO += -O1 -Gy -Gw -GL -MT -Zi
+:'''32bit and 64-bit'''
+ QMAKE_CFLAGS_DEBUG = -Zi -MTd
+ QMAKE_LFLAGS = /NOLOGO /DYNAMICBASE /NXCOMPAT /LTCG
+ QMAKE_LFLAGS_RELEASE = /DEBUG /OPT:REF /OPT:ICF=5 /MANIFEST:EMBED /INCREMENTAL:NO /NODEFAULTLIB:MSVCRT
+ QMAKE_LFLAGS_RELEASE_WITH_DEBUGINFO = /DEBUG /OPT:REF /OPT:ICF=5 /INCREMENTAL:NO
+* Issue the following command:
+:'''32-bit'''
+ configure -prefix G:\QBITTORRENT\install_msvc32\qt5 -I G:\QBITTORRENT\install_msvc32\base\include -L G:\QBITTORRENT\install_msvc32\base\lib -platform win32-msvc -release -opensource -confirm-license -strip -no-shared -static -static-runtime -ltcg -make libs -make tools -nomake examples -no-compile-examples -no-dbus -no-icu -system-zlib -openssl-linked -no-gtk -no-opengl -no-opengles3 -no-angle -no-sql-sqlite -no-sql-odbc -no-sqlite -skip qt3d -skip qtactiveqt -skip qtandroidextras -skip qtcanvas3d -skip qtcharts -skip qtconnectivity -skip qtdatavis3d -skip qtdeclarative -skip qtdoc -skip qtgamepad -skip qtgraphicaleffects -skip qtimageformats -skip qtlocation -skip qtmacextras -skip qtmultimedia -skip qtnetworkauth -skip qtpurchasing -skip qtquickcontrols -skip qtquickcontrols2 -skip qtremoteobjects -skip qtscript -skip qtscxml -skip qtsensors -skip qtserialbus -skip qtserialport -skip qtspeech -skip qtvirtualkeyboard -skip qtwayland -skip qtwebchannel -skip qtwebengine -skip qtwebglplugin -skip qtwebsockets -skip qtwebview -skip qtx11extras -skip qtxmlpatterns ZLIB_LIBS="-lzlib" OPENSSL_LIBS="-lzlib -llibcrypto -llibssl -lgdi32 -luser32 -lws2_32 -lAdvapi32 -lCrypt32"
+:'''64-bit'''
+ configure -prefix G:\QBITTORRENT\install_msvc64\qt5 -I G:\QBITTORRENT\install_msvc64\base\include -L G:\QBITTORRENT\install_msvc64\base\lib -platform win32-msvc -release -opensource -confirm-license -strip -no-shared -static -static-runtime -ltcg -make libs -make tools -nomake examples -no-compile-examples -no-dbus -no-icu -system-zlib -openssl-linked -no-gtk -no-opengl -no-opengles3 -no-angle -no-sql-sqlite -no-sql-odbc -no-sqlite -skip qt3d -skip qtactiveqt -skip qtandroidextras -skip qtcanvas3d -skip qtcharts -skip qtconnectivity -skip qtdatavis3d -skip qtdeclarative -skip qtdoc -skip qtgamepad -skip qtgraphicaleffects -skip qtimageformats -skip qtlocation -skip qtmacextras -skip qtmultimedia -skip qtnetworkauth -skip qtpurchasing -skip qtquickcontrols -skip qtquickcontrols2 -skip qtremoteobjects -skip qtscript -skip qtscxml -skip qtsensors -skip qtserialbus -skip qtserialport -skip qtspeech -skip qtvirtualkeyboard -skip qtwayland -skip qtwebchannel -skip qtwebengine -skip qtwebglplugin -skip qtwebsockets -skip qtwebview -skip qtx11extras -skip qtxmlpatterns ZLIB_LIBS="-lzlib" OPENSSL_LIBS="-lzlib -llibcrypto -llibssl -lgdi32 -luser32 -lws2_32 -lAdvapi32 -lCrypt32"
+* Now you have 2 choices for compiling. Using <code>nmake</code> or <code>jom</code>. nmake uses only one core for compilation. That means that the qt compilation will take hours. On the other hand jom can use multiple cores/threads for faster compilation. Download it from [https://www.qt.io/download-open-source/ here]. Extract the jom.exe to the qt source dir and just issue(N number of cores/threads to use):
+ jom -j N
+* Now install:
+ jom -j N install
+
+=== Install and Configure Qt Creator ===
+* Just follow the installer instructions for the installation.
+* Launch Qt Creator and select Tools->Options...
+* Select the '''Kits''' item from the left and select the '''Qt Versions''' tab.
+* Click the '''Add...''' button and select the qmake.exe you just build. It should be in '''G:\QBITTORRENT\install_msvc32\qt5\bin\qmake.exe''' or '''G:\QBITTORRENT\install_msvc64\qt5\bin\qmake.exe'''
+* Name it something meaningful like "Qt5 msvc x32" or "Qt5 msvc x64"
+* Apply the changes
+* Click the '''Kits''' tab
+* Click the '''Add''' button. Choose a name eg Qt5 msvc2017 x32. Also choose a Qt version and a compiler from the drop down menus. Be sure to select the 32-bit(x86) version of the compiler if you choose the 32-bit version of Qt and the equivalent for 64-bit. Click Apply.
+* If you have configured multiple kits, then select the one you want as default and click the button '''Make Default''' and click OK. Otherwise, just close the dialog now.
+
+=== Compiling qBittorrent ===
+* Extract the qBittorrent sources in the working dir.
+* Launch Qt Creator and open the ''qbittorrent.pro'' file in ''G:\QBITTORRENT\qbittorrent-4.2.0''
+* From the Window that pops up select the Qt version you added above and specify '''release''' version. You can also select where qBittorrent will be built if you want.
+* Rename the ''conf.pri.windows'' file to ''conf.pri'' (or make a copy of it with that name). Open it and do the following (you can read the comments that it has inside too). The paths below use the path used for 32-bit, adjust them for 64-bit:
+:* Edit the first INCLUDEPATH to look like this(adjust for actual boost name):
+ INCLUDEPATH += $$quote(G:/QBITTORRENT/boost_1_71_0)
+:* Edit the second INCLUDEPATH to look like this:
+ INCLUDEPATH += $$quote(G:/QBITTORRENT/install_msvc32/base/include)
+:* Edit the third INCLUDEPATH to look like this(adjust for actual boost name):
+ INCLUDEPATH += $$quote(G:/QBITTORRENT/install_msvc32/qt5/include)
+:* Delete the lines with the rest of the INCLUDEPATH variables
+:* Edit the first LIBS to look like this:
+ LIBS += $$quote(-LG:/QBITTORRENT/boost_1_71_0/stage/lib)
+:* Edit the first LIBS to look like this:
+ LIBS += $$quote(-LG:/QBITTORRENT/install_msvc32/base/lib)
+:* Edit the first LIBS to look like this:
+ LIBS += $$quote(-LG:/QBITTORRENT/install_msvc32/qt5/lib)
+:* Delete the lines with the rest of the LIBS variables that '''expect paths'''
+:* Look for the LIBS variable that takes the lib names of libtorrent and libboost_system. Adjust the filename of the lib of libboost_system (it changes depending on version and other things).
+:* Uncomment the line shown below (remove the "#")
+ #DEFINES += TORRENT_NO_DEPRECATE
+* Select Build->Build Project "qbittorrent"
+* After the compilation ends you should have ''qbittorrent.exe'' in <code><build folder>\src\release</code>. "build folder" is where you chose qBittorrent to be build in the popup window.
