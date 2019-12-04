@@ -71,7 +71,11 @@ This page describes how to compile 32-bit and 64-bit qBittorrent using MSVC 2017
 * Then issue the following:
  nmake
  nmake test
+* Because we substituted the LDFLAGS variable and removed the "/debug" switch, *.pdb files weren't generated. The next command expects to find one at "apps/openssl.pdb". So we just create a dummy file with that name. The easiest way is to make a copy of <code>openssl.exe</code> (exists in the same subfolder) and rename it to <code>openssl.pdb</code>.
+* Issue command:
  nmake install_sw
+* Delete the dummy <code>openssl.pdb</code> from where it was copied to (adjust for 64-bit):
+ G:\QBITTORRENT\install_msvc32\base\bin\openssl.pdb
 
 === Compiling Boost ===
 * Extract the Boost sources in the working dir.
