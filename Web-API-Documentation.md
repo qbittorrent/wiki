@@ -155,8 +155,6 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
 
 ## API v2.3.0 ##
 
-*(unconfirmed version, pending release of qBittorrent v4.2.0)*
-
 - Remove `web_ui_password` field from `/app/preferences`, this field is still writable in `/app/setPreferences` method ([#9942](https://github.com/qbittorrent/qBittorrent/pull/9942))
 - Add `/app/buildInfo` method ([#10096](https://github.com/qbittorrent/qBittorrent/pull/10096))
 - Always use `/` as path separator in `/torrents/files` response ([#10153](https://github.com/qbittorrent/qBittorrent/pull/10153/))
