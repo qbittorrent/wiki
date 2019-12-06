@@ -44,7 +44,7 @@ Clone from the repo
 If you want to use libtorrent 1.2.* (only qBittorrent 4.2.0 and later supports libtorrent 1.2)
  git checkout RC_1_2
  ./autotool.sh
- ./configure --disable-debug --enable-encryption
+ ./configure --disable-debug --enable-encryption CXXFLAGS="-std=c++14"
 
 If you want to use libtorrent 1.1.*
  git checkout RC_1_1
@@ -108,7 +108,7 @@ If you clone the git repository and want to use the stable current version (rath
 (Note: When the stable version changes to 4.2.0, the stable branch will change to v4_2_x.)
 
 Enter the folder in a new terminal window and run:
- ./configure --disable-gui
+ ./configure --disable-gui CXXFLAGS="-std=c++14"
  make -j$(nproc)
 
 * Note 1: If you're using libtorrent-rasterbar from the 0.16.x series, you also need to pass the <code>--with-libtorrent-rasterbar0.16</code> option to configure. qBittorrent v3.3.x has dropped the support of libtorrent 0.16.x.
