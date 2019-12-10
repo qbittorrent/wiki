@@ -29,6 +29,7 @@ Everyone is welcome to edit and improve the wiki!
 * Reverse proxy setup for WebUI
   * [NGINX](wiki/NGINX-Reverse-Proxy-for-Web-UI)
   * [Microsoft IIS ARR](wiki/IIS-ARR-Reverse-Proxy)
+  * [Traefik](wiki/Traefik-Reverse-Proxy-for-Web-UI)
 * Setting up HTTPS
   * [Let's Encrypt certificates + NGINX reverse proxy - Linux](wiki/Linux-WebUI-HTTPS-with-Let's-Encrypt-certificates-and-NGINX-SSL-reverse-proxy)
   * [Let's Encrypt certificates - Linux](wiki/Linux-WebUI-setting-up-HTTPS-with-Let's-Encrypt-certificates)
