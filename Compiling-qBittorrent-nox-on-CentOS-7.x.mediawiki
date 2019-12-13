@@ -1,0 +1,72 @@
+This how-to will guide you though the compilation of qBittorrent and libtorrent-rasterbar.<br />
+This guide is written for CentOS 7.x, but the process should be similar for other RHEL distributions.
+
+== Required dependencies ==
+* General required dependencies
+ sudo yum groupinstall "Development Tools"
+ sudo yum install devtoolset-8-gcc devtoolset-8-gcc-c++
+ sudo yum install qt-devel openssl-devel qt5-qtbase-devel qt5-linguist
+
+* Boost
+[https://www.boost.org/users/download/ Download] latest version of Boost. (Actually 1.72.0)<br /><br />
+
+ wget https://dl.bintray.com/boostorg/release/1.72.0/source/boost_1_72_0.tar.gz
+
+* Qt libraries
+qBittorrent 4.0 - 4.1.x requires at least Qt 5.5.1, and qBittorrent 4.2 and later requires at least Qt 5.9.<br /><br />
+
+Check installed version:
+ rpm -qa | grep qt5-qtbase
+ qt5-qtbase-common-5.9.7-2.el7.noarch
+ qt5-qtbase-gui-5.9.7-2.el7.x86_64
+ qt5-qtbase-5.9.7-2.el7.x86_64
+ qt5-qtbase-devel-5.9.7-2.el7.x86_64
+
+* Libtorrent
+[https://libtorrent.org/ Libtorrent] is a library written by Arvid Norberg that qBittorrent depends on. It is necessary to compile and install libtorrent before compiling qBittorrent.
+
+== Boost ==
+Change devtoolsset if you didn't do that already
+ scl enable devtoolset-8 bash
+
+Compile:
+ export DIR_BOOST="/opt/boost"
+ tar -xvf boost_1_72_0.tar.gz
+ cd boost_1_72_0
+ ./bootstrap.sh --prefix=${DIR_BOOST}
+ ./b2 install --prefix=${DIR_BOOST} --with=all -j$(( $(nproc) - 1 ))
+
+== Libtorrent ==
+Change devtoolsset if you didn't do that already
+ scl enable devtoolset-8 bash
+
+Clone from the repository:
+ git clone --depth 1 -b RC_1_2 https://github.com/arvidn/libtorrent.git
+
+Compile:
+ cd libtorrent
+ ./autotool.sh
+ ./configure --disable-debug --enable-encryption --prefix=/usr --with-boost=${DIR_BOOST} CXXFLAGS=--std=c++14
+ make -j$(( $(nproc) - 1 ))
+ make install
+
+== Compiling qBittorrent (without the GUI) ==
+First, obtain the qBittorrent source code.<br />
+Either download and extract a .tar archive from [https://sourceforge.net/projects/qbittorrent/files/qbittorrent/ Sourceforge] or clone the git repository:
+ git clone --depth 1 -b v4_2_x https://github.com/qbittorrent/qBittorrent
+
+Compile:
+ cd qBittorrent
+ ./configure --prefix=/usr --disable-gui CPPFLAGS=-I/usr/include/qt5 --with-boost=${DIR_BOOST} CXXFLAGS=--std=c++14
+ make -j$(( $(nproc) - 1 ))
+ make install
+
+Since you disabled the graphical user interface, qBittorrent can only be controlled via its WebUI. If you haven't disabled authentication, as a default, you can access it at:
+ http://localhost:8080
+ Username: admin
+ Password: adminadmin
+
+A documentation about running qBittorrent without GUI is available [[Running-qBittorrent-without-X-server|here]].
+
+To set up qbittorrent as a deamon see [https://github.com/qbittorrent/qBittorrent/wiki/Setting-up-qBittorrent-as-a-daemon-on-CentOS-7 this guide] or just run 
+ qbittorrent-nox
