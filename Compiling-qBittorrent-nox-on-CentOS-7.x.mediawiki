@@ -55,6 +55,9 @@ First, obtain the qBittorrent source code.<br />
 Either download and extract a .tar archive from [https://sourceforge.net/projects/qbittorrent/files/qbittorrent/ Sourceforge] or clone the git repository:
  git clone --depth 1 -b v4_2_x https://github.com/qbittorrent/qBittorrent
 
+Change devtoolsset if you didn't do that already
+ scl enable devtoolset-8 bash
+
 Compile:
  cd qBittorrent
  ./configure --prefix=/usr --disable-gui CPPFLAGS=-I/usr/include/qt5 --with-boost=${DIR_BOOST} CXXFLAGS=--std=c++14
