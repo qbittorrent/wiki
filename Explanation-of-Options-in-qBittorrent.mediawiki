@@ -1,5 +1,7 @@
 Here you will find explanation for various settings found under the options in qBittorrent, grouped by the tab. The options can be accessed by hitting '''Alt''' + '''O''' or going to ''Tools'' and clicking on ''Options''. Some of these options are pretty self explanatory, so detailed explanations for these have been omitted. For additional clarification or explanation, please visit the [http://forum.qbittorrent.org qBittorrent forum].
 
+At the bottom, there is a list of deprecated options. This list may not be comprehensive.
+
 = Behavior =
 
 == Language ==
@@ -151,4 +153,6 @@ A complete list of libtorrent configuration may be found [https://www.libtorrent
 
 = Deprecated options =
 
-* '''Listen on IPv6 address''' - also known as the config string <code>Connection\InterfaceListenIPv6</code> (since <code>4.2.1</code>). Reason: https://github.com/qbittorrent/qBittorrent/pull/11592
+Deprecated options may be safely removed from your config file.
+
+* '''Listen on IPv6 address''' - also known as the config string <code>Connection\InterfaceListenIPv6</code> (since <code>4.2.1</code>). Replacement: "Optional IP address to bind to", confg string <code>Connection\InterfaceAddress</code>. Reason: [https://github.com/qbittorrent/qBittorrent/pull/11592 #11592].
