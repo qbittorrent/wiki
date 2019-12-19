@@ -106,7 +106,6 @@ The following settings are also documented in qBittorrent and libtorrent, respec
 === qBittorrent–specific configuration ===
 * '''Network interface''' — specifies which network interfaces qBittorrent listens on. On multi-nic systems (e.g. device has an ethernet port and wifi) you may limit which interface should be used to send and transmit data.
 * '''Optional IP address to bind to''' — ''TBA''
-* '''Listen on IPv6 address''' — allows qBittorrent to listen on IPv6 address in addition to the old, standard IPv4.
 * '''Save resume data interval''' — duration on which the resume data is saved to the disk. (''TBA'': What is "resume data")
 * '''Confirm torrent recheck''' — before manually rechecking torrents (e.g. Context-menu → Force recheck), a user confirmation dialog is displayed.
 * '''Recheck torrents on completion''' — after the torrent is completely downloaded a recheck operation is performed on the torrent. (''TBA'': completing may or may not be before ''seeding'' completion.)  This is specially useful on unreliable disks or filesystems.
@@ -148,3 +147,8 @@ A complete list of libtorrent configuration may be found [https://www.libtorrent
 * '''Strict super seeding''' — activate libtorrent's strict mode for super seeding ("when this is set to true, a piece has to have been forwarded to a third peer before another one is handed out. This is the traditional definition of super seeding.").
 * '''Always announce to all trackers in a tier''' — controls how multi tracker torrents are treated.  If this is set to true, all trackers in the same tier are announced to in parallel. Otherwise the behavior is as defined by the multi tracker specification.
 * '''IP Address to report to trackers''' — is the ip address passed along to trackers.  If this value is blank, the parameter will be omitted.
+
+
+= Deprecated options =
+
+* '''Listen on IPv6 address''' - also known as the config string <code>Connection\InterfaceListenIPv6</code> (since <code>4.2.1</code>). Reason: https://github.com/qbittorrent/qBittorrent/pull/11592
