@@ -7,7 +7,7 @@ This page describes how to compile 32-bit and 64-bit qBittorrent using MSVC 2017
 * Latest release of [https://www.zlib.net/ Zlib].
 * Latest release of [https://www.openssl.org/ OpenSSL].
 * Latest release of the [https://www.boost.org/ Boost libraries].
-* Latest release of [https://www.libtorrent.com/ libtorrent(rasterbar)].
+* Latest release of [https://www.libtorrent.org/ libtorrent(rasterbar)].
 * Latest release of the [https://www.qt.io/ Qt libraries] source.
 * Latest release of [https://www.qbittorrent.org qBittorrent].
 * [https://www.qt.io/download-open-source/#section-6 Qt Creator].
