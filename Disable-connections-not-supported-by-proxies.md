@@ -8,4 +8,4 @@ This feature attempts to enhance client privacy by disallowing any traffic that 
 * Only talks to http(s) trackers via (any) proxy
 * Only talks to udp trackers via SOCKS5/I2P proxy
 
-In qBitorrent 4.2 and above [changes in the underlying libtorrent library](https://github.com/qbittorrent/qBittorrent/issues/11698) mean the option is removed, as the above behavior is always enabled when using a proxy.
+In qBitorrent 4.2 and above [changes in the underlying libtorrent library](https://github.com/qbittorrent/qBittorrent/issues/11698#issuecomment-567733276) mean the option is removed, as the above behavior is always enabled when using a proxy.
