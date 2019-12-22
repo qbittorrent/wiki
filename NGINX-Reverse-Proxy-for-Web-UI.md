@@ -8,9 +8,6 @@ location /qbt/ {
     proxy_hide_header       Origin;
     proxy_set_header        Referer                 '';
     proxy_set_header        Origin                  '';
-    add_header              X-Frame-Options         "SAMEORIGIN"; # see note
+    # add_header              X-Frame-Options         "SAMEORIGIN"; # not needed since 4.1.0
 }
 ```
-Note: For some users, several windows in the Web UI will still be blank, such as when adding a new torrent from a URL/magnet or local file. If so, try adding the following line to the location block:
-
-`add_header  X-Frame-Options "SAMEORIGIN";`
