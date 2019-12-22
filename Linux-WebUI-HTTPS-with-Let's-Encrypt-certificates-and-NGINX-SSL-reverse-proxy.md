@@ -73,7 +73,7 @@ cd /etc/nginx/sites-enabled/
 sudo ln -s /etc/nginx/sites-available/yoursite yoursite 
 ```
 5. Open the file with your favourite text editor and paste something like the following (read the comments, which start with `#` to know what you have to change):
-```shell
+```nginx
 # change "yourdomain.com" and similar to your actual domain
 server {
     listen 80;
@@ -115,7 +115,13 @@ server {
         proxy_hide_header       Origin;
         proxy_set_header        Referer                     '';
         proxy_set_header        Origin                      '';
-        add_header              X-Frame-Options             "SAMEORIGIN"; # see note
+
+        # in a future version of qBittorrent (probably 4.2.2),
+        # it will be possible to set the "Secure" flag for the session cookie,
+        # but only if using qBittorrent's HTTPS functionality.
+        # For this use case, where qBittorrent itself is using HTTP,
+        # set this flag by overriding it in the proxy configuration it itself:
+        # proxy_cookie_path / "/; Secure";
     }
 
     # OPTIONAL: serve static HTML files at the root of the domain, like a simple homepage
