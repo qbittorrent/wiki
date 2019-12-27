@@ -3,7 +3,7 @@ If you're using NGINX as a reverse proxy for Web UI, as of version 4.0.3, assumi
 ```nginx
 location /qbt/ {
     proxy_pass              http://127.0.0.1:8080/;
-    proxy_http_version   1.1;
+    proxy_http_version      1.1;
     proxy_set_header        X-Forwarded-Host        $server_name:$server_port;
     proxy_hide_header       Referer;
     proxy_hide_header       Origin;
