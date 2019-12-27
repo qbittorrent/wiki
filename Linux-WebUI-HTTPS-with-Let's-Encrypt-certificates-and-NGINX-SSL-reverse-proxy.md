@@ -42,10 +42,11 @@ sudo apt install nginx
 
 1. Access your WebUI, and go to Tools -> Options -> WebUI
 2. Change the following settings if they are not already like so:
-* Server domains: localhost
+* IP address: 127.0.0.1
 * Port: some free port on your system that is NOT accessible through the outside world. In this case we will use `30000`
 * Use UPnP / NAT-PMP to forward the port from my router: unchecked.
 * Use HTTPS instead of HTTP: unchecked.
+* Optional: if you want to use "enable host header validaion", enable that checkbox, and add `127.0.0.1` to the "server domains" text box. Don't forget to also configure the `proxy_set_header` directive in the nginx config below.
 
 
 ## Set up NGINX
@@ -72,7 +73,7 @@ sudo touch /etc/nginx/sites-available/yoursite
 cd /etc/nginx/sites-enabled/
 sudo ln -s /etc/nginx/sites-available/yoursite yoursite 
 ```
-5. Open the file with your favourite text editor and paste something like the following (read the comments, which start with `#` to know what you have to change):
+5. Open the file with your favourite text editor and paste something like the following (read the comments, which start with `#` to know what you have to change/uncomment):
 ```nginx
 # change "yourdomain.com" and similar to your actual domain
 server {
@@ -109,12 +110,19 @@ server {
 
     location /qbt/ {
         # you can use any other port other than 30000 as long as it is available on your system
-        proxy_pass              http://localhost:30000/;
+        proxy_pass              http://127.0.0.1:30000/;
         proxy_set_header        X-Forwarded-Host            $server_name:$server_port;
         proxy_hide_header       Referer;
         proxy_hide_header       Origin;
         proxy_set_header        Referer                     '';
         proxy_set_header        Origin                      '';
+
+        # if you use the "enable host header validation" setting with 127.0.0.1 in the "server domains" text box
+        # don't forget to change the port number to the one you are actually using.
+        # proxy_set_header      Host                        127.0.0.1:30000; 
+
+        # not needed since 4.1.0
+        # add_header            X-Frame-Options             "SAMEORIGIN";
 
         # in a future version of qBittorrent (probably 4.2.2),
         # it will be possible to set the "Secure" flag for the session cookie,
