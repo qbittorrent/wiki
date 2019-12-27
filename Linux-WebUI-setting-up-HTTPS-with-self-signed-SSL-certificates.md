@@ -28,7 +28,7 @@ server.crt  server.key
 Now go to your qbittorrent web-interface (http://192.168.0.1:8080 if you haven't changed it yet) Then open the `Tools -> Options...` in the menu bar (or click the screwdriver or cogwheel icon depending on your version), and click on the last tab labelled `WebUI`. Enable HTTPS and optionally change the port to your liking.
 Then, according to your version:
 
-- `4.2.0`: copy the _path_ of the key and certificate files into the respective fields of the WebUI (for example, `/home/qbtuser/.config/qBittorrent/ssl/server.key` and `/home/qbtuser/.config/qBittorrent/ssl/server.crt`)
+- `4.2.0` and newer: copy the _path_ of the key and certificate files into the respective fields of the WebUI (for example, `/home/qbtuser/.config/qBittorrent/ssl/server.key` and `/home/qbtuser/.config/qBittorrent/ssl/server.crt`)
 
 - older versions: copy and paste the key and certificate's _contents_ into the respective fields of the webui. You can use `cat` in your terminal to view the contents of the files:
 ```
