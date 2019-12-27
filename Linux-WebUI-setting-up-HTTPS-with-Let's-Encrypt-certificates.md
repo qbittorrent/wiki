@@ -49,9 +49,14 @@ Refer to the [documentation][certbot-docs-cmd-opt] for more info
 2. On the Tools -> Options... menu, go to the Web UI tab.
 3. In the "Server domains:" field put `yourwebuidomain.duckdns.org`
 4. Tick the "Use HTTPS instead of HTTP" checkbox
-5. In the "Key:" text box paste the contents of the file `/etc/letsencrypt/live/yourwebuidomain.duckdns.org/privkey.pem`. You may need root privileges to access this file.
-6. In the "Certificate:" text box paste the contents of the file `/etc/letsencrypt/live/yourwebuidomain.duckdns.org/fullchain.pem`. You may need root privileges to access this file.
-7. Click save, close the tab and now you should only be able to access your Web UI via HTTPS.
+5. a) If using version `4.2.0` or later:
+    - In the "Key:" text box paste the _path_ of the key file.
+    - In the "Certificate:" text box paste the _path_ of the certificate file.
+    - IMPORTANT NOTE: since the directory where these files usually are located (for example, `/etc/letsencrypt/live/yourwebuidomain.duckdns.org/`) is usually only readable by `root`, you may first need to copy the files somewhere that is readable by the user account that is running qBittorrent. Do not change the permissions of the original `certbot` directories.
+5. b) If using older versions:
+    - In the "Key:" text box paste the _contents_ of the key file (for example, `/etc/letsencrypt/live/yourwebuidomain.duckdns.org/privkey.pem`). You may need root privileges to access this file.
+    - In the "Certificate:" text box paste the _contents_ of the certificate file (for example, `/etc/letsencrypt/live/yourwebuidomain.duckdns.org/fullchain.pem`). You may need root privileges to access this file.
+6. Click save, close the tab and now you should only be able to access your Web UI via HTTPS.
 
 # Automating certificate renewal
 
@@ -62,6 +67,8 @@ A possible renewal command for a user that does not normally use port 80 can be:
 `sudo certbot renew --pre-hook "ufw allow 80 && ufw reload" --post-hook "ufw deny 80 && ufw reload"`
 
 If you have a program listening on port 80, be sure to use the `--pre-hook` and `--post-hook` flags to restart it (for example, `--pre-hook "stop_my_program.sh"` and `--post-hook "restart_my_program.sh"`).
+
+Additionally, you can use `certbot` hooks to copy certificate files around and even to shutdown/restart qBittorrent and possibly even modify its config.
 
 Each time the command is run, `certbot` checks if any certificate is more than 60 days old, and only actually renews those.
 
