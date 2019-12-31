@@ -90,7 +90,7 @@ export CXXFLAGS=-std=c++11
 ./configure \
     --disable-debug \
     --enable-encryption \
-    --with-boost-libdir=/usr/lib/x86_64-linux-gnu \
+    --with-boost-libdir=/usr/lib/arm-linux-gnueabihf \
     --with-libiconv
 make -j$(nproc)
 sudo make install
