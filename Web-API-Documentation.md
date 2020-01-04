@@ -13,6 +13,7 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
    1. [API v2.2.0](#api-v220)
    1. [API v2.2.1](#api-v221)
    1. [API v2.3.0](#api-v230)
+   1. [API v2.4.x](#api-v24x)
 1. [General information](#general-information)
 1. [Authentication](#authentication)
    1. [Login](#login)
@@ -160,6 +161,10 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
 - Always use `/` as path separator in `/torrents/files` response ([#10153](https://github.com/qbittorrent/qBittorrent/pull/10153/))
 - Add `/torrents/addPeers` and `/transfer/banPeers` methods ([#10158](https://github.com/qbittorrent/qBittorrent/pull/10158))
 - Add `/torrents/addTags`, `/torrents/removeTags`, `/torrents/tags`, `/torrents/createTags`, `/torrents/deleteTags` methods ([#10527](https://github.com/qbittorrent/qBittorrent/pull/10527))
+
+## API v2.4.x ##
+
+TODO: unreleased
 
 # General Information #
 
