@@ -13,7 +13,7 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
    1. [API v2.2.0](#api-v220)
    1. [API v2.2.1](#api-v221)
    1. [API v2.3.0](#api-v230)
-   1. [API v2.4.x](#api-v24x)
+   1. [API v2.4.0](#api-v240)
 1. [General information](#general-information)
 1. [Authentication](#authentication)
    1. [Login](#login)
@@ -86,6 +86,7 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
    1. [Set first/last piece priority](#set-firstlast-piece-priority)
    1. [Set force start](#set-force-start)
    1. [Set super seeding](#set-super-seeding)
+   1. [Rename file](#rename-file)
 1. [RSS (experimental)](#rss-experimental)
    1. [Add folder](#add-folder)
    1. [Add feed](#add-feed)
@@ -162,9 +163,9 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
 - Add `/torrents/addPeers` and `/transfer/banPeers` methods ([#10158](https://github.com/qbittorrent/qBittorrent/pull/10158))
 - Add `/torrents/addTags`, `/torrents/removeTags`, `/torrents/tags`, `/torrents/createTags`, `/torrents/deleteTags` methods ([#10527](https://github.com/qbittorrent/qBittorrent/pull/10527))
 
-## API v2.4.x ##
+## API v2.4.0 ##
 
-TODO: unreleased
+- Add `/torrents/renameFile` method ([#11029](https://github.com/qbittorrent/qBittorrent/pull/11029))
 
 # General Information #
 
@@ -2466,6 +2467,26 @@ hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32?value=true
 HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
 200                               | All scenarios
+
+## Rename file ##
+
+Name: `renameFile`
+
+**Parameters:**
+
+Parameter                         | Type    | Description
+----------------------------------|---------|------------
+`hash`                            | string  | The hash of the torrent
+`id`                              | string  | The id of the file to rename
+`name`                            | string  | The new name to use for the file
+
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+400                               | Missing `name` parameter
+409                               | Invalid `name` or `id`, or `name` already in use
+200                               | All other scenarios
 
 # RSS (experimental) #
 
