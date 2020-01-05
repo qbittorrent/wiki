@@ -2474,11 +2474,11 @@ Name: `renameFile`
 
 **Parameters:**
 
-Parameter                         | Type    | Description
-----------------------------------|---------|------------
-`hash`                            | string  | The hash of the torrent
-`id`                              | string  | The id of the file to rename
-`name`                            | string  | The new name to use for the file
+Parameter                         | Type     | Description
+----------------------------------|----------|------------
+`hash`                            | string   | The hash of the torrent
+`id`                              | integer  | The id of the file to rename
+`name`                            | string   | The new name to use for the file
 
 **Returns:**
 
