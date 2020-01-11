@@ -1,4 +1,4 @@
-##The definition of a software 'bug' is:##
+## The definition of a software 'bug' is:
 
 **An unexpected behaviour occurring under a given set of conditions**
 
