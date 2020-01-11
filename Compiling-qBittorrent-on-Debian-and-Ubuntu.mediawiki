@@ -41,28 +41,45 @@ Clone from the repo
  git clone https://github.com/arvidn/libtorrent.git
  cd libtorrent
 
-If you want to use libtorrent 1.2.* (only qBittorrent 4.2.0 and later supports libtorrent 1.2)
- git checkout RC_1_2
- ./autotool.sh
- ./configure --disable-debug --enable-encryption CXXFLAGS="-std=c++14"
+Choose the appropriate <code>git</code> and compile command according to the version of libtorrent you need:
 
-If you want to use libtorrent 1.1.*
- git checkout RC_1_1
- ./autotool.sh
- ./configure --disable-debug --enable-encryption
+{| class="wikitable"
+! style="text-align: center;" | libtorrent version
+! style="text-align: center;" | qBittorrent version support
+! style="text-align: center;" | git command
+! colspan="2" style="text-align: center;" | Compile commands (after running the git command, choose between using autotools or CMake)
+|-
+| colspan="3" style="text-align: center;" | ----
+| style="text-align: center;" | autotools(*)
+| style="text-align: center;" | CMake
+|-
+| 1.2.*
+| >= 4.2.0
+| <source>git checkout RC_1_2</source>
+| <source>./autotool.sh
+./configure --disable-debug --enable-encryption CXXFLAGS="-std=c++14"</source>
+| <source>mkdir -p cmake-build-dir/release && cd cmake-build-dir/release
+cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_STANDARD=14 -G "Unix Makefiles" ../..</source>
+|-
+| 1.1.*
+| >= 3.3.8
+| <source>git checkout RC_1_1</source>
+| <source>./autotool.sh
+./configure --disable-debug --enable-encryption</source>
+| <source>mkdir -p cmake-build-dir/release && cd cmake-build-dir/release
+cmake -DCMAKE_BUILD_TYPE=Release -G "Unix Makefiles" ../..</source>
+|-
+| 1.0.*
+| <= 4.1.5
+| <source>git checkout RC_1_0</source>
+| <source>./autotool.sh
+./configure --disable-debug --enable-encryption</source>
+| <source>mkdir -p cmake-build-dir/release && cd cmake-build-dir/release
+cmake -DCMAKE_BUILD_TYPE=Release -G "Unix Makefiles" ../..</source>
+|}
 
-If you want to use libtorrent 1.0.* (support of libtorrent 1.0 has been dropped after qBittorrent 4.1.5)
- git checkout RC_1_0
- ./autotool.sh
- ./configure --disable-debug --enable-encryption
-
-If you get a <code>configure: error: Boost.System library not found</code>, check if you installed all the above dependencies.<br/>
+(*)If you get a <code>configure: error: Boost.System library not found</code>, check if you installed all the above dependencies.<br/>
 If yes, add <code>--with-boost-libdir=/usr/lib/i386-linux-gnu</code>
-
-CMake can now also be used to compile libtorrent
-
-  mkdir -p cmake-build-dir/release && cd cmake-build-dir/release
-  cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_STANDARD=14 -G "Unix Makefiles" ../..
 
 Now you're ready to compile:
  make clean && make -j$(nproc)
