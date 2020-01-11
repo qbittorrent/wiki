@@ -114,7 +114,14 @@ Enter the folder in a new terminal window and run:
 * Note 2: If you want to compile with qt4 instead of qt5, you also need to pass the <code>--with-qt4</code> option to configure. qBittorrent v4.0.x has dropped the support of qt4
 * Note 3: This build uses a conservative number of jobs (equal to the threads available); increasing it may make the build faster, but an eye must be kept on the memory usage.
 
-And finally to install qBittorrent:
+Finally, you can install qBittorrent:
+
+If you have <code>checkinstall</code>, the following command will generate and install a <code>.deb</code> package that can be tracked and managed by your package manager:
+
+ sudo checkinstall --nodoc --pkgname qbittorrent --pkgversion 4.2.1-source-compile # change this to your liking
+
+Alternatively, the traditional way will do just fine:
+
  sudo make install
 
 That's it! qBittorrent should now be installed. You can now run qBittorrent using the following command:
@@ -137,7 +144,14 @@ Enter the folder in a new terminal window and run:
 * Note 2: If you want to compile with qt4 instead of qt5, you also need to pass the <code>--with-qt4</code> option to configure. qBittorrent v4.0.x has dropped the support of qt4
 * Note 3: This build uses a conservative number of jobs (equal to the threads available); increasing it may make the build faster, but an eye must be kept on the memory usage.
 
-And finally to install qBittorrent:
+Finally, you can install qBittorrent:
+
+If you have <code>checkinstall</code>, the following command will generate and install a <code>.deb</code> package that can be tracked and managed by your package manager:
+
+ sudo checkinstall --nodoc --pkgname qbittorrent-nox --pkgversion 4.2.1-source-compile # change the version to your liking
+
+Alternatively, the traditional method will do just fine:
+
  sudo make install
 
 If everything went fine, there is one last thing you need to do, just simply run:
