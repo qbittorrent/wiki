@@ -4,6 +4,8 @@ If you are looking only for the latest version of qBittorrent, just head to the 
 This how-to will guide you though the compilation of qBittorrent and libtorrent-rasterbar.<br />
 This guide is written for Debian/Ubuntu, but the process should be similar for other Debian-derivatives distributions.
 
+If you run into trouble or errors at any step, check the Troubleshooting section at the bottom of the page before posting an issue.
+
 == Required dependencies ==
 * General required dependencies
  sudo apt-get install build-essential pkg-config automake libtool git zlib1g-dev
@@ -50,7 +52,7 @@ Choose the appropriate <code>git</code> and compile command according to the ver
 ! colspan="2" style="text-align: center;" | Compile commands (after running the git command, choose between using autotools or CMake)
 |-
 | colspan="3" style="text-align: center;" | ----
-| style="text-align: center;" | autotools(*)
+| style="text-align: center;" | autotools
 | style="text-align: center;" | CMake
 |-
 | 1.2.*
@@ -78,14 +80,18 @@ cmake -DCMAKE_BUILD_TYPE=Release -G "Unix Makefiles" ../..</source>
 cmake -DCMAKE_BUILD_TYPE=Release -G "Unix Makefiles" ../..</source>
 |}
 
-(*)If you get a <code>configure: error: Boost.System library not found</code>, check if you installed all the above dependencies.<br/>
-If yes, add <code>--with-boost-libdir=/usr/lib/i386-linux-gnu</code>
-
 Now you're ready to compile:
  make clean && make -j$(nproc)
- sudo make install
 
-See note in the next section regarding the build jobs.
+Finally, you can install libtorrent.
+
+If you have <code>checkinstall</code>, the following command will generate and install a <code>.deb</code> package that can be tracked and managed by your package manager:
+
+ sudo checkinstall --nodoc --pkgname libtorrent-rasterbar --pkgversion 1.2.3-source-compile # change the version to your liking
+
+Alternatively, the traditional way will do just fine:
+
+ sudo make install
 
 For more information on building libtorrent, see [https://www.libtorrent.org/building.html libtorrent downloading and building].
 
@@ -110,15 +116,11 @@ Enter the folder in a new terminal window and run:
  ./configure
  make -j$(nproc)
 
-* Note 1: If you're using libtorrent-rasterbar from the 0.16.x series, you also need to pass the <code>--with-libtorrent-rasterbar0.16</code> option to configure. qBittorrent v3.3.x has dropped the support of libtorrent 0.16.x.
-* Note 2: If you want to compile with qt4 instead of qt5, you also need to pass the <code>--with-qt4</code> option to configure. qBittorrent v4.0.x has dropped the support of qt4
-* Note 3: This build uses a conservative number of jobs (equal to the threads available); increasing it may make the build faster, but an eye must be kept on the memory usage.
-
 Finally, you can install qBittorrent:
 
 If you have <code>checkinstall</code>, the following command will generate and install a <code>.deb</code> package that can be tracked and managed by your package manager:
 
- sudo checkinstall --nodoc --pkgname qbittorrent --pkgversion 4.2.1-source-compile # change this to your liking
+ sudo checkinstall --nodoc --pkgname qbittorrent --pkgversion 4.2.1-source-compile # change the version to your liking
 
 Alternatively, the traditional way will do just fine:
 
@@ -140,10 +142,6 @@ Enter the folder in a new terminal window and run:
  ./configure --disable-gui CXXFLAGS="-std=c++14"
  make -j$(nproc)
 
-* Note 1: If you're using libtorrent-rasterbar from the 0.16.x series, you also need to pass the <code>--with-libtorrent-rasterbar0.16</code> option to configure. qBittorrent v3.3.x has dropped the support of libtorrent 0.16.x.
-* Note 2: If you want to compile with qt4 instead of qt5, you also need to pass the <code>--with-qt4</code> option to configure. qBittorrent v4.0.x has dropped the support of qt4
-* Note 3: This build uses a conservative number of jobs (equal to the threads available); increasing it may make the build faster, but an eye must be kept on the memory usage.
-
 Finally, you can install qBittorrent:
 
 If you have <code>checkinstall</code>, the following command will generate and install a <code>.deb</code> package that can be tracked and managed by your package manager:
@@ -154,7 +152,35 @@ Alternatively, the traditional method will do just fine:
 
  sudo make install
 
-If everything went fine, there is one last thing you need to do, just simply run:
+That's it! qBittorrent-nox should now be installed. You can now run qBittorrent-nox using the following command:
+ qbittorrent-nox
+
+Since you disabled the graphical user interface, qBittorrent can only be controlled via its WebUI. If you haven't disabled authentication, as a default, you can access it at:
+ http://localhost:8080
+ Username: admin
+ Password: adminadmin
+
+Documentation about running qBittorrent without GUI is available [[Running-qBittorrent-without-X-server|here]].
+
+== Troubleshooting ==
+
+=== Compiling (generic) ===
+
+* In the <code>make</code> command, the <code>-j$(nproc)</code> flag makes the number of build jobs equal to the number of threads available; increasing it may make the build faster, but an eye must be kept on the memory usage.
+
+=== Compiling libtorrent ===
+
+*  If you get a <code>configure: error: Boost.System library not found</code>, check if you installed all the above dependencies.<br/>If yes, add <code>--with-boost-libdir=/usr/lib/i386-linux-gnu</code>
+
+=== Compiling qBittorrent ===
+
+*  If you're using libtorrent-rasterbar from the 0.16.x series, you also need to pass the <code>--with-libtorrent-rasterbar0.16</code> option to configure. qBittorrent v3.3.x has dropped the support of libtorrent 0.16.x.
+*  If you want to compile with qt4 instead of qt5, you also need to pass the <code>--with-qt4</code> option to configure. qBittorrent v4.0.x has dropped the support of qt4
+
+=== Running qBittorrent ===
+
+If you get an error similar to <code>qbittorrent: symbol lookup error: qbittorrent: undefined symbol:</code>
+Simply run:
  ldconfig
 The following method is too complex, but if you want to know what's going on, then you can read the following method (see https://github.com/qbittorrent/qBittorrent/issues/8047):
 
@@ -164,15 +190,6 @@ Simply run <code>env</code> in your terminal and look for <code>LD_LIBRARY_PATH<
 If so, you are good to go. If not, add the path to the variable:
   export LD_LIBRARY_PATH=/usr/local/lib:${LD_LIBRARY_PATH}
 
-That's it! qBittorrent-nox should now be installed. You can now run qBittorrent-nox using the following command:
- qbittorrent-nox
-
-Since you disabled the graphical user interface, qBittorrent can only be controlled via its WebUI. If you haven't disabled authentication, as a default, you can access it at:
- http://localhost:8080
- Username: admin
- Password: adminadmin
-
-A documentation about running qBittorrent without GUI is available [[Running-qBittorrent-without-X-server|here]].
 
 == Notes ==
 * If you experience any problem with this how to, do not hesitate to contact me at sledgehammer999(at)qbittorrent(dot)org.
