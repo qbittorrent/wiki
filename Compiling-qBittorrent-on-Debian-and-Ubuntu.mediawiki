@@ -59,6 +59,11 @@ If you want to use libtorrent 1.0.* (support of libtorrent 1.0 has been dropped 
 If you get a <code>configure: error: Boost.System library not found</code>, check if you installed all the above dependencies.<br/>
 If yes, add <code>--with-boost-libdir=/usr/lib/i386-linux-gnu</code>
 
+CMake can now also be used to compile libtorrent
+
+  mkdir -p cmake-build-dir/release && cd cmake-build-dir/release
+  cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_STANDARD=14 -G "Unix Makefiles" ../..
+
 Now you're ready to compile:
  make clean && make -j$(nproc)
  sudo make install
