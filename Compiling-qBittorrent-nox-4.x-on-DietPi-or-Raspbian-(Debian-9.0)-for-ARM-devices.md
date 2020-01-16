@@ -67,15 +67,15 @@ git clone https://github.com/arvidn/libtorrent.git
 cd libtorrent
 # select the latest release tag
 git checkout $(git tag | grep libtorrent-1_2_ | sort -t _ -n -k 3 | tail -n 1)
-~~~~~
+~~~~
 
 ### B. Download the [latest release](https://github.com/arvidn/libtorrent/releases)
 
-~~~~~
+~~~~
 wget https://github.com/arvidn/libtorrent/archive/libtorrent-1_2_3.zip
 unzip libtorrent-1_2_3.zip
 cd libtorrent-libtorrent-1_2_3
-~~~~~
+~~~~
 
 ## Compile Libtorrent
 
@@ -84,13 +84,13 @@ cd libtorrent-libtorrent-1_2_3
 ./configure --disable-debug --enable-encryption --with-boost-libdir=/usr/lib/arm-linux-gnueabihf --with-libiconv CXXFLAGS="-std=c++14"
 make -j$(nproc)
 sudo make install
-~~~~~
+~~~~
 
 #### out of memory (OOM)
 
 If OOM errors occur, add a swap file.
 
-~~~~~
+~~~~
 sudo dd if=/dev/zero of=/.swapfile bs=1M count=1024
 sudo mkswap /.swapfile
 sudo swapon /.swapfile
@@ -99,19 +99,19 @@ make
 # assuming the prior command succeeded
 sudo swapoff /.swapfile
 sudo rm /.swapfile
-~~~~~
+~~~~
 
 (Those commands were copied from [here](https://dev.deluge-torrent.org/wiki/Building/libtorrent#TemporarySwapFileforRasperryPiorlowmemorysystems).)
 
 One example manifestation of an OOM error on Raspbian OS looks like:
 
-~~~~~
+~~~~
 $ make
 ...
 make[1]: Entering directory '/tmp/libtorrent-libtorrent_1_2_0/src'
   CXX      libtorrent_rasterbar_la-session_impl.lo
 g++: internal compiler error: Killed (program cc1plus)
-~~~~~
+~~~~
 
 ## Add Libtorrent as a system library
 
@@ -140,7 +140,7 @@ B. `wget ...`
 ~~~~
 git clone -b v4_2_x https://github.com/qbittorrent/qBittorrent
 cd qBittorrent
-~~~~~
+~~~~
 
 You may select the branch version on the [branches page](https://github.com/qbittorrent/qBittorrent/branches).
 
@@ -150,7 +150,7 @@ You may select the branch version on the [branches page](https://github.com/qbit
 wget https://github.com/qbittorrent/qBittorrent/archive/release-4.2.1.zip
 unzip release-4.2.1.zip
 cd qBittorrent-release-4.2.1
-~~~~~
+~~~~
 
 ## Compile qBittorrent-nox
 
@@ -158,7 +158,7 @@ cd qBittorrent-release-4.2.1
 ./configure --disable-gui --enable-systemd --with-boost-libdir=/usr/lib/arm-linux-gnueabihf CXXFLAGS="-std=c++14"
 make -j$(nproc)
 sudo make install
-~~~~~
+~~~~
 
 NOTE: Review [Ubuntu/Debian compilation guide](https://github.com/qbittorrent/qBittorrent/wiki/Compiling-qBittorrent-on-Debian-and-Ubuntu#Compiling_qBittorrent_with_the_GUI) if you want to run qBittorrent with a GUI.
 
@@ -204,7 +204,7 @@ ExecStop=/usr/bin/killall -w qbittorrent-nox
 
 [Install]
 WantedBy=multi-user.target
-~~~~~
+~~~~
 
 Contents for DietPi:
 ~~~~
@@ -219,7 +219,7 @@ ExecStop=/usr/bin/killall -w qbittorrent-nox
 
 [Install]
 WantedBy=multi-user.target
-~~~~~
+~~~~
 
 ## Run and check systemd service status
 
@@ -227,7 +227,7 @@ WantedBy=multi-user.target
 sudo systemctl daemon-reload
 sudo systemctl start qbittorrent
 sudo systemctl status qbittorrent
-~~~~~
+~~~~
 
 The `systemctl status` command should show qBittorrent-nox is `active (running)`.
 
@@ -238,10 +238,10 @@ Enable `qbittorrent` service during boot: `sudo systemctl enable qbittorrent`.
 ## Updating an already compiled version of qBittorrent-nox
 
 ~~~~
-systemctl stop qbittorrent
-./configure --disable-gui --with-boost-libdir=/usr/lib/arm-linux-gnueabihf CXXFLAGS="-std=c++14"
-sudo make -j$(nproc)
-make install
+sudo systemctl stop qbittorrent
+./configure --disable-gui --enable-systemd --with-boost-libdir=/usr/lib/arm-linux-gnueabihf CXXFLAGS="-std=c++14"
+make -j$(nproc)
+sudo make install
 ~~~~
 
 ## Checking the version to verify that the binary got updated
