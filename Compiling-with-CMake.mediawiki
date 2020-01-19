@@ -30,7 +30,7 @@ With the generator selected, you have to do one of the following:
 ;No IDE
 : Create build directory. For example, it can be a sub-directory of the source directory, like <code>build/debug</code> for a debug build. Cd into that directory and issue a command:
 : <code>cmake -G <chosen generator> -D<option1> -D<option2> <source directory></code>. If your build directory is as above (<code>build/debug</code>), the command may be:
-: <code>cmake -G Ninja -DCMAKE_BUILD_TYPE=Debug -DQBT_USE_GUI=ON -DSYSTEM_QTSINGLEAPPLICATION=ON ../..</code>. For the list of supported by qBittorrent and CMake options (and where to look them up) see below.
+: <code>cmake -G Ninja -DCMAKE_BUILD_TYPE=Debug -DSYSTEM_QTSINGLEAPPLICATION=ON ../..</code>. For the list of supported by qBittorrent and CMake options (and where to look them up) see below.
 ;Visual Studio
 : Create build directory. This directory will contain Visual Studio project files as well. Cd into that directory and issue a command:
 : <code>cmake -G "Visual Studio xxxx" -D<option1> -D<option2> <source directory></code>. If your build directory is as above (<code>build/debug</code>), the command may be:
@@ -91,10 +91,10 @@ Here are the options that you can use to change to tune qBittorent build for you
 | False
 |
 |-
-| <tt>QBT_USE_GUI</tt>
+| <tt>CMAKE_DISABLE_FIND_PACKAGE_Qt5Widgets</tt>
 | bool
-| Enable graphical user interface
-| True
+| Disable graphical user interface
+| False
 |
 |-
 | <tt>WEBUI</tt>
@@ -113,13 +113,13 @@ Here are the options that you can use to change to tune qBittorent build for you
 | bool
 | Install the systemd service file
 | False
-| not Windows, <code>-DQBT_USE_GUI=OFF</code>, systemd installed
+| not Windows, <code>-DCMAKE_DISABLE_FIND_PACKAGE_Qt5Widgets=ON</code>, systemd installed
 |-
-| <tt>DBUS</tt>
-| bool
-| Enable use of DBus for various purposes
-| True
-| not Windows, <code>-DQBT_USE_GUI=ON</code>
+| <tt>Systemd_SERVICES_INSTALL_DIR</tt>
+| path (optional)
+| Custom path for the installion of the systemd service file
+| /lib/systemd/systemd (TODO: should be changed in the future)
+| <code>-DSYSTEMD=ON</code>
 |}
 
 == Compiling ==
