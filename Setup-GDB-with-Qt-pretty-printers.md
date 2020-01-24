@@ -45,7 +45,7 @@ Now, you can use GDB as you usually would. Whenever you print a variable with a 
 
 For example, suppose you are at a breakpoint and print the value of a variable named `data`, which is a `QByteArray`, containing an HTTP request.
 
-- output Without pretty printers:
+- output without pretty printers:
     ```
     (gdb) print data
     $1 = (const QByteArray &) @0x555555e2ecd0: {d = 0x555555e46610}
