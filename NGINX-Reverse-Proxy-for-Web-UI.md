@@ -11,10 +11,10 @@ location /qbt/ {
     # You should consider disable "Enable Cross-site request forgery (CSRF) protection"
     # setting in qBittorrent instead of using these directives to tamper the headers.
     # The setting is located under "Options -> WebUI tab" in qBittorrent since v4.1.2.
-    proxy_hide_header       Referer;
-    proxy_hide_header       Origin;
-    proxy_set_header        Referer                 '';
-    proxy_set_header        Origin                  '';
+    #proxy_hide_header       Referer;
+    #proxy_hide_header       Origin;
+    #proxy_set_header        Referer                 '';
+    #proxy_set_header        Origin                  '';
 
     # Not needed since qBittorrent v4.1.0
     #add_header              X-Frame-Options         "SAMEORIGIN";
