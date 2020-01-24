@@ -69,6 +69,6 @@ For example, suppose you are at a breakpoint and print the value of a variable n
   [160] = 10 '\n', [161] = 67 'C', [162] = 111 'o', [163] = 110 'n', [164] = 116 't', [165] = 101 'e', [166] = 110 'n', [167] = 116 't', [168] = 45 '-', [169] = 76 'L', [170] = 101 'e', [171] = 110 'n', [172] = 103 'g', [173] = 116 't', [174] = 104 'h', 
   [175] = 58 ':', [176] = 32 ' ', [177] = 51 '3', [178] = 52 '4', [179] = 13 '\r', [180] = 10 '\n', [181] = 67 'C', [182] = 111 'o', [183] = 110 'n', [184] = 116 't', [185] = 101 'e', [186] = 110 'n', [187] = 116 't', [188] = 45 '-', [189] = 84 'T', 
   [190] = 121 'y', [191] = 112 'p', [192] = 101 'e', [193] = 58 ':', [194] = 32 ' ', [195] = 97 'a', [196] = 112 'p', [197] = 112 'p', [198] = 108 'l', [199] = 105 'i'...}
-```
+    ```
 
 The pretty printer output is further customizable with the usual GDB options. For example, you can suppress output of individual array elements, or reduce the number of array elements printed.
