@@ -133,7 +133,7 @@ server {
         # but only if using qBittorrent's HTTPS functionality.
         # For this use case, where qBittorrent itself is using HTTP,
         # set this flag by overriding it in the proxy configuration it itself:
-        # proxy_cookie_path / "/; Secure";
+        #proxy_cookie_path / "/; Secure";
     }
 
     # OPTIONAL: serve static HTML files at the root of the domain, like a simple homepage
@@ -146,10 +146,10 @@ server {
     #location /other_webapp {
         # change the location and port to the location and port the application is actually listening on
         #proxy_pass              http://localhost:8080/;
-        #proxy_set_header        Host                        $host;
-        #proxy_set_header        X-Real-IP                   $remote_addr;
-        #proxy_set_header        X-Forwarded-For             $proxy_add_x_forwarded_for;
         #proxy_set_header        X-Forwarded-Proto           $scheme;
+        #proxy_set_header        X-Forwarded-Host            $http_host;
+        #proxy_set_header        X-Forwarded-For             $proxy_add_x_forwarded_for;
+        #proxy_set_header        X-Real-IP                   $remote_addr;
     #}
 }
 ```
