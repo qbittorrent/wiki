@@ -10,7 +10,7 @@ This guide was made possible by the authors of the [Debian/Ubuntu compilation gu
 
 **Major update:**
 
-**In order to bring this guide up-to-date with the latest changes, I will do a pretty major update of it. I tested the changes, but some things might have slipped. Please feel free to mention me ([Aeriem](https://github.com/Aeriem)) should any issues arise. A big thanks to the original author of this guide ([jtmoon79](https://github.com/jtmoon79)).**
+**In order to bring this guide up-to-date with the latest changes, I will do a pretty major update of it. I tested the changes, but some things might have slipped. Please feel free to mention me ([Aeriem](https://github.com/Aeriem)) should any issues arise. A big thanks to the original author of this guide ([Millichrome](https://github.com/Millichrome)).**
 
 # Table of Contents
 
