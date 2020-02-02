@@ -46,7 +46,7 @@ If you choose to retrieve source code using `git clone`, then also `sudo apt ins
 
 # Compiling Libtorrent
 
-DietPi's and Raspbian's repositories include older versions of [Libtorrent](https://libtorrent.org/). You will need to compile Libtorrent 1.2.x to get qBittorrent-nox 4.2.x running. The "git clone" method outlines how to install ibtorrent 1.2.x for use with qBittorrent-nox 4.2.x (and likely later versions).
+DietPi's and Raspbian's repositories include older versions of [Libtorrent](https://libtorrent.org/). You will need to compile Libtorrent 1.2.x to get qBittorrent-nox 4.2.x running. Both methods below outline how to install Libtorrent 1.2.x for use with qBittorrent-nox 4.2.x (and likely later versions).
 
 ## Get the source code
 
