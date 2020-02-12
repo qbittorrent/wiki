@@ -172,8 +172,8 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
 
 (preliminary changelog, features are in development and may not have been merged yet)
 
-- Add `stalled`, `stalled_uploading` and `stalled_downloading` as possible values for the `filter` parameter in `/torrents/info` (https://github.com/qbittorrent/qBittorrent/pull/11825)
-- Add `piece_extent_affinity` boolean  field to `/app/getPreferences` and `/app/setPreferences` (https://github.com/qbittorrent/qBittorrent/pull/11781)
+- Add `stalled`, `stalled_uploading` and `stalled_downloading` as possible values for the `filter` parameter in `/torrents/info` ([#11825](https://github.com/qbittorrent/qBittorrent/pull/11825))
+- Add `piece_extent_affinity` boolean  field to `/app/getPreferences` and `/app/setPreferences` ([#11781](https://github.com/qbittorrent/qBittorrent/pull/11781))
 
 # General Information #
 
