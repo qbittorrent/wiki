@@ -9,7 +9,7 @@ yum install -y boost-devel boost-system glib2 glibc gmp gnutls libblkid libcap l
 
 ## compile need
 ```
-yum install -y qt5-linguist qt5-qttools-devel qt5-qtsvg-devel
+yum install -y autoconf automake libtool make wget tar qt5-linguist qt5-qttools-devel qt5-qtsvg-devel
 ```
 
 ./configure -xxxx
