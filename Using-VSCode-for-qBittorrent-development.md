@@ -47,6 +47,7 @@ For all editor features such as code completion, navigation, hovers and error re
     }
     ```
     - You may change the paths to the `Qt` and `libtorrent` headers in the `includePath`. The paths in this example are the defaults for Ubuntu.
+    - If using an alternative Boost library version (if you compiled from source, for example), make sure to specify the proper include path for it as well (e.g. `"/opt/boost/**"`).
     - You may change the `QBT_VERSION*` `defines` to your preference. This is only needed because VSCode does not read the version defines from the `version.pri` file, so it throws errors whenever it sees them otherwise.
     - Feel free to browse the documentation of this file and customize more of the available options to your liking.
 
