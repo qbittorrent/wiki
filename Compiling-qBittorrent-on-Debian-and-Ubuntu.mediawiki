@@ -87,7 +87,7 @@ Finally, you can install libtorrent.
 
 If you have <code>checkinstall</code>, the following command will generate and install a <code>.deb</code> package that can be tracked and managed by your package manager:
 
- sudo checkinstall --nodoc --pkgname libtorrent-rasterbar --pkgversion 1.2.3-source-compile # change the version to your liking
+ sudo checkinstall --nodoc --backup=no --deldesc --pkgname libtorrent-rasterbar --pkgversion 1.2.3-source-compile # change the version to your liking
 
 Alternatively, the traditional way will do just fine:
 
@@ -120,7 +120,7 @@ Finally, you can install qBittorrent:
 
 If you have <code>checkinstall</code>, the following command will generate and install a <code>.deb</code> package that can be tracked and managed by your package manager:
 
- sudo checkinstall --nodoc --pkgname qbittorrent --pkgversion 4.2.1-source-compile # change the version to your liking
+ sudo checkinstall --nodoc --backup=no --deldesc --pkgname qbittorrent --pkgversion 4.2.1-source-compile # change the version to your liking
 
 Alternatively, the traditional way will do just fine:
 
@@ -146,7 +146,7 @@ Finally, you can install qBittorrent:
 
 If you have <code>checkinstall</code>, the following command will generate and install a <code>.deb</code> package that can be tracked and managed by your package manager:
 
- sudo checkinstall --nodoc --pkgname qbittorrent-nox --pkgversion 4.2.1-source-compile # change the version to your liking
+ sudo checkinstall --nodoc --backup=no --deldesc --pkgname qbittorrent-nox --pkgversion 4.2.1-source-compile # change the version to your liking
 
 Alternatively, the traditional method will do just fine:
 
