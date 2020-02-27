@@ -71,19 +71,19 @@ The ''qBT'' abbreviation is also commonly used to refer to the qBittorrent clien
 Windows:
 * preferences:
 ** <code>%APPDATA%\qBittorrent</code> = <code>C:\Users\<username>\AppData\Roaming\qBittorrent</code>
-* .torrent files:
+* .torrent files, logs, etc:
 ** <code>%LOCALAPPDATA%\qBittorrent</code> = <code>C:\Users\<username>\AppData\Local\qBittorrent</code>
 
 GNU/Linux:
 * preferences:
 ** <code>~/.config/qBittorrent/</code>
-* .torrent files (This is the standard [https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html XDG] data folder):
+* .torrent files, logs, etc (This is the standard [https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html XDG] data folder):
 ** <code>~/.local/share/data/qBittorrent/</code>
 
 OS X:
 * preferences:
 ** <code>~/.config/qBittorrent/</code>
-* .torrent files:
+* .torrent files, logs, etc:
 ** <code>~/Library/Application Support/qBittorrent</code>
 
 == How can I reset the settings to default values? ==
