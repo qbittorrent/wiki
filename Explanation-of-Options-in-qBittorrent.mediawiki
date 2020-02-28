@@ -156,3 +156,4 @@ A complete list of libtorrent configuration may be found [https://www.libtorrent
 Deprecated options may be safely removed from your config file.
 
 * '''Listen on IPv6 address''' - also known as the config string <code>Connection\InterfaceListenIPv6</code> (since <code>4.2.1</code>). Replacement: "Optional IP address to bind to", confg string <code>Connection\InterfaceAddress</code>. Reason: [https://github.com/qbittorrent/qBittorrent/pull/11592 #11592].
+* '''Maximum number of half-open connections''' - also known as the config string <code>BitTorrent/Session/MaxHalfOpenConnections</code> (since <code>4.2.0</code>). Replacement: None. Reason: [https://github.com/arvidn/libtorrent/commit/ceccc2a4835fefce836001a7ccff8cca82d58999 option removed from libtorrent as it did not make sense anymore].
