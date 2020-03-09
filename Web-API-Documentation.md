@@ -1094,6 +1094,7 @@ Property             | Type    | Description
 `added_on`           | integer | Time (Unix Epoch) when the torrent was added to the client
 `amount_left`        | integer | Amount of data left to download (bytes)
 `auto_tmm`           | bool    | Whether this torrent is managed by Automatic Torrent Management
+`availability`       | float   | Percentage of file pieces currently available
 `category`           | string  | Category of the torrent
 `completed`          | integer | Amount of transfer data completed (bytes)
 `completion_on`      | integer | Time (Unix Epoch) when the torrent completed
