@@ -1068,7 +1068,7 @@ Name: `info`
 Parameter             | Description
 ----------------------|------------
 `filter`  _optional_  | Filter torrent list. Allowed filters: `all`, `downloading`, `completed`, `paused`, `active`, `inactive`, `resumed`
-`category` _optional_ | Get torrents with the given category (empty string means "without category"; no "category" parameter means "any category")
+`category` _optional_ | Get torrents with the given category (empty string means "without category"; no "category" parameter means "any category" <- broken until [#11748](https://github.com/qbittorrent/qBittorrent/issues/11748) is resolved)
 `sort` _optional_     | Sort torrents by given key. All the possible keys are listed here below
 `reverse` _optional_  | Enable reverse sorting. Possible values are `true` and `false` (default)
 `limit` _optional_    | Limit the number of torrents returned
