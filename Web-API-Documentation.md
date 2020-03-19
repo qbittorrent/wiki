@@ -1065,15 +1065,15 @@ Name: `info`
 
 **Parameters:**
 
-Parameter             | Description
-----------------------|------------
-`filter`  _optional_  | Filter torrent list. Allowed filters: `all`, `downloading`, `completed`, `paused`, `active`, `inactive`, `resumed`
-`category` _optional_ | Get torrents with the given category (empty string means "without category"; no "category" parameter means "any category" <- broken until [#11748](https://github.com/qbittorrent/qBittorrent/issues/11748) is resolved)
-`sort` _optional_     | Sort torrents by given key. All the possible keys are listed here below
-`reverse` _optional_  | Enable reverse sorting. Possible values are `true` and `false` (default)
-`limit` _optional_    | Limit the number of torrents returned
-`offset` _optional_   | Set offset (if less than 0, offset from end)
-`hashes` _optional_   | Filter by hashes. Can contain multiple hashes separated by `\|`
+Parameter             | Type    | Description
+----------------------|---------|------
+`filter`  _optional_  | string  | Filter torrent list by state. Allowed state filters: `all`, `downloading`, `completed`, `paused`, `active`, `inactive`, `resumed`
+`category` _optional_ | string  | Get torrents with the given category (empty string means "without category"; no "category" parameter means "any category" <- broken until [#11748](https://github.com/qbittorrent/qBittorrent/issues/11748) is resolved). Remember to URL-encode the category name. For example, `My category` becomes `My%20category`
+`sort` _optional_     | string  | Sort torrents by given key. They can be sorted using any field of the response's JSON array (which are documented below) as the sort key.
+`reverse` _optional_  | bool    | Enable reverse sorting. Defaults to `false`
+`limit` _optional_    | integer | Limit the number of torrents returned
+`offset` _optional_   | integer | Set offset (if less than 0, offset from end)
+`hashes` _optional_   | string  | Filter by hashes. Can contain multiple hashes separated by `\|`
 
 Example:
 
@@ -1199,9 +1199,9 @@ Name: `properties`
 
 **Parameters:**
 
-Parameter | Description
-----------|------------
-`hash`    | The hash of the torrent you want to get the generic properties of
+Parameter | Type   | Description
+----------|--------|------------
+`hash`    | string | The hash of the torrent you want to get the generic properties of
 
 **Returns:**
 
@@ -1301,9 +1301,9 @@ Name: `trackers`
 
 **Parameters:**
 
-Parameter | Description
-----------|------------
-`hash`    | The hash of the torrent you want to get the trackers of
+Parameter | Type   | Description
+----------|--------|------------
+`hash`    | string | The hash of the torrent you want to get the trackers of
 
 **Returns:**
 
@@ -1359,9 +1359,9 @@ Name: `webseeds`
 
 **Parameters:**
 
-Parameter | Description
-----------|------------
-`hash`    | The hash of the torrent you want to get the webseeds of
+Parameter | Type   | Description
+----------|--------|------------
+`hash`    | string | The hash of the torrent you want to get the webseeds of
 
 **Returns:**
 
@@ -1397,9 +1397,9 @@ Name: `files`
 
 **Parameters:**
 
-Parameter | Description
-----------|------------
-`hash`    | The hash of the torrent you want to get the contents of
+Parameter | Type   | Description
+----------|--------|------------
+`hash`    | string | The hash of the torrent you want to get the contents of
 
 **Returns:**
 
@@ -1459,6 +1459,7 @@ Name: `pieceStates`
 Parameter | Description
 ----------|------------
 `hash`    | The hash of the torrent you want to get the pieces' states of
+
 
 **Returns:**
 
