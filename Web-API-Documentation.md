@@ -810,9 +810,9 @@ Name: `maindata`
 
 **Parameters:**
 
-Parameter | Description
-----------|------------
-`rid`     | Response ID. If not provided, `rid=0` will be assumed. If the given `rid` is different from the one of last server reply, `full_update` will be `true` (see the server reply details for more info)
+Parameter | Type    | Description
+----------|---------|------------
+`rid`     | integer | Response ID. If not provided, `rid=0` will be assumed. If the given `rid` is different from the one of last server reply, `full_update` will be `true` (see the server reply details for more info)
 
 Example:
 
@@ -861,10 +861,10 @@ Name: `torrentPeers`
 
 **Parameters:**
 
-Parameter | Description
-----------|------------
-`hash`    | Torrent hash
-`rid`     | Response ID. If not provided, `rid=0` will be assumed. If the given `rid` is different from the one of last server reply, `full_update` will be `true` (see the server reply details for more info)
+Parameter | Type    | Description
+----------|---------|------------
+`hash`    | string  | Torrent hash
+`rid`     | integer | Response ID. If not provided, `rid=0` will be assumed. If the given `rid` is different from the one of last server reply, `full_update` will be `true` (see the server reply details for more info)
 
 Example:
 
@@ -1066,7 +1066,7 @@ Name: `info`
 **Parameters:**
 
 Parameter             | Type    | Description
-----------------------|---------|------
+----------------------|---------|------------
 `filter`  _optional_  | string  | Filter torrent list by state. Allowed state filters: `all`, `downloading`, `completed`, `paused`, `active`, `inactive`, `resumed`
 `category` _optional_ | string  | Get torrents with the given category (empty string means "without category"; no "category" parameter means "any category" <- broken until [#11748](https://github.com/qbittorrent/qBittorrent/issues/11748) is resolved). Remember to URL-encode the category name. For example, `My category` becomes `My%20category`
 `sort` _optional_     | string  | Sort torrents by given key. They can be sorted using any field of the response's JSON array (which are documented below) as the sort key.
@@ -1456,10 +1456,9 @@ Name: `pieceStates`
 
 **Parameters:**
 
-Parameter | Description
-----------|------------
-`hash`    | The hash of the torrent you want to get the pieces' states of
-
+Parameter | Type   | Description
+----------|--------|------------
+`hash`    | string | The hash of the torrent you want to get the pieces' states of
 
 **Returns:**
 
@@ -1495,9 +1494,9 @@ Name: `pieceHashes`
 
 **Parameters:**
 
-Parameter | Description
-----------|------------
-`hash`    | The hash of the torrent you want to get the pieces' hashes of
+Parameter | Type   | Description
+----------|--------|------------
+`hash`    | string | The hash of the torrent you want to get the pieces' hashes of
 
 **Returns:**
 
@@ -1525,9 +1524,9 @@ Name: `pause`
 
 **Parameters:**
 
-Parameter | Description
-----------|------------
-`hashes`  | The hashes of the torrents you want to pause. `hashes` can contain multiple hashes separated by `\|`, to pause multiple torrents, or set to `all`, to pause all torrents.
+Parameter   | Type     | Description
+------------|----------|------------
+`hashes`    | string   | The hashes of the torrents you want to pause. `hashes` can contain multiple hashes separated by `\|`, to pause multiple torrents, or set to `all`, to pause all torrents.
 
 Example:
 
@@ -1549,9 +1548,9 @@ Name: `resume`
 
 **Parameters:**
 
-Parameter | Description
-----------|------------
-`hashes`  | The hashes of the torrents you want to resume. `hashes` can contain multiple hashes separated by `\|`, to resume multiple torrents, or set to `all`, to resume all torrents.
+Parameter   | Type     | Description
+------------|----------|------------
+`hashes`    | string   | The hashes of the torrents you want to resume. `hashes` can contain multiple hashes separated by `\|`, to resume multiple torrents, or set to `all`, to resume all torrents.
 
 Example:
 
@@ -1573,9 +1572,9 @@ Name: `delete`
 
 **Parameters:**
 
-Parameter     | Description
---------------|------------
-`hashes`      | The hashes of the torrents you want to delete. `hashes` can contain multiple hashes separated by `\|`, to delete multiple torrents, or set to `all`, to delete all torrents.
+Parameter   | Type     | Description
+------------|----------|------------
+`hashes`    | string   | The hashes of the torrents you want to delete. `hashes` can contain multiple hashes separated by `\|`, to delete multiple torrents, or set to `all`, to delete all torrents.
 `deleteFiles` | If set to `true`, the downloaded data will also be deleted, otherwise has no effect.
 
 Example:
@@ -1598,9 +1597,9 @@ Name: `recheck`
 
 **Parameters:**
 
-Parameter | Description
-----------|------------
-`hashes`  | The hashes of the torrents you want to recheck. `hashes` can contain multiple hashes separated by `\|`, to recheck multiple torrents, or set to `all`, to recheck all torrents.
+Parameter   | Type     | Description
+------------|----------|------------
+`hashes`    | string   | The hashes of the torrents you want to recheck. `hashes` can contain multiple hashes separated by `\|`, to recheck multiple torrents, or set to `all`, to recheck all torrents.
 
 Example:
 
@@ -1622,9 +1621,9 @@ Name: `reannounce`
 
 **Parameters:**
 
-Parameter | Description
-----------|------------
-`hashes`  | The hashes of the torrents you want to reannounce. `hashes` can contain multiple hashes separated by `\|`, to reannounce multiple torrents, or set to `all`, to reannounce all torrents.
+Parameter   | Type     | Description
+------------|----------|------------
+`hashes`    | string   | The hashes of the torrents you want to reannounce. `hashes` can contain multiple hashes separated by `\|`, to reannounce multiple torrents, or set to `all`, to reannounce all torrents.
 
 Example:
 
@@ -1825,9 +1824,9 @@ Name: `increasePrio`
 
 **Parameters:**
 
-Parameter | Description
-----------|------------
-`hashes`  | The hashes of the torrents you want to increase the priority of. `hashes` can contain multiple hashes separated by `\|`, to increase the priority of multiple torrents, or set to `all`, to increase the priority of all torrents.
+Parameter   | Type     | Description
+------------|----------|------------
+`hashes`    | string   | The hashes of the torrents you want to increase the priority of. `hashes` can contain multiple hashes separated by `\|`, to increase the priority of multiple torrents, or set to `all`, to increase the priority of all torrents.
 
 Example:
 
@@ -1850,9 +1849,9 @@ Name: `decreasePrio`
 
 **Parameters:**
 
-Parameter | Description
-----------|------------
-`hashes`  | The hashes of the torrents you want to decrease the priority of. `hashes` can contain multiple hashes separated by `\|`, to decrease the priority of multiple torrents, or set to `all`, to decrease the priority of all torrents.
+Parameter   | Type     | Description
+------------|----------|------------
+`hashes`    | string   | The hashes of the torrents you want to decrease the priority of. `hashes` can contain multiple hashes separated by `\|`, to decrease the priority of multiple torrents, or set to `all`, to decrease the priority of all torrents.
 
 Example:
 
@@ -1875,9 +1874,9 @@ Name: `topPrio`
 
 **Parameters:**
 
-Parameter | Description
-----------|------------
-`hashes`  | The hashes of the torrents you want to set to the maximum priority. `hashes` can contain multiple hashes separated by `\|`, to set multiple torrents to the maximum priority, or set to `all`, to set all torrents to the maximum priority.
+Parameter   | Type     | Description
+------------|----------|------------
+`hashes`    | string   | The hashes of the torrents you want to set to the maximum priority. `hashes` can contain multiple hashes separated by `\|`, to set multiple torrents to the maximum priority, or set to `all`, to set all torrents to the maximum priority.
 
 Example:
 
@@ -1900,9 +1899,9 @@ Name: `bottomPrio`
 
 **Parameters:**
 
-Parameter | Description
-----------|------------
-`hashes`  | The hashes of the torrents you want to set to the minimum priority. `hashes` can contain multiple hashes separated by `\|`, to set multiple torrents to the minimum priority, or set to `all`, to set all torrents to the minimum priority.
+Parameter   | Type     | Description
+------------|----------|------------
+`hashes`    | string   | The hashes of the torrents you want to set to the minimum priority. `hashes` can contain multiple hashes separated by `\|`, to set multiple torrents to the minimum priority, or set to `all`, to set all torrents to the minimum priority.
 
 Example:
 
@@ -2390,9 +2389,9 @@ Name: `toggleSequentialDownload`
 
 **Parameters:**
 
-Parameter | Description
-----------|------------
-`hashes`  | The hashes of the torrents you want to toggle sequential download for. `hashes` can contain multiple hashes separated by `\|`, to toggle sequential download for multiple torrents, or set to `all`, to toggle sequential download for all torrents.
+Parameter   | Type     | Description
+------------|----------|------------
+`hashes`    | string   | The hashes of the torrents you want to toggle sequential download for. `hashes` can contain multiple hashes separated by `\|`, to toggle sequential download for multiple torrents, or set to `all`, to toggle sequential download for all torrents.
 
 Example:
 
@@ -2414,9 +2413,9 @@ Name: `toggleFirstLastPiecePrio`
 
 **Parameters:**
 
-Parameter | Description
-----------|------------
-`hashes`  | The hashes of the torrents you want to toggle the first/last piece priority for. `hashes` can contain multiple hashes separated by `\|`, to toggle the first/last piece priority for multiple torrents, or set to `all`, to toggle the first/last piece priority for all torrents.
+Parameter   | Type     | Description
+------------|----------|------------
+`hashes`    | string   | The hashes of the torrents you want to toggle the first/last piece priority for. `hashes` can contain multiple hashes separated by `\|`, to toggle the first/last piece priority for multiple torrents, or set to `all`, to toggle the first/last piece priority for all torrents.
 
 Example:
 
