@@ -110,6 +110,7 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
    1. [Uninstall search plugin](#uninstall-search-plugin)
    1. [Enable search plugin](#enable-search-plugin)
    1. [Update search plugins](#update-search-plugins)
+1. [WebAPI versioning](#webapi-versioning)
 
 ***
 
@@ -3033,3 +3034,8 @@ None
 HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
 200                               | All scenarios
+
+## WebAPI versioning ##
+1. Main version. Should be changed only on some global changes (e.g. total redesign/relayout)
+2. Changed on incompatible API changes (i.e. if it breaks outdated clients). E.g. if you change/remove something
+3. Changed on compatible API changes (i.e. if it doesn't break outdated clients). E.g. if you add something new outdated clients still can access old subset of API.
