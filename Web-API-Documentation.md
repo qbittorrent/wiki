@@ -175,6 +175,11 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
 
 - Add `stalled`, `stalled_uploading` and `stalled_downloading` as possible values for the `filter` parameter in `/torrents/info` ([#11825](https://github.com/qbittorrent/qBittorrent/pull/11825))
 - Add `piece_extent_affinity` boolean  field to `/app/getPreferences` and `/app/setPreferences` ([#11781](https://github.com/qbittorrent/qBittorrent/pull/11781))
+- Add `web_ui_secure_cookie_enabled` boolean field to `/app/getPreferences` and `/app/setPreferences` ([#11726](https://github.com/qbittorrent/qBittorrent/pull/11726))
+- TODO: document these below and an mention PR number
+- Add `web_ui_max_auth_fail_count` integer field to `/app/getPreferences` and `/app/setPreferences`
+- Add `web_ui_ban_duration` integer field to `/app/getPreferences` and `/app/setPreferences`
+- Add `stop_tracker_timeout` integer field to `/app/getPreferences` and `/app/setPreferences`
 
 # General Information #
 
