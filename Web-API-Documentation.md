@@ -374,6 +374,8 @@ Property                          | Type    | Description
 `max_connec_per_torrent`          | integer | Maximum number of simultaneous connections per torrent
 `max_uploads`                     | integer | Maximum number of upload slots
 `max_uploads_per_torrent`         | integer | Maximum number of upload slots per torrent
+`stop_tracker_timeout`            | integer | Timeout in seconds for a `stopped` announce request to trackers
+`piece_extent_affinity`           | bool    | True if the advanced libtorrent option `piece_extent_affinity` is enabled
 `enable_utp`                      | bool    | True if uTP protocol should be enabled; this option is only available in qBittorent built against libtorrent version 0.16.X and higher
 `limit_utp_rate`                  | bool    | True if `[du]l_limit` should be applied to uTP connections; this option is only available in qBittorent built against libtorrent version 0.16.X and higher
 `limit_tcp_overhead`              | bool    | True if `[du]l_limit` should be applied to estimated TCP overhead (service data: e.g. packet headers)
@@ -412,6 +414,9 @@ Property                          | Type    | Description
 `web_ui_password`                 | string  | For API ≥ v2.3.0: Plaintext WebUI password, not readable, write-only. For API < v2.3.0: MD5 hash of WebUI password, hash is generated from the following string: `username:Web UI Access:plain_text_web_ui_password`
 `web_ui_csrf_protection_enabled`  | bool    | True if WebUI CSRF protection is enabled
 `web_ui_clickjacking_protection_enabled` | bool | True if WebUI clickjacking protection is enabled
+`web_ui_secure_cookie_enabled`    | bool    | True if WebUI cookie `Secure` flag is enabled
+`web_ui_max_auth_fail_count`      | integer | Maximum number of authentication failures before WebUI access ban
+`web_ui_ban_duration`             | integer | WebUI access ban duration in seconds
 `bypass_local_auth`               | bool    | True if authentication challenge for loopback address (127.0.0.1) should be disabled
 `bypass_auth_subnet_whitelist_enabled` | bool | True if webui authentication should be bypassed for clients whose ip resides within (at least) one of the subnets on the whitelist
 `bypass_auth_subnet_whitelist`    | string | (White)list of ipv4/ipv6 subnets for which webui authentication should be bypassed; list entries are separated by commas
