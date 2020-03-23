@@ -5,6 +5,7 @@ location /qbt/ {
     proxy_pass              http://127.0.0.1:8080/;
     proxy_http_version      1.1;
     proxy_set_header        X-Forwarded-Host        $http_host;
+    http2_push_preload on; # Enable http2 push
 
     # The following directives effectively nullify Cross-site request forgery (CSRF)
     # protection mechanism in qBittorrent, only use them when you encountered connection problems.
