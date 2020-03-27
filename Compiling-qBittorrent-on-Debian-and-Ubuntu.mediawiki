@@ -57,7 +57,7 @@ Choose the appropriate <code>git</code> and compile command according to the ver
 |-
 | 1.2.*
 | >= 4.2.0
-| <source>git checkout RC_1_2</source>
+| <source>git checkout libtorrent-1_2_x</source>
 | <source>./autotool.sh
 ./configure --disable-debug --enable-encryption CXXFLAGS="-std=c++14"</source>
 | <source>mkdir -p cmake-build-dir/release && cd cmake-build-dir/release
@@ -65,7 +65,7 @@ cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_STANDARD=14 -G "Unix Makefiles" ../
 |-
 | 1.1.*
 | >= 3.3.8
-| <source>git checkout RC_1_1</source>
+| <source>git checkout libtorrent-1_1_x</source>
 | <source>./autotool.sh
 ./configure --disable-debug --enable-encryption</source>
 | <source>mkdir -p cmake-build-dir/release && cd cmake-build-dir/release
@@ -73,7 +73,7 @@ cmake -DCMAKE_BUILD_TYPE=Release -G "Unix Makefiles" ../..</source>
 |-
 | 1.0.*
 | <= 4.1.5
-| <source>git checkout RC_1_0</source>
+| <source>git checkout libtorrent-1_0_x</source>
 | <source>./autotool.sh
 ./configure --disable-debug --enable-encryption</source>
 | <source>mkdir -p cmake-build-dir/release && cd cmake-build-dir/release
@@ -87,7 +87,7 @@ Finally, you can install libtorrent.
 
 If you have <code>checkinstall</code>, the following command will generate and install a <code>.deb</code> package that can be tracked and managed by your package manager:
 
- sudo checkinstall --nodoc --backup=no --deldesc --pkgname libtorrent-rasterbar --pkgversion 1.2.3-source-compile # change the version to your liking
+ sudo checkinstall --nodoc --backup=no --deldesc --pkgname libtorrent-rasterbar --pkgversion 1.x.x-source-compile # change the version to your liking
 
 Alternatively, the traditional way will do just fine:
 
@@ -107,10 +107,10 @@ By checking out the stable branch (4.1.x at the time of writing):
   cd qBittorrent
   git checkout v4_1_x
 
-Or by checking out the latest tagged stable release (4.1.5 at the time of writing):
+Or by checking out the latest tagged stable release (4.2.2 at the time of writing):
 
   cd qBittorrent
-  git checkout release-4.1.5
+  git checkout release-4.2.2
 
 Enter the folder in a new terminal window and run:
  ./configure
@@ -120,7 +120,7 @@ Finally, you can install qBittorrent:
 
 If you have <code>checkinstall</code>, the following command will generate and install a <code>.deb</code> package that can be tracked and managed by your package manager:
 
- sudo checkinstall --nodoc --backup=no --deldesc --pkgname qbittorrent --pkgversion 4.2.1-source-compile # change the version to your liking
+ sudo checkinstall --nodoc --backup=no --deldesc --pkgname qbittorrent --pkgversion 4.x.x-source-compile # change the version to your liking
 
 Alternatively, the traditional way will do just fine:
 
@@ -135,8 +135,8 @@ Either download and extract a .tar archive from [https://sourceforge.net/project
   git clone https://github.com/qbittorrent/qBittorrent
   cd qBittorrent
 If you clone the git repository and want to use the stable current version (rather than the development version), you need to checkout the stable branch. 
- git checkout v4_1_x
-(Note: When the stable version changes to 4.2.0, the stable branch will change to v4_2_x.)
+ git checkout release-4.x.x
+(Note: Chanege release-4.x.x to latest stable release, 4.2.2 at the time of writing)
 
 Enter the folder in a new terminal window and run:
  ./configure --disable-gui CXXFLAGS="-std=c++14"
@@ -146,7 +146,7 @@ Finally, you can install qBittorrent:
 
 If you have <code>checkinstall</code>, the following command will generate and install a <code>.deb</code> package that can be tracked and managed by your package manager:
 
- sudo checkinstall --nodoc --backup=no --deldesc --pkgname qbittorrent-nox --pkgversion 4.2.1-source-compile # change the version to your liking
+ sudo checkinstall --nodoc --backup=no --deldesc --pkgname qbittorrent-nox --pkgversion 4.x.x-source-compile # change the version to your liking
 
 Alternatively, the traditional method will do just fine:
 
