@@ -4,7 +4,7 @@ If you just want the latest version of qBittorrent, use our [https://launchpad.n
 This how-to will guide you though the compilation of qBittorrent and optionally its backend, <code>libtorrent-rasterbar</code> (referred to only as <code>libtorrent</code> for the rest of the document).<br />
 This guide is written for Debian/Ubuntu, but the process should be similar for other Debian-derivatives distributions.
 
-If you run into trouble or errors at any step, check the Troubleshooting section at the bottom of the page before posting an issue.
+If you run into trouble or errors at any step, check the Troubleshooting section at the bottom of the page first before posting an issue.
 
 == General build dependencies ==
 
@@ -36,7 +36,7 @@ If you were using Ubuntu 16.04 LTS, you could add this PPA:
 For Debian 10, Ubuntu 18.04 LTS or later, just install Qt from repository
  sudo apt-get install qtbase5-dev qttools5-dev-tools libqt5svg5-dev
 
-Alternatively, you could of course compile Qt version of your choosing from source. However, only do this if you have a _very_ good reason to do so.
+Alternatively, you could of course compile Qt version of your choosing from source. However, only do this if you have a <em>very</em> good reason to do so.
 
 == libtorrent ==
 qBittorrent uses the [https://libtorrent.org/ libtorrent] library by Arvid Norberg as the backend. <br />
@@ -161,7 +161,7 @@ Documentation about running qBittorrent without GUI is available [[Running-qBitt
 
 === Compiling (generic) ===
 
-* In the <code>make</code> command, the <code>-j$(nproc)</code> flag makes the number of build jobs equal to the number of threads available; increasing it may make the build faster, but an eye must be kept on the memory usage.
+* In the <code>make</code> command, the <code>-j$(nproc)</code> flag makes the number of build jobs equal to the number of hardware threads available. To see the actual value your system is using, run <code>echo $(nproc)</code> in a terminal. You could also manually specify a value like so: <code>-j5</code>. Higher values may make the build faster, but an eye must be kept on the memory usage.
 
 === Compiling libtorrent ===
 
