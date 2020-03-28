@@ -50,6 +50,7 @@ Compile:
  make -j$(( $(nproc) - 1 ))
  make install
 
+
 == Compiling qBittorrent (without the GUI) ==
 First, obtain the qBittorrent source code.<br />
 Either download and extract a .tar archive from [https://sourceforge.net/projects/qbittorrent/files/qbittorrent/ Sourceforge] or clone the git repository:
@@ -63,7 +64,8 @@ Compile:
  ./configure --prefix=/usr --disable-gui CPPFLAGS=-I/usr/include/qt5 --with-boost=${DIR_BOOST} CXXFLAGS=--std=c++14
  make -j$(( $(nproc) - 1 ))
  make install
-
+ ln -s /usr/lib/pkgconfig/libtorrent-rasterbar.pc /usr/lib64/pkgconfig/libtorrent-rasterbar.pc
+**Last command was missing and on 64bit systems will fail without it ** 
 Since you disabled the graphical user interface, qBittorrent can only be controlled via its WebUI. If you haven't disabled authentication, as a default, you can access it at:
  http://localhost:8080
  Username: admin
