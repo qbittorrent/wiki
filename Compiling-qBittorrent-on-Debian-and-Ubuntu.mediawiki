@@ -1,18 +1,28 @@
 Only follow this guide if you know what you are doing and this is what you really want.<br />
-If you are looking only for the latest version of qBittorrent, just head to the [https://www.qbittorrent.org/download.php download page] and use our [https://launchpad.net/~qbittorrent-team/+archive/ubuntu/qbittorrent-stable PPAs].
+If you just want the latest version of qBittorrent, use our [https://launchpad.net/~qbittorrent-team/+archive/ubuntu/qbittorrent-stable stable] or [https://launchpad.net/~qbittorrent-team/+archive/ubuntu/qbittorrent-unstable unstable] PPAs.
 
-This how-to will guide you though the compilation of qBittorrent and libtorrent-rasterbar.<br />
+This how-to will guide you though the compilation of qBittorrent and optionally its backend, <code>libtorrent-rasterbar</code> (referred to only as <code>libtorrent</code> for the rest of the document).<br />
 This guide is written for Debian/Ubuntu, but the process should be similar for other Debian-derivatives distributions.
 
 If you run into trouble or errors at any step, check the Troubleshooting section at the bottom of the page before posting an issue.
 
-== Required dependencies ==
-* General required dependencies
- sudo apt-get install build-essential pkg-config automake libtool git zlib1g-dev
- sudo apt-get install libboost-dev libboost-system-dev libboost-chrono-dev libboost-random-dev libssl-dev libgeoip-dev
+== General build dependencies ==
 
-* Qt libraries
-qBittorrent 4.0 - 4.1.x requires at least Qt 5.5.1, and qBittorrent 4.2 and later requires at least Qt 5.9.<br /><br />
+You need to install these packages in order to be able to compile qBittorrent from source.
+ sudo apt-get install build-essential pkg-config automake libtool git zlib1g-dev libssl-dev libgeoip-dev
+ sudo apt-get install libboost-dev libboost-system-dev libboost-chrono-dev libboost-random-dev
+
+If you want, you can install the Boost libraries from source instead of installing them from the distro's repositories. This is quite easy to do, but generally does not make that much of a difference and is out of the scope of this guide.
+
+== Runtime-only dependencies ==
+
+qBittorrent has a runtime-only dependency on Python 3 for its search engine functionality.
+ sudo apt-get install python3
+
+== Qt libraries ==
+
+qBittorrent uses the Qt framework as the basis for its GUI.<br />
+qBittorrent 4.0 - 4.1.x requires at least Qt 5.5.1, and qBittorrent 4.2 and later requires at least Qt 5.9.<br />
 
 Note that Qt libraries in Debian 8/9 repository is too old for compiling newer qBittorrent, you need to upgrade your system to Debian 10, or install newer Qt libraries by the other way.<br />
 
@@ -26,24 +36,22 @@ If you were using Ubuntu 16.04 LTS, you could add this PPA:
 For Debian 10, Ubuntu 18.04 LTS or later, just install Qt from repository
  sudo apt-get install qtbase5-dev qttools5-dev-tools libqt5svg5-dev
 
+Alternatively, you could of course compile Qt version of your choosing from source. However, only do this if you have a _very_ good reason to do so.
 
-* Python (Run time only dependency, for the search engine)
- sudo apt-get install python3
-
-== Libtorrent ==
+== libtorrent ==
 qBittorrent uses the [https://libtorrent.org/ libtorrent] library by Arvid Norberg as the backend. <br />
 It is necessary to compile and install <code>libtorrent</code> before compiling qBittorrent.
 
-It is possible to install the <code>libtorrent</code> development package from the distro's repositories:
+It is possible to install the <code>libtorrent</code> development package directly from the distro's repositories:
  sudo apt-get install libtorrent-rasterbar-dev
 
 but the version may not be the most recent or exactly the one you want.
 
-Alternatively, clone the <code>libtorrent</code> repository and compile it yourself.
+Alternatively, you can compile it yourself.<br />First, clone the <code>libtorrent</code> repository:
  git clone https://github.com/arvidn/libtorrent.git
  cd libtorrent
 
-To compile, first choose the appropriate <code>git</code> and compile commands according to the version of <code>libtorrent</code> you need in the table.
+To compile, first choose the appropriate <code>git</code> and compile commands in the table below, according to the version of <code>libtorrent</code> you need:
 
 {| class="wikitable"
 ! style="text-align: center;" | libtorrent version series
@@ -96,24 +104,27 @@ Alternatively, the traditional way will do just fine:
 For more information on building libtorrent, see [https://www.libtorrent.org/building.html libtorrent downloading and building].
 
 == Compiling qBittorrent (with the GUI) ==
+
 First, obtain the qBittorrent source code.<br />
 Either download and extract a .tar archive from [https://sourceforge.net/projects/qbittorrent/files/qbittorrent/ Sourceforge] or clone the git repository:
   git clone https://github.com/qbittorrent/qBittorrent
 
-If you clone the git repository and want to use the stable current version (rather than the development version which may not work), you need to checkout the stable branch. You can do this in two ways:
+If you clone the git repository and want to use the stable current version (rather than the development version int the <code>master</code> branch which may not work), you need to checkout the stable branch. You can do this in two ways:
 
-By checking out the stable branch (4.1.x at the time of writing):
+By checking out the stable branch (4.2.x at the time of writing):
 
   cd qBittorrent
-  git checkout v4_1_x
+  git checkout v4_2_x
 
 Or by checking out the latest tagged stable release (4.2.2 at the time of writing):
 
   cd qBittorrent
   git checkout release-4.2.2
 
-Enter the folder in a new terminal window and run:
- ./configure
+Open the folder in a terminal window and run this to configure the build:
+ ./configure CXXFLAGS="-std=c++14"
+
+Once that finishes successfully, run:
  make -j$(nproc)
 
 Finally, you can install qBittorrent:
@@ -130,32 +141,16 @@ That's it! qBittorrent should now be installed. You can now run qBittorrent usin
  qbittorrent
 
 == Compiling qBittorrent (without the GUI; aka qBittorrent-nox aka headless) ==
-First, obtain the qBittorrent source code.<br />
-Either download and extract a .tar archive from [https://sourceforge.net/projects/qbittorrent/files/qbittorrent/ Sourceforge] or clone the git repository:
-  git clone https://github.com/qbittorrent/qBittorrent
-  cd qBittorrent
-If you clone the git repository and want to use the stable current version (rather than the development version), you need to checkout the stable branch. 
- git checkout release-4.x.x
-(Note: Chanege release-4.x.x to latest stable release, 4.2.2 at the time of writing)
 
-Enter the folder in a new terminal window and run:
- ./configure --disable-gui CXXFLAGS="-std=c++14"
- make -j$(nproc)
+The steps are almost all the same as the GUI version except for the configure step, where you should add the <code>--disable-gui</code> flag to it, like so:
+ ./configure CXXFLAGS="-std=c++14" --disable-gui
 
-Finally, you can install qBittorrent:
-
-If you have <code>checkinstall</code>, the following command will generate and install a <code>.deb</code> package that can be tracked and managed by your package manager:
-
- sudo checkinstall --nodoc --backup=no --deldesc --pkgname qbittorrent-nox --pkgversion 4.x.x-source-compile # change the version to your liking
-
-Alternatively, the traditional method will do just fine:
-
- sudo make install
+It is also recommended that you name the package <code>qbittorrent-nox</code> instead of <code>qbittorrent</code> if you use the <code>checkinstall</code> method for installing.
 
 That's it! qBittorrent-nox should now be installed. You can now run qBittorrent-nox using the following command:
  qbittorrent-nox
 
-Since you disabled the graphical user interface, qBittorrent can only be controlled via its WebUI. If you haven't disabled authentication, as a default, you can access it at:
+Since you disabled the graphical user interface, qBittorrent can only be controlled via its WebUI. If you haven't disabled authentication, (which is the default behavior), you can access it at:
  http://localhost:8080
  Username: admin
  Password: adminadmin
@@ -192,4 +187,4 @@ If so, you are good to go. If not, add the path to the variable:
 
 
 == Notes ==
-* If you experience any problem with this how to, do not hesitate to contact me at sledgehammer999(at)qbittorrent(dot)org.
+* If you experience any problem with this how to, do not hesitate to contact sledgehammer999(at)qbittorrent(dot)org.
