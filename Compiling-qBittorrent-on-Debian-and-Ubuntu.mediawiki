@@ -31,49 +31,49 @@ For Debian 10, Ubuntu 18.04 LTS or later, just install Qt from repository
  sudo apt-get install python3
 
 == Libtorrent ==
-[https://libtorrent.org/ Libtorrent] is a library written by Arvid Norberg that qBittorrent depends on.<br />
-It is necessary to compile and install libtorrent before compiling qBittorrent.
+qBittorrent uses the [https://libtorrent.org/ libtorrent] library by Arvid Norberg as the backend. <br />
+It is necessary to compile and install <code>libtorrent</code> before compiling qBittorrent.
 
-Install Libtorrent dev pkg from repository
+It is possible to install the <code>libtorrent</code> development package from the distro's repositories:
  sudo apt-get install libtorrent-rasterbar-dev
 
-or use git repo and compile Libtorrent yourself.
+but the version may not be the most recent or exactly the one you want.
 
-Clone from the repo
+Alternatively, clone the <code>libtorrent</code> repository and compile it yourself.
  git clone https://github.com/arvidn/libtorrent.git
  cd libtorrent
 
-Choose the appropriate <code>git</code> and compile command according to the version of libtorrent you need:
+To compile, first choose the appropriate <code>git</code> and compile commands according to the version of <code>libtorrent</code> you need in the table.
 
 {| class="wikitable"
-! style="text-align: center;" | libtorrent version
+! style="text-align: center;" | libtorrent version series
 ! style="text-align: center;" | qBittorrent version support
-! style="text-align: center;" | git command
-! colspan="2" style="text-align: center;" | Compile commands (after running the git command, choose between using autotools or CMake)
+! style="text-align: center;" | git command (example with most recent tag in series at the time of writing)
+! colspan="2" style="text-align: center;" | Compile commands (after running the git command, choose between using autotools <em>or</em> CMake)
 |-
 | colspan="3" style="text-align: center;" | ----
 | style="text-align: center;" | autotools
 | style="text-align: center;" | CMake
 |-
-| 1.2.*
+| 1.2.x
 | >= 4.2.0
-| <source>git checkout libtorrent-1_2_x</source>
+| <source>git checkout libtorrent-1_2_5</source>
 | <source>./autotool.sh
 ./configure --disable-debug --enable-encryption CXXFLAGS="-std=c++14"</source>
 | <source>mkdir -p cmake-build-dir/release && cd cmake-build-dir/release
 cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_STANDARD=14 -G "Unix Makefiles" ../..</source>
 |-
-| 1.1.*
+| 1.1.x
 | >= 3.3.8
-| <source>git checkout libtorrent-1_1_x</source>
+| <source>git checkout libtorrent-1_1_14</source>
 | <source>./autotool.sh
 ./configure --disable-debug --enable-encryption</source>
 | <source>mkdir -p cmake-build-dir/release && cd cmake-build-dir/release
 cmake -DCMAKE_BUILD_TYPE=Release -G "Unix Makefiles" ../..</source>
 |-
-| 1.0.*
+| 1.0.x
 | <= 4.1.5
-| <source>git checkout libtorrent-1_0_x</source>
+| <source>git checkout libtorrent-1_0_11</source>
 | <source>./autotool.sh
 ./configure --disable-debug --enable-encryption</source>
 | <source>mkdir -p cmake-build-dir/release && cd cmake-build-dir/release
@@ -174,7 +174,7 @@ Documentation about running qBittorrent without GUI is available [[Running-qBitt
 
 === Compiling qBittorrent ===
 
-*  If you're using libtorrent-rasterbar from the 0.16.x series, you also need to pass the <code>--with-libtorrent-rasterbar0.16</code> option to configure. qBittorrent v3.3.x has dropped the support of libtorrent 0.16.x.
+*  If you're using <code>libtorrent-rasterbar</code> from the 0.16.x series, you also need to pass the <code>--with-libtorrent-rasterbar0.16</code> option to configure. qBittorrent v3.3.x has dropped the support of libtorrent 0.16.x.
 *  If you want to compile with qt4 instead of qt5, you also need to pass the <code>--with-qt4</code> option to configure. qBittorrent v4.0.x has dropped the support of qt4
 
 === Running qBittorrent ===
