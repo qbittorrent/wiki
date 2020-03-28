@@ -237,6 +237,10 @@ Enable `qbittorrent` service during boot: `sudo systemctl enable qbittorrent`.
 
 ## Updating an already compiled version of qBittorrent-nox
 
+Get the latest version of qBittorrent using instructions outlined above (git/wget).
+
+Navigate to the qBittorrent directory with the latest release.
+
 ~~~~
 sudo systemctl stop qbittorrent
 ./configure --disable-gui --enable-systemd --with-boost-libdir=/usr/lib/arm-linux-gnueabihf CXXFLAGS="-std=c++14"
