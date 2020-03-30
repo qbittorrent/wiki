@@ -4,7 +4,7 @@ As of version 4.2.2, custom unofficial Qt UI themes can be used on all platforms
 
 # Procedure
 
-You can find some unofficial themes here: [List of unofficial themes](../List-of-known-qBittorrent-themes)
+You can find some unofficial themes here: [List of unofficial themes](https://github.com/qbittorrent/qBittorrent/wiki/List-of-known-qBittorrent-themes)
 
 After you have downloaded your chosen `.qbtheme` theme file, using it is quite easy:
 
