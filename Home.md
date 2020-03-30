@@ -26,19 +26,29 @@ Everyone is welcome to edit and improve the wiki!
 * [How to translate qBittorrent](wiki/How-to-translate-qBittorrent)
 
 ### WebUI Related
-* API documentation (by versions)
-  * [API documentation (current, qBittorrent v4.1+)](wiki/Web-API-Documentation)
-  * [API documentation (previous, qBittorrent v3.2.0-v4.0.4)](wiki/WebUI-API-Documentation)
-  * [API documentation (obsolete, qBittorrent v3.1.x)](wiki/WebUI-API-Documentation-(qBittorrent-v3.1.x))
-* [Alternate webUI usage notes (WIP)](wiki/Alternate-WebUI-usage)
-* Reverse proxy setup for WebUI
-  * [NGINX](wiki/NGINX-Reverse-Proxy-for-Web-UI)
-  * [Microsoft IIS ARR](wiki/IIS-ARR-Reverse-Proxy)
-  * [Traefik](wiki/Traefik-Reverse-Proxy-for-Web-UI)
-* Setting up HTTPS
-  * [Let's Encrypt certificates + NGINX reverse proxy - Linux](wiki/Linux-WebUI-HTTPS-with-Let's-Encrypt-certificates-and-NGINX-SSL-reverse-proxy)
-  * [Let's Encrypt certificates - Linux](wiki/Linux-WebUI-setting-up-HTTPS-with-Let's-Encrypt-certificates)
-  * [Self-signed SSL certificates - Linux](wiki/Linux-WebUI-setting-up-HTTPS-with-self-signed-SSL-certificates)
+
+#### API documentation
+
+* [API documentation (current, qBittorrent v4.1+)](wiki/Web-API-Documentation)
+* [API documentation (previous, qBittorrent v3.2.0-v4.0.4)](wiki/WebUI-API-Documentation)
+* [API documentation (obsolete, qBittorrent v3.1.x)](wiki/WebUI-API-Documentation-(qBittorrent-v3.1.x))
+
+#### Alternate WebUI
+
+* [Alternate WebUI usage notes (WIP)](wiki/Alternate-WebUI-usage)
+* [List of unofficial alternate WebUIs](https://github.com/qbittorrent/qBittorrent/wiki/List-of-known-alternate-WebUIs)
+
+#### Reverse proxy setup for WebUI access
+
+* [NGINX](wiki/NGINX-Reverse-Proxy-for-Web-UI)
+* [Microsoft IIS ARR](wiki/IIS-ARR-Reverse-Proxy)
+* [Traefik](wiki/Traefik-Reverse-Proxy-for-Web-UI)
+
+#### WebUI HTTPS configuration
+
+* [Let's Encrypt certificates + NGINX reverse proxy - Linux](wiki/Linux-WebUI-HTTPS-with-Let's-Encrypt-certificates-and-NGINX-SSL-reverse-proxy)
+* [Let's Encrypt certificates - Linux](wiki/Linux-WebUI-setting-up-HTTPS-with-Let's-Encrypt-certificates)
+* [Self-signed SSL certificates - Linux](wiki/Linux-WebUI-setting-up-HTTPS-with-self-signed-SSL-certificates)
 
 ### Linux
 * [qBittorrent on Ubuntu server (headless) with WebUI (15.04 - newer)](wiki/Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface-(15.04-and-newer))
