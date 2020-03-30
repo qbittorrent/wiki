@@ -19,7 +19,7 @@ Everyone is welcome to edit and improve the wiki!
 
 ### Themes
 
-* TODO: theme user documentation/about themes
+* [How to use custom UI themes](wiki/How-to-use-custom-UI-themes)
 * [List of unofficial themes](wiki/List-of-known-qBittorrent-themes)
 
 ### Translation
