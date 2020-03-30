@@ -20,7 +20,7 @@ Everyone is welcome to edit and improve the wiki!
 ### Themes
 
 * TODO: theme user documentation/about themes
-* [List of known qBittorrent themes](wiki/List-of-known-qBittorrent-themes)
+* [List of unofficial themes](wiki/List-of-known-qBittorrent-themes)
 
 ### Translation
 * [How to translate qBittorrent](wiki/How-to-translate-qBittorrent)
