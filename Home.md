@@ -70,3 +70,11 @@ Everyone is welcome to edit and improve the wiki!
 * [Compiling qbittorrent-nox for CentOS from source](wiki/Compiling-qbittorrent-nox-for-CentOS-from-source)
 * [Compilation on FreeBSD (no gui)](wiki/Compilation-on-FreeBSD-(no-gui))
 * [Compilation on Raspbian and DietPi (no gui)](wiki/Compiling-qBittorrent-nox-4.x-on-DietPi-or-Raspbian-(Debian-9.0)-for-ARM-devices)
+
+### Themes
+
+TODO: wiki article on theme development
+
+### Alternate WebUI
+
+* [Developing alternate WebUIs](wiki/Developing-alternate-WebUIs-(WIP))
