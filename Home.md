@@ -35,7 +35,7 @@ Everyone is welcome to edit and improve the wiki!
 
 #### Alternate WebUI
 
-* [Alternate WebUI usage notes (WIP)](wiki/Alternate-WebUI-usage)
+* [Alternate WebUI usage](wiki/Alternate-WebUI-usage)
 * [List of unofficial alternate WebUIs](https://github.com/qbittorrent/qBittorrent/wiki/List-of-known-alternate-WebUIs)
 
 #### Reverse proxy setup for WebUI access
