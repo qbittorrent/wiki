@@ -1,25 +1,19 @@
-### **WIP**
+# Introduction
 
-From qBittorrent v4.1.0 and on, the WebUI architecture was expanded to allow the use of alternate set of HTML files, allowing customization of the WebUI separated from the evolution of the core qBittorrent code.
+From qBittorrent v4.1.0 and on, the WebUI architecture was expanded to allow the use of alternate sets of WebUI sources, allowing customization of the WebUI and usage of community developed alternatives.
 
-Also, this mechanism is controlled via configuration options (core UI preferences window or config file), and the WebUI files (html, css, js, ...) are external to the program so it's easier than ever to test and modify the WebUI's functionality, look and feel without need of rebuilding the executable.
+# Procedure
 
-### Public and Private WebUI files separation
-In order to increase security, a `public` (login process handling) and `private` (WebUI functionality) separation of files is implemented (see core WebUI files' segregation as ref: https://github.com/qbittorrent/qBittorrent/tree/master/src/webui/www)
+First you need to download a compatible WebUI. You can find a list of unofficial community-developed WebUIs at [List of unofficial alternate WebUIs](https://github.com/qbittorrent/qBittorrent/wiki/List-of-known-alternate-WebUIs).
 
-### Config entries
-* WebUI\AlternativeUIEnabled=`<true>/<false>`
-* WebUI\RootFolder=`<path>`
+1. Under `Tools->Preferences->WebUI` enable `Use alternative WebUI`.
+2. Chose a location that points to a WebUI-compatible folder location.
+3. Restart qBittorrent or refresh your browser for changes to take effect.
 
-### First steps to an alternate WebUI:
-Copy the files:  
-https://github.com/qbittorrent/qBittorrent/tree/master/src/webui/www to a `<new folder>`  
-https://github.com/qbittorrent/qBittorrent/tree/master/src/icons to `<new folder>/public/images`  
-https://github.com/qbittorrent/qBittorrent/tree/master/src/icons to `<new folder>/private/images`  
+You can also change these settings via the config file. The relevant entries are:
 
-Enable AltWebUI on the options and point the entry `WebUI\RootFolder` to `<new folder>`, then launch qBittorrent.
-Access the WebUI as always, modify the files at `<new folder>` according to your needs and refresh the browser to see the changes reflected.
-
-### References:
-* Main WebUI PR: https://github.com/qbittorrent/qBittorrent/pull/7610
-
+```
+WebUI\AlternativeUIEnabled=true
+WebUI\RootFolder=/path/to/some/alternate/webui
+```
+If you wish to customize the default one and maybe develop your own, refer to the article on [Developing alternate WebUIs](https://github.com/qbittorrent/qBittorrent/wiki/Developing-alternate-WebUIs-(WIP)).
