@@ -12,7 +12,7 @@ If you know of more, feel free to add a link to the repository along with a shor
 
 - https://github.com/CzBiX/qb-web
 
-    A custom WebUI written in Typescript+VueJS implementing the WebAPI's RSS functionality.
+    A custom WebUI writes in Typescript+VueJS with extra features, such as RSS and dark mode.
 
 - https://github.com/AndersMalmgren/qBittorrent/tree/master/src/webui/www
 
