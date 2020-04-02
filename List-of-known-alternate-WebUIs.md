@@ -12,7 +12,7 @@ If you know of more, feel free to add a link to the repository along with a shor
 
 - https://github.com/CzBiX/qb-web
 
-    A custom WebUI writes in Typescript+VueJS with extra features, such as RSS and dark mode.
+    A custom WebUI written in Typescript and VueJS with extra features, such as RSS and dark mode.
 
 - https://github.com/AndersMalmgren/qBittorrent/tree/master/src/webui/www
 
@@ -20,12 +20,12 @@ If you know of more, feel free to add a link to the repository along with a shor
 
 - https://github.com/WDaan/VueTorrent
 
-    A modern looking WEBUI for qBittorrent made with VueJS and ExpressJS
+    A modern looking WebUI for qBittorrent, made with VueJS and ExpressJS.
 
 - https://github.com/despin/qbittorrent-webui-react
 
-    A custom material design WebUI written in ReactJS
+    A custom material design WebUI written in ReactJS.
 
 - https://github.com/bill-ahmed/qbit-WebUI
 
-    A minimalist WebUI using Typescript 
+    A minimalist WebUI made using Typescript.
