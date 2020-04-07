@@ -106,7 +106,7 @@ This page describes how to compile 32-bit and 64-bit qBittorrent using MSVC 2019
 
 === Compiling Qt5 ===
 * Extract the Qt sources in the working dir.
-* Navigate to the Qt source folder. eg <code>cd G:\QBITTORRENT\qt-everywhere-src-5.14.1</code>
+* Navigate to the Qt source folder. eg <code>cd G:\QBITTORRENT\qt-everywhere-src-5.14.2</code>
 * Now we will build a static version of Qt and make it as small as possible.
 * Open '''qtbase/mkspecs/common/msvc-desktop.conf''' and replace the  relevant lines with:
 :'''32-bit'''
