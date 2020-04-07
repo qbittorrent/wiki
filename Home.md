@@ -67,7 +67,7 @@ Everyone is welcome to edit and improve the wiki!
 * [Windows compilation](wiki/Windows-compilation)
 * [macOS compilation](wiki/Compilation-guide-for-macOS-systems)
 * [Debian / Ubuntu compilation](wiki/Compiling-qBittorrent-on-Debian-and-Ubuntu)
-* [Compiling qbittorrent-nox for CentOS from source](wiki/Compiling-qbittorrent-nox-for-CentOS-from-source)
+* [Compiling qBittorrent nox on CentOS 7.x](https://github.com/qbittorrent/qBittorrent/wiki/Compiling-qBittorrent-nox-on-CentOS-7.x) / [Compiling qBittorrent nox on CentOS 8.x](https://github.com/qbittorrent/qBittorrent/wiki/Compiling-qBittorrent-nox-on-CentOS-8.x)
 * [Compilation on FreeBSD (no gui)](wiki/Compilation-on-FreeBSD-(no-gui))
 * [Compilation on Raspbian and DietPi (no gui)](wiki/Compiling-qBittorrent-nox-4.x-on-DietPi-or-Raspbian-(Debian-9.0)-for-ARM-devices)
 
