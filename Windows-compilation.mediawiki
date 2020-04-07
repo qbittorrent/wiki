@@ -2,6 +2,7 @@ qBittorrent officially support Windows
 
 Current:
 * [[Compiling with MSVC 2017 (static linkage)]] - method used for the official installers
+* [[Compiling with MSVC 2019 (static linkage)]]
 * [https://github.com/Chocobo1/qbittorent_msys2 Compiling with MSYS2]
 
 Obsolete:
