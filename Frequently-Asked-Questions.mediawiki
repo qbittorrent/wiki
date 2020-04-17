@@ -80,6 +80,12 @@ GNU/Linux:
 * .torrent files, logs, etc (This is the standard [https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html XDG] data folder):
 ** <code>~/.local/share/data/qBittorrent/</code>
 
+Linux/SnapStore:
+* preferences:
+** <code>~/snap/qbittorrent-arnatious/current/.config/qBittorrent/</code>
+* .torrent files, logs, etc (This is the standard [https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html XDG] data folder):
+** <code>~/snap/qbittorrent-arnatious/current/.local/share/data/qBittorrent/</code>
+
 OS X:
 * preferences:
 ** <code>~/.config/qBittorrent/</code>
