@@ -9,15 +9,15 @@ If you run into trouble or errors at any step, check the Troubleshooting section
 == General build dependencies ==
 
 You need to install these packages in order to be able to compile qBittorrent from source.
- sudo apt-get install build-essential pkg-config automake libtool git zlib1g-dev libssl-dev libgeoip-dev
- sudo apt-get install libboost-dev libboost-system-dev libboost-chrono-dev libboost-random-dev
+ sudo apt install build-essential pkg-config automake libtool git zlib1g-dev libssl-dev libgeoip-dev
+ sudo apt install libboost-dev libboost-system-dev libboost-chrono-dev libboost-random-dev
 
 If you want, you can install the Boost libraries from source instead of installing them from the distro's repositories. This is quite easy to do, but generally does not make that much of a difference and is out of the scope of this guide.
 
 == Runtime-only dependencies ==
 
 qBittorrent has a runtime-only dependency on Python 3 for its search engine functionality.
- sudo apt-get install python3
+ sudo apt install python3
 
 == Qt libraries ==
 
@@ -28,13 +28,13 @@ Note that Qt libraries in Debian 8/9 repository is too old for compiling newer q
 
 If you were using Ubuntu 16.04 LTS, you could add this PPA:
  sudo add-apt-repository ppa:beineri/opt-qt597-xenial
- sudo apt-get update
- sudo apt-get install qt59base qt59svg qt59tools
+ sudo apt update
+ sudo apt install qt59base qt59svg qt59tools
  export PATH=/opt/qt59/bin:$PATH
  export PKG_CONFIG_PATH=/opt/qt59/lib/pkgconfig:$PKG_CONFIG_PATH
 
 For Debian 10, Ubuntu 18.04 LTS or later, just install Qt from repository
- sudo apt-get install qtbase5-dev qttools5-dev-tools libqt5svg5-dev
+ sudo apt install qtbase5-dev qttools5-dev libqt5svg5-dev
 
 Alternatively, you could of course compile Qt version of your choosing from source. However, only do this if you have a <em>very</em> good reason to do so.
 
@@ -43,7 +43,7 @@ qBittorrent uses the [https://libtorrent.org/ libtorrent] library by Arvid Norbe
 It is necessary to compile and install <code>libtorrent</code> before compiling qBittorrent.
 
 It is possible to install the <code>libtorrent</code> development package directly from the distro's repositories:
- sudo apt-get install libtorrent-rasterbar-dev
+ sudo apt install libtorrent-rasterbar-dev
 
 but the version may not be the most recent or exactly the one you want.
 
