@@ -90,7 +90,7 @@ This page describes how to compile 32-bit and 64-bit qBittorrent using MSVC 2019
 
 === Compiling Libtorrent ===
 * Extract the Libtorrent sources in the working dir.
-* Navigate to the Libtorrent source folder. eg <code>cd G:\QBITTORRENT\libtorrent-rasterbar-1.2.5</code>
+* Navigate to the Libtorrent source folder. eg <code>cd G:\QBITTORRENT\libtorrent-rasterbar-1.2.6</code>
 * Copy the b2.exe from the Boost directory to the Libtorrent directory
  copy ..\boost_1_72_0\b2.exe b2.exe
 * Compile a static version of Libtorrent. Issue the following command. Replace N in <code>-j N</code> with the number of CPU cores you have or how many threads you want b2 to use when compiling:
