@@ -15,6 +15,7 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
    1. [API v2.3.0](#api-v230)
    1. [API v2.4.0](#api-v240)
    1. [API v2.4.1](#api-v241)
+   1. [API v2.5.0](#api-v250)
 1. [General information](#general-information)
 1. [Authentication](#authentication)
    1. [Login](#login)
@@ -177,10 +178,11 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
 - Add `stalled`, `stalled_uploading` and `stalled_downloading` as possible values for the `filter` parameter in `/torrents/info` ([#11825](https://github.com/qbittorrent/qBittorrent/pull/11825))
 - Add various fields to `/app/preferences` and `/app/setPreferences` (`piece_extent_affinity`, `web_ui_secure_cookie_enabled`, `web_ui_max_auth_fail_count`, `web_ui_ban_duration`, `stop_tracker_timeout`) ([#11781](https://github.com/qbittorrent/qBittorrent/pull/11781), [#11726](https://github.com/qbittorrent/qBittorrent/pull/11726), [#12004](https://github.com/qbittorrent/qBittorrent/pull/12004), [#11834](https://github.com/qbittorrent/qBittorrent/pull/11834))
 
-## API v2.4.2 ##
+## API v2.5.0 ##
 
-- Add `rss_download_repack_proper_episodes` and `rss_smart_episode_filters` as fields to `/app/preferences` and `/app/setPreferences` ([#12549](https://github.com/qbittorrent/qBittorrent/pull/12549))
+- Add `web_ui_use_custom_http_headers_enabled`, `web_ui_custom_http_headers`, `rss_download_repack_proper_episodes` and `rss_smart_episode_filters` as fields to `/app/preferences` and `/app/setPreferences` ([#12579](https://github.com/qbittorrent/qBittorrent/pull/12579), [#12549](https://github.com/qbittorrent/qBittorrent/pull/12549))
 - Add `/rss/markAsRead` and `/rss/matchingArticles` methods ([#12549](https://github.com/qbittorrent/qBittorrent/pull/12549))
+
 
 # General Information #
 
@@ -444,11 +446,12 @@ Property                                 | Type    | Description
 `rss_max_articles_per_feed`              | integer | Max stored articles per RSS feed
 `rss_processing_enabled`                 | bool    | Enable processing of RSS feeds
 `rss_auto_downloading_enabled`           | bool    | Enable auto-downloading of torrents from the RSS feeds
-`rss_download_repack_proper_episodes`    | bool    | For API ≥ v2.4.2: Enable downloading of repack/proper Episodes
-`rss_smart_episode_filters`              | string  | For API ≥ v2.4.2: List of RSS Smart Episode Filters
+`rss_download_repack_proper_episodes`    | bool    | For API ≥ v2.5.0: Enable downloading of repack/proper Episodes
+`rss_smart_episode_filters`              | string  | For API ≥ v2.5.0: List of RSS Smart Episode Filters
 `add_trackers_enabled`                   | bool    | Enable automatic adding of trackers to new torrents
 `add_trackers`                           | string  | List of trackers to add to new torrent
-
+`web_ui_use_custom_http_headers_enabled` | bool    | For API ≥ v2.5.0: Enable custom http headers
+`web_ui_custom_http_headers`             | string  | For API ≥ v2.5.0: List of custom http headers
 
 Possible values of `scan_dirs`:
 
