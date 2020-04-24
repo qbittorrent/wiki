@@ -482,8 +482,8 @@ Property                                 | Type    | Description
 `socket_backlog_size`                    | integer | Socket backlog size
 `upload_choking_algorithm`               | integer | Upload choking algorithm used (see list of possible values below)
 `upload_slots_behavior`                  | integer | Upload slots behavior used (see list of possible values below)
-`upnp_lease_duration``                   | integer | UPnP lease duration (0: Permanent lease)
-`utp_tcp_mixed_mode``                    | integer | μTP-TCP mixed mode algorithm (see list of possible values below)
+`upnp_lease_duration`                    | integer | UPnP lease duration (0: Permanent lease)
+`utp_tcp_mixed_mode`                     | integer | μTP-TCP mixed mode algorithm (see list of possible values below)
 
 Possible values of `scan_dirs`:
 
