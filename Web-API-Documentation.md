@@ -94,10 +94,13 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
    1. [Remove item](#remove-item)
    1. [Move item](#move-item)
    1. [Get all items](#get-all-items)
+   1. [Mark as read](#mark-as-read)
+   1. [Refresh item](#refresh-item)
    1. [Set auto-downloading rule](#set-auto-downloading-rule)
    1. [Rename auto-downloading rule](#rename-auto-downloading-rule)
    1. [Remove auto-downloading rule](#remove-auto-downloading-rule)
    1. [Get all auto-downloading rules](#get-all-auto-downloading-rules)
+   1. [Get all articles matching a rule](#get-all-articles-matching-a-rule)
 1. [Search](#search)
    1. [Start search](#start-search)
    1. [Stop search](#stop-search)
@@ -155,7 +158,7 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
 
 ## API v2.2.1 ##
 
-- Add rss/refreshItem ([#11067](https://github.com/qbittorrent/qBittorrent/pull/11067))
+- Add `rss/refreshItem` ([#11067](https://github.com/qbittorrent/qBittorrent/pull/11067))
 
 ## API v2.3.0 ##
 
@@ -172,7 +175,12 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
 ## API v2.4.1 ##
 
 - Add `stalled`, `stalled_uploading` and `stalled_downloading` as possible values for the `filter` parameter in `/torrents/info` ([#11825](https://github.com/qbittorrent/qBittorrent/pull/11825))
-- Add various fields to `/app/getPreferences` and `/app/setPreferences` (`piece_extent_affinity`, `web_ui_secure_cookie_enabled`, `web_ui_max_auth_fail_count`, `web_ui_ban_duration`, `stop_tracker_timeout`) ([#11781](https://github.com/qbittorrent/qBittorrent/pull/11781), [#11726](https://github.com/qbittorrent/qBittorrent/pull/11726), [#12004](https://github.com/qbittorrent/qBittorrent/pull/12004), [#11834](https://github.com/qbittorrent/qBittorrent/pull/11834))
+- Add various fields to `/app/preferences` and `/app/setPreferences` (`piece_extent_affinity`, `web_ui_secure_cookie_enabled`, `web_ui_max_auth_fail_count`, `web_ui_ban_duration`, `stop_tracker_timeout`) ([#11781](https://github.com/qbittorrent/qBittorrent/pull/11781), [#11726](https://github.com/qbittorrent/qBittorrent/pull/11726), [#12004](https://github.com/qbittorrent/qBittorrent/pull/12004), [#11834](https://github.com/qbittorrent/qBittorrent/pull/11834))
+
+## API v2.4.2 ##
+
+- Add `rss_download_repack_proper_episodes` and `rss_smart_episode_filters` as fields to `/app/preferences` and `/app/setPreferences` ([#12549](https://github.com/qbittorrent/qBittorrent/pull/12549))
+- Add `/rss/markAsRead` and `/rss/matchingArticles` methods ([#12549](https://github.com/qbittorrent/qBittorrent/pull/12549))
 
 # General Information #
 
@@ -326,114 +334,121 @@ The response is a JSON object with several fields (key-value) pairs representing
 
 Possible fields:
 
-Property                          | Type    | Description
-----------------------------------|---------|------------
-`locale`                          | string  | Currently selected language (e.g. en_GB for English)
-`create_subfolder_enabled`        | bool    | True if a subfolder should be created when adding a torrent
-`start_paused_enabled`            | bool    | True if torrents should be added in a Paused state
-`auto_delete_mode`                | integer | TODO
-`preallocate_all`                 | bool    | True if disk space should be pre-allocated for all files
-`incomplete_files_ext`            | bool    | True if ".!qB" should be appended to incomplete files
-`auto_tmm_enabled`                | bool    | True if Automatic Torrent Management is enabled by default
-`torrent_changed_tmm_enabled`     | bool    | True if torrent should be relocated when its Category changes
-`save_path_changed_tmm_enabled`   | bool    | True if torrent should be relocated when the default save path changes
-`category_changed_tmm_enabled`    | bool    | True if torrent should be relocated when its Category's save path changes
-`save_path`                       | string  | Default save path for torrents, separated by slashes
-`temp_path_enabled`               | bool    | True if folder for incomplete torrents is enabled
-`temp_path`                       | string  | Path for incomplete torrents, separated by slashes
-`scan_dirs`                       | object  | Property: directory to watch for torrent files, value: where torrents loaded from this directory should be downloaded to (see list of possible values below). Slashes are used as path separators; multiple key/value pairs can be specified
-`export_dir`                      | string  | Path to directory to copy .torrent files to. Slashes are used as path separators
-`export_dir_fin`                  | string  | Path to directory to copy .torrent files of completed downloads to. Slashes are used as path separators
-`mail_notification_enabled`       | bool    | True if e-mail notification should be enabled
-`mail_notification_sender`        | string  | e-mail where notifications should originate from
-`mail_notification_email`         | string  | e-mail to send notifications to
-`mail_notification_smtp`          | string  | smtp server for e-mail notifications
-`mail_notification_ssl_enabled`   | bool    | True if smtp server requires SSL connection
-`mail_notification_auth_enabled`  | bool    | True if smtp server requires authentication
-`mail_notification_username`      | string  | Username for smtp authentication
-`mail_notification_password`      | string  | Password for smtp authentication
-`autorun_enabled`                 | bool    | True if external program should be run after torrent has finished downloading
-`autorun_program`                 | string  | Program path/name/arguments to run if `autorun_enabled` is enabled; path is separated by slashes; you can use `%f` and `%n` arguments, which will be expanded by qBittorent as path_to_torrent_file and torrent_name (from the GUI; not the .torrent file name) respectively
-`queueing_enabled`                | bool    | True if torrent queuing is enabled
-`max_active_downloads`            | integer | Maximum number of active simultaneous downloads
-`max_active_torrents`             | integer | Maximum number of active simultaneous downloads and uploads
-`max_active_uploads`              | integer | Maximum number of active simultaneous uploads
-`dont_count_slow_torrents`        | bool    | If true torrents w/o any activity (stalled ones) will not be counted towards `max_active_*` limits; see [dont_count_slow_torrents](https://www.libtorrent.org/reference-Settings.html#dont_count_slow_torrents) for more information
-`slow_torrent_dl_rate_threshold`  | integer | Download rate in KiB/s for a torrent to be considered "slow"
-`slow_torrent_ul_rate_threshold`  | integer | Upload rate in KiB/s for a torrent to be considered "slow"
-`slow_torrent_inactive_timer`     | integer | Seconds a torrent should be inactive before considered "slow"
-`max_ratio_enabled`               | bool    | True if share ratio limit is enabled
-`max_ratio`                       | float   | Get the global share ratio limit
-`max_ratio_act`                   | bool    | Action performed when a torrent reaches the maximum share ratio. See list of possible values here below.
-`listen_port`                     | integer | Port for incoming connections
-`upnp`                            | bool    | True if UPnP/NAT-PMP is enabled
-`random_port`                     | bool    | True if the port is randomly selected
-`dl_limit`                        | integer | Global download speed limit in KiB/s; `-1` means no limit is applied
-`up_limit`                        | integer | Global upload speed limit in KiB/s; `-1` means no limit is applied
-`max_connec`                      | integer | Maximum global number of simultaneous connections
-`max_connec_per_torrent`          | integer | Maximum number of simultaneous connections per torrent
-`max_uploads`                     | integer | Maximum number of upload slots
-`max_uploads_per_torrent`         | integer | Maximum number of upload slots per torrent
-`stop_tracker_timeout`            | integer | Timeout in seconds for a `stopped` announce request to trackers
-`piece_extent_affinity`           | bool    | True if the advanced libtorrent option `piece_extent_affinity` is enabled
-`enable_utp`                      | bool    | True if uTP protocol should be enabled; this option is only available in qBittorent built against libtorrent version 0.16.X and higher
-`limit_utp_rate`                  | bool    | True if `[du]l_limit` should be applied to uTP connections; this option is only available in qBittorent built against libtorrent version 0.16.X and higher
-`limit_tcp_overhead`              | bool    | True if `[du]l_limit` should be applied to estimated TCP overhead (service data: e.g. packet headers)
-`limit_lan_peers`                 | bool    | True if `[du]l_limit` should be applied to peers on the LAN
-`alt_dl_limit`                    | integer | Alternative global download speed limit in KiB/s
-`alt_up_limit`                    | integer | Alternative global upload speed limit in KiB/s
-`scheduler_enabled`               | bool    | True if alternative limits should be applied according to schedule
-`schedule_from_hour`              | integer | Scheduler starting hour
-`schedule_from_min`               | integer | Scheduler starting minute
-`schedule_to_hour`                | integer | Scheduler ending hour
-`schedule_to_min`                 | integer | Scheduler ending minute
-`scheduler_days`                  | integer | Scheduler days. See possible values here below
-`dht`                             | bool    | True if DHT is enabled
-`dhtSameAsBT`                     | bool    | True if DHT port should match TCP port
-`dht_port`                        | integer | DHT port if `dhtSameAsBT` is false
-`pex`                             | bool    | True if PeX is enabled
-`lsd`                             | bool    | True if LSD is enabled
-`encryption`                      | integer | See list of possible values here below
-`anonymous_mode`                  | bool    | If true anonymous mode will be enabled; read more [here](Anonymous-Mode); this option is only available in qBittorent built against libtorrent version 0.16.X and higher
-`proxy_type`                      | integer | See list of possible values here below
-`proxy_ip`                        | string  | Proxy IP address or domain name
-`proxy_port`                      | integer | Proxy port
-`proxy_peer_connections`          | bool    | True if peer and web seed connections should be proxified; this option will have any effect only in qBittorent built against libtorrent version 0.16.X and higher
-`force_proxy`                     | bool    | True if the connections not supported by the proxy are disabled
-`proxy_auth_enabled`              | bool    | True proxy requires authentication; doesn't apply to SOCKS4 proxies
-`proxy_username`                  | string  | Username for proxy authentication
-`proxy_password`                  | string  | Password for proxy authentication
-`ip_filter_enabled`               | bool    | True if external IP filter should be enabled
-`ip_filter_path`                  | string  | Path to IP filter file (.dat, .p2p, .p2b files are supported); path is separated by slashes
-`ip_filter_trackers`              | bool    | True if IP filters are applied to trackers
-`web_ui_domain_list`              | string  | Comma-separated list of domains to accept when performing Host header validation
-`web_ui_address`                  | string  | IP address to use for the WebUI
-`web_ui_port`                     | integer | WebUI port
-`web_ui_upnp`                     | bool    | True if UPnP is used for the WebUI port
-`web_ui_username`                 | string  | WebUI username
-`web_ui_password`                 | string  | For API ≥ v2.3.0: Plaintext WebUI password, not readable, write-only. For API < v2.3.0: MD5 hash of WebUI password, hash is generated from the following string: `username:Web UI Access:plain_text_web_ui_password`
-`web_ui_csrf_protection_enabled`  | bool    | True if WebUI CSRF protection is enabled
-`web_ui_clickjacking_protection_enabled` | bool | True if WebUI clickjacking protection is enabled
-`web_ui_secure_cookie_enabled`    | bool    | True if WebUI cookie `Secure` flag is enabled
-`web_ui_max_auth_fail_count`      | integer | Maximum number of authentication failures before WebUI access ban
-`web_ui_ban_duration`             | integer | WebUI access ban duration in seconds
-`bypass_local_auth`               | bool    | True if authentication challenge for loopback address (127.0.0.1) should be disabled
-`bypass_auth_subnet_whitelist_enabled` | bool | True if webui authentication should be bypassed for clients whose ip resides within (at least) one of the subnets on the whitelist
-`bypass_auth_subnet_whitelist`    | string | (White)list of ipv4/ipv6 subnets for which webui authentication should be bypassed; list entries are separated by commas
-`alternative_webui_enabled`       | bool    | True if an alternative WebUI should be used
-`alternative_webui_path`          | string  | File path to the alternative WebUI
-`use_https`                       | bool    | True if WebUI HTTPS access is enabled
-`ssl_key`                         | string  | SSL keyfile contents (this is a not a path)
-`ssl_cert`                        | string  | SSL certificate contents (this is a not a path)
-`dyndns_enabled`                  | bool    | True if server DNS should be updated dynamically
-`dyndns_service`                  | integer | See list of possible values here below
-`dyndns_username`                 | string  | Username for DDNS service
-`dyndns_password`                 | string  | Password for DDNS service
-`dyndns_domain`                   | string  | Your DDNS domain name
-`rss_refresh_interval`            | integer | RSS refresh interval
-`rss_max_articles_per_feed`       | integer | Max stored articles per RSS feed
-`rss_processing_enabled`          | bool    | Enable processing of RSS feeds
-`rss_auto_downloading_enabled`    | bool    | Enable auto-downloading of torrents from the RSS feeds
+Property                                 | Type    | Description
+-----------------------------------------|---------|------------
+`locale`                                 | string  | Currently selected language (e.g. en_GB for English)
+`create_subfolder_enabled`               | bool    | True if a subfolder should be created when adding a torrent
+`start_paused_enabled`                   | bool    | True if torrents should be added in a Paused state
+`auto_delete_mode`                       | integer | TODO
+`preallocate_all`                        | bool    | True if disk space should be pre-allocated for all files
+`incomplete_files_ext`                   | bool    | True if ".!qB" should be appended to incomplete files
+`auto_tmm_enabled`                       | bool    | True if Automatic Torrent Management is enabled by default
+`torrent_changed_tmm_enabled`            | bool    | True if torrent should be relocated when its Category changes
+`save_path_changed_tmm_enabled`          | bool    | True if torrent should be relocated when the default save path changes
+`category_changed_tmm_enabled`           | bool    | True if torrent should be relocated when its Category's save path changes
+`save_path`                              | string  | Default save path for torrents, separated by slashes
+`temp_path_enabled`                      | bool    | True if folder for incomplete torrents is enabled
+`temp_path`                              | string  | Path for incomplete torrents, separated by slashes
+`scan_dirs`                              | object  | Property: directory to watch for torrent files, value: where torrents loaded from this directory should be downloaded to (see list of possible values below). Slashes are used as path separators; multiple key/value pairs can be specified
+`export_dir`                             | string  | Path to directory to copy .torrent files to. Slashes are used as path separators
+`export_dir_fin`                         | string  | Path to directory to copy .torrent files of completed downloads to. Slashes are used as path separators
+`mail_notification_enabled`              | bool    | True if e-mail notification should be enabled
+`mail_notification_sender`               | string  | e-mail where notifications should originate from
+`mail_notification_email`                | string  | e-mail to send notifications to
+`mail_notification_smtp`                 | string  | smtp server for e-mail notifications
+`mail_notification_ssl_enabled`          | bool    | True if smtp server requires SSL connection
+`mail_notification_auth_enabled`         | bool    | True if smtp server requires authentication
+`mail_notification_username`             | string  | Username for smtp authentication
+`mail_notification_password`             | string  | Password for smtp authentication
+`autorun_enabled`                        | bool    | True if external program should be run after torrent has finished downloading
+`autorun_program`                        | string  | Program path/name/arguments to run if `autorun_enabled` is enabled; path is separated by slashes; you can use `%f` and `%n` arguments, which will be expanded by qBittorent as path_to_torrent_file and torrent_name (from the GUI; not the .torrent file name) respectively
+`queueing_enabled`                       | bool    | True if torrent queuing is enabled
+`max_active_downloads`                   | integer | Maximum number of active simultaneous downloads
+`max_active_torrents`                    | integer | Maximum number of active simultaneous downloads and uploads
+`max_active_uploads`                     | integer | Maximum number of active simultaneous uploads
+`dont_count_slow_torrents`               | bool    | If true torrents w/o any activity (stalled ones) will not be counted towards `max_active_*` limits; see [dont_count_slow_torrents](https://www.libtorrent.org/reference-Settings.html#dont_count_slow_torrents) for more information
+`slow_torrent_dl_rate_threshold`         | integer | Download rate in KiB/s for a torrent to be considered "slow"
+`slow_torrent_ul_rate_threshold`         | integer | Upload rate in KiB/s for a torrent to be considered "slow"
+`slow_torrent_inactive_timer`            | integer | Seconds a torrent should be inactive before considered "slow"
+`max_ratio_enabled`                      | bool    | True if share ratio limit is enabled
+`max_ratio`                              | float   | Get the global share ratio limit
+`max_ratio_act`                          | bool    | Action performed when a torrent reaches the maximum share ratio. See list of possible values here below.
+`listen_port`                            | integer | Port for incoming connections
+`upnp`                                   | bool    | True if UPnP/NAT-PMP is enabled
+`random_port`                            | bool    | True if the port is randomly selected
+`dl_limit`                               | integer | Global download speed limit in KiB/s; `-1` means no limit is applied
+`up_limit`                               | integer | Global upload speed limit in KiB/s; `-1` means no limit is applied
+`max_connec`                             | integer | Maximum global number of simultaneous connections
+`max_connec_per_torrent`                 | integer | Maximum number of simultaneous connections per torrent
+`max_uploads`                            | integer | Maximum number of upload slots
+`max_uploads_per_torrent`                | integer | Maximum number of upload slots per torrent
+`stop_tracker_timeout`                   | integer | Timeout in seconds for a `stopped` announce request to trackers
+`enable_piece_extent_affinity`           | bool    | True if the advanced libtorrent option `piece_extent_affinity` is enabled
+`bittorrent_protocol`                    | integer | Bittorrent Protocol to use (see list of possible values below)
+`limit_utp_rate`                         | bool    | True if `[du]l_limit` should be applied to uTP connections; this option is only available in qBittorent built against libtorrent version 0.16.X and higher
+`limit_tcp_overhead`                     | bool    | True if `[du]l_limit` should be applied to estimated TCP overhead (service data: e.g. packet headers)
+`limit_lan_peers`                        | bool    | True if `[du]l_limit` should be applied to peers on the LAN
+`alt_dl_limit`                           | integer | Alternative global download speed limit in KiB/s
+`alt_up_limit`                           | integer | Alternative global upload speed limit in KiB/s
+`scheduler_enabled`                      | bool    | True if alternative limits should be applied according to schedule
+`schedule_from_hour`                     | integer | Scheduler starting hour
+`schedule_from_min`                      | integer | Scheduler starting minute
+`schedule_to_hour`                       | integer | Scheduler ending hour
+`schedule_to_min`                        | integer | Scheduler ending minute
+`scheduler_days`                         | integer | Scheduler days. See possible values here below
+`dht`                                    | bool    | True if DHT is enabled
+`pex`                                    | bool    | True if PeX is enabled
+`lsd`                                    | bool    | True if LSD is enabled
+`encryption`                             | integer | See list of possible values here below
+`anonymous_mode`                         | bool    | If true anonymous mode will be enabled; read more [here](Anonymous-Mode); this option is only available in qBittorent built against libtorrent version 0.16.X and higher
+`proxy_type`                             | integer | See list of possible values here below
+`proxy_ip`                               | string  | Proxy IP address or domain name
+`proxy_port`                             | integer | Proxy port
+`proxy_peer_connections`                 | bool    | True if peer and web seed connections should be proxified; this option will have any effect only in qBittorent built against libtorrent version 0.16.X and higher
+`proxy_auth_enabled`                     | bool    | True proxy requires authentication; doesn't apply to SOCKS4 proxies
+`proxy_username`                         | string  | Username for proxy authentication
+`proxy_password`                         | string  | Password for proxy authentication
+`proxy_torrents_only`                    | bool    | True if proxy is only used for torrents
+`ip_filter_enabled`                      | bool    | True if external IP filter should be enabled
+`ip_filter_path`                         | string  | Path to IP filter file (.dat, .p2p, .p2b files are supported); path is separated by slashes
+`ip_filter_trackers`                     | bool    | True if IP filters are applied to trackers
+`web_ui_domain_list`                     | string  | Comma-separated list of domains to accept when performing Host header validation
+`web_ui_address`                         | string  | IP address to use for the WebUI
+`web_ui_port`                            | integer | WebUI port
+`web_ui_upnp`                            | bool    | True if UPnP is used for the WebUI port
+`web_ui_username`                        | string  | WebUI username
+`web_ui_password`                        | string  | For API ≥ v2.3.0: Plaintext WebUI password, not readable, write-only. For API < v2.3.0: MD5 hash of WebUI password, hash is generated from the following string: `username:Web UI Access:plain_text_web_ui_password`
+`web_ui_csrf_protection_enabled`         | bool    | True if WebUI CSRF protection is enabled
+`web_ui_clickjacking_protection_enabled` | bool    | True if WebUI clickjacking protection is enabled
+`web_ui_secure_cookie_enabled`           | bool    | True if WebUI cookie `Secure` flag is enabled
+`web_ui_max_auth_fail_count`             | integer | Maximum number of authentication failures before WebUI access ban
+`web_ui_ban_duration`                    | integer | WebUI access ban duration in seconds
+`web_ui_session_timeout`                 | integer | Seconds until WebUI is automatically signed off
+`web_ui_host_header_validation_enabled`  | bool    | True if WebUI host header validation is enabled
+`bypass_local_auth`                      | bool    | True if authentication challenge for loopback address (127.0.0.1) should be disabled
+`bypass_auth_subnet_whitelist_enabled`   | bool    | True if webui authentication should be bypassed for clients whose ip resides within (at least) one of the subnets on the whitelist
+`bypass_auth_subnet_whitelist`           | string  | (White)list of ipv4/ipv6 subnets for which webui authentication should be bypassed; list entries are separated by commas
+`alternative_webui_enabled`              | bool    | True if an alternative WebUI should be used
+`alternative_webui_path`                 | string  | File path to the alternative WebUI
+`use_https`                              | bool    | True if WebUI HTTPS access is enabled
+`ssl_key`                                | string  | For API < v2.0.1: SSL keyfile contents (this is a not a path)
+`ssl_cert`                               | string  | For API < v2.0.1: SSL certificate contents (this is a not a path)
+`web_ui_https_key_path`                  | string  | For API ≥ v2.0.1: Path to SSL keyfile
+`web_ui_https_cert_path`                 | string  | For API ≥ v2.0.1: Path to SSL certificate
+`dyndns_enabled`                         | bool    | True if server DNS should be updated dynamically
+`dyndns_service`                         | integer | See list of possible values here below
+`dyndns_username`                        | string  | Username for DDNS service
+`dyndns_password`                        | string  | Password for DDNS service
+`dyndns_domain`                          | string  | Your DDNS domain name
+`rss_refresh_interval`                   | integer | RSS refresh interval
+`rss_max_articles_per_feed`              | integer | Max stored articles per RSS feed
+`rss_processing_enabled`                 | bool    | Enable processing of RSS feeds
+`rss_auto_downloading_enabled`           | bool    | Enable auto-downloading of torrents from the RSS feeds
+`rss_download_repack_proper_episodes`    | bool    | For API ≥ v2.4.2: Enable downloading of repack/proper Episodes
+`rss_smart_episode_filters`              | string  | For API ≥ v2.4.2: List of RSS Smart Episode Filters
+`add_trackers_enabled`                   | bool    | Enable automatic adding of trackers to new torrents
+`add_trackers`                           | string  | List of trackers to add to new torrent
+
 
 Possible values of `scan_dirs`:
 
@@ -492,6 +507,15 @@ Value | Description
 ------|------------
 `0`   | Pause torrent
 `1`   | Remove torrent
+
+Possible values of `bittorrent_protocol`:
+
+Value  | Description
+-------|------------
+`0`    | TCP and μTP
+`1`    | TCP
+`2`    | μTP
+
 
 Example:
 
@@ -590,10 +614,12 @@ Example:
     "random_port": false,
     "recheck_completed_torrents": false,
     "resolve_peer_countries": true,
-    "rss_auto_downloading_enabled": false,
-    "rss_max_articles_per_feed": 50,
-    "rss_processing_enabled": false,
-    "rss_refresh_interval": 30,
+    "rss_auto_downloading_enabled":true,
+    "rss_download_repack_proper_episodes":true,
+    "rss_max_articles_per_feed":50,
+    "rss_processing_enabled":true,
+    "rss_refresh_interval":30,
+    "rss_smart_episode_filters":"s(\\d+)e(\\d+)\n(\\d+)x(\\d+)\n(\\d{4}[.\\-]\\d{1,2}[.\\-]\\d{1,2})",
     "save_path": "/home/user/Downloads/",
     "save_path_changed_tmm_enabled": false,
     "save_resume_data_interval": 60,
@@ -2656,6 +2682,43 @@ Returns all RSS items in JSON format, e.g.:
 }
 ```
 
+## Mark as read ##
+
+If `articleId` is provided only the article is marked as read otherwise the whole feed is going to be marked as read.
+
+Name: `markAsRead`
+
+Parameters:
+
+Parameter                         | Type    | Description
+----------------------------------|---------|------------
+`itemPath`                        | string  | Current full path of item (e.g. "The Pirate Bay\Top100")
+`articleId` _optional_            | string  | ID of article
+
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios
+
+## Refresh item ##
+
+Refreshes folder or feed.
+
+Name: `refreshItem`
+
+Parameters:
+
+Parameter                         | Type    | Description
+----------------------------------|---------|------------
+`itemPath`                        | string  | Current full path of item (e.g. "The Pirate Bay\Top100")
+
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios
+
 ## Set auto-downloading rule ##
 
 Name: `setRule`
@@ -2770,6 +2833,43 @@ Returns all auto-downloading rules in JSON format, e.g.:
     }
 }
 ```
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios
+
+## Get all articles matching a rule ##
+
+Name: `matchingArticles`
+
+Parameter                         | Type    | Description
+----------------------------------|---------|------------
+`ruleName`                        | string  | Rule name (e.g. "Linux")
+
+
+Returns all articles that match a rule by feed name in JSON format, e.g.:
+
+```JSON
+{
+    "DistroWatch":[
+        "sparkylinux-5.11-i686-minimalgui.iso.torrent",
+        "sparkylinux-5.11-x86_64-minimalgui.iso.torrent",
+        "sparkylinux-5.11-i686-xfce.iso.torrent",
+        "bluestar-linux-5.6.3-2020.04.09-x86_64.iso.torrent",
+        "robolinux64-mate3d-v10.10.iso.torrent",
+    ],
+    "Linuxtracker":[
+        "[Alpine Linux] alpine-extended-3.11.6",
+        "[Alpine Linux] alpine-standard-3.11.6",
+        "[Linuxfx] linuxfx10-wxs-lts-beta5.iso",
+        "[Linux Lite] linux-lite-5.0-rc1-64bit.iso (MULTI)",
+        "[Scientific Linux] SL-7.8-x86_64-Pack",
+        "[NixOS] nixos-plasma5-20.03.1418.5272327b81e-x86_64-linux.iso"
+    ]
+}
+```
+
 **Returns:**
 
 HTTP Status Code                  | Scenario
