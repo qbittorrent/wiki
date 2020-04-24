@@ -179,7 +179,7 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
 - Add various fields to `/app/preferences` and `/app/setPreferences` (`piece_extent_affinity`, `web_ui_secure_cookie_enabled`, `web_ui_max_auth_fail_count`, `web_ui_ban_duration`, `stop_tracker_timeout`) ([#11781](https://github.com/qbittorrent/qBittorrent/pull/11781), [#11726](https://github.com/qbittorrent/qBittorrent/pull/11726), [#12004](https://github.com/qbittorrent/qBittorrent/pull/12004), [#11834](https://github.com/qbittorrent/qBittorrent/pull/11834))
 
 ## API v2.5.0 ##
-
+- Removes `enable_super_seeding` as fields from `/app/preferences` and `/app/setPreferences`  ([#12423](https://github.com/qbittorrent/qBittorrent/pull/12423))
 - Add `web_ui_use_custom_http_headers_enabled`, `web_ui_custom_http_headers`, `rss_download_repack_proper_episodes` and `rss_smart_episode_filters` as fields to `/app/preferences` and `/app/setPreferences` ([#12579](https://github.com/qbittorrent/qBittorrent/pull/12579), [#12549](https://github.com/qbittorrent/qBittorrent/pull/12549))
 - Add `/rss/markAsRead` and `/rss/matchingArticles` methods ([#12549](https://github.com/qbittorrent/qBittorrent/pull/12549))
 
@@ -452,6 +452,38 @@ Property                                 | Type    | Description
 `add_trackers`                           | string  | List of trackers to add to new torrent
 `web_ui_use_custom_http_headers_enabled` | bool    | For API ≥ v2.5.0: Enable custom http headers
 `web_ui_custom_http_headers`             | string  | For API ≥ v2.5.0: List of custom http headers
+`max_seeding_time_enabled`               | bool    | True enables max seeding time 
+`max_seeding_time`                       | integer | Number of minutes to seed a torrent
+`announce_ip`                            | string  | TODO
+`announce_to_all_tiers`                  | bool    | True always announce to all tiers
+`announce_to_all_trackers`               | bool    | True always announce to all trackers in a tier
+`async_io_threads`                       | integer | Number of asynchronous I/O threads
+`banned_IPs`                             | string  | List of banned IPs
+`checking_memory_use`                    | integer | Outstanding memory when checking torrents in MiB
+`current_interface_address`              | string  | IP Address to bind to. Empty String means All addresses
+`current_network_interface`              | string  | Network Interface used
+`disk_cache`                             | integer | Disk cache used in MiB
+`disk_cache_ttl`                         | integer | Disk cache expiry interval in seconds
+`embedded_tracker_port`                  | integer | Port used for embedded tracker
+`enable_coalesce_read_write`             | bool    | True enables coalesce reads & writes
+`enable_embedded_tracker`                | bool    | True enables embedded tracker
+`enable_multi_connections_from_same_ip`  | bool    | True allows multiple connections from the same IP address
+`enable_os_cache`                        | bool    | True enables os cache
+`enable_upload_suggestions`              | bool    | True enables sending of upload piece suggestions
+`file_pool_size`                         | integer | File pool size
+`outgoing_ports_max`                     | integer | Maximal outgoing port (0: Disabled)
+`outgoing_ports_min`                     | integer | Minimal outgoing port (0: Disabled)
+`recheck_completed_torrents`             | bool    | True rechecks torrents on completion
+`resolve_peer_countries`                 | bool    | True resolves peer countries
+`save_resume_data_interval`              | integer | Save resume data interval in min
+`send_buffer_low_watermark`              | integer | Send buffer low watermark in KiB
+`send_buffer_watermark`                  | integer | Send buffer watermark in KiB
+`send_buffer_watermark_factor`           | integer | Send buffer watermark factor in percent
+`socket_backlog_size`                    | integer | Socket backlog size
+`upload_choking_algorithm`               | integer | Upload choking algorithm used (see list of possible values below)
+`upload_slots_behavior`                  | integer | Upload slots behavior used (see list of possible values below)
+`upnp_lease_duration``                   | integer | UPnP lease duration (0: Permanent lease)
+`utp_tcp_mixed_mode``                    | integer | μTP-TCP mixed mode algorithm (see list of possible values below)
 
 Possible values of `scan_dirs`:
 
@@ -519,6 +551,27 @@ Value  | Description
 `1`    | TCP
 `2`    | μTP
 
+Possible values of `upload_choking_algorithm`:
+
+Value  | Description
+-------|------------
+`0`    | Round-robin
+`1`    | Fastest upload
+`2`    | Anti-leech
+
+Possible values of `upload_slots_behavior`:
+
+Value  | Description
+-------|------------
+`0`    | Fixed slots
+`1`    | Upload rate based
+
+Possible values of `utp_tcp_mixed_mode`:
+
+Value  | Description
+-------|------------
+`0`    | Prefer TCP
+`1`    | Peer proportional
 
 Example:
 
@@ -565,7 +618,6 @@ Example:
     "enable_multi_connections_from_same_ip": false,
     "enable_os_cache": true,
     "enable_piece_extent_affinity": false,
-    "enable_super_seeding": false,
     "enable_upload_suggestions": false,
     "encryption": 0,
     "export_dir": "/home/user/Downloads/all",
