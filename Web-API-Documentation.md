@@ -16,6 +16,7 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
    1. [API v2.4.0](#api-v240)
    1. [API v2.4.1](#api-v241)
    1. [API v2.5.0](#api-v250)
+   1. [API v2.5.1](#api-v251)
 1. [General information](#general-information)
 1. [Authentication](#authentication)
    1. [Login](#login)
@@ -180,6 +181,8 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
 
 ## API v2.5.0 ##
 - Removes `enable_super_seeding` as fields from `/app/preferences` and `/app/setPreferences`  ([#12423](https://github.com/qbittorrent/qBittorrent/pull/12423))
+
+## API v2.5.1 ##
 - Add `web_ui_use_custom_http_headers_enabled`, `web_ui_custom_http_headers`, `rss_download_repack_proper_episodes` and `rss_smart_episode_filters` as fields to `/app/preferences` and `/app/setPreferences` ([#12579](https://github.com/qbittorrent/qBittorrent/pull/12579), [#12549](https://github.com/qbittorrent/qBittorrent/pull/12549))
 - Add `/rss/markAsRead` and `/rss/matchingArticles` methods ([#12549](https://github.com/qbittorrent/qBittorrent/pull/12549))
 
@@ -446,12 +449,12 @@ Property                                 | Type    | Description
 `rss_max_articles_per_feed`              | integer | Max stored articles per RSS feed
 `rss_processing_enabled`                 | bool    | Enable processing of RSS feeds
 `rss_auto_downloading_enabled`           | bool    | Enable auto-downloading of torrents from the RSS feeds
-`rss_download_repack_proper_episodes`    | bool    | For API ≥ v2.5.0: Enable downloading of repack/proper Episodes
-`rss_smart_episode_filters`              | string  | For API ≥ v2.5.0: List of RSS Smart Episode Filters
+`rss_download_repack_proper_episodes`    | bool    | For API ≥ v2.5.1: Enable downloading of repack/proper Episodes
+`rss_smart_episode_filters`              | string  | For API ≥ v2.5.1: List of RSS Smart Episode Filters
 `add_trackers_enabled`                   | bool    | Enable automatic adding of trackers to new torrents
 `add_trackers`                           | string  | List of trackers to add to new torrent
-`web_ui_use_custom_http_headers_enabled` | bool    | For API ≥ v2.5.0: Enable custom http headers
-`web_ui_custom_http_headers`             | string  | For API ≥ v2.5.0: List of custom http headers
+`web_ui_use_custom_http_headers_enabled` | bool    | For API ≥ v2.5.1: Enable custom http headers
+`web_ui_custom_http_headers`             | string  | For API ≥ v2.5.1: List of custom http headers
 `max_seeding_time_enabled`               | bool    | True enables max seeding time 
 `max_seeding_time`                       | integer | Number of minutes to seed a torrent
 `announce_ip`                            | string  | TODO
@@ -711,6 +714,7 @@ Example:
     "web_ui_ban_duration": 3600,
     "web_ui_clickjacking_protection_enabled": true,
     "web_ui_csrf_protection_enabled": true,
+    "web_ui_custom_http_headers": "",
     "web_ui_domain_list": "*",
     "web_ui_host_header_validation_enabled": true,
     "web_ui_https_cert_path": "",
@@ -720,6 +724,7 @@ Example:
     "web_ui_secure_cookie_enabled": true,
     "web_ui_session_timeout": 3600,
     "web_ui_upnp": false,
+    "web_ui_use_custom_http_headers_enabled": false,
     "web_ui_username": "admin"
 }
 ```
