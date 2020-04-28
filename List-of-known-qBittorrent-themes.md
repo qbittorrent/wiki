@@ -13,3 +13,7 @@ If you know of more, feel free to add a link to the repository along with a shor
 - https://github.com/maboroshin/qBittorrentDarktheme
 
     A dark theme inspired by one of the above, also by a qBittorrent contributor.
+
+- https://github.com/FoxInFlame/legacy-qBittorrent
+
+    A compact theme with the look of version 4.2.1.
