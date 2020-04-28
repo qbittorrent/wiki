@@ -73,7 +73,7 @@ Everyone is welcome to edit and improve the wiki!
 
 ### Themes
 
-TODO: wiki article on theme development
+* [Developing custom UI themes](wiki/Create-custom-themes-for-qBittorrent)
 
 ### Alternate WebUI
 
