@@ -4,6 +4,8 @@ A non-exhaustive list of FOSS GUI themes developed for qBittorrent by the commun
 
 If you know of more, feel free to add a link to the repository along with a short description.
 
+See [How to use custom UI themes](https://github.com/qbittorrent/qBittorrent/wiki/How-to-use-custom-UI-themes) to use them.
+
 ---
 
 - https://github.com/FoxInFlame/legacy-qBittorrent
