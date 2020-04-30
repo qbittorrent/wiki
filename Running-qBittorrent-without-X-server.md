@@ -14,9 +14,9 @@ To quit, simply press `Ctrl-c` or send `SIGINT` or `SIGTERM` to the process.
 
 ### Running in the background
 
-After first start and having accepted the legal disclaimer, you can execute `qbittorrent-nox -d` to execute qbittorrent as a daemon.
+After first start and having accepted the legal disclaimer, you can also use `qbittorrent-nox -d` to execute qbittorrent as a daemon in the background, instead of running it in the foreground.
 
-To control the daemonized process, checkout https://github.com/qbittorrent/qBittorrent/wiki/Running-qBittorrent-as-a-daemon-without-X-server-(systemd-distros-like-Ubuntu-Server-15.04-or-newer).
+You probably want to control the daemon, like setting it to start on system boot, for example. To learn how to do that with `systemd`, checkout https://github.com/qbittorrent/qBittorrent/wiki/Running-qBittorrent-as-a-daemon-without-X-server-(systemd-distros-like-Ubuntu-Server-15.04-or-newer).
 
 # Settings and logs
 
