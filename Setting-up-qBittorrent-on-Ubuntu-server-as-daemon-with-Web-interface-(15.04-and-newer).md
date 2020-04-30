@@ -3,38 +3,26 @@ qBittorrent has a feature-rich Web UI allowing users to control qBittorrent remo
 
 
 ### Note: ###
-Since Ubuntu (Server) 15.04, upstart was replaced with systemd. Thus, this guide only applies to Ubuntu 15.04 and newer. This change only affects how qbittorrent is started (init scripts) and how logging happens.
+Since Ubuntu (Server) 15.04, upstart was replaced with `systemd`.
+Thus, this guide only applies to Ubuntu 15.04 and newer.
+This change only affects how qbittorrent is started (init scripts) and how logging happens.
 
 
-### A little about qBittorent-nox vs qBittorrent: ###
+### A little about qbittorent-nox`: ###
 The main binary file (executable file) for qBittorrent has two variants and is usually located at /usr/bin/:
 * qbittorrent which is qBittorrent *with* Graphical user interface and 
-* qbittorrent-nox which is same as the above but compiled *without* the desktop graphical user interface, and only a web-interface.   
-  
-Since this guide focuses on servers that normally don't have a desktop user interface, we will use the qbittorrent-nox binary, but we still call it by it's regular name - qbittorrent.
-
+* qbittorrent-nox which is same as the above but compiled *without* the desktop graphical user interface, and only a web-interface - this is the one you want to use in a headless server.
 
 ### Install ###
-qBittorrent is now available in official Ubuntu repositories.
-More up-to-date packages are published on our [stable](https://launchpad.net/~qbittorrent-team/+archive/ubuntu/qbittorrent-stable) and [unstable](https://launchpad.net/~qbittorrent-team/+archive/ubuntu/qbittorrent-unstable) PPAs. 
-The stable PPA supports Ubuntu 14.04 LTS (only the libtorrent-rasterbar package), 16.04 LTS, 17.04, 17.10, 18.04 LTS, and 19.10. 
 
-Quick instructions
-To use these PPAs please use the following command and make sure your version is supported:
+qBittorrent is available on the official Ubuntu repositories, but its is recommended to use the most recent versions from either the official [stable](https://launchpad.net/~qbittorrent-team/+archive/ubuntu/qbittorrent-stable) or [unstable](https://launchpad.net/~qbittorrent-team/+archive/ubuntu/qbittorrent-unstable) PPAs.
 
-qBittorrent Stable
-```
-$ sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable
-```
+Simply install the `qbittorrent-nox` package.
 
-Then install qBittorrent by doing this:
-```
-$ sudo apt-get update && sudo apt-get install qbittorrent-nox
-```
+### Create a separate user account (optional) ###
 
-
-### User ###
-Assuming you want qbittorent to run as its own user (better for security purposes), let's create the user that qbittorrent will run under and give it a password when prompted. Just press `Return` for values you want to leave blank:
+Assuming you want qbittorent to run as its own user (better for security purposes), let's create the user that qbittorrent will run under and give it a password when prompted.
+Just press `Return` for values you want to leave blank:
 
 ```
 sudo adduser qbtuser
@@ -58,11 +46,15 @@ Is the information correct? [Y/n] y
 
 
 ### Create Service ###
-First, create a file:
+
+qBittorrent includes a bundled `systemd` service file since version 3.2.0.
+The following example is based on it, and includes some possible customization that you might want to make.
+
 `/etc/systemd/system/qbittorrent.service`
+
 ```
 [Unit]
-Description=qBittorrent Daemon Service
+Description=qBittorrenti-nox service for user %I
 Documentation=man:qbittorrent-nox(1)
 Wants=network-online.target
 After=network-online.target nss-lookup.target
@@ -70,33 +62,38 @@ After=network-online.target nss-lookup.target
 [Service]
 # if you have systemd >= 240, you probably want to use Type=exec instead
 Type=simple
-User=qbtuser
+User=%i
 ExecStart=/usr/bin/qbittorrent-nox
-TimeoutStopSec=infinity
+# qBittorrent >= 4.2.x sets open file limits to unlimited by itself, so this is not needed:
+LimitNOFILE=infinity
 
 [Install]
 WantedBy=multi-user.target
 ```
 
-Normally after editing services we'd issue a reload command but since it will also invoke qbittorrent before we initialized the configuration, we'll give it a skip for now. If you ever make changes to the services file, update systemctl with:
+Normally after editing services we'd issue a reload command but since it will also invoke qbittorrent before we initialized the configuration, we'll give it a skip for now.
+If you ever make changes to the services file, update systemctl with:
+
 ```
 $ sudo systemctl daemon-reload
 ```
 
-
 ### Initializing Configuration ###
 
 Before we continue, let's run qbittorrent so that it can ask us to accept the disclaimer, and save and create the config file to remember this setting. Doing this will create and save the configuration files under:
+
 ```
 /home/qbtuser/.config/qBittorrent/
 ```
 
 First we impersonate the qbtuser:
+
 ```
 $ sudo su qbtuser
 ```
 
 And run qbittorrent:  
+
 ```
 $ qbittorrent-nox
 ```
@@ -128,20 +125,24 @@ Without doing anything further, you should be able to point a web browser (on th
 
 You should now see the web interface.
 
-Back at the server's command line, exit out of qbittorrent-nox instance with `Ctrl-c`
+Back at the server's command line, exit out of `qbittorrent-nox` instance with `Ctrl-c`
 
 Now, stop impersonating the qbittorrent user to return to our account with sudo access:
+
 ```
 $ exit
 ```
 
 ### Enable service: ###
+
 Now start the service,
+
 ```
 $ sudo systemctl start qbittorrent
 ```
 
 Verify it is running:
+
 ```
 $ sudo systemctl status qbittorrent
 ```
@@ -149,30 +150,20 @@ $ sudo systemctl status qbittorrent
 Quit out of the above screen by pressing `q`
 
 Enable it to start up on boot:
+
 ```
 $ sudo systemctl enable qbittorrent
 ```
 
 and you should see:
+
 ```
 Created symlink from /etc/systemd/system/multi-user.target.wants/qbittorrent.service to /etc/systemd/system/qbittorrent.service.
 ```
 
-
 ### That's it, we are done! ###
-After the above, systemd should have indexed and invoked our init script so qbittorrent should be running. qBittorrent should now start automatically with reboots.
 
-
-### Disable account login ###
-You may also want to issue the following command to disable login for the account (from SSH) for security reasons. The account will still be usable locally:
-```
-$ sudo usermod -s /usr/sbin/nologin qbtuser
-```
-
-This can be reversed if necessary with the command:
-```
-$ sudo usermod -s /bin/bash qbtuser
-```
+After the above, `systemd` should have indexed and invoked our init script so qbittorrent should be running. qBittorrent should now start automatically with reboots.
 
 
 ### Starting qBittorrent ###
