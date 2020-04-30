@@ -3,6 +3,7 @@ Welcome to the qBittorrent wiki!
 Everyone is welcome to edit and improve the wiki!
 
 # General
+* [Installing qBittorrent](wiki/Installing-qBittorrent)
 * [Frequently Asked Questions (FAQ)](wiki/Frequently-Asked-Questions)
 * [qBittorrent options (current and deprecated)](wiki/Explanation-of-Options-in-qBittorrent)
 * [How to use qBittorrent as a tracker](wiki/How-to-use-qBittorrent-as-a-tracker)
