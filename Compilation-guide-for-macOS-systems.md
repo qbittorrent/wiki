@@ -1,3 +1,7 @@
+# WARNING: Very outdated. Please update this if you can
+
+This guide is very outdated. Newer versions of qBittorrent should be compiled with libtorrent RC_1_2 and much newer Qt versions. However, most of the steps should be the same or very similar. If you are able to properly update this guide, please do so!
+
 # Install Xcode
 A full installation of Xcode.app is required to compile Qt.<br/>
 Xcode can be installed from the [App Store](https://www.apple.com/osx/apps/app-store/).<br/>
