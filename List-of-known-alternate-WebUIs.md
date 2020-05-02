@@ -1,5 +1,7 @@
 # Information
 
+**Note:** issues with alternate WebUIs should be reported in their respective repositories.
+
 A non-exhaustive list of FOSS alternate WebUIs developed for qBittorrent by the community. They are provided on a best-effort basis as a community initiative and not officially supported. Some of them might be at feature-parity with the default one, some may not, and some may implement extra functionality on top. Issues with the WebUIs should be reported on their respective repositories.
 
 If you know of more, feel free to add a link to the repository along with a short description.
