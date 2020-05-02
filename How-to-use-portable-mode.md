@@ -1,6 +1,6 @@
 # Introduction
 
-Portable mode makes it so that all qBittorrent config files get stored and read from one "portable" directory, to make it easy to migrate and share settings between qBittorrent installations.
+Portable mode makes it so that all qBittorrent config files get stored and read from one "portable" directory, to make it easy to migrate and share settings between qBittorrent installations. It also makes it possible to use qBittorrent without installing to- and reading configs from system directories. This feature is most useful for Windows users in general.
 
 **NOTE: Only available for version 4.2.1 and above.**
 
