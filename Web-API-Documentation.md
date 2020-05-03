@@ -1273,7 +1273,7 @@ Property             | Type    | Description
 `tags`               | string  | Comma-concatenated tag list of the torrent
 `time_active`        | integer | Total active time (seconds)
 `total_size`         | integer | Total size (bytes) of all file in this torrent (including unselected ones)
-`tracker`            | string  | The first tracker with working status. (TODO: what is returned if no tracker is working?)
+`tracker`            | string  | The first tracker with working status. Returns empty string if no tracker is working.
 `up_limit`           | integer | Torrent upload speed limit (bytes/s). `-1` if ulimited.
 `uploaded`           | integer | Amount of data uploaded
 `uploaded_session`   | integer | Amount of data uploaded this session
