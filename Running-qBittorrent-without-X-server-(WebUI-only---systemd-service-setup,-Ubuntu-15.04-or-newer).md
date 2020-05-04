@@ -47,18 +47,10 @@ sudo su qbtuser
 ```
 
 Then run `qbittorent-nox`.
+It will prompt you to accept the legal disclaimer.
+You must agree to it in order to proceed.
 
-```
-$ qbittorrent-nox
-*** Legal Notice ***
-qBittorrent is a file sharing program. When you run a torrent, its data will be made available to others by means of upload. Any content you share is your sole responsibility.
-
-No further notices will be issued.
-
-Press 'y' key to accept and continue...
-```
-
-Press y if you accept the disclaimer.
+Then, you should see the following information printed on your terminal:
 
 ```
 ******** Information ********
