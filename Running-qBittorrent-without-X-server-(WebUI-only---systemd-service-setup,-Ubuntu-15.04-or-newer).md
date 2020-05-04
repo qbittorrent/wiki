@@ -11,6 +11,7 @@ For Ubuntu it's advisable to install `qbittorrent-nox` from the official PPA to 
 Refer to https://github.com/qbittorrent/qBittorrent/wiki/Installing-qBittorrent for more information.
 
 Side Note: these instructions are written with Ubuntu in mind but should be much the same if not exactly the same for any modern distro that uses `systemd`.
+All instructions assume very basic knowledge of how to use the terminal.
 
 # Create a separate user account (optional - you may want to do this for security depending on your setup)
 
