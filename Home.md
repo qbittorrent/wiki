@@ -54,7 +54,7 @@ Everyone is welcome to edit and improve the wiki!
 
 ### Linux
 * [Running qBittorrent without X server](wiki/Running-qBittorrent-without-X-server)
-* [Running qBittorrent as a daemon without X server (`systemd` distros like Ubuntu Server 15.04 or newer)](wiki/Running-qBittorrent-as-a-daemon-without-X-server-(systemd-distros-like-Ubuntu-Server-15.04-or-newer))
+* [Running qBittorrent with WebUI on Ubuntu Server (`systemd`)](https://github.com/qbittorrent/qBittorrent/wiki/Running-qBittorrent-with-WebUI-on-Ubuntu-(systemd))
 * Running qBittorrent as a daemon without X server (alternative `init` systems) - TODO
 
 # Developing
