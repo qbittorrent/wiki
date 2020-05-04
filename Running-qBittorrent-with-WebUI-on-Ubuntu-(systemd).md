@@ -6,11 +6,21 @@ This guide will show you how to setup `qbittorrent-nox` to run as a managed back
 
 For Ubuntu it's advisable to add and install from the PPA if you want the newest version. On Ubuntu 20.04 (Focal Fossa) the packaged version of qbittorrent-nox was 4.1.7 while installing from the PPA yielded version 4.2.5.
 
-Refer to https://github.com/qbittorrent/qBittorrent/wiki/Installing-qBittorrent for more information on how to install the latest version of `qbittorrent-nox` on your system.
 
-Otherwise, on Ubuntu you can install with `sudo apt install qbittorrent-nox`.
+If you want to install the packaged version, skip this step.
+Add the PPA to your server:
+'sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable'
 
-Note: these instructions are written with Ubuntu in mind but should be much the same if not exactly the same for any modern distro that uses `systemd`.
+''' Packages for the stable series of qBittorrent
+ More info: https://launchpad.net/~qbittorrent-team/+archive/ubuntu/qbittorrent-stable
+Press [ENTER] to continue or Ctrl-c to cancel adding it.'''
+
+Press ENTER to confirm.
+
+Now update and install:
+'sudo apt-get update && sudo apt-get install qbittorrent-nox'
+
+Side Note: these instructions are written with Ubuntu in mind but should be much the same if not exactly the same for any modern distro that uses `systemd`.
 
 # Create a separate user account (optional - you may want to do this for security depending on your setup)
 
