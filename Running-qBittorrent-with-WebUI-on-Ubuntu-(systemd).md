@@ -65,7 +65,7 @@ This can be reversed if necessary with the command:
 ```
 $ sudo usermod -s /bin/bash qbtuser
 ```
-### Initialising Qbittorent ###
+### Initialising Qbittorent
 
 Before we set up qbittorrent-nox, it's advisable to run it once so that we can get some configuration out of the way such as the legal disclaimer.
 
@@ -75,14 +75,16 @@ First, switch to the user that will run qbittorent:
 
 Then Run qbittorent  
 
-`$ qbittorent-nox`  
+```
+$ qbittorent-nox`  
 
-```*** Legal Notice ***
+*** Legal Notice ***
 qBittorrent is a file sharing program. When you run a torrent, its data will be made available to others by means of upload. Any content you share is your sole responsibility.
 
 No further notices will be issued.
 
-Press 'y' key to accept and continue...```   
+Press 'y' key to accept and continue...
+```
 
 Press y if you accept the disclaimer.
 
@@ -143,14 +145,16 @@ and then enable the service to start with the server at boot with:
 
 `sudo systemctl enable qbittorent.service`
 
+The qBittorrent service is now ready to be used.
+
 # Controlling the service
 
-The qBittorrent service is now ready to be used. It can be controlled like any other `systemd` service:
+The qbittorent service controlled like any other `systemd` service:
 
 - start the service: `sudo systemctl start qbittorrent`
 - check service status: `sudo systemctl status qbittorrent`
 - stop the service: `sudo systemctl stop qbittorrent`
-- enable it to start up on boot: `sudo systemctl enable qbittorrent`
+- enable/disable it to start up on boot: `sudo systemctl enable qbittorrent`
     - this should output something like the following:
         ```
         Created symlink from /etc/systemd/system/multi-user.target.wants/qbittorrent.service to /etc/systemd/system/qbittorrent.service.
