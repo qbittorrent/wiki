@@ -7,11 +7,10 @@ This is ideal for headless servers without the X window system such as Ubuntu Se
 This guide will show you how to setup `qbittorrent-nox` to run as a managed background service (daemon) by setting it up as a `systemd` service.
 It can then be customized like any other `systemd` service, to automatically start on boot, for instance.
 
-For Ubuntu it's advisable to install `qbittorrent-nox` from the official PPA to get the latest version.
-Refer to https://github.com/qbittorrent/qBittorrent/wiki/Installing-qBittorrent for more information.
+For Ubuntu, it's advisable to install `qbittorrent-nox` from the official PPA to get the latest version.
+Refer to https://github.com/qbittorrent/qBittorrent/wiki/Installing-qBittorrent under > Other Binary Packages
 
 Side Note: these instructions are written with Ubuntu in mind but should be much the same if not exactly the same for any modern distro that uses `systemd`.
-All instructions assume very basic knowledge of how to use the terminal.
 
 # Create a separate user account (optional - you may want to do this for security depending on your setup)
 
@@ -61,7 +60,7 @@ The Web UI administrator password is still the default one: adminadmin
 This is a security risk, please consider changing your password from program preferences.
 ```
 
-Now will be a good time to make some changes. Visit your server in the addressed mentioned in `To control qBittorrent, access the Web UI at...` (might be different in your case), and log in with the credentials given. Then you can go to `Tools -> Options` to change settings such as the WebUI port.
+Now will be a good time to make some changes. Visit your server with the given details, replacing localhost with your server's ip in the URL field, and log in with the given credentials. Then you can go to `Tools -> Options` to change settings such as the WebUI port.
 
 Quit the running `qbittorent-nox` process by pressing `Ctrl-c` on your keyboard in the terminal:
 
@@ -76,17 +75,17 @@ You can now stop impersonating the qbittorent user by executing the `exit` comma
 
 On Ubuntu, system-wide `systemd` service definition files are located under `/etc/systemd/system/` (for other distros it might be a different directory), so we'll create the service definition file for `qbittorrent-nox` there.
 
-Edit `/etc/systemd/system/qbittorrent.service` with the appropriate permissions and text editor of your choice, for example:
+Create a new file `/etc/systemd/system/qbittorrent.service` with the appropriate permissions and text editor of your choice, for example:
 
 ```
-sudoedit /etc/systemd/system/qbittorrent.service
+sudo nano /etc/systemd/system/qbittorrent.service
 ```
 
 Save the file with the following contents or similar. You may modify them as-needed to better suit your needs:
 
 ```
 [Unit]
-Description=qBittorrenti-nox service
+Description=qBittorrent-nox service
 Documentation=man:qbittorrent-nox(1)
 Wants=network-online.target
 After=network-online.target nss-lookup.target
@@ -98,8 +97,8 @@ Type=Exec
 User=qbtuser
 # notice that no -d flag needed
 ExecStart=/usr/bin/qbittorrent-nox
-# qBittorrent >= 4.2.x sets open file limits to unlimited by itself, so this is not needed:
-LimitNOFILE=infinity
+# uncomment the below for versions of qBittorrent below 4.2.x
+#LimitNOFILE=infinity
 
 [Install]
 WantedBy=multi-user.target
@@ -107,11 +106,9 @@ WantedBy=multi-user.target
 
 Then run `sudo systemctl daemon-reload` to update the service manager.
 
-The qBittorrent service is now ready to be used. You can start it, check the status, enable starting on boot, etc. Learn more in the next section.
+The qBittorrent service is now ready to be used. To start the service with your system, refer to the next section.
 
 # Controlling the service
-
-The qbittorent service controlled like any other `systemd` service:
 
 - start the service: `sudo systemctl start qbittorrent`
 - check service status: `sudo systemctl status qbittorrent`
@@ -121,7 +118,7 @@ The qbittorent service controlled like any other `systemd` service:
         ```
         Created symlink from /etc/systemd/system/multi-user.target.wants/qbittorrent.service to /etc/systemd/system/qbittorrent.service.
         ```
-- the previous command can be reverted with: `sudo systemctl disable qbittorrent`
+- the previous command can be reverted with: `sudo systemctl disable qbittorrent` if you want to disable automatic startup of the qbittorrent service.
 
 # Logging
 
@@ -135,7 +132,7 @@ sudo journalctl -u qbittorrent.service
 
 For more information on how to use and customize `systemd` logging, refer to its documentation.
 
-# Service Dependencies (optional)
+# systemd Service Dependencies (optional)
 
 Let's say that you've configured `qbittorrent-nox` to download files to a directory that is in another drive, for example, mounted on '/media/user/volume'.
 It's important that you edit the service created above and add some `systemd` dependencies to prevent qbittorrent from writing files on a directory that it should not, in case your drive fails to mount or is accidentally unmounted.
@@ -161,8 +158,6 @@ BindsTo=media-volume.mount
 # ...
 ```
 
-The 'media-volume.mount' is a `systemd` unit created dynamically at boot, based on the entries found on `/etc/fstab`
-and is used by `systemd` to mount and manage the status of the respective drive. [Systemd.mount reference](http://man7.org/linux/man-pages/man5/systemd.mount.5.html)
-It follows a simple logic: if your drive is mounted on '/media/volume', the unit name will be 'media-volume.mount', if it's on '/mnt/disk', the unit will be 'mnt-disk.mount'.
+The 'media-volume.mount' is a `systemd` convention created dynamically at boot, based on the entries found in `/etc/fstab`. Conventions such as these are used by `systemd` to define conditions around services, such as requiring a drive to be mounted before the service will start. Refer to [Systemd.mount reference](http://man7.org/linux/man-pages/man5/systemd.mount.5.html) for further reading.  It follows a simple logic: if your drive is mounted on '/media/volume', the unit name will be 'media-volume.mount', if it's on '/mnt/disk', the unit will be 'mnt-disk.mount'.
 
-This way, if the drive can't mount on boot or if the drive is unmounted after qbittorrent started, it will not allow it to start or force it to stop, preventing from writing when the drive is not ready or present.
+Using this to define the qbittorent-nox service file, if the drive can't mount when booting or if the drive is unmounted after qbittorrent has been started, it will not allow it to start or force it to stop, preventing from writing when the drive is not ready or present.
