@@ -17,6 +17,7 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
    1. [API v2.4.1](#api-v241)
    1. [API v2.5.0](#api-v250)
    1. [API v2.5.1](#api-v251)
+   1. [API v2.6.0](#api-v260)
 1. [General information](#general-information)
 1. [Authentication](#authentication)
    1. [Login](#login)
@@ -109,7 +110,6 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
    1. [Get search status](#get-search-status)
    1. [Get search results](#get-search-results)
    1. [Delete search](#delete-search)
-   1. [Get search categories](#get-search-categories)
    1. [Get search plugins](#get-search-plugins)
    1. [Install search plugin](#install-search-plugin)
    1. [Uninstall search plugin](#uninstall-search-plugin)
@@ -186,6 +186,8 @@ This Web API documentation applies qBittorrent v4.1+, for previous API version r
 - Add `web_ui_use_custom_http_headers_enabled`, `web_ui_custom_http_headers`, `rss_download_repack_proper_episodes` and `rss_smart_episode_filters` as fields to `/app/preferences` and `/app/setPreferences` ([#12579](https://github.com/qbittorrent/qBittorrent/pull/12579), [#12549](https://github.com/qbittorrent/qBittorrent/pull/12549))
 - Add `/rss/markAsRead` and `/rss/matchingArticles` methods ([#12549](https://github.com/qbittorrent/qBittorrent/pull/12549))
 
+## API v2.6.0 ##
+- Removed `/search/categories` method and modified `/search/plugins` method's response ([#12705](https://github.com/qbittorrent/qBittorrent/pull/12705))
 
 # General Information #
 
@@ -3114,36 +3116,6 @@ HTTP Status Code                  | Scenario
 404                               | Search job was not found
 200                               | All other scenarios
 
-## Get search categories ##
-
-Name: `categories`
-
-**Parameters:**
-
-Parameter                         | Type    | Description
-----------------------------------|---------|------------
-`pluginName` _optional_           | string  | name of the plugin (e.g. "legittorrents"). Also supports `all` and `enabled`
-
-**Returns:**
-
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios- see JSON below
-
-The response is a JSON array containing a list of categories as strings
-
-```JSON
-[
-    "All categories",
-    "TV shows",
-    "Books",
-    "Games",
-    "Movies",
-    "Music",
-    "Anime"
-]
-```
-
 ## Get search plugins ##
 
 Name: `plugins`
@@ -3165,7 +3137,7 @@ Field                             | Type    | Description
 `enabled`                         | bool    | Whether the plugin is enabled
 `fullName`                        | string  | Full name of the plugin
 `name`                            | string  | Short name of the plugin
-`supportedCategories`             | array   | List of supported categories as strings
+`supportedCategories`             | array   | List of category objects
 `url`                             | string  | URL of the torrent site
 `version`                         | string  | Installed version of the plugin
 
@@ -3175,14 +3147,28 @@ Field                             | Type    | Description
         "enabled": true,
         "fullName": "Legit Torrents",
         "name": "legittorrents",
-        "supportedCategories": [
-            "tv",
-            "books",
-            "games",
-            "movies",
-            "music",
-            "anime"
-        ],
+        "supportedCategories": [{
+            "id": "all",
+            "name": "All categories"
+        }, {
+            "id": "anime",
+            "name": "Anime"
+        }, {
+            "id": "books",
+            "name": "Books"
+        }, {
+            "id": "games",
+            "name": "Games"
+        }, {
+            "id": "movies",
+            "name": "Movies"
+        }, {
+            "id": "music",
+            "name": "Music"
+        }, {
+            "id": "tv",
+            "name": "TV shows"
+        }],
         "url": "http://www.legittorrents.info",
         "version": "2.3"
     }
