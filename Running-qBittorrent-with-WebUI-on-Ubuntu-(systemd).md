@@ -4,80 +4,48 @@ qBittorrent has a feature-rich Web UI allowing users to control qBittorrent remo
 
 This guide will show you how to setup `qbittorrent-nox` to run as a managed background service (daemon) by setting it up as a `systemd` service. It can then be customized like any other `systemd` service, to automatically start on boot, for instance.
 
-For Ubuntu it's advisable to add and install from the PPA if you want the newest version. On Ubuntu 20.04 (Focal Fossa) the packaged version of qbittorrent-nox was 4.1.7 while installing from the PPA yielded version 4.2.5.
-
-
-If you want to install the packaged version, skip this step.  
-
-Add the PPA to your server:  
-```
-sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable
-
-Packages for the stable series of qBittorrent
-More info: https://launchpad.net/~qbittorrent-team/+archive/ubuntu/qbittorrent-stable
-Press [ENTER] to continue or Ctrl-c to cancel adding it.
-
-Press ENTER to confirm.
-```   
-
-Now update and install:  
-
-`sudo apt-get update && sudo apt-get install qbittorrent-nox`  
+For Ubuntu it's advisable to install `qbittorrent-nox` from the official PPA to get the latest version. Refer to https://github.com/qbittorrent/qBittorrent/wiki/Installing-qBittorrent for more information.
 
 Side Note: these instructions are written with Ubuntu in mind but should be much the same if not exactly the same for any modern distro that uses `systemd`.
 
 # Create a separate user account (optional - you may want to do this for security depending on your setup)
 
-Assuming you want qbittorent to run as its own user, let's create the user that qbittorrent will run under and give it a password when prompted.
-
-You may leave every other value blank.
+Create the user that `qbittorrent-nox` will run under with:
 
 ```
 sudo adduser qbtuser
-Adding user `qbtuser' ...
-Adding new group `qbtuser' (1003) ...
-Adding new user `qbtuser' (1003) with group `qbtuser' ...
-Creating home directory `/home/qbtuser' ...
-Copying files from `/etc/skel' ...
-Enter new UNIX password:
-Retype new UNIX password:
-passwd: password updated successfully
-Changing the user information for qbtuser
-Enter the new value, or press ENTER for the default
-        Full Name []:
-        Room Number []:
-        Work Phone []:
-        Home Phone []:
-        Other []:
-Is the information correct? [Y/n] y
 ```
+
+Give it a password when prompted. You may leave every other value blank.
 
 ### Disable qbtuser account SSH login (optional)
 
 You may also want to disable login for the account (from SSH) for security reasons. The account will still be usable locally:
 
 ```
-$ sudo usermod -s /usr/sbin/nologin qbtuser
+sudo usermod -s /usr/sbin/nologin qbtuser
 ```
 
 This can be reversed if necessary with the command:
 
 ```
-$ sudo usermod -s /bin/bash qbtuser
+sudo usermod -s /bin/bash qbtuser
 ```
-### Initialising Qbittorent
 
-Before we set up qbittorrent-nox, it's advisable to run it once so that we can get some configuration out of the way such as the legal disclaimer.
+# Initialising Qbittorent
 
-First, switch to the user that will run qbittorent:  
+Before we set up `qbittorrent-nox` to run as a background service, it's advisable to run it once so that we can get some configuration out of the way such as the legal disclaimer.
 
-`$ sudo su qbtuser`  
-
-Then Run qbittorent  
+First, switch to the user that will run qbittorent:
 
 ```
-$ qbittorent-nox`  
+sudo su qbtuser
+```
 
+Then run `qbittorent-nox`.
+
+```
+$ qbittorrent-nox
 *** Legal Notice ***
 qBittorrent is a file sharing program. When you run a torrent, its data will be made available to others by means of upload. Any content you share is your sole responsibility.
 
@@ -94,26 +62,31 @@ To control qBittorrent, access the Web UI at http://localhost:8080
 The Web UI administrator user name is: admin
 The Web UI administrator password is still the default one: adminadmin
 This is a security risk, please consider changing your password from program preferences.
-```   
+```
 
-Now will be a good time to make some changes. Visit your server at http://your-server-ip:8080, log in with above details. Then go to tools->Options. Here you can change the port associated with the qbittorrent-nox webui.
+Now will be a good time to make some changes. Visit your server in the addressed mentioned in `To control qBittorrent, access the Web UI at...` (might be different in your case), and log in with the credentials given. Then you can go to `Tools -> Options` to change settings such as the WebUI port.
 
-Quit the running qbittorent process by pressing control-c on your keyboard in the terminal:
+Quit the running `qbittorent-nox` process by pressing `Ctrl-c` on your keyboard in the terminal:
 
 ```
 ^CCatching signal: SIGINT
 Exiting cleanly
 ```
 
-Stop impersonating the qbittorent user and return to your sudo account:  
+You can now stop impersonating the qbittorent user by executing the `exit` command or simply pressing `Ctrl-d`.
 
-`$ exit`  
+# Setup the `systemd` service
 
-# Create systemd Service Definition  
+On Ubuntu, system-wide `systemd` service definition files are located under `/etc/systemd/system/` (for other distros it might be a different directory), so we'll create the service definition file for `qbittorrent-nox` there.
 
-`sudo nano /etc/systemd/system/qbittorrent.service`  
+Edit `/etc/systemd/system/qbittorrent.service` with the appropriate permissions and text editor of your choice, for example:
 
-Copy the following contents and modify to your needs:
+```
+sudoedit /etc/systemd/system/qbittorrent.service
+```
+
+Save the file with the following contents or similar. You may modify them as-needed to better suit your needs:
+
 ```
 [Unit]
 Description=qBittorrenti-nox service
@@ -133,19 +106,11 @@ LimitNOFILE=infinity
 
 [Install]
 WantedBy=multi-user.target
-```  
+```
 
-Press Ctrl+X and then Y to quit and save.  
+Then run `sudo systemctl daemon-reload` to update the service manager.
 
-update systemctl with:  
-
-`sudo systemctl daemon-reload`  
-
-and then enable the service to start with the server at boot with:
-
-`sudo systemctl enable qbittorent.service`
-
-The qBittorrent service is now ready to be used.
+The qBittorrent service is now ready to be used. You can start it, check the status, enable starting on boot, etc. Learn more in the next section.
 
 # Controlling the service
 
@@ -168,23 +133,26 @@ qBittorrent will still log most interesting stuff to its usual logging directory
 However, some output can probably still be viewed with:
 
 ```
-$ sudo journalctl -u qbittorrent.service
+sudo journalctl -u qbittorrent.service
 ```
 
 For more information on how to use and customize `systemd` logging, refer to its documentation.
 
 # Service Dependencies (optional)
 
-Let's say that you configured qbittorrent-nox to download files to a directory that is in another drive, for example, mounted on '/media/volume'.
+Let's say that you've configured `qbittorrent-nox` to download files to a directory that is in another drive, for example, mounted on '/media/user/volume'.
 It's important that you edit the service created above and add some `systemd` dependencies to prevent qbittorrent from writing files on a directory that it should not, in case your drive fails to mount or is accidentally unmounted.
 
 After you added the mount point to the `/etc/fstab`, it should have a line like this:
+
 ```
 UUID=c987355d-0ddf-4dc7-bbbc-bab8989d0690 /media/volume  ext4     defaults,nofail 0       0
 ```
+
 The 'nofail' option prevents the system from stopping the boot process in case the drive can't mount on startup.
 
-You should edit `/etc/systemd/system/qbittorrent.service` to add 'local-fs.target' to the line 'After=network-online.target' and add the line 'BindsTo=media-volume.mount' to bind the qbittorrent service to the mount point that you want it to write the files. Your service file should look like this: 
+You should edit `/etc/systemd/system/qbittorrent.service` to add 'local-fs.target' to the line 'After=network-online.target' and add the line 'BindsTo=media-volume.mount' to bind the qbittorrent service to the mount point that you want it to write the files. Your service file should look like this:
+
 ```
 # ... other stuff ...
 
