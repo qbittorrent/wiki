@@ -9,14 +9,15 @@ For Ubuntu it's advisable to add and install from the PPA if you want the newest
 
 If you want to install the packaged version, skip this step.  
 
-Add the PPA to your server:
-'sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable'
+Add the PPA to your server:  
 
-''' Packages for the stable series of qBittorrent
- More info: https://launchpad.net/~qbittorrent-team/+archive/ubuntu/qbittorrent-stable
-Press [ENTER] to continue or Ctrl-c to cancel adding it.'''  
-
-Press ENTER to confirm.  
+`sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable`
+``
+`Packages for the stable series of qBittorrent`
+`More info: https://launchpad.net/~qbittorrent-team/+archive/ubuntu/qbittorrent-stable`
+`Press [ENTER] to continue or Ctrl-c to cancel adding it.`
+``
+`Press ENTER to confirm.`  
 
 Now update and install:  
 
