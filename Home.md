@@ -53,9 +53,9 @@ Everyone is welcome to edit and improve the wiki!
 * [Self-signed SSL certificates - Linux](wiki/Linux-WebUI-setting-up-HTTPS-with-self-signed-SSL-certificates)
 
 ### Linux
-* [Running qBittorrent without X server](wiki/Running-qBittorrent-without-X-server)
-* [Running qBittorrent as a daemon without X server (`systemd` distros like Ubuntu Server 15.04 or newer)](wiki/Running-qBittorrent-as-a-daemon-without-X-server-(systemd-distros-like-Ubuntu-Server-15.04-or-newer))
-* Running qBittorrent as a daemon without X server (alternative `init` systems) - TODO
+* [Running qBittorrent without X server (WebUI only)](wiki/Running-qBittorrent-without-X-server-(WebUI-only))
+* [Running qBittorrent without X server (WebUI only + systemd service setup, Ubuntu 15.04 or newer)](wiki/Running-qBittorrent-without-X-server-(WebUI-only---systemd-service-setup,-Ubuntu-15.04-or-newer))
+* Running qBittorrent without X server (WebUI only + daemon setup on alternative `init` systems) - TODO
 
 # Developing
 * [Coding style](https://github.com/qbittorrent/qBittorrent/blob/master/CODING_GUIDELINES.md)
