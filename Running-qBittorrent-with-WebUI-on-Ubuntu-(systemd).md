@@ -67,40 +67,49 @@ $ sudo usermod -s /bin/bash qbtuser
 ```
 ### Initialising Qbittorent ###
 
-Before we set up qbittorrent-nox, it's advisable to run it once so that we can get some configuration out of the way.
+Before we set up qbittorrent-nox, it's advisable to run it once so that we can get some configuration out of the way such as the legal disclaimer.
 
 First, switch to the user that will run qbittorent:  
+
 `$ sudo su qbtuser`  
+
 Then Run qbittorent  
+
 `$ qbittorent-nox`  
-'''*** Legal Notice ***
+
+```*** Legal Notice ***
 qBittorrent is a file sharing program. When you run a torrent, its data will be made available to others by means of upload. Any content you share is your sole responsibility.
 
 No further notices will be issued.
 
-Press 'y' key to accept and continue...
-y
+Press 'y' key to accept and continue...```   
 
+Press y if you accept the disclaimer.
+
+```
 ******** Information ********
 To control qBittorrent, access the Web UI at http://localhost:8080
 The Web UI administrator user name is: admin
 The Web UI administrator password is still the default one: adminadmin
-This is a security risk, please consider changing your password from program preferences.'''
+This is a security risk, please consider changing your password from program preferences.
+```   
 
 Now will be a good time to make some changes. Visit your server at http://your-server-ip:8080, log in with above details. Then go to tools->Options. Here you can change the port associated with the qbittorrent-nox webui.
 
 Quit the running qbittorent process by pressing control-c on your keyboard in the terminal:
 
-'''^CCatching signal: SIGINT
-Exiting cleanly'''
+```
+^CCatching signal: SIGINT
+Exiting cleanly
+```
 
-Stop impersonating the qbittorent user and return to your sudo account:
+Stop impersonating the qbittorent user and return to your sudo account:  
 
-'$ exit'
+`$ exit`  
 
-# Create systemd Service Definition
+# Create systemd Service Definition  
 
-'sudo nano /etc/systemd/system/qbittorrent.service'
+`sudo nano /etc/systemd/system/qbittorrent.service`  
 
 Copy the following contents and modify to your needs:
 ```
@@ -122,17 +131,17 @@ LimitNOFILE=infinity
 
 [Install]
 WantedBy=multi-user.target
-```
+```  
 
-Press Ctrl+X and then Y to quit and save.
+Press Ctrl+X and then Y to quit and save.  
 
-update systemctl with:
+update systemctl with:  
 
-'sudo systemctl daemon-reload'
+`sudo systemctl daemon-reload`  
 
 and then enable the service to start with the server at boot with:
 
-'sudo systemctl enable qbittorent.service'
+`sudo systemctl enable qbittorent.service`
 
 # Controlling the service
 
