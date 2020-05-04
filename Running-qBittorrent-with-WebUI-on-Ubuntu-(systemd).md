@@ -65,14 +65,14 @@ This can be reversed if necessary with the command:
 ```
 $ sudo usermod -s /bin/bash qbtuser
 ```
-#Initialising Qbittorent
+### Initialising Qbittorent ###
 
 Before we set up qbittorrent-nox, it's advisable to run it once so that we can get some configuration out of the way.
 
-First, switch to the user that will run qbittorent:
-'$ sudo su qbtuser'
-Then Run qbittorent
-'$ qbittorent-nox'
+First, switch to the user that will run qbittorent:  
+`$ sudo su qbtuser`  
+Then Run qbittorent  
+`$ qbittorent-nox`  
 '''*** Legal Notice ***
 qBittorrent is a file sharing program. When you run a torrent, its data will be made available to others by means of upload. Any content you share is your sole responsibility.
 
