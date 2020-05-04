@@ -32,7 +32,7 @@ This can be reversed if necessary with the command:
 sudo usermod -s /bin/bash qbtuser
 ```
 
-# Initialising Qbittorent
+# Initialise qBittorent
 
 Before we set up `qbittorrent-nox` to run as a background service, it's advisable to run it once so that we can get some configuration out of the way such as the legal disclaimer.
 
