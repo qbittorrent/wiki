@@ -1,10 +1,14 @@
 # Introduction
 
-qBittorrent has a feature-rich Web UI allowing users to control qBittorrent remotely. `qbittorrent-nox` is a version of qBittorrent with a webUI instead of a windowed GUI. This is ideal for headless servers without the X window system such as Ubuntu Server.
+qBittorrent has a feature-rich Web UI allowing users to control qBittorrent remotely.
+`qbittorrent-nox` is a version of qBittorrent with a webUI instead of a windowed GUI.
+This is ideal for headless servers without the X window system such as Ubuntu Server.
 
-This guide will show you how to setup `qbittorrent-nox` to run as a managed background service (daemon) by setting it up as a `systemd` service. It can then be customized like any other `systemd` service, to automatically start on boot, for instance.
+This guide will show you how to setup `qbittorrent-nox` to run as a managed background service (daemon) by setting it up as a `systemd` service.
+It can then be customized like any other `systemd` service, to automatically start on boot, for instance.
 
-For Ubuntu it's advisable to install `qbittorrent-nox` from the official PPA to get the latest version. Refer to https://github.com/qbittorrent/qBittorrent/wiki/Installing-qBittorrent for more information.
+For Ubuntu it's advisable to install `qbittorrent-nox` from the official PPA to get the latest version.
+Refer to https://github.com/qbittorrent/qBittorrent/wiki/Installing-qBittorrent for more information.
 
 Side Note: these instructions are written with Ubuntu in mind but should be much the same if not exactly the same for any modern distro that uses `systemd`.
 
