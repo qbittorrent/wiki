@@ -95,7 +95,6 @@ To compile, first choose the appropriate `git` and compile commands in the table
 <td colspan="3"><hr /></td>
 <td><p>autotools</p></td>
 <td><p>CMake</p></td>
-<td></td>
 </tr>
 <tr>
 <td><p>1.2.x</p></td>
