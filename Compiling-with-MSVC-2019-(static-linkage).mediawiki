@@ -52,7 +52,7 @@ This page describes how to compile 32-bit and 64-bit qBittorrent using MSVC 2019
 === Compiling OpenSSL ===
 * Make sure you have installed perl and nasm.
 * Extract the OpenSSL source inside our working dir.
-* Navigate to the OpenSSL source folder. eg <code>cd G:\QBITTORRENT\openssl-1.1.1f</code>
+* Navigate to the OpenSSL source folder. eg <code>cd G:\QBITTORRENT\openssl-1.1.1g</code>
 * Now we will build a static version of OpenSSL. Issue the following commands:
 :'''32-bit'''
  perl Configure VC-WIN32 no-shared no-zlib no-zlib-dynamic threads --release --openssldir=C:\openssl --prefix=G:\QBITTORRENT\install_msvc32\base -IG:\QBITTORRENT\install_msvc32\base\include -LG:\QBITTORRENT\install_msvc32\base\lib --with-zlib-lib=G:\QBITTORRENT\install_msvc32\base\lib\zlib.lib
