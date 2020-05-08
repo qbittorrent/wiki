@@ -18,6 +18,8 @@ $HOME/tmp/qbt
  |_ ext         <-- directory for all compiled dependencies
 ```
 
+It is assumed that all listed commands should be issued from `$HOME/tmp/qbt/src` unless otherwise specified.
+
 ## Build environment setup
 
 - XCode: default IDE and toolchain for macOS (includes the SDK and essential tools for native development)
@@ -46,8 +48,6 @@ Actually some additional libraries (like zlib) are required, but they are availa
 ## Downloading sources
 
 Download and build instructions was split due to some macOS specific stuff, see "[Building sources](#building-sources)" section for details.
-
-It is assumed that all commands listed in this section must be issued from `$HOME/tmp/qbt/src` (see [conventions](#conventions-used-in-this-document)).
 
 ### Downloading OpenSSL
 
@@ -132,8 +132,6 @@ grep QMAKE_MACOSX_DEPLOYMENT_TARGET qtbase/mkspecs/common/macx.conf | grep -Eo -
 ```
 
 Qt 5.14.2 was used for that guide, in this case minimum supported macOS version is 10.13.
-
-It is assumed that all commands listed in this section must be issued from `$HOME/tmp/qbt/src` (see [conventions](#conventions-used-in-this-document)).
 
 ### Building OpenSSL
 
