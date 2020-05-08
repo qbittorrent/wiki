@@ -20,7 +20,7 @@ qBittorrent uses [QResources::registerResource](https://doc.qt.io/qt-5/qresource
 QRadioButton::indicator:unchecked,
 QRadioButton::indicator:unchecked:focus
 {
-    image: url(:/uitheme/dark/radio_unchecked_disabled.svg);
+    image: url(:/uitheme/light/radio_button.svg);
 }
 ```
 
