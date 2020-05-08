@@ -15,7 +15,7 @@ You can check out this Python script([here](https://github.com/jagannatharjun/qb
 
 At runtime, qBittorrent loads the `stylesheet.qss` file to support theming. `stylesheet.qss` is a [Qt stylesheet](https://doc.qt.io/qt-5/stylesheet.html), which is basically custom CSS for Qt.
 You can read more about Qt stylesheet syntax [here](https://doc.qt.io/Qt-5/stylesheet-syntax.html). A reference is also available [here](https://doc.qt.io/qt-5/stylesheet.html).
-qBittorrent uses [QResources::registerResource](https://doc.qt.io/qt-5/qresource.html#registerResource) to use the bundle file, you can imagine it like QBittorrent extracts bundle file in a special path which is `:/uitheme`, so every file should be referenced accordingly f.e let's see we have to change the image QRadiaButtons indicator, so to reference a `light/radio_button.svg` that we had it inside our rcc, we should reference it something like this
+qBittorrent uses [QResources::registerResource](https://doc.qt.io/qt-5/qresource.html#registerResource) to use the bundle file, you can imagine it like QBittorrent extracts bundle file in a special path which is `:/uitheme`, so every file should be referenced accordingly f.e let's see we have to change the image QRadiaButtons indicator, so to reference a `light/radio_button.svg` that we had it inside our bundle file, we should reference it something like this
 ```
 QRadioButton::indicator:unchecked,
 QRadioButton::indicator:unchecked:focus
