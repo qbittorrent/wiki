@@ -301,7 +301,7 @@ Unfortunately, it is not so convenient as cmake or autotools in case of qBittorr
 
 Except paths to dependencies, this file also should contain defines describing libtorrent configuration (libtorrent is very sensitive to it, if it itself and app are build with different set of defines it won't link).
 
-If you just followed this guide to build all required dependencies, next `conf.pri` is suitable for building qBittorrent (with no any adjustments). In other cases adjustments are required (at least paths).
+If you just followed this guide to build all required dependencies, next `conf.pri` is suitable for building qBittorrent (with no any adjustments). In other cases adjustments are required (at least for paths).
 
 ```qmake
 INCLUDEPATH += $$PWD/../../ext/include
@@ -320,7 +320,7 @@ CONFIG -= silent
 CONFIG += strict_c++ c++14
 ```
 
-Most of content is libtorrent-related stuff (libtorrent dependencies and mentioned above defines). Line `CONFIG -= silent` is just my preference, it may be useful in development process, it disables "silent build", i.e. all  build commands are fully shown with all arguments.
+Most of its content is libtorrent-related stuff (libtorrent dependencies and mentioned above defines). Line `CONFIG -= silent` is just my preference, it may be useful in development process, it disables "silent build", i.e. all  build commands are fully shown with all arguments.
 
 In case if you built libtorrent with your own options (for example with disabled deprecated stuff), you have to adjust defines set. There are some tips how to find them.
 
