@@ -20,24 +20,16 @@ $HOME/tmp/qbt
 
 ## Build environment setup
 
-Only few very common things are required:
+- XCode: default IDE and toolchain for macOS (includes the SDK and essential tools for native development)
 
-- Xcode - default IDE for macOS apps development
-- CMake - widely used build tool
+  - Download and install XCode from the official [Apple App Store][xcode-appstore].
+  - Lauch XCode for a first time. You will be asked to install additional command line tools, which you should do, as they are required for building Qt-based apps such as qBittorrent.
 
-### Xcode installation
+- CMake: a build-system generator, nowadays the de-facto standard for building C/C++ projects.
 
-Xcode is default IDE for macOS apps development. It provides everything required for native app development: compiler, SDK (set of system-specific header and libraries), various additional platform-specific tools, and even Git.
+  - Download and install CMake from the [official website][cmake-off-site]. A GUI and some command-line tools will be installed. The GUI will not be needed for this tutorial.
 
-Xcode can be downloaded from official [Apple App Store][xcode-appstore] for free. There is pretty much to download (about 8GB), so process can be not so fast. Moreover, after download some installation process (actually don't know what it really does) also takes pretty much time (~20 minutes in my case), and this process accompanied by high CPU usage.
-
-Please note **it is important to launch Xcode first time after installation**! You will be asked to install additional command line tools, you should do it, this is **essential for building** at least any **Qt-based app**. Tools installation process will ask for administrator privileges, also it requires an active Internet connection, ~200MB will be downloaded, installation takes ~5 minutes.
-
-### CMake installation
-
-CMake stays for "cross-platform make", widely used tool for building C/C++ projects.
-
-CMake can be downloaded from [official website][cmake-off-site] for free. Download size is approximately 40MB. Just download latest available version as `.dmg` or `.tar.gz` (binary for macOS, not source!) file, and install `CMake.app` (just drop it to `/Applications` as any other macOS app). It is not required to launch installed app, what can be launched is just GUI around a set of command line utilities (bundled in that app) which actually are used in build process.
+Please note that XCode takes up several GiBs of space, and may take several minutes to install on your system.
 
 ## Required sources
 
