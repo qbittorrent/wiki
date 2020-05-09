@@ -23,6 +23,8 @@ Optionally, you may also install the CMake Tools extension, for integration with
 After cloning the qBittorrent repository (to `/home/user/Documents/qBittorrent`, for example), open the folder in VSCode. This is now your workspace.
 
 ## Editing
+**NOTE** If you're using CMake Tools, it should be able to create `c_cpp_properties.json` itself and you wouldn't need to do following steps,
+
 
 For all editor features such as code completion, navigation, hovers and error reporting to work properly you need to configure the C/C++ settings.
 
