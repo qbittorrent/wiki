@@ -7,7 +7,7 @@ This page contains the necessary information to get started developing custom th
 These are theme bundles for qBittorrent.
 They should contain all files required to support theming in qBittorrent and are packed using [Qt's Resource Compiler](https://doc.qt.io/qt-5/rcc.html).
 qBittorrent accesses files inside `.qbttheme` using [Qt's Resource System](https://doc.qt.io/qt-5/resources.html).
-Currently, qBittorrent only searches for a `stylesheet.qss` and `config.json` inside a `.qbttheme` file but you can also add your own custom resources.
+Currently, qBittorrent only searches for a `stylesheet.qss` and `config.json` inside a `.qbttheme` file but you can also add your own custom resources (read more [here](https://github.com/qbittorrent/qBittorrent/wiki/Create-custom-themes-for-qBittorrent#using-custom-resources-with-bundles)).
 
 # How to create your own theme bundles?
 
@@ -99,9 +99,9 @@ QRadioButton::indicator:unchecked:focus
 
 reserved files and their structure in bundle files are - `stylesheet.qss` and `config.json` both should occur at the root of your bundle file.
 
-# Examples
+# Notes
 
-- To change Transfer List row colors based on the torrent state, one can add the following to their `stylesheet.qss`.
+Following way of changing TransferList row's color is removed after version 4.2.5, please change you bundle files accordingly and For changing Transferlist row's color one should use `config.json`
 
 ```css
 TransferListWidget 
