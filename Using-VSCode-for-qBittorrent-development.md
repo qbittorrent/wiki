@@ -76,7 +76,7 @@ You can use VSCode tasks to automate the above process and run it from within VS
 
 ### Using CMake + CMake Tools extension
 
-TODO
+CMake Tools support both building and running for different targets from CMakeLists.txt, so you should be able to compile, run, and debug without needing to create `launch.json` and `tasks.json`. 
 
 ## Running and debugging
 
