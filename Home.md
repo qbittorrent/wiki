@@ -71,6 +71,7 @@ Everyone is welcome to edit and improve the wiki!
 * [Compiling qBittorrent nox on CentOS 7.x](https://github.com/qbittorrent/qBittorrent/wiki/Compiling-qBittorrent-nox-on-CentOS-7.x) / [Compiling qBittorrent nox on CentOS 8.x](https://github.com/qbittorrent/qBittorrent/wiki/Compiling-qBittorrent-nox-on-CentOS-8.x)
 * [Compilation on FreeBSD (no gui)](wiki/Compilation-on-FreeBSD-(no-gui))
 * [Compilation on Raspbian and DietPi (no gui)](wiki/Compiling-qBittorrent-nox-4.x-on-DietPi-or-Raspbian-(Debian-9.0)-for-ARM-devices)
+* [Compiling fully static binaries on Linux (glibc or musl)](wiki/Compiling-fully-static-binaries-on-Linux-(glibc-or-musl))
 
 ### Themes
 
