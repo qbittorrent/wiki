@@ -2,7 +2,7 @@
 
 Following this guide anyone even completely unexperienced in C/C++ software building process can successfully build qBittorent. Only very basic skills in command line usage are required.
 
-This guide could seem too detailed or even odd, but that was done intentionally, because first of all it aims to help novice users. Any experienced users may just overview it to find section they are interested in. For example, [the last one](#building-with-qtcreator) may be interesting for new contributors who wants to debug or just poke around the code.
+This guide could seem too detailed or even odd, but that was done intentionally, because first of all it aims to help novice users. Any experienced users may just overview it to find section they are interested in. For example, [the last one](#building-with-qmake) may be interesting for new contributors who wants to debug or just poke around the code.
 
 This guide describes build process using qBittorrent sources from `master` branch, but it also can be suitable for 4.2.x releases. It assumes only using of libtorrent 1.2.x series. Building qBittorrent 4.1.x series or 4.2.x with libtorrent 1.1.x is out of scope, similar concept can be used in any case, but various build options must be adjusted.
 
@@ -287,11 +287,11 @@ Now `qbittorrent.app` bundle is ready to use. Also `qbittorrent.dmg` is created 
 
 That's all! Now you have your own qBittorrent build!
 
-You can use [this script][macos-build-script] to build qBittorrent master branch in "fully automatic mode". Just launch it and wait. This script is a little bit tricky, but it is not too complex to understand. Moreover, it is pretty well documented sometimes it contains very detailed explanations. Initially I created it just to fulfill my own needs, but later it was published due to often user requests. It can be a good starting point for creating your own build script serving your own needs/requirements/preferences.
+You can use [this script][macos-build-script] to build qBittorrent master branch in "fully automatic mode". Just launch it and wait. This script is a little bit tricky, but it is not too complex to understand. Moreover, it is pretty well documented, sometimes it contains very detailed explanations. Initially I created it just to fulfill my own needs, but later it was published due to often user requests. It can be a good starting point for creating your own build script serving your own needs/requirements/preferences.
 
-Next sections for advanced users, mostly for anyone who want to develop (or just build) qBittorrent using QtCreator IDE.
+Next sections for advanced users, mostly for anyone who want to develop (or just build) qBittorrent using qmake.
 
-## Building with QtCreator
+## Building with qmake
 
 First of all, this section for advanced or just very curious users, who want to know how to build qBittorrent using qmake.
 
@@ -332,7 +332,7 @@ Mentioned cmake config file can be found at `$HOME/tmp/qbt/ext/lib/cmake/Libtorr
 
 I recommend to use cmake file, it looks more reliable, but pkg-config is easy to read.
 
-`conf.pri` must be placed to sources root, then qBittorrent can be built using qmake from command line or by opening project in QtCreator.
+`conf.pri` must be placed to sources root, then qBittorrent can be built using qmake from command line or by opening project in [QtCreator](#building-with-qtcreator).
 
 To build qBittorrent using qmake from command line, just issue next few commands (assuming you are in `$HOME/tmp/qbt/src`):
 
@@ -353,7 +353,21 @@ $HOME/tmp/qbt/ext/bin/macdeployqt qbittorrent.app -dmg
 
 Now `qbittorrent.app` build is ready to use. Again, if you don't want .dmg image, just drop `-dmg` option, it is used just to show that `macdeployqt` has it.
 
-One more note for new contributors: build Qt with debug symbols, just drop `-release` option from suggested configuration command for it.
+### Building with QtCreator
+
+To build qBittorrent using QtCreator few additional steps are required.
+
+First of all, custom Qt Kit should be added. Just open QtCreator settings dialog, [add Qt compiled for qBittorrent][adding-qt-version] and then [create new kit][adding-qt-kits] that uses it.
+
+Next important thing that some project files must be edited, otherwise it could be impossible to launch qBittorrent from QtCreator. Just **delete/comment** next line in `macxconf.pri` (in qBittorrent sources root):
+
+```qmake
+QMAKE_BUNDLE_DATA += qt_conf
+```
+
+Now everything is ready for development or just building.
+
+One more note for new contributors: for better debugging experience, build at least Qt with debug symbols. Just drop `-release` option from suggested configuration command for it. Please note build time will be approximately twice longer.
 
 [xcode-appstore]: https://apps.apple.com/us/app/xcode/id497799835
 [cmake-off-site]: https://cmake.org/download/
@@ -364,3 +378,6 @@ One more note for new contributors: build Qt with debug symbols, just drop `-rel
 [qbittorrent-repo]: https://github.com/qbittorrent/qBittorrent
 
 [macos-build-script]: https://gist.github.com/Kolcha/3ccd533123b773ba110b8fd778b1c2bf
+
+[adding-qt-version]: https://doc.qt.io/qtcreator/creator-project-qmake.html
+[adding-qt-kits]: https://doc.qt.io/qtcreator/creator-targets.html
