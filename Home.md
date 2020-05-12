@@ -48,6 +48,7 @@ Everyone is welcome to edit and improve the wiki!
 
 #### WebUI HTTPS configuration
 
+* [Let's Encrypt Certificates + Caddy2 Reverse Proxy](wiki/Linux-WebUI-HTTPS-with-Let's-Encrypt-&-Caddy2-reverse-proxy)
 * [Let's Encrypt certificates + NGINX reverse proxy - Linux](wiki/Linux-WebUI-HTTPS-with-Let's-Encrypt-certificates-and-NGINX-SSL-reverse-proxy)
 * [Let's Encrypt certificates - Linux](wiki/Linux-WebUI-setting-up-HTTPS-with-Let's-Encrypt-certificates)
 * [Self-signed SSL certificates - Linux](wiki/Linux-WebUI-setting-up-HTTPS-with-self-signed-SSL-certificates)
