@@ -20,7 +20,7 @@ At runtime, qBittorrent loads only `stylesheet.qss` to support theming and `conf
 You can read more about Qt stylesheet syntax [here](https://doc.qt.io/Qt-5/stylesheet-syntax.html). A reference is also available [here](https://doc.qt.io/qt-5/stylesheet.html).
 
 # Changing QBittorrent specific colors
-for changing GUI specific colors for your theme, you have to use config.json  
+for changing qBittorrent specific GUI colors, you have to use config.json, NOTE: A large part of colors is already changeable from stylesheet but following are QBitTorrent's specific context-sensitive colors,   
 The following are all keys that are currently supported.
 
 ```json
