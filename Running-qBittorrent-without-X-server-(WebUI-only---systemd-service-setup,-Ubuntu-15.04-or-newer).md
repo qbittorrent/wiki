@@ -96,7 +96,7 @@ After=network-online.target nss-lookup.target
 
 [Service]
 # if you have systemd < 240 (Ubuntu 18.10 and earlier, for example), you probably want to use Type=simple instead
-Type=Exec
+Type=exec
 # change user as needed
 User=qbtuser
 # notice that no -d flag needed
