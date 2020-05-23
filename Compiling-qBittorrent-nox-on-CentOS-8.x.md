@@ -14,7 +14,7 @@ yum install "https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.
 
 1. 
 ```
-yum install -y autoconf automake boost-devel boost-system gcc gcc-c++ git glib2 glibc gmp gnutls libblkid libcap libffi libgcc libgcrypt libgpg-error libicu libidn2 libmount libselinux libstdc++ libtasn1 libtool libunistring libuuid lz4-libs make nettle openssl-devel openssl-libs p11-kit pcre pcre2 pcre2 qt5-qtbase systemd-libs tar wget xz-libs zlib
+yum install -y autoconf automake boost-devel boost-system gcc gcc-c++ git glib2 glibc gmp gnutls libblkid libcap libffi libgcc libgcrypt libgpg-error libicu libidn2 libmount libselinux libstdc++ libtasn1 libtool libunistring libuuid lz4-libs make nettle openssl-devel openssl-libs p11-kit pcre pcre2 qt5-qtbase systemd-libs tar wget xz-libs zlib
 ```
 2. install libtorrent
 ```
