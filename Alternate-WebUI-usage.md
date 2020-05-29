@@ -4,10 +4,10 @@ From qBittorrent v4.1.0 and on, the WebUI architecture was expanded to allow the
 
 # Procedure
 
-First you need to download a compatible WebUI. You can find a list of unofficial community-developed WebUIs at [List of unofficial alternate WebUIs](https://github.com/qbittorrent/qBittorrent/wiki/List-of-known-alternate-WebUIs).
+First, you need to download a compatible WebUI. You can find a list of unofficial community-developed WebUIs at [List of unofficial alternate WebUIs](https://github.com/qbittorrent/qBittorrent/wiki/List-of-known-alternate-WebUIs).
 
 1. Under `Tools->Preferences->WebUI` enable `Use alternative WebUI`.
-2. Chose a location that points to a WebUI-compatible folder location.
+2. Choose a location that points to a WebUI-compatible folder location.
 3. Restart qBittorrent or refresh your browser for changes to take effect.
 
 You can also change these settings via the config file. The relevant entries are:
