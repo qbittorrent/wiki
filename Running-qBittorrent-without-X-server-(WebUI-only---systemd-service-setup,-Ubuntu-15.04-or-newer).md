@@ -47,7 +47,7 @@ First, switch to the user that will run qbittorent:
 sudo su qbtuser
 ```
 
-Then run `qbittorent-nox`.
+Then run `qbittorrent-nox`.
 It will prompt you to accept the legal disclaimer.
 You must agree to it in order to proceed.
 
@@ -65,7 +65,7 @@ Now is a good time to adjust some qBittorrent settings.
 Visit the URL mentioned in `To control qBittorrent, access the Web UI at...` (might be different in your case), and log in with the credentials given.
 Then you can go to `Tools -> Options` to change settings such as the WebUI port.
 
-Quit the running `qbittorent-nox` process by pressing `Ctrl-c` on your keyboard in the terminal:
+Quit the running `qbittorrent-nox` process by pressing `Ctrl-c` on your keyboard in the terminal:
 
 ```
 ^CCatching signal: SIGINT
@@ -171,4 +171,4 @@ Conventions such as these are used by `systemd` to define conditions around serv
 Refer to [Systemd.mount reference](http://man7.org/linux/man-pages/man5/systemd.mount.5.html) for further reading.
 It follows a simple logic: if your drive is mounted on `/media/volume`, the unit name will be `media-volume.mount`, if it's on `/mnt/disk`, the unit will be `mnt-disk.mount`.
 
-Using this to define the qbittorent-nox service file, if the drive can't mount when booting or if the drive is unmounted after qbittorrent has been started, it will not allow it to start or force it to stop, preventing from writing when the drive is not ready or present.
+Using this to define the qbittorrent-nox service file, if the drive can't mount when booting or if the drive is unmounted after qbittorrent has been started, it will not allow it to start or force it to stop, preventing from writing when the drive is not ready or present.
