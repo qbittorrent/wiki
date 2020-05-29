@@ -307,7 +307,7 @@ Property     | Type    | Description
 `libtorrent` | string  | libtorrent version
 `boost`      | string  | Boost version
 `openssl`    | string  | OpenSSL version
-`bitness`    | string  | Application bitness (e.g. 64-bit)
+`bitness`    | int     | Application bitness (e.g. 64-bit)
 
 ## Shutdown application ##
 
