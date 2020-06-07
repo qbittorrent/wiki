@@ -87,6 +87,8 @@ Here
 
 `<color>` value supports normal rgb values(#rrggbb) or svg color names, basically it follows [Qt's named color convention](https://doc.qt.io/qt-5/qcolor.html#setNamedColor) convention
 
+This is introduced in qbittorrent v4.2.6
+
 # Using custom resources with bundles
 qBittorrent uses [QResources::registerResource](https://doc.qt.io/qt-5/qresource.html#registerResource) to use the bundle file, you can imagine it like QBittorrent extracts bundle file in a special path which is `:/uitheme`, so every file should be referenced accordingly f.e let's see you have to change the image QRadiaButtons indicator, so to reference a `light/radio_button.svg` inside your bundle file, you should do something like this
 ```
