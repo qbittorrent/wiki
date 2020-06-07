@@ -15,27 +15,27 @@ Save the script below as `savecategory` and make it executable via `chmod 755 /p
 ```bash
 #!/bin/sh
 
-category=$(basename $1)
-torrent_hash=$2
-torrent_name=$3
-apiv2=http://localhost:25832/api/v2
-username=admin
-password=adminadmin
-cookie_file=/config/external/cookie
+category="$(basename $1)"
+torrent_hash="$2"
+torrent_name="$3"
+host="http://localhost:8112"
+username="admin"
+password="adminadmin"
 
 echo "running savecategory script"
 
-echo "getting cookie"
+echo "\tgetting cookie"
 
-curl --silent --fail --show-error --request GET \
-    --url "$apiv2/auth/login?username=$username&password=$password" \
-    --cookie-jar "$cookie_file" > /dev/null
+cookie=$(curl --silent --fail --show-error \
+    --header "Referer: $host" \
+    --cookie-jar - \
+    --request GET "$host/api/v2/auth/login?username=$username&password=$password")
 
-echo "setting $torrent_name to category $category"
+echo "\tsetting $torrent_name to category $category"
 
-curl --silent --fail --show-error --request GET \
-    --url "$apiv2/torrents/setCategory?hashes=$torrent_hash&category=$category" \
-    --cookie "$cookie_file" > /dev/null
+echo "$cookie" | curl --silent --fail --show-error \
+    --cookie - \
+    --request GET "$host/api/v2/torrents/setCategory?hashes=$torrent_hash&category=$category"
 
 echo "completed savecategory script"
 
