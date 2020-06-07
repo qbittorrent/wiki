@@ -88,7 +88,7 @@
 * [CMake](wiki/Compilation:-CMake)
 * [Debian / Ubuntu compilation](wiki/Compilation:-Debian-and-Ubuntu)
 * [DietPi/Rasbian](wiki/Compilation:-DietPi-and-Raspbian-(Debian-9.0))
-	* [Raspian for LeMaker Banana Pro](wiki/Compilation:-Raspbian-for-LeMaker-Banana-Pro)
+* [Raspian for LeMaker Banana Pro](wiki/Compilation:-Raspbian-for-LeMaker-Banana-Pro)
 * [FreeBSD (no GUI)](wiki/Compilation:-FreeBSD-(no-GUI))
 * [Fully static binaries on Linux (glibc or musl)](wiki/Compiliation:-Fully-static-binaries-on-Linux-(glibc-or-musl))
 * [macOS](wiki/Compilation:-macOS)
