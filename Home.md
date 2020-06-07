@@ -20,7 +20,7 @@ Everyone is welcome to edit and improve the wiki!
 
 ### Search Plugins
 
-* [List of unofficial search plugins](https://github.com/qbittorrent/search-plugins/wiki/Unofficial-search-plugins)
+* [List of unofficial search plugins](wiki/Unofficial-search-plugins)
 
 ### Themes
 
@@ -42,7 +42,7 @@ Everyone is welcome to edit and improve the wiki!
 ### Alternate WebUI
 
 * [Alternate WebUI usage](wiki/Alternate-WebUI-usage)
-* [List of unofficial alternate WebUIs](https://github.com/qbittorrent/qBittorrent/wiki/List-of-known-alternate-WebUIs)
+* [List of unofficial alternate WebUIs](wiki/List-of-known-alternate-WebUIs)
 
 ### Reverse proxy setup for WebUI access
 
@@ -66,19 +66,30 @@ Everyone is welcome to edit and improve the wiki!
 ## Development
 
 * [Coding style](https://github.com/qbittorrent/qBittorrent/blob/master/CODING_GUIDELINES.md)
-* [How to write a search plugin](https://github.com/qbittorrent/search-plugins/wiki/How-to-write-a-search-plugin)
-* [Using VSCode for qBittorrent development](https://github.com/qbittorrent/qBittorrent/wiki/Using-VSCode-for-qBittorrent-development)
-* [Setup GDB with Qt pretty printers](https://github.com/qbittorrent/qBittorrent/wiki/Setup-GDB-with-Qt-pretty-printers)
-* [How to debug WebUI code](https://github.com/qbittorrent/qBittorrent/wiki/How-to-debug-the-WebUI-code)
+* [How to write a search plugin](wiki/How-to-write-a-search-plugin)
+* [Using VSCode for qBittorrent development](wiki/Using-VSCode-for-qBittorrent-development)
+* [Setup GDB with Qt pretty printers](wiki/Setup-GDB-with-Qt-pretty-printers)
+* [How to debug WebUI code](wiki/How-to-debug-the-WebUI-code)
 
 ### Compilation
-* [Windows compilation](wiki/Windows-compilation)
-* [macOS compilation](wiki/Compilation-guide-for-macOS-systems)
-* [Debian / Ubuntu compilation](wiki/Compiling-qBittorrent-on-Debian-and-Ubuntu)
-* [Compiling qBittorrent nox on CentOS 7.x](https://github.com/qbittorrent/qBittorrent/wiki/Compiling-qBittorrent-nox-on-CentOS-7.x) / [Compiling qBittorrent nox on CentOS 8.x](https://github.com/qbittorrent/qBittorrent/wiki/Compiling-qBittorrent-nox-on-CentOS-8.x)
-* [Compilation on FreeBSD (no gui)](wiki/Compilation-on-FreeBSD-(no-gui))
-* [Compilation on Raspbian and DietPi (no gui)](wiki/Compiling-qBittorrent-nox-4.x-on-DietPi-or-Raspbian-(Debian-9.0)-for-ARM-devices)
-* [Compiling fully static binaries on Linux (glibc or musl)](wiki/Compiling-fully-static-binaries-on-Linux-(glibc-or-musl))
+
+* [CentOS 7.x](wiki/Compilation:-CentOS-7.x)
+* [CentOS 8.x](wiki/Compilation:-CentOS-8.x)
+* [CMake](wiki/Compilation:-CMake)
+* [Debian / Ubuntu compilation](wiki/Compilation:-Debian-and-Ubuntu)
+* [DietPi/Rasbian](wiki/Compilation:-DietPi-and-Raspbian-(Debian-9.0))
+	* [Raspian for LeMaker Banana Pro](wiki/Compilation:-Raspbian-for-LeMaker-Banana-Pro)
+* [FreeBSD (no GUI)](wiki/Compilation:-FreeBSD-(no-GUI))
+* [Fully static binaries on Linux (glibc or musl)](wiki/Compiliation:-Fully-static-binaries-on-Linux-(glibc-or-musl))
+* [macOS](wiki/Compilation:-macOS)
+* [MSVS 10.0 (dynamic linkage)](wiki/Compilation:-MSVC-10.0-(dynamic-linkage))
+* [MSVS 2008 (static linkage)](wiki/Compilation:-MSVC-2008-(static-linkage))
+* [MSVS 2008 (x86_64) (static linkage)](wiki/Compilation:-MSVC-2010-(x86_64)-(dynamic-linkage))
+* [MSVC 2013 (static linkage)](wiki/Compilation:-MSVC-2013-(static-linkage))
+* [MSVC 2013 (x86_64) (dynamic linkage)](wiki/Compilation:-MSVC-2013-(x86_64)-(dynamic-linkage))
+* [MSVC 2017 (static linkage)](wiki/Compiling:-MSVC-2017-(static-linkage))
+* [MSVC 2017 (x86_64) (static linkage)](wiki/Compilation:-MSVC-2017-(x86_64)-(static-linkage))
+* [MSVC 2019 (static linkage)](wiki/Compiling:-MSVC-2019-(static-linkage))
 
 ## Themes
 
