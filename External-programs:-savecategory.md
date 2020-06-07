@@ -18,20 +18,18 @@ Save the script below as `savecategory` and make it executable via `chmod 755 /p
 category=$(basename $1)
 torrent_hash=$2
 torrent_name=$3
-apiv2=http://localhost:8112/api/v2
+apiv2=http://localhost:25832/api/v2
 username=admin
 password=adminadmin
 cookie_file=/config/external/cookie
 
 echo "running savecategory script"
 
-if [ ! -f "$cookie_file" ]; then
-    echo "getting cookie"
+echo "getting cookie"
 
-    curl --silent --fail --show-error --request GET \
-        --url "$apiv2/auth/login?username=$username&password=$password" \
-        --cookie-jar "$cookie_file" > /dev/null
-fi
+curl --silent --fail --show-error --request GET \
+    --url "$apiv2/auth/login?username=$username&password=$password" \
+    --cookie-jar "$cookie_file" > /dev/null
 
 echo "setting $torrent_name to category $category"
 
