@@ -24,12 +24,15 @@ Everyone is welcome to edit and improve the wiki!
 
 ### Themes
 
+* [Developing custom UI themes](wiki/Create-custom-themes-for-qBittorrent)
 * [How to use custom UI themes](wiki/How-to-use-custom-UI-themes)
 * [List of unofficial themes](wiki/List-of-known-qBittorrent-themes)
 
 ### Translation
 
 * [How to translate qBittorrent](wiki/How-to-translate-qBittorrent)
+
+---
 
 ## WebUI Related
 
@@ -57,11 +60,15 @@ Everyone is welcome to edit and improve the wiki!
 * [Let's Encrypt certificates - Linux](wiki/Linux-WebUI-setting-up-HTTPS-with-Let's-Encrypt-certificates)
 * [Self-signed SSL certificates - Linux](wiki/Linux-WebUI-setting-up-HTTPS-with-self-signed-SSL-certificates)
 
+---
+
 ## Linux
 
 * [Running qBittorrent without X server (WebUI only)](wiki/Running-qBittorrent-without-X-server-(WebUI-only))
 * [Running qBittorrent without X server (WebUI only + systemd service setup, Ubuntu 15.04 or newer)](wiki/Running-qBittorrent-without-X-server-(WebUI-only---systemd-service-setup,-Ubuntu-15.04-or-newer))
 * Running qBittorrent without X server (WebUI only + daemon setup on alternative `init` systems) - TODO
+
+---
 
 ## Development
 
@@ -91,9 +98,7 @@ Everyone is welcome to edit and improve the wiki!
 * [MSVC 2017 (x86_64) (static linkage)](wiki/Compilation:-MSVC-2017-(x86_64)-(static-linkage))
 * [MSVC 2019 (static linkage)](wiki/Compiling:-MSVC-2019-(static-linkage))
 
-## Themes
-
-* [Developing custom UI themes](wiki/Create-custom-themes-for-qBittorrent)
+---
 
 ## Alternate WebUI
 
