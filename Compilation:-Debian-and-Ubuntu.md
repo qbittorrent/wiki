@@ -1,5 +1,3 @@
-# Introduction
-
 This how-to will guide you through compiling both qBittorrent and optionally its backend, `libtorrent-rasterbar` (referred to only as `libtorrent` for the rest of the document) from source.
 
 Only follow this guide if you know what you are doing and this is what you really want.
