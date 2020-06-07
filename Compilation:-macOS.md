@@ -1,5 +1,3 @@
-# qBittorrent macOS build guide
-
 Following this guide anyone even completely unexperienced in C/C++ software building process can successfully build qBittorent. Only very basic skills in command line usage are required.
 
 This guide could seem too detailed or even odd, but that was done intentionally, because first of all it aims to help novice users. Any experienced users may just overview it to find section they are interested in. For example, [the last one](#building-with-qmake) may be interesting for new contributors who wants to debug or just poke around the code.
