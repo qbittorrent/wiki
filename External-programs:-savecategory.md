@@ -45,7 +45,9 @@ exit 0
 
 ```
 
-> :information_source: [link to gist](https://gist.github.com/jef/e29126da5953c331310c1b6c58502be0)
+> :information_source: Make sure to replace the `username` and `password` with your credentials before using or else this will not work.
+> 
+> :link: [Link to gist](https://gist.github.com/jef/e29126da5953c331310c1b6c58502be0) for potential script changes or comments.
 
 And set **Run external program on torrent completion** to:
 
