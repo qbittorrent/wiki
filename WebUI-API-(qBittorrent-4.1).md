@@ -1,4 +1,4 @@
-This WebUI API documentation applies to qBittorrent v4.1+. For other WebUI API versions, visit [the home page](https://github.com/qbittorrent/qBittorrent/wiki#WebUI-API).
+This WebUI API documentation applies to qBittorrent v4.1+. For other WebUI API versions, visit [WebUI API](https://github.com/qbittorrent/qBittorrent/wiki#WebUI-API).
 
 # Table of Contents #
 
