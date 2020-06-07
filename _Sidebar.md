@@ -14,7 +14,12 @@
 * [I forgot my WebUI password](wiki/Web-UI-password-locked-on-qBittorrent-NO-X-%28qbittorrent-nox%29)
 * [Speed issues](wiki/Things-we-need-to-know-to-help-you-with-'speed'-issues)
 
-### Search Plugins
+### External programs
+
+* [How-to](wiki/External-programs:-How-to)
+* [`savecategory`](wiki/External-programs:-savecategory)
+
+### Search plugins
 
 * [List of unofficial search plugins](wiki/Unofficial-search-plugins)
 
@@ -30,7 +35,7 @@
 
 ---
 
-## WebUI Related
+## WebUI related
 
 ### API documentation
 
@@ -41,6 +46,7 @@
 ### Alternate WebUI
 
 * [Alternate WebUI usage](wiki/Alternate-WebUI-usage)
+* [Developing alternate WebUIs](wiki/Developing-alternate-WebUIs-(WIP))
 * [List of unofficial alternate WebUIs](wiki/List-of-known-alternate-WebUIs)
 
 ### Reverse proxy setup for WebUI access
@@ -94,9 +100,3 @@
 * [MSVC 2017 (static linkage)](wiki/Compiling:-MSVC-2017-(static-linkage))
 * [MSVC 2017 (x86_64) (static linkage)](wiki/Compilation:-MSVC-2017-(x86_64)-(static-linkage))
 * [MSVC 2019 (static linkage)](wiki/Compiling:-MSVC-2019-(static-linkage))
-
----
-
-## Alternate WebUI
-
-* [Developing alternate WebUIs](wiki/Developing-alternate-WebUIs-(WIP))
