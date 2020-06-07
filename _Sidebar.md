@@ -69,6 +69,7 @@
 ## Development
 
 * [Coding style](https://github.com/qbittorrent/qBittorrent/blob/master/CODING_GUIDELINES.md)
+* [Contributing](https://github.com/qbittorrent/qBittorrent/blob/master/CONTRIBUTING.md)
 * [How to write a search plugin](wiki/How-to-write-a-search-plugin)
 * [Using VSCode for qBittorrent development](wiki/Using-VSCode-for-qBittorrent-development)
 * [Setup GDB with Qt pretty printers](wiki/Setup-GDB-with-Qt-pretty-printers)
