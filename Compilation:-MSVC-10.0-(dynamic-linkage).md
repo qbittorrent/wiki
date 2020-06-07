@@ -1,6 +1,4 @@
-
-
-'''OUTDATED'''
+# OUTDATED
 
 We are building qBittorrent on Windows with MSVC compiler instead of MinGW. This choice was made because [http://www.mingw.org/wiki/wide_characters MinGW does not support wide characters]. MSVC compiler also generates smaller executables than MinGW.
 
