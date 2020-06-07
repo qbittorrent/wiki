@@ -35,13 +35,15 @@
 
 ---
 
-## WebUI related
+## WebUI
 
-### API documentation
+### WebUI API
 
-* [API documentation (current, qBittorrent v4.1+)](wiki/Web-API-Documentation)
-* [API documentation (previous, qBittorrent v3.2.0-v4.0.4)](wiki/WebUI-API-Documentation)
-* [API documentation (obsolete, qBittorrent v3.1.x)](wiki/WebUI-API-Documentation-(qBittorrent-v3.1.x))
+| State | Version |
+|---|---|
+| [Current](wiki/WebUI-API-(qBittorrent-4.1)) | qBittorrent v4.1+ |
+| [Previous](wiki/WebUI-API-(qBittorrent-v3.2.0-v4.0.4)) | qBittorrent v3.2.0-v4.0.4 |
+| [Obsolete](wiki/WebUI-API-(qBittorrent-v3.1.x)) | qBittorrent v3.1.x |
 
 ### Alternate WebUI
 
