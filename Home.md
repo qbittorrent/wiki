@@ -45,7 +45,7 @@ Everyone is welcome to edit and improve the wiki!
 
 | State | Version |
 |---|---|
-| [Current]((wiki/WebUI-API-(qBittorrent-4.1-))) | qBittorrent v4.1+ |
+| [Current](wiki/WebUI-API-(qBittorrent-4.1-)) | qBittorrent v4.1+ |
 | [Previous](wiki/WebUI-API-(qBittorrent-v3.2.0-v4.0.4)) | qBittorrent v3.2.0-v4.0.4 |
 | [Obsolete](wiki/WebUI-API-(qBittorrent-v3.1.x)) | qBittorrent v3.1.x |
 
