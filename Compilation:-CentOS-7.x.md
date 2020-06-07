@@ -1,5 +1,3 @@
-# Introduction
-
 This how-to will guide you though the compilation of qBittorrent and
 `libtorrent-rasterbar`.
 
