@@ -51,4 +51,4 @@ And set **Run external program on torrent completion** to:
 
 `/path/to/savecategory "%D" "%I" "%N"`
 
-Now whenever a `.torrent` file gets dropped in your watch folders, it'll set the category correctly.
+On completion, the category will changed based on the directory name the `.torrent` file was placed in the watch directory.
