@@ -61,12 +61,21 @@ Change devtoolsset if you didn't do that already: `scl enable devtoolset-8 ba
 
 Clone from the repository: `git clone --depth 1 -b RC_1_2 https://github.com/arvidn/libtorrent.git`
 
+If you need to build deluge,you must run the following command:
+```bash
+yum -y install python-devel boost-devel
+```
 Compile:
 
 ```bash
 cd libtorrent
 ./autotool.sh
-./configure --disable-debug --enable-encryption --prefix=/usr --with-boost=${DIR_BOOST} CXXFLAGS=--std=c++14
+
+# Only compiled for qbittorrent:
+./configure --prefix=/usr --disable-debug --enable-encryption --with-boost=${DIR_BOOST} CXXFLAGS=--std=c++14
+
+# Compiling for both qbittorrent and deluge:
+./configure --prefix=/usr --disable-debug --enable-encryption --with-boost=${DIR_BOOST} CXXFLAGS=--std=c++14 --with-libiconv --with-libgeoip=system --enable-python-binding
 make -j$(( $(nproc) - 1 ))
 make install
 ln -s /usr/lib/pkgconfig/libtorrent-rasterbar.pc /usr/lib64/pkgconfig/libtorrent-rasterbar.pc
@@ -105,12 +114,25 @@ To set up qbittorrent as a deamon see [this guide](https://github.com/qbittorren
 
 # Troubleshooting
 
-If are you facing a problem like this
+If are you facing a problem like this:
 
 ```txt
 qbittorrent-nox: error while loading shared libraries: libtorrent-rasterbar.so 10: cannot open shared object file: No such file or directory
 ```
+and this:
+```txt
+checking for libtorrent... no
+configure: error: Package requirements (libtorrent-rasterbar >= 1.0.6) were not met:
 
+No package 'libtorrent-rasterbar' found
+
+Consider adjusting the PKG_CONFIG_PATH environment variable if you
+installed software in a non-standard prefix.
+
+Alternatively, you may set the environment variables libtorrent_CFLAGS
+and libtorrent_LIBS to avoid the need to call pkg-config.
+See the pkg-config man page for more details.
+```
 This often happened when you are using 64-bit CentOS 7.x.
 And it's because of the libraries that the qBittorrent need are not in `/usr/lib64/`.
 
