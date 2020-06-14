@@ -81,7 +81,20 @@ make install
 ln -s /usr/lib/pkgconfig/libtorrent-rasterbar.pc /usr/lib64/pkgconfig/libtorrent-rasterbar.pc
 ```
 
-**Last command was missing and on 64bit systems will fail without it**
+**Last command was missing and on 64bit systems will fail without it.Here is the error information:**
+```txt
+checking for libtorrent... no
+configure: error: Package requirements (libtorrent-rasterbar >= 1.0.6) were not met:
+
+No package 'libtorrent-rasterbar' found
+
+Consider adjusting the PKG_CONFIG_PATH environment variable if you
+installed software in a non-standard prefix.
+
+Alternatively, you may set the environment variables libtorrent_CFLAGS
+and libtorrent_LIBS to avoid the need to call pkg-config.
+See the pkg-config man page for more details.
+```
 
 # Compiling qBittorrent (without the GUI)
 
@@ -119,20 +132,8 @@ If are you facing a problem like this:
 ```txt
 qbittorrent-nox: error while loading shared libraries: libtorrent-rasterbar.so 10: cannot open shared object file: No such file or directory
 ```
-and this:
-```txt
-checking for libtorrent... no
-configure: error: Package requirements (libtorrent-rasterbar >= 1.0.6) were not met:
 
-No package 'libtorrent-rasterbar' found
 
-Consider adjusting the PKG_CONFIG_PATH environment variable if you
-installed software in a non-standard prefix.
-
-Alternatively, you may set the environment variables libtorrent_CFLAGS
-and libtorrent_LIBS to avoid the need to call pkg-config.
-See the pkg-config man page for more details.
-```
 This often happened when you are using 64-bit CentOS 7.x.
 And it's because of the libraries that the qBittorrent need are not in `/usr/lib64/`.
 
