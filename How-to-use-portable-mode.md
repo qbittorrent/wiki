@@ -8,7 +8,7 @@ Portable mode makes it so that all qBittorrent config files get stored and read 
 
 Use `--profile=path/to/config/dir --relative-fastresume`, where `path/to/config/dir` is the folder where you want your portable config to be stored or read from, if the config files already exist inside it.
 
-Alternatively, create a folder literally named `profile` in the same directory as the qBittorrent executable, and just run the executable without the `--profile` and --relative-fastresume` flags. The effect is the same as above, inside the `profile` directory. However, this is usually not what you want unless you are testing a build of qBittorrent you've compiled yourself in a directory that does not require elevated privileges.
+Alternatively, create a folder literally named `profile` in the same directory as the qBittorrent executable, and just run the executable without the `--profile` and `--relative-fastresume` flags. The effect is the same as above, inside the `profile` directory. However, this is usually not what you want unless you are testing a build of qBittorrent you've compiled yourself in a directory that does not require elevated privileges.
 
 **NOTE:** there are a bunch of caveats and pitfalls associated with portable mode and the `--relative-fastresume` flag in particular. Refer to the man page for more information and things to watch out for about these options. If just you want to use multiple configurations, use `--profile=path/to/config/dir` or `--configuration=config-name-here`. TODO: work on the new, complete man page is not yet finished.
 
