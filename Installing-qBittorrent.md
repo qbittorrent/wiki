@@ -16,6 +16,8 @@ Currently, two official PPAs are maintained for Ubuntu:
  
 qBittorrent is also available semi-officially on FlatHub: https://flathub.org/apps/details/org.qbittorrent.qBittorrent
 
+For CentOS, Fedora and RHEL, enable the Extra Packages for Enterprise Linux (EPEL) repository (epel-release) to install qbittorrent or qbittorrent-nox. 
+
 # Windows and macOS
 
 The **only** official source for Windows and macOS builds is this page (and the links within it): https://www.qbittorrent.org/download.php.
