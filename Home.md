@@ -1,6 +1,6 @@
 Everyone is welcome to edit and improve the wiki!
 
-> :point_right: If you create a page, place it below in it's respective place and update the sidebar with the content below.
+> :point_right: If you create a page, place it below in its respective place and update the sidebar with the content below.
 
 ## General
 
