@@ -1,1 +1,0 @@
-telegram  @ams_team
