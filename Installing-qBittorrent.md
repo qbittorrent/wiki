@@ -7,7 +7,7 @@ It can be compiled from source for any of those platforms, but binary packages a
 
 qBittorrent binary packages should be available in your distro's repositories. Both the `qbittorrent` (qBittorrent with GUI) and `qbittorrent-nox` ("no X", for headless server environments) packages should be available.
 
-It is recommended to use always use the latest version, and new issue reports should be filed against the latest stable version (or a more recent `master` commit) only. However, some distributions do not always provide the latest packages. In this case, you should either: use an official alternative binary repository (such as the official PPAs for Ubuntu), use an alternative unofficial binary repository (at your own risk) or compile from source.
+It is recommended to always use the latest version, and new issue reports should be filed against the latest stable version (or a more recent `master` commit) only. However, some distributions do not always provide the latest packages. In this case, you should either: use an official alternative binary repository (such as the official PPAs for Ubuntu), use an alternative unofficial binary repository (at your own risk) or compile from source.
 
 Currently, two official PPAs are maintained for Ubuntu:
 
