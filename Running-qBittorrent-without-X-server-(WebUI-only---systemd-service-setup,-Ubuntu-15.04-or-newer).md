@@ -171,4 +171,11 @@ Conventions such as these are used by `systemd` to define conditions around serv
 Refer to [Systemd.mount reference](http://man7.org/linux/man-pages/man5/systemd.mount.5.html) for further reading.
 It follows a simple logic: if your drive is mounted on `/media/volume`, the unit name will be `media-volume.mount`, if it's on `/mnt/disk`, the unit will be `mnt-disk.mount`.
 
+For more complex paths you can use `systemd-escape --path`:
+
+```sh
+$ systemd-escape --path /mnt/disk\ with\ spaces-10
+mnt-disk\x20with\x20spaces\x2d10
+```
+
 Using this to define the qbittorrent-nox service file, if the drive can't mount when booting or if the drive is unmounted after qbittorrent has been started, it will not allow it to start or force it to stop, preventing from writing when the drive is not ready or present.
