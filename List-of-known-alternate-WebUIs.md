@@ -31,3 +31,14 @@ If you know of more, feel free to add a link to the repository along with a shor
 - https://github.com/bill-ahmed/qbit-WebUI
 
     A minimalist WebUI made using Typescript.
+
+
+---
+### Boilerplates
+
+This is a list of boilerplate projects for starting to develop a new WebUI
+
+
+- https://github.com/ntoporcov/qbittorrent-webui-react-boilerplate
+
+    A barebones CRA React project modified for WebUI .
