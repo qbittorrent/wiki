@@ -7,6 +7,8 @@ A non-exhaustive list of FOSS alternate WebUIs developed for qBittorrent by the 
 If you know of more, feel free to add a link to the repository along with a short description.
 
 ---
+### Custom WebUI Projects
+
 
 - https://github.com/iFelix18/Dark-qBittorrent-WebUI
 
