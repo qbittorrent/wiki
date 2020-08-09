@@ -34,6 +34,10 @@ If you know of more, feel free to add a link to the repository along with a shor
 
     A minimalist WebUI made using Typescript.
 
+- https://github.com/ntoporcov/iQbit
+
+    An iOS styled, mobile focused WebUI theme and PWA. Built in react and made especially for mobile devices and tablets, although it works in any browser as well.
+
 
 ---
 ### Boilerplates
