@@ -10,7 +10,11 @@ This guide assumes you are relatively inexperienced with GDB, and either don't k
 
 1. Clone the qBittorrent repository if you haven't done so already. In this example, it is assumed it was cloned to `/home/user/Documents/qBittorrent`
 
-2. Create a file called `.gdbinit` inside the cloned repository folder with the following contents:
+2. Create a folder called `.gdb` inside the cloned repository folder (`/home/user/Documents/qBittorrent`).
+
+3. Download the `qt.py` and `helper.py` files from [here](https://cgit.kde.org/kdevelop.git/tree/plugins/gdb/printers) and place them inside the `.gdb` folder.
+
+4. Create a file called `.gdbinit` inside the cloned repository folder with the following contents:
     ```python
     python
 
@@ -27,13 +31,9 @@ This guide assumes you are relatively inexperienced with GDB, and either don't k
     end
     ```
 
-3. Create a folder called `.gdb` inside the cloned repository folder.
-
-4. Download `qt.py` and `helper.py` from [here](https://cgit.kde.org/kdevelop.git/tree/plugins/gdb/printers) and place them inside the `.gdb` folder.
-
 # Usage
 
-After starting a debugging session with qBittorrent (`gdb qbittorrent`, for example), do `source .gdbinit` in  the GDB console. You should see some output informing you that the pretty printers have been loaded.
+After starting a debugging session with qBittorrent (`gdb qbittorrent`, for example), execute `source .gdbinit` in  the GDB console. You should see some output informing you that the pretty printers have been loaded.
 
 ```gdb
 (gdb) source .gdbinit
@@ -71,4 +71,4 @@ For example, suppose you are at a breakpoint and print the value of a variable n
   [190] = 121 'y', [191] = 112 'p', [192] = 101 'e', [193] = 58 ':', [194] = 32 ' ', [195] = 97 'a', [196] = 112 'p', [197] = 112 'p', [198] = 108 'l', [199] = 105 'i'...}
     ```
 
-The pretty printer output is further customizable with the usual GDB options. For example, you can suppress output of individual array elements, or reduce the number of array elements printed.
+The pretty printer output is further customizable via the usual GDB options for output customization. For example, you can suppress output of individual array elements, or reduce the number of array elements printed.
