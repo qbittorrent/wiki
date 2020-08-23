@@ -1,23 +1,29 @@
 # Introduction
 
 qBittorrent has a feature-rich Web UI allowing users to control qBittorrent remotely.
-`qbittorrent-nox` is a version of qBittorrent with a webUI instead of a windowed GUI.
+`qbittorrent-nox` is a version of qBittorrent that only has a WebUI instead of a windowed desktop GUI.
 This is ideal for headless servers without the X window system such as Ubuntu Server.
 
 This guide will show you how to setup `qbittorrent-nox` to run as a managed background service (daemon) by setting it up as a `systemd` service.
 It can then be customized like any other `systemd` service, to automatically start on boot, for instance.
 
-For Ubuntu, it's advisable to install `qbittorrent-nox` from the official PPA to get the latest version.
-Refer to https://github.com/qbittorrent/qBittorrent/wiki/Installing-qBittorrent for more information.
-
 Side Note: these instructions are written with Ubuntu in mind but should be much the same if not exactly the same for any modern distro that uses `systemd`.
 All instructions assume very basic knowledge of how to use the terminal.
+
+# Install `qBittorrent-nox`
+
+Official qBittorrent packages are available for all mainstream Linux distributions, but distributions may not always contain the latest package versions.
+
+For Ubuntu, it's advisable to install `qbittorrent-nox` from the official PPAs to get the latest version.
+Refer to https://github.com/qbittorrent/qBittorrent/wiki/Installing-qBittorrent for more information.
+
+Alternatively, you can always compile from source. Check out the articles under the [Compilation](https://github.com/qbittorrent/qBittorrent/wiki#compilation) section of the Wiki home page for more information.
 
 # Create a separate user account (optional - you may want to do this for security depending on your setup)
 
 Create the user that `qbittorrent-nox` will run under with:
 
-```
+```sh
 sudo adduser qbtuser
 ```
 
@@ -27,13 +33,13 @@ Give it a password when prompted. You may leave every other value blank.
 
 You may also want to disable login for the account (from SSH) for security reasons. The account will still be usable locally:
 
-```
+```sh
 sudo usermod -s /usr/sbin/nologin qbtuser
 ```
 
 This can be reversed if necessary with the command:
 
-```
+```sh
 sudo usermod -s /bin/bash qbtuser
 ```
 
@@ -43,7 +49,7 @@ Before we set up `qbittorrent-nox` to run as a background service, it's advisabl
 
 First, switch to the user that will run qbittorent:
 
-```
+```sh
 sudo su qbtuser
 ```
 
@@ -53,7 +59,7 @@ You must agree to it in order to proceed.
 
 Then, you should see the following information printed on your terminal:
 
-```
+```txt
 ******** Information ********
 To control qBittorrent, access the Web UI at http://localhost:8080
 The Web UI administrator user name is: admin
@@ -67,7 +73,7 @@ Then you can go to `Tools -> Options` to change settings such as the WebUI port.
 
 Quit the running `qbittorrent-nox` process by pressing `Ctrl-c` on your keyboard in the terminal:
 
-```
+```txt
 ^CCatching signal: SIGINT
 Exiting cleanly
 ```
@@ -80,14 +86,14 @@ On Ubuntu, system-wide `systemd` service definition files are located under `/et
 
 Create a new file, `/etc/systemd/system/qbittorrent.service`, and edit it with the appropriate permissions and text editor of your choice, for example:
 
-```
+```sh
 sudoedit /etc/systemd/system/qbittorrent.service
 ```
 
 Save the file with the following contents or similar.
 You may modify them as-needed to better suit your needs:
 
-```
+```txt
 [Unit]
 Description=qBittorrent-nox service
 Documentation=man:qbittorrent-nox(1)
@@ -119,7 +125,8 @@ The qBittorrent service is now ready to be used. To start the service on system 
 - stop the service: `sudo systemctl stop qbittorrent`
 - enable/disable it to start up on boot: `sudo systemctl enable qbittorrent`
     - this should output something like the following:
-        ```
+
+        ```txt
         Created symlink from /etc/systemd/system/multi-user.target.wants/qbittorrent.service to /etc/systemd/system/qbittorrent.service.
         ```
 - the result of the previous command can be reverted with: `sudo systemctl disable qbittorrent`.
@@ -133,7 +140,7 @@ qBittorrent will still log most interesting stuff to its usual logging directory
 
 However, some output can probably still be viewed with:
 
-```
+```sh
 sudo journalctl -u qbittorrent.service
 ```
 
@@ -146,7 +153,7 @@ It's important that you edit the service created above and add some `systemd` de
 
 After you added the mount point to the `/etc/fstab`, it should have a line like this:
 
-```
+```txt
 UUID=c987355d-0ddf-4dc7-bbbc-bab8989d0690 /media/volume  ext4     defaults,nofail 0       0
 ```
 
@@ -155,7 +162,7 @@ The `nofail` option prevents the system from stopping the boot process in case t
 You should edit `/etc/systemd/system/qbittorrent.service` to add `local-fs.target` to the line `After=network-online.target` and add the line `BindsTo=media-volume.mount` to bind the qbittorrent service to the mount point that you want it to write the files.
 Your service file should look like this:
 
-```
+```txt
 # ... other stuff ...
 
 [Unit]
