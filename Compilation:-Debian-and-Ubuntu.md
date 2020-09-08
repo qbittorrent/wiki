@@ -77,7 +77,7 @@ git clone https://github.com/arvidn/libtorrent.git
 cd libtorrent
 ```
 
-To compile, first choose the appropriate `git` and compile commands in the table below, according to the version of `libtorrent` you need:
+To compile, first choose the appropriate `git` and compile commands in the table below, according to the version of `libtorrent` you need, then run them:
 
 <table>
 <thead>
@@ -85,32 +85,34 @@ To compile, first choose the appropriate `git` and compile commands in the table
 <th><p>libtorrent version series</p></th>
 <th><p>qBittorrent version support</p></th>
 <th><p>git command (example with most recent tag in series at the time of writing)</p></th>
-<th colspan="2"><p>Compile commands (after running the git command, choose between using autotools <em>or</em> CMake)</p></th>
+<th colspan="2"><p>Compile commands - after running the git command, choose between using CMake (recommended) <em>or</em> autotools</p></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td colspan="3"><hr /></td>
-<td><p>autotools</p></td>
 <td><p>CMake</p></td>
+<td><p>autotools</p></td>
 </tr>
 <tr>
 <td><p>1.2.x</p></td>
 <td><p>&gt;= 4.2.0</p></td>
 <td><pre><code>git checkout libtorrent-1_2_5</code></pre></td>
+<td><pre><code>cmake -B cmake-build-dir/release -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_STANDARD=14
+cmake --build cmake-build-dir/release</code></pre></td>
 <td><pre><code>./autotool.sh
-./configure --disable-debug --enable-encryption CXXFLAGS=&quot;-std=c++14&quot;</code></pre></td>
-<td><pre><code>mkdir -p cmake-build-dir/release && cd cmake-build-dir/release
-cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_STANDARD=14 -G "Unix Makefiles" ../..</code></pre></td>
+./configure --disable-debug --enable-encryption CXXFLAGS=&quot;-std=c++14&quot;
+make clean && make -j$(nproc)</code></pre></td>
 </tr>
 <tr>
 <td><p>1.1.x</p></td>
 <td><p>&gt;= 3.3.8 and &lt;4.2.0 (*)</p></td>
 <td><pre><code>git checkout libtorrent-1_1_14</code></pre></td>
+<td rowspan="2"><pre><code>cmake -B cmake-build-dir/release -DCMAKE_BUILD_TYPE=Release
+cmake --build cmake-build-dir/release</code></pre></td>
 <td rowspan="2"><pre><code>./autotool.sh
-./configure --disable-debug --enable-encryption</code></pre></td>
-<td rowspan="2"><pre><code>mkdir -p cmake-build-dir/release && cd cmake-build-dir/release
-cmake -DCMAKE_BUILD_TYPE=Release -G "Unix Makefiles" ../..</code></pre></td>
+./configure --disable-debug --enable-encryption
+make clean && make -j$(nproc)</code></pre></td>
 </tr>
 <tr>
 <td><p>1.0.x</p></td>
@@ -122,25 +124,27 @@ cmake -DCMAKE_BUILD_TYPE=Release -G "Unix Makefiles" ../..</code></pre></td>
 
 (*) Technically, the 4.2.x releases actually support the 1.1.x `libtorrent` series, but it is just life support and not properly tested/developed.
 
-Now you're ready to compile:
-
-```bash
-make clean && make -j$(nproc)
-```
-
 Finally, you can install `libtorrent`.
 
-If you have `checkinstall`, the following command will generate and install a `.deb` package that can be tracked and managed by your package manager:
+- If building with CMake:
 
-```bash
-sudo checkinstall --nodoc --backup=no --deldesc --pkgname libtorrent-rasterbar --pkgversion 1.x.x-source-compile # change the version to your liking
-```
+    `sudo cmake --install cmake-build-dir/release`
 
-Alternatively, the traditional way will do just fine:
+    This generates an `install_manifest.txt` file in the build folder that can later be used to uninstall all installed files with `sudo xargs rm < install_manifest.txt`. The default installation prefix is `/usr/local`, as expected.
 
-```bash
-sudo make install
-```
+- If building with `autotools`:
+
+    If you have `checkinstall`, the following command will generate and install a `.deb` package that can be tracked and managed by your package manager:
+
+    ```bash
+    sudo checkinstall --nodoc --backup=no --deldesc --pkgname libtorrent-rasterbar --pkgversion 1.x.x-source-compile # change the version to your liking
+    ```
+
+    Alternatively, the traditional way will do just fine (but there is no tracking of the installed files):
+
+    ```bash
+    sudo make install
+    ```
 
 For more information on building libtorrent, see [libtorrent downloading and building](https://www.libtorrent.org/building.html).
 
