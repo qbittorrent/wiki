@@ -45,6 +45,10 @@
 | [Previous](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-v3.2.0-v4.0.4)) | qBittorrent v3.2.0-v4.0.4 |
 | [Obsolete](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-v3.1.x)) | qBittorrent v3.1.x |
 
+### WebAPI clients
+
+* [List of unofficial WebAPI clients](https://github.com/qbittorrent/qBittorrent/wiki/List-of-unnoficial-WebAPI-clients)
+
 ### Alternate WebUI
 
 * [Alternate WebUI usage](https://github.com/qbittorrent/qBittorrent/wiki/Alternate-WebUI-usage)
