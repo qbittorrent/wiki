@@ -89,7 +89,6 @@
 
 ### Compilation
 
-* [CentOS 7.x](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-CentOS-7.x)
 * [CentOS 8.x](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-CentOS-8.x)
 * [CMake](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-CMake)
 * [Debian / Ubuntu compilation](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-Debian-and-Ubuntu)
@@ -98,11 +97,10 @@
 * [FreeBSD (no GUI)](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-FreeBSD-(no-GUI))
 * [Fully static binaries on Linux (glibc or musl)](https://github.com/qbittorrent/qBittorrent/wiki/Compiliation:-Fully-static-binaries-on-Linux-(glibc-or-musl))
 * [macOS](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-macOS)
-* [MSVS 10.0 (dynamic linkage)](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-MSVC-10.0-(dynamic-linkage))
-* [MSVS 2008 (static linkage)](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-MSVC-2008-(static-linkage))
-* [MSVS 2008 (x86_64) (static linkage)](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-MSVC-2010-(x86_64)-(dynamic-linkage))
-* [MSVC 2013 (static linkage)](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-MSVC-2013-(static-linkage))
-* [MSVC 2013 (x86_64) (dynamic linkage)](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-MSVC-2013-(x86_64)-(dynamic-linkage))
 * [MSVC 2017 (static linkage)](https://github.com/qbittorrent/qBittorrent/wiki/Compiling:-MSVC-2017-(static-linkage))
 * [MSVC 2017 (x86_64) (static linkage)](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-MSVC-2017-(x86_64)-(static-linkage))
 * [MSVC 2019 (static linkage)](https://github.com/qbittorrent/qBittorrent/wiki/Compiling-with-MSVC-2019-(static-linkage))
+
+---
+
+* [Obsolete compilation guides](https://github.com/qbittorrent/qBittorrent/wiki/Obsolete-compilation-guides)
