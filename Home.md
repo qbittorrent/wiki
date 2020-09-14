@@ -107,4 +107,4 @@ Everyone is welcome to edit and improve the wiki!
 
 ---
 
-* [Obsolete](https://github.com/qbittorrent/qBittorrent/wiki/Obsolete-compilation-guides)
+* [Obsolete compilation guides](https://github.com/qbittorrent/qBittorrent/wiki/Obsolete-compilation-guides)
