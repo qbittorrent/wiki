@@ -109,6 +109,11 @@ As you may know, a torrent is split into pieces of equal size that do not take f
 As a consequence, a piece can contain information relative to more than one file and qBittorrent only operates at piece level.<br />
 Because of this, if two files are adjacent and you choose to download only one of them, it is likely that the filtered one will be partially downloaded and thus appear on the hard-disk.
 
+== Low performance despite high or 100% disk usage on Windows (also with external drives) ==
+Try disabling MSI mode for that drive: [https://support.microsoft.com/en-us/help/3083595/task-manager-might-show-100-disk-utilization-on-windows-10-devices-wit Microsoft Docs page].<br />
+For external drives, you may need to shuck them and use them as internal drives. Or just get a new motherboard/PCIe card with better SATA controllers.<br />
+See also [https://github.com/qbittorrent/qBittorrent/issues/13314#issuecomment-693379135 this issue comment].
+
 == Only one tracker is working. The others aren't contacted yet ==
 Tick Tools → Options... → Advanced → Always announce to all trackers.
 
