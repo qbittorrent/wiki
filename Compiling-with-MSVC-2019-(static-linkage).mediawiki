@@ -5,12 +5,13 @@ This page describes how to compile 32-bit and 64-bit qBittorrent using MSVC 2019
 * A [https://www.perl.org/ Perl language] interpreter. [http://strawberryperl.com/ Strawberry Perl] will do fine.
 * Latest release of the [https://www.nasm.us/ NASM assembler].
 * Latest release of [https://www.zlib.net/ Zlib].
-* Latest release of [https://www.openssl.org/ OpenSSL].
+* Latest release of [https://www.openssl.org/source/ OpenSSL] (1.1.1 branch). 
 * Latest release of the [https://www.boost.org/ Boost libraries].
-* Latest release of [https://www.libtorrent.org/ libtorrent(rasterbar)].
-* Latest release of the [https://www.qt.io/ Qt libraries] source.
-* Latest release of [https://www.qbittorrent.org qBittorrent].
-* [https://www.qt.io/download-open-source/#section-6 Qt Creator].
+* Latest release of [https://www.libtorrent.org/ libtorrent(rasterbar)] (1.2.x branch).
+* Latest release of the [https://download.qt.io/official_releases/qt/ Qt libraries] source.
+** Choose the latest release, and then download the .tar.xz or .zip file under the 'single' directory. For example, 5.15.1 may be found [https://download.qt.io/official_releases/qt/5.15/5.15.1/single/ here].
+* Latest release of [https://www.qbittorrent.org/download.php qBittorrent] (scroll to bottom for source code).
+* [https://download.qt.io/official_releases/qtcreator/ Qt Creator].
 
 === Info that applies to all steps ===
 * Let's assume that the working directory for our compilation will be <code>G:\QBITTORRENT</code>
@@ -93,6 +94,9 @@ This page describes how to compile 32-bit and 64-bit qBittorrent using MSVC 2019
 * Navigate to the Libtorrent source folder. eg <code>cd G:\QBITTORRENT\libtorrent-rasterbar-1.2.10</code>
 * Copy the b2.exe from the Boost directory to the Libtorrent directory
  copy ..\boost_1_73_0\b2.exe b2.exe
+* Set the following two shell variables, so that boost knows where its build system is:
+ set BOOST_ROOT=G:\QBITTORRENT\boost_1_73_0
+ set BOOST_BUILD_PATH=G:\QBITTORRENT\boost_1_73_0\tools\build
 * Compile a static version of Libtorrent. Issue the following command. Replace N in <code>-j N</code> with the number of CPU cores you have or how many threads you want b2 to use when compiling:
 :'''32-bit'''
  b2 -q --without-python --toolset=msvc-14.2 variant=release link=static runtime-link=static debug-symbols=on encryption=on crypto=openssl openssl-version=1.1 logging=off dht=on windows-version=win7 boost-link=static -sBOOST_ROOT="G:\QBITTORRENT\boost_1_73_0" include="G:\QBITTORRENT\install_msvc32\base\include" include="G:\QBITTORRENT\boost_1_73_0" library-path="G:\QBITTORRENT\install_msvc32\base\lib" library-path="G:\QBITTORRENT\boost_1_73_0\stage\lib" --prefix="G:\QBITTORRENT\install_msvc32\base" define=BOOST_ASIO_DISABLE_CONNECTEX cxxflags="-O1 -Oy- -Gy -Gw -GL" linkflags="/NOLOGO /DYNAMICBASE /NXCOMPAT /LTCG /OPT:REF /OPT:ICF=5 /MANIFEST:EMBED /INCREMENTAL:NO" --hash -j N
@@ -125,7 +129,7 @@ This page describes how to compile 32-bit and 64-bit qBittorrent using MSVC 2019
  configure -prefix G:\QBITTORRENT\install_msvc32\qt5 -I G:\QBITTORRENT\install_msvc32\base\include -L G:\QBITTORRENT\install_msvc32\base\lib -platform win32-msvc -release -opensource -confirm-license -strip -no-shared -static -static-runtime -ltcg -make libs -make tools -nomake examples -no-compile-examples -no-dbus -no-icu -system-zlib -openssl-linked -no-gtk -no-opengl -no-opengles3 -no-angle -no-sql-sqlite -no-sql-odbc -no-sqlite -skip qt3d -skip qtactiveqt -skip qtandroidextras -skip qtcanvas3d -skip qtcharts -skip qtconnectivity -skip qtdatavis3d -skip qtdeclarative -skip qtdoc -skip qtgamepad -skip qtgraphicaleffects -skip qtimageformats -skip qtlocation -skip qtmacextras -skip qtmultimedia -skip qtnetworkauth -skip qtpurchasing -skip qtquickcontrols -skip qtquickcontrols2 -skip qtremoteobjects -skip qtscript -skip qtscxml -skip qtsensors -skip qtserialbus -skip qtserialport -skip qtspeech -skip qtvirtualkeyboard -skip qtwayland -skip qtwebchannel -skip qtwebengine -skip qtwebglplugin -skip qtwebsockets -skip qtwebview -skip qtx11extras -skip qtxmlpatterns ZLIB_LIBS="-lzlib" OPENSSL_LIBS="-lzlib -llibcrypto -llibssl -lgdi32 -luser32 -lws2_32 -lAdvapi32 -lCrypt32"
 :'''64-bit'''
  configure -prefix G:\QBITTORRENT\install_msvc64\qt5 -I G:\QBITTORRENT\install_msvc64\base\include -L G:\QBITTORRENT\install_msvc64\base\lib -platform win32-msvc -release -opensource -confirm-license -strip -no-shared -static -static-runtime -ltcg -make libs -make tools -nomake examples -no-compile-examples -no-dbus -no-icu -system-zlib -openssl-linked -no-gtk -no-opengl -no-opengles3 -no-angle -no-sql-sqlite -no-sql-odbc -no-sqlite -skip qt3d -skip qtactiveqt -skip qtandroidextras -skip qtcanvas3d -skip qtcharts -skip qtconnectivity -skip qtdatavis3d -skip qtdeclarative -skip qtdoc -skip qtgamepad -skip qtgraphicaleffects -skip qtimageformats -skip qtlocation -skip qtmacextras -skip qtmultimedia -skip qtnetworkauth -skip qtpurchasing -skip qtquickcontrols -skip qtquickcontrols2 -skip qtremoteobjects -skip qtscript -skip qtscxml -skip qtsensors -skip qtserialbus -skip qtserialport -skip qtspeech -skip qtvirtualkeyboard -skip qtwayland -skip qtwebchannel -skip qtwebengine -skip qtwebglplugin -skip qtwebsockets -skip qtwebview -skip qtx11extras -skip qtxmlpatterns ZLIB_LIBS="-lzlib" OPENSSL_LIBS="-lzlib -llibcrypto -llibssl -lgdi32 -luser32 -lws2_32 -lAdvapi32 -lCrypt32"
-* Now you have 2 choices for compiling. Using <code>nmake</code> or <code>jom</code>. nmake uses only one core for compilation. That means that the qt compilation will take hours. On the other hand jom can use multiple cores/threads for faster compilation. Download it from [https://www.qt.io/download-open-source/ here]. Extract the jom.exe to the qt source dir and just issue(N number of cores/threads to use):
+* Now you have 2 choices for compiling. Using <code>nmake</code> or <code>jom</code>. nmake uses only one core for compilation. That means that the qt compilation will take hours. On the other hand jom can use multiple cores/threads for faster compilation. Download it from [https://download.qt.io/official_releases/jom/ here]. Extract the jom.exe to the qt source dir and just issue(N number of cores/threads to use):
  jom -j N
 * Now install:
  jom -j N install
