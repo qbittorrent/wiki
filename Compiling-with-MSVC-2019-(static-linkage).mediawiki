@@ -1,7 +1,7 @@
 This page describes how to compile 32-bit and 64-bit qBittorrent using MSVC 2019 under Windows. This is tested under Windows 10 64-bit but it should work the same under any other Windows version. Here the Community Edition of MSVC 2019 was used but any other edition must behave the same.
 
 === What you will need: ===
-* The MSVC 2019 compiler. The Community Edition(free) will do fine.
+* The MSVC 2019 compiler. The free [https://visualstudio.microsoft.com/vs/community/ Community Edition] will do fine.
 * A [https://www.perl.org/ Perl language] interpreter. [http://strawberryperl.com/ Strawberry Perl] will do fine.
 * Latest release of the [https://www.nasm.us/ NASM assembler].
 * Latest release of [https://www.zlib.net/ Zlib].
