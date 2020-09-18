@@ -85,9 +85,9 @@ This page describes how to compile 32-bit and 64-bit qBittorrent using MSVC 2019
  bootstrap.bat 
 * Compile a static version of Boost. Issue the following command. Replace N in <code>-j N</code> with the number of CPU cores you have or how many threads you want b2 to use when compiling:
 :'''32-bit'''
- b2 -q --with-system --toolset=msvc-14.2 variant=release link=static runtime-link=static include="G:\QBITTORRENT\install_msvc32\base\include" library-path="G:\QBITTORRENT\install_msvc32\base\lib" define=BOOST_ASIO_DISABLE_CONNECTEX cxxflags="-O1 -Oy- -Gy -Gw -GL" linkflags="/NOLOGO /DYNAMICBASE /NXCOMPAT /LTCG /OPT:REF /OPT:ICF=5 /MANIFEST:EMBED /INCREMENTAL:NO" --hash -j N
+ b2 -q --with-system --with-date_time --toolset=msvc-14.2 variant=release link=static runtime-link=static include="G:\QBITTORRENT\install_msvc32\base\include" library-path="G:\QBITTORRENT\install_msvc32\base\lib" define=BOOST_ASIO_DISABLE_CONNECTEX cxxflags="-O1 -Oy- -Gy -Gw -GL" linkflags="/NOLOGO /DYNAMICBASE /NXCOMPAT /LTCG /OPT:REF /OPT:ICF=5 /MANIFEST:EMBED /INCREMENTAL:NO" --hash -j N
 :'''64-bit'''
- b2 -q --with-system --toolset=msvc-14.2 address-model=64 variant=release link=static runtime-link=static include="G:\QBITTORRENT\install_msvc64\base\include" library-path="G:\QBITTORRENT\install_msvc64\base\lib" --prefix="G:\QBITTORRENT\install_msvc64\base" cxxflags="-O1 -Gy -Gw -GL" linkflags="/NOLOGO /DYNAMICBASE /NXCOMPAT /LTCG /OPT:REF /OPT:ICF=5 /MANIFEST:EMBED /INCREMENTAL:NO" --hash -j N
+ b2 -q --with-system --with-date_time --toolset=msvc-14.2 address-model=64 variant=release link=static runtime-link=static include="G:\QBITTORRENT\install_msvc64\base\include" library-path="G:\QBITTORRENT\install_msvc64\base\lib" --prefix="G:\QBITTORRENT\install_msvc64\base" cxxflags="-O1 -Gy -Gw -GL" linkflags="/NOLOGO /DYNAMICBASE /NXCOMPAT /LTCG /OPT:REF /OPT:ICF=5 /MANIFEST:EMBED /INCREMENTAL:NO" --hash -j N
 
 === Compiling Libtorrent ===
 * Extract the Libtorrent sources in the working dir.
@@ -163,9 +163,14 @@ This page describes how to compile 32-bit and 64-bit qBittorrent using MSVC 2019
  LIBS += $$quote(-LG:/QBITTORRENT/install_msvc64/base/lib)
 :* Edit the third LIBS to look like this:
  LIBS += $$quote(-LG:/QBITTORRENT/install_msvc64/qt5/lib)
-:* Delete the lines with the rest of the LIBS variables that '''expect paths'''
-:* Look for the LIBS variable that takes the lib names of libtorrent and libboost_system. Adjust the filename of the lib of libboost_system (it changes depending on version and other things).
-:* Adjust the line with the LIBS variables of libeay32.lib and ssleay32.lib, as we are using the OpenSSL build large than 1.0.2, the library files has been renamed. A proper change should look like this:
+:* Delete the nearby lines with the rest of the LIBS variables that '''expect paths'''
+:* Look for the LIBS variables that take the lib names of libboost_system.
+:**These lines may include the <code>libtorrent</code> library as well on versions earlier than the 4.3.x branch; just leave that alone if it is present. 
+:**Adjust the filename of the <code>libboost_system</code> library. Its full name will vary based on the boost version, build-system, and target architecture, among other things. In our example, it can be found under <code>G:/QBITTORRENT/boost_1_73_0/stage/lib</code>.
+:***For example, if you've built an x64 build of boost 1.73.0 with MSVC2019, it'll should be <code>libboost_system-vc142-mt-s-x64-1_73.lib</code>
+:** '''Additionally''', if you are building 4.3.x or later, you must '''also''' specify the correct filename of the <code>libboost_date_time</code> library here. You can find out what it is by looking in the same directory the <code>libboost_system</code> library is. 
+:* If you are compiling the 4.2.x branch rather than the latest master commit, adjust the line with the LIBS variables of libeay32.lib and ssleay32.lib--as we are using the OpenSSL build large than 1.0.2, the library files has been renamed. A proper change should look like this:
  LIBS += libcrypto.lib libssl.lib
 * Select Build->Build Project "qbittorrent"
 * After the compilation ends you should have ''qbittorrent.exe'' in <code><build folder>\src\release</code>. "build folder" is where you chose qBittorrent to be build in the popup window.
+** By default, the build folder will be a new directory that's the same depth as your source-dir, and may look something like <code>build-qbittorrent-Desktop_x86_windows_msvc2019_pe_64bit-Release</code> 
