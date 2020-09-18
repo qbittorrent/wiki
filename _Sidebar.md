@@ -6,7 +6,6 @@
 * [How to use qBittorrent as a tracker](https://github.com/qbittorrent/qBittorrent/wiki/How-to-use-qBittorrent-as-a-tracker)
 * [How to use portable mode](https://github.com/qbittorrent/qBittorrent/wiki/How-to-use-portable-mode)
 * [Anonymous mode](https://github.com/qbittorrent/qBittorrent/wiki/Anonymous-Mode)
-* [Multiple users for WebUI](https://github.com/qbittorrent/qBittorrent/wiki/Multiple-users-for-WebUI)
 
 ### Troubleshooting
 
