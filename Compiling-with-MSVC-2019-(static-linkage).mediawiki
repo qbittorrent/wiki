@@ -170,8 +170,11 @@ This page describes how to compile 32-bit and 64-bit qBittorrent using MSVC 2019
 :**Adjust the filename of the <code>libboost_system</code> library. Its full name will vary based on the boost version, build-system, and target architecture, among other things. In our example, it can be found under <code>G:/QBITTORRENT/boost_1_73_0/stage/lib</code>.
 :***For example, if you've built an x64 build of boost 1.73.0 with MSVC2019, it should be <code>libboost_system-vc142-mt-s-x64-1_73.lib</code>
 :** '''Additionally''', if you are building 4.3.x or later, you must '''also''' specify the correct filename of the <code>libboost_date_time</code> library here. You can find out what it is by looking in the same directory that the <code>libboost_system</code> library is. 
-:* If you are compiling the 4.2.x branch rather than the latest master commit, adjust the line with the LIBS variables of libeay32.lib and ssleay32.lib--as we are using the OpenSSL build large than 1.0.2, the library files has been renamed. A proper change should look like this:
- LIBS += libcrypto.lib libssl.lib
+:* If you are compiling the 4.2.x branch rather than the latest master commit, find the following line
+:::<code>LIBS += libeay32.lib ssleay32.lib</code>
+::*and replace it with:
+:::<code>LIBS += libcrypto.lib libssl.lib</code>
+
 * Select Build->Build Project "qbittorrent"
 * After the compilation ends you should have ''qbittorrent.exe'' in <code><build folder>\src\release</code>. "build folder" is where you chose qBittorrent to be built in the popup window.
 ** By default, the build folder will be a new directory that's the same depth as--''not under''--your source directory, and may look something like <code>build-qbittorrent-Desktop_x86_windows_msvc2019_pe_64bit-Release</code> 
