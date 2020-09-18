@@ -10,6 +10,7 @@ This page describes how to compile 32-bit and 64-bit qBittorrent using MSVC 2019
 * Latest release of [https://www.libtorrent.org/ libtorrent(rasterbar)] (1.2.x branch).
 * Latest release of the [https://download.qt.io/official_releases/qt/ Qt libraries] source.
 ** Choose the latest release, and then download the .tar.xz or .zip file under the 'single' directory. For example, 5.15.1 may be found [https://download.qt.io/official_releases/qt/5.15/5.15.1/single/ here].
+** '''Note''': This is a massive source tree, with many small files, and will take some time to decompress. 
 * Latest release of qBittorrent (clone the repository or download the source tarball of the latest release). Typically you want either the latest stable release or the latest master commit, for the latest fixes and improvements.
 * [https://download.qt.io/official_releases/qtcreator/ Qt Creator].
 
