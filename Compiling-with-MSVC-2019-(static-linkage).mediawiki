@@ -148,23 +148,24 @@ This page describes how to compile 32-bit and 64-bit qBittorrent using MSVC 2019
 
 === Compiling qBittorrent ===
 * Extract the qBittorrent sources in the working dir.
-* Launch Qt Creator and open the ''qbittorrent.pro'' file in ''G:\QBITTORRENT\qBittorrent''
+* Launch Qt Creator and open the <code>qbittorrent.pro</code> file in <code>G:\QBITTORRENT\qBittorrent</code>
 * From the Window that pops up select the Qt version you added above and specify '''release''' version. You can also select where qBittorrent will be built if you want.
 * If you're compiling the 4.2.x branch with MSVC2019:
 :* Navigate down to <code>src/gui/Sources</code> in the Qt Creator folder tree on the left.
 :* Open <code>fspathedit.cpp</code>.
-:* Add this line at the end of the header inclusions at beginning of <code>fspathedit.cpp</code>:
+:* At the end of the header inclusions at beginning of that file, add this line:
 :::<code>#include <stdexcept></code>
-:* Save your changes.
-* Rename the ''conf.pri.windows'' file to ''conf.pri'' (or make a copy of it with that name). Open it and do the following (you can read the comments that it has inside too). The paths below use the path used for 32-bit, adjust them for 64-bit:
-:* Edit the first INCLUDEPATH to look like this(adjust for actual boost name):
+:* and save your changes.
+* Navigate to <code>G:\QBITTORRENT\qBittorrent</code> in Windows Explorer, and rename the <code>conf.pri.windows</code> file to <code>conf.pri</code> (or make a copy of it with that name). You'll have to change a few paths here so that qBittorrent successfully builds and links.  
+::: '''NOTE:''' The paths below use the proper pathnames for a 64-bit build. Make sure you adjust them if you are building for a 32-bit target. Moreover, there are some notes in <code>conf.pri</code> itself that provide for alternative configurations that are worth paying attention to, but are not covered here. Keeping that in mind:  
+:* Edit the first INCLUDEPATH to look like this (adjust for actual boost version):
  INCLUDEPATH += $$quote(G:/QBITTORRENT/boost_1_73_0)
 :* Edit the second INCLUDEPATH to look like this:
  INCLUDEPATH += $$quote(G:/QBITTORRENT/install_msvc64/base/include)
-:* Edit the third INCLUDEPATH to look like this(adjust for actual boost name):
+:* Edit the third INCLUDEPATH to look like this: 
  INCLUDEPATH += $$quote(G:/QBITTORRENT/install_msvc64/qt5/include)
 :* Delete the lines with the rest of the INCLUDEPATH variables
-:* Edit the first LIBS to look like this:
+:* Edit the first LIBS to look like this (adjust for actual boost version):
  LIBS += $$quote(-LG:/QBITTORRENT/boost_1_73_0/stage/lib)
 :* Edit the second LIBS to look like this:
  LIBS += $$quote(-LG:/QBITTORRENT/install_msvc64/base/lib)
@@ -180,6 +181,7 @@ This page describes how to compile 32-bit and 64-bit qBittorrent using MSVC 2019
 :::<code>LIBS += libeay32.lib ssleay32.lib</code>
 ::*and replace it with:
 :::<code>LIBS += libcrypto.lib libssl.lib</code>
+:* Save your changes. 
 
 * Select Build->Build Project "qbittorrent"
 * After the compilation ends you should have ''qbittorrent.exe'' in <code><build folder>\src\release</code>. "build folder" is where you chose qBittorrent to be built in the popup window.
