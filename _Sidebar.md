@@ -89,8 +89,17 @@
 
 ### Compilation
 
+#### CMake (WIP)
+
+* [Common information](https://github.com/qbittorrent/qBittorrent/wiki/Compilation-with-CMake:-common-information)
+* Debian/Ubuntu TODO
+* Windows (MSVC 2019, static linkage) TODO
+* Windows (MinGW 64-bit, dynamic linkage) TODO
+* macOS TODO
+
+#### qmake/autotools (deprecated)
+
 * [CentOS 8.x](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-CentOS-8.x)
-* [CMake](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-CMake)
 * [Debian / Ubuntu compilation](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-Debian-and-Ubuntu)
 * [DietPi/Rasbian](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-DietPi-and-Raspbian-(Debian-9.0))
 * [Raspian for LeMaker Banana Pro](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-Raspbian-for-LeMaker-Banana-Pro)
