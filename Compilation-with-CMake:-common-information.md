@@ -1,14 +1,14 @@
 ## Introduction
 
-As of revision `63ff5e348c248c31b801040de838898d9c3baba9` (this is after version 4.2.5), CMake should be considered the preferred way of building qBittorrent on all supported platforms.
+As of revision `63ff5e3` (this is after version 4.2.5), CMake should be considered the preferred way of building qBittorrent on all supported platforms.
 
-Currently, the CMake build scripts may not handle installation to system directories both correctly and in a fully automated fashion for all platforms (this is noted in each platform-specific guide where relevant). Additionally, currently they don't handle packaging at all. Patches are welcome to improve this!
-
-Specific instructions for each platform are listed in the section below: [platform specific guides](#Platform-specific-instructions-and-guides).
+Not that currently, the CMake build scripts may not handle installation to system directories both correctly and in a fully automated fashion for all platforms (this is noted in each platform-specific guide where relevant). Additionally, currently they don't handle packaging at all. Patches are welcome to improve this!
 
 ## Prerequisites
 
-- The qBittorrent source code
+In order to build qBittorrent with CMake, first check that you have the following:
+
+- Basic understanding of how to use CMake. Refer to [CMake Basics](#CMake-Basics) below if needed.
 - A C++ compiler and toolchain (e.g. `build-essential` package on Ubuntu, Visual Studio/MSVC toolchain on Windows, Xcode toolchain on macOS, ...)
 - CMake >= 3.16. If your distribution does not include a recent enough version in their repositories, install it from the official website or the official PPA.
 - The Ninja build tool (optional, but recommended).
@@ -17,7 +17,7 @@ More information about what is needed specifically is detailed in the guides for
 
 ## qBittorrent build configuration options
 
-You may use the following options to customize the build. Pass them in the **configure step** like so: `-D<option_name>=<value>`.
+When following any of the [platform-specific guides](#Platform-specific-instructions-and-guides), you may use the following qBittorrent-specific options to customize the build. Pass them in the **configure step** like so: `-D<option_name>=<value>`.
 
 | Option name | Type | Default value | Description | Conditions, if any |
 |-|-|-|-|-|
@@ -41,6 +41,8 @@ TODO
 - macOS 10.15 with Xcode
 
 ---
+---
+---
 
 ## CMake Basics
 
@@ -49,7 +51,7 @@ Building qBittorrent with CMake comes down to a 2-step process:
 - the configuration and generation, also known as the **configure step/"configure-time"**, where 
 - and the build itself, also known as the **build step/"build-time"**.
 
-In the **configure step** where it is possible to set some options to customize the qBittorrent build, CMake checks that all prerequistes and dependencies are in order and generates input files for some underlying buildsystem.
+In the **configure step** where it is possible to set some options to customize the qBittorrent build, CMake checks that all prerequisites and dependencies are in order and generates input files for some underlying buildsystem.
 These input files will be then used to actually build the project in the **build step** by the underlying buildsystem.
 
 A typical CMake invocation looks like the following 2 commands:
@@ -74,7 +76,7 @@ At the end of the **configure step** CMake will print some useful information to
 
 - In the second one, which is the **build step**:
 
-    - `--build build` tells CMake to build the buildtree generated under the `build/` directory (it is created if it doesn't already exist). All resulting build outputs will be under this directory when the build finishes.
+    - `--build build` tells CMake to build the build tree generated under the `build/` directory (it is created if it doesn't already exist). All resulting build outputs will be under this directory when the build finishes.
     - Since in this example a single-config generator is being used, the `--config <BuildType>` argument is not passed (it would be ignored anyway), since the build configuration was already selected at **"configure-time"**.
     - `--parallel 4` tells CMake to instruct the underlying buildsytem to use 4 CPU cores for compilation. If not specified, the underlying buildsystem's default is used (for example, `Ninja` defaults to all available cores, `Unix Makefiles` defaults to 1).
     - It is possible to pass additional options directly to the underlying buildsystem after `--`. For example, `cmake --build build -- -j 4` would do the same thing as `cmake --build build --parallel 4` when using the `Unix Makefiles` generator.
