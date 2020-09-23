@@ -12,7 +12,7 @@ This guide assumes you are relatively inexperienced with GDB, and either don't k
 
 2. Create a folder called `.gdb` inside the cloned repository folder (`/home/user/Documents/qBittorrent`).
 
-3. Download the `qt.py` and `helper.py` files from [here](https://cgit.kde.org/kdevelop.git/tree/plugins/gdb/printers) and place them inside the `.gdb` folder.
+3. Download the `qt.py` and `helper.py` files from [here](https://invent.kde.org/kdevelop/kdevelop/-/tree/master/plugins/gdb/printers)  ([backup link](https://github.com/KDE/kdevelop/tree/master/plugins/gdb/printers)) and place them inside the `.gdb` folder.
 
 4. Create a file called `.gdbinit` inside the cloned repository folder with the following contents:
     ```python
