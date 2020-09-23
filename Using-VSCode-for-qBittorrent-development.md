@@ -292,3 +292,9 @@ Here is an example `.vscode/launch.json` file for launching/attaching to the qBi
     ]
 }
 ```
+
+## Setup additional tools
+
+VScode allows defining arbitrary tasks in `.vscode/tasks.json`.
+
+You can make use of this to drive additional tooling straight from the editor, such as [Clazy](https://github.com/KDE/clazy), for example.
