@@ -2,292 +2,293 @@
 
 VSCode is a popular open source text editor with IDE-like functionality.
 
-This is guide will help you setup a basic configuration for a good qBittorrent development experience, from editing to compiling and debugging.
+This guide will help you setup a basic configuration for a good qBittorrent development experience, from editing to compiling and debugging.
 
-Currently this guide is mostly targeted at Linux users, but Windows/macOS users should be able to follow along, as most steps are the same or analogous.
+Currently this guide is mostly targeted at Linux users, but Windows/macOS users should be able to follow along with possibly some tweaks to the suggested settings here and there, as most steps are the same or analogous.
 
-# Extensions
+# Prerequisites
 
-The main extension required is MS's VSCode C/C++ tools:
+## Tools
 
-- ID: `ms-vscode.cpptools`
-- URL: https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools
+Install the following tools:
 
-Optionally, you may also install the CMake Tools extension, for integration with qBittorrents (still experimental) CMake build support.
+- `CMake` and `ninja` (also known as `ninja-build`), for compiling/building and project build integration in the editor via the `CMake Tools` extension.
+- The `clangd` language server, to provide "language intelligence" features (code completion, compile errors, go to definition, ...). It is highly recommended to use a recent version, like 11 or later.
+- `clang-tidy`, for static analysis and linting duties. It will can be executed as part of the build by `CMake` and automatically for each file as needed by `clangd`.
 
-- ID: `ms-vscode.cmake-tools`
-- URL: https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools
+## VScode extensions
 
-# Workspace settings
+Install the following extensions in VSCode:
 
-After cloning the qBittorrent repository (to `/home/user/Documents/qBittorrent`, for example), open the folder in VSCode. This is now your workspace.
+- `CMake Tools`, to provide good `CMake` project integration (but sadly, no syntax highlighting, yet).
+  - ID: `ms-vscode.cmake-tools`
+  - URL: https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools
 
-## Editing
-**NOTE** If you're using CMake Tools, it should be able to create `c_cpp_properties.json` itself and you wouldn't need to do following steps,
+- `clangd`, to provide C/C++ "language intelligence" features via the `clangd` program.
+  - ID: `llvm-vs-code-extensions.vscode-clangd`
+  - URL: https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd
 
+- `C/C++` (from Microsoft), to provide debugging support. Later on, most of its features will be disabled to prevent conflicts with `clangd`.
+  - ID: `ms-vscode.cpptools`
+  - URL: https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools
 
-For all editor features such as code completion, navigation, hovers and error reporting to work properly you need to configure the C/C++ settings.
+# Setup
 
-1. Create a folder called `.vscode` in the root of the workspace, if it does not exist already.
+Clone the qBittorrent repository (to `/home/user/Documents/qBittorrent`, for example), and open that folder in VSCode. This will be referred to as "workspace"/"workspace root folder"/"project root" throughout the guide.
 
-2. Create a file called `c_cpp_properties.json` inside the `.vscode` folder if it doesn't already exist with the following contents:
-    ```
-    {
-        "configurations": [
-            {
-                "name": "Linux",
-                "includePath": [
-                    "${workspaceFolder}/**",
-                    "/usr/include/libtorrent/**",
-                    "/usr/include/x86_64-linux-gnu/qt5/**"
-                ],
-                "defines": ["QBT_VERSION_MAJOR=4", "QBT_VERSION_MINOR=3", "QBT_VERSION_BUGFIX=0", "QBT_VERSION_BUILD=0", "QBT_VERSION=\"v4.3.0alpha1\"", "QBT_VERSION_2=\"4.3.0alpha1\""],
-                "cppStandard": "c++17"
-            }
-        ],
-        "version": 4
-    }
-    ```
-    - You may change the paths to the `Qt` and `libtorrent` headers in the `includePath`. The paths in this example are the defaults for Ubuntu.
-    - If using an alternative Boost library version (if you compiled from source, for example), make sure to specify the proper include path for it as well (e.g. `"/opt/boost/**"`).
-    - You may change the `QBT_VERSION*` `defines` to your preference. This is only needed because VSCode does not read the version defines from the `version.pri` file, so it throws errors whenever it sees them otherwise.
-    - Feel free to browse the documentation of this file and customize more of the available options to your liking.
+For this setup to work as intended, you will need to add some settings mentioned in the following sections to the project-level `.vscode/settings.json` file, in the workspace root.
+If you find that you end up using many of these settings as-is for many projects, feel free to factor them out into the user-level settings file.
 
-## Compiling
+Note that this configuration is merely a suggestion with sane defaults, for the sake of this guide.
+You may customize some them to your liking, after looking up what they do.
+However, note that some of these settings are non-negotiable for this setup to work correctly.
+For example, for `clangd` to work correctly in VSCode, the IntelliSense engine of the `C/C++` extension must not be enabled.
 
-### Manually
+## Setup the `CMake Tools` extension
 
-You can use VSCode's integrated terminal to run qBittorrent's traditional compilation commands.
+You can call `CMake` manually from the terminal for both configuring and/or building the project.
+However, it is still worth installing and configuring this extension because it synergizes very well with `clangd`.
+For example, it can be configured to automatically copy the generated `compile_commands.json` compilation database to the workspace root, where `clangd` needs it to be to generate its index in order to work correctly.
+Otherwise, you would have to create a custom task to accomplish this.
 
-For example, on Ubuntu:
+In addition, the GUI can be a convenient way of running common tasks and customizing the options for the configure step command line.
 
-```bash
-./configure --enable-debug
-make -j2
-# optional: creates a .deb package and installs to /usr/local/*
-sudo checkinstall --nodoc --strip=no --stripso=no --pkgname qbittorrent --pkgversion 4.2.x-test
+In the status bar, the currently active build type and "kit" (the selected compiler) are displayed. You can change the currently active ones by clicking on them and selecting from the pop-up that appears.
+
+These are the recommended settings:
+
+```jsonc
+{
+    "cmake.configureOnOpen": false,
+    "cmake.configureArgs": [
+        "--graphviz=${workspaceFolder}/build/${buildType}/target_graph.dot",
+    ],
+    "cmake.buildDirectory": "${workspaceFolder}/build/${buildType}",
+    // This is very useful to get clangd to "just work" after the first CMake build
+    "cmake.copyCompileCommands": "${workspaceFolder}/compile_commands.json",
+    // These are the options you would normally pass as -DVar=Value at configure-time
+    "cmake.configureSettings": {
+        "CMAKE_EXPORT_COMPILE_COMMANDS": true,
+        // More options, including qBittorrent build configuration options go here...
+    },
+    "cmake.installPrefix": "/usr/local",
+    "cmake.preferredGenerators": [
+        "Ninja",
+        "Unix Makefiles",
+    ],
+}
 ```
 
-For more information see https://github.com/qbittorrent/qBittorrent/wiki#compilation
+Note that `CMake` can also output `clang-tidy` diagnostics as part of the build, at the cost of slowing it down.
+This can be accomplished by specifying a valid `clang-tidy` command-line via the `CMAKE_CXX_CLANG_TIDY` configure-time option, for example: `-DCMAKE_CXX_CLANG_TIDY="clang-tidy --checks=boost-*,bugprone-*,clang-analyzer-*"`.
 
-### Using tasks
+If you already have a generated `.clang-tidy` file at the root of the project, the checks will be automatically picked up from there, so if you need no additional options besides those checks, you just need `-DCMAKE_CXX_CLANG_TIDY="clang-tidy"`.
 
-You can use VSCode tasks to automate the above process and run it from within VSCode. See https://code.visualstudio.com/docs/editor/tasks for more information.
+## Setup the `clangd` and `C/C++` extensions
 
-### Using CMake + CMake Tools extension
+The `clangd` extension will be configured to run in the background and enable `clang-tidy` diagnostics.
+It  piggy-backs off of the `compile_commands.json` compilation database generated by the `CMake` build (and copied to the root of the workspace by the `CMake` Extension) to provide `clang-tidy` diagnostics and other "language intelligence" features.
 
-CMake Tools support both building and running for different targets from CMakeLists.txt, so you should be able to compile, run, and debug without needing to create `launch.json` and `tasks.json`. 
+`clangd` generates an index/cache of the diagnostics for every file inside a `.cache` folder at the root of the workspace.
+You might want to add this to your global `.gitignore`.
+Generating this index for the first time might take a while; the indexing progress and status is shown in VSCode's status bar.
 
-## Running and debugging
+These are the recommended settings:
 
-Create a `launch.json` inside the `.vscode` folder.
-
-Here is an example for launching/attaching either `qbittorrent` or `qbittorrent-nox` with GDB and Qt pretty printer functionality (see https://github.com/qbittorrent/qBittorrent/wiki/Setup-GDB-with-Qt-pretty-printers). Change the executable locations if needed.
-
-You will be able to set breakpoints/watchpoints, step through the code, view variable values, call stack, etc from within VSCode.
-
+```jsonc
+{
+    // Disable most of the C/C++ extension's features, except debugging support
+    "C_Cpp.autocomplete": "Disabled",
+    "C_Cpp.errorSquiggles": "Disabled",
+    "C_Cpp.experimentalFeatures": "Disabled",
+    "C_Cpp.formatting": "Disabled",
+    "C_Cpp.intelliSenseEngine": "Disabled",
+    // clangd configuration
+    "clangd.semanticHighlighting": true,
+    "clangd.arguments": [
+        // maximum number of parallel jobs; increase or decrease to your liking
+        "-j=4",
+        "--all-scopes-completion",
+        "--background-index",
+        "--completion-style=detailed",
+        "--header-insertion=iwyu",
+        "--suggest-missing-includes"
+        "--clang-tidy",
+        // select which clang-tidy checks should be enabled
+        "--clang-tidy-checks=boost-*,bugprone-*,cert-*,cppcoreguidelines-*,clang-analyzer-*,misc-*,modernize-*,performance-*,portability-*,readability-*,-readability-braces-around-statements",
+    ],
+}
 ```
+
+`clangd` runs `clang-tidy` in the background as needed for each file as they are opened, and displays the detected problems in the "Problems" view, as well as squiggles in the text buffer.
+More detailed descriptions and fix-it suggestions are displayed as mouse-over hovers in the text buffer for each problem.
+
+If you already have a generated `.clang-tidy` file at the root of the project, the checks for which diagnostics should be emitted will be automatically picked up from there, so in this case you can remove the `--clang-tidy-checks` option.
+
+- Note: to generate a `.clang-tidy` file: `clang-tidy -checks=<checks_string> --dump-config`. Refer to the `clang-tidy` documentation to learn more.
+
+## Setup launch configurations for debugging
+
+Integrated debugging support is provided mainly by the `C/C++` extension and also by the `CMake Tools` extension.
+There is no additional extension configuration required for debugging, but the following general debugging settings are often desirable:
+
+```jsonc
+{
+    "debug.allowBreakpointsEverywhere": true,
+    "debug.inlineValues": true,
+    "debug.showBreakpointsInOverviewRuler": true,
+}
+```
+
+Thanks to the `CMake Tools` extension, it is possible to launch the debugger with default settings for executable `CMake` targets, even without any configured launch configuration.
+
+However, it is still recommended to create launch configurations in order to have a better overall experience.
+For example, with an actual launch configuration, it is possible to use custom pretty-printing functionality, which enables better display of values Qt types in the variables view (see https://github.com/qbittorrent/qBittorrent/wiki/Setup-GDB-with-Qt-pretty-printers).
+
+Here is an example `.vscode/launch.json` file for launching/attaching to the qBitorrent executable from either the build folder or the system installation directories with GDB and Qt pretty printer functionality:
+
+```jsonc
 {
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(gdb) Launch qbittorrent",
-            "request": "launch",
+            "name": "(gdb) Launch from CMake build directory",
             "type": "cppdbg",
-            "program": "/usr/local/bin/qbittorrent", // change if needed
+            "request": "launch",
+            "MIMode": "gdb",
+            "program": "${command:cmake.launchTargetPath}",
+            "cwd": "${workspaceFolder}",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
             "externalConsole": false,
-            "MIMode": "gdb",
+            // the setup commands are the same for the remaining configurations
             "setupCommands": [
                 {
-                    // make sure we are in the root of the workspace
                     "description": "Change gdb's working directory to the root workspace folder",
-                    "text": "-environment-cd ${workspaceFolder}",
-                    "ignoreFailures": false
+                    "text": "-environment-cd ${workspaceFolder} -foo",
                 },
                 {
                     "description": "Execute the commands from the .gdbinit file in the root workspace folder",
                     "text": "-interpreter-exec console \"source .gdbinit\"",
-                    "ignoreFailures": false
                 },
                 {
-                    // this one is needed for pretty printers to work in the variables view
                     "description": "Enable custom pretty printers to work on the variables view",
                     "text": "-enable-pretty-printing",
-                    "ignoreFailures": false
                 },
                 {
-                    // this one enables standard pretty printing in the debug console
                     "description": "Enable standard pretty-printing in the gdb console",
                     "text": "-gdb-set print pretty on",
-                    "ignoreFailures": false
                 },
                 {
                     "description": "GDB: no limit on print output for arrays",
                     "text": "-gdb-set print elements unlimited",
-                    "ignoreFailures": false
                 },
                 {
                     "description": "GDB: pretty print arrays",
                     "text": "-gdb-set print array on",
-                    "ignoreFailures": false
                 },
                 {
                     "description": "GDB: show array indexes",
                     "text": "-gdb-set print array-indexes on",
-                    "ignoreFailures": false
-                }
-            ]
-        },
-        {   
-            "name": "(gdb) Launch qbittorrent-nox",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "/usr/local/bin/qbittorrent-nox", // change if needed
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
-            "externalConsole": false,
-            "MIMode": "gdb",
-            "setupCommands": [
-                {
-                    // make sure we are in the root of the workspace
-                    "description": "Change gdb's working directory to the root workspace folder",
-                    "text": "-environment-cd ${workspaceFolder}",
-                    "ignoreFailures": false
-                },
-                {
-                    "description": "Execute the commands from the .gdbinit file in the root workspace folder",
-                    "text": "-interpreter-exec console \"source .gdbinit\"",
-                    "ignoreFailures": false
-                },
-                {
-                    // this one is needed for pretty printers to work in the variables view
-                    "description": "Enable custom pretty printers to work on the variables view",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": false
-                },
-                {
-                    // this one enables standard pretty printing in the debug console
-                    "description": "Enable standard pretty-printing in the gdb console",
-                    "text": "-gdb-set print pretty on",
-                    "ignoreFailures": false
-                },
-                {
-                    "description": "GDB: no limit on print output for arrays",
-                    "text": "-gdb-set print elements unlimited",
-                    "ignoreFailures": false
-                },
-                {
-                    "description": "GDB: pretty print arrays",
-                    "text": "-gdb-set print array on",
-                    "ignoreFailures": false
-                },
-                {
-                    "description": "GDB: show array indexes",
-                    "text": "-gdb-set print array-indexes on",
-                    "ignoreFailures": false
                 }
             ]
         },
         {
-            "name": "(gdb) Attach qbittorrent",
+            "name": "(gdb) Attach from CMake build directory",
             "type": "cppdbg",
             "request": "attach",
-            "program": "/usr/local/bin/qbittorrent", // change if needed
-            "processId": "${command:pickProcess}",
             "MIMode": "gdb",
+            "program": "${command:cmake.launchTargetPath}",
+            "processId": "${command:pickProcess}",
             "setupCommands": [
                 {
-                    // make sure we are in the root of the workspace
-                    "description": "Change gdb's working directory to the root workspace folder",
                     "text": "-environment-cd ${workspaceFolder}",
-                    "ignoreFailures": false
                 },
                 {
-                    "description": "Execute the commands from the .gdbinit file in the root workspace folder",
                     "text": "-interpreter-exec console \"source .gdbinit\"",
-                    "ignoreFailures": false
                 },
                 {
-                    // this one is needed for pretty printers to work in the variables view
-                    "description": "Enable custom pretty printers to work on the variables view",
                     "text": "-enable-pretty-printing",
-                    "ignoreFailures": false
                 },
                 {
-                    // this one enables standard pretty printing in the debug console
-                    "description": "Enable standard pretty-printing in the gdb console",
                     "text": "-gdb-set print pretty on",
-                    "ignoreFailures": false
                 },
                 {
-                    "description": "GDB: no limit on print output for arrays",
                     "text": "-gdb-set print elements unlimited",
-                    "ignoreFailures": false
                 },
                 {
-                    "description": "GDB: pretty print arrays",
                     "text": "-gdb-set print array on",
-                    "ignoreFailures": false
                 },
                 {
-                    "description": "GDB: show array indexes",
                     "text": "-gdb-set print array-indexes on",
-                    "ignoreFailures": false
                 }
             ]
         },
         {
-            "name": "(gdb) Attach qbittorrent-nox",
+            "name": "(gdb) Launch from system install location",
             "type": "cppdbg",
-            "request": "attach",
-            "program": "/usr/local/bin/qbittorrent-nox", // change if needed
-            "processId": "${command:pickProcess}",
+            "request": "launch",
             "MIMode": "gdb",
+            "program": "/usr/local/bin/qbittorrent", // adjust path as needed
+            "cwd": "${workspaceFolder}",
+            "args": [],
+            "stopAtEntry": false,
+            "externalConsole": false,
             "setupCommands": [
                 {
-                    // make sure we are in the root of the workspace
-                    "description": "Change gdb's working directory to the root workspace folder",
                     "text": "-environment-cd ${workspaceFolder}",
-                    "ignoreFailures": false
                 },
                 {
-                    "description": "Execute the commands from the .gdbinit file in the root workspace folder",
                     "text": "-interpreter-exec console \"source .gdbinit\"",
-                    "ignoreFailures": false
                 },
                 {
-                    // this one is needed for pretty printers to work in the variables view
-                    "description": "Enable custom pretty printers to work on the variables view",
                     "text": "-enable-pretty-printing",
-                    "ignoreFailures": false
                 },
                 {
-                    // this one enables standard pretty printing in the debug console
-                    "description": "Enable standard pretty-printing in the gdb console",
                     "text": "-gdb-set print pretty on",
-                    "ignoreFailures": false
                 },
                 {
-                    "description": "GDB: no limit on print output for arrays",
                     "text": "-gdb-set print elements unlimited",
-                    "ignoreFailures": false
                 },
                 {
-                    "description": "GDB: pretty print arrays",
                     "text": "-gdb-set print array on",
-                    "ignoreFailures": false
                 },
                 {
-                    "description": "GDB: show array indexes",
                     "text": "-gdb-set print array-indexes on",
-                    "ignoreFailures": false
                 }
             ]
-        }
+        },
+        {
+            "name": "(gdb) Attach from system install location",
+            "type": "cppdbg",
+            "request": "attach",
+            "MIMode": "gdb",
+            "program": "/usr/local/bin/qbittorrent", // adjust path as needed
+            "processId": "${command:pickProcess}",
+            "setupCommands": [
+                {
+                    "text": "-environment-cd ${workspaceFolder}",
+                },
+                {
+                    "text": "-interpreter-exec console \"source .gdbinit\"",
+                },
+                {
+                    "text": "-enable-pretty-printing",
+                },
+                {
+                    "text": "-gdb-set print pretty on",
+                },
+                {
+                    "text": "-gdb-set print elements unlimited",
+                },
+                {
+                    "text": "-gdb-set print array on",
+                },
+                {
+                    "text": "-gdb-set print array-indexes on",
+                }
+            ]
+        },
     ]
 }
 ```
