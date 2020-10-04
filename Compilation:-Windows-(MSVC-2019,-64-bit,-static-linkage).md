@@ -34,7 +34,7 @@ This guide assumes you will use `cmd`, `powershell`, or `pwsh` (Powershell Core)
 
 ## Dependencies (static linkage)
 
-None of qBittorrent's dependencies have officially released builds of statically linked binaries. The best way to get good general-purpose builds of recent versions of the dependencies easily is to install them via the `vcpkg` package manager. `vcpkg` can also be used to install `libtorrent`.
+None of qBittorrent's dependencies have officially released statically linked builds. Thus, the best way to get good general-purpose builds of recent versions of the dependencies easily is to install them via the `vcpkg` package manager. `vcpkg` can also be used to install `libtorrent`.
 
 The nice thing about `vcpkg` is that it also allows you to easily patch any of the packages that it installs, should you need/want to do so. Furthermore, you can even compile some dependencies with `vcpkg`, others manually, and mix-and-match when building qBittorrent.
 
