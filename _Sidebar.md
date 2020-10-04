@@ -92,7 +92,7 @@
 #### CMake (WIP)
 
 * [Common information](https://github.com/qbittorrent/qBittorrent/wiki/Compilation-with-CMake:-common-information)
-* Debian/Ubuntu TODO
+* [Debian/Ubuntu and derivatives](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-Debian,-Ubuntu,-and-derivatives)
 * Windows (MSVC 2019, static linkage) TODO
 * Windows (MinGW 64-bit, dynamic linkage) TODO
 * macOS TODO
