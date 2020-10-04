@@ -1,0 +1,91 @@
+# Introduction
+
+**NOTE:** for qBittorrent revisions older than `63ff5e3` (2020-09-19), use the [legacy guide](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-Debian-and-Ubuntu) instead.
+
+This how-to will guide you through compiling qBittorrent from source on Debian, Ubuntu, and other derivative distros.
+
+Only follow this guide if you know what you are doing and this is what you really want.
+If you just want the latest version of qBittorrent, use our [stable](https://launchpad.net/~qbittorrent-team/+archive/ubuntu/) or [unstable](https://launchpad.net/~qbittorrent-team/+archive/ubuntu/qbittorrent-unstable) PPAs.
+
+# Install the dependencies
+
+## Boost and other miscellaneous build dependencies
+
+You need to install these packages in order to be able to compile qBittorrent from source:
+
+```bash
+sudo apt install build-essential cmake ninja-build pkg-config git zlib1g-dev libssl-dev libgeoip-dev
+sudo apt install libboost-dev libboost-system-dev libboost-chrono-dev libboost-random-dev
+```
+
+If you want, you can install the Boost libraries from source instead of installing them from the distro's repositories. This is quite easy to do, but generally does not make that much of a difference and is out of the scope of this guide.
+
+## Qt libraries
+
+qBittorrent uses the Qt framework as the basis for its GUI. qBittorrent 4.2 and later requires at least Qt 5.9.
+
+For Debian 10, Ubuntu 18.04 LTS or later and their derivatives, just install Qt from the official repositories:
+
+```bash
+sudo apt install qtbase5-dev qttools5-dev libqt5svg5-dev
+```
+
+## libtorrent
+
+qBittorrent uses the [libtorrent](https://libtorrent.org/) library by Arvid Norberg (aka `libtorrent-rasterbar`) as the backend.
+
+It is possible to install the `libtorrent` development package directly from the distro's repositories:
+
+```bash
+sudo apt install libtorrent-rasterbar-dev
+```
+
+but the version may not be the most recent or exactly the one you want.
+
+Alternatively, you can compile `libtorrent` yourself. qBittorrent 4.2.x and above requires the  1.2.x series(*).
+
+```bash
+git clone https://github.com/arvidn/libtorrent.git
+cd libtorrent
+git checkout RC_1_2 # or a 1.2.x tag
+cmake -B cmake-build-dir/Release -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local
+cmake --build cmake-build-dir/Release
+sudo cmake --install cmake-build-dir/Release
+```
+
+The install step will install libtorrent to the chosen prefix (`/usr/local`, in this case), and generate an `install_manifest.txt` file in the build folder that can later be used to uninstall all installed files with `sudo xargs rm < install_manifest.txt`.
+
+For more information on building and installing libtorrent (such as the available build configuration options), read [the documentation](https://www.libtorrent.org/building.html).
+
+(*)Technically, 4.2.x releases up to, and including, 4.2.5, actually support the 1.1.x `libtorrent` series as well, but it is just life support and not properly tested/developed.
+
+## Runtime-only dependencies
+
+qBittorrent has a runtime-only dependency on Python **3** for its search engine functionality:
+
+```bash
+sudo apt install python3
+```
+
+# Build qBittorrent
+
+Download and extract a `.tar` archive from [the GitHub releases page](https://github.com/qbittorrent/qBittorrent/releases) or clone the repository and checkout the branch/tag of your choice.
+
+Then, configure and build with CMake:
+
+```bash
+cmake -G "Ninja" -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local
+cmake --build build --config Release
+```
+
+Check out the [common information](https://github.com/qbittorrent/qBittorrent/wiki/Compilation-with-CMake:-common-information) page to learn more about the available build configuration options (for compiling without the GUI, for instance).
+
+Once qBittorrent is built, you can run it straight from the build directory.
+
+If you want to install it to the prefix chosen at configure-time, simply do `sudo cmake install`, which will generate an `install_manifest.txt` file in the build folder that can later be used to uninstall all the installed files with `sudo xargs rm < install_manifest.txt`.
+
+Alternatively, use `checkinstall`, which will generate and install a `.deb` package that can be tracked and managed by your package manager: `bash
+sudo checkinstall --nodoc --backup=no --deldesc --pkgname qbittorrent --pkgversion 4.x.x-source-compile # change the version to your liking
+`.
+
+Documentation about running qBittorrent without GUI is available [here](https://github.com/qbittorrent/qBittorrent/wiki/Running-qBittorrent-without-X-server-(WebUI-only)).
