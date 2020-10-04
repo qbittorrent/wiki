@@ -97,7 +97,8 @@ Everyone is welcome to edit and improve the wiki!
 
 * [Common information](https://github.com/qbittorrent/qBittorrent/wiki/Compilation-with-CMake:-common-information)
 * [Debian/Ubuntu and derivatives](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-Debian,-Ubuntu,-and-derivatives)
-* Windows (MSVC 2019, static linkage) TODO
+* [Windows (MSVC 2019, static linkage)](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-Windows-(MSVC-2019,-64-bit,-static-linkage))
+* Windows (MSVC 2019, dynamic linkage) TODO
 * Windows (MinGW 64-bit, dynamic linkage) TODO
 * macOS TODO
 
