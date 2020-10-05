@@ -111,8 +111,6 @@ Everyone is welcome to edit and improve the wiki!
 * [FreeBSD (no GUI)](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-FreeBSD-(no-GUI))
 * [Fully static binaries on Linux (glibc or musl)](https://github.com/qbittorrent/qBittorrent/wiki/Compiliation:-Fully-static-binaries-on-Linux-(glibc-or-musl))
 * [macOS](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-macOS)
-* [MSVC 2017 (static linkage)](https://github.com/qbittorrent/qBittorrent/wiki/Compiling:-MSVC-2017-(static-linkage))
-* [MSVC 2017 (x86_64) (static linkage)](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-MSVC-2017-(x86_64)-(static-linkage))
 * [MSVC 2019 (static linkage)](https://github.com/qbittorrent/qBittorrent/wiki/Compiling-with-MSVC-2019-(static-linkage))
 
 ---
