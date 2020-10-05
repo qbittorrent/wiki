@@ -30,7 +30,18 @@ You will need:
 - [CMake](https://cmake.org/download/) (the portable zip version is recommended) and [Ninja](https://github.com/ninja-build/ninja/releases) (download them and [add the directories where the executables are located to the system's `PATH`](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/))
 - [git for Windows](https://git-scm.com/download/win) or `git` via WSL/WSL 2, if you have WSL/WSL 2 enabled.
 
-This guide assumes you will use `cmd`, `powershell`, or `pwsh` (Powershell Core) for runing all commands (except `git` commands, which you may run via another shell in WSL/WSL 2 if you want). If you don't already have it, the new [Windows Terminal](https://github.com/microsoft/terminal) is recommended for comfortably using and managing multiple shells on Windows.
+You will need to use either `cmd` or `pwsh` (Powershell Core) with the appropriate MSVC environment variables set up to run most commands in this guide successfully:
+
+- For `cmd`, always run it from the `x64 Native Tools Command Prompt for VS 2019` shortcut that Visual Studio installs.
+- For `pwsh`, run the following command in `cmd`:
+    ```
+    pwsh -NoExit -Command "&{Import-Module ""C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\Tools\Microsoft.VisualStudio.DevShell.dll""; Enter-VsDevShell -VsInstallPath ""C:\Program Files (x86)\Microsoft Visual Studio\2019\Community"" -DevCmdArguments ""-host_arch=amd64 -arch=amd64 -vcvars_spectre_libs=spectre""}"
+    ```
+    (to run the same command from an already-running `pwsh` instance, turn every dual double-quote into a quadruple double-quote).
+
+Using the `Developer Powershell for VS 2019` shortcut is not recommended, since it uses the legacy `powershell` and defaults to using the 32-bit/x86 tools.
+
+The new [Windows Terminal](https://github.com/microsoft/terminal) is recommended for comfortably using and managing multiple shells on Windows.
 
 ## Dependencies (static linkage)
 
