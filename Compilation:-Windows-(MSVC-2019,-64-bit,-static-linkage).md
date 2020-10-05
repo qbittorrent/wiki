@@ -93,6 +93,8 @@ cmake --build cmake-build-dir
 cmake --install cmake-build-dir --prefix C:\some\folder\not\requiring\admin\privileges\libtorrent-install-dir
 ```
 
+More information about building `libtorrent` can be found at https://libtorrent.org/building.html#building-with-cmake. Passing `-Ddeveloper-options=ON` to the configure command line will enable advanced build customization options.
+
 # Build qBittorrent
 
 Download and extract a `.tar` archive from [the GitHub releases page](https://github.com/qbittorrent/qBittorrent/releases) or clone the repository and checkout the branch/tag of your choice.
