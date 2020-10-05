@@ -2,7 +2,7 @@
 
 **NOTE:** for qBittorrent revisions older than `63ff5e3` (2020-09-19), use the [legacy guide](https://github.com/qbittorrent/qBittorrent/wiki/Compiling-with-MSVC-2019-(static-linkage)) instead.
 
-This page describes how to compile qBittorrent 64-bit/x64/x86-64/amd64(*) using MSVC 2019 under Windows 10(**).
+This page describes how to compile qBittorrent 64-bit/x64/x86-64/amd64(*) (static linkage) using MSVC 2019 under Windows 10(**).
 
 (*): as of writing, compiling 32-bit/x86 versions is also possible but not recommended.
 
