@@ -93,7 +93,7 @@ Everyone is welcome to edit and improve the wiki!
 
 ### Compilation
 
-#### CMake (new method WIP)
+#### CMake
 
 * [Common information](https://github.com/qbittorrent/qBittorrent/wiki/Compilation-with-CMake:-common-information)
 * [Debian/Ubuntu and derivatives](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-Debian,-Ubuntu,-and-derivatives)
@@ -112,6 +112,7 @@ Everyone is welcome to edit and improve the wiki!
 * [Fully static binaries on Linux (glibc or musl)](https://github.com/qbittorrent/qBittorrent/wiki/Compiliation:-Fully-static-binaries-on-Linux-(glibc-or-musl))
 * [macOS](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-macOS)
 * [MSVC 2019 (static linkage)](https://github.com/qbittorrent/qBittorrent/wiki/Compiling-with-MSVC-2019-(static-linkage))
+* [Compiling with MSYS2](https://github.com/Chocobo1/qbittorent_msys2)
 
 ---
 
