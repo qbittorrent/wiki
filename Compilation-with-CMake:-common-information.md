@@ -2,7 +2,7 @@
 
 As of revision `63ff5e3` (this is after version 4.2.5), CMake should be considered the preferred way of building qBittorrent on all supported platforms.
 
-Not that currently, the CMake build scripts may not handle installation to system directories both correctly and in a fully automated fashion for all platforms (this is noted in each platform-specific guide where relevant). Additionally, currently they don't handle packaging at all. Patches are welcome to improve this!
+Note that currently, the CMake build scripts may not handle installation to system directories both correctly and in a fully automated fashion for all platforms (this is noted in each platform-specific guide where relevant). Additionally, currently they don't handle packaging at all. Patches are welcome to improve this!
 
 ## Prerequisites
 
@@ -13,11 +13,11 @@ In order to build qBittorrent with CMake, first check that you have the followin
 - CMake >= 3.16. If your distribution does not include a recent enough version in their repositories, install it from the official website or the official PPA.
 - The Ninja build tool (optional, but recommended).
 - Development files (headers and libraries, and potentially sources) of all dependencies (Qt, zlib, OpenSSL, Boost, libtorrent) for your platform.
-More information about what is needed specifically is detailed in the guides for each platform.
+More information about what is needed specifically is detailed in each [platform-specific guide](https://github.com/qbittorrent/qBittorrent/wiki#cmake).
 
 ## qBittorrent build configuration options
 
-When following any of the [platform-specific guides](#Platform-specific-instructions-and-guides), you may use the following qBittorrent-specific options to customize the build. Pass them in the **configure step** like so: `-D<option_name>=<value>`.
+You may use the following qBittorrent-specific options to customize the build. Pass them in the **configure step** like so: `-D<option_name>=<value>`. This information applies to any of the [platform-specific guides](https://github.com/qbittorrent/qBittorrent/wiki#cmake).
 
 | Option name | Type | Default value | Description | Conditions, if any |
 |-|-|-|-|-|
@@ -30,15 +30,6 @@ When following any of the [platform-specific guides](#Platform-specific-instruct
 | `Systemd_SERVICES_INSTALL_DIR` | Path | Default SystemD services directory | Where to install the SystemD service file to | Only relevant if `SYSTEMD` is `ON` |
 | `VERBOSE_CONFIGURE` | Bool | `OFF` | Show more information in the configure output (only useful for debugging the CMake build scripts) | - |
 | `WEBUI` | Bool | `ON` | Enables built-in HTTP server for headless use | - |
-
-## Platform-specific instructions and guides
-
-TODO
-
-- Ubuntu/Debian (also applicable to most other Linux distros)
-- Windows with MSVC 2019 (static linkage)
-- Windows with MinGW 7.3.0 64-bit (dynamic linkage)
-- macOS 10.15 with Xcode
 
 ---
 ---
