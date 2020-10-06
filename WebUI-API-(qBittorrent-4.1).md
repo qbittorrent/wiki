@@ -1572,7 +1572,7 @@ Possible values of `priority`:
 Value      | Description
 -----------|------------
 `0`        | Do not download
-`1`        | Normal priority
+`4`        | Normal priority
 `6`        | High priority
 `7`        | Maximal priority
 
