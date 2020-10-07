@@ -1572,7 +1572,7 @@ Possible values of `priority`:
 Value      | Description
 -----------|------------
 `0`        | Do not download
-`4`        | Normal priority
+`1`        | Normal priority
 `6`        | High priority
 `7`        | Maximal priority
 
@@ -1585,7 +1585,7 @@ Example:
         "is_seed":false,
         "name":"debian-8.1.0-amd64-CD-1.iso",
         "piece_range":[0,1253],
-        "priority":4,
+        "priority":1,
         "progress":0,
         "size":657457152
     }
