@@ -176,7 +176,7 @@ Instructions on disabling the qBittorrent GUI is available [[Running qBittorrent
 Provided you have at least shell access you can follow the instructions on [[Web-UI-password-locked-on-qBittorrent-NO-X-(qbittorrent-nox)|this page]].
 
 == Is there a Firefox or Chrome/Chromium addon that can help me send torrents to qBittorrent? ==
-Yes, there is a great Firefox add-on called [https://addons.mozilla.org/en-US/firefox/addon/bittorrent-webui-120685/ Bit Torrent WebUI+] that can send torrent and magnet links directly to the qBT Web UI server when clicked.<br />
+Yes, there is a great Firefox add-on called [https://addons.mozilla.org/en-US/firefox/addon/add-link-to-qbittorrent-webui/Add Link to  qBittorrent WebUI] that can send torrent and magnet links directly to the qBT Web UI server when clicked.<br />
 This add-on works with many popular WebUI clients including qBittorrent.
 
 And yes, there is a Chrome/Chromium extension that works great with qBittorrent : [https://chrome.google.com/webstore/detail/remote-torrent-adder/oabphaconndgibllomdcjbfdghcmenci Remote Torrent Adder]
