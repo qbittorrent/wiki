@@ -75,17 +75,21 @@ Then, configure and build with CMake:
 
 ```bash
 cmake -G "Ninja" -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local
-cmake --build build --config Release
+cmake --build build
 ```
 
-Check out the [common information](https://github.com/qbittorrent/qBittorrent/wiki/Compilation-with-CMake:-common-information) page to learn more about the available build configuration options (for compiling without the GUI, for instance).
+Check out the [common information](https://github.com/qbittorrent/qBittorrent/wiki/Compilation-with-CMake:-common-information) page to learn more about the available build configuration options (for compiling without the GUI, for instance) and CMake itself, if you're new to it.
 
-Once qBittorrent is built, you can run it straight from the build directory.
+Once qBittorrent is built, you can run it straight from the build directory. Documentation about running qBittorrent without GUI is available [here](https://github.com/qbittorrent/qBittorrent/wiki/Running-qBittorrent-without-X-server-(WebUI-only)).
 
-If you want to install it to the prefix chosen at configure-time, simply do `sudo cmake install`, which will generate an `install_manifest.txt` file in the build folder that can later be used to uninstall all the installed files with `sudo xargs rm < install_manifest.txt`.
+## Installing (optional)
 
-Alternatively, use `checkinstall`, which will generate and install a `.deb` package that can be tracked and managed by your package manager: `bash
-sudo checkinstall --nodoc --backup=no --deldesc --pkgname qbittorrent --pkgversion 4.x.x-source-compile # change the version to your liking
-`.
+To install qBittorrent to the prefix chosen at configure-time:
 
-Documentation about running qBittorrent without GUI is available [here](https://github.com/qbittorrent/qBittorrent/wiki/Running-qBittorrent-without-X-server-(WebUI-only)).
+```
+sudo cmake --install build
+```
+
+This will generate an `install_manifest.txt` file in the build folder that can later be used to uninstall all the installed files with `sudo xargs rm < install_manifest.txt`. To override the installation prefix at install-time, pass `--prefix <install_prefix>`.
+
+Patches are welcome to implement Debian package generation with CPack.
