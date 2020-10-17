@@ -165,7 +165,7 @@ Here is an example `.vscode/launch.json` file for launching/attaching to the qBi
             "setupCommands": [
                 {
                     "description": "Change gdb's working directory to the root workspace folder",
-                    "text": "-environment-cd ${workspaceFolder} -foo",
+                    "text": "-environment-cd ${workspaceFolder}",
                 },
                 {
                     "description": "Execute the commands from the .gdbinit file in the root workspace folder",
