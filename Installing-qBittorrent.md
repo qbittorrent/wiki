@@ -10,7 +10,7 @@ qBittorrent binary packages should be available in your distro's repositories. B
 It is recommended to always use the latest version, and new issue reports should be filed against the latest stable version (or a more recent `master` commit) only. However, some distributions do not always provide the latest packages. In this case, you should either:
 
 - use an official alternative binary repository (such as the official PPAs for Ubuntu)
-- compile from source (for example, https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-Debian,-Ubuntu,-and-derivatives)
+- compile from source (https://github.com/qbittorrent/qBittorrent/wiki#compilation)
 - use an alternative unofficial binary repository (at your own risk)
 
 Currently, two official PPAs are maintained for Ubuntu:
@@ -31,7 +31,4 @@ Experimental development builds are available here: https://github.com/qbittorre
 Use any other builds at your own risk.
 Issue reports from using other builds such as PortableApps and the like are not accepted.
 
-You can also compile from source if you wish, by following the relevant guides:
-
-- Windows: https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-Windows-(MSVC-2019,-64-bit,-static-linkage)
-- macOS: https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-macOS
+You can also compile from source if you wish, by following the relevant guides listed under https://github.com/qbittorrent/qBittorrent/wiki#compilation.
