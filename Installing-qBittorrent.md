@@ -22,6 +22,8 @@ qBittorrent is also available semi-officially on FlatHub: https://flathub.org/ap
 
 For CentOS, Fedora and RHEL, enable the Extra Packages for Enterprise Linux (EPEL) repository (epel-release) to install qbittorrent or qbittorrent-nox. 
 
+**Unofficial** Debian qBittorrent nightly repo https://github.com/qbittorrent/qBittorrent/issues/12616
+
 # Windows and macOS
 
 The **only** official source for Windows and macOS release builds is this page (and the links within it): https://www.qbittorrent.org/download.php.
