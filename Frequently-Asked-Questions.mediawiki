@@ -18,17 +18,16 @@ The simple answer is that "priority" has no significance for payloads, or part t
 "Priority" is there to arrange in numerical order the requests for pieces that '''your''' client makes to other peer nodes in the swarm for pieces that are still required by your client to complete the selected payload. It has no relevance to other peers as it is purely a 'local' setting.<br />
 Because of this it is excluded from the context menu that is accessed via a 'right click' or 'menu' button on a keyboard.
 
-== will private torrent be affected by DHT and PeX in qBittorrent? #9379 ==
+== Will private torrent be affected by DHT and PeX in qBittorrent? ==
 You can enable all 3 of those options and your private torrents will stay private. You can verify this by viewing the trackers tab on a private torrent and the status for DHT/PEX/LSD will be "Disabled" and the message column will say "This torrent is private".
 
 == I wrote a patch for qBittorrent, to whom can I send it? ==
-You can either fork our GitHub repository and make a pull request (highly recommended) or send patches to the following address: sledgehammer999(at)qbittorrent(dot)org.<br />
-We will review them promptly.
+You can fork our GitHub repository and make a pull request on GitHub.
 
 == Who is developing qBittorrent? ==
 qBittorrent was created in March 2006 by [mailto:chris@qbittorrent.org Christophe Dumez] and was actively maintained/developed by him until July 2013.<br />
 After that [mailto:sledgehammer999@qbittorrent.org sledgehammer999] is maintaining the project.<br />
-Several other people (Arnaud Demaiziere, Ishan Arora, Stephanos Antaris, Mohammad Dib, Gelmir (Dayman)) have contributed or are still contributing to the project.<br />
+[https://github.com/qbittorrent/qBittorrent/graphs/contributors Many other people] have contributed or are still contributing to the project.<br />
 If you like the software and you would like to help the project to subsist by giving some money, please do so [https://www.qbittorrent.org/donate here].<br />
 '''We thank you in advance.'''
 
