@@ -20,8 +20,7 @@ At runtime, qBittorrent loads only `stylesheet.qss` to support theming and `conf
 You can read more about Qt stylesheet syntax [here](https://doc.qt.io/Qt-5/stylesheet-syntax.html). A reference is also available [here](https://doc.qt.io/qt-5/stylesheet.html).
 
 # Changing QBittorrent specific colors
-for changing qBittorrent specific GUI colors, you have to use config.json, NOTE: A large part of colors is already changeable from stylesheet but following are QBitTorrent's specific context-sensitive colors,   
-The following are all keys that are currently supported.
+for changing qBittorrent specific GUI colors, you have to use config.json, NOTE: A large part of colors is already changeable from stylesheet but the following are QBitTorrent's specific context-sensitive colors,  
 
 ```json
 {
@@ -82,12 +81,12 @@ The following are all keys that are currently supported.
 ```
 Here 
 1. Palette referes to [QPalette](https://doc.qt.io/qt-5/qpalette.html), and following string(after .) denotes [Color roles](https://doc.qt.io/qt-5/qpalette.html#ColorRole-enum)
-2. Log refers to log messages and following string (after .) denotes type of messages
+2. Log refers to log messages and the following string (after .) denotes the type of messages
 3. Transfer List refers to view containing all of your torrents and following string(after .) denotes torrent state on which based on which row colors would be decided. 
 
 `<color>` value supports normal rgb values(#rrggbb) or svg color names, basically it follows [Qt's named color convention](https://doc.qt.io/qt-5/qcolor.html#setNamedColor) convention
 
-This is introduced in qbittorrent v4.2.6
+This is introduced in qBittorrent v4.3.0
 
 # Using custom resources with bundles
 qBittorrent uses [QResources::registerResource](https://doc.qt.io/qt-5/qresource.html#registerResource) to use the bundle file, you can imagine it like QBittorrent extracts bundle file in a special path which is `:/uitheme`, so every file should be referenced accordingly f.e let's see you have to change the image QRadiaButtons indicator, so to reference a `light/radio_button.svg` inside your bundle file, you should do something like this
@@ -100,6 +99,10 @@ QRadioButton::indicator:unchecked:focus
 ```
 
 reserved files and their structure in bundle files are - `stylesheet.qss` and `config.json` both should occur at the root of your bundle file.
+
+# Changing icons of GUI
+
+Starting with v4.3.0 you can change the icons of GUIs too, you just have to include your icons in the theme bundle under icons prefix. Icon name should be the same as the originals icons. See all the icons here (https://github.com/qbittorrent/qBittorrent/tree/master/src/icons)
 
 # Notes
 
