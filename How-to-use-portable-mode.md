@@ -14,8 +14,8 @@ Alternatively, create a folder literally named `profile` in the same directory a
 
 # Windows
 
-1. Place the qBittorrent executable (`qbittorrent.exe`) anywhere you want in your PC. You can extract it from the setup `.exe` file using 7-zip or similar (setup files are just fancy self-extracting archives).
-2. Create a folder called `profile` in the same directory as the `qbittorrent.exe` file.
+1. Place the qBittorrent binaries (`qbittorrent.exe` and `qbittorrent.pdb`) anywhere you want in your PC. You can extract them from the setup `.exe` file using 7-zip or similar (setup files are just fancy self-extracting archives).
+2. Create a folder called `profile` in the same directory as the `qbittorrent.exe` and `qbittorrent.pdb` files.
 3. Execute `qbittorrent.exe`. It will initialize the needed configuration files within the `profile` folder and use them during execution.
 
-- Note: You can copy qBittorrent configuration files from any installation, portable or not, to the matching directories inside the `profile` directory. When started, qBittorrent will use those files if they exist. You can of course move the `profile` directory around including to different machines, and any `qbittorrent.exe` started beside it will use those configs.
+- Note: You can copy qBittorrent configuration files from any installation, portable or not, to the matching directories inside the `profile` directory. When started, qBittorrent will use those files if they exist. You can of course move the `profile` directory around including to different machines, and any `qbittorrent.exe` started beside it will use those configs. Beware that some settings that deal with specific paths may not work out of the box when migrating, because paths may not be exactly the same and may not exist across machines.
