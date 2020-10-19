@@ -84,7 +84,7 @@ Here
 2. Log refers to log messages and the following string (after .) denotes the type of messages
 3. Transfer List refers to view containing all of your torrents and following string(after .) denotes torrent state on which based on which row colors would be decided. 
 
-`<color>` value supports normal rgb values(#rrggbb) or svg color names, basically it follows [Qt's named color convention](https://doc.qt.io/qt-5/qcolor.html#setNamedColor) convention
+`<color>` value supports normal rgb values(#rrggbb) or svg color names. It follows [Qt's named color convention](https://doc.qt.io/qt-5/qcolor.html#setNamedColor) convention
 
 This is introduced in qBittorrent v4.3.0
 
