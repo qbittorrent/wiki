@@ -23,3 +23,7 @@ See [How to use custom UI themes](https://github.com/qbittorrent/qBittorrent/wik
 - https://gitlab.com/qbittorrent-black-theme/client
 
     A fully dark theme for qBittorrent, just simple black and white, nothing else.
+
+- https://github.com/CzBiX/qb-web
+
+    A qBittorrent Web UI written in TypeScript+Vue which adds Light/Dark mode and RSS management.
