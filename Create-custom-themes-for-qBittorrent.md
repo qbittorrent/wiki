@@ -103,6 +103,7 @@ reserved files and their structure in bundle files are - `stylesheet.qss` and `c
 ## Changing icons of GUI
 
 Starting with v4.3.0 you can change the icons of GUIs too, you just have to include your icons in the theme bundle under icons prefix. Icon name should be the same as the originals icons. See all the icons here (https://github.com/qbittorrent/qBittorrent/tree/master/src/icons)
+an example can be read here https://github.com/jagannatharjun/qbt-theme/issues/29#issuecomment-713305420
 
 ## Notes
 
