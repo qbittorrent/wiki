@@ -1,3 +1,5 @@
+**WARNING: anonymous mode doesn't provide strong privacy guarantees on its own. If you are concerned about legal authorities and copyright trouble, for example, consider using a VPN instead (or in addition to it). Anonymous mode is only meant to further prevent your BitTorrent traffic from being associated to you, even when using other privacy enhancing mechanisms (such as a VPN service), by limiting the scope of the information broadcasted by the client (such as the fingerprint in the peer-ID).**
+
 When enabled, qBittorrent will take certain measures to try to mask its identity. The exact functionality of Anonymous Mode depends on the version of qBittorrent (specifically, libtorrent-rasterbar) being used.
 
 If you're using VPN, proxy or I2P, you probably want to enable Anonymous Mode.
