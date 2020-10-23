@@ -15,7 +15,7 @@ This WebUI API documentation applies to qBittorrent v4.1+. For other WebUI API v
    1. [API v2.4.1](#api-v241)
    1. [API v2.5.0](#api-v250)
    1. [API v2.5.1](#api-v251)
-   1. [API v2.6.0 (unreleased)](#api-v260-unreleased)
+   1. [API v2.6.0](#api-v260)
 1. [General information](#general-information)
 1. [Authentication](#authentication)
    1. [Login](#login)
@@ -184,7 +184,7 @@ This WebUI API documentation applies to qBittorrent v4.1+. For other WebUI API v
 - Add `web_ui_use_custom_http_headers_enabled`, `web_ui_custom_http_headers`, `rss_download_repack_proper_episodes` and `rss_smart_episode_filters` as fields to `/app/preferences` and `/app/setPreferences` ([#12579](https://github.com/qbittorrent/qBittorrent/pull/12579), [#12549](https://github.com/qbittorrent/qBittorrent/pull/12549))
 - Add `/rss/markAsRead` and `/rss/matchingArticles` methods ([#12549](https://github.com/qbittorrent/qBittorrent/pull/12549))
 
-## API v2.6.0 (unreleased) ##
+## API v2.6.0 ##
 - Removed `/search/categories` method and modified `/search/plugins` method's response ([#12705](https://github.com/qbittorrent/qBittorrent/pull/12705))
 
 # General Information #
