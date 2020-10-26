@@ -16,6 +16,7 @@ This WebUI API documentation applies to qBittorrent v4.1+. For other WebUI API v
    1. [API v2.5.0](#api-v250)
    1. [API v2.5.1](#api-v251)
    1. [API v2.6.0](#api-v260)
+   1. [API v2.6.1 (unreleased)](#api-v261-unreleased)
 1. [General information](#general-information)
 1. [Authentication](#authentication)
    1. [Login](#login)
@@ -186,6 +187,9 @@ This WebUI API documentation applies to qBittorrent v4.1+. For other WebUI API v
 
 ## API v2.6.0 ##
 - Removed `/search/categories` method and modified `/search/plugins` method's response ([#12705](https://github.com/qbittorrent/qBittorrent/pull/12705))
+
+## API v2.6.1 ##
+- Exposed `contentPath` via the `content_path` field in the response to `/torrents/info` ([#13625](https://github.com/qbittorrent/qBittorrent/pull/13625))
 
 # General Information #
 
@@ -1242,6 +1246,7 @@ Property             | Type    | Description
 `category`           | string  | Category of the torrent
 `completed`          | integer | Amount of transfer data completed (bytes)
 `completion_on`      | integer | Time (Unix Epoch) when the torrent completed
+`content_path`       | string  | Absolute path of torrent content (root path for multifile torrents, absolute file path for singlefile torrents)
 `dl_limit`           | integer | Torrent download speed limit (bytes/s). `-1` if ulimited.
 `dlspeed`            | integer | Torrent download speed (bytes/s)
 `downloaded`         | integer | Amount of data downloaded
