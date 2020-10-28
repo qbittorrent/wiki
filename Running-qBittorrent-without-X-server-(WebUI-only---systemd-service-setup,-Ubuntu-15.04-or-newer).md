@@ -159,7 +159,7 @@ UUID=c987355d-0ddf-4dc7-bbbc-bab8989d0690 /media/volume  ext4     defaults,nofai
 
 The `nofail` option prevents the system from stopping the boot process in case the drive can't mount on startup.
 
-You should edit `/etc/systemd/system/qbittorrent.service` to add `local-fs.target` to the line `After=network-online.target` and add the line `BindsTo=media-volume.mount` to bind the qbittorrent service to the mount point that you want it to write the files.
+You should edit `/etc/systemd/system/qbittorrent.service` to add your volume's systemd name (for example: `media-volume.mount`) to the line `After=network-online.target` and add the line `BindsTo=media-volume.mount` to bind the qbittorrent service to the mount point that you want it to write the files.
 Your service file should look like this:
 
 ```txt
@@ -167,7 +167,7 @@ Your service file should look like this:
 
 [Unit]
 # ...
-After=network.target nss-lookup.target local-fs.target
+After=network.target nss-lookup.target media-volume.mount
 BindsTo=media-volume.mount
 
 # ...
