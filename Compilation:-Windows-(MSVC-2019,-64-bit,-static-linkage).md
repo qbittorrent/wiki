@@ -88,7 +88,7 @@ Then, clone the repository, checkout your preferred commit/tag, apply any patche
 ```pwsh
 git clone https://github.com/arvidn/libtorrent.git
 git checkout RC_1_2
-cmake -G "Ninja" -B cmake-build-dir -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE="C:\path\to\vcpkg\scripts\buildsystems\vcpkg.cmake" -DVCPKG_TARGET_TRIPLET="x64-windows-static" -DBUILD_SHARED_LIBS=OFF -Dstatic_runtime=ON -Ddeprecated-functions=OFF
+cmake -G "Ninja" -B cmake-build-dir -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE="C:\path\to\vcpkg\scripts\buildsystems\vcpkg.cmake" -DVCPKG_TARGET_TRIPLET="x64-windows-static" -DBUILD_SHARED_LIBS=OFF -Dstatic_runtime=ON -Ddeprecated-functions=ON
 cmake --build cmake-build-dir
 cmake --install cmake-build-dir --prefix C:\some\folder\not\requiring\admin\privileges\libtorrent-install-dir
 ```
