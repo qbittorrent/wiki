@@ -98,7 +98,7 @@
 * Windows (MinGW 64-bit, dynamic linkage) TODO
 * macOS TODO
 
-#### qmake/autotools (deprecated)
+#### qmake/autotools
 
 * [CentOS 8.x](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-CentOS-8.x)
 * [Debian / Ubuntu compilation](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-Debian-and-Ubuntu)
