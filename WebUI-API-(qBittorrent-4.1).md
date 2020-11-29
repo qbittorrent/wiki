@@ -16,7 +16,7 @@ This WebUI API documentation applies to qBittorrent v4.1+. For other WebUI API v
    1. [API v2.5.0](#api-v250)
    1. [API v2.5.1](#api-v251)
    1. [API v2.6.0](#api-v260)
-   1. [API v2.6.1 (unreleased)](#api-v261-unreleased)
+   1. [API v2.6.1](#api-v261)
 1. [General information](#general-information)
 1. [Authentication](#authentication)
    1. [Login](#login)
@@ -188,7 +188,7 @@ This WebUI API documentation applies to qBittorrent v4.1+. For other WebUI API v
 ## API v2.6.0 ##
 - Removed `/search/categories` method and modified `/search/plugins` method's response ([#12705](https://github.com/qbittorrent/qBittorrent/pull/12705))
 
-## API v2.6.1 (unreleased) ##
+## API v2.6.1 ##
 - Exposed `contentPath` via the `content_path` field in the response to `/torrents/info` ([#13625](https://github.com/qbittorrent/qBittorrent/pull/13625))
 
 # General Information #
