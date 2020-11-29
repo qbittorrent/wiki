@@ -27,7 +27,7 @@ qBittorrent uses the Qt framework as the basis for its GUI. qBittorrent 4.2 and 
 For Debian 10, Ubuntu 18.04 LTS or later and their derivatives, just install Qt from the official repositories:
 
 ```bash
-sudo apt install qtbase5-dev qttools5-dev libqt5svg5-dev
+sudo apt install --no-install-recommends qtbase5-dev qttools5-dev libqt5svg5-dev
 ```
 
 ## libtorrent
