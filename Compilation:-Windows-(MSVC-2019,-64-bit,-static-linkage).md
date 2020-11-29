@@ -95,6 +95,8 @@ cmake --install cmake-build-dir --prefix C:\some\folder\not\requiring\admin\priv
 
 More information about building `libtorrent` can be found at https://libtorrent.org/building.html#building-with-cmake. Passing `-Ddeveloper-options=ON` to the configure command line will enable advanced build customization options.
 
+Note: if you are developing/testing qBittorrent, you are encouraged to use `-Ddeprecated-functions=OFF` instead, to catch any potential use of deprecated libtorrent functionality (it will result in a compile error). Then, if you do, submit a bug report, or better yet, a PR fixing the problem :)
+
 # Build qBittorrent
 
 Download and extract a `.tar` archive from [the GitHub releases page](https://github.com/qbittorrent/qBittorrent/releases) or clone the repository and checkout the branch/tag of your choice.
