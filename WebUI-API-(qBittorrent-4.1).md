@@ -17,6 +17,7 @@ This WebUI API documentation applies to qBittorrent v4.1+. For other WebUI API v
    1. [API v2.5.1](#api-v251)
    1. [API v2.6.0](#api-v260)
    1. [API v2.6.1](#api-v261)
+   1. [API v2.6.2](#api-v262)
 1. [General information](#general-information)
 1. [Authentication](#authentication)
    1. [Login](#login)
@@ -190,6 +191,9 @@ This WebUI API documentation applies to qBittorrent v4.1+. For other WebUI API v
 
 ## API v2.6.1 ##
 - Exposed `contentPath` via the `content_path` field in the response to `/torrents/info` ([#13625](https://github.com/qbittorrent/qBittorrent/pull/13625))
+
+## API v2.6.2 ##
+- Added `tags` optional field to `/torrents/add` ([#13882](https://github.com/qbittorrent/qBittorrent/pull/13882))
 
 # General Information #
 
@@ -1865,6 +1869,7 @@ Property                        | Type    | Description
 `savepath` _optional_           | string  | Download folder
 `cookie` _optional_             | string  | Cookie sent to download the .torrent file
 `category` _optional_           | string  | Category for the torrent
+`tags` _optional_               | string  | Tags for the torrent, split by ','
 `skip_checking` _optional_      | string  | Skip hash checking. Possible values are `true`, `false` (default)
 `paused` _optional_             | string  | Add torrents in the paused state. Possible values are `true`, `false` (default)
 `root_folder` _optional_        | string  | Create the root folder. Possible values are `true`, `false`, unset (default)
