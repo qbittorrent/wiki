@@ -105,11 +105,8 @@ After=network-online.target nss-lookup.target
 Type=exec
 # change user as needed
 User=qbtuser
-# notice that no -d flag needed
+# The -d flag should not be used in this setup
 ExecStart=/usr/bin/qbittorrent-nox
-ExecStop=/usr/bin/pkill --signal SIGINT qbittorrent-nox
-KillSignal=SIGINT
-TimeoutStopSec=60 # default is 90 seconds
 # uncomment this for versions of qBittorrent < 4.2.0 to set the maximum number of open files to unlimited
 #LimitNOFILE=infinity
 
