@@ -23,3 +23,7 @@ If you know of more, feel free to add a link to the repository along with a shor
 - https://github.com/fedarovich/qbittorrent-cli
 
     Cross-platform command line interface qBittorrent WebAPI client
+
+- https://github.com/hrap1919/qbclient
+
+    A simple WebAPI command-line client using only bash, curl and jq for Linux (or Cygwin etc).
