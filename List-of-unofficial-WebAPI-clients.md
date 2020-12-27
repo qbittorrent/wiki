@@ -27,3 +27,8 @@ If you know of more, feel free to add a link to the repository along with a shor
 - https://github.com/hrap1919/qbclient
 
     A simple WebAPI command-line client using only bash, curl and jq for Linux (or Cygwin etc).
+
+- https://github.com/jesec/flood/blob/master/server/services/qBittorrent/clientRequestManager.ts
+
+    TypeScript/JavaScript implementation for qBittorrent's WebAPI
+
