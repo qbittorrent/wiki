@@ -47,7 +47,7 @@
 
 ### WebAPI clients
 
-* [List of unofficial WebAPI clients](https://github.com/qbittorrent/qBittorrent/wiki/List-of-unnoficial-WebAPI-clients)
+* [List of unofficial WebAPI clients](https://github.com/qbittorrent/qBittorrent/wiki/List-of-unofficial-WebAPI-clients)
 
 ### Alternate WebUI
 
