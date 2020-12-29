@@ -5,7 +5,7 @@
 This how-to will guide you through compiling qBittorrent from source on Debian, Ubuntu, and other derivative distros.
 
 Only follow this guide if you know what you are doing and this is what you really want.
-If you just want the latest version of qBittorrent, use our [stable](https://launchpad.net/~qbittorrent-team/+archive/ubuntu/) or [unstable](https://launchpad.net/~qbittorrent-team/+archive/ubuntu/qbittorrent-unstable) PPAs.
+If you just want the latest version of qBittorrent, use our [stable](https://launchpad.net/~qbittorrent-team/+archive/ubuntu/qbittorrent-stable) or [unstable](https://launchpad.net/~qbittorrent-team/+archive/ubuntu/qbittorrent-unstable) PPAs.
 
 # Install the dependencies
 
