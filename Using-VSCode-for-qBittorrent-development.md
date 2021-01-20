@@ -112,7 +112,7 @@ These are the recommended settings:
         "--background-index",
         "--completion-style=detailed",
         "--header-insertion=iwyu",
-        "--suggest-missing-includes"
+        "--suggest-missing-includes",
         "--clang-tidy",
         // select which clang-tidy checks should be enabled
         "--clang-tidy-checks=boost-*,bugprone-*,cert-*,cppcoreguidelines-*,clang-analyzer-*,misc-*,modernize-*,performance-*,portability-*,readability-*,-readability-braces-around-statements",
