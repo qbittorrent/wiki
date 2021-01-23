@@ -385,7 +385,7 @@ Property                                 | Type    | Description
 `slow_torrent_inactive_timer`            | integer | Seconds a torrent should be inactive before considered "slow"
 `max_ratio_enabled`                      | bool    | True if share ratio limit is enabled
 `max_ratio`                              | float   | Get the global share ratio limit
-`max_ratio_act`                          | bool    | Action performed when a torrent reaches the maximum share ratio. See list of possible values here below.
+`max_ratio_act`                          | integer | Action performed when a torrent reaches the maximum share ratio. See list of possible values here below.
 `listen_port`                            | integer | Port for incoming connections
 `upnp`                                   | bool    | True if UPnP/NAT-PMP is enabled
 `random_port`                            | bool    | True if the port is randomly selected
