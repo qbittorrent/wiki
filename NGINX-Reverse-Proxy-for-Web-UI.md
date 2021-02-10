@@ -20,3 +20,5 @@ location /qbt/ {
     add_header              X-Frame-Options         "SAMEORIGIN";
 }
 ```
+
+Note: qBittorrent currently doesn't read the `X-Forwarded-For` header, so if you find yourself seeing `WebAPI login failure. Reason: IP has been banned, IP: 127.0.0.1` and needing to restart qBittorrent, you may want to set the ban after failure count to `0`.
