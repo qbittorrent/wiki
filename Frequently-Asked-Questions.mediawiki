@@ -89,7 +89,7 @@ OS X:
 * preferences:
 ** <code>~/.config/qBittorrent/</code>
 * .torrent files, logs, etc:
-** <code>~/Library/Application Support/qBittorrent</code>
+** <code>~/Library/ApplicationSupport/qBittorrent</code>
 
 == How can I reset the settings to default values? ==
 * Remove all files in the [[Frequently-Asked-Questions#where-does-qbittorrent-save-its-settings|preferences folder]].
