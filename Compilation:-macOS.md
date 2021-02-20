@@ -1,6 +1,6 @@
-Following this guide anyone even completely unexperienced in C/C++ software building process can successfully build qBittorent. Only very basic skills in command line usage are required.
+Following this guide, anyone even completely unexperienced in C/C++ software building process can successfully build qBittorent. Only very basic skills in command line usage are required.
 
-This guide could seem too detailed or even odd, but that was done intentionally, because first of all it aims to help novice users. Any experienced users may just overview it to find section they are interested in. For example, [the last one](#building-with-qmake) may be interesting for new contributors who wants to debug or just poke around the code.
+This guide could seem too detailed or even odd, but that was done intentionally, because first of all it aims to help novice users. Any experienced users may just overview it to find section they are interested in. For example, [the last one](#building-with-qmake) may be interesting for new contributors who want to debug or just poke around the code.
 
 This guide describes build process using qBittorrent sources from `master` branch, but it also can be suitable for 4.2.x releases. It assumes only using of libtorrent 1.2.x series. Building qBittorrent 4.1.x series or 4.2.x with libtorrent 1.1.x is out of scope, similar concept can be used in any case, but various build options must be adjusted.
 
@@ -8,7 +8,7 @@ This guide assumes building **everything** (i.e. all dependencies) from sources,
 
 ## Conventions used in this document
 
-The follow directory tree structure will be used through the document:
+The following directory tree structure will be used through the document:
 
 ```text
 $HOME/tmp/qbt
@@ -23,7 +23,7 @@ It is assumed that all listed commands should be issued from `$HOME/tmp/qbt/src`
 - XCode: default IDE and toolchain for macOS (includes the SDK and essential tools for native development)
 
   - Download and install XCode from the official [Apple App Store][xcode-appstore].
-  - Lauch XCode for a first time. You will be asked to install additional command line tools, which you should do, as they are required for building Qt-based apps such as qBittorrent.
+  - Launch XCode for the first time. You will be asked to install additional command-line tools, which you should do, as they are required for building Qt-based apps such as qBittorrent.
 
 - CMake: a build-system generator, nowadays the de-facto standard for building C/C++ projects.
 
@@ -41,7 +41,7 @@ qBittorrent has few required dependencies, and they also have their own. The ful
 - libtorrent (libtorrent-rasterbar) 1.2.x, 1.2.6 or above is recommended
 - qBittorrent 4.2.x or above
 
-Actually some additional libraries (like zlib) are required, but they are available on each system and have stable binary interfaces, so there is no reason to build them from sources. Moreover, such libraries are part of SDK.
+Actually, some additional libraries (like zlib) are required, but they are available on each system and have stable binary interfaces, so there is no reason to build them from sources. Moreover, such libraries are part of the SDK.
 
 ## Downloading sources
 
@@ -99,26 +99,26 @@ libtorrent RC_1_2 branch is used in this guide, but any 1.2.x release is also su
 Just clone [official repo][libtorrent-repo], RC_1_2 branch was default at the time of writing, so no `git checkout` is required:
 
 ```sh
-git clone https://github.com/arvidn/libtorrent.git
+git clone --recurse-submodules https://github.com/arvidn/libtorrent.git
 ```
 
-It is also possible to download release archive or git snapshot instead of cloning repo.
+It is also possible to download the release archive or git snapshot instead of cloning the repo.
 
 ### Downloading qBittorrent
 
 qBittorrent master branch is used in this guide, but any 4.2.x release or v4_2_x branch can be used.
 
-master branch is default, so no additional `git checkout` is required. Just clone [official repo][qbittorrent-repo]:
+master branch is the default, so no additional `git checkout` is required. Just clone [official repo][qbittorrent-repo]:
 
 ```sh
 git clone https://github.com/qbittorrent/qBittorrent.git
 ```
 
-It is also possible to download release archive or git snapshot instead of cloning repo.
+It is also possible to download the release archive or git snapshot instead of cloning the repo.
 
 ## Building sources
 
-It is important to build all libraries with same value of minimum supported macOS version, otherwise build may fail at the final linker stage. Qt sets such value, so use it for any other libraries.
+It is important to build all libraries with the same value of minimum supported macOS version, otherwise the build may fail at the final linker stage. Qt sets such value, so use it for any other libraries.
 
 To find it, go to the Qt sources directory, open `qtbase/mkspecs/common/macx.conf` file and find `QMAKE_MACOSX_DEPLOYMENT_TARGET` variable in it.
 
@@ -147,7 +147,7 @@ and issue configuration command:
 ./config no-comp no-deprecated no-dynamic-engine no-tests no-zlib --openssldir=/etc/ssl --prefix="$HOME/tmp/qbt/ext" -mmacosx-version-min=10.13
 ```
 
-Please note `-mmacosx-version-min` option at the end of line, this is NOT a some OpenSSL configure script option, this option is passed directly to compiler, it is important to place it last. It's value must be value what was found in Qt sources.
+Please note `-mmacosx-version-min` option at the end of line, this is NOT some OpenSSL configure script option, this option is passed directly to compiler, it is important to place it last. Its value must be the value that was found in Qt sources.
 
 To start build process just run `make`:
 
@@ -165,7 +165,7 @@ Please note '_sw' suffix, it used just to install a subset of available stuff, t
 
 ### Building Qt
 
-Preferred way to build Qt is 'out of tree build'. So create separate build directory at the same level as source directory and go into it:
+The preferred way to build Qt is 'out of tree build'. So create separate build directory at the same level as source directory and go into it:
 
 ```sh
 mkdir build-qt && cd build-qt
@@ -183,7 +183,7 @@ Note `-I` and `-L` options in that line, they are required to allow Qt' build sy
 
 The rest of options mostly to minimize the scope of building stuff and decrease build time.
 
-Configuration process takes few minutes, some required tools are build during it.
+Configuration process takes a few minutes, some required tools are build during it.
 
 When configuration process is finished, build can be started:
 
@@ -201,7 +201,7 @@ make install
 
 ### Building Boost
 
-Actually no any Boost binaries are required, libtorrent requires Boost.System and it became header-only since Boost 1.70 (or even 1.69), boost_system library is just a stub left for compatibility, but a lot of tools/scripts rely on it when detecting the presence of Boost. Moreover, there is no option to build header-only version of Boost. Of course, 'stage' version can be used without any building, but it is not suitable for usage with cmake - it doesn't have files allowing cmake to detect it. Such files are generated only during installation process. So build only boost_system library regardless this is just a stub and will not be used:
+Actually no Boost binaries are required, libtorrent requires Boost.System and it became header-only since Boost 1.70 (or even 1.69), boost_system library is just a stub left for compatibility, but a lot of tools/scripts rely on it when detecting the presence of Boost. Moreover, there is no option to build header-only version of Boost. Of course, 'stage' version can be used without any building, but it is not suitable for usage with cmake - it doesn't have files allowing cmake to detect it. Such files are generated only during installation process. So build only boost_system library regardless this is just a stub and will not be used:
 
 ```sh
 cd boost_1_73_0
@@ -230,7 +230,7 @@ Configure libtorrent as static library with all other options set to default:
 
 Few important things to note in this line are C++ standard version and minimum supported macOS version (`CMAKE_CXX_STANDARD` and `CMAKE_OSX_DEPLOYMENT_TARGET` options), this is required for successful linkage.
 
-Value of `CMAKE_PREFIX_PATH` is also important, it tell cmake where to find any required dependency. So adjust it in case of using custom paths.
+Value of `CMAKE_PREFIX_PATH` is also important, it tells cmake where to find any required dependency. So adjust it in case of using custom paths.
 
 cmake just performs configuration steps and generates platform-specific makefile, so build and install it as usual (remember, you are still in 'build' directory):
 
@@ -245,7 +245,7 @@ Build process takes about 5-7 minutes.
 
 Like libtorrent, qBittorrent also provides few build systems to choose from to build it. GNU autotools is not available on macOS, qmake requires some additional work to setup project, so let's use cmake again.
 
-Unfortunately, qBittorrent sources must be slightly adjusted to be built using cmake. First of all, `cmake/Modules/FindLibtorrentRasterbar.cmake` must be removed, it conflicts with cmake-specific files provided by libtorrent. Next step is edit root `CMakeLists.txt` and set minimum required libtorrent version to 1.2.0. Find line containing `requiredLibtorrentVersion` variable and replace 1.1.x value with 1.2.0. This required because cmake files provided by libtorrent are "smart" - they take into account the fact that libtorrent 1.2 has API incompatible with 1.1 series, and if app requires 1.1.x 1.2.x will not be selected. cmake warn you about it.
+Unfortunately, qBittorrent sources must be slightly adjusted to be built using cmake. First of all, `cmake/Modules/FindLibtorrentRasterbar.cmake` must be removed, it conflicts with cmake-specific files provided by libtorrent. Next step is to edit root `CMakeLists.txt` and set minimum required libtorrent version to 1.2.0. Find line containing `requiredLibtorrentVersion` variable and replace 1.1.x value with 1.2.0. This required because cmake files provided by libtorrent are "smart" - they take into account the fact that libtorrent 1.2 has API incompatible with 1.1 series, and if app requires 1.1.x 1.2.x will not be selected. cmake warn you about it.
 
 This also can be done through command line:
 
@@ -255,7 +255,7 @@ rm cmake/Modules/FindLibtorrentRasterbar.cmake
 perl -p -i -e 's/requiredLibtorrentVersion\s+\d+\.\d+\.\d+/requiredLibtorrentVersion 1\.2\.0/g' CMakeLists.txt
 ```
 
-As for libttorrent, let's create separate build directory:
+As for libttorrent, let's create a separate build directory:
 
 ```sh
 mkdir build && cd build
@@ -267,7 +267,7 @@ Now everything is ready to issue cmake (from build directory).
 /Applications/CMake.app/Contents/bin/cmake -DCMAKE_PREFIX_PATH="$HOME/tmp/qbt/ext" -DCMAKE_CXX_STANDARD=14 -DCMAKE_CXX_EXTENSIONS=OFF -DCMAKE_OSX_DEPLOYMENT_TARGET=10.13 -DCMAKE_BUILD_TYPE=Release ..
 ```
 
-This configures qBittorrent with all default build options. Only one important option to note - `CMAKE_PREFIX_PATH`, it tells cmake where to find dependencies.
+This configures qBittorrent with all default build options. Only one important option to note - `CMAKE_PREFIX_PATH`, tells cmake where to find dependencies.
 
 Now run build as usual:
 
@@ -285,7 +285,7 @@ Now `qbittorrent.app` bundle is ready to use. Also `qbittorrent.dmg` is created 
 
 That's all! Now you have your own qBittorrent build!
 
-You can use [this script][macos-build-script] to build qBittorrent master branch in "fully automatic mode". Just launch it and wait. This script is a little bit tricky, but it is not too complex to understand. Moreover, it is pretty well documented, sometimes it contains very detailed explanations. Initially I created it just to fulfill my own needs, but later it was published due to often user requests. It can be a good starting point for creating your own build script serving your own needs/requirements/preferences.
+You can use [this script][macos-build-script] to build qBittorrent master branch in "fully automatic mode". Just launch it and wait. This script is a little bit tricky, but it is not too complex to understand. Moreover, it is pretty well documented, sometimes it contains very detailed explanations. Initially, I created it just to fulfil my own needs, but later it was published due to often user requests. It can be a good starting point for creating your own build script serving your own needs/requirements/preferences.
 
 Next sections for advanced users, mostly for anyone who want to develop (or just build) qBittorrent using qmake.
 
@@ -297,7 +297,7 @@ As was written before, qBittorrent supports several build systems, one of them i
 
 Unfortunately, it is not so convenient as cmake or autotools in case of qBittorrent (due to complex dependencies), but qBittorrent authors envisaged it by providing the way for user-specific configuration (e.g. paths to dependencies) as separate file called `conf.pri`.
 
-Except paths to dependencies, this file also should contain defines describing libtorrent configuration (libtorrent is very sensitive to it, if it itself and app are build with different set of defines it won't link).
+Except paths to dependencies, this file also should contain defines describing libtorrent configuration (libtorrent is very sensitive to it, if it itself and app are built with different set of defines it won't link).
 
 If you just followed this guide to build all required dependencies, next `conf.pri` is suitable for building qBittorrent (with no any adjustments). In other cases adjustments are required (at least for paths).
 
@@ -318,9 +318,9 @@ CONFIG -= silent
 CONFIG += strict_c++ c++14
 ```
 
-Most of its content is libtorrent-related stuff (libtorrent dependencies and mentioned above defines). Line `CONFIG -= silent` is just my preference, it may be useful in development process, it disables "silent build", i.e. all  build commands are fully shown with all arguments.
+Most of its content is libtorrent-related stuff (libtorrent dependencies and mentioned above defines). Line `CONFIG -= silent` is just my preference, it may be useful in development process, it disables "silent build", i.e. all build commands are fully shown with all arguments.
 
-In case if you built libtorrent with your own options (for example with disabled deprecated stuff), you have to adjust defines set. There are some tips how to find them.
+In case if you built libtorrent with your own options (for example with disabled deprecated stuff), you have to adjust defines set. There are some tips on how to find them.
 
 libtorrent defines used for building it can be found in few places: .pc file (used by pkg-config tool on Linux) and cmake config files. The set of defines is the same in these files.
 
@@ -342,7 +342,7 @@ make -j$(sysctl -n hw.ncpu)
 
 First line just creates out of tree build directory, second runs qmake to generate makefile (release configuration is used by default), and the last just runs make to build everything.
 
-As result you will get `qbittorrent.app` under `src` subdirectory in your build directory (not like in case of cmake). This bundle is also incomplete, and Qt runtime must be deployed for it:
+As result, you will get `qbittorrent.app` under `src` subdirectory in your build directory (not like in case of cmake). This bundle is also incomplete, and Qt runtime must be deployed for it:
 
 ```sh
 cd src          # you are still in build directory
@@ -365,7 +365,7 @@ QMAKE_BUNDLE_DATA += qt_conf
 
 Now everything is ready for development or just building.
 
-One more note for new contributors: for better debugging experience, build at least Qt with debug symbols. Just drop `-release` option from suggested configuration command for it. Please note build time will be approximately twice longer.
+One more note for new contributors: for a better debugging experience, build at least Qt with debug symbols. Just drop `-release` option from suggested configuration command for it. Please note build time will be approximately twice longer.
 
 [xcode-appstore]: https://apps.apple.com/us/app/xcode/id497799835
 [cmake-off-site]: https://cmake.org/download/
