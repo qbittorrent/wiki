@@ -17,6 +17,7 @@ location /qbt/ {
     #proxy_set_header        Referer                 '';
     #proxy_set_header        Origin                  '';
 
+    # Not needed since qBittorrent v4.1.0
     add_header              X-Frame-Options         "SAMEORIGIN";
 }
 ```
