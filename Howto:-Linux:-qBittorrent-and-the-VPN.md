@@ -1,23 +1,23 @@
 ## Subject:
-If you want to use the qBittorrent together with a VPN connection for any reason (to maintain your privacy, to avoid your ISP's restrictions or to enable incoming connections without paying for a static IP, or all those reasons simultaneously), you can set up your Linux system like following:
+If you want to use the qBittorrent together with a VPN connection for any reason (to maintain your privacy, to avoid your ISP's restrictions or to enable incoming connections without paying for a static IP, or all those reasons simultaneously), you can set up your Linux system like following.
 
 ## Requirements:
-I have control over the OpenVPN server deployed on the VPS with a static worldwide-routable IP address ("white IP address"), and the rest will be about setting up the OpenVPN+qBittorrent, but OpenVPN is not the only VPN solution, but just one of the possible solutions.
+The control over the OpenVPN server deployed on the VPS with a static worldwide-routable IP address ("white IP address"), the rest will be about setting up the OpenVPN+qBittorrent, but OpenVPN is not the only VPN solution and just one of the possible solutions.
 
 ## Pre-requirements:
-Before the howto itself, I assume you have installed the qBittorrent on your device from the [official PPA](http://ppa.launchpad.net/qbittorrent-team/qbittorrent-stable/ubuntu) or from the packages downloaded from the [official site](https://www.qbittorrent.org/download.php) and set up your VPN connection and checked its connectivity on the device intended to host the qBittorrent.
+Before the howto itself, let's assume you have installed the qBittorrent on your device from the [official PPA](http://ppa.launchpad.net/qbittorrent-team/qbittorrent-stable/ubuntu) or from the packages downloaded from the [official site](https://www.qbittorrent.org/download.php) and set up your VPN connection and checked its connectivity on the device intended to host the qBittorrent client.
 
 You also may want to add the following line to your OpenVPN client configuration file to avoid it becoming the default gateway:
 ```
 pull-filter ignore redirect-gateway
 ```
-This line will allow all traffic not intended to go through the VPN go through the primary ISP gateway.
+This line will allow all traffic not intended to go through the VPN to go through the primary ISP gateway.
 
 ## The task should be considered in two parts:
 1. Setting up the qBittorrent client to work through a VPN connection
 2. Enabling incoming connections from outer space to the qBittorrent through the VPN.
 
-I will assume you have the VPN connection interface named `tun0`, VPN server external IP is 212.213.214.215, VPN gateway IP is `10.8.0.1/24` and VPN Client IP address is `10.8.0.2/24` - feel free to do replace any of those values in the guide below if it does not match your setup.
+Let's assume you have the VPN connection interface named `tun0`, VPN server external IP is 212.213.214.215, VPN gateway IP is `10.8.0.1/24` and VPN Client IP address is `10.8.0.2/24` - feel free to do replace any of those values in the guide below if it does not match your setup.
 
 ## Part 1:
 Setting up the qBittorrent client to work through a VPN connection.
