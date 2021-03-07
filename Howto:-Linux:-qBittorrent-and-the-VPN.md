@@ -7,6 +7,12 @@ I have control over the OpenVPN server deployed on the VPS with a static worldwi
 ## Pre-requirements:
 Before the howto itself, I assume you have installed the qBittorrent on your device from the [official PPA](http://ppa.launchpad.net/qbittorrent-team/qbittorrent-stable/ubuntu) or from the packages downloaded from the [official site](https://www.qbittorrent.org/download.php) and set up your VPN connection and checked its connectivity on the device intended to host the qBittorrent.
 
+You also may want to add the following line to your OpenVPN client configuration file to avoid it becoming the default gateway:
+```
+pull-filter ignore redirect-gateway
+```
+This line will allow all traffic not intended to go through the VPN go through the primary ISP gateway.
+
 ## The task should be considered in two parts:
 1. Setting up the qBittorrent client to work through a VPN connection
 2. Enabling incoming connections from outer space to the qBittorrent through the VPN.
