@@ -109,7 +109,9 @@ User=qbtuser
 ExecStart=/usr/bin/qbittorrent-nox
 # uncomment this for versions of qBittorrent < 4.2.0 to set the maximum number of open files to unlimited
 #LimitNOFILE=infinity
-
+# uncomment this to use "Network interface" and/or "Optional IP address to bind to" options
+# without this binding will fail and qBittorrent's traffic will go through the default route
+# AmbientCapabilities=CAP_NET_RAW
 [Install]
 WantedBy=multi-user.target
 ```
