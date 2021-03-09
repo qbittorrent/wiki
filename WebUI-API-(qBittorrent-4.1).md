@@ -1880,8 +1880,8 @@ Property                        | Type    | Description
 `rename` _optional_             | string  | Rename torrent
 `upLimit` _optional_            | integer | Set torrent upload speed limit. Unit in bytes/second
 `dlLimit` _optional_            | integer | Set torrent download speed limit. Unit in bytes/second
-`ratioLimit` _optional_ (_since 2.8.1_) | float   | Set torrent share ratio limit
-`seedingTimeLimit` _optional_ (_since 2.8.1_)  | integer | Set torrent seeding time limit. Unit in seconds
+`ratioLimit` _optional_ <sup>since 2.8.1</sup> | float   | Set torrent share ratio limit
+`seedingTimeLimit` _optional_ <sup>since 2.8.1</sup>  | integer | Set torrent seeding time limit. Unit in seconds
 `autoTMM` _optional_         | bool    | Whether Automatic Torrent Management should be used
 `sequentialDownload` _optional_ | string  | Enable sequential download. Possible values are `true`, `false` (default)
 `firstLastPiecePrio` _optional_ | string  | Prioritize download first last piece. Possible values are `true`, `false` (default)
