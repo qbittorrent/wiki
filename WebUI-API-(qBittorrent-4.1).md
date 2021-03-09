@@ -196,6 +196,9 @@ This WebUI API documentation applies to qBittorrent v4.1+. For other WebUI API v
 ## API v2.6.2 ##
 - Added `tags` optional field to `/torrents/add` ([#13882](https://github.com/qbittorrent/qBittorrent/pull/13882))
 
+## API v2.8.1 ##
+- Added `ratioLimit` and `seedingTimeLimit` optional fields to `/torrents/add` ([#14519](https://github.com/qbittorrent/qBittorrent/pull/14519))
+
 # General Information #
 
 - All API methods are under `/api/v2/APIName/methodName`, where `APIName` is a certain subgroup of API methods whose functionality is related.
@@ -1877,6 +1880,8 @@ Property                        | Type    | Description
 `rename` _optional_             | string  | Rename torrent
 `upLimit` _optional_            | integer | Set torrent upload speed limit. Unit in bytes/second
 `dlLimit` _optional_            | integer | Set torrent download speed limit. Unit in bytes/second
+`ratioLimit` _optional_ (_since 2.8.1_) | float   | Set torrent share ratio limit
+`seedingTimeLimit` _optional_ (_since 2.8.1_)  | integer | Set torrent seeding time limit. Unit in seconds
 `autoTMM` _optional_         | bool    | Whether Automatic Torrent Management should be used
 `sequentialDownload` _optional_ | string  | Enable sequential download. Possible values are `true`, `false` (default)
 `firstLastPiecePrio` _optional_ | string  | Prioritize download first last piece. Possible values are `true`, `false` (default)
