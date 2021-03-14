@@ -1311,7 +1311,7 @@ Value         | Description
 `queuedDL`    | Queuing is enabled and torrent is queued for download
 `stalledDL`   | Torrent is being downloaded, but no connection were made
 `checkingDL`  | Same as checkingUP, but torrent has NOT finished downloading
-`forceDL`     | Torrent is forced to downloading to ignore queue limit
+`forcedDL`    | Torrent is forced to downloading to ignore queue limit
 `checkingResumeData`| Checking resume data on qBt startup
 `moving`      | Torrent is moving to another location
 `unknown`     | Unknown status
