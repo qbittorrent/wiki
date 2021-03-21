@@ -198,6 +198,7 @@ This WebUI API documentation applies to qBittorrent v4.1+. For other WebUI API v
 
 ## API v2.8.1 ##
 - Added `ratioLimit` and `seedingTimeLimit` optional fields to `/torrents/add` ([#14519](https://github.com/qbittorrent/qBittorrent/pull/14519))
+- Added `seeding_time` field to `/torrents/info` ([#14554](https://github.com/qbittorrent/qBittorrent/pull/14554))
 
 # General Information #
 
@@ -1277,6 +1278,7 @@ Property             | Type    | Description
 `ratio`              | float   | Torrent share ratio. Max ratio value: 9999.
 `ratio_limit`        | float   | TODO (what is different from `max_ratio`?)
 `save_path`          | string  | Path where this torrent's data is stored
+`seeding_time`       | integer | Torrent elapsed time while complete (seconds)
 `seeding_time_limit` | integer | TODO (what is different from `max_seeding_time`?)
 `seen_complete`      | integer | Time (Unix Epoch) when this torrent was last seen complete
 `seq_dl`             | bool    | True if sequential download is enabled
