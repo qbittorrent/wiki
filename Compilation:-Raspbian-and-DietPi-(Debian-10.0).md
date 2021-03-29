@@ -1,12 +1,12 @@
-[Raspbian](https://www.raspbian.org/) is the most popular Linux distribution built for Raspberry Pi hardware.
+[Raspberry Pi OS](https://www.raspberrypi.org/software/) is the most popular Linux distribution built for Raspberry Pi hardware.
 
 [DietPi](https://dietpi.com/ "DietPi Homepage") is a refined Linux distribution for ARM SoCs such as Raspberry Pi 3 B+ and ASUS Tinker Board.
 
-Both are based on Debian. Debian 9.0 ships with a patched version of an older qBittorrent-nox release (3.3.7). qBittorrent 4.x has many improvements to the webUI component which are of particular use for headless operation.
+Both are based on Debian. Debian 9.0 ships with a patched version of an older qBittorrent-nox release (4.1.5). qBittorrent 4.3.x has many improvements to the webUI component which are of particular use for headless operation for example RSS handling.
 
 This guide outlines the steps needed to compile qBittorrent-nox 4.3.x and run it as a service. Both DietPi and Raspbian provide pre-compiled qBittorrent using either `dietpi-software` or `apt`. Use this guide if you want to run the most recent qBittorrent (and libtorrent-rasterbar).
 
-This guide was made possible by the authors of the [Debian/Ubuntu compilation guide](https://github.com/qbittorrent/qBittorrent/wiki/Compiling-qBittorrent-on-Debian-and-Ubuntu "Debian/Ubuntu compilation guide") and [Guide on running qBittorrent as a service](https://github.com/qbittorrent/qBittorrent/wiki/Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface-(15.04-and-newer) "Guide on running qBittorrent as a service"). A few DietPi-specific amendments are included.
+This guide was made possible by the authors of the [Debian/Ubuntu compilation guide](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-Debian-and-Ubuntu "Debian/Ubuntu compilation guide") and [Guide on running qBittorrent as a service](https://github.com/qbittorrent/qBittorrent/wiki/Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface-(15.04-and-newer) "Guide on running qBittorrent as a service"). A few DietPi-specific amendments are included.
 
 **Major update:**
 
@@ -50,9 +50,9 @@ DietPi's and Raspbian's repositories include older versions of [Libtorrent](http
 
 ## Get the source code
 
-Two versions of Libtorrent are currently maintained: 1.1.x and 1.2.x.
+Two versions of Libtorrent are currently maintained: 1.2.x and 2.0.x.
 
-Since release 4.2.0, qBittorrent makes use of the newer 1.2.x version, so get the latest release of this one.
+Since release 4.2.0, qBittorrent makes use of the 1.2.x version, so get the 1.2.x release.
 
 To get the Libtorrent source code, either:
 
@@ -72,16 +72,16 @@ git checkout $(git tag | grep v1\.2.\. | sort -t _ -n -k 3 | tail -n 1)
 ### B. Download the [latest release](https://github.com/arvidn/libtorrent/releases)
 
 ~~~~
-wget https://github.com/arvidn/libtorrent/archive/libtorrent-1_2_7.zip
-unzip libtorrent-1_2_7.zip
-cd libtorrent-libtorrent-1_2_7
+wget https://github.com/arvidn/libtorrent/archive/libtorrent-1_2_13.zip
+unzip libtorrent-1_2_13.zip
+cd libtorrent-libtorrent-1_2_13
 ~~~~
 
 ## Compile Libtorrent
 
 ~~~~
 ./autotool.sh
-./configure --disable-debug --enable-encryption --with-boost-libdir=/usr/lib/arm-linux-gnueabihf --with-libiconv CXXFLAGS="-std=c++14"
+./configure --disable-debug --enable-encryption --with-boost-libdir=/usr/lib/arm-linux-gnueabihf --with-libiconv CXXFLAGS="-std=c++17"
 make -j$(nproc)
 sudo make install
 ~~~~
@@ -147,9 +147,9 @@ You may select the branch version on the [branches page](https://github.com/qbit
 ### B. Download the [latest release](https://github.com/qbittorrent/qBittorrent/releases)
 
 ~~~~
-wget https://github.com/qbittorrent/qBittorrent/archive/release-4.2.1.zip
-unzip release-4.2.1.zip
-cd qBittorrent-release-4.2.1
+wget https://github.com/qbittorrent/qBittorrent/archive/release-4.3.4.1.zip
+unzip release-4.3.4.1.zip
+cd qBittorrent-release-4.3.4.1
 ~~~~
 
 ## Compile qBittorrent-nox
