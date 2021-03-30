@@ -18,6 +18,8 @@ This WebUI API documentation applies to qBittorrent v4.1+. For other WebUI API v
    1. [API v2.6.0](#api-v260)
    1. [API v2.6.1](#api-v261)
    1. [API v2.6.2](#api-v262)
+   1. [API v2.7.0](#api-v270)
+   1. [API v2.8.0](#api-v280)
    1. [API v2.8.1](#api-v281)
 1. [General information](#general-information)
 1. [Authentication](#authentication)
@@ -92,6 +94,7 @@ This WebUI API documentation applies to qBittorrent v4.1+. For other WebUI API v
    1. [Set force start](#set-force-start)
    1. [Set super seeding](#set-super-seeding)
    1. [Rename file](#rename-file)
+   1. [Rename folder](#rename-folder)
 1. [RSS (experimental)](#rss-experimental)
    1. [Add folder](#add-folder)
    1. [Add feed](#add-feed)
@@ -195,6 +198,11 @@ This WebUI API documentation applies to qBittorrent v4.1+. For other WebUI API v
 
 ## API v2.6.2 ##
 - Added `tags` optional field to `/torrents/add` ([#13882](https://github.com/qbittorrent/qBittorrent/pull/13882))
+
+## API v2.8.0 ##
+- Added `/torrents/renameFolder` method and modified `/torrents/renameFile` method's parameters ([#13995](https://github.com/qbittorrent/qBittorrent/pull/13995))
+
+Note that this change was released in qBittorrent v4.3.3, but the WebAPI version was incorrectly set to v2.7.0 (see [#14275](https://github.com/qbittorrent/qBittorrent/pull/14275#issuecomment-766310862) for details)
 
 ## API v2.8.1 ##
 - Added `ratioLimit` and `seedingTimeLimit` optional fields to `/torrents/add` ([#14519](https://github.com/qbittorrent/qBittorrent/pull/14519))
@@ -2648,15 +2656,35 @@ Name: `renameFile`
 Parameter                         | Type     | Description
 ----------------------------------|----------|------------
 `hash`                            | string   | The hash of the torrent
-`id`                              | integer  | The id of the file to rename
-`name`                            | string   | The new name to use for the file
+`oldPath`                         | string   | The old path of the torrent
+`newPath`                         | string   | The new path to use for the file
 
 **Returns:**
 
 HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
-400                               | Missing `name` parameter
-409                               | Invalid `name` or `id`, or `name` already in use
+400                               | Missing `newPath` parameter
+409                               | Invalid `newPath` or `oldPath`, or `newPath` already in use
+200                               | All other scenarios
+
+## Rename folder ##
+
+Name: `renameFolder`
+
+**Parameters:**
+
+Parameter                         | Type     | Description
+----------------------------------|----------|------------
+`hash`                            | string   | The hash of the torrent
+`oldPath`                         | string   | The old path of the torrent
+`newPath`                         | string   | The new path to use for the file
+
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+400                               | Missing `newPath` parameter
+409                               | Invalid `newPath` or `oldPath`, or `newPath` already in use
 200                               | All other scenarios
 
 # RSS (experimental) #
