@@ -74,7 +74,7 @@ These options allow you to set up a proxy server to use when downloading torrent
 Disable connections not supported by proxies: [[Disable-connections-not-supported-by-proxies|link]]
 
 == IP filtering ==
-This is a feature which allows you to block certain ''bad peers''. Didn't understand a word? More information about that [http://www.techzilo.com/ban-utorrent-peers-ip-address/ here].
+This is a feature which allows you to block certain ''bad peers''. Didn't understand a word? More information about that [https://en.wikipedia.org/wiki/Leecher_(computing) here].
 
 = Speed =
 
