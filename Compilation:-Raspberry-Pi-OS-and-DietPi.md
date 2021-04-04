@@ -4,7 +4,7 @@
 
 Both are based on Debian. Debian 9.0 ships with a patched version of an older qBittorrent-nox release (4.1.5). qBittorrent 4.3.x has many improvements to the webUI component which are of particular use for headless operation for example RSS handling.
 
-This guide outlines the steps needed to compile qBittorrent-nox 4.3.x and run it as a service. Both DietPi and Raspbian provide pre-compiled qBittorrent using either `dietpi-software` or `apt`. Use this guide if you want to run the most recent qBittorrent (and libtorrent-rasterbar).
+This guide outlines the steps needed to compile qBittorrent-nox 4.3.x and run it as a service. Both DietPi and Raspberry Pi OS provide pre-compiled qBittorrent using either `dietpi-software` or `apt`. Use this guide if you want to run the most recent qBittorrent (and libtorrent-rasterbar).
 
 This guide was made possible by the authors of the [Debian/Ubuntu compilation guide](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-Debian-and-Ubuntu "Debian/Ubuntu compilation guide") and [Guide on running qBittorrent as a service](https://github.com/qbittorrent/qBittorrent/wiki/Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface-(15.04-and-newer) "Guide on running qBittorrent as a service"). A few DietPi-specific amendments are included.
 
@@ -46,7 +46,7 @@ If you choose to retrieve source code using `git clone`, then also `sudo apt ins
 
 # Compiling Libtorrent
 
-DietPi's and Raspbian's repositories include older versions of [Libtorrent](https://libtorrent.org/). You will need to compile Libtorrent 1.2.x to get qBittorrent-nox 4.2.x running. Both methods below outline how to install Libtorrent 1.2.x for use with qBittorrent-nox 4.3.x (and likely later versions).
+DietPi's and Raspberry Pi OS's repositories include older versions of [Libtorrent](https://libtorrent.org/). You will need to compile Libtorrent 1.2.x to get qBittorrent-nox 4.2.x running. Both methods below outline how to install Libtorrent 1.2.x for use with qBittorrent-nox 4.3.x (and likely later versions).
 
 ## Get the source code
 
@@ -103,7 +103,7 @@ sudo rm /.swapfile
 
 (Those commands were copied from [here](https://dev.deluge-torrent.org/wiki/Building/libtorrent#TemporarySwapFileforRasperryPiorlowmemorysystems).)
 
-One example manifestation of an OOM error on Raspbian OS looks like:
+One example manifestation of an OOM error on Raspberry Pi OS looks like:
 
 ~~~~
 $ make
@@ -175,7 +175,7 @@ qBittorrent-nox is currently installed as a terminal application, which is not o
 
 ## Add user for qBittorrent-nox service
 
-For Raspbian:
+For Raspberry Pi OS:
 ~~~~
 sudo useradd -rm qbittorrent -G pi -s /usr/sbin/nologin
 ~~~~
@@ -191,7 +191,7 @@ _UPDATE:_ this **may** not be necessary if qBittorrent compilation was configure
 
 Create a systemd service file `sudo nano /etc/systemd/system/qbittorrent.service`.
 
-Contents for Raspbian:
+Contents for Raspberry Pi OS:
 ~~~~
 Description=qBittorrent Daemon Service
 After=network.target
