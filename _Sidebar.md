@@ -103,7 +103,7 @@
 
 * [CentOS 8.x](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-CentOS-8.x)
 * [Debian / Ubuntu compilation](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-Debian-and-Ubuntu)
-* [DietPi/Rasbian](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-DietPi-and-Raspbian-(Debian-9.0))
+* [DietPi/Rasbian](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-Raspbian-and-DietPi)
 * [Raspian for LeMaker Banana Pro](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-Raspbian-for-LeMaker-Banana-Pro)
 * [FreeBSD (no GUI)](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-FreeBSD-(no-GUI))
 * [Fully static binaries on Linux (glibc or musl)](https://github.com/qbittorrent/qBittorrent/wiki/Compiliation:-Fully-static-binaries-on-Linux-(glibc-or-musl))
