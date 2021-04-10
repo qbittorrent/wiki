@@ -121,23 +121,18 @@ Then run `sudo systemctl daemon-reload` to update the service manager.
 
 The qBittorrent service is now ready to be used. To start the service on system boot, refer to the next section.
 
-# Controlling the service
+### Controlling the service
 
-- start the service: `sudo systemctl start qbittorrent`
-- check service status: `systemctl status qbittorrent`
-- stop the service: `sudo systemctl stop qbittorrent`
-- enable/disable it to start up on boot: `sudo systemctl enable qbittorrent`
-    - this should output something like the following:
-
-        ```txt
-        Created symlink from /etc/systemd/system/multi-user.target.wants/qbittorrent.service to /etc/systemd/system/qbittorrent.service.
-        ```
-- the result of the previous command can be reverted with: `sudo systemctl disable qbittorrent`.
+- Start the service: `sudo systemctl start qbittorrent`
+- Check service status: `systemctl status qbittorrent`
+- Stop the service: `sudo systemctl stop qbittorrent`
+- Enable it to start up on boot: `sudo systemctl enable qbittorrent`
+- To disable: `sudo systemctl disable qbittorrent`.
 It simply disables automatic startup of the qBittorrent service.
 
 Refer to the `systemd` documentation to know of more operations you can do on services.
 
-# Logging
+### Logging
 
 qBittorrent will still log most interesting stuff to its usual logging directory. In this example, this would be `/home/qbtuser/.local/share/data/qBittorrent/logs/`.
 
@@ -149,7 +144,7 @@ sudo journalctl -u qbittorrent.service
 
 For more information on how to use and customize `systemd` logging, refer to its documentation.
 
-# `systemd` service dependencies (optional)
+### `systemd` service dependencies (optional)
 
 Let's say that you've configured `qbittorrent-nox` to download files to a directory that is in another drive, for example, mounted on `/media/user/volume`.
 
