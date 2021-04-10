@@ -1,4 +1,4 @@
-# Introduction
+## Introduction
 
 qBittorrent has a feature-rich Web UI allowing users to control qBittorrent remotely.
 `qbittorrent-nox` is a version of qBittorrent that only has a WebUI instead of a windowed desktop GUI.
@@ -10,7 +10,7 @@ It can then be customized like any other `systemd` service, to automatically sta
 Side Note: these instructions are written with Ubuntu in mind but should be much the same if not exactly the same for any modern distro that uses `systemd`.
 All instructions assume very basic knowledge of how to use the terminal.
 
-# Install `qBittorrent-nox`
+### Install `qbittorrent-nox`
 
 Official qBittorrent packages are available for all mainstream Linux distributions, but distributions may not always contain the latest package versions.
 
@@ -19,7 +19,7 @@ Refer to https://github.com/qbittorrent/qBittorrent/wiki/Installing-qBittorrent 
 
 Alternatively, you can always compile from source. Check out the articles under the [Compilation](https://github.com/qbittorrent/qBittorrent/wiki#compilation) section of the Wiki home page for more information.
 
-# Create a separate user account (optional - you may want to do this for security depending on your setup)
+### Create a separate user account (optional - you may want to do this for security depending on your setup)
 
 Create the user that `qbittorrent-nox` will run under with:
 
@@ -43,7 +43,7 @@ This can be reversed if necessary with the command:
 sudo usermod -s /bin/bash qbtuser
 ```
 
-# Initialise qBittorent
+## Initialize qBittorrent
 
 Before we set up `qbittorrent-nox` to run as a background service, it's advisable to run it once so that we can get some configuration out of the way such as the legal disclaimer.
 
@@ -71,7 +71,7 @@ Now is a good time to adjust some qBittorrent settings.
 Visit the URL mentioned in `To control qBittorrent, access the Web UI at...` (might be different in your case), and log in with the credentials given.
 Then you can go to `Tools -> Options` to change settings such as the WebUI port.
 
-Quit the running `qbittorrent-nox` process by pressing `Ctrl-c` on your keyboard in the terminal:
+Quit the running `qbittorrent-nox` process by pressing <kbd>Ctrl</kbd>-<kbd>c</kbd> on your keyboard:
 
 ```txt
 ^CCatching signal: SIGINT
@@ -80,20 +80,20 @@ Exiting cleanly
 
 You can now stop impersonating the qbittorent user by executing the `exit` command or simply pressing `Ctrl-d`.
 
-# Setup the `systemd` service
+## Setup the `systemd` service
 
 On Ubuntu, system-wide `systemd` service definition files are located under `/etc/systemd/system/` (for other distros it might be a different directory), so we'll create the service definition file for `qbittorrent-nox` there.
 
 Create a new file, `/etc/systemd/system/qbittorrent.service`, and edit it with the appropriate permissions and text editor of your choice, for example:
 
 ```sh
-sudoedit /etc/systemd/system/qbittorrent.service
+sudo nano /etc/systemd/system/qbittorrent.service
 ```
 
 Save the file with the following contents or similar.
 You may modify them as-needed to better suit your needs:
 
-```txt
+```ini
 [Unit]
 Description=qBittorrent-nox service
 Documentation=man:qbittorrent-nox(1)
@@ -112,6 +112,7 @@ ExecStart=/usr/bin/qbittorrent-nox
 # uncomment this to use "Network interface" and/or "Optional IP address to bind to" options
 # without this binding will fail and qBittorrent's traffic will go through the default route
 # AmbientCapabilities=CAP_NET_RAW
+
 [Install]
 WantedBy=multi-user.target
 ```
@@ -123,7 +124,7 @@ The qBittorrent service is now ready to be used. To start the service on system 
 # Controlling the service
 
 - start the service: `sudo systemctl start qbittorrent`
-- check service status: `sudo systemctl status qbittorrent`
+- check service status: `systemctl status qbittorrent`
 - stop the service: `sudo systemctl stop qbittorrent`
 - enable/disable it to start up on boot: `sudo systemctl enable qbittorrent`
     - this should output something like the following:
@@ -148,15 +149,16 @@ sudo journalctl -u qbittorrent.service
 
 For more information on how to use and customize `systemd` logging, refer to its documentation.
 
-# `systemd` Service Dependencies (optional)
+# `systemd` service dependencies (optional)
 
 Let's say that you've configured `qbittorrent-nox` to download files to a directory that is in another drive, for example, mounted on `/media/user/volume`.
-It's important that you edit the service created above and add some `systemd` dependencies to prevent qbittorrent from writing files on a directory that it should not, in case your drive fails to mount or is accidentally unmounted.
+
+It's important that you edit the service created above and add dependencies to `systemd` service to prevent qBittorrent from writing files on a directory that it should not, in case your drive fails to mount or is accidentally unmounted.
 
 After you added the mount point to the `/etc/fstab`, it should have a line like this:
 
 ```txt
-UUID=c987355d-0ddf-4dc7-bbbc-bab8989d0690 /media/volume  ext4     defaults,nofail 0       0
+UUID=aa-bb-cc /media/volume ext4 defaults,nofail 0 0
 ```
 
 The `nofail` option prevents the system from stopping the boot process in case the drive can't mount on startup.
@@ -164,7 +166,7 @@ The `nofail` option prevents the system from stopping the boot process in case t
 You should edit `/etc/systemd/system/qbittorrent.service` to add your volume's systemd name (for example: `media-volume.mount`) to the line `After=network-online.target` and add the line `BindsTo=media-volume.mount` to bind the qbittorrent service to the mount point that you want it to write the files.
 Your service file should look like this:
 
-```txt
+```ini
 # ... other stuff ...
 
 [Unit]
@@ -177,6 +179,7 @@ BindsTo=media-volume.mount
 
 The `media-volume.mount` is a `systemd` convention created dynamically at boot, based on the entries found in `/etc/fstab`.
 Conventions such as these are used by `systemd` to define conditions around services, such as requiring a drive to be mounted before the service will start.
+
 Refer to [Systemd.mount reference](http://man7.org/linux/man-pages/man5/systemd.mount.5.html) for further reading.
 It follows a simple logic: if your drive is mounted on `/media/volume`, the unit name will be `media-volume.mount`, if it's on `/mnt/disk`, the unit will be `mnt-disk.mount`.
 
