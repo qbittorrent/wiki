@@ -87,7 +87,7 @@ On Ubuntu, system-wide `systemd` service definition files are located under `/et
 Create a new file, `/etc/systemd/system/qbittorrent.service`, and edit it with the appropriate permissions and text editor of your choice, for example:
 
 ```sh
-sudo nano /etc/systemd/system/qbittorrent.service
+sudoedit /etc/systemd/system/qbittorrent.service
 ```
 
 Save the file with the following contents or similar.
