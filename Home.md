@@ -77,7 +77,7 @@ Everyone is welcome to edit and improve the wiki!
 ## Linux
 
 * [Running qBittorrent without X server (WebUI only)](https://github.com/qbittorrent/qBittorrent/wiki/Running-qBittorrent-without-X-server-(WebUI-only))
-* [Running qBittorrent without X server (WebUI only + systemd service setup, Ubuntu 15.04 or newer)](https://github.com/qbittorrent/qBittorrent/wiki/Running-qBittorrent-without-X-server-(WebUI-only---systemd-service-setup,-Ubuntu-15.04-or-newer))
+* [Running qBittorrent without X server (WebUI only, systemd service set up, Ubuntu 15.04 or newer)](https://github.com/qbittorrent/qBittorrent/wiki/Running-qBittorrent-without-X-server-(WebUI-only,-systemd-service-set-up,-Ubuntu-15.04-or-newer))
 * Running qBittorrent without X server (WebUI only + daemon setup on alternative `init` systems) - TODO
 * [OpenVPN and qBittorrent without X server](https://github.com/qbittorrent/qBittorrent/wiki/OpenVPN-and-qBittorrent-without-X-server)
 
