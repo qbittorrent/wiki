@@ -82,7 +82,7 @@ for changing qBittorrent specific GUI colors, you have to use config.json, NOTE:
 Here 
 1. Palette referes to [QPalette](https://doc.qt.io/qt-5/qpalette.html), and following string(after .) denotes [Color roles](https://doc.qt.io/qt-5/qpalette.html#ColorRole-enum)
 2. Log refers to log messages and the following string (after .) denotes the type of messages
-3. Transfer List refers to view containing all of your torrents and following string(after .) denotes torrent state on which based on which row colors would be decided. 
+3. Transfer List refers to central view containing all of your torrents entries and the following string(after .) denotes torrent state on which based on which row colors would be decided. 
 
 `<color>` value supports normal rgb values(#rrggbb) or svg color names. It follows [Qt's named color convention](https://doc.qt.io/qt-5/qcolor.html#setNamedColor) convention
 
@@ -102,12 +102,12 @@ reserved files and their structure in bundle files are - `stylesheet.qss` and `c
 
 ## Changing icons of GUI
 
-Starting with v4.3.0 you can change the icons of GUIs too, you just have to include your icons in the theme bundle under icons prefix. Icon name should be the same as the originals icons. See all the icons here (https://github.com/qbittorrent/qBittorrent/tree/master/src/icons)
+Starting with v4.3.0 you can change the icons of GUIs too, you just have to include your icons in the theme bundle under the icons prefix. The icon name should be the same as the originals icons. See all the icons here (https://github.com/qbittorrent/qBittorrent/tree/master/src/icons)
 an example can be read here https://github.com/jagannatharjun/qbt-theme/issues/29#issuecomment-713305420
 
 ## Notes
 
-Following way of changing TransferList row's color is removed after version 4.2.5, please change you bundle files accordingly and For changing Transferlist row's color one should use `config.json`
+Following way of changing TransferList row's color is removed after version 4.2.5, please change your bundle files accordingly and instead use `config.json`
 
 ```css
 TransferListWidget 
