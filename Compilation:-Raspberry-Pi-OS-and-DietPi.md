@@ -72,9 +72,9 @@ git checkout $(git tag | grep v1\.2.\. | sort -t _ -n -k 3 | tail -n 1)
 ### B. Download the [latest release](https://github.com/arvidn/libtorrent/releases)
 
 ~~~~
-wget https://github.com/arvidn/libtorrent/archive/libtorrent-1_2_13.zip
-unzip libtorrent-1_2_13.zip
-cd libtorrent-libtorrent-1_2_13
+wget https://github.com/arvidn/libtorrent/archive/libtorrent-1_2_12.zip
+unzip libtorrent-1_2_12.zip
+cd libtorrent-libtorrent-1_2_12
 ~~~~
 
 ## Compile Libtorrent
@@ -147,9 +147,9 @@ You may select the branch version on the [branches page](https://github.com/qbit
 ### B. Download the [latest release](https://github.com/qbittorrent/qBittorrent/releases)
 
 ~~~~
-wget https://github.com/qbittorrent/qBittorrent/archive/release-4.3.4.1.zip
-unzip release-4.3.4.1.zip
-cd qBittorrent-release-4.3.4.1
+wget https://github.com/qbittorrent/qBittorrent/archive/release-4.3.5.zip
+unzip release-4.3.5.zip
+cd qBittorrent-release-4.3.5
 ~~~~
 
 ## Compile qBittorrent-nox
