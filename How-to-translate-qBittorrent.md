@@ -1,16 +1,21 @@
-qBittorrent is currently translated into approximately ~70 languages but we are still looking for new translators to help us make qBittorrent available into as many languages as possible.
+qBittorrent is currently translated into approximately ~70 languages and we are always looking for new translators to help us make qBittorrent available into as many languages as possible.
 
-# Proceed with the translation
-We are using [Transifex](https://www.transifex.com/) to localize qBittorrent. You can see the current state of the localization by visiting the [page of the project](https://www.transifex.com/sledgehammer999/qbittorrent/).
+# Translating strings used in NSIS installer
+You can find the files at: https://github.com/qbittorrent/qBittorrent/tree/master/dist/windows/installer-translations
+
+Feel free to submit a Pull Request (PR) for the changes you made.
+
+# Translating qBittorrent
+We are using Transifex to localize qBittorrent. For the localization progress, visit the [project page](https://www.transifex.com/sledgehammer999/qbittorrent/).
 
 If you want to help, sign up for free, select the language you want to translate and request to join the translation team.
-Once you are accepted as member of the team, you can proceed with the translation.
+Once you are accepted as a member of the team, you can proceed with the translation.
 
 Transifex provides an easy to use web interface to work on the translation.
 
-You can alternatively work locally using tools such as **Qt Linguist** and submit your changes using the web interface or the Transifex client. Make sure your local files are updated before pushing changes or you may override the work of others.
+You can alternatively work locally using tools such as **Qt Linguist** and submit your changes using the Transifex web interface or the [command-line client](https://docs.transifex.com/client/introduction). Before pushing changes make sure your local files are updated to latest or you might override the work of others.
 
-# Things you need to pay attention to
+## Things you need to pay attention to
 * HTML tags<br>
 We tried not to put much html code in the translatable strings but some of them still contain some HTML tags in them. If it is the case, please recopy the html tags in the translation *as is* and translate the rest of the string. The HTML **MUST** be present in the translation and at the same location.
 
