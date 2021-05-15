@@ -2,7 +2,7 @@ Following this guide, anyone even completely unexperienced in C/C++ software bui
 
 This guide could seem too detailed or even odd, but that was done intentionally, because first of all it aims to help novice users. Any experienced users may just overview it to find section they are interested in. For example, [the last one](#building-with-qmake) may be interesting for new contributors who want to debug or just poke around the code.
 
-This guide describes build process using qBittorrent sources from `master` branch, but it also can be suitable for 4.2.x releases. It assumes only using of libtorrent 1.2.x series. Building qBittorrent 4.1.x series or 4.2.x with libtorrent 1.1.x is out of scope, similar concept can be used in any case, but various build options must be adjusted.
+This guide describes build process using qBittorrent sources from `master` branch, but it also can be suitable for 4.3.x releases. It assumes only using of libtorrent 1.2.x series. Building qBittorrent 4.1.x series or 4.2.x with libtorrent 1.1.x is out of scope, similar concept can be used in any case, but various build options must be adjusted.
 
 This guide assumes building **everything** (i.e. all dependencies) from sources, so whole build process is pretty time consuming (takes ~1 hour on old MacBook Pro Retina Mid 2014).
 
@@ -36,10 +36,10 @@ Please note that XCode takes up several GiBs of space, and may take several minu
 qBittorrent has few required dependencies, and they also have their own. The full list of required sources (including qBittorrent itself) is next:
 
 - OpenSSL 1.1.x
-- Qt 5.9.x or above, 5.12.x or above is recommended
+- Qt 5.12.x or above is required
 - Boost 1.60 or above, 1.70 or above is recommended
-- libtorrent (libtorrent-rasterbar) 1.2.x, 1.2.6 or above is recommended
-- qBittorrent 4.2.x or above
+- libtorrent (libtorrent-rasterbar) 1.2.x, 1.2.12 or above is required
+- qBittorrent 4.3.x or above
 
 Actually, some additional libraries (like zlib) are required, but they are available on each system and have stable binary interfaces, so there is no reason to build them from sources. Moreover, such libraries are part of the SDK.
 
@@ -94,7 +94,7 @@ tar xf boost_1_73_0.tar.bz2
 
 ### Downloading libtorrent
 
-libtorrent RC_1_2 branch is used in this guide, but any 1.2.x release is also suitable. 1.2.6 and above is recommended.
+libtorrent RC_1_2 branch is used in this guide, but any 1.2.x release is also suitable. 1.2.12 and above is required.
 
 Just clone [official repo][libtorrent-repo], RC_1_2 branch was default at the time of writing, so no `git checkout` is required:
 
@@ -106,7 +106,7 @@ It is also possible to download the release archive or git snapshot instead of c
 
 ### Downloading qBittorrent
 
-qBittorrent master branch is used in this guide, but any 4.2.x release or v4_2_x branch can be used.
+qBittorrent master branch is used in this guide, but any 4.3.x release or v4_3_x branch can be used.
 
 master branch is the default, so no additional `git checkout` is required. Just clone [official repo][qbittorrent-repo]:
 
@@ -253,8 +253,10 @@ mkdir build && cd build
 
 Now everything is ready to issue cmake (from build directory).
 
+qBittorrent 4.3.x series and master branch requires C++17 features available only starting from macOS 10.14. This requirement must be explicitly expressed as cmake arguments.
+
 ```sh
-/Applications/CMake.app/Contents/bin/cmake -DCMAKE_PREFIX_PATH="$HOME/tmp/qbt/ext" -DCMAKE_CXX_STANDARD=14 -DCMAKE_CXX_EXTENSIONS=OFF -DCMAKE_OSX_DEPLOYMENT_TARGET=10.13 -DCMAKE_BUILD_TYPE=Release ..
+/Applications/CMake.app/Contents/bin/cmake -DCMAKE_PREFIX_PATH="$HOME/tmp/qbt/ext" -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_EXTENSIONS=OFF -DCMAKE_OSX_DEPLOYMENT_TARGET=10.14 -DCMAKE_BUILD_TYPE=Release ..
 ```
 
 This configures qBittorrent with all default build options. Only one important option to note - `CMAKE_PREFIX_PATH`, tells cmake where to find dependencies.
@@ -305,7 +307,7 @@ DEFINES += TORRENT_USE_LIBCRYPTO
 DEFINES += TORRENT_USE_OPENSSL
 
 CONFIG -= silent
-CONFIG += strict_c++ c++14
+CONFIG += strict_c++ c++17
 ```
 
 Most of its content is libtorrent-related stuff (libtorrent dependencies and mentioned above defines). Line `CONFIG -= silent` is just my preference, it may be useful in development process, it disables "silent build", i.e. all build commands are fully shown with all arguments.
