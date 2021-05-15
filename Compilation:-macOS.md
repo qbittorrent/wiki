@@ -245,16 +245,6 @@ Build process takes about 5-7 minutes.
 
 Like libtorrent, qBittorrent also provides few build systems to choose from to build it. GNU autotools is not available on macOS, qmake requires some additional work to setup project, so let's use cmake again.
 
-Unfortunately, qBittorrent sources must be slightly adjusted to be built using cmake. First of all, `cmake/Modules/FindLibtorrentRasterbar.cmake` must be removed, it conflicts with cmake-specific files provided by libtorrent. Next step is to edit root `CMakeLists.txt` and set minimum required libtorrent version to 1.2.0. Find line containing `requiredLibtorrentVersion` variable and replace 1.1.x value with 1.2.0. This required because cmake files provided by libtorrent are "smart" - they take into account the fact that libtorrent 1.2 has API incompatible with 1.1 series, and if app requires 1.1.x 1.2.x will not be selected. cmake warn you about it.
-
-This also can be done through command line:
-
-```sh
-cd qBittorrent
-rm cmake/Modules/FindLibtorrentRasterbar.cmake
-perl -p -i -e 's/requiredLibtorrentVersion\s+\d+\.\d+\.\d+/requiredLibtorrentVersion 1\.2\.0/g' CMakeLists.txt
-```
-
 As for libttorrent, let's create a separate build directory:
 
 ```sh
