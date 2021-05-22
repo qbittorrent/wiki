@@ -1,4 +1,4 @@
-I'm not gonna lie i don#t know how i got here but i'm about it
+I'm not gonna lie I don't know how I got here but I'm about it
 
 
-im confused how i got here too - jackdev
+I'm confused how I got here too - jackdev
