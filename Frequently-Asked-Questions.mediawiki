@@ -220,6 +220,10 @@ For example, we would have the following Peer IDs for these versions:
 * qBittorrent v2.4.10: <code>-qB24A0-<12 random bytes></code>
 * qBittorrent v3.0.2: <code>-qB3020-<12 random bytes></code>
 
+== Numbers are displayed wrong/with weird symbols on Windows ==
+
+Change your regional formatting settings. See https://github.com/qbittorrent/qBittorrent/issues/13028#issuecomment-647827021
+
 == How do I do IP Filtering (eMule and PeerGuardian compatible) in qbittorrent in GNU/Linux? ==
 In most GNU/Linux distributions, you can go to '''Tools → Options → Connection''' then click on IP Filtering.
 
