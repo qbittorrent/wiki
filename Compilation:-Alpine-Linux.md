@@ -8,6 +8,8 @@ This guide will help you install qBittorrent on Alpine Linux using a combination
 
 The majority of these commands are copy and paste but some can be modified. For example, in the libtorrent section there is a choice between libtorrent `v1` or `v2`. Check the notes and commented commands for more information.
 
+Check out the [common information](https://github.com/qbittorrent/qBittorrent/wiki/Compilation-with-CMake:-common-information) page to learn more about the available build configuration options for qBittorrent (for example, to compile qBittorrent without the GUI) and also CMake itself, if you're new to it.
+
 ## Build dependencies
 
 These are the build dependencies we need to install using `apk`
@@ -24,51 +26,6 @@ These are application dependencies we need to install using `apk`
 
 ```ash
 apk add icu-dev libexecinfo-dev openssl-dev qt5-qtbase-dev qt5-qttools-dev zlib-dev qt5-qtsvg-dev
-```
-
-## cmake helpful info
-
-This is a reference section with some helpful `cmake` tweaks you can apply if you need to debug or change anything during the build process.
-
-💡 To see the configuration options available you can use this command in the cloned git folder.
-
-```
-cmake -LAH .
-```
-
-ℹ️ To see project specific variables we can do this to see results after a specific option
-
-
-```
-cmake -LAH . | awk '/CMAKE_VERBOSE_MAKEFILE/,EOF'
-```
-
-ℹ️ After you have run at least one configure command you can see and edit the project settings using `ccmake` to have an interactive method.
-
-```bash
-ccmake .
-```
-
-💡 To set `cxx` flags you can add this to your `cmake` commands but it's optional.
-
-For example, these options can be set `-w` - no warnings `-s` - strip unneeded symbols
-
-```bash
--D CMAKE_CXX_FLAGS="-w -s"
-```
-
-💡 Ninja build is quiet by default. To enable verbose build information you have these options
-
-Pass `--verbose` to the build command (recommended)
-
-```bash
-cmake --build build --verbose
-```
-
-Add it as cmake variable at configure time.
-
-```bash
--D CMAKE_VERBOSE_MAKEFILE=ON
 ```
 
 ## Ninja build
@@ -120,9 +77,7 @@ cmake --install build
 
 Build and install qBittorrent
 
-⚠️ If you do not want the GUI you can set `-D GUI=OFF` to only build and install `qbittorrent-nox`
-
-ℹ️ Any tag can be used to checkout the version you want - https://github.com/arvidn/libtorrent/tags
+ℹ️ Any tag can be used to checkout the version you want - https://github.com/qbittorrent/qBittorrent/tags
 
 ```bash
 git clone --shallow-submodules --recurse-submodules https://github.com/qbittorrent/qBittorrent.git ~/qbittorrent && cd ~/qbittorrent
@@ -145,7 +100,7 @@ cd && rm -rf qbittorrent libtorrent ninja boost_1_76_0 boost_1_76_0.tar.gz
 
 ## Post build
 
-You can now run `qbittorrent` as it will be in the path.
+You can now run `qbittorrent` as it will be in the path (or `qbittorrent-nox`, if you build with no GUI).
 
 ```bash
 qbittorrent
