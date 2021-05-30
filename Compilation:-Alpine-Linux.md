@@ -66,7 +66,7 @@ git checkout "$(git tag -l --sort=-v:refname "v1*" | head -n 1)" # always checko
 cmake -Wno-dev -G Ninja -B build \
     -D CMAKE_BUILD_TYPE="Release" \
     -D CMAKE_CXX_STANDARD=17 \
-    -D Boost_INCLUDE_DIR="$HOME/boost_1_76_0/" \
+    -D BOOST_INCLUDEDIR="$HOME/boost_1_76_0/" \
     -D CMAKE_INSTALL_LIBDIR="lib" \
     -D CMAKE_INSTALL_PREFIX="/usr/local"
 cmake --build build
@@ -79,7 +79,7 @@ Build and install qBittorrent
 
 ℹ️ Any tag can be used to checkout the version you want - https://github.com/qbittorrent/qBittorrent/tags
 
-⚠️ You are most likely not using a GUI with Alpine, so remember to pass `-D GUI=OFF`.
+⚠️ You are most likely not using a GUI (desktop) with Alpine, so remember to pass `-D GUI=OFF`.
 
 ```bash
 git clone --shallow-submodules --recurse-submodules https://github.com/qbittorrent/qBittorrent.git ~/qbittorrent && cd ~/qbittorrent
@@ -87,7 +87,7 @@ git checkout "$(git tag -l --sort=-v:refname | head -n 1)" # always checkout the
 cmake -Wno-dev -G Ninja -B build \
     -D CMAKE_BUILD_TYPE="release" \
     -D CMAKE_CXX_STANDARD=17 \
-    -D Boost_INCLUDE_DIR="$HOME/boost_1_76_0/" \
+    -D BOOST_INCLUDEDIR="$HOME/boost_1_76_0/" \
     -D CMAKE_CXX_STANDARD_LIBRARIES="/usr/lib/libexecinfo.so" \
     -D CMAKE_INSTALL_PREFIX="/usr/local"
 cmake --build build
