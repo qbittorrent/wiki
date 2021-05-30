@@ -128,12 +128,43 @@ The build type/configuration selection is a bit different depending on whether a
 
 See the CMake documentation for more information about build types/configurations, including a list of built-in build types/configurations.
 
+
+### Changing **configure-time** options
+
+ After you have run at least one configure command you can see and edit the project settings using either the Qt-based CMake GUI, or `ccmake` for an interactive TUI experience:
+
+```bash
+ccmake .
+```
+
+To specify C++ flags that should be used for all build types, change the [`CMAKE_CXX_FLAGS`](https://cmake.org/cmake/help/latest/variable/CMAKE_LANG_FLAGS.html) variable.
+To specify C++ flags that should only be used for a certain build type/configuration, change the [`CMAKE_CXX_FLAGS_<CONFIG>`](https://cmake.org/cmake/help/latest/variable/CMAKE_LANG_FLAGS_CONFIG.html) variables, such as `CMAKE_CXX_FLAGS_RELEASE`.
+Note that this overwrites any previous value that these variables held.
+
+For example, to always use the GCC flags `-w` (no warnings) and `-s` (strip unneeded symbols):
+
+```bash
+cmake -B build -DCMAKE_CXX_FLAGS="-w -s" # ...
+```
+
+### Exporting a [JSON Compilation Database](https://clang.llvm.org/docs/JSONCompilationDatabase.html)
+
+Passing `-DCMAKE_EXPORT_COMPILE_COMMANDS=ON` at **configure-time** when using single-config generators will cause CMake to output a compilation database file (`compile_commands.json`) containing information about the effective command lines used to compile each file.
+
+This can be useful for both manually inspecting the effective command lines that will be used to compile each file, as well as to feed into tools such as `clangd` to provide language intelligence features to smart IDEs/text editors that support the Language Server Protocol (LSP) and have a suitable C++ client implementation for it.
+
 ### Build tool invocation
 
 The preferred way to actually invoke the underlying buildsystem to execute the build is with the `cmake --build ...` command.
 This allows platform-agnostic invocation in a majority of scenarios.
 
-Fortunately, if more fine-grained control is required, CMake also allows passing options directly to the underlying build system after `--`.
+The build is quiet by default with some generators such as Ninja. To enable verbose build, the recommended practice is to pass the `--verbose` flag at **build-time**:
+
+```bash
+cmake --build build --verbose
+```
+
+If more fine-grained control is required, CMake also allows passing options directly to the underlying build system after `--`.
 
 ### Dependencies
 
