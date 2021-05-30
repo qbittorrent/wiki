@@ -79,6 +79,8 @@ Build and install qBittorrent
 
 ℹ️ Any tag can be used to checkout the version you want - https://github.com/qbittorrent/qBittorrent/tags
 
+⚠️ You are most likely not using a GUI with Alpine, so remember to pass `-D GUI=OFF`.
+
 ```bash
 git clone --shallow-submodules --recurse-submodules https://github.com/qbittorrent/qBittorrent.git ~/qbittorrent && cd ~/qbittorrent
 git checkout "$(git tag -l --sort=-v:refname | head -n 1)" # always checkout the latest release of qbittorrent
@@ -100,8 +102,8 @@ cd && rm -rf qbittorrent libtorrent ninja boost_1_76_0 boost_1_76_0.tar.gz
 
 ## Post build
 
-You can now run `qbittorrent` as it will be in the path (or `qbittorrent-nox`, if you build with no GUI).
+You can now run `qbittorrent-no` as it will be in the path (or `qbittorrent`, if you build with the GUI).
 
 ```bash
-qbittorrent
+qbittorrent-nox
 ```
