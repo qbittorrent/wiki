@@ -72,9 +72,9 @@ git checkout $(git tag | grep v1\.2.\. | sort -t _ -n -k 3 | tail -n 1)
 ### B. Download the [latest release](https://github.com/arvidn/libtorrent/releases)
 
 ~~~~
-wget https://github.com/arvidn/libtorrent/archive/libtorrent-1_2_12.zip
-unzip libtorrent-1_2_12.zip
-cd libtorrent-libtorrent-1_2_12
+wget https://github.com/arvidn/libtorrent/archive/libtorrent-1_2_14.zip
+unzip libtorrent-1_2_14.zip
+cd libtorrent-libtorrent-1_2_14
 ~~~~
 
 ## Compile Libtorrent
