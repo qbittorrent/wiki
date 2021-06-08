@@ -81,7 +81,7 @@ cd libtorrent-libtorrent-1_2_14
 
 ~~~~
 ./autotool.sh
-./configure --disable-debug --enable-encryption --with-boost-libdir=/usr/lib/arm-linux-gnueabihf --with-libiconv CXXFLAGS="-std=c++17"
+./configure --with-boost-libdir=/usr/lib/arm-linux-gnueabihf --with-libiconv CXXFLAGS="-std=c++17"
 make -j$(nproc)
 sudo make install
 ~~~~
