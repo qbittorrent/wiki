@@ -175,3 +175,21 @@ In others, you may need to supply hints in the form of options passed in the **c
 
 For example, if CMake fails the **configure step** complaining that it can't find OpenSSL on Windows, you need to pass `-DOPENSSL_ROOT_DIR=C:\path\to\OpenSSL_root_directory` in the **configure step**.
 CMake usually tells you what exactly it wants and the name of the variable to pass it as.
+
+### Installation and stripping binaries
+
+You can run the executable from the build directory, but you also may want to install the build artifacts into system directories.
+
+This can be done with (you may need elevated privileges, depending on the install destination):
+
+```
+cmake --install build_dir
+```
+
+The install destination can be controlled via the `CMAKE_INSTALL_PREFIX` variable at **configure-time**.
+
+CMake does not strip binaries by default. To install stripped binaries, pass the `--strip` flag to the install command:
+
+```
+make --install build_dir --strip
+```
