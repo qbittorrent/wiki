@@ -193,3 +193,5 @@ CMake does not strip binaries by default. To install stripped binaries, pass the
 ```
 make --install build_dir --strip
 ```
+
+Note that stripped binaries will produce useless stacktraces.
