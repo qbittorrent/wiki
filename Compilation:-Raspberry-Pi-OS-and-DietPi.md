@@ -8,10 +8,6 @@ This guide outlines the steps needed to compile qBittorrent-nox 4.3.x and run it
 
 This guide was made possible by the authors of the [Debian/Ubuntu compilation guide](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-Debian-and-Ubuntu "Debian/Ubuntu compilation guide") and [Guide on running qBittorrent as a service](https://github.com/qbittorrent/qBittorrent/wiki/Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface-(15.04-and-newer) "Guide on running qBittorrent as a service"). A few DietPi-specific amendments are included.
 
-**Major update:**
-
-**In order to bring this guide up-to-date with the latest changes, I will do a pretty major update of it. I tested the changes, but some things might have slipped. Please feel free to mention me ([Aeriem](https://github.com/Aeriem)) should any issues arise. A big thanks to the original author of this guide ([Millichrome](https://github.com/Millichrome)).**
-
 # Table of Contents
 
 * [Dependencies](#dependencies)
