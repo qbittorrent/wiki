@@ -22,6 +22,7 @@ This WebUI API documentation applies to qBittorrent v4.1+. For other WebUI API v
    1. [API v2.8.0](#api-v280)
    1. [API v2.8.1](#api-v281)
    1. [API v2.8.2](#api-v282)
+   1. [API v2.8.3](#api-v283)
 1. [General information](#general-information)
 1. [Authentication](#authentication)
    1. [Login](#login)
@@ -212,6 +213,9 @@ Note that this change was released in qBittorrent v4.3.3, but the WebAPI version
 ## API v2.8.2 ##
 - Added `indexes` optional parameter to `/torrents/files` ([#14795](https://github.com/qbittorrent/qBittorrent/pull/14795))
 - Added `index` field to `/torrents/files` response ([#14795](https://github.com/qbittorrent/qBittorrent/pull/14795))
+
+## API v2.8.3 ##
+- Added `tag` optional parameter to `/torrents/info` ([#15152](https://github.com/qbittorrent/qBittorrent/pull/15152))
 
 # General Information #
 
@@ -1239,6 +1243,7 @@ Parameter             | Type    | Description
 ----------------------|---------|------------
 `filter`  _optional_  | string  | Filter torrent list by state. Allowed state filters: `all`, `downloading`, `completed`, `paused`, `active`, `inactive`, `resumed`, `stalled`, `stalled_uploading`, `stalled_downloading`
 `category` _optional_ | string  | Get torrents with the given category (empty string means "without category"; no "category" parameter means "any category" <- broken until [#11748](https://github.com/qbittorrent/qBittorrent/issues/11748) is resolved). Remember to URL-encode the category name. For example, `My category` becomes `My%20category`
+`tag` _optional_ <sup>since 2.8.3</sup> | string  | Get torrents with the given tag (empty string means "without tag"; no "tag" parameter means "any tag". Remember to URL-encode the category name. For example, `My tag` becomes `My%20tag`
 `sort` _optional_     | string  | Sort torrents by given key. They can be sorted using any field of the response's JSON array (which are documented below) as the sort key.
 `reverse` _optional_  | bool    | Enable reverse sorting. Defaults to `false`
 `limit` _optional_    | integer | Limit the number of torrents returned
