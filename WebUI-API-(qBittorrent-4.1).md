@@ -21,6 +21,7 @@ This WebUI API documentation applies to qBittorrent v4.1+. For other WebUI API v
    1. [API v2.7.0](#api-v270)
    1. [API v2.8.0](#api-v280)
    1. [API v2.8.1](#api-v281)
+   1. [API v2.8.2](#api-v282)
 1. [General information](#general-information)
 1. [Authentication](#authentication)
    1. [Login](#login)
@@ -207,6 +208,10 @@ Note that this change was released in qBittorrent v4.3.3, but the WebAPI version
 ## API v2.8.1 ##
 - Added `ratioLimit` and `seedingTimeLimit` optional fields to `/torrents/add` ([#14519](https://github.com/qbittorrent/qBittorrent/pull/14519))
 - Added `seeding_time` field to `/torrents/info` ([#14554](https://github.com/qbittorrent/qBittorrent/pull/14554))
+
+## API v2.8.2 ##
+- Added `indexes` optional parameter to `/torrents/files` ([#14795](https://github.com/qbittorrent/qBittorrent/pull/14795))
+- Added `index` field to `/torrents/files` response ([#14795](https://github.com/qbittorrent/qBittorrent/pull/14795))
 
 # General Information #
 
@@ -1567,6 +1572,7 @@ Name: `files`
 Parameter | Type   | Description
 ----------|--------|------------
 `hash`    | string | The hash of the torrent you want to get the contents of
+`indexes` | string | The indexes of the files you want to retrieve. `indexes` can contain multiple values separated by `\|`.
 
 **Returns:**
 
@@ -1582,6 +1588,7 @@ The response is:
 
 Property       | Type          | Description
 ---------------|---------------|-------------
+`index`        | string        | File index
 `name`         | string        | File name (including relative path)
 `size`         | integer       | File size (bytes)
 `progress`     | float         | File progress (percentage/100)
@@ -1605,6 +1612,7 @@ Example:
 
 [
     {
+        "index":0,
         "is_seed":false,
         "name":"debian-8.1.0-amd64-CD-1.iso",
         "piece_range":[0,1253],
@@ -2096,9 +2104,11 @@ Parameter                         | Type    | Description
 ----------------------------------|---------|------------
 `hash`                            | string  | The hash of the torrent
 `id`                              | string  | File ids, separated by `\|`
-`priority`                        | number  | File priority to set
+`priority`                        | number  | File priority to set (consult [torrent contents API](#get-torrent-contents) for possible values)
 
-Please consult the [torrent contents API](#get-torrent-contents) for possible `priority` values. `id` values coresspond to contents returned by [torrent contents API](#get-torrent-contents), e.g. `id=0` for first file, `id=1` for second file, etc.
+`id` values correspond to file position inside the array returned by [torrent contents API](#get-torrent-contents), e.g. `id=0` for first file, `id=1` for second file, etc.
+
+Since 2.8.2 it is reccomended to use `index` field returned by [torrent contents API](#get-torrent-contents) (since the files can be filtered and the `index` value may differ from the position inside the response array).
 
 **Returns:**
 
