@@ -1572,7 +1572,7 @@ Name: `files`
 Parameter | Type   | Description
 ----------|--------|------------
 `hash`    | string | The hash of the torrent you want to get the contents of
-`indexes` | string | The indexes of the files you want to retrieve. `indexes` can contain multiple values separated by `\|`.
+`indexes` _optional_ <sup>since 2.8.2</sup> | string | The indexes of the files you want to retrieve. `indexes` can contain multiple values separated by `\|`.
 
 **Returns:**
 
@@ -1588,7 +1588,7 @@ The response is:
 
 Property       | Type          | Description
 ---------------|---------------|-------------
-`index`        | string        | File index
+`index` <sup>since 2.8.2</sup> | string | File index
 `name`         | string        | File name (including relative path)
 `size`         | integer       | File size (bytes)
 `progress`     | float         | File progress (percentage/100)
