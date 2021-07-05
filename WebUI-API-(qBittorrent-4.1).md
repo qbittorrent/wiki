@@ -1600,7 +1600,7 @@ Property       | Type          | Description
 `priority`     | integer       | File priority. See possible values here below
 `is_seed`      | bool          | True if file is seeding/complete
 `piece_range`  | integer array | The first number is the starting piece index and the second number is the ending piece index (inclusive)
-`availability` | float         | Percentage of file pieces currently available
+`availability` | float         | Percentage of file pieces currently available (percentage/100)
 
 Possible values of `priority`:
 
@@ -1623,7 +1623,8 @@ Example:
         "piece_range":[0,1253],
         "priority":1,
         "progress":0,
-        "size":657457152
+        "size":657457152,
+        "availability":0.5,
     }
 ]
 ```
