@@ -1241,7 +1241,7 @@ Name: `info`
 
 Parameter             | Type    | Description
 ----------------------|---------|------------
-`filter`  _optional_  | string  | Filter torrent list by state. Allowed state filters: `all`, `downloading`, `completed`, `paused`, `active`, `inactive`, `resumed`, `stalled`, `stalled_uploading`, `stalled_downloading`
+`filter`  _optional_  | string  | Filter torrent list by state. Allowed state filters: `all`, `downloading`, `seeding`, `completed`, `paused`, `active`, `inactive`, `resumed`, `stalled`, `stalled_uploading`, `stalled_downloading`, `errored`
 `category` _optional_ | string  | Get torrents with the given category (empty string means "without category"; no "category" parameter means "any category" <- broken until [#11748](https://github.com/qbittorrent/qBittorrent/issues/11748) is resolved). Remember to URL-encode the category name. For example, `My category` becomes `My%20category`
 `tag` _optional_ <sup>since 2.8.3</sup> | string  | Get torrents with the given tag (empty string means "without tag"; no "tag" parameter means "any tag". Remember to URL-encode the category name. For example, `My tag` becomes `My%20tag`
 `sort` _optional_     | string  | Sort torrents by given key. They can be sorted using any field of the response's JSON array (which are documented below) as the sort key.
