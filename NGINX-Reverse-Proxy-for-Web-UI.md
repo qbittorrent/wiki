@@ -21,6 +21,8 @@ location /qbt/ {
     # For this use case, where qBittorrent itself is using plain HTTP
     # (and regardless of whether or not the external website uses HTTPS),
     # the flag must be set here, in the proxy configuration itself:
+    # Note: If this flag is set while the external website uses only HTTP, this will cause
+    # the login mechanism to not work without any apparent errors in console/network resulting in "auth loops".
     proxy_cookie_path / "/; Secure";
 }
 ```
