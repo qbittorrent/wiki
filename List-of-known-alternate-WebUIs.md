@@ -9,11 +9,6 @@ If you know of more, feel free to add a link to the repository along with a shor
 ---
 ### Custom WebUI Projects
 
-
-- https://github.com/iFelix18/Dark-qBittorrent-WebUI
-
-    A dark theme CSS stylesheet for the default WebUI.
-
 - https://github.com/CzBiX/qb-web
 
     A custom WebUI written in Typescript and VueJS with extra features, such as RSS and dark mode.
@@ -25,10 +20,6 @@ If you know of more, feel free to add a link to the repository along with a shor
 - https://github.com/WDaan/VueTorrent
 
     A modern looking WebUI for qBittorrent, made with VueJS and ExpressJS.
-
-- https://github.com/despin/qbittorrent-webui-react
-
-    A custom material design WebUI written in ReactJS.
 
 - https://github.com/bill-ahmed/qbit-WebUI
 
