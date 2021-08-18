@@ -1297,7 +1297,7 @@ Property             | Type    | Description
 `ratio_limit`        | float   | TODO (what is different from `max_ratio`?)
 `save_path`          | string  | Path where this torrent's data is stored
 `seeding_time`       | integer | Torrent elapsed time while complete (seconds)
-`seeding_time_limit` | integer | TODO (what is different from `max_seeding_time`?)
+`seeding_time_limit` | integer | TODO (what is different from `max_seeding_time`?) seeding_time_limit is a per torrent setting, when Automatic Torrent Management is disabled, furthermore then max_seeding_time is set to seeding_time_limit for this torrent. If Automatic Torrent Management is enabled, the value is -2. And if max_seeding_time is unset it have a default value -1.
 `seen_complete`      | integer | Time (Unix Epoch) when this torrent was last seen complete
 `seq_dl`             | bool    | True if sequential download is enabled
 `size`               | integer | Total size (bytes) of files selected for download
