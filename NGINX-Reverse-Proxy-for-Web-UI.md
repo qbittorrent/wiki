@@ -6,27 +6,29 @@ location /qbt/ {
     proxy_http_version 1.1;
 
     proxy_set_header   Host               127.0.0.1:30000;
-    proxy_set_header   X-Forwarded-Proto  $scheme;
     proxy_set_header   X-Forwarded-Host   $http_host;
     proxy_set_header   X-Forwarded-For    $remote_addr;
-    proxy_set_header   X-Real-IP          $remote_addr;
 
-    # optionally, you can adjust the POST request size limit, to allow adding a lot of torrents at once:
+    # not used by qBittorrent
+    #proxy_set_header   X-Forwarded-Proto  $scheme;
+    #proxy_set_header   X-Real-IP          $remote_addr;
+
+    # optionally, you can adjust the POST request size limit, to allow adding a lot of torrents at once
     #client_max_body_size 100M;
 
-    # since v4.2.2, is possible to configure qBittorrent
+    # Since v4.2.2, is possible to configure qBittorrent
     # to set the "Secure" flag for the session cookie automatically.
     # However, that option does nothing unless using qBittorrent's built-in HTTPS functionality.
     # For this use case, where qBittorrent itself is using plain HTTP
     # (and regardless of whether or not the external website uses HTTPS),
-    # the flag must be set here, in the proxy configuration itself:
+    # the flag must be set here, in the proxy configuration itself.
     # Note: If this flag is set while the external website uses only HTTP, this will cause
     # the login mechanism to not work without any apparent errors in console/network resulting in "auth loops".
-    proxy_cookie_path / "/; Secure";
+    proxy_cookie_path  /                  "/; Secure";
 }
 ```
 
-Note: qBittorrent currently doesn't read the `X-Forwarded-For` header, so if you find yourself seeing `WebAPI login failure. Reason: IP has been banned, IP: 127.0.0.1` and needing to restart qBittorrent, you may want to set the ban after failure count to `0`.
+Note: If you find yourself seeing `WebAPI login failure. Reason: IP has been banned, IP: 127.0.0.1` and needing to restart qBittorrent, you may want to set the ban after failure count to `0` which will disable it.
 
 ---
 
