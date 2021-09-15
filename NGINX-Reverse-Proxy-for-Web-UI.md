@@ -4,7 +4,6 @@ This configuration allows you to use NGINX as a reverse proxy for the WebUI list
 location /qbt/ {
     proxy_pass         http://127.0.0.1:30000/;
     proxy_http_version 1.1;
-    http2_push_preload on; # Enable http2 push
 
     proxy_set_header   Host               127.0.0.1:30000;
     proxy_set_header   X-Forwarded-Proto  $scheme;
