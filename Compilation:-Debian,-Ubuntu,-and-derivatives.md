@@ -14,11 +14,8 @@ If you just want the latest version of qBittorrent, use our [stable](https://lau
 You need to install these packages in order to be able to compile qBittorrent from source:
 
 ```bash
-sudo apt install build-essential cmake ninja-build pkg-config git zlib1g-dev libssl-dev libgeoip-dev
-sudo apt install libboost-dev libboost-system-dev libboost-chrono-dev libboost-random-dev
+sudo apt install build-essential cmake git ninja-build pkg-config libboost-dev libssl-dev zlib1g-dev
 ```
-
-If you want, you can install the Boost libraries from source instead of installing them from the distro's repositories. This is quite easy to do, but generally does not make that much of a difference and is out of the scope of this guide.
 
 ## Qt libraries
 
@@ -48,9 +45,9 @@ Alternatively, you can compile `libtorrent` yourself. qBittorrent 4.2.x and abov
 git clone https://github.com/arvidn/libtorrent.git
 cd libtorrent
 git checkout RC_1_2 # or a 1.2.x tag
-cmake -B cmake-build-dir/Release -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local
-cmake --build cmake-build-dir/Release
-sudo cmake --install cmake-build-dir/Release
+cmake -B build -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_INSTALL_PREFIX=/usr/local
+cmake --build build
+sudo cmake --install build
 ```
 
 The install step will install libtorrent to the chosen prefix (`/usr/local`, in this case), and generate an `install_manifest.txt` file in the build folder that can later be used to uninstall all installed files with `sudo xargs rm < install_manifest.txt`.
@@ -74,7 +71,7 @@ Download and extract a `.tar` archive from [the GitHub releases page](https://gi
 Then, configure and build with CMake:
 
 ```bash
-cmake -G "Ninja" -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local
+cmake -G "Ninja" -B build -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_INSTALL_PREFIX=/usr/local
 cmake --build build
 ```
 
