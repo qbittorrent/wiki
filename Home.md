@@ -87,7 +87,7 @@ Everyone is welcome to edit and improve the wiki!
 
 * [Coding style](https://github.com/qbittorrent/qBittorrent/blob/master/CODING_GUIDELINES.md)
 * [Contributing](https://github.com/qbittorrent/qBittorrent/blob/master/CONTRIBUTING.md)
-* [How to write a search plugin](https://github.com/qbittorrent/qBittorrent/wiki/How-to-write-a-search-plugin)
+* [How to write a search plugin](https://github.com/qbittorrent/search-plugins/wiki/How-to-write-a-search-plugin)
 * [Using VSCode for qBittorrent development](https://github.com/qbittorrent/qBittorrent/wiki/Using-VSCode-for-qBittorrent-development)
 * [Setup GDB with Qt pretty printers](https://github.com/qbittorrent/qBittorrent/wiki/Setup-GDB-with-Qt-pretty-printers)
 * [How to debug WebUI code](https://github.com/qbittorrent/qBittorrent/wiki/How-to-debug-the-WebUI-code)
