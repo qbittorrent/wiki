@@ -107,19 +107,22 @@ You can use a remote control with qBittorrent. For more information, go [https:/
 The following settings are also documented in qBittorrent and libtorrent, respectively [https://github.com/qbittorrent/qBittorrent/blob/master/src/gui/advancedsettings.cpp here] and [https://github.com/arvidn/libtorrent/blob/master/include/libtorrent/settings_pack.hpp here].
 
 === qBittorrent–specific configuration ===
-* '''Network interface''' — specifies which network interfaces qBittorrent listens on. On multi-nic systems (e.g. device has an ethernet port and wifi) you may limit which interface should be used to send and transmit data.
-* '''Optional IP address to bind to''' — ''TBA''
-* '''Save resume data interval''' — duration on which the resume data is saved to the disk. (''TBA'': What is "resume data")
-* '''Confirm torrent recheck''' — before manually rechecking torrents (e.g. Context-menu → Force recheck), a user confirmation dialog is displayed.
-* '''Recheck torrents on completion''' — after the torrent is completely downloaded a recheck operation is performed on the torrent. (''TBA'': completing may or may not be before ''seeding'' completion.)  This is specially useful on unreliable disks or filesystems.
-* '''Transfer list refresh interval''' — controls how fast or slow the transfer list view is updated.  Adjusting the refresh interval to a lower value displays less accurate speeds in average, but nicer results.  If qBittorrent is running in the background, you may increase the value instead.  Using lower values might cause qBittorrent to use more resources. The default value is `1500 ms` (i.e. 1.5 seconds).
-* '''Resolve peer host name''' — when enabled, the address list in the Peers tab will try to resolve IP addresses to hostname using reverse lookups. Might not always return accurate results.
-* '''Resolve peer countries using GeoIP''' — when enabled, qBittorrent tries to lookup the originating country of each peer using the [https://dev.maxmind.com/geoip/geoip2/geolite2/ GeoIP] database.
-* '''Display notifications''' — will make qBittorrent output system tray notifications for various events (e.g. download completed, search finished, an error occurred).  Disabling this option will silence qBittorrent.
-* '''Display notifications for added torrents''' — when enabled will make qBittorrent output new notification on adding a new torrent.  Specially useful if torrents are added using RSS or the Web UI.
-* '''Confirm removal of all tags''' — displays a user confirmation message before removing all tags.
-* '''Download tracker's favicon''' — when enabled, qBittorrent tries to fetch the "favicon.ico" file from each tracker URL.  This icon is displayed in the left pane under "Trackers" in GUI.
-* '''Save path history length''' — this controls how many recent paths qBittorrent will remember.
+* '''Process memory priority (Windows >= 8 only)''' — (default: Below normal) Specifies the memory priority for a thread or process.
+* '''Network interface''' — (default: Any interface) Specifies which network interfaces qBittorrent listens on. On multi-nic systems (e.g. device has an ethernet port and wifi) you may limit which interface should be used to send and transmit data.
+* '''Optional IP address to bind to''' — (default: All addresses) ''TBA''
+* '''Save resume data interval''' — (default: 3 min) Duration on which the resume data is saved to the disk. (''TBA'': What is "resume data")
+* '''Confirm torrent recheck''' — (default: enabled) Before manually rechecking torrents (e.g. Context-menu → Force recheck), a user confirmation dialog is displayed.
+* '''Recheck torrents on completion''' — (default: disabled) After the torrent is completely downloaded a recheck operation is performed on the torrent. (''TBA'': completing may or may not be before ''seeding'' completion.)  This is specially useful on unreliable disks or filesystems.
+* '''Transfer list refresh interval''' — (default: 1500 ms) Controls how fast or slow the transfer list view is updated.  Adjusting the refresh interval to a lower value displays less accurate speeds in average, but nicer results.  If qBittorrent is running in the background, you may increase the value instead.  Using lower values might cause qBittorrent to use more resources.
+* '''Resolve peer host name''' — (default: disabled) When enabled, the address list in the Peers tab will try to resolve IP addresses to hostname using reverse lookups. Might not always return accurate results.
+* '''Resolve peer countries''' — (default: enabled) When enabled, qBittorrent tries to lookup the originating country of each peer using the [https://dev.maxmind.com/geoip/geoip2/geolite2/ GeoIP] database.
+* '''Display notifications''' — (default: enabled) Will make qBittorrent output system tray notifications for various events (e.g. download completed, search finished, an error occurred).  Disabling this option will silence qBittorrent.
+* '''Display notifications for added torrents''' — (default: disabled) When enabled will make qBittorrent output new notification on adding a new torrent.  Specially useful if torrents are added using RSS or the Web UI.
+* '''Confirm removal of all tags''' — (default: enabled) Displays a user confirmation message before removing all tags.
+* '''Download tracker's favicon''' — (default: enabled) When enabled, qBittorrent tries to fetch the "favicon.ico" file from each tracker URL.  This icon is displayed in the left pane under "Trackers" in GUI.
+* '''Save path history length''' — (default: 8) This controls how many recent paths qBittorrent will remember.
+* '''Enable speed graphs''' — (default: enabled) Self-explanatory
+* '''Enable icons in menus''' — (default: enabled) Self-explanatory, restart required (Windows).
 * '''Enable embedded tracker''' — (default: disabled) Enable qbittorrent's tracker functionality. It is not a fully-featured bittorrent tracker, but it supports the basic features need for sharing a few torrents see the [https://github.com/qbittorrent/qBittorrent/wiki/How-to-use-qBittorrent-as-a-tracker how-to wiki page] for more info.
 * '''Embedded tracker port''' — (default: 9000) The port the embedded tracker should listen on.
 
