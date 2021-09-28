@@ -1,1 +1,0 @@
-Moved to https://github.com/qbittorrent/search-plugins/wiki/How-to-write-a-search-plugin
