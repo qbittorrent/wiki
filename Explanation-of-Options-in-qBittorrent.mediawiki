@@ -108,7 +108,7 @@ The following settings are also documented in qBittorrent and libtorrent, respec
 
 === qBittorrent–specific configuration ===
 * '''Process memory priority (Windows >= 8 only)''' — (default: Below normal) Specifies the memory priority for a thread or process.
-* '''Network interface''' — (default: Any interface) Specifies which network interfaces qBittorrent listens on. On multi-nic systems (e.g. device has an ethernet port and wifi) you may limit which interface should be used to send and transmit data.
+* '''Network interface''' — (default: Any interface) Specifies which network interfaces qBittorrent listens on. On multi-NIC systems (e.g. device has an ethernet port and wifi) you may limit which interface should be used to send and transmit data.
 * '''Optional IP address to bind to''' — (default: All addresses) ''TBA''
 * '''Save resume data interval''' — (default: 3 min) Duration on which the resume data is saved to the disk. (''TBA'': What is "resume data")
 * '''Confirm torrent recheck''' — (default: enabled) Before manually rechecking torrents (e.g. Context-menu → Force recheck), a user confirmation dialog is displayed.
