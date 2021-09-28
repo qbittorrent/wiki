@@ -156,9 +156,14 @@ Web seeds that end up on the client's local network (i.e. in a private IP addres
 ** '''Round-robin''' — Rotates the peers that are unchoked when seeding. This distributes the upload bandwidth uniformly and fairly. It minimizes the ability for a peer to download everything without redistributing it.
 ** '''Fastest upload''' — Unchokes the peers we can send to the fastest. This might be a bit more reliable in utilizing all available capacity.
 ** '''Anti-leech''' — Prioritizes peers who have just started or are just about to finish the download. The intention is to force peers in the middle of the download to trade with each other.
-* '''Always announce to all trackers in a tier''' — controls how multi tracker torrents are treated.  If this is set to true, all trackers in the same tier are announced to in parallel. Otherwise the behavior is as defined by the multi tracker specification.
-* '''IP Address to report to trackers''' — is the ip address passed along to trackers.  If this value is blank, the parameter will be omitted.
-
+* '''Always announce to all trackers in a tier''' — (default: enabled) Controls how multi tracker torrents are treated.  If this is set to true, all trackers in the same tier are announced to in parallel. Otherwise the behavior is as defined by the multi tracker specification.
+* '''Always announce to all tiers''' — (default: enabled) also controls how multi tracker torrents are treated. When this is set to true, one tracker from each tier is announced to. This is the uTorrent behavior. To be compliant with the Multi-tracker specification, set it to false.
+* '''IP Address to report to trackers (requires restart)''' — (default: blank) is the IP address passed along to trackers.  If this value is blank, the parameter will be omitted.
+* '''Max concurrent HTTP announces''' — (default: 50) limits the number of concurrent HTTP tracker announces. Once the limit is hit, tracker requests are queued and issued when an outstanding announce completes.
+* '''Stop tracker timeout''' — (default: 5 s) is the number of seconds to wait when sending a stopped message before considering a tracker to have timed out. This is usually shorter, to make the client quit faster. If the value is set to 0, the connections to trackers with the stopped event are suppressed.
+* '''Peer turnover disconnect percentage''' — (default: 4 %) is the percentage of peers to disconnect every turnover (Peer turnover disconnect interval) (if we're at the peer limit). When we are connected to more than limit (Peer turnover thresshold percentage) peers, disconnect this percentage fraction of the peers.
+* '''Peer turnover thresshold percentage''' — (default: 90 %) See above.
+* '''Peer turnover disconnect interval''' — (default: 300 s) is the interval (in seconds) between optimistic disconnects if the disconnects happen. See above.
 
 = Deprecated options =
 
