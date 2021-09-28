@@ -121,7 +121,7 @@ The following settings are also documented in qBittorrent and libtorrent, respec
 * '''Confirm removal of all tags''' — (default: enabled) Displays a user confirmation message before removing all tags.
 * '''Download tracker's favicon''' — (default: enabled) When enabled, qBittorrent tries to fetch the "favicon.ico" file from each tracker URL.  This icon is displayed in the left pane under "Trackers" in GUI.
 * '''Save path history length''' — (default: 8) This controls how many recent paths qBittorrent will remember.
-* '''Enable speed graphs''' — (default: enabled) Self-explanatory
+* '''Enable speed graphs''' — (default: enabled) Self-explanatory.
 * '''Enable icons in menus''' — (default: enabled) Self-explanatory, restart required (Windows).
 * '''Enable embedded tracker''' — (default: disabled) Enable qbittorrent's tracker functionality. It is not a fully-featured bittorrent tracker, but it supports the basic features need for sharing a few torrents see the [https://github.com/qbittorrent/qBittorrent/wiki/How-to-use-qBittorrent-as-a-tracker how-to wiki page] for more info.
 * '''Embedded tracker port''' — (default: 9000) The port the embedded tracker should listen on.
