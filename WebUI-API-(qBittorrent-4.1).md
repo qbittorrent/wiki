@@ -1593,7 +1593,7 @@ The response is:
 
 Property       | Type          | Description
 ---------------|---------------|-------------
-`index` <sup>since 2.8.2</sup> | string | File index
+`index` <sup>since 2.8.2</sup> | integer | File index
 `name`         | string        | File name (including relative path)
 `size`         | integer       | File size (bytes)
 `progress`     | float         | File progress (percentage/100)
