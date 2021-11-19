@@ -32,3 +32,9 @@ If you know of more, feel free to add a link to the repository along with a shor
 
     TypeScript/JavaScript implementation for qBittorrent's WebAPI
 
+- https://sourceforge.net/projects/qbitvcl/
+
+    A free Delphi (Sydney, Alexandia) implementation of qBittorrent's WebAPI
+
+
+
