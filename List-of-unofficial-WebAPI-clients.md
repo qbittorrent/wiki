@@ -37,6 +37,7 @@ If you know of more, feel free to add a link to the repository along with a shor
     A free Delphi VCL/FMX implementation of qBittorrent's WebAPI
 
 - https://github.com/bnzbnz/qBit4Delphi
+
     qNOXify : a qBittorent/NOX Thin Client implementing  qBit4Delphi (in progress...)
 
 
