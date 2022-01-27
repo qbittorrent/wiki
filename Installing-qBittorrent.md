@@ -22,7 +22,7 @@ qBittorrent is also available semi-officially on FlatHub:
 
 For CentOS, Fedora and RHEL, enable the Extra Packages for Enterprise Linux (EPEL) repository (epel-release) to install qbittorrent or qbittorrent-nox.
 
-Unofficial nightly builds for Debian:
+Unofficial nightly builds for Debian (from [Kolcha](https://github.com/Kolcha)):
 * Repository: https://software.opensuse.org//download.html?project=home%3Anikoneko%3Atest&package=qbittorrent
 * Discussion thread: https://github.com/qbittorrent/qBittorrent/issues/12616
 
