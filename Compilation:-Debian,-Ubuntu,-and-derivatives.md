@@ -21,7 +21,7 @@ sudo apt install build-essential cmake git ninja-build pkg-config libboost-dev l
 
 qBittorrent uses the Qt framework as the basis for its GUI.
 
-- qBittorrent 4.3.x requires at least Qt 5.11.
+- qBittorrent 4.4.x requires at least Qt 5.15.2.
 - At the time of writing, the current `master` branch requires at least Qt 5.15.2.
 
 Many distributions, in particular Debian, Ubuntu (especially LTS releases), and their derivatives don't provide up-to-date Qt packages in their repositories or are very slow in updating them.
@@ -46,11 +46,12 @@ sudo apt install libtorrent-rasterbar-dev
 but the version may not be the most recent or exactly the one you want.
 
 Alternatively, you can compile `libtorrent` yourself. qBittorrent 4.2.x and above requires the  1.2.x series(*).
+qBittorrent 4.4.x requires minimum libtorrent 1.2.14 or 2.0.4.
 
 ```bash
-git clone https://github.com/arvidn/libtorrent.git
+git clone --recurse-submodules https://github.com/arvidn/libtorrent.git
 cd libtorrent
-git checkout RC_1_2 # or a 1.2.x tag
+git checkout RC_2_0 # or a 2.0.x tag
 cmake -B build -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_INSTALL_PREFIX=/usr/local
 cmake --build build
 sudo cmake --install build
