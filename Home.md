@@ -112,7 +112,7 @@ Everyone is welcome to edit and improve the wiki!
 
 #### Windows
   * [MSVC 2019 (CMake, static linkage)](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-Windows-(MSVC-2019,-64-bit,-static-linkage))
-  * [MSVC 2019 (autotools/qmake, static linkage)](https://github.com/qbittorrent/qBittorrent/wiki/Compiling-with-MSVC-2019-(static-linkage))
+  * [MSVC 2019 (qmake, static linkage)](https://github.com/qbittorrent/qBittorrent/wiki/Compiling-with-MSVC-2019-(static-linkage))
   * [MSYS2](https://github.com/Chocobo1/qbittorent_msys2#readme)
 
 [Obsolete compilation guides](https://github.com/qbittorrent/qBittorrent/wiki/Obsolete-compilation-guides)
