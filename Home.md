@@ -107,7 +107,7 @@ Everyone is welcome to edit and improve the wiki!
 * [Raspbian for LeMaker Banana Pro](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-Raspbian-for-LeMaker-Banana-Pro)
 
 #### macOS
-* [x86_64, arm64, cross-compilation, static linkage](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-macOS-(x86_64,-arm64,-cross-compilation))
+* [cmake (x86_64, arm64, cross-compilation, static linkage)](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-macOS-(x86_64,-arm64,-cross-compilation))
 * [autotools/qmake](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-macOS)
 
 #### Windows
