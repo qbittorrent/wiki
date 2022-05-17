@@ -78,8 +78,6 @@ Everyone is welcome to edit and improve the wiki!
 
 * [Running qBittorrent without X server (WebUI only)](https://github.com/qbittorrent/qBittorrent/wiki/Running-qBittorrent-without-X-server-(WebUI-only))
 * [Running qBittorrent without X server (WebUI only, systemd service set up, Ubuntu 15.04 or newer)](https://github.com/qbittorrent/qBittorrent/wiki/Running-qBittorrent-without-X-server-(WebUI-only,-systemd-service-set-up,-Ubuntu-15.04-or-newer))
-* [Running qBittorrent without X server (WebUI only, Docker)](https://github.com/qbittorrent/qBittorrent/tree/master/dist/docker#readme)
-* Running qBittorrent without X server (WebUI only + daemon setup on alternative `init` systems) - TODO
 * [OpenVPN and qBittorrent without X server](https://github.com/qbittorrent/qBittorrent/wiki/OpenVPN-and-qBittorrent-without-X-server)
 
 ---
@@ -95,28 +93,26 @@ Everyone is welcome to edit and improve the wiki!
 
 ### Compilation
 
-#### CMake
+[Common information for CMake](https://github.com/qbittorrent/qBittorrent/wiki/Compilation-with-CMake:-common-information)
 
-* [Common information](https://github.com/qbittorrent/qBittorrent/wiki/Compilation-with-CMake:-common-information)
-* [Debian/Ubuntu and derivatives](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-Debian,-Ubuntu,-and-derivatives)
+#### *BSD, Linux
 * [Alpine Linux](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-Alpine-Linux)
-* [Windows (MSVC 2019, static linkage)](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-Windows-(MSVC-2019,-64-bit,-static-linkage))
-* Windows (MSVC 2019, dynamic linkage) TODO
-* Windows (MinGW 64-bit, dynamic linkage) TODO
-* [macOS (x86_64, arm64, cross-compilation, static linkage)](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-macOS-(x86_64,-arm64,-cross-compilation))
-
-#### qmake/autotools
-
 * [CentOS 8.x](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-CentOS-8.x)
-* [Debian / Ubuntu compilation](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-Debian-and-Ubuntu)
-* [Raspberry Pi OS / DietPi](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-Raspberry-Pi-OS-and-DietPi)
-* [Raspian for LeMaker Banana Pro](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-Raspbian-for-LeMaker-Banana-Pro)
+* [Debian / Ubuntu and derivatives (CMake)](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-Debian,-Ubuntu,-and-derivatives)
+* [Debian / Ubuntu and derivatives (autotools/qmake)](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-Debian-and-Ubuntu)
+* [Docker](https://github.com/qbittorrent/qBittorrent/tree/master/dist/docker#readme)
 * [FreeBSD (no GUI)](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-FreeBSD-(no-GUI))
 * [Fully static binaries on Linux (glibc or musl)](https://github.com/qbittorrent/qBittorrent/wiki/Compiliation:-Fully-static-binaries-on-Linux-(glibc-or-musl))
-* [macOS](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-macOS)
-* [MSVC 2019 (static linkage)](https://github.com/qbittorrent/qBittorrent/wiki/Compiling-with-MSVC-2019-(static-linkage))
-* [Compiling with MSYS2](https://github.com/Chocobo1/qbittorent_msys2)
+* [Raspberry Pi OS / DietPi](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-Raspberry-Pi-OS-and-DietPi)
+* [Raspbian for LeMaker Banana Pro](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-Raspbian-for-LeMaker-Banana-Pro)
 
----
+#### macOS
+* [x86_64, arm64, cross-compilation, static linkage](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-macOS-(x86_64,-arm64,-cross-compilation))
+* [autotools/qmake](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-macOS)
 
-* [Obsolete compilation guides](https://github.com/qbittorrent/qBittorrent/wiki/Obsolete-compilation-guides)
+#### Windows
+  * [MSVC 2019 (CMake, static linkage)](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-Windows-(MSVC-2019,-64-bit,-static-linkage))
+  * [MSVC 2019 (autotools/qmake, static linkage)](https://github.com/qbittorrent/qBittorrent/wiki/Compiling-with-MSVC-2019-(static-linkage))
+  * [MSYS2](https://github.com/Chocobo1/qbittorent_msys2)
+
+[Obsolete compilation guides](https://github.com/qbittorrent/qBittorrent/wiki/Obsolete-compilation-guides)
