@@ -14,11 +14,11 @@ See [How to use custom UI themes](https://github.com/qbittorrent/qBittorrent/wik
 
 - https://github.com/jagannatharjun/qbt-theme
 
-    A collection of Dark and light themes inspired by Mumble and others developed by a qBittorrent contributor.
+    A collection of Dark and light themes inspired by Mumble and others.
 
 - https://github.com/maboroshin/qBittorrentDarktheme
 
-    A dark theme inspired by one of the above, also by a qBittorrent contributor.
+    A dark theme inspired by one of the above.
 
 - https://gitlab.com/qbittorrent-black-theme/client
 
