@@ -61,7 +61,7 @@ cd .\vcpkg
 ### Install the base dependencies
 
 ```
-.\vcpkg install boost-circular-buffer:x64-windows-static openssl:x64-windows-static qt5-base:x64-windows-static qt5-svg:x64-windows-static qt5-tools:x64-windows-static qt5-winextras:x64-windows-static
+.\vcpkg install boost-circular-buffer:x64-windows-static boost-stacktrace:x64-windows-static openssl:x64-windows-static qt5-base:x64-windows-static qt5-svg:x64-windows-static qt5-tools:x64-windows-static qt5-winextras:x64-windows-static
 ```
 
 Note that by default, `vcpkg` keeps all the buildtrees after each package installation. This is useful for patching and rebuilding, but they can take up a lot of space, so if you don't need them, you can additionally pass the `--clean-after-build` flag to the above command so that the buildtrees are deleted automatically after the installation. Or just delete them manually after the build is done.
