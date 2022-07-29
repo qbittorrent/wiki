@@ -77,7 +77,8 @@ GNU/Linux:
 * preferences:
 ** <code>~/.config/qBittorrent/</code>
 * .torrent files, logs, etc (This is the standard [https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html XDG] data folder):
-** <code>~/.local/share/data/qBittorrent/</code>
+** <code>~/.local/share/qBittorrent/</code>
+** <code>~/.local/share/data/qBittorrent/</code> (in case legacy data directory was used)
 
 Linux/SnapStore:
 * preferences:
