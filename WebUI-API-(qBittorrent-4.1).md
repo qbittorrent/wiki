@@ -219,9 +219,9 @@ Note that this change was released in qBittorrent v4.3.3, but the WebAPI version
 
 # General Information #
 
-- All API methods are under `/api/v2/APIName/methodName`, where `APIName` is a certain subgroup of API methods whose functionality is related.
-- Either `GET` or `POST` can be used as the request type for all API methods.
-- All API methods require [authentication](#authentication) (except the `/api/v2/auth/login` method itself, obviously).
+- All API methods follows the format `/api/v2/APIName/methodName`, where `APIName` is a certain subgroup of API methods whose functionality is related.
+- All API methods only allows `GET` or `POST` methods. Use `POST` when you are mutating some state (or when your request is too big to fit into `GET`) and use `GET` otherwise. Starting with qBittorrent v4.4.4, server will return `405 Method Not Allowed` when you used the wrong request method.
+- All API methods require [authentication](#authentication) (except `/api/v2/auth/login`, obviously).
 
 # Authentication #
 
