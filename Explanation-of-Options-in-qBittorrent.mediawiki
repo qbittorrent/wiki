@@ -88,7 +88,6 @@ For those of you whose internet connectivity is limited during specific hours (f
 
 == Privacy ==
 * '''Enable DHT (decentralized network) to find more peers'''  - DHT is a solution to make torrent downloading and uploading a tracker independent operation. More about DHT [https://en.wikipedia.org/wiki/BitTorrent_%28protocol%29#Creating_and_publishing_torrents here].
-** '''Use a different port for DHT and BitTorrent''' allows the port that DHT and BitTorrent use to be different.
 * '''Enable Peer Exchange (PeX) to find more peers''' - another alternative to enable lesser dependency on trackers. More information [http://wiki.vuze.com/w/Peer_Exchange here].
 * '''Enable Local Peer Discovery to find more peers''' - an extension to the BitTorrent protocol to enable communication via LAN. More information [https://en.wikipedia.org/wiki/Local_Peer_Discovery here].
 * '''Enable anonymous mode''' - in simple terms, qBittorrent tries to maintain a certain degree of anonymity while using this function. Detailed explanation [[Anonymous-Mode|here]].
