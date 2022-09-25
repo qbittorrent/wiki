@@ -1905,7 +1905,7 @@ Property                        | Type    | Description
 `upLimit` _optional_            | integer | Set torrent upload speed limit. Unit in bytes/second
 `dlLimit` _optional_            | integer | Set torrent download speed limit. Unit in bytes/second
 `ratioLimit` _optional_ <sup>since 2.8.1</sup> | float   | Set torrent share ratio limit
-`seedingTimeLimit` _optional_ <sup>since 2.8.1</sup>  | integer | Set torrent seeding time limit. Unit in seconds
+`seedingTimeLimit` _optional_ <sup>since 2.8.1</sup>  | integer | Set torrent seeding time limit. Unit in minutes
 `autoTMM` _optional_         | bool    | Whether Automatic Torrent Management should be used
 `sequentialDownload` _optional_ | string  | Enable sequential download. Possible values are `true`, `false` (default)
 `firstLastPiecePrio` _optional_ | string  | Prioritize download first last piece. Possible values are `true`, `false` (default)
@@ -2197,7 +2197,7 @@ hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5
 
 `hashes` can contain multiple hashes separated by `|` or set to `all`
 `ratioLimit` is the max ratio the torrent should be seeded until. `-2` means the global limit should be used, `-1` means no limit.
-`seedingTimeLimit` is the max amount of time the torrent should be seeded. `-2` means the global limit should be used, `-1` means no limit.
+`seedingTimeLimit` is the max amount of time (minutes) the torrent should be seeded. `-2` means the global limit should be used, `-1` means no limit.
 
 **Returns:**
 
