@@ -82,6 +82,13 @@ You can now stop impersonating the qbittorent user by executing the `exit` comma
 
 ## Setup the `systemd` service
 
+If you are not using a very ancient version of qBittorrent, usually a service file will be already installed and it should be located at `/usr/lib/systemd/system/qbittorrent-nox@.service`. \
+In case the file isn't present on your system, you can create one by copying the contents from here: https://github.com/qbittorrent/qBittorrent/blob/master/dist/unix/systemd/qbittorrent-nox%40.service.in \
+To start it just run: `sudo systemctl start qbittorrent-nox@qbtuser` \
+To let it start up on boot: `sudo systemctl enable qbittorrent-nox@qbtuser`
+
+***The rest of this section is outdated and it remains here as historical record.***
+
 On Ubuntu, system-wide `systemd` service definition files are located under `/etc/systemd/system/` (for other distros it might be a different directory), so we'll create the service definition file for `qbittorrent-nox` there.
 
 Create a new file, `/etc/systemd/system/qbittorrent.service`, and edit it with the appropriate permissions and text editor of your choice, for example:
