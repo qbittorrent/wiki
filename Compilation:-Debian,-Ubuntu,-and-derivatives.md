@@ -14,7 +14,7 @@ If you just want the latest version of qBittorrent, use our [stable](https://lau
 You need to install these packages in order to be able to compile qBittorrent from source:
 
 ```bash
-sudo apt install build-essential cmake git ninja-build pkg-config libboost-dev libssl-dev zlib1g-dev
+sudo apt install build-essential cmake git ninja-build pkg-config libboost-dev libssl-dev zlib1g-dev libgl1-mesa-dev
 ```
 
 ## Qt libraries
