@@ -100,7 +100,7 @@ Everyone is welcome to edit and improve the wiki!
 * [CentOS 8.x](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-CentOS-8.x)
 * [Debian / Ubuntu and derivatives (CMake)](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-Debian,-Ubuntu,-and-derivatives)
 * [Debian / Ubuntu and derivatives (autotools/qmake)](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-Debian-and-Ubuntu)
-* [Docker](https://github.com/qbittorrent/qBittorrent/tree/master/dist/docker#readme)
+* [Docker](https://github.com/qbittorrent/docker-qbittorrent-nox#readme)
 * [FreeBSD (no GUI)](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-FreeBSD-(no-GUI))
 * [Fully static binaries on Linux (glibc or musl)](https://github.com/qbittorrent/qBittorrent/wiki/Compiliation:-Fully-static-binaries-on-Linux-(glibc-or-musl))
 * [Raspberry Pi OS / DietPi](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-Raspberry-Pi-OS-and-DietPi)
