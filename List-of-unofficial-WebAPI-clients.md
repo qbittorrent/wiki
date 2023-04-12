@@ -40,6 +40,10 @@ If you know of more, feel free to add a link to the repository along with a shor
 
     qNOXify : a qBittorent/NOX Thin Client implementing  qBit4Delphi (in progress...)
 
+- https://github.com/George-Miao/qbit
+
+    A Rust library for interacting with qBittorrent's Web API
+
 
 
 
