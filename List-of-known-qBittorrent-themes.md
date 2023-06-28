@@ -31,3 +31,7 @@ See [How to use custom UI themes](https://github.com/qbittorrent/qBittorrent/wik
 - https://github.com/dracula/qbittorrent
 
     A dark theme for qBittorrent.
+
+- https://github.com/Bluewave2/legacy-4.3.8-qBittorrent
+
+    Look and feel of qBittorrent 4.3.X.
