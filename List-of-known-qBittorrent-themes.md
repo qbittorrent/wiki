@@ -35,3 +35,11 @@ See [How to use custom UI themes](https://github.com/qbittorrent/qBittorrent/wik
 - https://github.com/Bluewave2/legacy-4.3.8-qBittorrent
 
     Look and feel of qBittorrent 4.3.X.
+
+- https://github.com/catppuccin/qbittorrent
+
+    Soothing pastel theme for qBittorrent
+
+- https://github.com/witalihirsch/qBitTorrent-fluent-theme
+
+    Fluent dark/light themes for qBittorrent
