@@ -110,7 +110,7 @@ As a consequence, a piece can contain information relative to more than one file
 Because of this, if two files are adjacent and you choose to download only one of them, it is likely that the filtered one will be partially downloaded and thus appear on the hard-disk.
 
 == Low performance despite high or 100% disk usage on Windows (also with external drives) ==
-Try disabling MSI mode for that drive: [https://support.microsoft.com/en-us/help/3083595/task-manager-might-show-100-disk-utilization-on-windows-10-devices-wit Microsoft Docs page].<br />
+Try disabling MSI mode for that drive see this [https://answers.microsoft.com/en-us/windows/forum/all/windows-10-task-manager-reports-100-disk/c2ca1d67-00c6-4bb3-9f86-78932051421e Microsoft forum page answer].<br />
 For external drives, you may need to shuck them and use them as internal drives. Or just get a new motherboard/PCIe card with better SATA controllers.<br />
 See also [https://github.com/qbittorrent/qBittorrent/issues/13314#issuecomment-693379135 this issue comment].
 
