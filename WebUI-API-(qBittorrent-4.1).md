@@ -851,7 +851,7 @@ Example:
     {
         "id":0,
         "message":"qBittorrent v3.4.0 started",
-        "timestamp":1507969127860,
+        "timestamp":1507969127,
         "type":1
     },
     {
