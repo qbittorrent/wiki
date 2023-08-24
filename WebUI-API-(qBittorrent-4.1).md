@@ -841,7 +841,7 @@ Property    | Type    | Description
 ------------|---------|------------
 `id`        | integer | ID of the message
 `message`   | string  | Text of the message
-`timestamp` | integer | Seconds since epoch
+`timestamp` | integer | Seconds since epoch (Note: switched from milliseconds to seconds in v4.6.0)
 `type`      | integer | Type of the message: Log::NORMAL: `1`, Log::INFO: `2`, Log::WARNING: `4`, Log::CRITICAL: `8`
 
 Example:
