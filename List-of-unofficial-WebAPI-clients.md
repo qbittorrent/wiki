@@ -44,6 +44,10 @@ If you know of more, feel free to add a link to the repository along with a shor
 
     A Rust library for interacting with qBittorrent's Web API
 
+- https://github.com/yosemiteyss/qbittorrent_api
+
+    Dart wrapper for qBittorrent Web API
+
 
 
 
