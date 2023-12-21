@@ -13,7 +13,7 @@ Once you are accepted as a member of the team, you can proceed with the translat
 
 Transifex provides an easy to use web interface to work on the translation.
 
-You can alternatively work locally using tools such as **Qt Linguist** and submit your changes using the Transifex web interface or the [command-line client](https://docs.transifex.com/client/introduction). Before pushing changes make sure your local files are updated to latest or you might override the work of others.
+You can alternatively work locally using tools such as **Qt Linguist** and submit your changes using the Transifex web interface or the [command-line client](https://developers.transifex.com/docs/cli). Before pushing changes make sure your local files are updated to latest or you might override the work of others.
 
 ## Things you need to pay attention to
 * HTML tags<br>
