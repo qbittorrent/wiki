@@ -447,7 +447,7 @@ Property                                 | Type    | Description
 `ip_filter_enabled`                      | bool    | True if external IP filter should be enabled
 `ip_filter_path`                         | string  | Path to IP filter file (.dat, .p2p, .p2b files are supported); path is separated by slashes
 `ip_filter_trackers`                     | bool    | True if IP filters are applied to trackers
-`web_ui_domain_list`                     | string  | Comma-separated list of domains to accept when performing Host header validation
+`web_ui_domain_list`                     | string  | Semicolon-separated list of domains to accept when performing Host header validation
 `web_ui_address`                         | string  | IP address to use for the WebUI
 `web_ui_port`                            | integer | WebUI port
 `web_ui_upnp`                            | bool    | True if UPnP is used for the WebUI port
