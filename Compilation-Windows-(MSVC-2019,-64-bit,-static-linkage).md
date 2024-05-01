@@ -114,6 +114,6 @@ Then, configure and build with CMake, using the `vcpkg` toolchain file (change t
 
     Same as above, but also pass `-DLibtorrentRasterbar_DIR=C:\path\to\libtorrent-install-dir\lib\cmake\LibtorrentRasterbar` to the configure command line.
 
-Check out the [common information](https://github.com/qbittorrent/qBittorrent/wiki/Compilation-with-CMake:-common-information) page to learn more about the available build configuration options (for compiling without WebUI functionality, for instance).
+Check out the [common information](https://github.com/qbittorrent/qBittorrent/wiki/Compilation-with-CMake-common-information) page to learn more about the available build configuration options (for compiling without WebUI functionality, for instance).
 
 Once qBittorrent is built, you can run it straight from the build directory.

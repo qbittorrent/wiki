@@ -20,8 +20,8 @@ Everyone is welcome to edit and improve the wiki!
 
 ### External programs
 
-* [How-to](https://github.com/qbittorrent/qBittorrent/wiki/External-programs:-How-to)
-* [`savecategory`](https://github.com/qbittorrent/qBittorrent/wiki/External-programs:-savecategory)
+* [How-to](https://github.com/qbittorrent/qBittorrent/wiki/External-programs-How-to)
+* [`savecategory`](https://github.com/qbittorrent/qBittorrent/wiki/External-programs-savecategory)
 
 ### Search plugins
 
@@ -93,25 +93,25 @@ Everyone is welcome to edit and improve the wiki!
 
 ### Compilation
 
-[Common information for CMake](https://github.com/qbittorrent/qBittorrent/wiki/Compilation-with-CMake:-common-information)
+[Common information for CMake](https://github.com/qbittorrent/qBittorrent/wiki/Compilation-with-CMake-common-information)
 
 #### *BSD, Linux
-* [Alpine Linux](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-Alpine-Linux)
-* [CentOS 8.x](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-CentOS-8.x)
-* [Debian / Ubuntu and derivatives (CMake)](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-Debian,-Ubuntu,-and-derivatives)
-* [Debian / Ubuntu and derivatives (autotools/qmake)](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-Debian-and-Ubuntu)
+* [Alpine Linux](https://github.com/qbittorrent/qBittorrent/wiki/Compilation-Alpine-Linux)
+* [CentOS 8.x](https://github.com/qbittorrent/qBittorrent/wiki/Compilation-CentOS-8.x)
+* [Debian / Ubuntu and derivatives (CMake)](https://github.com/qbittorrent/qBittorrent/wiki/Compilation-Debian,-Ubuntu,-and-derivatives)
+* [Debian / Ubuntu and derivatives (autotools/qmake)](https://github.com/qbittorrent/qBittorrent/wiki/Compilation-Debian-and-Ubuntu)
 * [Docker](https://github.com/qbittorrent/docker-qbittorrent-nox#readme)
-* [FreeBSD (no GUI)](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-FreeBSD-(no-GUI))
-* [Fully static binaries on Linux (glibc or musl)](https://github.com/qbittorrent/qBittorrent/wiki/Compiliation:-Fully-static-binaries-on-Linux-(glibc-or-musl))
-* [Raspberry Pi OS / DietPi](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-Raspberry-Pi-OS-and-DietPi)
-* [Raspbian for LeMaker Banana Pro](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-Raspbian-for-LeMaker-Banana-Pro)
+* [FreeBSD (no GUI)](https://github.com/qbittorrent/qBittorrent/wiki/Compilation-FreeBSD-(no-GUI))
+* [Fully static binaries on Linux (glibc or musl)](https://github.com/qbittorrent/qBittorrent/wiki/Compilation-Fully-static-binaries-on-Linux-(glibc-or-musl))
+* [Raspberry Pi OS / DietPi](https://github.com/qbittorrent/qBittorrent/wiki/Compilation-Raspberry-Pi-OS-and-DietPi)
+* [Raspbian for LeMaker Banana Pro](https://github.com/qbittorrent/qBittorrent/wiki/Compilation-Raspbian-for-LeMaker-Banana-Pro)
 
 #### macOS
-* [cmake (x86_64, arm64, cross-compilation, static linkage)](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-macOS-(x86_64,-arm64,-cross-compilation))
-* [autotools/qmake](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-macOS)
+* [cmake (x86_64, arm64, cross-compilation, static linkage)](https://github.com/qbittorrent/qBittorrent/wiki/Compilation-macOS-(x86_64,-arm64,-cross-compilation))
+* [autotools/qmake](https://github.com/qbittorrent/qBittorrent/wiki/Compilation-macOS)
 
 #### Windows
-  * [MSVC 2019 (CMake, static linkage)](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-Windows-(MSVC-2019,-64-bit,-static-linkage))
+  * [MSVC 2019 (CMake, static linkage)](https://github.com/qbittorrent/qBittorrent/wiki/Compilation-Windows-(MSVC-2019,-64-bit,-static-linkage))
   * [MSVC 2019 (qmake, static linkage)](https://github.com/qbittorrent/qBittorrent/wiki/Compiling-with-MSVC-2019-(static-linkage))
   * [MSYS2](https://github.com/Chocobo1/qbittorent_msys2#readme)
 

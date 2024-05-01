@@ -8,7 +8,7 @@ This guide will help you install qBittorrent on Alpine Linux using a combination
 
 The majority of these commands are copy and paste but some can be modified. For example, in the libtorrent section there is a choice between libtorrent `v1` or `v2`. Check the notes and commented commands for more information.
 
-Check out the [common information](https://github.com/qbittorrent/qBittorrent/wiki/Compilation-with-CMake:-common-information) page to learn more about the available build configuration options for qBittorrent (for example, to compile qBittorrent without the GUI) and also CMake itself, if you're new to it.
+Check out the [common information](https://github.com/qbittorrent/qBittorrent/wiki/Compilation-with-CMake-common-information) page to learn more about the available build configuration options for qBittorrent (for example, to compile qBittorrent without the GUI) and also CMake itself, if you're new to it.
 
 ## Build dependencies
 
