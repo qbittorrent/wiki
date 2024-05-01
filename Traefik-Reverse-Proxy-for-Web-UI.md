@@ -22,7 +22,7 @@ services:
         - "traefik.http.middlewares.qb-redirect.redirectregex.regex=^(.*)/qb$$"
         - "traefik.http.middlewares.qb-redirect.redirectregex.replacement=$$1/qb/"
         - "traefik.http.middlewares.qb-strip.stripprefix.prefixes=/qb/"
-        # appropropriate header changes
+        # appropriate header changes
         - "traefik.http.middlewares.qb-headers.headers.customrequestheaders.X-Frame-Options=SAMEORIGIN"
         - "traefik.http.middlewares.qb-headers.headers.customrequestheaders.Referer="
         - "traefik.http.middlewares.qb-headers.headers.customrequestheaders.Origin="

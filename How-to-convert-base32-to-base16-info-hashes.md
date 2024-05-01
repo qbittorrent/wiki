@@ -11,7 +11,7 @@ Suppose you have the following magnet link:
 
     magnet:?xt=urn:btih:WRN7ZT6NKMA6SSXYKAFRUGDDIFJUNKI2
 
-if it´s added to qBittorrent and then you issue a /query/torrents command, you´ll get a JSON object like this (fields other than "hash" are ommitted):
+if it´s added to qBittorrent and then you issue a /query/torrents command, you´ll get a JSON object like this (fields other than "hash" are omitted):
 
     [{...,"hash":"b45bfccfcd5301e94af8500b1a1863415346a91a",...},...]
 

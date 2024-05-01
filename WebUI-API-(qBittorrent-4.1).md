@@ -1274,7 +1274,7 @@ Property             | Type    | Description
 `completed`          | integer | Amount of transfer data completed (bytes)
 `completion_on`      | integer | Time (Unix Epoch) when the torrent completed
 `content_path`       | string  | Absolute path of torrent content (root path for multifile torrents, absolute file path for singlefile torrents)
-`dl_limit`           | integer | Torrent download speed limit (bytes/s). `-1` if ulimited.
+`dl_limit`           | integer | Torrent download speed limit (bytes/s). `-1` if unlimited.
 `dlspeed`            | integer | Torrent download speed (bytes/s)
 `downloaded`         | integer | Amount of data downloaded
 `downloaded_session` | integer | Amount of data downloaded this session
@@ -1307,7 +1307,7 @@ Property             | Type    | Description
 `time_active`        | integer | Total active time (seconds)
 `total_size`         | integer | Total size (bytes) of all file in this torrent (including unselected ones)
 `tracker`            | string  | The first tracker with working status. Returns empty string if no tracker is working.
-`up_limit`           | integer | Torrent upload speed limit (bytes/s). `-1` if ulimited.
+`up_limit`           | integer | Torrent upload speed limit (bytes/s). `-1` if unlimited.
 `uploaded`           | integer | Amount of data uploaded
 `uploaded_session`   | integer | Amount of data uploaded this session
 `upspeed`            | integer | Torrent upload speed (bytes/s)
@@ -1499,7 +1499,7 @@ Property         | Type     | Description
 `num_peers`      | integer  | Number of peers for current torrent, as reported by the tracker
 `num_seeds`      | integer  | Number of seeds for current torrent, asreported by the tracker
 `num_leeches`    | integer  | Number of leeches for current torrent, as reported by the tracker
-`num_downloaded` | integer  | Number of completed downlods for current torrent, as reported by the tracker
+`num_downloaded` | integer  | Number of completed downloads for current torrent, as reported by the tracker
 `msg`            | string   | Tracker message (there is no way of knowing what this message is - it's up to tracker admins)
 
 Possible values of `status`:
@@ -2114,7 +2114,7 @@ Parameter                         | Type    | Description
 
 `id` values correspond to file position inside the array returned by [torrent contents API](#get-torrent-contents), e.g. `id=0` for first file, `id=1` for second file, etc.
 
-Since 2.8.2 it is reccomended to use `index` field returned by [torrent contents API](#get-torrent-contents) (since the files can be filtered and the `index` value may differ from the position inside the response array).
+Since 2.8.2 it is recommended to use `index` field returned by [torrent contents API](#get-torrent-contents) (since the files can be filtered and the `index` value may differ from the position inside the response array).
 
 **Returns:**
 
