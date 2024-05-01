@@ -1,0 +1,30 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks.git
+    rev: v4.5.0
+    hooks:
+    - id: fix-byte-order-marker
+      name: Check file encoding (UTF-8 without BOM)
+
+    - id: mixed-line-ending
+      name: Check line ending character (LF)
+      args: ["--fix=lf"]
+
+    - id: end-of-file-fixer
+      name: Check trailing newlines
+
+    - id: trailing-whitespace
+      name: Check trailing whitespaces
+
+  - repo: https://github.com/codespell-project/codespell.git
+    rev: v2.2.6
+    hooks:
+    - id: codespell
+      name: Check spelling (codespell)
+      args: ["--ignore-words-list", ""]
+
+  - repo: https://github.com/crate-ci/typos.git
+    rev: v1.16.18
+    hooks:
+    - id: typos
+      name: Check spelling (typos)
+      args: ["--config", ".github/workflows/helper/pre-commit/.typos.toml"]
