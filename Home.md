@@ -1,4 +1,6 @@
-Everyone is welcome to edit and improve the wiki!
+Everyone is welcome to improve the wiki!
+
+The wiki source code is hosted at https://github.com/qbittorrent/wiki and is accepting Pull Requests.
 
 > :point_right: If you create a page, place it below in its respective place and update the sidebar with the content below.
 
