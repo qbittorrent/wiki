@@ -6,7 +6,7 @@ Both are based on Debian. Debian 9.0 ships with a patched version of an older qB
 
 This guide outlines the steps needed to compile qBittorrent-nox 4.3.x and run it as a service. Both DietPi and Raspberry Pi OS provide pre-compiled qBittorrent using either `dietpi-software` or `apt`. Use this guide if you want to run the most recent qBittorrent (and libtorrent-rasterbar).
 
-This guide was made possible by the authors of the [Debian/Ubuntu compilation guide](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-Debian-and-Ubuntu "Debian/Ubuntu compilation guide") and [Guide on running qBittorrent as a service](https://github.com/qbittorrent/qBittorrent/wiki/Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface-(15.04-and-newer) "Guide on running qBittorrent as a service"). A few DietPi-specific amendments are included.
+This guide was made possible by the authors of the [Debian/Ubuntu compilation guide](https://github.com/qbittorrent/qBittorrent/wiki/Compilation-Debian-and-Ubuntu "Debian/Ubuntu compilation guide") and [Guide on running qBittorrent as a service](https://github.com/qbittorrent/qBittorrent/wiki/Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface-(15.04-and-newer) "Guide on running qBittorrent as a service"). A few DietPi-specific amendments are included.
 
 # Table of Contents
 

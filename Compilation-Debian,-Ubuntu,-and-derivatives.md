@@ -1,6 +1,6 @@
 # Introduction
 
-**NOTE:** for qBittorrent revisions older than `63ff5e3` (2020-09-19), use the [legacy guide](https://github.com/qbittorrent/qBittorrent/wiki/Compilation:-Debian-and-Ubuntu) instead.
+**NOTE:** for qBittorrent revisions older than `63ff5e3` (2020-09-19), use the [legacy guide](https://github.com/qbittorrent/qBittorrent/wiki/Compilation-Debian-and-Ubuntu) instead.
 
 This how-to will guide you through compiling qBittorrent from source on Debian, Ubuntu, and other derivative distros.
 
@@ -82,7 +82,7 @@ cmake -G "Ninja" -B build -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_INSTALL_PREF
 cmake --build build
 ```
 
-Check out the [common information](https://github.com/qbittorrent/qBittorrent/wiki/Compilation-with-CMake:-common-information) page to learn more about the available build configuration options (for compiling without the GUI, for instance) and CMake itself, if you're new to it.
+Check out the [common information](https://github.com/qbittorrent/qBittorrent/wiki/Compilation-with-CMake-common-information) page to learn more about the available build configuration options (for compiling without the GUI, for instance) and CMake itself, if you're new to it.
 
 Once qBittorrent is built, you can run it straight from the build directory. Documentation about running qBittorrent without GUI is available [here](https://github.com/qbittorrent/qBittorrent/wiki/Running-qBittorrent-without-X-server-(WebUI-only)).
 
