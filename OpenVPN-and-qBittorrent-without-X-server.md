@@ -60,7 +60,7 @@ It will add a default route through the VPN gateway using device tun0 to the tab
 
 After performing steps 0..4 try to use your qBittorrent instance to download anything and make sure it using only the VPN interface for peers connection - it should now use only tun0 interface and stop if this interface will become unavailable (like if the OpenVPN daemon gets down or OpenVPN connection gets disconnected).
 
-## Part 2: 
+## Part 2:
 Set up the VPN server and VPN client to accept incoming connections from outer space.
 
 ### 0. Set up a static port for peers connections:

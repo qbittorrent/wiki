@@ -9,7 +9,7 @@ This page describes how to compile 64-bit qBittorrent using MSVC 2017 under Wind
 * Latest release of [https://www.openssl.org/ OpenSSL].
 * Latest release of the [https://www.boost.org/ Boost libraries].  Currently tested only with boost 1.68.
 * Latest release of [https://www.libtorrent.org/ libtorrent(rasterbar)]. Currently tested with libtorrent(rasterbar) 1.1.9
-* Latest release of the [https://download.qt.io/official_releases/qt/ Qt libraries] source. Currently tested only with Qt Everywhere '''5.9.6'''. 
+* Latest release of the [https://download.qt.io/official_releases/qt/ Qt libraries] source. Currently tested only with Qt Everywhere '''5.9.6'''.
 * Latest release of [https://www.qbittorrent.org qBittorrent].
 * [https://download.qt.io/official_releases/qtcreator/ Qt Creator].
 
@@ -47,7 +47,7 @@ This page describes how to compile 64-bit qBittorrent using MSVC 2017 under Wind
 * Now we will build a static version of OpenSSL. Issue the following commands:
  perl Configure VC-WIN64A no-shared zlib no-zlib-dynamic threads --openssldir=C:\openssl --prefix=G:\QBITTORRENT\install_msvc64\base -IG:\QBITTORRENT\install_msvc64\base\include -LG:\QBITTORRENT\install_msvc64\base\lib
  ms\do_win64a
-* '''NOTE:''' Using the <code>--openssldir</code> switch is very important. It controls the path that will get hardcoded into openssl when it looks for the file <code>openssl.cnf</code>. Otherwise openssl will use the prefix path. If that path is on any other drive other than C: it will cause weird problems for '''some''' of the end users. If users have assigned to G: (or any other letter you used) a card reader/cdrom/dvdrom that doesn't have a card/cd/dvd plugged in they will get a cryptic message saying <code>There is no disk in the drive. Please insert a disk into drive G:</code>. See issue [https://github.com/qbittorrent/qBittorrent/issues/4190 #4190]. So for that reason we use a dummy path under drive C: which is always available. 
+* '''NOTE:''' Using the <code>--openssldir</code> switch is very important. It controls the path that will get hardcoded into openssl when it looks for the file <code>openssl.cnf</code>. Otherwise openssl will use the prefix path. If that path is on any other drive other than C: it will cause weird problems for '''some''' of the end users. If users have assigned to G: (or any other letter you used) a card reader/cdrom/dvdrom that doesn't have a card/cd/dvd plugged in they will get a cryptic message saying <code>There is no disk in the drive. Please insert a disk into drive G:</code>. See issue [https://github.com/qbittorrent/qBittorrent/issues/4190 #4190]. So for that reason we use a dummy path under drive C: which is always available.
 * Edit the ''ms\nt.mak'' file and find the line that says:
  EX_LIBS=/libpath::\QBITTORRENT\install_msvc\base\lib ws2_32.lib gdi32.lib advapi32.lib crypt32.lib user32.lib zlib1.lib
 * Replace '''zlib1.lib''' with '''zlib.lib'''
@@ -66,7 +66,7 @@ This page describes how to compile 64-bit qBittorrent using MSVC 2017 under Wind
 * Extract the Boost sources in the working dir.
 * Navigate to the Boost source folder. eg ''cd G:\QBITTORRENT\boost_1_68_0''
 * Now you will need to bootstrap Boost so it will build b2.exe(previously bjam.exe). Issue the following command:
- bootstrap.bat 
+ bootstrap.bat
 * Compile a static version of Boost. Issue the following command. You can replace %NUMBER_OF_PROCESSORS% in <code>-j %NUMBER_OF_PROCESSORS%</code> with a different number of threads you want b2 to use when compiling:
  b2 -q --toolset=msvc-14.1 address-model=64 variant=release link=static runtime-link=static include="G:\QBITTORRENT\install_msvc64\base\include" library-path="G:\QBITTORRENT\install_msvc64\base\lib" --prefix="G:\QBITTORRENT\install_msvc64\base" cxxflags="-O1 -Gy -Gw -GL" linkflags="/NOLOGO /DYNAMICBASE /NXCOMPAT /LTCG /OPT:REF /OPT:ICF /MANIFEST:EMBED /INCREMENTAL:NO" --hash -j %NUMBER_OF_PROCESSORS%
 * Install (it take a while to copy the numerous files):
@@ -84,7 +84,7 @@ This page describes how to compile 64-bit qBittorrent using MSVC 2017 under Wind
 
 === Compiling Qt5 ===
 * Extract the Qt sources in the working dir.
-* Navigate to the Qt source folder. eg ''cd G:\QBITTORRENT\qt-everywhere-opensource-src-5.9.6'' 
+* Navigate to the Qt source folder. eg ''cd G:\QBITTORRENT\qt-everywhere-opensource-src-5.9.6''
 * Now we will build a static version of Qt and make it as small as possible.
 * Open '''qtbase/mkspecs/common/msvc-desktop.conf''' and replace the  relevant lines with:
  QMAKE_CFLAGS_RELEASE = -O1 -Gy -Gw -GL -MT
@@ -130,7 +130,7 @@ This page describes how to compile 64-bit qBittorrent using MSVC 2017 under Wind
 and comment line by putting # in front of them.
  DEFINES += BOOST_ASIO_SEPARATE_COMPILATION
 
-change: 
+change:
  CONFIG(debug, debug|release) {
      LIBS += libtorrentd.lib \
              libboost_system-vc140-mt-sgd-1_64.lib

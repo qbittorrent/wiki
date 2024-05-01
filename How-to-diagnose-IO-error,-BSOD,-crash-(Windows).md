@@ -1,6 +1,6 @@
 ## qBittorrent gave you a lockup or BSOD (Blue Screen of Death). Now what?
 
-First of all, if you get a BSOD, and it's not `irql_not_less_or_equal`, there is a good chance you will be able to debug the BSOD. It is a very powerful and useful tool to find why your Windows system just crashed.  
+First of all, if you get a BSOD, and it's not `irql_not_less_or_equal`, there is a good chance you will be able to debug the BSOD. It is a very powerful and useful tool to find why your Windows system just crashed.
 
 You must also know that the cause of your lockup/BSOD was not qBittorrent.
 There are four major things that can cause a freeze or BSOD.
@@ -22,7 +22,7 @@ The numbers mean how hard is it to check on a scale of 5.
 
 1. Install the [Windows SDK](https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk). You only need to select the "Debugging tools" at the installation, which is only a mere ~250MB.
 2. Launch the freshly installed "windbg" _as Administrator_ tool.
-3. Add remote symbols. 
+3. Add remote symbols.
 File -> Symbol File Path: `srv*c:\symbols*https://msdl.microsoft.com/download/symbols`
 The `c:\symbols` will be your local symbol cache. I would suggest using something more "writeable".
 4. File -> Open Crash Dump.
@@ -42,7 +42,7 @@ The `c:\symbols` will be your local symbol cache. I would suggest using somethin
 
 ### Alternatives
 In case Windows's in-built test does not work for you.
-* https://www.memtest86.com  
+* https://www.memtest86.com
 * https://www.howtogeek.com/260813/how-to-test-your-computers-ram-for-problems/
 
 You have to download Memtest86 and put it on a pendrive, CD or DVD.
@@ -60,13 +60,13 @@ Download the latest Ubuntu LTS version (16.04 at the moment), and put it on a pe
 
 ### Windows
 There are many great free tools for this.
-* https://hddguardian.codeplex.com  
+* https://hddguardian.codeplex.com
 * https://crystalmark.info/en/software/crystaldiskinfo/
 
 ### Ubuntu
 If you can't boot Windows, you can use an [Ubuntu Live CD](https://www.howtogeek.com/191054/how-to-create-bootable-usb-drives-and-sd-cards-for-every-operating-system/) to diagnose your HDD.
 * https://askubuntu.com/questions/528072/how-can-i-check-the-smart-status-of-a-drive-on-ubuntu-14-04-through-16-10
-* https://askubuntu.com/questions/38566/how-can-i-check-the-health-of-my-hard-drive  
+* https://askubuntu.com/questions/38566/how-can-i-check-the-health-of-my-hard-drive
 
 You want to check:
 * Reallocated_Sector_Ct

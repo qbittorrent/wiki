@@ -31,7 +31,7 @@ You will also need the `nginx` plugin.
 
 ```shell
 sudo apt update
-sudo apt install certbot 
+sudo apt install certbot
 sudo apt install python-certbot-nginx # this is needed for the nginx plugin
 ```
 
@@ -86,7 +86,7 @@ sudo apt install nginx
     ```shell
     sudo touch /etc/nginx/sites-available/yoursite
     cd /etc/nginx/sites-enabled/
-    sudo ln -s /etc/nginx/sites-available/yoursite yoursite 
+    sudo ln -s /etc/nginx/sites-available/yoursite yoursite
     ```
 
 6. Open the file with your favourite text editor and paste something like the following reference configuration (adjust according to your needs):
@@ -117,10 +117,10 @@ sudo apt install nginx
         ssl_ciphers 'ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256';
         ssl_ecdh_curve prime256v1:secp384r1:secp521r1;
         ssl_session_cache shared:TLS:50m;
-        ssl_session_timeout 1d; # default is 5 min 
+        ssl_session_timeout 1d; # default is 5 min
         ssl_session_tickets off;
         # OCSP stapling
-        ssl_stapling on; 
+        ssl_stapling on;
         ssl_stapling_verify on;
 
         access_log            /var/log/nginx/yourdomain.access.log;

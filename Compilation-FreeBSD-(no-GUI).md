@@ -1,7 +1,7 @@
 ## qBittorrent-nox compilation on FreeBSD (with dependencies as system packages)
 
-1. Install required libraries from repository  
-> - pkgconf 
+1. Install required libraries from repository
+> - pkgconf
 > - qt5-core
 > - qt5-network
 > - qt5-svg
@@ -23,7 +23,7 @@
 > ```sh
 > make
 > ```
-4. (Optionally) you can install qBittorrent in the system PATH (root privileges required)  
+4. (Optionally) you can install qBittorrent in the system PATH (root privileges required)
 **_You can also use `qbittorrent-nox` binary directly without installation (`./src/qbittorrent-nox`)_**
 > ```sh
 > make install

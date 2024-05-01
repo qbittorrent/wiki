@@ -20,7 +20,7 @@ At runtime, qBittorrent loads only `stylesheet.qss` to support theming and `conf
 You can read more about Qt stylesheet syntax [here](https://doc.qt.io/Qt-5/stylesheet-syntax.html). A reference is also available [here](https://doc.qt.io/qt-5/stylesheet.html).
 
 ## Changing QBittorrent specific colors
-for changing qBittorrent specific GUI colors, you have to use config.json, NOTE: A large part of colors is already changeable from stylesheet but the following are QBitTorrent's specific context-sensitive colors,  
+for changing qBittorrent specific GUI colors, you have to use config.json, NOTE: A large part of colors is already changeable from stylesheet but the following are QBitTorrent's specific context-sensitive colors,
 
 ```json
 {
@@ -50,14 +50,14 @@ for changing qBittorrent specific GUI colors, you have to use config.json, NOTE:
         "Palette.BrightTextDisabled": "<color>",
         "Palette.HighlightedTextDisabled": "<color>",
         "Palette.ButtonTextDisabled": "<color>",
-        
+
         "Log.Time": "<color>",
         "Log.Normal": "<color>",
         "Log.Info": "<color>",
         "Log.Warning": "<color>",
         "Log.Critical": "<color>",
         "Log.BannedPeer": "<color>",
-        
+
         "TransferList.Downloading": "<color>",
         "TransferList.StalledDownloading": "<color>",
         "TransferList.DownloadingMetadata": "<color>",
@@ -75,14 +75,14 @@ for changing qBittorrent specific GUI colors, you have to use config.json, NOTE:
         "TransferList.PausedUploading": "<color>",
         "TransferList.Moving": "<color>",
         "TransferList.MissingFiles": "<color>",
-        "TransferList.Error": "<color>"     
+        "TransferList.Error": "<color>"
     }
 }
 ```
-Here 
+Here
 1. Palette referes to [QPalette](https://doc.qt.io/qt-5/qpalette.html), and following string(after .) denotes [Color roles](https://doc.qt.io/qt-5/qpalette.html#ColorRole-enum)
 2. Log refers to log messages and the following string (after .) denotes the type of messages
-3. Transfer List refers to central view containing all of your torrents entries and the following string(after .) denotes torrent state on which based on which row colors would be decided. 
+3. Transfer List refers to central view containing all of your torrents entries and the following string(after .) denotes torrent state on which based on which row colors would be decided.
 
 `<color>` value supports normal rgb values(#rrggbb) or svg color names. It follows [Qt's named color convention](https://doc.qt.io/qt-5/qcolor.html#setNamedColor) convention
 
@@ -110,7 +110,7 @@ an example can be read here https://github.com/jagannatharjun/qbt-theme/issues/2
 Following way of changing TransferList row's color is removed after version 4.2.5, please change your bundle files accordingly and instead use `config.json`
 
 ```css
-TransferListWidget 
+TransferListWidget
 {
   qproperty-downloadingStateForeground: limegreen;
   qproperty-forcedDownloadingStateForeground: limegreen;
@@ -130,6 +130,6 @@ TransferListWidget
   qproperty-checkingUploadingStateForeground: #00cdcd;
   qproperty-checkingResumeDataStateForeground: #00cdcd;
   qproperty-movingStateForeground: #00cdcd;
-  qproperty-unknownStateForeground: red; 
+  qproperty-unknownStateForeground: red;
 }
 ```

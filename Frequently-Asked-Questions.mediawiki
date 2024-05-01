@@ -267,7 +267,7 @@ A Dutch step by step tutorial can be found [https://www.duken.nl/forums/handleid
     H = Peer was obtained through DHT.
     E = Peer is using Protocol Encryption (all traffic)
     e = Peer is using Protocol Encryption (handshake)
-    L = Peer is local (discovered through network broadcast, or in reserved local IP ranges) 
+    L = Peer is local (discovered through network broadcast, or in reserved local IP ranges)
 
 See [https://web.archive.org/web/20090320211618/http://btfaq.com:80/serve/cache/23.html this page]  for definitions of BitTorrent terms.
 

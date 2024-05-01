@@ -1,6 +1,6 @@
 ### Using info-hashes as download handles.
 
-When interfacing qBittorrent through the WebUI api, there are cases when you add a download via a magnet URI and then you want to track its state (for instance, to perform certain file operation once it's finished). The problem here is that the /command/download method does not return a handle to the download for you to track it. On the other hand, webUI api methods refer to every download through its info-hash, so it's possible to use that string as a handle. As every magnet URI will contain, al least, the info-hash (as stated in [this](http://www.bittorrent.org/beps/bep_0009.html) document at BitTorrent.org) you can parse the hash string from the uri itself. These hashes are base16 encoded, for a total of 40 characters.  
+When interfacing qBittorrent through the WebUI api, there are cases when you add a download via a magnet URI and then you want to track its state (for instance, to perform certain file operation once it's finished). The problem here is that the /command/download method does not return a handle to the download for you to track it. On the other hand, webUI api methods refer to every download through its info-hash, so it's possible to use that string as a handle. As every magnet URI will contain, al least, the info-hash (as stated in [this](http://www.bittorrent.org/beps/bep_0009.html) document at BitTorrent.org) you can parse the hash string from the uri itself. These hashes are base16 encoded, for a total of 40 characters.
 
 ### Special case: base32 encoded info-hashes.
 
@@ -12,7 +12,7 @@ Suppose you have the following magnet link:
     magnet:?xt=urn:btih:WRN7ZT6NKMA6SSXYKAFRUGDDIFJUNKI2
 
 if it´s added to qBittorrent and then you issue a /query/torrents command, you´ll get a JSON object like this (fields other than "hash" are ommitted):
-  
+
     [{...,"hash":"b45bfccfcd5301e94af8500b1a1863415346a91a",...},...]
 
 which shows how qBittorrent converted our base32 hash to its base16 representation.
@@ -20,7 +20,7 @@ which shows how qBittorrent converted our base32 hash to its base16 representati
 ### How to implement the base conversion:
 
 If you're into python, this base conversion can be accomplished as follows:
-    
+
     >>> import base64
     >>> b32Hash = "WRN7ZT6NKMA6SSXYKAFRUGDDIFJUNKI2"
     >>> b16Hash = base64.b16encode(base64.b32decode(b32Hash))

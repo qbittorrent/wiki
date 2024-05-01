@@ -58,7 +58,7 @@ This page describes how to compile 32-bit and 64-bit qBittorrent using MSVC 2017
  perl Configure VC-WIN32 no-shared no-zlib no-zlib-dynamic threads --release --openssldir=C:\openssl --prefix=G:\QBITTORRENT\install_msvc32\base -IG:\QBITTORRENT\install_msvc32\base\include -LG:\QBITTORRENT\install_msvc32\base\lib --with-zlib-lib=G:\QBITTORRENT\install_msvc32\base\lib\zlib.lib
 :'''64-bit'''
  perl Configure VC-WIN64A no-shared no-zlib no-zlib-dynamic threads --release --openssldir=C:\openssl --prefix=G:\QBITTORRENT\install_msvc64\base -IG:\QBITTORRENT\install_msvc64\base\include -LG:\QBITTORRENT\install_msvc64\base\lib --with-zlib-lib=G:\QBITTORRENT\install_msvc64\base\lib\zlib.lib
-* '''NOTE:''' Using the <code>--openssldir</code> switch is very important. It controls the path that will get hardcoded into openssl when it looks for the file <code>openssl.cnf</code>. Otherwise openssl will use the prefix path. If that path is on any other drive other than C: it will cause weird problems for '''some''' of the end users. If users have assigned to G: (or any other letter you used) a card reader/cdrom/dvdrom that doesn't have a card/cd/dvd plugged in they will get a cryptic message saying <code>There is no disk in the drive. Please insert a disk into drive G:</code>. See issue [https://github.com/qbittorrent/qBittorrent/issues/4190 #4190]. So for that reason we use a dummy path under drive C: which is always available. 
+* '''NOTE:''' Using the <code>--openssldir</code> switch is very important. It controls the path that will get hardcoded into openssl when it looks for the file <code>openssl.cnf</code>. Otherwise openssl will use the prefix path. If that path is on any other drive other than C: it will cause weird problems for '''some''' of the end users. If users have assigned to G: (or any other letter you used) a card reader/cdrom/dvdrom that doesn't have a card/cd/dvd plugged in they will get a cryptic message saying <code>There is no disk in the drive. Please insert a disk into drive G:</code>. See issue [https://github.com/qbittorrent/qBittorrent/issues/4190 #4190]. So for that reason we use a dummy path under drive C: which is always available.
 * Edit the generated ''makefile'' file.
 * At the end of the CFLAGS variable append:
 :'''32-bit'''
@@ -81,7 +81,7 @@ This page describes how to compile 32-bit and 64-bit qBittorrent using MSVC 2017
 * Extract the Boost sources in the working dir.
 * Navigate to the Boost source folder. eg ''cd G:\QBITTORRENT\boost_1_71_0''
 * Now you will need to bootstrap Boost so it will build b2.exe(previously bjam.exe). Issue the following command:
- bootstrap.bat 
+ bootstrap.bat
 * Compile a static version of Boost. Issue the following command. Replace N in <code>-j N</code> with the number of CPU cores you have or how many threads you want b2 to use when compiling:
 :'''32-bit'''
  b2 -q --with-system --toolset=msvc-14.1 variant=release link=static runtime-link=static include="G:\QBITTORRENT\install_msvc32\base\include" library-path="G:\QBITTORRENT\install_msvc32\base\lib" define=BOOST_ASIO_DISABLE_CONNECTEX cxxflags="-O1 -Oy- -Gy -Gw -GL" linkflags="/NOLOGO /DYNAMICBASE /NXCOMPAT /LTCG /OPT:REF /OPT:ICF=5 /MANIFEST:EMBED /INCREMENTAL:NO" --hash -j N
@@ -106,7 +106,7 @@ This page describes how to compile 32-bit and 64-bit qBittorrent using MSVC 2017
 
 === Compiling Qt5 ===
 * Extract the Qt sources in the working dir.
-* Navigate to the Qt source folder. eg ''cd G:\QBITTORRENT\qt-everywhere-src-5.13.2'' 
+* Navigate to the Qt source folder. eg ''cd G:\QBITTORRENT\qt-everywhere-src-5.13.2''
 * Now we will build a static version of Qt and make it as small as possible.
 * Open '''qtbase/mkspecs/common/msvc-desktop.conf''' and replace the  relevant lines with:
 :'''32-bit'''

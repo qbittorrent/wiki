@@ -12,13 +12,13 @@ If you are looking only for the latest version of qBittorrent, just head to the 
 
    `sudo apt-get install libboost-dev libboost-system-dev`
 
-* Qt4 libraries 
+* Qt4 libraries
 
    `sudo apt-get install libqt4-dev`
 
 _[ at the time of this writing, Qt5 libraries were not available for Raspbian on B-Pro. You can safely compile QBitTorrent against Qt4 Libraries. ]_
 
-* Python _(Run time only dependency, needed by the search engine)_ 
+* Python _(Run time only dependency, needed by the search engine)_
 
    `sudo apt-get install python`
 
@@ -76,16 +76,16 @@ To overcome this error and configure correctly you must issue the following comm
 ## Install library and python bindings:
 
    `sudo checkinstall`
-   
+
    _[ The `checkinstall `command replaces the `make install`. It created a DEB Package for easier removal/re-install trough dpkg. ]_
 
-   `sudo ldconfig` 
+   `sudo ldconfig`
 
    _[Running `ldconfig` avoids an ImportError for libtorrent-rasterbar.so, a result of Python being unable to find the main library.]_
 
 # Compiling qBittorrent (with the GUI)
 
-Now that each prerequisite has been completed you mut obtain the qBittorrent source code. 
+Now that each prerequisite has been completed you mut obtain the qBittorrent source code.
 
 Either download and extract a .tar archive from [Sourceforge]( https://sourceforge.net/projects/qbittorrent/files/qbittorrent/) or use the following commands to speed-up the process.
 
@@ -121,7 +121,7 @@ To overcome this error and configure correctly you must issue the following comm
 # Compiling qBittorrent-NOX _(aka Without the GUI, also called headless)_
 
 
-Now that each prerequisite has been completed you mut obtain the qBittorrent source code. 
+Now that each prerequisite has been completed you mut obtain the qBittorrent source code.
 
 Either download and extract a .tar archive from [Sourceforge]( https://sourceforge.net/projects/qbittorrent/files/qbittorrent/) or use the following commands to speed-up the process.
 
@@ -192,7 +192,7 @@ By doing so you will not need to keep open a terminal window in order to execute
 
 _**Please Note:**_ **the following solution is based upon personal research** and days of testing. I am aware that it might not be the nicest solution available, but if your are **running qBittorrent-nox on B-Pro with Raspbian** chances are that you too noticed how **impredictible **and **unstable **is its behaviour when using **`update-rc.d` method.**
 
-_The following commands are based upon the assumption that you are running qBittorrent under a dedicated user._ 
+_The following commands are based upon the assumption that you are running qBittorrent under a dedicated user._
 If you are running it under the 'bananapi' root user you need to execute the following with 'root privileges'.
 
 Exceute the following command:
@@ -205,7 +205,7 @@ Scroll to the bottom of the file and insert the following line:
 
 Use " CTRL + O " to save the file, than " CTRL + X " to exit.
 
-That's it! **Now qBittorrent-nox should be correctly configured for autostart!** 
+That's it! **Now qBittorrent-nox should be correctly configured for autostart!**
 
 If you want to try it just reboot you B-Pro with the command:
 
@@ -217,6 +217,6 @@ This work has been realized putting togheter personal knowledge and information 
 
 **Credits are as follows:**
 
-**Thanks to** [**SledgeHammer**](https://github.com/qbittorrent/qBittorrent/wiki/Compiling-qBittorrent-on-Debian-and-Ubuntu) for providing a solid template for compiling and running qBittorrent under Debian. 
+**Thanks to** [**SledgeHammer**](https://github.com/qbittorrent/qBittorrent/wiki/Compiling-qBittorrent-on-Debian-and-Ubuntu) for providing a solid template for compiling and running qBittorrent under Debian.
 
 **Thanks to** [**Cas**](https://dev.deluge-torrent.org/wiki/Building/libtorrent) from Deluge Wiki for explaining how to compile libtorrent_rastebar under Debian with the use of checkinstall.

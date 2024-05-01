@@ -13,7 +13,7 @@ This guide also assumes that:
 sudo apt update && sudo apt upgrade -y # first update all packages in the system
 sudo add-apt-repository ppa:certbot/certbot
 sudo apt update
-sudo apt install certbot 
+sudo apt install certbot
 ```
 
 # Obtaining the certificate

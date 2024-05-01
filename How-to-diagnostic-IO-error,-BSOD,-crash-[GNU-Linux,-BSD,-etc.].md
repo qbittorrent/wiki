@@ -20,13 +20,13 @@ The numbers mean how hard is it to check on a scale of 5.
 * https://www.cnet.com/how-to/test-your-ram-with-windows-memory-diagnostic-tool/
 
 ## Linux
-In short, on 99% of the Linux distributions out there, there will be a "Memtest", "Check memory", or another similar entry in your boot loader's menu. Select that. 
+In short, on 99% of the Linux distributions out there, there will be a "Memtest", "Check memory", or another similar entry in your boot loader's menu. Select that.
 
-* https://askubuntu.com/questions/343114/how-to-check-for-errors-in-ram-via-linux  
+* https://askubuntu.com/questions/343114/how-to-check-for-errors-in-ram-via-linux
 * https://help.ubuntu.com/community/MemoryTest
 
 ## Any OS
-* https://www.memtest86.com  
+* https://www.memtest86.com
 * https://www.howtogeek.com/260813/how-to-test-your-computers-ram-for-problems/
 
 Basically you have to download Memtest86 and put it on a pendrive, CD or DVD.
@@ -39,7 +39,7 @@ Download the latest Ubuntu LTS version (16.04 at the moment), and put it on a pe
 
 ## Windows
 There are many great free tools for this.
-* https://hddguardian.codeplex.com  
+* https://hddguardian.codeplex.com
 * https://crystalmark.info/en/software/crystaldiskinfo/
 
 ## Ubuntu
@@ -48,7 +48,7 @@ There are many great free tools for this.
 If you can't figure out how to use that tool, read below.
 
 ## Linux / BSD
-* https://askubuntu.com/questions/38566/how-can-i-check-the-health-of-my-hard-drive  
+* https://askubuntu.com/questions/38566/how-can-i-check-the-health-of-my-hard-drive
 
 You want to check:
 * Reallocated_Sector_Ct

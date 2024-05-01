@@ -57,7 +57,7 @@ Let's assume that the working directory for our compilation will be '''C:\qBitto
   cd ..
   cd b<TAB><ENTER>
 * Now you will need to bootstrap Boost so it will build b2.exe(previously bjam.exe). Issue the following command:
- bootstrap.bat 
+ bootstrap.bat
 * Compile a static version of Boost. Issue the following command where N is the number of CPU cores you have or how many threads you want b2 to use when compiling (msvc version is needed for the correct choice of msvc-9.0 if installed msvc-10.0) (replace N with the number of processor cores):
  b2 -q --with-system --toolset=msvc-9.0 variant=release link=static runtime-link=static -j N
 
@@ -87,7 +87,7 @@ Let's assume that the working directory for our compilation will be '''C:\qBitto
 === Compiling Qt ===
 * Extract the Qt sources in the working dir.
 * Open the MSVC2008 command shell. Start->Programs->Microsoft Visual C++ 2008 Express Edition->Visual Studio Tools->Visual Studio 2008 Command Prompt
-* Navigate to the Qtsource folder. eg ''cd C:\qBittorrent\qt-everywhere-opensource-src-4.8.4'' 
+* Navigate to the Qtsource folder. eg ''cd C:\qBittorrent\qt-everywhere-opensource-src-4.8.4''
 * Now we will build a static version of Qt with making as small as possible.
 * Open '''mkspecs\win32-msvc2008\qmake.conf''' and replace the  '''QMAKE_CFLAGS_RELEASE''' line with:
  QMAKE_CFLAGS_RELEASE = -O1 -Og -GL -MT

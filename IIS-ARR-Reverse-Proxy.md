@@ -36,7 +36,7 @@ The result should look similar to this in your web.config (Note: you must use th
                     <action type="Rewrite" url="http://127.0.0.1:8080/{R:1}" />
                     <serverVariables>
                         <set name="HTTP_X-Forwarded-Host" value="{HTTP_HOST}:{SERVER_PORT}" />
-                        <set name="HTTP_X-Forwarded-For" value="{REMOTE_ADDR}" />                        
+                        <set name="HTTP_X-Forwarded-For" value="{REMOTE_ADDR}" />
                     </serverVariables>
                 </rule>
             </rules>
@@ -50,7 +50,7 @@ The result should look similar to this in your web.config (Note: you must use th
 
 Additionally you must untick **Enable Cross-Site Request Forgery (CSRF) protection** in qBittorrent's Web UI options for the reverse proxy to work.
 
-You can use HTTPS to access the URL via IIS and it will use HTTP to communicate with qBittorrent. There is no need for HTTPS on localhost. 
+You can use HTTPS to access the URL via IIS and it will use HTTP to communicate with qBittorrent. There is no need for HTTPS on localhost.
 
 Note: If you find yourself seeing `WebAPI login failure. Reason: IP has been banned, IP: 127.0.0.1` and needing to restart qBittorrent, you may want to set the ban after failure count to `0` which will disable it.
 

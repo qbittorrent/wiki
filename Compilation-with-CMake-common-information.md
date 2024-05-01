@@ -39,7 +39,7 @@ You may use the following qBittorrent-specific options to customize the build. P
 
 Building qBittorrent with CMake comes down to a 2-step process:
 
-- the configuration and generation, also known as the **configure step/"configure-time"**, where 
+- the configuration and generation, also known as the **configure step/"configure-time"**, where
 - and the build itself, also known as the **build step/"build-time"**.
 
 In the **configure step** where it is possible to set some options to customize the qBittorrent build, CMake checks that all prerequisites and dependencies are in order and generates input files for some underlying buildsystem.
@@ -48,7 +48,7 @@ These input files will be then used to actually build the project in the **build
 A typical CMake invocation looks like the following 2 commands:
 
 ```
-cmake -B build -G "Ninja" -DCMAKE_BUILD_TYPE=Release -DWEBUI=OFF 
+cmake -B build -G "Ninja" -DCMAKE_BUILD_TYPE=Release -DWEBUI=OFF
 cmake --build build --parallel 4
 ```
 

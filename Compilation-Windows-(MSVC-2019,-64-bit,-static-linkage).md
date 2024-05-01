@@ -53,7 +53,7 @@ The nice thing about `vcpkg` is that it also allows you to easily patch any of t
 
 ```
 git clone https://github.com/microsoft/vcpkg
-cd .\vcpkg 
+cd .\vcpkg
 .\bootstrap-vcpkg.bat -disableMetrics
 .\vcpkg integrate install
 ```
