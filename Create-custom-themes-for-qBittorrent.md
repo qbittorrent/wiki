@@ -80,7 +80,7 @@ for changing qBittorrent specific GUI colors, you have to use config.json, NOTE:
 }
 ```
 Here
-1. Palette referes to [QPalette](https://doc.qt.io/qt-5/qpalette.html), and following string(after .) denotes [Color roles](https://doc.qt.io/qt-5/qpalette.html#ColorRole-enum)
+1. Palette refers to [QPalette](https://doc.qt.io/qt-5/qpalette.html), and following string(after .) denotes [Color roles](https://doc.qt.io/qt-5/qpalette.html#ColorRole-enum)
 2. Log refers to log messages and the following string (after .) denotes the type of messages
 3. Transfer List refers to central view containing all of your torrents entries and the following string(after .) denotes torrent state on which based on which row colors would be decided.
 

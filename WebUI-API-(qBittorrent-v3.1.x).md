@@ -184,11 +184,11 @@ where
 1. `pausedDL` - torrent is paused and has **NOT** finished downloading
 1. `queuedUP` - queuing is enabled and torrent is queued for upload
 1. `queuedDL` - queuing is enabled and torrent is queued for download
-1. `uploading` - torrent is being seeded and data is being transfered
+1. `uploading` - torrent is being seeded and data is being transferred
 1. `stalledUP` - torrent is being seeded, but no connection were made
 1. `checkingUP` - torrent has finished downloading and is being checked; this status also applies to preallocation (if enabled) and checking resume data on qBt startup
 1. `checkingDL` - same as `checkingUP`, but torrent has **NOT** finished downloading
-1. `downloading` - torrent is being downloaded and data is being transfered
+1. `downloading` - torrent is being downloaded and data is being transferred
 1. `stalledDL` - torrent is being downloaded, but no connection were made
 
 **BIG FAT WARNING:** `size`, `dlspeed`, `upspeed` and `eta` suffixes (e.g. MiB, KiB/s) will depend on current language selected in qBt; these suffixes will be translated.
@@ -424,7 +424,7 @@ where
 `dhtSameAsBT` - true if DHT port should match TCP port<br/>
 `dht_port` - DHT port if `dhtSameAsBT` is false<br/>
 `pex` - true if PeX is enabled<br/>
-`lsd` - true if LSD is eanbled<br/>
+`lsd` - true if LSD is enabled<br/>
 `encryption` - possible values:<br/>
 
   1. `0` - prefer encryption
@@ -455,7 +455,7 @@ where
 `web_ui_username` - WebUI username<br/>
 `web_ui_password` - MD5 hash of WebUI password; hash is generated from the following string: `username:Web UI Access:plain_text_web_ui_password`<br/>
 `bypass_local_auth` - true if auithetication challenge for loopback address (127.0.0.1) should be disabled<br/>
-`use_https` - true if WebUI HTTPS access is eanbled<br/>
+`use_https` - true if WebUI HTTPS access is enabled<br/>
 `ssl_key` - SSL keyfile contents (this is a not a path)<br/>
 `ssl_cert` - SSL certificate contents (this is a not a path)<br/>
 `dyndns_enabled` - true if server DNS should be updated dynamically<br/>

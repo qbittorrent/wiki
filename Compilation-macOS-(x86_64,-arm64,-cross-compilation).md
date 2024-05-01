@@ -59,7 +59,7 @@ Downloading process consists of few steps: cloning the root repo and then clonin
 ```bash
 git clone https://code.qt.io/qt/qt5.git
 cd qt5
-git checkout v5.15.2    # tag in Qt repository, 5.15.2 was the lastest at the time of writing
+git checkout v5.15.2    # tag in Qt repository, 5.15.2 was the latest at the time of writing
 ```
 
 Now it's time to download modules. The required modules set is slightly different depending on the qBittorrent version use are building. Suggested set assumes master version, if you want to build 4.3.x just add `qtmacextras` to list:
@@ -90,7 +90,7 @@ Actually boost is not required to be built. All parts required by libtorrent are
 
 ### OpenSSL
 
-OpenSSL supports out-of-tree builds, so let's use it to not bloat source folder with any binaries and allow to re-use it if more that one build is planned (for both architectures).
+OpenSSL supports out-of-tree builds, so let's use it to not bloat source folder with any binaries and allow to reuse it if more that one build is planned (for both architectures).
 
 ```bash
 mkdir build-openssl && cd build-openssl
@@ -158,7 +158,7 @@ Nothing special is required to build Qt for x86_64 host, but some adjustments ar
 
 First trick is required when building on Apple Silicon based Mac (regardless for which target architecture), without it Qt build system produces x86_64 binaries instead of arm64 even for tools required at build time, what leads to build errors (because binaries can be launched). File `qt5/qtbase/mkspecs/common/macx.conf` must be edited. Variable `QMAKE_APPLE_DEVICE_ARCHS` in it must have the value corresponding to *host architecture* (i.e. arm64 in case of Apple Silicon), so it must be adjusted if necessary.
 
-Also let's cahnge `QMAKE_MACOSX_DEPLOYMENT_TARGET` to newer `10.14` allowing Qt to benefit from new C++17 features. Without this adjustment option forcing C++17 usage can't be used and configure command will fail.
+Also let's change `QMAKE_MACOSX_DEPLOYMENT_TARGET` to newer `10.14` allowing Qt to benefit from new C++17 features. Without this adjustment option forcing C++17 usage can't be used and configure command will fail.
 
 Next trick is required for cross-compilation, for host-only builds it is not required. Qt has so-called mkspecs for a lot of compiler/architecture build variants. These mkspecs contain a set of configuration files used by build system to produce binaries for required architecture. Unfortunately, there are no any mkspecs applicable to clang compiler targeting arm64 (or x86_64 in case of cross-compilation on arm64 host), especially taking into account macOS specifics. so they must be created. Fortunately, there is mkspec used for host macOS build, and it can be copied and adapted easily for required target architecture.
 
@@ -238,4 +238,4 @@ Happy building!
 About this document
 -------------------
 
-As afterwords, it is worth to mention how this document is appeared. Someday on qBittorrent GitHub page author found an issue requesting Apple M1 support. That days an author already had suitable hardware (MacBook Pro 13 M1 2020) got from his office due to work responsibilities and decided to try to build qBittorrent on it... And that worked! Later he found the way to do cross-compilation to make it possible to get arm64 binaries using x86_64 host. This guide is result of that research and almost completely repeats the authors steps made this possible, but in much cleaner way. Also there is the [script](https://gist.github.com/Kolcha/3ccd533123b773ba110b8fd778b1c2bf) allowing to build qBittorrent master branch for desired architecture in "fully automatic mode". Script was also written by the same author as this guide.
+As afterwards, it is worth to mention how this document is appeared. Someday on qBittorrent GitHub page author found an issue requesting Apple M1 support. That days an author already had suitable hardware (MacBook Pro 13 M1 2020) got from his office due to work responsibilities and decided to try to build qBittorrent on it... And that worked! Later he found the way to do cross-compilation to make it possible to get arm64 binaries using x86_64 host. This guide is result of that research and almost completely repeats the authors steps made this possible, but in much cleaner way. Also there is the [script](https://gist.github.com/Kolcha/3ccd533123b773ba110b8fd778b1c2bf) allowing to build qBittorrent master branch for desired architecture in "fully automatic mode". Script was also written by the same author as this guide.

@@ -38,7 +38,7 @@ This page describes the process of building qBittorrent on Windows targeting x86
 
     > Note: Qt5 is currently not supported by qBittorrent.
     + 4.8.4 is used in this article.
-    + If you can't download from the official site with official links use a direct link like that: `https://releases.qt-project.org/qt4/source/qt-everywhere-opensource-src-VERSION.tar.gz` where `VERSION` is, for exmaple, `4.8.4`
+    + If you can't download from the official site with official links use a direct link like that: `https://releases.qt-project.org/qt4/source/qt-everywhere-opensource-src-VERSION.tar.gz` where `VERSION` is, for example, `4.8.4`
     + An example direct link: [https://releases.qt-project.org/qt4/source/qt-everywhere-opensource-src-4.8.4.tar.gz](https://releases.qt-project.org/qt4/source/qt-everywhere-opensource-src-4.8.4.tar.gz)
 1. Latest version of [Boost](http://www.boost.org/users/download/).
     + 1.52 is used in this article.

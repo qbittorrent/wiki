@@ -160,7 +160,7 @@ NOTE: Review [Ubuntu/Debian compilation guide](https://github.com/qbittorrent/qB
 
 The binary should be located at `/usr/local/bin/qbittorrent-nox`. If `qbittorrent-nox` was installed using `apt` then that binary will be at `/usr/bin/qbittorrent-nox`. _Do not confuse them!_
 
-**Web UI access informations**
+**Web UI access information**
 * _http://localhost:8080_
 * Username: _admin_
 * Password: _adminadmin_

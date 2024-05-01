@@ -7,7 +7,7 @@ Impersonate the qbittorent user:
 
 `sudo su qbtuser`
 
-Create neccesary folders:
+Create necessary folders:
 ```
 cd /home/qbtuser/
 mkdir ~/.config/qBittorrent/ssl
@@ -52,7 +52,7 @@ A little about self signed certificates: You will be prompted by your browser th
 
 You should now be able to log in with your username and password as before, unless you changed it during the steps above.
 
-If you are unsure what url (ip and port and protocol) qtorrent is using, you can find it in the logfile, asuming you followed the Ubuntu Server guide on this wiki with:
+If you are unsure what url (ip and port and protocol) qtorrent is using, you can find it in the logfile, assuming you followed the Ubuntu Server guide on this wiki with:
 
 `sudo tail /var/log/qbittorrent-nox.log`
 

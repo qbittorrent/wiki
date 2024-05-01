@@ -43,7 +43,7 @@ The procedure for compiling and installing Libtorrent on B-Pro is derived from t
     sudo apt-get install checkinstall
 
    Your system could be configured with some option that might interfere with checkinstall.
-   If previous installation fails then procede manually:
+   If previous installation fails then proceed manually:
 
     sudo apt-get install build-essential checkinstall libboost-system-dev libboost-python-dev libssl-dev libgeoip-dev
 
@@ -77,7 +77,7 @@ To overcome this error and configure correctly you must issue the following comm
 
    `sudo checkinstall`
 
-   _[ The `checkinstall `command replaces the `make install`. It created a DEB Package for easier removal/re-install trough dpkg. ]_
+   _[ The `checkinstall `command replaces the `make install`. It created a DEB Package for easier removal/re-install through dpkg. ]_
 
    `sudo ldconfig`
 
@@ -150,7 +150,7 @@ To overcome this error and configure correctly you must issue the following comm
 
    _[alternatively you can use the standard command `make install`, as discussed before]_
 
-**That's it! qBittorrent should now be installed.** You could simply launch Qbittorrent-nox using the following comand:
+**That's it! qBittorrent should now be installed.** You could simply launch Qbittorrent-nox using the following command:
 
    'qbittorrent-nox'
 
@@ -195,7 +195,7 @@ _**Please Note:**_ **the following solution is based upon personal research** an
 _The following commands are based upon the assumption that you are running qBittorrent under a dedicated user._
 If you are running it under the 'bananapi' root user you need to execute the following with 'root privileges'.
 
-Exceute the following command:
+Execute the following command:
 
    `crontab -e`
 
@@ -213,7 +213,7 @@ If you want to try it just reboot you B-Pro with the command:
 
 ## Final Notes
 
-This work has been realized putting togheter personal knowledge and information provided by other authors.
+This work has been realized putting together personal knowledge and information provided by other authors.
 
 **Credits are as follows:**
 
