@@ -7,7 +7,7 @@ We are building qBittorrent on Windows with MSVC compiler instead of MinGW. This
 * Add MSVC and Qt bin/ folders (''C:\Qt\4.8.2\bin'' and ''C:\Program Files\Microsoft Visual Studio 10.0\VC\bin'') to the ''PATH'' environment variable
 * Download [http://downloads.sourceforge.net/project/boost/boost-jam/3.1.18/boost-jam-3.1.18-1-ntx86.zip?use_mirror=freefr Boost Jam] (bjam) and [http://sourceforge.net/projects/boost/files/boost/1.51.0/boost_1_51_0.zip/download Boost library] (v1.42-1.51 are known to work) and unzip them
 * Compile boost using the following command in a terminal (bjam must be in the PATH)
- bjam -q --with-filesystem --with-thread --toolset=msvc variant=release link=static runtime-link=shared 
+ bjam -q --with-filesystem --with-thread --toolset=msvc variant=release link=static runtime-link=shared
 * Define ''BOOST_ROOT'' environment variable and point to the boost source folder (you will need to close and reopen your terminal window after that)
 * Download [http://www.slproweb.com/download/Win32OpenSSL-0_9_8x.exe OpenSSL v0.9.x] and install it
 * Copy OpenSSL include folder (''C:\OpenSSL\include\openssl'') to MSVC include/ folder (''C:\Program Files\Microsoft Visual Studio 10.0\VC\include'')

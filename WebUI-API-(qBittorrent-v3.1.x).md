@@ -104,7 +104,7 @@ Authorization: Digest username="admin", realm="Web UI Access", nonce="a3f396f2dc
   1. End Result
 
       Server reply:
-      
+
       ```http
 HTTP/1.1 401 Unauthorized
 WWW-Authenticate: Digest realm="Web UI Access", nonce="a3f396f2dcc1cafae73637e2ac321134", opaque="a3f396f2dcc1cafae73637e2ac321134", stale="false", algorithm="MD5", qop="auth"
@@ -275,7 +275,7 @@ where
   1. `Updating...` - tracker is currently being updated
   1. `Not working` - tracker has been contacted, but it is not working (or doesn't send proper replies)
   1. `Not contacted yet` - tracker has not been contacted yet
-  
+
 `num_peers` - number of peers for current torrent eported by tracker<br/>
 `msg` - tracker message (there is no way of knowing what this message is - it's up to tracker admins)<br/>
 

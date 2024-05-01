@@ -6,7 +6,7 @@ services:
     image: traefik
     networks: [traefik-qb-net]
     ports: ["80:80"]
-    command: 
+    command:
       - "--providers.docker=true"
       - "--providers.docker.swarmMode=true"
       - "--providers.docker.exposedbydefault=false"

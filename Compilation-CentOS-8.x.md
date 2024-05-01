@@ -11,7 +11,7 @@ yum install "https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.
 
 ## General required dependencies
 
-### Running the binary 
+### Running the binary
 
 ```bash
 # step 1
@@ -24,7 +24,7 @@ git clone -b RC_1_XXXXXXXXXXX https://github.com/arvidn/libtorrent/
 cd libtorrent
 ./autotool.sh
 ./configure
-make -j 
+make -j
 make install
 ```
 

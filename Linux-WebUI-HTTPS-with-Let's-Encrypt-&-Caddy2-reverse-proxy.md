@@ -27,7 +27,7 @@ yay -S caddy2
 4. Deselect "Use HTTPS instead of HTTP."
 5. Enable clickjacking protection
 6. Enable CSRF protection
-7. Enable host header validaion. Confirm "*; example.domain" is in the "server domains" text box. 
+7. Enable host header validaion. Confirm "*; example.domain" is in the "server domains" text box.
 
 ## Caddy2 Config
 Create a Caddyfile as a config. Assuming a standard HTTPS & reverse proxy setup, your Caddyfile can be as basic as
@@ -37,7 +37,7 @@ Create a Caddyfile as a config. Assuming a standard HTTPS & reverse proxy setup,
 }
 
 example.domain {
-    reverse_proxy IP:port 
+    reverse_proxy IP:port
 }
 
 ```
@@ -54,7 +54,7 @@ or
 sudo caddy start -config /path/to/Caddyfile
 ```
 The difference between the two is minimal.
-run starts the Caddy process and blocks indefinitely while start starts the Caddy process in the background and then returns. 
+run starts the Caddy process and blocks indefinitely while start starts the Caddy process in the background and then returns.
 You can also run caddy as a systemd service.
 
 # Test

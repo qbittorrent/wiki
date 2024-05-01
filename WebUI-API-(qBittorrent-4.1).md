@@ -485,7 +485,7 @@ Property                                 | Type    | Description
 `add_trackers`                           | string  | List of trackers to add to new torrent
 `web_ui_use_custom_http_headers_enabled` | bool    | For API ≥ v2.5.1: Enable custom http headers
 `web_ui_custom_http_headers`             | string  | For API ≥ v2.5.1: List of custom http headers
-`max_seeding_time_enabled`               | bool    | True enables max seeding time 
+`max_seeding_time_enabled`               | bool    | True enables max seeding time
 `max_seeding_time`                       | integer | Number of minutes to seed a torrent
 `announce_ip`                            | string  | TODO
 `announce_to_all_tiers`                  | bool    | True always announce to all tiers

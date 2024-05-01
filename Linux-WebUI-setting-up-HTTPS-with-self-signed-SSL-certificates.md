@@ -3,11 +3,11 @@ Setting up HTTPS for the web interface involves creating a key and certificate p
 The following guide assumes you have a setup as mentioned in [this](https://github.com/qbittorrent/qBittorrent/wiki/Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface-(14.04-and-older)) or [this](https://github.com/qbittorrent/qBittorrent/wiki/Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface-(15.04-and-newer)) article. Change qbtuser with the user you have qbittorrent-nox running under.
 
 
-Impersonate the qbittorent user:  
+Impersonate the qbittorent user:
 
 `sudo su qbtuser`
 
-Create neccesary folders:  
+Create neccesary folders:
 ```
 cd /home/qbtuser/
 mkdir ~/.config/qBittorrent/ssl
@@ -40,7 +40,7 @@ into the 'key' field of the WebUI and proceed to do the same with the certificat
 cat server.crt
 ```
 
-Now click save to have the changes take effect. 
+Now click save to have the changes take effect.
 
 You should now be able to log in to your qbittorrent web-server keeping in mind to change http to https and append the port number with a colon :
 
@@ -56,7 +56,7 @@ If you are unsure what url (ip and port and protocol) qtorrent is using, you can
 
 `sudo tail /var/log/qbittorrent-nox.log`
 
-Alternatively you could run qtorrent-nox in a terminal window (after impersonating the qbittorrent user) and it will print the URL to the screen with:  
+Alternatively you could run qtorrent-nox in a terminal window (after impersonating the qbittorrent user) and it will print the URL to the screen with:
 
-`sudo su qbtuser`  
+`sudo su qbtuser`
 `sudo qbittorrent-nox`

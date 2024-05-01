@@ -8,10 +8,10 @@ Also, this mechanism is controlled via configuration options (core UI preference
 In order to increase security, a `public` (login process handling) and `private` (WebUI functionality) separation of files is implemented (see core WebUI files' segregation as ref: https://github.com/qbittorrent/qBittorrent/tree/master/src/webui/www)
 
 ### First steps to an alternate WebUI:
-Copy the files:  
-https://github.com/qbittorrent/qBittorrent/tree/master/src/webui/www to a `<new folder>`  
-https://github.com/qbittorrent/qBittorrent/tree/master/src/icons to `<new folder>/public`  
-https://github.com/qbittorrent/qBittorrent/tree/master/src/icons to `<new folder>/private`  
+Copy the files:
+https://github.com/qbittorrent/qBittorrent/tree/master/src/webui/www to a `<new folder>`
+https://github.com/qbittorrent/qBittorrent/tree/master/src/icons to `<new folder>/public`
+https://github.com/qbittorrent/qBittorrent/tree/master/src/icons to `<new folder>/private`
 
 Enable AltWebUI on the options and point the entry `WebUI\RootFolder` to `<new folder>`, then launch qBittorrent.
 Access the WebUI as always, modify the files at `<new folder>` according to your needs and refresh the browser to see the changes reflected.

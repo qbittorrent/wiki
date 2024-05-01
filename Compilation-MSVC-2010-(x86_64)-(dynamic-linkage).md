@@ -1,9 +1,9 @@
 This page describes the process of building qBittorrent on Windows targeting x86\_64 (aka x64 aka AMD64 aka 64-bit) architecture. Building for x86\_64 arch is only supported by Visual Studio Professional or better, Express edition won't do.
 
 > Note: It is possible to use 64-bit compiler collection included in WinSDK 7.1. But if you already have ***ANY*** edition of Visual Studio 2010 installed with SP1 applied you won't be able to install it. Thus, using WinSDK is out of this article's scope.
-> 
+>
 > Another note: Even though this article tries to be as full as possible, it is not recommended for users without basic knowledge in programming and windows shell scripting.
-> 
+>
 > Final note: Resulting binary will not support Windows XP 64-bit Edition and Windows Server 2003 64-bit Edition unless you follow special notes describing how to make it compatible with those systems.
 
 # Table of Contents #
@@ -59,7 +59,7 @@ This page describes the process of building qBittorrent on Windows targeting x86
 
 1. In this article I'm using a drive as a working directory, so I have something like that:
 
-        T: 
+        T:
             \sources
             \install
 
@@ -154,7 +154,7 @@ This page describes the process of building qBittorrent on Windows targeting x86
         Available compression methods:
           1: zlib compression
 
-    
+
     And in the very end you should see `passed all tests`.
 
 1. Install OpenSSL:
@@ -255,7 +255,7 @@ This page describes the process of building qBittorrent on Windows targeting x86
         + Find `INCLUDEPATH += $$quote(C:/qBittorrent/Zlib/include)`<br />
         and replace with
         `INCLUDEPATH += $$quote(T:/install/Zlib/include)`<br />
-        and insert `INCLUDEPATH += $$quote(T:/install/OpenSSL/include)` on next line 
+        and insert `INCLUDEPATH += $$quote(T:/install/OpenSSL/include)` on next line
         + Find `LIBS += $$quote(-LC:/qBittorrent/boost_1_51_0/stage/lib)`<br />
         and replace with
         `LIBS += $$quote(-LT:/install/Boost/lib)`
@@ -284,7 +284,7 @@ This page describes the process of building qBittorrent on Windows targeting x86
         + Find `DEFINES += _WIN32_WINNT=0x0500`<br />
         and replace with `DEFINES += _WIN32_WINNT=0x0600`
             + If you want to build For XP 64-bit or WinServer 2003 64-bit replace `DEFINES += _WIN32_WINNT=0x0500` with `DEFINES += _WIN32_WINNT=0x0501`
-            
+
 1. Build qBt:
 
         SET "PATH=T:\install\Qt\bin;%PATH%"
@@ -327,4 +327,3 @@ If you want to use the resulting binaries on other Windows computers (or redistr
 Alternatively you can copy redistributable dlls into program folder like this:
 
         XCOPY /Y /Q /I "%VCINSTALLDIR%\redist\x64\Microsoft.VC100.CRT\*.dll" T:\install\qBittorrent\
-

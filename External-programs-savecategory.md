@@ -44,7 +44,7 @@ exit 0
 ```
 
 > :information_source: Make sure to replace the `username` and `password` with your credentials before using or else this will not work. Another caveat is that if your password contains `#` or `&`, you'll need to replace with [ASCII encoded characters](https://www.w3schools.com/tags/ref_urlencode.ASP).
-> 
+>
 > :link: [gist](https://gist.github.com/jef/e29126da5953c331310c1b6c58502be0) for potential script changes or comments.
 
 And set **Run external program on torrent completion** to:
