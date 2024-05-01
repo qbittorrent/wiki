@@ -1,0 +1,28 @@
+name: Deploy wiki
+
+on:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
+  cancel-in-progress: ${{ github.head_ref != '' }}
+
+jobs:
+  deploy:
+    name: Deploy wiki
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # full depth
+
+      - name: Deploy
+        run: |
+          git push https://${{ secrets.ACCESS_TOKEN }}@github.com/qbittorrent/qBittorrent.wiki.git --force
