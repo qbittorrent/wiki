@@ -21,8 +21,8 @@ sudo apt install build-essential cmake git ninja-build pkg-config libboost-dev l
 
 qBittorrent uses the Qt framework as the basis for its GUI.
 
-- qBittorrent 4.4.x requires at least Qt 5.15.2.
-- At the time of writing, the current `master` branch requires at least Qt 5.15.2.
+- qBittorrent 4.4.x requires at least Qt 6.5.0.
+- At the time of writing, the current `master` branch requires at least Qt 6.5.0.
 
 Many distributions, in particular Debian, Ubuntu (especially LTS releases), and their derivatives don't provide up-to-date Qt packages in their repositories or are very slow in updating them.
 In such cases, you must get them from somewhere else, such as the official installer from the [Qt website](https://www.qt.io/download-qt-installer) (unfortunately, this method requires the creation of an account, but you can just use a throwaway email), or a PPA you trust in the case of Ubuntu and other distributions that support that installation method.
@@ -30,7 +30,7 @@ In such cases, you must get them from somewhere else, such as the official insta
 For Debian and Ubuntu versions that include sufficiently up-to-date Qt packages, you can just install the following packages from the official repositories:
 
 ```bash
-sudo apt install --no-install-recommends qtbase5-dev qttools5-dev libqt5svg5-dev
+sudo apt install --no-install-recommends qt6-base-dev qt6-tools-dev qt6-svg-dev
 ```
 
 ## libtorrent
