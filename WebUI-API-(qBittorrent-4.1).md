@@ -1282,6 +1282,7 @@ Property             | Type    | Description
 `f_l_piece_prio`     | bool    | True if first last piece are prioritized
 `force_start`        | bool    | True if force start is enabled for this torrent
 `hash`               | string  | Torrent hash
+`isPrivate`          | bool    | True if torrent is from a private tracker (added in 5.0.0)
 `last_activity`      | integer | Last time (Unix Epoch) when a chunk was downloaded/uploaded
 `magnet_uri`         | string  | Magnet URI corresponding to this torrent
 `max_ratio`          | float   | Maximum share ratio until torrent is stopped from seeding/uploading
@@ -1360,7 +1361,8 @@ Example:
         "size":657457152,
         "state":"downloading",
         "super_seeding":false,
-        "upspeed":0
+        "upspeed":0,
+        "isPrivate":true
     },
     {
         another_torrent_info
@@ -1427,6 +1429,7 @@ Property                  | Type    | Description
 `total_size`              | integer | Torrent total size (bytes)
 `up_speed_avg`            | integer | Torrent average upload speed (bytes/second)
 `up_speed`                | integer | Torrent upload speed (bytes/second)
+`isPrivate`               | bool    | True if torrent is from a private tracker
 
 NB: `-1` is returned if the type of the property is integer but its value is not known.
 
@@ -1443,6 +1446,7 @@ Example:
     "dl_speed":0,
     "dl_speed_avg":9736015,
     "eta":8640000,
+    "isPrivate":true,
     "last_seen":1438430354,
     "nb_connections":3,
     "nb_connections_limit":250,
