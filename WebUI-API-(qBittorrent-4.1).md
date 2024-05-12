@@ -2203,7 +2203,7 @@ hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5
 
 Property                      | Type    | Description
 ------------------------------|---------|------------
-`hashes`                      | integer | The hashes of the torrents for which you want to set the share limits. Multiple hashes need to be seperated by `\|` or set to `all`.
+`hashes`                      | integer | The hashes of the torrents for which you want to set the share limits. Multiple hashes need to be separated by `\|` or set to `all`.
 `ratioLimit`                  | float   | The maximum seeding ratio for the torrent. `-2` means the global limit should be used, `-1` means no limit.
 `seedingTimeLimit`            | integer | The maximum seeding time (minutes) for the torrent. `-2` means the global limit should be used, `-1` means no limit.
 `inactiveSeedingTimeLimit`    | integer | The maximum amount of time (minutes) the torrent is allowed to seed while being inactive. `-2` means the global limit should be used, `-1` means no limit.
