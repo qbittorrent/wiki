@@ -2212,7 +2212,8 @@ Property                      | Type    | Description
 
 HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
-200                               | All scenarios
+200                               | All other scenarios
+400                               | Bad Request, e.g. missing parameter
 
 ## Get torrent upload limit ##
 
