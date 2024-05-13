@@ -17,9 +17,9 @@ If you know of more, feel free to add a link to the repository along with a shor
 
     A fork of qBittorrent containing a WebUI modified to implement the WebAPI's RSS functionality.
 
-- https://github.com/WDaan/VueTorrent
+- https://github.com/VueTorrent/VueTorrent
 
-    A modern looking WebUI for qBittorrent, made with VueJS and ExpressJS.
+    A full-featured modern looking and responsive WebUI for qBittorrent, made with VueJS! Includes dark mode, RSS, search engine, logs and more!
 
 - https://github.com/bill-ahmed/qbit-WebUI
 
