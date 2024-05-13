@@ -2196,18 +2196,24 @@ Cookie: SID=your_sid
 Content-Type: application/x-www-form-urlencoded
 Content-Length: length
 
-hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5d7cc2ba0&ratioLimit=1.0&seedingTimeLimit=60
+hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5d7cc2ba0&ratioLimit=1.0&seedingTimeLimit=60&inactiveSeedingTimeLimit=-2
 ```
 
-`hashes` can contain multiple hashes separated by `|` or set to `all`
-`ratioLimit` is the max ratio the torrent should be seeded until. `-2` means the global limit should be used, `-1` means no limit.
-`seedingTimeLimit` is the max amount of time (minutes) the torrent should be seeded. `-2` means the global limit should be used, `-1` means no limit.
+**Parameters:**
+
+Property                      | Type    | Description
+------------------------------|---------|------------
+`hashes`                      | integer | The hashes of the torrents for which you want to set the share limits. Multiple hashes need to be separated by `\|` or set to `all`.
+`ratioLimit`                  | float   | The maximum seeding ratio for the torrent. `-2` means the global limit should be used, `-1` means no limit.
+`seedingTimeLimit`            | integer | The maximum seeding time (minutes) for the torrent. `-2` means the global limit should be used, `-1` means no limit.
+`inactiveSeedingTimeLimit`    | integer | The maximum amount of time (minutes) the torrent is allowed to seed while being inactive. `-2` means the global limit should be used, `-1` means no limit.
 
 **Returns:**
 
 HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
-200                               | All scenarios
+200                               | All other scenarios
+400                               | Bad Request, e.g. missing parameter
 
 ## Get torrent upload limit ##
 
