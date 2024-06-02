@@ -125,19 +125,19 @@ Here is the list (github doesn't allow changing the text color):
 
 Light theme:
 * Forest Green (rgb(34, 139, 34)) for torrents in downloading, forced downloading or downloading metadata status
-* Black for torrents in allocating or stalled(up and down) status
+* Black for torrents in allocating or stalled (up and down) status
 * Royal Blue (rgb(65, 105, 225)) for torrents in uploading or forced uploading status
-* Salmon (rgb(250, 128, 114)) for torrents in paused(downloading) status
-* Dark Blue (rgb(0, 0, 139)) for torrents in completed(paused seeding) status
+* Salmon (rgb(250, 128, 114)) for torrents in paused (downloading) status
+* Dark Blue (rgb(0, 0, 139)) for torrents in completed (paused seeding) status
 * Red (rgb(255, 0, 0)) for torrents in error or missing files status
 * Teal (rgb(0, 128, 128)) for torrents in queued, checking, queued for checking or checking resume data status
 
 Dark theme:
 * Lime Green (rgb(50, 205, 50)) for torrents in downloading, forced downloading or downloading metadata status
-* Gray 80 (rgb(204, 204, 204)) for torrents in allocating or stalled(up and down) status
+* Gray 80 (rgb(204, 204, 204)) for torrents in allocating or stalled (up and down) status
 * Steel Blue 1 (rgb(99, 184, 255)) for torrents in uploading or forced uploading status
-* Salmon (rgb(250, 128, 114)) for torrents in paused(downloading) status
-* Steel Blue 3 (rgb(79, 148, 205)) for torrents in completed(paused seeding) status
+* Salmon (rgb(250, 128, 114)) for torrents in paused (downloading) status
+* Steel Blue 3 (rgb(79, 148, 205)) for torrents in completed (paused seeding) status
 * Red (rgb(255, 0, 0)) for torrents in error or missing files status
 * Cyan 3 (rgb(0, 205, 205)) for torrents in queued, checking, queued for checking or checking resume data status
 
