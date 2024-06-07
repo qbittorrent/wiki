@@ -16,6 +16,7 @@ You need to install these packages in order to be able to compile qBittorrent fr
 ```bash
 sudo apt install build-essential pkg-config automake libtool git zlib1g-dev libssl-dev libgeoip-dev
 sudo apt install libboost-dev libboost-system-dev libboost-chrono-dev libboost-random-dev
+sudo apt install cmake ninja-build
 ```
 
 If you want, you can install the Boost libraries from source instead of installing them from the distro's repositories. This is quite easy to do, but generally does not make that much of a difference and is out of the scope of this guide.
@@ -34,10 +35,16 @@ qBittorrent uses the Qt framework as the basis for its GUI.
 
 qBittorrent 4.0 - 4.1.x requires at least Qt 5.5.1, and qBittorrent 4.2 and later requires at least Qt 5.9.
 
-For Debian 10, Ubuntu 18.04 LTS or later, just install Qt from the official repositories:
+For Debian 10, Ubuntu 18.04 LTS or later, if you build qBittorrent with Qt5 just install Qt from the official repositories:
 
 ```bash
-sudo apt install qtbase5-dev qttools5-dev libqt5svg5-dev
+sudo apt install qtbase5-dev qttools5-dev libqt5svg5-dev qtbase5-private-dev
+```
+
+If you build with Qt6:
+
+```bash
+sudo apt install qt6-base-dev qt6-base-private-dev qt6-tools-dev
 ```
 
 Note that Qt libraries in Debian 8/9 repository are too old for compiling newer qBittorrent versions, so you need to install newer Qt libraries some other way.
