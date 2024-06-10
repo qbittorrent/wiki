@@ -38,7 +38,7 @@ qBittorrent 4.0 - 4.1.x requires at least Qt 5.5.1, and qBittorrent 4.2 and late
 For Debian 10, Ubuntu 18.04 LTS or later, if you build qBittorrent with Qt5 just install Qt from the official repositories:
 
 ```bash
-sudo apt install qtbase5-dev qttools5-dev libqt5svg5-dev qtbase5-private-dev
+sudo apt install qtbase5-dev qtbase5-private-dev qttools5-dev libqt5svg5-dev
 ```
 
 If you build with Qt6:
