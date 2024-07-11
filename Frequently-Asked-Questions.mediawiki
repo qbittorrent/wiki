@@ -253,7 +253,7 @@ obapps can be launched from the terminal.
 A Dutch step by step tutorial can be found [https://www.duken.nl/forums/handleidingen/downloaden/downloaden-met-qbittorrent-en-gebruik-maken-van-de-interne-torrent-zoekmachine-r26/ here].
 
 == What do all those flags in the Flags column mean? ==
-    P = μtp
+    P = Peer is using μTP (Micro Transport Protocol)
     D = Currently downloading (interested and not choked)
     d = Your client wants to download, but peer doesn't want to send (interested and choked)
     U = Currently uploading (interested and not choked)
