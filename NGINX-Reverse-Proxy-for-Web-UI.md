@@ -1,21 +1,22 @@
-This configuration allows you to use NGINX as a reverse proxy for the WebUI listening on a local address to expose it outside of your LAN, on the Web. It is assumed that your WebUI is configured to be accessible at `http://127.0.0.1:30000/`, and you wish to be able to access it outside of your LAN at `mywebsite.com/qbt`. Then, in the NGINX configuration used to serve `mywebsite.com`, your `location /qbt/` stanza should have the following settings:
+This configuration allows you to use NGINX as a reverse proxy for the WebUI listening on a local address to expose it outside of your LAN, on the Web. \
+It is assumed that your WebUI is configured to be accessible at `http://127.0.0.1:30000/`, and you wish to be able to access it outside of your LAN at `mywebsite.com/qbt`. \
+Then, in the NGINX configuration used to serve `mywebsite.com`, your `location /qbt/` stanza should have the following settings:
 
 ```nginx
 location /qbt/ {
     proxy_pass         http://127.0.0.1:30000/;
     proxy_http_version 1.1;
 
-    proxy_set_header   Host               127.0.0.1:30000;
+    # headers recognized by qBittorrent
+    proxy_set_header   Host               $proxy_host;
+    proxy_set_header   X-Forwarded-For    $proxy_add_x_forwarded_for;
     proxy_set_header   X-Forwarded-Host   $http_host;
-    proxy_set_header   X-Forwarded-For    $remote_addr;
-
-    # not used by qBittorrent
-    #proxy_set_header   X-Forwarded-Proto  $scheme;
-    #proxy_set_header   X-Real-IP          $remote_addr;
+    proxy_set_header   X-Forwarded-Proto  $scheme;
 
     # optionally, you can adjust the POST request size limit, to allow adding a lot of torrents at once
     #client_max_body_size 100M;
 
+    # No longer required since qBittorrent v5.1:
     # Since v4.2.2, is possible to configure qBittorrent
     # to set the "Secure" flag for the session cookie automatically.
     # However, that option does nothing unless using qBittorrent's built-in HTTPS functionality.
@@ -28,13 +29,14 @@ location /qbt/ {
 }
 ```
 
-Note: If you find yourself seeing `WebAPI login failure. Reason: IP has been banned, IP: 127.0.0.1` and needing to restart qBittorrent, you may want to set the ban after failure count to `0` which will disable it.
+Note: If you find yourself seeing `WebAPI login failure. Reason: IP has been banned, IP: 127.0.0.1` and needing to restart qBittorrent,
+you may want to set the ban after failure count to `0` which will disable it.
 
 ---
 
-Obsolete directives, no longer needed when using recent qBittorrent versions
+Obsolete directives, no longer needed when using recent qBittorrent versions:
 
-- No longer required/discouraged since v4.1.2:
+- No longer required and discouraged since v4.1.2:
 
     ```nginx
     # The following directives effectively nullify Cross-site request forgery (CSRF)

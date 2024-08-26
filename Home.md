@@ -64,6 +64,7 @@ The wiki source code is hosted at https://github.com/qbittorrent/wiki and is acc
 ### Reverse proxy setup for WebUI access
 
 * [NGINX](https://github.com/qbittorrent/qBittorrent/wiki/NGINX-Reverse-Proxy-for-Web-UI)
+  (canonical source for reverse proxy settings)
 * [Microsoft IIS ARR](https://github.com/qbittorrent/qBittorrent/wiki/IIS-ARR-Reverse-Proxy)
 * [Traefik](https://github.com/qbittorrent/qBittorrent/wiki/Traefik-Reverse-Proxy-for-Web-UI)
 
