@@ -81,15 +81,15 @@ GNU/Linux:
 ** <code>~/.local/share/data/qBittorrent/</code> (in case legacy data directory was used)
 
 Linux/Flatpak:
-* preferences
+* preferences:
 ** <code>~/.var/app/org.qbittorrent.qBittorrent/config/qBittorrent/</code>
-* .torrent files, logs, etc (This is the standard [https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html XDG] data folder):
+* .torrent files, logs, etc:
 ** <code>~/.var/app/org.qbittorrent.qBittorrent/data/qBittorrent/</code>
 
 Linux/SnapStore:
 * preferences:
 ** <code>~/snap/qbittorrent-arnatious/current/.config/qBittorrent/</code>
-* .torrent files, logs, etc (This is the standard [https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html XDG] data folder):
+* .torrent files, logs, etc:
 ** <code>~/snap/qbittorrent-arnatious/current/.local/share/data/qBittorrent/</code>
 
 OS X:
