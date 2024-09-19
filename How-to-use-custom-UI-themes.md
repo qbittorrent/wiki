@@ -1,6 +1,6 @@
 # Introduction
 
-As of version 4.2.2, custom unofficial Qt UI themes can be used on all platforms. This is mostly relevant for Windows users, because on Windows there is currently no native themeing integration.
+As of version 4.2.2, custom unofficial Qt UI themes can be used on all platforms. This is mostly relevant for Windows users, because on Windows there is currently no native theming integration.
 
 # Procedure
 
