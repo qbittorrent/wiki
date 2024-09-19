@@ -6,5 +6,6 @@
 [default.extend-identifiers]
 BigSur = "BigSur"
 mak = "mak"
+UPnP = "UPnP"
 
 [default.extend-words]
