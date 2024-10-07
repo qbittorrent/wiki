@@ -43,3 +43,8 @@ See [How to use custom UI themes](https://github.com/qbittorrent/qBittorrent/wik
 - https://github.com/witalihirsch/qBitTorrent-fluent-theme
 
     Fluent dark/light themes for qBittorrent
+
+- https://github.com/BaraShiro/Material-qBittorrent
+
+    A theme for qBittorrent that uses Material Design Symbols.
+  
