@@ -28,7 +28,7 @@ The wiki source code is hosted at https://github.com/qbittorrent/wiki and is acc
 
 ### Search plugins
 
-- [List of unofficial search plugins](https://github.com/qbittorrent/qBittorrent/wiki/Unofficial-search-plugins)
+- [List of unofficial search plugins](https://github.com/qbittorrent/search-plugins/wiki/Unofficial-search-plugins)
 
 ### Themes
 

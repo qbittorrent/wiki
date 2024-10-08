@@ -22,7 +22,7 @@
 
 ### Search plugins
 
-- [List of unofficial search plugins](https://github.com/qbittorrent/qBittorrent/wiki/Unofficial-search-plugins)
+- [List of unofficial search plugins](https://github.com/qbittorrent/search-plugins/wiki/Unofficial-search-plugins)
 
 ### Themes
 
