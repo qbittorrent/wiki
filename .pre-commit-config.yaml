@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks.git
-    rev: v4.5.0
+    rev: v5.0.0
     hooks:
     - id: fix-byte-order-marker
       name: Check file encoding (UTF-8 without BOM)
@@ -16,14 +16,14 @@ repos:
       name: Check trailing whitespaces
 
   - repo: https://github.com/codespell-project/codespell.git
-    rev: v2.2.6
+    rev: v2.3.0
     hooks:
     - id: codespell
       name: Check spelling (codespell)
       args: ["--ignore-words-list", ""]
 
   - repo: https://github.com/crate-ci/typos.git
-    rev: v1.16.18
+    rev: v1.26.0
     hooks:
     - id: typos
       name: Check spelling (typos)
