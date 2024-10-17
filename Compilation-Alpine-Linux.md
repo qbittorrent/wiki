@@ -17,8 +17,8 @@ This guide will help you install qBittorrent on Alpine Linux
 
 These are the build dependencies we need to install using `apk`
 
-```bash
-apk add build-base cmake curl git linux-headers python3 re2c tar xz ninja-build ninja-is-really-ninja
+```shell
+apk add build-base cmake curl git linux-headers ninja-build ninja-is-really-ninja python3 re2c tar xz
 ```
 
 ## Application dependencies
@@ -28,25 +28,32 @@ These are application dependencies we need to install using `apk`
 > [!WARNING]
 > If you are using a desktop and want the GUI for qBittorrent, you will need to append the dependency `qt6-qtsvg-dev` to the command below
 
-```bash
-apk add zlib-dev icu-dev openssl-dev qt6-qtbase-dev qt6-qttools-dev
+```shell
+apk add icu-dev openssl-dev qt6-qtbase-dev qt6-qttools-dev zlib-dev
 ```
 
 ## Boost build files
 
-> [!TIP]
-> Get the latest version info via
+> [!TIP]>
+> This command should provide the latest non beta release info from Github
 >
-> - https://github.com/boostorg/boost/releases/latest
-> - `curl -sL https://api.github.com/repos/boostorg/boost/releases/latest | jq -r '.tag_name'`
+> - `curl -sL https://api.github.com/repos/boostorg/boost/releases | jq -r '.[0].name | select(contains("beta") | not)'`
+>
+> You can view all the tags for the boost Github repository here:
+>
+> - https://github.com/boostorg/boost/tags
 
 Download and extract the boost files.
 
 > [!NOTE]
 > All we need to bootstrap boost is to download and extract the files. There is nothing to build at this step.
 
-```bash
-curl -sNLko- https://github.com/boostorg/boost/releases/latest/download/boost-1.86.0-b2-nodocs.tar.xz | tar xfJ -
+Bootstrap boost dev files
+
+```shell
+mkdir -p ~/boost-dev
+curl -L https://github.com/boostorg/boost/releases/latest/download/boost-1.86.0-b2-nodocs.tar.xz -o ~/boost.tar.xz
+tar xf ~/boost.tar.xz --strip-components=1 -C ~/boost-dev
 ```
 
 ## Libtorrent
@@ -56,14 +63,14 @@ Download and build libtorrent by checking out the `RC_1_2` branch. You can also 
 > [!TIP]
 > Any tag can be used to checkout the version you want - https://github.com/arvidn/libtorrent/tags
 
-```bash
+```shell
 git clone --shallow-submodules --recurse-submodules https://github.com/arvidn/libtorrent.git ~/libtorrent && cd ~/libtorrent
 # git checkout "$(git tag -l --sort=-v:refname | awk '/v2/' | head -1)" # always checkout the latest release of libtorrent v2
 git checkout "$(git tag -l --sort=-v:refname | awk '/v1/' | head -1)" # always checkout the latest release of libtorrent v1
 cmake -Wno-dev -G Ninja -B build \
     -D CMAKE_BUILD_TYPE="Release" \
     -D CMAKE_CXX_STANDARD=20 \
-    -D BOOST_INCLUDEDIR="$HOME/boost-1.86.0/" \
+    -D BOOST_INCLUDEDIR="$HOME/boost-dev/" \
     -D CMAKE_INSTALL_LIBDIR="lib" \
     -D CMAKE_INSTALL_PREFIX="/usr/local"
 cmake --build build
@@ -86,25 +93,17 @@ Build and install qBittorrent
 
 This command will build qBittorrent `v5` with Libtorrent `v1.2` using `Qt6`, the defaults at the time of this guide.
 
-```bash
+```shell
 git clone --shallow-submodules --recurse-submodules https://github.com/qbittorrent/qBittorrent.git ~/qbittorrent && cd ~/qbittorrent
 git checkout "$(git tag -l --sort=-v:refname | awk '!/[0-9][a-zA-Z]/' | head -1)" # always checkout the latest release of qbittorrent
 cmake -Wno-dev -G Ninja -B build \
     -D CMAKE_BUILD_TYPE="release" \
     -D CMAKE_CXX_STANDARD=20 \
-    -D BOOST_INCLUDEDIR="$HOME/boost-1.86.0/" \
+    -D BOOST_INCLUDEDIR="$HOME/boost-dev/" \
     -D CMAKE_INSTALL_PREFIX="/usr/local" \
     -D GUI=OFF
 cmake --build build
 cmake --install build
-```
-
-## Post installation
-
-Tidy up the downloaded build files
-
-```bash
-cd && rm -rf qbittorrent libtorrent boost-1.86.0
 ```
 
 ## Run the binary
@@ -113,12 +112,20 @@ You can now run `qbittorrent` or `qbittorrent-nox` as it will be in the path.
 
 Desktop version: `-D GUI=ON`
 
-```bash
+```shell
 qbittorrent
 ```
 
 cli version: `-D GUI=OFF`
 
-```bash
+```shell
 qbittorrent-nox
+```
+
+## Post installation
+
+Tidy up: Delete the downloaded build files and folders
+
+```shell
+cd && rm -rf qbittorrent libtorrent boost-dev ~/boost.tar.xz
 ```
