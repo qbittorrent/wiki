@@ -37,7 +37,7 @@ apk add icu-dev openssl-dev qt6-qtbase-dev qt6-qttools-dev zlib-dev
 > [!TIP]
 > This command should provide the latest non beta release info from Github
 >
-> - `curl -sL https://api.github.com/repos/boostorg/boost/releases | jq -r '.[].name | select(contains("beta") | not)' | head -n 1'`
+> - `curl -sL https://api.github.com/repos/boostorg/boost/releases | jq -r 'map(.name | select(test("boost-[\\d\\.]+$"))) | first'`
 >
 > You can view all the tags for the boost Github repository here:
 >
