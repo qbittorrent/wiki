@@ -1921,6 +1921,25 @@ HTTP Status Code                  | Scenario
 415                               | Torrent file is not valid
 200                               | All other scenarios
 
+### Notes on boundaries ###
+
+Also, be aware that multipart/form-data boundaries in the POST body are preceeded by two hyphens, and the end of the body is closed by two hyphens added to the end of the boundary string.
+For example, if you use a random string and your header has:
+
+```
+Content-Type: multipart/form-data; boundary=--AqhE2AFEJbRxE4xx
+```
+
+Your POST body would look like this:
+
+```
+----AqhE2AFEJbRxE4xx
+Content-Disposition: form-data; name="urls"
+
+https://torcache.net/torrent/3B1A1469C180F447B77021074DBBCCAEF62611E7.torrent
+----AqhE2AFEJbRxE4xx--
+```
+
 ## Add trackers to torrent ##
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
