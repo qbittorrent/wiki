@@ -1,4 +1,4 @@
-# How to reset qBittorrent webui password
+# How to reset qBittorrent WebUI password
 
 1. Check the version of qBittorrent
 
@@ -10,7 +10,7 @@
 - Linux `~/.config/qBittorrent/qBittorrent.conf`
 - macOS `~/.config/qBittorrent/qBittorrent.conf`
 
-4. Remove the password line from the configuration file
+4. Remove or replace the password line from the configuration file
 
 - **qBittorrent version < 4.2.0**, password line start with `WebUI\Password_ha1`, remove it
 
