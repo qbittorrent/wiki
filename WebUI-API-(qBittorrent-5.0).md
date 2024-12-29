@@ -1,28 +1,9 @@
-This WebUI API documentation applies to qBittorrent v4.1+. For other WebUI API versions, visit [WebUI API](https://github.com/qbittorrent/qBittorrent/wiki#WebUI-API).
+This WebUI API documentation applies to qBittorrent v5.0+. For other WebUI API versions, visit [WebUI API](https://github.com/qbittorrent/qBittorrent/wiki#WebUI-API).
 
 # Table of Contents #
 
 1. [Changes](#changes)
-   1. [API v2.0](#api-v20)
-   1. [API v2.0.1](#api-v201)
-   1. [API v2.0.2](#api-v202)
-   1. [API v2.1.0](#api-v210)
-   1. [API v2.1.1](#api-v211)
-   1. [API v2.2.0](#api-v220)
-   1. [API v2.2.1](#api-v221)
-   1. [API v2.3.0](#api-v230)
-   1. [API v2.4.0](#api-v240)
-   1. [API v2.4.1](#api-v241)
-   1. [API v2.5.0](#api-v250)
-   1. [API v2.5.1](#api-v251)
-   1. [API v2.6.0](#api-v260)
-   1. [API v2.6.1](#api-v261)
-   1. [API v2.6.2](#api-v262)
-   1. [API v2.7.0](#api-v270)
-   1. [API v2.8.0](#api-v280)
-   1. [API v2.8.1](#api-v281)
-   1. [API v2.8.2](#api-v282)
-   1. [API v2.8.3](#api-v283)
+   1. [API v2.9.3](#api-v293)
 1. [General information](#general-information)
 1. [Authentication](#authentication)
    1. [Login](#login)
@@ -127,95 +108,8 @@ This WebUI API documentation applies to qBittorrent v4.1+. For other WebUI API v
 
 # Changes #
 
-## API v2.0 ##
-
-- New version naming scheme: X.Y.Z (where X - major version, Y - minor version, Z - release version)
-- New API paths. All API methods are under `api/vX/` (where X is API major version)
-- API methods are under new scopes
-
-## API v2.0.1 ##
-
-- Add `hashes` field to `/torrents/info` ([#8782](https://github.com/qbittorrent/qBittorrent/pull/8782))
-- Add `/torrents/setShareLimits/` method ([#8598](https://github.com/qbittorrent/qBittorrent/pull/8598))
-
-## API v2.0.2 ##
-
-- Add `/torrents/reannounce` method ([#9229](https://github.com/qbittorrent/qBittorrent/pull/9229))
-
-## API v2.1.0 ##
-
-- Change `/sync/maindata` `categories` field from `array` to `object` ([#9228](https://github.com/qbittorrent/qBittorrent/pull/9228))
-- Add `savePath` field to `/torrents/createCategory` ([#9228](https://github.com/qbittorrent/qBittorrent/pull/9228)). This method now requires the category to already exist and will not create new categories.
-- Add `/torrents/editCategory` method ([#9228](https://github.com/qbittorrent/qBittorrent/pull/9228))
-
-## API v2.1.1 ##
-
-- Add `/torrents/categories` method ([#9586](https://github.com/qbittorrent/qBittorrent/pull/9586))
-- Add `/search/` methods ([#8584](https://github.com/qbittorrent/qBittorrent/pull/8584))
-- Add `free_space_on_disk` field to `/sync/maindata` ([#8217](https://github.com/qbittorrent/qBittorrent/pull/8217))
-
-## API v2.2.0 ##
-
-- Add `/torrents/editTracker` and `/torrents/removeTracker` methods ([#9375](https://github.com/qbittorrent/qBittorrent/pull/9375))
-- Add `tier`, `num_seeds`, `num_leeches`, and `num_downloaded` fields to `/torrents/trackers` ([#9375](https://github.com/qbittorrent/qBittorrent/pull/9375))
-- Change `status` field from translated string to an integer for `/torrents/trackers` ([#9375](https://github.com/qbittorrent/qBittorrent/pull/9375))
-- Change `/torrents/filePrio` `id` field to accept multiple ids ([#9541](https://github.com/qbittorrent/qBittorrent/pull/9541))
-- Throw additional errors for failed requests to `/torrents/filePrio` ([#9541](https://github.com/qbittorrent/qBittorrent/pull/9541))
-- Add `autoTMM` field to `/torrents/add` ([#9752](https://github.com/qbittorrent/qBittorrent/pull/9752))
-- Add various fields to `/app/getPreferences` and `/app/setPreferences` (`create_subfolder_enabled`, `start_paused_enabled`, `auto_delete_mode`, `preallocate_all`, `incomplete_files_ext`, `auto_tmm_enabled`, `torrent_changed_tmm_enabled`, `save_path_changed_tmm_enabled`, `category_changed_tmm_enabled`, `mail_notification_sender`, `limit_lan_peers`, `slow_torrent_dl_rate_threshold`, `slow_torrent_ul_rate_threshold`, `slow_torrent_inactive_timer`, `alternative_webui_enabled`, `alternative_webui_path`) ([#9752](https://github.com/qbittorrent/qBittorrent/pull/9752))
-
-## API v2.2.1 ##
-
-- Add `rss/refreshItem` ([#11067](https://github.com/qbittorrent/qBittorrent/pull/11067))
-
-## API v2.3.0 ##
-
-- Remove `web_ui_password` field from `/app/preferences`, this field is still writable in `/app/setPreferences` method ([#9942](https://github.com/qbittorrent/qBittorrent/pull/9942))
-- Add `/app/buildInfo` method ([#10096](https://github.com/qbittorrent/qBittorrent/pull/10096))
-- Always use `/` as path separator in `/torrents/files` response ([#10153](https://github.com/qbittorrent/qBittorrent/pull/10153/))
-- Add `/torrents/addPeers` and `/transfer/banPeers` methods ([#10158](https://github.com/qbittorrent/qBittorrent/pull/10158))
-- Add `/torrents/addTags`, `/torrents/removeTags`, `/torrents/tags`, `/torrents/createTags`, `/torrents/deleteTags` methods ([#10527](https://github.com/qbittorrent/qBittorrent/pull/10527))
-
-## API v2.4.0 ##
-
-- Add `/torrents/renameFile` method ([#11029](https://github.com/qbittorrent/qBittorrent/pull/11029))
-
-## API v2.4.1 ##
-
-- Add `stalled`, `stalled_uploading` and `stalled_downloading` as possible values for the `filter` parameter in `/torrents/info` ([#11825](https://github.com/qbittorrent/qBittorrent/pull/11825))
-- Add various fields to `/app/preferences` and `/app/setPreferences` (`piece_extent_affinity`, `web_ui_secure_cookie_enabled`, `web_ui_max_auth_fail_count`, `web_ui_ban_duration`, `stop_tracker_timeout`) ([#11781](https://github.com/qbittorrent/qBittorrent/pull/11781), [#11726](https://github.com/qbittorrent/qBittorrent/pull/11726), [#12004](https://github.com/qbittorrent/qBittorrent/pull/12004), [#11834](https://github.com/qbittorrent/qBittorrent/pull/11834))
-
-## API v2.5.0 ##
-- Removes `enable_super_seeding` as fields from `/app/preferences` and `/app/setPreferences`  ([#12423](https://github.com/qbittorrent/qBittorrent/pull/12423))
-
-## API v2.5.1 ##
-- Add `web_ui_use_custom_http_headers_enabled`, `web_ui_custom_http_headers`, `rss_download_repack_proper_episodes` and `rss_smart_episode_filters` as fields to `/app/preferences` and `/app/setPreferences` ([#12579](https://github.com/qbittorrent/qBittorrent/pull/12579), [#12549](https://github.com/qbittorrent/qBittorrent/pull/12549))
-- Add `/rss/markAsRead` and `/rss/matchingArticles` methods ([#12549](https://github.com/qbittorrent/qBittorrent/pull/12549))
-
-## API v2.6.0 ##
-- Removed `/search/categories` method and modified `/search/plugins` method's response ([#12705](https://github.com/qbittorrent/qBittorrent/pull/12705))
-
-## API v2.6.1 ##
-- Exposed `contentPath` via the `content_path` field in the response to `/torrents/info` ([#13625](https://github.com/qbittorrent/qBittorrent/pull/13625))
-
-## API v2.6.2 ##
-- Added `tags` optional field to `/torrents/add` ([#13882](https://github.com/qbittorrent/qBittorrent/pull/13882))
-
-## API v2.8.0 ##
-- Added `/torrents/renameFolder` method and modified `/torrents/renameFile` method's parameters ([#13995](https://github.com/qbittorrent/qBittorrent/pull/13995))
-
-Note that this change was released in qBittorrent v4.3.3, but the WebAPI version was incorrectly set to v2.7.0 (see [#14275](https://github.com/qbittorrent/qBittorrent/pull/14275#issuecomment-766310862) for details)
-
-## API v2.8.1 ##
-- Added `ratioLimit` and `seedingTimeLimit` optional fields to `/torrents/add` ([#14519](https://github.com/qbittorrent/qBittorrent/pull/14519))
-- Added `seeding_time` field to `/torrents/info` ([#14554](https://github.com/qbittorrent/qBittorrent/pull/14554))
-
-## API v2.8.2 ##
-- Added `indexes` optional parameter to `/torrents/files` ([#14795](https://github.com/qbittorrent/qBittorrent/pull/14795))
-- Added `index` field to `/torrents/files` response ([#14795](https://github.com/qbittorrent/qBittorrent/pull/14795))
-
-## API v2.8.3 ##
-- Added `tag` optional parameter to `/torrents/info` ([#15152](https://github.com/qbittorrent/qBittorrent/pull/15152))
+## API v2.9.3 ##
+- Added `reannounce` to `/torrents/info` ([#19571](https://github.com/qbittorrent/qBittorrent/pull/19571))
 
 # General Information #
 
@@ -1296,6 +1190,7 @@ Property             | Type    | Description
 `progress`           | float   | Torrent progress (percentage/100)
 `ratio`              | float   | Torrent share ratio. Max ratio value: 9999.
 `ratio_limit`        | float   | TODO (what is different from `max_ratio`?)
+`reannounce`         | integer | Time until the next tracker reannounce
 `save_path`          | string  | Path where this torrent's data is stored
 `seeding_time`       | integer | Torrent elapsed time while complete (seconds)
 `seeding_time_limit` | integer | TODO (what is different from `max_seeding_time`?) seeding_time_limit is a per torrent setting, when Automatic Torrent Management is disabled, furthermore then max_seeding_time is set to seeding_time_limit for this torrent. If Automatic Torrent Management is enabled, the value is -2. And if max_seeding_time is unset it have a default value -1.
