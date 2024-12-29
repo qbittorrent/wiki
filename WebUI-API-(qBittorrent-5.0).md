@@ -4,6 +4,7 @@ This WebUI API documentation applies to qBittorrent v5.0+. For other WebUI API v
 
 1. [Changes](#changes)
    1. [API v2.9.3](#api-v293)
+   2. [API v2.11.3](#api-v2113)
 1. [General information](#general-information)
 1. [Authentication](#authentication)
    1. [Login](#login)
@@ -16,6 +17,8 @@ This WebUI API documentation applies to qBittorrent v5.0+. For other WebUI API v
    1. [Get application preferences](#get-application-preferences)
    1. [Set application preferences](#set-application-preferences)
    1. [Get default save path](#get-default-save-path)
+   1. [Get cookies](#get-cookies)
+   1. [Set cookies](#set-cookies)
 1. [Log](#log)
    1. [Get log](#get-log)
    1. [Get peer log](#get-peer-log)
@@ -110,6 +113,10 @@ This WebUI API documentation applies to qBittorrent v5.0+. For other WebUI API v
 
 ## API v2.9.3 ##
 - Added `reannounce` to `/torrents/info` ([#19571](https://github.com/qbittorrent/qBittorrent/pull/19571))
+
+## API v2.11.3 ##
+- Add APIs for managing cookies` ([#21340](https://github.com/qbittorrent/qBittorrent/pull/21340))
+- Remove `cookie` field from `/torrents/add` request
 
 # General Information #
 
@@ -696,6 +703,71 @@ HTTP Status Code                  | Scenario
 200                               | All scenarios
 
 The response is a string with the default save path, e.g. `C:/Users/Dayman/Downloads`.
+
+## Get cookies ##
+
+Name: `cookies`
+
+**Parameters:**
+
+None
+
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios
+
+The response is a JSON array in which each element is an entry of the log.
+
+Each element of the array has the following properties:
+
+Property         | Type    | Description
+-----------------|---------|------------
+`name`           | string  | Cookie name
+`domain`         | string  | Cookie domain
+`path`           | string  | Cookie path
+`value`          | string  | Cookie value
+`expirationDate` | integer | Seconds since epoch
+
+Example:
+
+```JSON
+[
+    {
+        "name":"Example",
+        "domain":"example.com",
+        "path":"/",
+        "value":"foo=bar"
+        "expirationDate":1507969127,
+    },
+]
+```
+
+## Set cookies ##
+
+Name: `setCookies`
+
+**Parameters:**
+
+A json array of cookies to send when downloading .torrent files.
+
+Each element of the array has the following properties:
+
+Property         | Type     | Description
+-----------------|----------|------------
+`name`           | string?  | Cookie name
+`domain`         | string?  | Cookie domain
+`path`           | string?  | Cookie path
+`value`          | string?  | Cookie value
+`expirationDate` | integer? | Seconds since epoch
+
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | Cookies were saved
+400                               | Request was not a valid json array of cookie objects
 
 # Log #
 
@@ -1741,10 +1813,6 @@ Content-Disposition: form-data; name="savepath"
 
 C:/Users/qBit/Downloads
 -----------------------------6688794727912
-Content-Disposition: form-data; name="cookie"
-
-ui=28979218048197
------------------------------6688794727912
 Content-Disposition: form-data; name="category"
 
 movies
@@ -1794,7 +1862,6 @@ Property                        | Type    | Description
 `urls`                          | string  | URLs separated with newlines
 `torrents`                      | raw     | Raw data of torrent file. `torrents` can be presented multiple times.
 `savepath` _optional_           | string  | Download folder
-`cookie` _optional_             | string  | Cookie sent to download the .torrent file
 `category` _optional_           | string  | Category for the torrent
 `tags` _optional_               | string  | Tags for the torrent, split by ','
 `skip_checking` _optional_      | string  | Skip hash checking. Possible values are `true`, `false` (default)
