@@ -5,8 +5,7 @@ on:
     branches:
       - master
 
-permissions:
-  contents: write
+permissions: {}
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
@@ -16,6 +15,8 @@ jobs:
   deploy:
     name: Deploy wiki
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout repository
