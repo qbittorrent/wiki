@@ -4,6 +4,9 @@ This is a short guide for building qBittorrent 5.0.0+ with Qt6 on Debian.
 
 # Install the dependencies
 
+*NOTE:* `Qt6 libboost libtorrent-rasterbar` on current Debian stable(bookworm) does not meet minimal requirements.
+You can switch to Debian testing(trixie) or build dependencies from source.
+
 ## Boost and other miscellaneous build dependencies
 
 You need to install these packages in order to be able to compile qBittorrent from source:
@@ -31,9 +34,6 @@ It is possible to install the `libtorrent` development package directly from the
 ```bash
 sudo apt install libtorrent-rasterbar-dev
 ```
-
-*NOTE:* `libtorrent-rasterbar` on current Debian stable(bookworm) does not meet minimal requirements.
-You can build `libtorrent-rasterbar` from source or switch to Debian testing(trixie).
 
 ## Runtime-only dependencies
 
