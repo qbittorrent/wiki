@@ -6,8 +6,8 @@ For users that run qBittorrent via Microsoft IIS as a reverse proxy some extra h
 4. Create a new site that will handle the reverse proxy requests
 5. Select the site and then open **URL Rewrite**
 6. On the right hand side, open **View Server Variables**
-7. Click **Add** and in the box that appears enter `HTTP_X-Forwarded-Host`
-8. Repeat this for `HTTP_X-Forwarded-For` and `RESPONSE_Set_Cookie`
+7. Click **Add** and in the box that appears enter `HTTP_X_Forwarded_Host`
+8. Repeat this for `HTTP_X_Forwarded_For` and `RESPONSE_Set_Cookie`
 9. Return to the rules page
 10. Open **Add Rules** and select **Reverse Proxy**
 11. Enter the server IP:Port without `http://` (for example `127.0.0.1:8080`), then click **OK**
@@ -16,8 +16,8 @@ For users that run qBittorrent via Microsoft IIS as a reverse proxy some extra h
 
     | Server variable name  | Value                     |
     | --------------------- | ------------------------- |
-    | HTTP_X-Forwarded-Host | {HTTP_HOST}:{SERVER_PORT} |
-    | HTTP_X-Forwarded-For  | {REMOTE_ADDR}             |
+    | HTTP_X_Forwarded_Host | {HTTP_HOST}               |
+    | HTTP_X_Forwarded_For  | {REMOTE_ADDR}             |
 
 14. Apply and return to the rules page
 15. Open **Add Rules** and select **Blank rule** under **Outbound rules**
@@ -35,8 +35,8 @@ The result should look similar to this in your web.config (Note: you must use th
                     <match url="qbweb/(.*)" />
                     <action type="Rewrite" url="http://127.0.0.1:8080/{R:1}" />
                     <serverVariables>
-                        <set name="HTTP_X-Forwarded-Host" value="{HTTP_HOST}:{SERVER_PORT}" />
-                        <set name="HTTP_X-Forwarded-For" value="{REMOTE_ADDR}" />
+                        <set name="HTTP_X_Forwarded_Host" value="{HTTP_HOST}" />
+                        <set name="HTTP_X_Forwarded_For" value="{REMOTE_ADDR}" />
                     </serverVariables>
                 </rule>
             </rules>
@@ -47,8 +47,6 @@ The result should look similar to this in your web.config (Note: you must use th
                 </rule>
             </outboundRules>
 ```
-
-Additionally you must untick **Enable Cross-Site Request Forgery (CSRF) protection** in qBittorrent's Web UI options for the reverse proxy to work.
 
 You can use HTTPS to access the URL via IIS and it will use HTTP to communicate with qBittorrent. There is no need for HTTPS on localhost.
 
