@@ -1207,7 +1207,7 @@ Name: `info`
 
 Parameter             | Type    | Description
 ----------------------|---------|------------
-`filter`  _optional_  | string  | Filter torrent list by state. Allowed state filters: `all`, `downloading`, `seeding`, `completed`, `paused`, `active`, `inactive`, `resumed`, `stalled`, `stalled_uploading`, `stalled_downloading`, `errored`
+`filter`  _optional_  | string  | Filter torrent list by state. Allowed state filters: `all`, `downloading`, `seeding`, `completed`, `stopped`, `active`, `inactive`, `running`, `stalled`, `stalled_uploading`, `stalled_downloading`, `errored`
 `category` _optional_ | string  | Get torrents with the given category (empty string means "without category"; no "category" parameter means "any category"). Remember to URL-encode the category name. For example, `My category` becomes `My%20category`
 `tag` _optional_ <sup>since 2.8.3</sup> | string  | Get torrents with the given tag (empty string means "without tag"; no "tag" parameter means "any tag". Remember to URL-encode the category name. For example, `My tag` becomes `My%20tag`
 `sort` _optional_     | string  | Sort torrents by given key. They can be sorted using any field of the response's JSON array (which are documented below) as the sort key.
@@ -1672,7 +1672,7 @@ Example:
 
 Requires knowing the torrent hashes. You can get it from [torrent list](#get-torrent-list).
 
-Name: `pause`
+Name: `stop`
 
 **Parameters:**
 
@@ -1683,7 +1683,7 @@ Parameter   | Type     | Description
 Example:
 
 ```http
-/api/v2/torrents/pause?hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|54eddd830a5b58480a6143d616a97e3a6c23c439
+/api/v2/torrents/stop?hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|54eddd830a5b58480a6143d616a97e3a6c23c439
 ```
 
 **Returns:**
@@ -1696,7 +1696,7 @@ HTTP Status Code                  | Scenario
 
 Requires knowing the torrent hashes. You can get it from [torrent list](#get-torrent-list).
 
-Name: `resume`
+Name: `start`
 
 **Parameters:**
 
@@ -1707,7 +1707,7 @@ Parameter   | Type     | Description
 Example:
 
 ```http
-/api/v2/torrents/resume?hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|54eddd830a5b58480a6143d616a97e3a6c23c439
+/api/v2/torrents/start?hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|54eddd830a5b58480a6143d616a97e3a6c23c439
 ```
 
 **Returns:**
