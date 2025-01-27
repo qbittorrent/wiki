@@ -343,7 +343,7 @@ content-length: length
 ```
 where
 
-`dl_info` - (translated string) contains current global downalod speed and global amount of data downaloded during this session<br/>
+`dl_info` - (translated string) contains current global download speed and global amount of data downloaded during this session<br/>
 `up_info` - (translated string) contains current global upload speed and global amount of data uploaded during this session<br/>
 
 ### Get qBittorrent preferences ###

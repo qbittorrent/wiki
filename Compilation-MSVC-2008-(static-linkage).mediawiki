@@ -75,7 +75,7 @@ Let's assume that the working directory for our compilation will be '''C:\qBitto
 * Navigate to the Libtorrent source folder. eg ''cd C:\qBittorrent\libtorrent-rasterbar-0.16.9''
 * Copy the b2.exe from the Boost directory to the Libtorrent directory
  copy ..\boost_1_53_0\b2.exe b2.exe
-* Compile a static version of Libtorrent. Issue the following command where N is the number of CPU cores you have or how many threads you want b2 to use when compiling, adjust the value of BOOST_ROOT to the Boost source directory(absolute path) and adjuct the value of the "include=" and "library-path=" keywords:
+* Compile a static version of Libtorrent. Issue the following command where N is the number of CPU cores you have or how many threads you want b2 to use when compiling, adjust the value of BOOST_ROOT to the Boost source directory(absolute path) and adjust the value of the "include=" and "library-path=" keywords:
  b2 -q --without-python --toolset=msvc-9.0 variant=release link=static runtime-link=static encryption=openssl logging=none geoip=static dht-support=on boost=source character-set=unicode boost-link=static -sBOOST_ROOT="C:\qBittorrent\boost_1_53_0" include="C:\QBITTORRENT\install\include" library-path="C:\QBITTORRENT\install\lib" -j N
 * If you want to continue with the lazy batch file approach here's the batch file you need to use (still assuming you haven't left the VS2008 Command prompt) -- copy and paste it to e.g. 'mkl.bat' and place it in your lib* folder and then run it:
  copy %BOOST_ROOT%\b2.exe
