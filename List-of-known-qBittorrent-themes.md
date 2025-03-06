@@ -8,6 +8,10 @@ See [How to use custom UI themes](https://github.com/qbittorrent/qBittorrent/wik
 
 ---
 
+- https://github.com/Zabooby/qbittorrent-config
+
+    A theme that follows the Nord colour scheme.
+
 - https://github.com/FoxInFlame/legacy-qBittorrent
 
     A compact theme with the look of version 4.2.1.
