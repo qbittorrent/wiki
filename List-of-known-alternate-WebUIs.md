@@ -37,6 +37,10 @@ If you know of more, feel free to add a link to the repository along with a shor
 
     A modern web UI for various torrent clients with a Node.js backend and React frontend. Flood supports touch devices, content previews, filesystem browsing and multi-user (with different clients).
 
+- https://github.com/Carve/qbittorrent-webui-cjratliff.com
+
+    A sleek and modern dark theme with pretty colors for stats.
+
 ---
 ### Boilerplates
 
