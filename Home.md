@@ -48,8 +48,9 @@ The wiki source code is hosted at https://github.com/qbittorrent/wiki and is acc
 
 | State                                                                                               | Version                     |
 | --------------------------------------------------------------------------------------------------- | --------------------------- |
-| [Current](<https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)>)            | qBittorrent ≥ v4.1          |
-| [Previous](<https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-v3.2.0-v4.0.4)>) | qBittorrent v3.2.0 - v4.0.x |
+| [Current](<https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)>)            | qBittorrent ≥ v5.0          |
+| [Previous](<https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)>)           | qBittorrent v4.1.0 - v4.6.x |
+| [Obsolete](<https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-v3.2.0-v4.0.4)>) | qBittorrent v3.2.0 - v4.0.x |
 | [Obsolete](<https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-v3.1.x)>)        | qBittorrent < v3.2.0        |
 
 ### WebAPI clients
