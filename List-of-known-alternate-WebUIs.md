@@ -41,6 +41,10 @@ If you know of more, feel free to add a link to the repository along with a shor
 
     A sleek and modern dark theme with pretty colors for stats.
 
+- https://github.com/lantean-code/qbtmud
+
+    qbtmud is a drop-in replacement for qBittorrent's default WebUI, implementing all of its functionality with a modern and user-friendly interface.
+
 ---
 ### Boilerplates
 
