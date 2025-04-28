@@ -23,7 +23,7 @@ If you know of more, feel free to add a link to the repository along with a shor
 
 - https://github.com/bill-ahmed/qbit-WebUI
 
-    A minimalist WebUI made using Typescript.
+    A minimalist WebUI made using Typescript. Last updated 2022-10-15
 
 - https://github.com/ntoporcov/iQbit
 
@@ -31,7 +31,7 @@ If you know of more, feel free to add a link to the repository along with a shor
 
 - https://github.com/crash0verride11/DarkLight-qBittorent-WebUI
 
-    A toggle-able dark theme for the default WebUI.
+    A toggle-able dark theme for the default WebUI. Archived 2024
 
 - https://flood.js.org
 
