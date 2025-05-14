@@ -16,14 +16,14 @@ repos:
       name: Check trailing whitespaces
 
   - repo: https://github.com/codespell-project/codespell.git
-    rev: v2.4.0
+    rev: v2.4.1
     hooks:
     - id: codespell
       name: Check spelling (codespell)
       args: ["--ignore-words-list", ""]
 
   - repo: https://github.com/crate-ci/typos.git
-    rev: v1.29.4
+    rev: v1.32.0
     hooks:
     - id: typos
       name: Check spelling (typos)
