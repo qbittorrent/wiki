@@ -1923,7 +1923,7 @@ HTTP Status Code                  | Scenario
 
 ### Notes on boundaries ###
 
-Also, be aware that multipart/form-data boundaries in the POST body are preceeded by two hyphens, and the end of the body is closed by two hyphens added to the end of the boundary string.
+Also, be aware that multipart/form-data boundaries in the POST body are preceded by two hyphens, and the end of the body is closed by two hyphens added to the end of the boundary string.
 For example, if you use a random string and your header has:
 
 ```

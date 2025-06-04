@@ -9,3 +9,4 @@ mak = "mak"
 UPnP = "UPnP"
 
 [default.extend-words]
+AFE = "AFE"
