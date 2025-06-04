@@ -23,7 +23,7 @@ repos:
       args: ["--ignore-words-list", ""]
 
   - repo: https://github.com/crate-ci/typos.git
-    rev: v1.32.0
+    rev: v1.33.1
     hooks:
     - id: typos
       name: Check spelling (typos)
