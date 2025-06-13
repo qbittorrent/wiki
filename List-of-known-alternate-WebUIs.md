@@ -9,6 +9,10 @@ If you know of more, feel free to add a link to the repository along with a shor
 ---
 ### Custom WebUI Projects
 
+- https://github.com/dracula/qbittorrent
+
+    Dracula Theme for QBittorrent.
+
 - https://github.com/CzBiX/qb-web
 
     A custom WebUI written in Typescript and VueJS with extra features, such as RSS and dark mode.
@@ -23,7 +27,7 @@ If you know of more, feel free to add a link to the repository along with a shor
 
 - https://github.com/bill-ahmed/qbit-WebUI
 
-    A minimalist WebUI made using Typescript. Last updated 2022-10-15
+    A minimalist WebUI made using Typescript.
 
 - https://github.com/ntoporcov/iQbit
 
@@ -53,4 +57,4 @@ This is a list of boilerplate projects for starting to develop a new WebUI
 
 - https://github.com/ntoporcov/qbittorrent-webui-react-boilerplate
 
-    A barebones CRA React project modified for WebUI .
+    A barebones CRA React project modified for WebUI.
