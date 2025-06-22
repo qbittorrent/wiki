@@ -6,7 +6,7 @@ You can find the files at: https://github.com/qbittorrent/qBittorrent/tree/maste
 Feel free to submit a Pull Request (PR) for the changes you made.
 
 # Translating qBittorrent
-We are using Transifex to localize qBittorrent. For the localization progress, visit the [project page](https://www.transifex.com/sledgehammer999/qbittorrent/).
+We are using Transifex to localize qBittorrent. For the localization progress, visit the [project page](https://explore.transifex.com/sledgehammer999/qbittorrent/).
 
 If you want to help, sign up for free, select the language you want to translate and request to join the translation team.
 Once you are accepted as a member of the team, you can proceed with the translation.
