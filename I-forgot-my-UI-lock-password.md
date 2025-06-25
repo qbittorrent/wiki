@@ -3,9 +3,9 @@ Don't worry, you can recover from this.
 
 1. Exit or kill qBittorrent process.
 
-2. Open the preference file with a text editor.[[Frequently-Asked-Questions#where-does-qbittorrent-save-its-settings|It is located here]]<br/>
+2. Open the preference file with a text editor. [It is located here](https://github.com/qbittorrent/qBittorrent/wiki/Frequently-Asked-Questions#where-does-qbittorrent-save-its-settings)<br/>
 
-3. Remove the following lines:
+4. Remove the following lines:
     ```ini
     [Locking]
     password=<encrypted_password>         # this only appear on qBittorrent version < 4.2.0
@@ -13,9 +13,9 @@ Don't worry, you can recover from this.
     locked=true
     ```
 
-4. Save the file
+5. Save the file
 
-5. Start qBittorrent again
+6. Start qBittorrent again
 
 
 ## Before qBittorrent v3.3.6 on macOS
