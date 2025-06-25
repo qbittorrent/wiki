@@ -3,13 +3,7 @@ Don't worry, you can recover from this.
 
 1. Exit or kill qBittorrent process.
 
-2. Open the preference file with a text editor.<br/>
-Windows<br/>
-`%APPDATA%\qBittorrent\qbittorrent.ini` = `C:\Users\<username>\AppData\Roaming\qBittorrent\qbittorrent.ini`<br/>
-Linux<br/>
-`~/.config/qBittorrent/qBittorrent.conf`<br/>
-macOS<br/>
-`~/.config/qBittorrent/qbittorrent.ini`<br/>
+2. Open the preference file with a text editor.[[Frequently-Asked-Questions#where-does-qbittorrent-save-its-settings|It is located here]]<br/>
 
 3. Remove the following lines:
     ```ini
