@@ -119,6 +119,8 @@ ExecStart=/usr/bin/qbittorrent-nox
 # uncomment this to use "Network interface" and/or "Optional IP address to bind to" options
 # without this binding will fail and qBittorrent's traffic will go through the default route
 # AmbientCapabilities=CAP_NET_RAW
+# uncomment this if your qBittorrent instance is being killed by systemd before it can clean up (like announcing to trackers stop)
+# TimeoutStopSec=1800
 
 [Install]
 WantedBy=multi-user.target
