@@ -85,20 +85,16 @@ You can now stop impersonating the qbittorent user by executing the `exit` comma
 If you are not using a very ancient version of qBittorrent, usually a service file will be already installed and it should be located at `/usr/lib/systemd/system/qbittorrent-nox@.service` \
 In case the file isn't present on your system, you can create one by copying the contents from here: https://github.com/qbittorrent/qBittorrent/blob/master/dist/unix/systemd/qbittorrent-nox%40.service.in.
 Save this file to `/etc/systemd/system/qbittorrent-nox.service` and run `sudo systemctl daemon-reload` to make the service manager aware of it.
-- To start the service run: `sudo systemctl start qbittorrent-nox@qbtuser`
-- To let the service start up on boot: `sudo systemctl enable qbittorrent-nox@qbtuser`
-
-Then run `sudo systemctl daemon-reload` to update the service manager.
 
 The qBittorrent service is now ready to be used. To start the service on system boot, refer to the next section.
 
 ### Controlling the service
 
-- Start the service: `sudo systemctl start qbittorrent`
-- Check service status: `systemctl status qbittorrent`
-- Stop the service: `sudo systemctl stop qbittorrent`
-- Enable it to start up on boot: `sudo systemctl enable qbittorrent`
-- To disable: `sudo systemctl disable qbittorrent`.
+- Start the service: `sudo systemctl start qbittorrent-nox`
+- Check service status: `systemctl status qbittorrent-nox`
+- Stop the service: `sudo systemctl stop qbittorrent-nox`
+- Enable it to start up on boot: `sudo systemctl enable qbittorrent-nox`
+- To disable: `sudo systemctl disable qbittorrent-nox`.
 It simply disables automatic startup of the qBittorrent service.
 
 Refer to the `systemd` documentation to know of more operations you can do on services.
@@ -110,7 +106,7 @@ qBittorrent will still log most interesting stuff to its usual logging directory
 However, some output can probably still be viewed with:
 
 ```sh
-sudo journalctl -u qbittorrent.service
+sudo journalctl -u qbittorrent-nox.service
 ```
 
 For more information on how to use and customize `systemd` logging, refer to its documentation.
@@ -129,7 +125,7 @@ UUID=aa-bb-cc /media/volume ext4 defaults,nofail 0 0
 
 The `nofail` option prevents the system from stopping the boot process in case the drive can't mount on startup.
 
-You should edit `/etc/systemd/system/qbittorrent.service` to add your volume's systemd name (for example: `media-volume.mount`) to the line `After=network-online.target` and add the line `BindsTo=media-volume.mount` to bind the qbittorrent service to the mount point that you want it to write the files.
+You should edit `/etc/systemd/system/qbittorrent-nox.service` to add your volume's systemd name (for example: `media-volume.mount`) to the line `After=network-online.target` and add the line `BindsTo=media-volume.mount` to bind the qbittorrent service to the mount point that you want it to write the files.
 Your service file should look like this:
 
 ```ini
