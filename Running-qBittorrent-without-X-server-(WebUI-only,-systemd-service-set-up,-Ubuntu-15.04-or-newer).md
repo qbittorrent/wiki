@@ -83,48 +83,10 @@ You can now stop impersonating the qbittorent user by executing the `exit` comma
 ## Setup the `systemd` service
 
 If you are not using a very ancient version of qBittorrent, usually a service file will be already installed and it should be located at `/usr/lib/systemd/system/qbittorrent-nox@.service` \
-In case the file isn't present on your system, you can create one by copying the contents from here: https://github.com/qbittorrent/qBittorrent/blob/master/dist/unix/systemd/qbittorrent-nox%40.service.in. Save it and run `sudo systemctl daemon-reload` to make the service manager aware of it.
+In case the file isn't present on your system, you can create one by copying the contents from here: https://github.com/qbittorrent/qBittorrent/blob/master/dist/unix/systemd/qbittorrent-nox%40.service.in.
+Save this file to `/etc/systemd/system/qbittorrent-nox.service` and run `sudo systemctl daemon-reload` to make the service manager aware of it.
 - To start the service run: `sudo systemctl start qbittorrent-nox@qbtuser`
 - To let the service start up on boot: `sudo systemctl enable qbittorrent-nox@qbtuser`
-
-***The rest of this section is outdated and it remains here as historical record.***
-
-On Ubuntu, system-wide `systemd` service definition files are located under `/etc/systemd/system/` (for other distros it might be a different directory), so we'll create the service definition file for `qbittorrent-nox` there.
-
-Create a new file, `/etc/systemd/system/qbittorrent.service`, and edit it with the appropriate permissions and text editor of your choice, for example:
-
-```sh
-sudoedit /etc/systemd/system/qbittorrent.service
-```
-
-Save the file with the following contents or similar.
-You may modify them as-needed to better suit your needs:
-
-```ini
-[Unit]
-Description=qBittorrent-nox service
-Documentation=man:qbittorrent-nox(1)
-Wants=network-online.target
-After=network-online.target nss-lookup.target
-
-[Service]
-# if you have systemd < 240 (Ubuntu 18.10 and earlier, for example), you probably want to use Type=simple instead
-Type=exec
-# change user as needed
-User=qbtuser
-# The -d flag should not be used in this setup
-ExecStart=/usr/bin/qbittorrent-nox
-# uncomment this for versions of qBittorrent < 4.2.0 to set the maximum number of open files to unlimited
-#LimitNOFILE=infinity
-# uncomment this to use "Network interface" and/or "Optional IP address to bind to" options
-# without this binding will fail and qBittorrent's traffic will go through the default route
-# AmbientCapabilities=CAP_NET_RAW
-# uncomment this if your qBittorrent instance is being killed by systemd before it can clean up (like announcing to trackers stop)
-# TimeoutStopSec=1800
-
-[Install]
-WantedBy=multi-user.target
-```
 
 Then run `sudo systemctl daemon-reload` to update the service manager.
 
