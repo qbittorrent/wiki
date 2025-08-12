@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks.git
-    rev: v5.0.0
+    rev: v6.0.0
     hooks:
     - id: fix-byte-order-marker
       name: Check file encoding (UTF-8 without BOM)
@@ -23,7 +23,7 @@ repos:
       args: ["--ignore-words-list", ""]
 
   - repo: https://github.com/crate-ci/typos.git
-    rev: v1.33.1
+    rev: v1.35.4
     hooks:
     - id: typos
       name: Check spelling (typos)
