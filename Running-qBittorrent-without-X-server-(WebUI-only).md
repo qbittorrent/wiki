@@ -20,7 +20,7 @@ You probably want to control the daemon, like setting it to start on system boot
 
 # Settings and logs
 
-Settings can be customized via the WebUI, WebAPI, or, if needed, manually editing the config file when qBitorrent is not running (`~/.config/qBittorrent/qBittorrent.conf).
+Settings can be customized via the WebUI, WebAPI, or, if needed, manually editing the config file when qBitorrent is not running ([It is located here](https://github.com/qbittorrent/qBittorrent/wiki/Frequently-Asked-Questions#where-does-qbittorrent-save-its-settings)).
 
 The logs as well as other program data are located in `~/.local/share/data/qBittorrent`.
 

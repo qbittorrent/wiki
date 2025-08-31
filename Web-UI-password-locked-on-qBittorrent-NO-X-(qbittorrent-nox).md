@@ -4,7 +4,7 @@ If your user name and password is locked out of the WebUI and the default user n
 
 2. Exit (or kill) qBittorrent process.
 
-3. Navigate to `~/.config/qBittorrent/` (or `/<qbittorrent user name>/.config/qBittorrent/`) and edit the configuration file `qBittorrent.conf`.
+3. Navigate to the [location of the configuration file](https://github.com/qbittorrent/qBittorrent/wiki/Frequently-Asked-Questions#where-does-qbittorrent-save-its-settings) and edit `qBittorrent.conf`.
     * If you're using qbittorrent version ≥ 4.2.0, locate the line starting with `WebUI\Password_PBKDF2` and remove the entire line.
     * If you're using qbittorrent version < 4.2.0, locate the line starting with `WebUI\Password_ha1` and remove the entire line.
 
