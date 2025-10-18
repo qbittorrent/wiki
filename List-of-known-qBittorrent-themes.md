@@ -24,9 +24,11 @@ See [How to use custom UI themes](https://github.com/qbittorrent/qBittorrent/wik
 
     A fully dark theme for qBittorrent, just simple black and white, nothing else.
 
-- https://github.com/MahdiMirzade/Dotfiles/tree/main/.config/qbittorrent
+- https://github.com/MahdiMirzadeh/qbittorrent
 
-    A simple dark theme, with a similar color palette as all my other configurations. (i3, kitty, qutebrowser, ...)
+    A bunch of different themes for both the Qt Client and the webui using generated from single theme.json files.
+    
+    Current Themes: solarized-light, gruvbox-light, solarized-dark, gruvbox-dark, dracula, dark
 
 - https://github.com/dracula/qbittorrent
 
