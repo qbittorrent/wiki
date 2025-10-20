@@ -26,7 +26,7 @@ See [How to use custom UI themes](https://github.com/qbittorrent/qBittorrent/wik
 
 - https://github.com/MahdiMirzadeh/qbittorrent
 
-    A bunch of different themes for both the Qt Client and the webui using generated from single theme.json files.
+    A bunch of different themes for both the Qt GUI Client and the WebUI. Both variations are generated from a single theme.json file.
     
     Current Themes: solarized-light, gruvbox-light, solarized-dark, gruvbox-dark, dracula, dark
 
