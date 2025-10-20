@@ -18,7 +18,7 @@ The simple answer is that "priority" has no significance for payloads, or part t
 "Priority" is there to arrange in numerical order the requests for pieces that '''your''' client makes to other peer nodes in the swarm for pieces that are still required by your client to complete the selected payload. It has no relevance to other peers as it is purely a 'local' setting.<br />
 Because of this it is excluded from the context menu that is accessed via a 'right click' or 'menu' button on a keyboard.
 
-== Will private torrent be affected by DHT and PeX in qBittorrent? ==
+== Will private torrents be affected by DHT, PeX, or LSD in qBittorrent? ==
 You can enable all 3 of those options and your private torrents will stay private. You can verify this by viewing the trackers tab on a private torrent and the status for DHT/PEX/LSD will be "Disabled" and the message column will say "This torrent is private".
 
 == I wrote a patch for qBittorrent, to whom can I send it? ==
@@ -42,7 +42,7 @@ If not, please file a request at your GNU/Linux distribution's issue tracker.
 
 == Is it legal to use qBittorrent? ==
 qBittorrent is a peer to peer (P2P) file sharing software.<br />
-Although the software is '''perfectly legal''', it may be illegal to download restricted content with this software, depending on the law in your country.
+Although the software is '''perfectly legal''', it may be illegal to download restricted content with this software, depending on the laws in your country.
 
 == Why use qBittorrent instead of another client? ==
 A lot of other BitTorrent clients exist but qBittorrent has several advantages:
@@ -50,7 +50,7 @@ A lot of other BitTorrent clients exist but qBittorrent has several advantages:
 * It is the closest open-source equivalent to the extremely popular (and Windows only) BitTorrent client: [https://www.utorrent.com µTorrent].
 * Its development team is very active and friendly.
 * It is stable and it has a low footprint (generally, 20-60 MiB of RAM used), whilst providing all the features you may need.
-* It uses the high-tech [https://libtorrent.org/ libtorrent-rasterbar] library, which means greater download and upload speed as well as excellent support of the latest features of the BitTorrent protocol.
+* It uses the high-tech [https://libtorrent.org/ libtorrent-rasterbar] library, which means greater download and upload speeds as well as excellent support of the latest features of the BitTorrent protocol.
 * It is easy to use and all of its features are well documented.
 * It is an international program, supporting Unicode and containing translations into more than 70 languages.
 
@@ -106,14 +106,13 @@ You need to delete the qBittorrent .plist files from  ~/Library/Preferences:
 * <code>~/Library/Preferences/org.qbittorrent.*</code>
 * <code>~/Library/Preferences/com.qbittorrent.*</code>
 
-And then do the following to reset the plist cache:
- $ killall -u yourname cfprefsd
-Where <code>yourname</code> is your OS X user name.
+And then do the following to reset the plist cache by killing the core foundation preferences daemon and let it be restarted by launchd::
+ $ killall -u `/usr/bin/id -un` cfprefsd
 
 == I configured qBittorrent to not download some files in a torrent but they still appear on my hard disk, why is that? ==
 As you may know, a torrent is split into pieces of equal size that do not take files into consideration.<br />
 As a consequence, a piece can contain information relative to more than one file and qBittorrent only operates at piece level.<br />
-Because of this, if two files are adjacent and you choose to download only one of them, it is likely that the filtered one will be partially downloaded and thus appear on the hard-disk.
+Because of this, if two files are adjacent and you choose to download only one of them, it is likely that the filtered one will be partially downloaded and thus appear on the hard disk.
 
 == Low performance despite high or 100% disk usage on Windows (also with external drives) ==
 Try disabling MSI mode for that drive see this [https://answers.microsoft.com/en-us/windows/forum/all/windows-10-task-manager-reports-100-disk/c2ca1d67-00c6-4bb3-9f86-78932051421e Microsoft forum page answer].<br />
@@ -132,18 +131,18 @@ Here is the list (github doesn't allow changing the text color):
 
 Light theme:
 * Forest Green (rgb(34, 139, 34)) for torrents in downloading, forced downloading or downloading metadata status
-* Black for torrents in allocating or stalled(up and down) status
+* Black for torrents in allocating or stalled (up and down) status
 * Royal Blue (rgb(65, 105, 225)) for torrents in uploading or forced uploading status
-* Salmon (rgb(250, 128, 114)) for torrents in paused(downloading) status
+* Salmon (rgb(250, 128, 114)) for torrents in paused (downloading) status
 * Dark Blue (rgb(0, 0, 139)) for torrents in completed (paused seeding) status
 * Red (rgb(255, 0, 0)) for torrents in error or missing files status
 * Teal (rgb(0, 128, 128)) for torrents in queued, checking, queued for checking or checking resume data status
 
 Dark theme:
 * Lime Green (rgb(50, 205, 50)) for torrents in downloading, forced downloading or downloading metadata status
-* Gray 80 (rgb(204, 204, 204)) for torrents in allocating or stalled(up and down) status
+* Gray 80 (rgb(204, 204, 204)) for torrents in allocating or stalled (up and down) status
 * Steel Blue 1 (rgb(99, 184, 255)) for torrents in uploading or forced uploading status
-* Salmon (rgb(250, 128, 114)) for torrents in paused(downloading) status
+* Salmon (rgb(250, 128, 114)) for torrents in paused (downloading) status
 * Steel Blue 3 (rgb(79, 148, 205)) for torrents in completed (paused seeding) status
 * Red (rgb(255, 0, 0)) for torrents in error or missing files status
 * Cyan 3 (rgb(0, 205, 205)) for torrents in queued, checking, queued for checking or checking resume data status
@@ -152,7 +151,7 @@ Older versions:
 * Grey color means inactive (include download, upload and check)
 * Green color means active download
 * Orange color means active upload
-* Red color means paused or error.
+* Red color means paused or error
 
 == How do I import my torrents from another BitTorrent client? ==
 Most users want to keep the torrents they are downloading or seeding when switching to qBittorrent from another BitTorrent client. This is of course possible and it is quite simple to achieve.<br />
@@ -166,7 +165,7 @@ Here is how you should proceed:
 * Edit the download path in the torrent addition dialog and choose the path where the original torrents were being downloaded/seeded.
 * For the torrents that are complete, you can select the ''Skip file checking and start seeding immediately'' option in the torrent addition dialog in order to save time and CPU. Basically, qBittorrent will trust that the local files are not corrupt and will start seeding them without rechecking all the files.
 
-== What does the settings in the Options → Advanced menu do? ==
+== What do the settings in the Options → Advanced menu do? ==
 We have written a full explanation describing the advanced options in the guide <a href="https://github.com/qbittorrent/qBittorrent/wiki/Explanation-of-Options-in-qBittorrent#Advanced">here</a>.
 
 == Can I run qBittorrent on a remote computer? Without X server? ==
@@ -233,7 +232,7 @@ Change your regional formatting settings:
 
 [[https://user-images.githubusercontent.com/66999033/85346082-0a415200-b4fd-11ea-8eb5-419cf9af81bd.PNG|Windows regional settings]]
 
-== How do I do IP Filtering (eMule and PeerGuardian compatible) in qbittorrent in GNU/Linux? ==
+== How do I do IP Filtering (eMule and PeerGuardian compatible) in qBittorrent in GNU/Linux? ==
 In most GNU/Linux distributions, you can go to '''Tools → Options → Connection''' then click on IP Filtering.
 
 As far as adding the ipfilter file is concerned, see http://forums.debian.net/viewtopic.php?f=16&t=113690 for a potential way.
@@ -277,7 +276,7 @@ A Dutch step by step tutorial can be found [https://www.duken.nl/forums/handleid
 
 See [https://web.archive.org/web/20090320211618/http://btfaq.com:80/serve/cache/23.html this page]  for definitions of BitTorrent terms.
 
-== Hotkeys ==
+== What hotkeys/keyboard shortcuts are available? ==
     Ctrl+O = Add Torrent File
     Ctrl+Shift+O = Add Torrent Link
 
