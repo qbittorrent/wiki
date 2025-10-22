@@ -49,6 +49,11 @@ If you know of more, feel free to add a link to the repository along with a shor
 
     qbtmud is a drop-in replacement for qBittorrent's default WebUI, implementing all of its functionality with a modern and user-friendly interface.
 
+- https://github.com/MahdiMirzadeh/qbittorrent
+
+    A bunch of different themes for both the Qt GUI Client and the WebUI. Both variations are generated from a single theme.json file.
+    Current Themes: solarized-light, gruvbox-light, solarized-dark, gruvbox-dark, dracula, dark
+
 ---
 ### Boilerplates
 
