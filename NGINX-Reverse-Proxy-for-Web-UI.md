@@ -3,8 +3,17 @@ It is assumed that your WebUI is configured to be accessible at `http://127.0.0.
 Then, in the NGINX configuration used to serve `mywebsite.com`, your `location /qbt/` stanza should have the following settings:
 
 ```nginx
-location /qbt/ {
+# Redirect to link with trailing slash, to allow correct relative path resolution
+location = /qbt {
+    return 301 /qbt/;
+}
+
+location ~^/qbt/ {
+    # Remove prefix from request path before proxing to qBittorent
+    rewrite            /qbt(.*) $1 break;
     proxy_pass         http://127.0.0.1:30000/;
+    # Rewrite redirect responses to include the prefix
+    proxy_redirect     /qbt/;
     proxy_http_version 1.1;
 
     # headers recognized by qBittorrent
