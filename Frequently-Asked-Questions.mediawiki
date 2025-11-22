@@ -307,3 +307,6 @@ See [https://web.archive.org/web/20090320211618/http://btfaq.com:80/serve/cache/
     Ctrl+L = Lock qBittorrent
     Ctrl+Q = Exit qBittorrent
     Ctrl+M = Minimize (macOS only)
+
+== What does the popularity metric mean? ==
+The popularity metric expresses the popularity of a torrent based on the Ratio / Time Active (in months). See [https://github.com/qbittorrent/qBittorrent/pull/20180 #20180] for additional discussion.
