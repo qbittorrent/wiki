@@ -47,7 +47,7 @@ sudo usermod -s /bin/bash qbtuser
 
 Before we set up `qbittorrent-nox` to run as a background service, it's advisable to run it once so that we can get some configuration out of the way such as the legal disclaimer.
 
-First, switch to the user that will run qbittorent:
+First, switch to the user that will run qbittorrent:
 
 ```sh
 sudo su qbtuser
@@ -78,7 +78,7 @@ Quit the running `qbittorrent-nox` process by pressing <kbd>Ctrl</kbd>-<kbd>c</k
 Exiting cleanly
 ```
 
-You can now stop impersonating the qbittorent user by executing the `exit` command or simply pressing `Ctrl-d`.
+You can now stop impersonating the qbittorrent user by executing the `exit` command or simply pressing `Ctrl-d`.
 
 ## Setup the `systemd` service
 

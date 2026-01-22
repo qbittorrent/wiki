@@ -210,7 +210,7 @@ So, you went so far and the end is near: only the last step is left - to build q
 
 ```bash
 # it is assumed that qBittorrent repo was cloned
-# replace 'qBittorent' with your folder name containing qBittorent sources
+# replace 'qBittorrent' with your folder name containing qBittorrent sources
 cmake -S qBittorrent -B build-qbittorrent \
       -D CMAKE_VERBOSE_MAKEFILE=ON \
       -D CMAKE_PREFIX_PATH="$HOME/qbt/src/boost_1_76_0;$HOME/qbt/root" \

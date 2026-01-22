@@ -382,7 +382,7 @@ where
 `mail_notification_username` - username for smtp authentication<br/>
 `mail_notification_password` - password for smtp authentication<br/>
 `autorun_enabled` - true if external program should be run after torrent has finished downloading<br/>
-`autorun_program` - program path/name/arguments to run if `autorun_enabled` is enabled; path is separated by slashes; you can use `%f` and `%n` arguments, which will be expanded by qBittorent as path_to_torrent_file and torrent_name (from the GUI; not the .torrent file name) respectively<br/>
+`autorun_program` - program path/name/arguments to run if `autorun_enabled` is enabled; path is separated by slashes; you can use `%f` and `%n` arguments, which will be expanded by qBittorrent as path_to_torrent_file and torrent_name (from the GUI; not the .torrent file name) respectively<br/>
 `preallocate_all` - true if file preallocation should take place, otherwise sparse files are used<br/>
 `queueing_enabled` - true if torrent queuing is enabled<br/>
 `max_active_downloads` - maximum number of active simultaneous downloads<br/>
@@ -397,8 +397,8 @@ where
 `max_connec` - maximum global number of simultaneous connections<br/>
 `max_connec_per_torrent` - maximum number of simultaneous connections per torrent<br/>
 `max_uploads_per_torrent` - maximum number of upload slots per torrent<br/>
-`enable_utp` - true if uTP protocol should be enabled; this option is only available in qBittorent built against libtorrent version 0.16.X and higher<br/>
-`limit_utp_rate` - true if `[du]l_limit` should be applied to uTP connections; this option is only available in qBittorent built against libtorrent version 0.16.X and higher<br/>
+`enable_utp` - true if uTP protocol should be enabled; this option is only available in qBittorrent built against libtorrent version 0.16.X and higher<br/>
+`limit_utp_rate` - true if `[du]l_limit` should be applied to uTP connections; this option is only available in qBittorrent built against libtorrent version 0.16.X and higher<br/>
 `limit_tcp_overhead` - true if `[du]l_limit` should be applied to estimated TCP overhead (service data: e.g. packet headers)<br/>
 `alt_dl_limit` - alternative global download speed limit in KiB/s<br/>
 `alt_up_limit` - alternative global upload speed limit in KiB/s<br/>
@@ -433,7 +433,7 @@ where
 
     First options allows you to use both encrypted and unencrypted connections (this is the default); other options are mutually exclusive: e.g. by forcing encryption on you won't be able to use unencrypted connections and vice versa.
 
-`anonymous_mode` - if true anonymous mode will be enabled; read more [here](Anonymous-Mode); this option is only available in qBittorent built against libtorrent version 0.16.X and higher<br/>
+`anonymous_mode` - if true anonymous mode will be enabled; read more [here](Anonymous-Mode); this option is only available in qBittorrent built against libtorrent version 0.16.X and higher<br/>
 `proxy_type` - possible values:<br/>
 
   1. `-1` - proxy is disabled
@@ -445,7 +445,7 @@ where
 
 `proxy_ip` - proxy IP address or domain name<br/>
 `proxy_port` - proxy port<br/>
-`proxy_peer_connections` - true if peer and web seed connections should be proxified; this option will have any effect only in qBittorent built against libtorrent version 0.16.X and higher<br/>
+`proxy_peer_connections` - true if peer and web seed connections should be proxified; this option will have any effect only in qBittorrent built against libtorrent version 0.16.X and higher<br/>
 `proxy_auth_enabled` - true proxy requires authentication; doesn't apply to SOCKS4 proxies<br/>
 `proxy_username` - username for proxy authentication<br/>
 `proxy_password` - password for proxy authentication<br/>
@@ -1034,10 +1034,10 @@ For a list of possible preference options see [Get qBittorrent preferences](#pre
 
 ### Version 3.0.8 bugs ###
 
-The following WebUI-related bugs exist in qBittorent v3.0.8 and lower:
+The following WebUI-related bugs exist in qBittorrent v3.0.8 and lower:
 
 1. JSON generation bugs
   * `'` and `&` (apostrophe and ampersand) characters are escaped by backslash `\`
 1. JSON parsing bugs
-  * When [setting qBittorent preferences](#setpref) JSON values, containing `:` semicolons will be disregarded; this mostly affects Windows users, whose paths start with `DiskName:\`
-  * When [setting qBittorent preferences](#setpref) JSON bool lists (e.g. `"download_in_scan_dirs":[false,true]`) will be treated as all bool values in the list are `false`, this doesn't affect bool values outside JSON lists
+  * When [setting qBittorrent preferences](#setpref) JSON values, containing `:` semicolons will be disregarded; this mostly affects Windows users, whose paths start with `DiskName:\`
+  * When [setting qBittorrent preferences](#setpref) JSON bool lists (e.g. `"download_in_scan_dirs":[false,true]`) will be treated as all bool values in the list are `false`, this doesn't affect bool values outside JSON lists

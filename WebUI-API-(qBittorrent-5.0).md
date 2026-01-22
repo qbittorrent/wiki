@@ -297,7 +297,7 @@ Property                                 | Type    | Description
 `mail_notification_username`             | string  | Username for smtp authentication
 `mail_notification_password`             | string  | Password for smtp authentication
 `autorun_enabled`                        | bool    | True if external program should be run after torrent has finished downloading
-`autorun_program`                        | string  | Program path/name/arguments to run if `autorun_enabled` is enabled; path is separated by slashes; you can use `%f` and `%n` arguments, which will be expanded by qBittorent as path_to_torrent_file and torrent_name (from the GUI; not the .torrent file name) respectively
+`autorun_program`                        | string  | Program path/name/arguments to run if `autorun_enabled` is enabled; path is separated by slashes; you can use `%f` and `%n` arguments, which will be expanded by qBittorrent as path_to_torrent_file and torrent_name (from the GUI; not the .torrent file name) respectively
 `queueing_enabled`                       | bool    | True if torrent queuing is enabled
 `max_active_downloads`                   | integer | Maximum number of active simultaneous downloads
 `max_active_torrents`                    | integer | Maximum number of active simultaneous downloads and uploads
@@ -321,7 +321,7 @@ Property                                 | Type    | Description
 `stop_tracker_timeout`                   | integer | Timeout in seconds for a `stopped` announce request to trackers
 `enable_piece_extent_affinity`           | bool    | True if the advanced libtorrent option `piece_extent_affinity` is enabled
 `bittorrent_protocol`                    | integer | Bittorrent Protocol to use (see list of possible values below)
-`limit_utp_rate`                         | bool    | True if `[du]l_limit` should be applied to uTP connections; this option is only available in qBittorent built against libtorrent version 0.16.X and higher
+`limit_utp_rate`                         | bool    | True if `[du]l_limit` should be applied to uTP connections; this option is only available in qBittorrent built against libtorrent version 0.16.X and higher
 `limit_tcp_overhead`                     | bool    | True if `[du]l_limit` should be applied to estimated TCP overhead (service data: e.g. packet headers)
 `limit_lan_peers`                        | bool    | True if `[du]l_limit` should be applied to peers on the LAN
 `alt_dl_limit`                           | integer | Alternative global download speed limit in KiB/s
@@ -336,11 +336,11 @@ Property                                 | Type    | Description
 `pex`                                    | bool    | True if PeX is enabled
 `lsd`                                    | bool    | True if LSD is enabled
 `encryption`                             | integer | See list of possible values here below
-`anonymous_mode`                         | bool    | If true anonymous mode will be enabled; read more [here](Anonymous-Mode); this option is only available in qBittorent built against libtorrent version 0.16.X and higher
+`anonymous_mode`                         | bool    | If true anonymous mode will be enabled; read more [here](Anonymous-Mode); this option is only available in qBittorrent built against libtorrent version 0.16.X and higher
 `proxy_type`                             | integer | See list of possible values here below
 `proxy_ip`                               | string  | Proxy IP address or domain name
 `proxy_port`                             | integer | Proxy port
-`proxy_peer_connections`                 | bool    | True if peer and web seed connections should be proxified; this option will have any effect only in qBittorent built against libtorrent version 0.16.X and higher
+`proxy_peer_connections`                 | bool    | True if peer and web seed connections should be proxified; this option will have any effect only in qBittorrent built against libtorrent version 0.16.X and higher
 `proxy_auth_enabled`                     | bool    | True proxy requires authentication; doesn't apply to SOCKS4 proxies
 `proxy_username`                         | string  | Username for proxy authentication
 `proxy_password`                         | string  | Password for proxy authentication

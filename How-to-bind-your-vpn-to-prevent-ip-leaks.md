@@ -21,5 +21,5 @@ The following is a guide to enable this functionality
 11. Select `Apply`.
 12. Restart qBittorrent.
 
-This completes the bind to your VPN. Note that qBittorent should now only transfer data if your VPN is active.
+This completes the bind to your VPN. Note that qBittorrent should now only transfer data if your VPN is active.
 If you're not seeing data being transferred with your VPN active, try restarting qBittorrent.
