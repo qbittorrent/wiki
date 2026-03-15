@@ -4,7 +4,16 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     groups:
-      github-actions:
+      GHA_CI-dependency-update:
+        patterns:
+          - "*"
+    schedule:
+      interval: "monthly"
+
+  - package-ecosystem: "pre-commit"
+    directory: "/"
+    groups:
+      GHA_CI-dependency-update:
         patterns:
           - "*"
     schedule:
