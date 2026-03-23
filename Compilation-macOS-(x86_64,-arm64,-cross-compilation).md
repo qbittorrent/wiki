@@ -1,3 +1,7 @@
+> [!WARNING]
+> This guide is very outdated, but still contains a lot of good explanations for the build process
+> See [arm (possibly also intel)](Compilation-macOS-arm.md) for the latest instructions
+
 This guide covers qBittorrent compilation process for any supported Mac systems as of writing, i.e. following this guide you will be able to build as x86_64 (aka for Intel chip based Mac) so as arm64 (aka for Apple Silicon based Mac) binaries. Cross-compilation process is covered as well. Most of the steps are the same for all cases, required adjustments for a specific case are highlighted. Cross-compilation is possible (and was tested) in both directions, i.e. producing arm64 binaries on x86_64 host and vice versa. Universal (aka "fat") binaries are not supported due to a lot of technically difficult reasons of compiling required dependencies.
 
 Rosetta (or any other software allowing to run non-native binaries) is not required to produce binaries for other architecture, neither for running compiled qBittorrent.
