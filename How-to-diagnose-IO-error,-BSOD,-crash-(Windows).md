@@ -24,7 +24,7 @@ The numbers mean how hard is it to check on a scale of 5.
 2. Launch the freshly installed "windbg" _as Administrator_ tool.
 3. Add remote symbols.
 File -> Symbol File Path: `srv*c:\symbols*https://msdl.microsoft.com/download/symbols`
-The `c:\symbols` will be your local symbol cache. I would suggest using something more "writeable".
+The `c:\symbols` will be your local symbol cache. I would suggest using something more "writable".
 4. File -> Open Crash Dump.
 5. Navigate to `C:\Windows\`
 6. Open `memory.dmp`
