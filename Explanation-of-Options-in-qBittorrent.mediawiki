@@ -50,8 +50,16 @@ This allows you to prevent the system from going into sleep mode when torrents a
 * '''Copy .torrent files to''' option allows you to copy .torrent files for the torrents that you download to a specific folder (for example, ''Downloaded torrents'').
 * '''Copy .torrent files for finished downloads to''' option is the same as the above, with one difference. Only for completed torrents will qBittorrent copy the .torrent file to the specified location.
 
-== Email notification upon completion of downloads ==
+== Email notification upon download completion ==
 This allows you to receive an email when your download finishes. For this, you will have to supply the fields required.
+* '''From''' - provide the sending email address for the email notification.
+* '''To''' - provide the recipient email address for the email notification. '''''Note:''''' This can only be a single recipient email address.
+* '''SMTP server''' - provide the SMTP server address for sending email notifications.<br>The server address can either be entered as a DNS name '''''(recommended)''''' or IP address.<br>The default sending port is either 25 for SMTP or 465 for SMTPS.<br>To manually specify the server port, add a colon and then the port number to the end of the server address.<br>'''''Example: smtp.example.com:465''''' - connect to server '''''smtp.example.com''''' on port '''''465'''''
+* '''This server requires a secure connection (SSL)''' - enable this option if the email server requires the [https://en.wikipedia.org/wiki/SMTPS SMTPS] protocol. The default sending port is 465 but this can be overridden in the '''SMTP server''' field if needed.
+* '''Authentication''' - enable this option if the SMTP server requires you to authenticate to be able to send emails.
+** '''Username''' - provide the username for authentication to the SMTP server.
+** '''Password''' - provide the password for authentication to the SMTP server.
+* '''Send test email''' - pressing this button immediately sends a test email using the information you have provided in the other fields. Check your inbox to confirm success. Check the Execution Log for errors.
 
 == Run an external program on torrent completion ==
 This allows you to run a program on finishing certain types of torrents in a certain location.
