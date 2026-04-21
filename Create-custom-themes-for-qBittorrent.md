@@ -7,7 +7,7 @@ As of qBittorrent 4.6.0 (Oct 2023), qBittorrent migrated to Qt6 and dropped Qt5.
 These are theme bundles for qBittorrent.
 They should contain all files required to support theming in qBittorrent and are packed using [Qt's Resource Compiler](https://doc.qt.io/qt-6/rcc.html).
 qBittorrent accesses files inside `.qbtheme` using [Qt's Resource System](https://doc.qt.io/qt-6/resources.html).
-Currently, qBittorrent only searches for a `stylesheet.qss` and `config.json` inside a `.qbtheme` file but you can also add your own custom resources (read more below in “Using custom resources with bundles”).
+Currently, qBittorrent only searches for a `stylesheet.qss` and `config.json` inside a `.qbtheme` file but you can also add your own custom resources (read more below in ["Using custom resources with bundles"](#using-custom-resources-with-bundles)).
 
 ## How to create your own theme bundles?
 You can check out [this Python script](https://github.com/jagannatharjun/qbt-theme/blob/master/Builds/make-resource.py) for the easy creation of `.qbtheme` files.
