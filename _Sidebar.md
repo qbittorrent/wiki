@@ -112,6 +112,7 @@
 
 #### macOS
 
+- [Building qBittorrent Version 5](<https://github.com/qbittorrent/qBittorrent/wiki/Compilation-macOSv5>)
 - [cmake (x86_64, arm64, cross-compilation, static linkage)](<https://github.com/qbittorrent/qBittorrent/wiki/Compilation-macOS-(x86_64,-arm64,-cross-compilation)>)
 - [autotools/qmake](https://github.com/qbittorrent/qBittorrent/wiki/Compilation-macOS)
 
