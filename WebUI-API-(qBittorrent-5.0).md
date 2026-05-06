@@ -2289,7 +2289,7 @@ Requires knowing the torrent hash. You can get it from [torrent list](#get-torre
 POST /api/v2/torrents/setComment HTTP/1.1
 User-Agent: Fiddler
 Host: 127.0.0.1
-Cookie: QBIT_SID_<port>=your_sid
+Cookie: QBT_SID_<port>=your_sid
 Content-Type: application/x-www-form-urlencoded
 Content-Length: length
 
