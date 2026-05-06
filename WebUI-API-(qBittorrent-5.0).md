@@ -64,6 +64,7 @@ This WebUI API documentation applies to qBittorrent v5.0+. For other WebUI API v
    1. [Set torrent upload limit](#set-torrent-upload-limit)
    1. [Set torrent location](#set-torrent-location)
    1. [Set torrent name](#set-torrent-name)
+   2. [Set torrent comment](#set-torrent-comment)
    1. [Set torrent category](#set-torrent-category)
    1. [Get all categories](#get-all-categories)
    1. [Add new category](#add-new-category)
@@ -2278,6 +2279,32 @@ HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
 404                               | Torrent hash is invalid
 409                               | Torrent name is empty
+200                               | All other scenarios
+
+## Set torrent comment ##
+
+Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
+
+```http
+POST /api/v2/torrents/setComment HTTP/1.1
+User-Agent: Fiddler
+Host: 127.0.0.1
+Cookie: QBIT_SID_<port>=your_sid
+Content-Type: application/x-www-form-urlencoded
+Content-Length: length
+
+hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5d7cc2ba0&comment=This%20is%20a%20comment
+```
+
+`hashes` can contain multiple hashes separated by `|` or set to `all`
+
+`comment` is the torrent comment you want to set.
+
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+404                               | Torrent hash is invalid
 200                               | All other scenarios
 
 ## Set torrent category ##
