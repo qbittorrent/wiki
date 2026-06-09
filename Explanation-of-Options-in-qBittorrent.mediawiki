@@ -53,9 +53,12 @@ This allows you to prevent the system from going into sleep mode when torrents a
 == Email notification upon download completion ==
 This allows you to receive an email when your download finishes. For this, you will have to supply the fields required.
 * '''From''' - provide the sending email address for the email notification.
-* '''To''' - provide the recipient email address for the email notification. '''''Note:''''' This can only be a single recipient email address.
-* '''SMTP server''' - provide the SMTP server address for sending email notifications.<br>The server address can either be entered as a DNS name '''''(recommended)''''' or IP address.<br>The default sending port is either 25 for SMTP or 465 for SMTPS.<br>To manually specify the server port, add a colon and then the port number to the end of the server address.<br>'''''Example: smtp.example.com:465''''' - connect to server '''''smtp.example.com''''' on port '''''465'''''
-* '''This server requires a secure connection (SSL)''' - enable this option if the email server requires the [https://en.wikipedia.org/wiki/SMTPS SMTPS] protocol. The default sending port is 465 but this can be overridden in the '''SMTP server''' field if needed.
+* '''To''' - provide the recipient email address for the email notification.<br>Separate multiple emails with a semicolon.<br>Separate multiple email addresses within each email with a comma.<br>'''''Example: a@a.com;b@b.com,c@c.com''''' - send two emails: the first to just a@a.com, the second to both b@b.com and c@c.com<br>'''''Note:''''' b@b.com & c@c.com will both see each other's email addresses, whereas a@a.com will not see them nor be seen.
+* '''SMTP server''' - provide the SMTP server address for sending email notifications.<br>The server address can either be entered as a DNS name '''''(recommended)''''' or IP address.<br>To manually specify the server port, add a colon and then the port number to the end of the server address.<br>'''''Example: smtp.example.com:465''''' - connect to server '''''smtp.example.com''''' on port '''''465'''''
+* '''SMTP encryption''' - Select the encryption type used when sending SMTP emails. The default sending port is shown below for each option but this can be overridden in the '''SMTP server''' field if needed.
+** '''None''' - no encryption used when sending emails '''''(last choice if no other option)''''' Default port : 25
+** '''STARTTLS''' - use [https://en.wikipedia.org/wiki/STARTTLS STARTTLS] encryption when sending emails '''''(alternative choice if supported)''''' Default port : 587
+** '''SMTPS''' - use [https://en.wikipedia.org/wiki/SMTPS SMTPS] encryption when sending emails '''''(best choice if supported)''''' Default port : 465
 * '''Authentication''' - enable this option if the SMTP server requires you to authenticate to be able to send emails.
 ** '''Username''' - provide the username for authentication to the SMTP server.
 ** '''Password''' - provide the password for authentication to the SMTP server.
