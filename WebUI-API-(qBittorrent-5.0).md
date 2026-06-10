@@ -42,7 +42,7 @@ This WebUI API documentation applies to qBittorrent v5.0+. For other WebUI API v
    1. [Get torrent contents](#get-torrent-contents)
    1. [Get torrent pieces' states](#get-torrent-pieces-states)
    1. [Get torrent pieces' hashes](#get-torrent-pieces-hashes)
-   1. [Pause torrents](#pause-torrents)
+   1. [Stop torrents](#stop-torrents)
    1. [Resume torrents](#resume-torrents)
    1. [Delete torrents](#delete-torrents)
    1. [Recheck torrents](#recheck-torrents)
@@ -117,6 +117,11 @@ This WebUI API documentation applies to qBittorrent v5.0+. For other WebUI API v
 ## API v2.11.3 ##
 - Add APIs for managing cookies` ([#21340](https://github.com/qbittorrent/qBittorrent/pull/21340))
 - Remove `cookie` field from `/torrents/add` request
+
+## API v2.12.0 ##
+- Rename torrent `state` variants `PausedUP` and `PausedDL` to `StoppedUP` and `StoppedDL` respectively ([#20532](https://github.com/qbittorrent/qBittorrent/pull/20532/))
+- Rename `paused` field in `/torrents/add` to `stopped` ([#20532](https://github.com/qbittorrent/qBittorrent/pull/20532/))
+- Rename `start_paused_enabled` field in `/app/preferences` to `add_stopped_enabled` ([#20532](https://github.com/qbittorrent/qBittorrent/pull/20532/))
 
 # General Information #
 
@@ -274,7 +279,7 @@ Property                                 | Type    | Description
 -----------------------------------------|---------|------------
 `locale`                                 | string  | Currently selected language (e.g. en_GB for English)
 `create_subfolder_enabled`               | bool    | True if a subfolder should be created when adding a torrent
-`start_paused_enabled`                   | bool    | True if torrents should be added in a Paused state
+`add_stopped_enabled`                    | bool    | True if torrents should be added in a Stopped state
 `auto_delete_mode`                       | integer | TODO
 `preallocate_all`                        | bool    | True if disk space should be pre-allocated for all files
 `incomplete_files_ext`                   | bool    | True if ".!qB" should be appended to incomplete files
@@ -630,7 +635,7 @@ Example:
     "slow_torrent_inactive_timer": 60,
     "slow_torrent_ul_rate_threshold": 2,
     "socket_backlog_size": 30,
-    "start_paused_enabled": false,
+    "add_stopped_enabled": false,
     "stop_tracker_timeout": 1,
     "temp_path": "/home/user/Downloads/temp",
     "temp_path_enabled": false,
@@ -989,7 +994,7 @@ Example:
     {
         "8c212779b4abde7c6bc608063a0d008b7e40ce32":
         {
-            "state":"pausedUP"
+            "state":"stoppedUP"
         }
     }
 }
@@ -1284,10 +1289,10 @@ Possible values of `state`:
 
 Value         | Description
 --------------|------------
-`error`       | Some error occurred, applies to paused torrents
+`error`       | Some error occurred, applies to stopped torrents
 `missingFiles`| Torrent data files is missing
 `uploading`   | Torrent is being seeded and data is being transferred
-`pausedUP`    | Torrent is paused and has finished downloading
+`stoppedUP`    | Torrent is stopped and has finished downloading
 `queuedUP`    | Queuing is enabled and torrent is queued for upload
 `stalledUP`   | Torrent is being seeded, but no connection were made
 `checkingUP`  | Torrent has finished downloading and is being checked
@@ -1295,7 +1300,7 @@ Value         | Description
 `allocating`  | Torrent is allocating disk space for download
 `downloading` | Torrent is being downloaded and data is being transferred
 `metaDL`      | Torrent has just started downloading and is fetching metadata
-`pausedDL`    | Torrent is paused and has NOT finished downloading
+`stoppedDL`    | Torrent is stopped and has NOT finished downloading
 `queuedDL`    | Queuing is enabled and torrent is queued for download
 `stalledDL`   | Torrent is being downloaded, but no connection were made
 `checkingDL`  | Same as checkingUP, but torrent has NOT finished downloading
@@ -1821,7 +1826,7 @@ Content-Disposition: form-data; name="skip_checking"
 
 true
 -----------------------------6688794727912
-Content-Disposition: form-data; name="paused"
+Content-Disposition: form-data; name="stopped"
 
 true
 -----------------------------6688794727912
@@ -1865,7 +1870,7 @@ Property                        | Type    | Description
 `category` _optional_           | string  | Category for the torrent
 `tags` _optional_               | string  | Tags for the torrent, split by ','
 `skip_checking` _optional_      | string  | Skip hash checking. Possible values are `true`, `false` (default)
-`paused` _optional_             | string  | Add torrents in the paused state. Possible values are `true`, `false` (default)
+`stopped` _optional_            | string  | Add torrents in the stopped state. Possible values are `true`, `false` (default)
 `root_folder` _optional_        | string  | Create the root folder. Possible values are `true`, `false`, unset (default)
 `rename` _optional_             | string  | Rename torrent
 `upLimit` _optional_            | integer | Set torrent upload speed limit. Unit in bytes/second
@@ -2838,7 +2843,7 @@ Field                             | Type    | Description
 `affectedFeeds`                   | list    | The feed URLs the rule applied to
 `ignoreDays`                      | number  | Ignore sunsequent rule matches
 `lastMatch`                       | string  | The rule last match time
-`addPaused`                       | bool    | Add matched torrent in paused mode
+`addPaused`                       | bool    | Add matched torrent in stopped mode
 `assignedCategory`                | string  | Assign category to the torrent
 `savePath`                        | string  | Save torrent to the given directory
 
