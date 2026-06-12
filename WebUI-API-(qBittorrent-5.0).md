@@ -145,8 +145,9 @@ Parameter                         | Type    | Description
 
 HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
+401                               | Invalid credentials
 403                               | User's IP is banned for too many failed login attempts
-200                               | All other scenarios
+204                               | Authentication successful
 
 Upon success, the response will contain a cookie with your SID. You must supply the cookie whenever you want to perform an operation that requires authentication.
 
@@ -154,12 +155,16 @@ Example showing how to login and execute a command that requires authentication 
 
 ```sh
 $ curl -i --header 'Referer: http://localhost:8080' --data 'username=admin&password=adminadmin' http://localhost:8080/api/v2/auth/login
-HTTP/1.1 200 OK
-Content-Encoding:
-Content-Length: 3
-Content-Type: text/plain; charset=UTF-8
-Set-Cookie: SID=hBc7TxF76ERhvIw0jQQ4LZ7Z1jQUV0tQ; path=/
-$ curl http://localhost:8080/api/v2/torrents/info --cookie "SID=hBc7TxF76ERhvIw0jQQ4LZ7Z1jQUV0tQ"
+HTTP/1.1 204 OK
+connection: keep-alive
+content-length: 0
+content-security-policy:  frame-ancestors 'self';
+date: Sat, 23 May 2026 23:42:02 GMT
+set-cookie: QBT_SID_8080=SN0PVpL+efsGGQcSJLt29wQ4fpyeTEw7; HttpOnly; SameSite=Strict; expires=Mon, 24-May-2027 05:31:14 GMT; path=/
+x-content-type-options: nosniff
+x-frame-options: SAMEORIGIN
+x-xss-protection: 1; mode=block
+$ curl http://localhost:8080/api/v2/torrents/info --cookie "QBT_SID_8080=SN0PVpL+efsGGQcSJLt29wQ4fpyeTEw7"
 ```
 
 Note: Set `Referer` or `Origin` header to the exact same domain and port as used in the HTTP query `Host` header.
