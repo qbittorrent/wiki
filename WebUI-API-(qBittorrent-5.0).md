@@ -2710,6 +2710,34 @@ HTTP Status Code                  | Scenario
 409                               | Invalid `newPath` or `oldPath`, or `newPath` already in use
 200                               | All other scenarios
 
+## set comment
+
+Name: `setComment`
+
+Allow setting or modifying comment of a specific torrent. A `post` request with hashes and comment is required.
+
+```http
+POST /api/v2/torrents/setComment HTTP/1.1
+Host: blabla
+User-Agent: python-requests/2.x.x
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 29
+
+hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32&comment=some_comment
+```
+
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+400                               | Missing `hashes` or `comment` parameter
+200                               | All other scenarios
+
+The request will be ignored if the torrent hash is invalid.
+
+
 # RSS (experimental) #
 
 All RSS API methods are under "rss", e.g.: `/api/v2/rss/methodName`.
