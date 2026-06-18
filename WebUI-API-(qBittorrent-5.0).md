@@ -791,6 +791,15 @@ For example `/api/v2/app/getDirectoryContent?dirPath=%2Fhome&show=all` could ret
 
 ```json
 ["admin","johnny"]
+
+## Get process info
+
+Name: `processInfo`
+
+returns the launching time stamp of the application.
+
+```json
+{"launch_time":1781693511}
 ```
 
 # Log #
