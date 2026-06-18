@@ -1011,6 +1011,8 @@ Property                      | Type    | Description
 `categories_removed`          | array   | List of categories removed since last request
 `tags`                        | array   | List of tags added since last request
 `tags_removed`                | array   | List of tags removed since last request
+`trackers`                    | object  | Info for trackers added since last request
+`trackers_removed`          | array   | List of trackers removed since last request
 `server_state`                | object  | Global transfer info
 
 Example:
