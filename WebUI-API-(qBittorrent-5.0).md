@@ -769,6 +769,30 @@ HTTP Status Code                  | Scenario
 200                               | Cookies were saved
 400                               | Request was not a valid json array of cookie objects
 
+## Get directory content
+
+Name: `getDirectoryContent`
+
+|Parameter| Type| Description|
+|-|-|-|
+|dirPath|string| Absolute path to directory|
+|show|string|Define which elements should be listed: `all`, `files`, `dirs`|
+
+Returns:
+
+|HTTP Code|Scenario|
+|-|-|
+|200|Success|
+|400|Invalid path|
+|404|Directory not found|
+
+In case of success, the response will be a JSON array with the names of elements in the directory.
+For example `/api/v2/app/getDirectoryContent?dirPath=%2Fhome&show=all` could return:
+
+```json
+["admin","johnny"]
+```
+
 # Log #
 
 All Log API methods are under "log", e.g.: `/api/v2/log/methodName`.
