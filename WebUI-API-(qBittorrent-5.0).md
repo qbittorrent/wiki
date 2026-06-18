@@ -1475,13 +1475,15 @@ Property         | Type     | Description
 
 Possible values of `status`:
 
-Value  | Description
--------|------------
-0      | Tracker is disabled (used for DHT, PeX, and LSD)
-1      | Tracker has not been contacted yet
-2      | Tracker has been contacted and is working
-3      | Tracker is updating
-4      | Tracker has been contacted, but it is not working (or doesn't send proper replies)
+Value  | Status        | Description
+-------|---------------|------------
+0      | DISABLED      | Tracker is disabled (used for DHT, PeX, and LSD)
+1      | NOT_CONTACTED | Tracker has not been contacted yet
+2      | WORKING       | Tracker has been contacted and is working
+3      | UPDATING      | Tracker is updating
+4      | NOT_WORKING   | Tracker has been contacted, but it is not working (or doesn't send proper replies)
+5      | TRACKER_ERROR | Tracker is reachable but explicitly returned a failure/error message.
+6      | UNREACHABLE   | A network-level error occurred when contacting the tracker (e.g. failed DNS resolution, refused connection, etc.)
 
 Example:
 
