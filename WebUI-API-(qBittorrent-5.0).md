@@ -1250,6 +1250,8 @@ Parameter             | Type    | Description
 `limit` _optional_    | integer | Limit the number of torrents returned
 `offset` _optional_   | integer | Set offset (if less than 0, offset from end)
 `hashes` _optional_   | string  | Filter by hashes. Can contain multiple hashes separated by `\|`
+`private` _optional_  | bool    | Filter by private torrents. Return only private or non-private torrent when set to `true` or `false` respectively if set.
+
 
 Example:
 
