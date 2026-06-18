@@ -2465,7 +2465,7 @@ HTTP Status Code                  | Scenario
 
 ## Set torrent tags ##
 
-Remove all current tags and replace with the new ones. Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list). 
+Remove all current tags and replace with the new ones. Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
 ```http
 POST /api/v2/torrents/setTags HTTP/1.1
