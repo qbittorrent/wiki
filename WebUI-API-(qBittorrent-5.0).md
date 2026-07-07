@@ -2158,7 +2158,7 @@ Cookie: SID=your_sid
 Content-Type: application/x-www-form-urlencoded
 Content-Length: length
 
-hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5d7cc2ba0&ratioLimit=1.0&seedingTimeLimit=60&inactiveSeedingTimeLimit=-2
+hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5d7cc2ba0&ratioLimit=1.0&seedingTimeLimit=60&inactiveSeedingTimeLimit=-2&shareLimitAction=Default
 ```
 
 **Parameters:**
@@ -2169,6 +2169,7 @@ Property                      | Type    | Description
 `ratioLimit`                  | float   | The maximum seeding ratio for the torrent. `-2` means the global limit should be used, `-1` means no limit.
 `seedingTimeLimit`            | integer | The maximum seeding time (minutes) for the torrent. `-2` means the global limit should be used, `-1` means no limit.
 `inactiveSeedingTimeLimit`    | integer | The maximum amount of time (minutes) the torrent is allowed to seed while being inactive. `-2` means the global limit should be used, `-1` means no limit.
+`shareLimitAction`            | string  | The action to be performed when the torrent's share limit is reached. Possible values are `Default` (use global setting), `Stop` (stop torrent), `Remove` (remove torrent), `RemoveWithContent` (remove torrent and its files), and `EnableSuperSeeding` (enable super seeding mode for torrent).
 
 **Returns:**
 
