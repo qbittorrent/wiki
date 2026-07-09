@@ -769,6 +769,39 @@ HTTP Status Code                  | Scenario
 200                               | Cookies were saved
 400                               | Request was not a valid json array of cookie objects
 
+## Get directory content
+
+Name: `getDirectoryContent`
+
+|Parameter| Type| Description|
+|-|-|-|
+|dirPath|string| Absolute path to directory|
+|show|string|Define which elements should be listed: `all`, `files`, `dirs`|
+
+Returns:
+
+|HTTP Code|Scenario|
+|-|-|
+|200|Success|
+|400|Invalid path|
+|404|Directory not found|
+
+In case of success, the response will be a JSON array with the names of elements in the directory.
+For example `/api/v2/app/getDirectoryContent?dirPath=%2Fhome&show=all` could return:
+
+```json
+["admin","johnny"]
+
+## Get process info
+
+Name: `processInfo`
+
+returns the launching time stamp of the application.
+
+```json
+{"launch_time":1781693511}
+```
+
 # Log #
 
 All Log API methods are under "log", e.g.: `/api/v2/log/methodName`.
@@ -978,6 +1011,8 @@ Property                      | Type    | Description
 `categories_removed`          | array   | List of categories removed since last request
 `tags`                        | array   | List of tags added since last request
 `tags_removed`                | array   | List of tags removed since last request
+`trackers`                    | object  | Info for trackers added since last request
+`trackers_removed`          | array   | List of trackers removed since last request
 `server_state`                | object  | Global transfer info
 
 Example:
@@ -1215,6 +1250,8 @@ Parameter             | Type    | Description
 `limit` _optional_    | integer | Limit the number of torrents returned
 `offset` _optional_   | integer | Set offset (if less than 0, offset from end)
 `hashes` _optional_   | string  | Filter by hashes. Can contain multiple hashes separated by `\|`
+`private` _optional_  | bool    | Filter by private torrents. Return only private or non-private torrent when set to `true` or `false` respectively if set.
+
 
 Example:
 
@@ -1475,13 +1512,15 @@ Property         | Type     | Description
 
 Possible values of `status`:
 
-Value  | Description
--------|------------
-0      | Tracker is disabled (used for DHT, PeX, and LSD)
-1      | Tracker has not been contacted yet
-2      | Tracker has been contacted and is working
-3      | Tracker is updating
-4      | Tracker has been contacted, but it is not working (or doesn't send proper replies)
+Value  | Status        | Description
+-------|---------------|------------
+0      | DISABLED      | Tracker is disabled (used for DHT, PeX, and LSD)
+1      | NOT_CONTACTED | Tracker has not been contacted yet
+2      | WORKING       | Tracker has been contacted and is working
+3      | UPDATING      | Tracker is updating
+4      | NOT_WORKING   | Tracker has been contacted, but it is not working (or doesn't send proper replies)
+5      | TRACKER_ERROR | Tracker is reachable but explicitly returned a failure/error message.
+6      | UNREACHABLE   | A network-level error occurred when contacting the tracker (e.g. failed DNS resolution, refused connection, etc.)
 
 Example:
 
@@ -2424,6 +2463,31 @@ HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
 200                               | All scenarios
 
+## Set torrent tags ##
+
+Remove all current tags and replace with the new ones. Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
+
+```http
+POST /api/v2/torrents/setTags HTTP/1.1
+User-Agent: Fiddler
+Host: 127.0.0.1
+Cookie: SID=your_sid
+Content-Type: application/x-www-form-urlencoded
+Content-Length: length
+
+hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5d7cc2ba0&tags=TagName1,TagName2
+```
+
+`hashes` can contain multiple hashes separated by `|` or set to `all`
+
+`tags` is the list of tags you want to set on the passed torrents.
+
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios
+
 ## Remove torrent tags ##
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
@@ -2674,6 +2738,34 @@ HTTP Status Code                  | Scenario
 400                               | Missing `newPath` parameter
 409                               | Invalid `newPath` or `oldPath`, or `newPath` already in use
 200                               | All other scenarios
+
+## set comment
+
+Name: `setComment`
+
+Allow setting or modifying comment of a specific torrent. A `post` request with hashes and comment is required.
+
+```http
+POST /api/v2/torrents/setComment HTTP/1.1
+Host: blabla
+User-Agent: python-requests/2.x.x
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 29
+
+hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32&comment=some_comment
+```
+
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+400                               | Missing `hashes` or `comment` parameter
+200                               | All other scenarios
+
+The request will be ignored if the torrent hash is invalid.
+
 
 # RSS (experimental) #
 
