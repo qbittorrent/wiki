@@ -18,6 +18,9 @@ If you know of more, feel free to add a link to the repository along with a shor
 
 - https://github.com/Conan1996-2/qBitorrent-WebUI-API
 
+    iOS app for managing qBittorrent remotely via its WebAPI, available (free) in App Store
+- https://github.com/taylorcox75/qRemote
+
     VB .NET code to access qBitorrent's WebAPI
 
 - https://github.com/fedarovich/qbittorrent-cli
