@@ -20,6 +20,10 @@ If you know of more, feel free to add a link to the repository along with a shor
 
     VB .NET code to access qBitorrent's WebAPI
 
+- https://github.com/taylorcox75/qRemote
+
+    iOS app for managing qBittorrent remotely via its WebAPI, available (free) in App Store
+
 - https://github.com/fedarovich/qbittorrent-cli
 
     Cross-platform command line interface qBittorrent WebAPI client
