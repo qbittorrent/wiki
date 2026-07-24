@@ -1916,8 +1916,8 @@ Name: `editTracker`
 Parameter                         | Type    | Description
 ----------------------------------|---------|------------
 `hash`                            | string  | The hash of the torrent
-`origUrl`                         | string  | The tracker URL you want to edit
-`newUrl`                          | string  | The new URL to replace the `origUrl`
+`url`                             | string  | The tracker URL you want to edit
+`newUrl`                          | string  | The new URL to replace the `url`
 
 **Returns:**
 
@@ -1926,7 +1926,7 @@ HTTP Status Code                  | Scenario
 400                               | `newUrl` is not a valid URL
 404                               | Torrent hash was not found
 409                               | `newUrl` already exists for the torrent
-409                               | `origUrl` was not found
+409                               | `url` was not found
 200                               | All other scenarios
 
 ## Remove trackers ##
