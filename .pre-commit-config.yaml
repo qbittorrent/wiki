@@ -16,7 +16,7 @@ repos:
       name: Check trailing whitespaces
 
   - repo: https://github.com/codespell-project/codespell.git
-    rev: v2.4.2
+    rev: v2.4.3
     hooks:
     - id: codespell
       name: Check spelling (codespell)
