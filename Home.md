@@ -12,7 +12,7 @@ The wiki source code is hosted at https://github.com/qbittorrent/wiki and is acc
 - [How to use qBittorrent as a tracker](https://github.com/qbittorrent/qBittorrent/wiki/How-to-use-qBittorrent-as-a-tracker)
 - [How to use portable mode](https://github.com/qbittorrent/qBittorrent/wiki/How-to-use-portable-mode)
 - [Anonymous mode](https://github.com/qbittorrent/qBittorrent/wiki/Anonymous-Mode)
-- [How to bind your vpn to prevent ip leaks](https://github.com/qbittorrent/qBittorrent/wiki/How-to-bind-your-vpn-to-prevent-ip-leaks.md)
+- [How to bind your vpn to prevent ip leaks](https://github.com/qbittorrent/qBittorrent/wiki/How-to-bind-your-vpn-to-prevent-ip-leaks)
 
 ### Troubleshooting
 
