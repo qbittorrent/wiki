@@ -112,8 +112,7 @@
 
 #### macOS
 
-- [cmake (x86_64, arm64, cross-compilation, static linkage)](<https://github.com/qbittorrent/qBittorrent/wiki/Compilation-macOS-(x86_64,-arm64,-cross-compilation)>)
-- [autotools/qmake](https://github.com/qbittorrent/qBittorrent/wiki/Compilation-macOS)
+- [arm (possibly also intel)](Compilation-macOS-arm.md)
 
 #### Windows
 
