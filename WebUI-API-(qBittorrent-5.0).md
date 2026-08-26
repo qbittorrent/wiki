@@ -91,6 +91,7 @@ This WebUI API documentation applies to qBittorrent v5.0+. For other WebUI API v
    1. [Refresh item](#refresh-item)
    1. [Set auto-downloading rule](#set-auto-downloading-rule)
    1. [Rename auto-downloading rule](#rename-auto-downloading-rule)
+   1. [Clone auto-downloading rule](#clone-auto-downloading-rule)
    1. [Remove auto-downloading rule](#remove-auto-downloading-rule)
    1. [Get all auto-downloading rules](#get-all-auto-downloading-rules)
    1. [Get all articles matching a rule](#get-all-articles-matching-a-rule)
@@ -2875,6 +2876,23 @@ Parameter                         | Type    | Description
 ----------------------------------|---------|------------
 `ruleName`                        | string  | Rule name (e.g. "Punisher")
 `newRuleName`                     | string  | New rule name (e.g. "The Punisher")
+
+**Returns:**
+
+HTTP Status Code                  | Scenario
+----------------------------------|---------------------
+200                               | All scenarios
+
+## Clone auto-downloading rule ##
+
+Name: `cloneRule`
+
+Parameters:
+
+Parameter                         | Type    | Description
+----------------------------------|---------|------------
+`sourceName`                      | string  | Source rule name (e.g. "Punisher")
+`cloneName`                       | string  | New clone rule name (e.g. "The Punisher")
 
 **Returns:**
 
