@@ -30,7 +30,7 @@ AmbientCapabilities=CAP_NET_RAW
 If you are using the qBittorrent with the GUI or don't use systemd - use a proper way to gain the client `CAP_NET_RAW` capability, or just run it as `root` user (not recommended).
 
 ### 1. Set up qBittorrent to bind to your VPN connection.
- Add the following lines to your qBittorrent.conf into the `[Preferences]` section:
+ Add the following lines to your qBittorrent.conf ([where is it?](https://github.com/qbittorrent/qBittorrent/wiki/Frequently-Asked-Questions#where-does-qbittorrent-save-its-settings)) into the `[Preferences]` section:
 ```
 Connection\Interface=tun0
 Connection\InterfaceAddress=10.8.0.2
@@ -64,7 +64,7 @@ After performing steps 0..4 try to use your qBittorrent instance to download any
 Set up the VPN server and VPN client to accept incoming connections from outer space.
 
 ### 0. Set up a static port for peers connections:
-Add the following line to your qBittorrent.conf to the `[Preferences]` section:
+Add the following line to your qBittorrent.conf ([Still here](https://github.com/qbittorrent/qBittorrent/wiki/Frequently-Asked-Questions#where-does-qbittorrent-save-its-settings)) to the `[Preferences]` section:
 ```
 Connection\PortRangeMin=62000
 ```
