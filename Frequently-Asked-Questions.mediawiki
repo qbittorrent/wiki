@@ -231,7 +231,7 @@ For example, we would have the following Peer IDs for these versions:
 
 Change your regional formatting settings:
 
-[https://user-images.githubusercontent.com/66999033/85346082-0a415200-b4fd-11ea-8eb5-419cf9af81bd.PNG Windows regional settings]
+<img src="https://user-images.githubusercontent.com/66999033/85346082-0a415200-b4fd-11ea-8eb5-419cf9af81bd.PNG" alt="Windows regional settings">
 
 == How do I do IP Filtering (eMule and PeerGuardian compatible) in qbittorrent in GNU/Linux? ==
 In most GNU/Linux distributions, you can go to '''Tools → Options → Connection''' then click on IP Filtering.

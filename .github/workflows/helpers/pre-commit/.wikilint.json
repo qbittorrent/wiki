@@ -1,5 +1,9 @@
 {
     "rules": {
-        "tag-like": [2, { "ENTER": 0, "TAB": 0 }]
+        "tag-like": [2, {
+            "ENTER": 0,
+            "img": 0,
+            "TAB": 0
+        }]
     }
 }
