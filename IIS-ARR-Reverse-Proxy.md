@@ -11,7 +11,7 @@ For users that run qBittorrent via Microsoft IIS as a reverse proxy some extra h
 9. Return to the rules page
 10. Open **Add Rules** and select **Reverse Proxy**
 11. Enter the server IP:Port without `http://` (for example `127.0.0.1:8080`), then click **OK**
-12. Open the new rule and change the path to a subdirectory if needed (for example **qbweb/(.*)** = http://domain.tld/qbweb/)
+12. Open the new rule and change the path to a subdirectory if needed (for example **qbweb/(.*)** = <http://domain.tld/qbweb/>)
 13. Under **Server Variables** add the following rules:
 
     | Server variable name  | Value                     |
@@ -29,6 +29,7 @@ For users that run qBittorrent via Microsoft IIS as a reverse proxy some extra h
 21. Apply
 
 The result should look similar to this in your web.config (Note: you must use the GUI first so reverse proxy support is enabled in IIS):
+
 ```xml
             <rules>
                 <rule name="Reverse Proxy">

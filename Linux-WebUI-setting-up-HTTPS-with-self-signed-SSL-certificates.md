@@ -2,41 +2,46 @@ Setting up HTTPS for the web interface involves creating a key and certificate p
 
 The following guide assumes you have a setup as mentioned in [this](https://github.com/qbittorrent/qBittorrent/wiki/Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface-(14.04-and-older)) or [this](https://github.com/qbittorrent/qBittorrent/wiki/Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface-(15.04-and-newer)) article. Change qbtuser with the user you have qbittorrent-nox running under.
 
-
 Impersonate the qbittorrent user:
 
 `sudo su qbtuser`
 
 Create necessary folders:
-```
+
+```text
 cd /home/qbtuser/
 mkdir ~/.config/qBittorrent/ssl
 cd ~/.config/qBittorrent/ssl
 ```
+
 Now we generate the key and certificate pair:
 
 `openssl req -new -x509 -nodes -out server.crt -keyout server.key`
 
 Answer the questions or press enter to leave blank.
 
-
 You should now have two files in your ssl folder:
-```
+
+```text
 $ ls
 server.crt  server.key
 ```
-Now go to your qbittorrent web-interface (http://192.168.0.1:8080 if you haven't changed it yet) Then open the `Tools -> Options...` in the menu bar (or click the screwdriver or cogwheel icon depending on your version), and click on the last tab labelled `WebUI`. Enable HTTPS and optionally change the port to your liking.
+
+Now go to your qbittorrent web-interface (<http://192.168.0.1:8080> if you haven't changed it yet) Then open the `Tools -> Options...` in the menu bar (or click the screwdriver or cogwheel icon depending on your version), and click on the last tab labelled `WebUI`. Enable HTTPS and optionally change the port to your liking.
 Then, according to your version:
 
 - `4.2.0` and newer: copy the _path_ of the key and certificate files into the respective fields of the WebUI (for example, `/home/qbtuser/.config/qBittorrent/ssl/server.key` and `/home/qbtuser/.config/qBittorrent/ssl/server.crt`)
 
 - older versions: copy and paste the key and certificate's _contents_ into the respective fields of the webui. You can use `cat` in your terminal to view the contents of the files:
-```
+
+```text
 cat server.key
 ```
+
 Copy the contents of the entire file (including -----BEGIN PRIVATE KEY----- and -----END PRIVATE KEY-----)
 into the 'key' field of the WebUI and proceed to do the same with the certificate by issuing:
-```
+
+```text
 cat server.crt
 ```
 
@@ -44,7 +49,7 @@ Now click save to have the changes take effect.
 
 You should now be able to log in to your qbittorrent web-server keeping in mind to change http to https and append the port number with a colon :
 
-```
+```text
 https://yourserverip:portnumber
 ```
 

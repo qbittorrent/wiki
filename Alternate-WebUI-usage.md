@@ -2,7 +2,7 @@
 
 From qBittorrent v4.1.0 and on, the WebUI architecture was expanded to allow the use of alternate sets of WebUI sources, allowing customization of the WebUI and usage of community developed alternatives.
 
-# Procedure
+## Procedure
 
 First, you need to download a compatible WebUI. You can find a list of unofficial community-developed WebUIs at [List of unofficial alternate WebUIs](https://github.com/qbittorrent/qBittorrent/wiki/List-of-known-alternate-WebUIs).
 
@@ -12,8 +12,9 @@ First, you need to download a compatible WebUI. You can find a list of unofficia
 
 You can also change these settings via the config file. The relevant entries are:
 
-```
+```text
 WebUI\AlternativeUIEnabled=true
 WebUI\RootFolder=/path/to/some/alternate/webui
 ```
+
 If you wish to customize the default one and maybe develop your own, refer to the article on [Developing alternate WebUIs](https://github.com/qbittorrent/qBittorrent/wiki/Developing-alternate-WebUIs-(WIP)).

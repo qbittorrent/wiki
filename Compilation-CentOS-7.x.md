@@ -14,7 +14,7 @@ sudo yum install devtoolset-8-gcc devtoolset-8-gcc-c++
 sudo yum install qt-devel openssl-devel qt5-qtbase-devel qt5-linguist
 ```
 
-## Boost
+## Download Boost
 
 [Download](https://www.boost.org/users/download/) latest version of
 Boost. (Actually 1.72.0)
@@ -55,16 +55,18 @@ cd boost_1_72_0
 ./b2 install --prefix=${DIR_BOOST} --with=all -j$(( $(nproc) - 1 ))
 ```
 
-### Libtorrent
+### Install Libtorrent
 
 Change devtoolsset if you didn't do that already: `scl enable devtoolset-8 bash`
 
 Clone from the repository: `git clone --depth 1 -b RC_1_2 https://github.com/arvidn/libtorrent.git`
 
 If you need to build deluge,you must run the following command:
+
 ```bash
 yum -y install python-devel boost-devel
 ```
+
 Compile:
 
 ```bash
@@ -82,6 +84,7 @@ ln -s /usr/lib/pkgconfig/libtorrent-rasterbar.pc /usr/lib64/pkgconfig/libtorr
 ```
 
 **Last command was missing and on 64bit systems will fail without it.Here is the error information:**
+
 ```txt
 checking for libtorrent... no
 configure: error: Package requirements (libtorrent-rasterbar >= 1.0.6) were not met:
@@ -96,7 +99,7 @@ and libtorrent_LIBS to avoid the need to call pkg-config.
 See the pkg-config man page for more details.
 ```
 
-# Compiling qBittorrent (without the GUI)
+## Compiling qBittorrent (without the GUI)
 
 First, obtain the qBittorrent source code.
 
@@ -125,14 +128,13 @@ Documentation about running qBittorrent without GUI is available [here](https://
 
 To set up qbittorrent as a daemon see [this guide](https://github.com/qbittorrent/qBittorrent/wiki/Setting-up-qBittorrent-as-a-daemon-on-CentOS-7)
 
-# Troubleshooting
+## Troubleshooting
 
 If are you facing a problem like this:
 
 ```txt
 qbittorrent-nox: error while loading shared libraries: libtorrent-rasterbar.so 10: cannot open shared object file: No such file or directory
 ```
-
 
 This often happened when you are using 64-bit CentOS 7.x.
 And it's because of the libraries that the qBittorrent need are not in `/usr/lib64/`.

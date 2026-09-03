@@ -1,4 +1,5 @@
 # Introduction
+
 This is probably the easiest, most extensible and trouble-free way of setting up qBittorrent's WebUI with HTTPS.
 It combines ideas from these other articles of the wiki: [1][qbt-webui-https], [2][qbt-reverse-proxy].
 
@@ -7,11 +8,13 @@ For example, you may have qBittorrent's WebUI accessible at `yourdomain.com/qbt`
 
 This guide assumes you have a working qbitorrent-nox setup (check [this][qbt-nox-wiki-setup] article if you haven't).
 This guide also assumes that:
+
 * you know how to and can forward ports on your router, to forward ports 80 and 443.
 * you have setup a DNS pointing to the IP you are running the Web UI from (you can use a free one like [Duck DNS][duckdns-url]).
 
 The overall architecture of the system will be:
-```
+
+```text
                                  ________________________________________________
 Outside world (insecure)         |   Your machine (secure)                      |
 You <-------HTTPS (secure)-------|->  NGINX <----HTTP-----> qbittorrent WebUI   |
@@ -19,9 +22,9 @@ You <-------HTTPS (secure)-------|->  NGINX <----HTTP-----> qbittorrent WebUI   
                                  ------------------------------------------------
 ```
 
-# Install the prerequisites
+## Install the prerequisites
 
-## Install `certbot`
+### Install `certbot`
 
 [`certbot`][certbot-url] is the recommended ACME client for requesting and managing Let's Encrypt certificates.
 It is available on the official Ubuntu repositories; it won't be the most recent version, but you don't really need the latest and greatest for this to work just fine.
@@ -35,7 +38,7 @@ sudo apt install certbot
 sudo apt install python-certbot-nginx # this is needed for the nginx plugin
 ```
 
-## Install `nginx`
+### Install `nginx`
 
 You can use the version in the repositories, but if you want the most recent version you can use the PPA.
 
@@ -44,29 +47,29 @@ sudo apt update && sudo apt upgrade -y # first update all packages in the system
 sudo add-apt-repository ppa:nginx/stable
 sudo apt install nginx
 ```
-# Setup
 
-## Setup the Web UI
+## Setup
+
+### Setup the Web UI
 
 1. Access your WebUI, and go to Tools -> Options -> WebUI
 2. Change the following settings if they are not already like so:
 
     * IP address: 127.0.0.1
     * Port: some free port on your system that is NOT accessible through the outside world.
-    In this case we will use port `30000`.
+   In this case we will use port `30000`.
     * Use UPnP / NAT-PMP to forward the port from my router: unchecked.
     * Use HTTPS instead of HTTP: unchecked.
     * Optional: if you want to use "enable host header validation", enable that checkbox, and add `127.0.0.1` to the "server domains" text box.
-    Don't forget to also configure the `proxy_set_header` directive in the nginx config below.
+   Don't forget to also configure the `proxy_set_header` directive in the nginx config below.
 
-
-## Set up NGINX
+### Set up NGINX
 
 1. Forward ports 80 and 443 in your router.
 
 2. Allow ports 80 and 443 through your system firewall if you have one.
 
-    If you have `ufw` as your system firewall, it is as simple as:
+   If you have `ufw` as your system firewall, it is as simple as:
 
     ```bash
     sudo ufw allow 80 && sudo ufw allow 443 && sudo ufw reload
@@ -166,13 +169,14 @@ sudo apt install nginx
     }
     ```
 
-## Obtain the certificate
+### Obtain the certificate
 
 Run the following commands to obtain your certificate (replace `yourdomain.com` with your actual domain):
 
 ```shell
 sudo certbot --nginx certonly --preferred-challenges http --must-staple --redirect --hsts --uir --staple-ocsp --rsa-key-size 4096 --domain yourdomain.com --domain www.yourdomain.com
 ```
+
 Take note of the location where `certbot` stored the certificate, and adjust the nginx configuration file if needed.
 If your `certbot` is setup correctly, it will renew your certificate automatically, so you do not need to worry.
 You can manually test the renewal process with `sudo certbot renew --dry-run`, or actually manually renew your certificates with `sudo certbot renew`.
@@ -188,13 +192,12 @@ Note: the following five options used above are optional, but good for hardened 
 
 Refer to the [documentation][certbot-docs-cmd-opt] for more info.
 
-# Test your setup
+## Test your setup
 
 Start nginx: `sudo systemctl restart nginx.service`
 
 Access your WebUI via `yourdomain.com/qbt`.
 You should see the qBittorrent Web UI and the indication that your connection is over HTTPS.
-
 
 [qbt-webui-https]: https://github.com/qbittorrent/qBittorrent/wiki/Linux-WebUI-setting-up-HTTPS-with-Let's-Encrypt-certificates
 [qbt-reverse-proxy]: https://github.com/qbittorrent/qBittorrent/wiki/NGINX-Reverse-Proxy-for-Web-UI

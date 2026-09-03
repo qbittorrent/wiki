@@ -1,10 +1,12 @@
+# How to assign `Categories` to `Automatically add torrents` from per `Monitored Folder`
+
 This script add Categories to **Automatically add torrents from** per **Monitored Folder**
 
 > :point_right: This script is in flux, as it may be implemented into qBittorrent in the future.
 
 `savecategory` expects the user's watch directories to look similar to something like this:
 
-![](https://i.imgur.com/HBvxmUt.png)
+![screenshot](https://i.imgur.com/HBvxmUt.png)
 
 It's based off [the popular wiki](https://old.reddit.com/r/usenet/wiki/docker) for setting up hard linking Docker and other torrent grabbers.
 

@@ -10,70 +10,77 @@ If you are looking only for the latest version of qBittorrent, just head to the 
 
 * General required dependencies
 
-   `sudo apt-get install libboost-dev libboost-system-dev`
+  `sudo apt-get install libboost-dev libboost-system-dev`
 
 * Qt4 libraries
 
-   `sudo apt-get install libqt4-dev`
+  `sudo apt-get install libqt4-dev`
 
 _[ at the time of this writing, Qt5 libraries were not available for Raspbian on B-Pro. You can safely compile QBitTorrent against Qt4 Libraries. ]_
 
 * Python _(Run time only dependency, needed by the search engine)_
 
-   `sudo apt-get install python`
+  `sudo apt-get install python`
 
-# Optional dependencies
+## Optional dependencies
 
 * Geoip Database _(For peer country resolution, strongly advised)_
 
-   ` sudo apt-get install geoip-database`
+  `sudo apt-get install geoip-database`
 
-# Libtorrent
+## Libtorrent
 
-[Libtorrent](https://www.libtorrent.org ) is a library written by Arvid Norberg that qBittorrent depends on. It is necessary to compile and install libtorrent before compiling qBittorrent.
+[Libtorrent](https://www.libtorrent.org) is a library written by Arvid Norberg that qBittorrent depends on. It is necessary to compile and install libtorrent before compiling qBittorrent.
 
-Default Raspbian distro packages a very old _(and very unstable)_ version of  libtorrent, hence you will need to compile it yourself.
+Default Raspbian distro packages a very old _(and very unstable)_ version of libtorrent, hence you will need to compile it yourself.
 
 ### Notes:
 
 The procedure for compiling and installing Libtorrent on B-Pro is derived from the [Deluge Wiki](https://dev.deluge-torrent.org/wiki/Building/libtorrent): some minor adjustments have been made to the procedure in order to work correctly on B-Pro.
 
-## Install dependencies for libtorrent build automatically, using build-dep:
-    sudo apt-get build-dep libtorrent-rasterbar
-    sudo apt-get install checkinstall
+### Install dependencies for libtorrent build automatically, using build-dep:
+
+```text
+sudo apt-get build-dep libtorrent-rasterbar
+sudo apt-get install checkinstall
+```
 
    Your system could be configured with some option that might interfere with checkinstall.
-   If previous installation fails then proceed manually:
+If previous installation fails then proceed manually:
 
-    sudo apt-get install build-essential checkinstall libboost-system-dev libboost-python-dev libssl-dev libgeoip-dev
+```text
+sudo apt-get install build-essential checkinstall libboost-system-dev libboost-python-dev libssl-dev libgeoip-dev
+```
 
-## Download ​libtorrent and extract:
-`   wget https://github.com/arvidn/libtorrent/releases/download/libtorrent_1_1_11/libtorrent-rasterbar-1.1.11.tar.gz`
+### Download libtorrent and extract:
+
+`wget https://github.com/arvidn/libtorrent/releases/download/libtorrent_1_1_11/libtorrent-rasterbar-1.1.11.tar.gz`
 
    `tar xf libtorrent-rasterbar-1.0.10.tar.gz`
 
    `cd libtorrent-rasterbar-1.0.10`
 
-## Configure:
+### Configure:
 
-   `./configure --enable-python-binding --with-libgeoip --with-libiconv --with-qt4`
+`./configure --enable-python-binding --with-libgeoip --with-libiconv --with-qt4`
 
-## WARNING: Users with Debian 8 "Jessie" or "Stretch"
+**WARNING: Users with Debian 8 "Jessie" or "Stretch"**
+
 If you have updated your Raspbian to the latest version "Jessie" then you will most certainly face an error with _libboost library_ while using the ._/configure_
-
 To overcome this error and configure correctly you must issue the following commands:
 
-    sudo apt-get install libboost-chrono-dev libboost-random-dev
+   ```text
+   sudo apt-get install libboost-chrono-dev libboost-random-dev
+   ./configure --enable-python-binding --with-libgeoip --with-libiconv --with-boost-libdir=/usr/lib/arm-linux-gnueabihf
+   ```
 
-    ./configure --enable-python-binding --with-libgeoip --with-libiconv --with-boost-libdir=/usr/lib/arm-linux-gnueabihf
-
-## Build:
+### Build:
 
    `make -j$(nproc)`
 
    _[The make option -j$(nproc) will utilize all available cpu cores.]_
 
-## Install library and python bindings:
+### Install library and python bindings:
 
    `sudo checkinstall`
 
@@ -83,32 +90,33 @@ To overcome this error and configure correctly you must issue the following comm
 
    _[Running `ldconfig` avoids an ImportError for libtorrent-rasterbar.so, a result of Python being unable to find the main library.]_
 
-# Compiling qBittorrent (with the GUI)
+## Compiling qBittorrent (with the GUI)
 
 Now that each prerequisite has been completed you mut obtain the qBittorrent source code.
 
-Either download and extract a .tar archive from [Sourceforge]( https://sourceforge.net/projects/qbittorrent/files/qbittorrent/) or use the following commands to speed-up the process.
+Either download and extract a .tar archive from [Sourceforge](https://sourceforge.net/projects/qbittorrent/files/qbittorrent/) or use the following commands to speed-up the process.
 
-`   git clone https://github.com/qbittorrent/qBittorrent`
+`git clone https://github.com/qbittorrent/qBittorrent`
 
-## Configure qBittorrent
+### Configure qBittorrent
 
-## WARNING: Users with Debian 8 "Jessie"
+**WARNING: Users with Debian 8 "Jessie"**
+
 If you have updated your Raspbian to the latest version "Jessie" then you will most certainly face an error with _libboost library_ while using the ._/configure_
-
 To overcome this error and configure correctly you must issue the following commands:
 
-    sudo apt-get install libboost-dev-all
+   ```text
+   sudo apt-get install libboost-dev-all
+   ./configure --enable-python-binding --with-libgeoip --with-libiconv --with-boost-libdir=/usr/lib/arm-linux-gnueabihf --with-qt4
+   ```
 
-    ./configure --enable-python-binding --with-libgeoip --with-libiconv --with-boost-libdir=/usr/lib/arm-linux-gnueabihf --with-qt4
+```text
+cd qBittorrent/
+./configure --prefix=/usr --with-qt4
+make
+```
 
-   `cd qBittorrent/`
-
-   `./configure --prefix=/usr --with-qt4`
-
-   `make`
-
-## Install qBittorrent:
+### Install qBittorrent:
 
    `sudo checkinstall`
 
@@ -118,57 +126,57 @@ To overcome this error and configure correctly you must issue the following comm
 
    `qbittorrent`
 
-# Compiling qBittorrent-NOX _(aka Without the GUI, also called headless)_
-
+## Compiling qBittorrent-NOX _(aka Without the GUI, also called headless)_
 
 Now that each prerequisite has been completed you mut obtain the qBittorrent source code.
 
-Either download and extract a .tar archive from [Sourceforge]( https://sourceforge.net/projects/qbittorrent/files/qbittorrent/) or use the following commands to speed-up the process.
+Either download and extract a .tar archive from [Sourceforge](https://sourceforge.net/projects/qbittorrent/files/qbittorrent/) or use the following commands to speed-up the process.
 
-`   git clone https://github.com/qbittorrent/qBittorrent`
+`git clone https://github.com/qbittorrent/qBittorrent`
 
-## Configure qBittorrent
+### Configure qBittorrent-nox
 
-   `cd qBittorrent/`
+**WARNING: Users with Debian 8 "Jessie"**
 
-   `./configure --prefix=/usr --disable-gui --with-qt4`
-
-## WARNING: Users with Debian 8 "Jessie"
 If you have updated your Raspbian to the latest version "Jessie" then you will most certainly face an error with _libboost library_ while using the ._/configure_
-
 To overcome this error and configure correctly you must issue the following commands:
 
-    sudo apt-get install libboost-all-dev
+   ```text
+   sudo apt-get install libboost-all-dev
+   ./configure --prefix=/usr --disable-gui --enable-python-binding --with-libgeoip --with-libiconv --with-boost-libdir=/usr/lib/arm-linux-gnueabihf --with-qt4
+   ```
 
-    ./configure --prefix=/usr --disable-gui --enable-python-binding --with-libgeoip --with-libiconv --with-boost-libdir=/usr/lib/arm-linux-gnueabihf --with-qt4
+```text
+cd qBittorrent/
+./configure --prefix=/usr --disable-gui --with-qt4
+make
+```
 
-   `make`
-
-## Install qBittorrent:
+### Install qBittorrent-nox:
 
    `sudo checkinstall`
 
    _[alternatively you can use the standard command `make install`, as discussed before]_
 
-**That's it! qBittorrent should now be installed.** You could simply launch Qbittorrent-nox using the following command:
+**That's it! qBittorrent-nox should now be installed.** You could simply launch qBittorrent-nox using the following command:
 
    'qbittorrent-nox'
 
 But since you have chosen the "headless" version you can access qBittorrent only through its WEB Interface.
 
-### Standard Access to WEB Interface
+#### Standard Access to WEB Interface
 
 As a default, you can access it from the following address:
-
- _http://localhost:8080_
+<http://localhost:8080>
 
 Using the following credentials:
 
- _Username: admin_
+```text
+   Username: admin
+   Password: adminadmin
+```
 
- _Password: adminadmin_
-
-### Customize WEB Interface Listening Port
+##### Customize WEB Interface Listening Port
 
 If you have another service listening on port 8080, or you simply want to use a different port, you can instruct qBittorrent to listen on a different by using the following launch command:
 
@@ -182,13 +190,13 @@ Where the 'xxxx' stands for the port number you desire to use. For example, if y
 
    `qbittorrent-nox`
 
-# Running qBittorrent-nox as a daemon at system startup
+#### Running qBittorrent-nox as a daemon at system startup
 
 Since you are using the "headless" version of qBittorrent, you might also want to autostart it at system boot as a _daemon_.
 
 By doing so you will not need to keep open a terminal window in order to execute qBittorrent.
 
-## Using CronJob at Reboot
+##### Using CronJob at Reboot
 
 _**Please Note:**_ **the following solution is based upon personal research** and days of testing. I am aware that it might not be the nicest solution available, but if your are **running qBittorrent-nox on B-Pro with Raspbian** chances are that you too noticed how **impredictible **and **unstable **is its behaviour when using **`update-rc.d` method.**
 
@@ -211,7 +219,7 @@ If you want to try it just reboot you B-Pro with the command:
 
    `sudo reboot`
 
-## Final Notes
+##### Final Notes
 
 This work has been realized putting together personal knowledge and information provided by other authors.
 

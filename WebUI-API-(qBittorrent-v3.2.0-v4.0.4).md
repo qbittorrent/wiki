@@ -64,14 +64,13 @@ This WebUI API documentation applies to qBittorrent v3.2.0-v4.0.4. For other API
 
 ***
 
-# Changes #
+## Changes ##
 
 `APIX`, where `X` is a number representing the API version, specifies the first API version in which the marked entry is available.
 
 `APIX-APIY`, where `X` and `Y` are two different API versions, represents a range where `APIX` and `APIY` are respectively the first and last API version in which the marked entry is available.
 
 `API2` is implied and not reported.
-
 
 * Changes in `API2`:
   * The authentication is now cookie based
@@ -87,7 +86,7 @@ This WebUI API documentation applies to qBittorrent v3.2.0-v4.0.4. For other API
 * Changes in `API14`:
   * The `Referer` header is now expected in all HTTP requests. qBittorrent will drop any request sent without the referer header.
 
-# Authorization #
+## Authorization ##
 
 qBittorrent uses a cookie based authentication.
 
@@ -104,14 +103,17 @@ username=admin&password=admin
 ```
 
 Server reply (example):
+
 ```http
 Content-Length: 3
 Content-Type: text/plain; charset=UTF-8
 Set-Cookie: SID=3133exaykXDX0mUQRDukIr9YUi0EchFY; path=/
 ```
+
 You must supply the cookie whenever you want to perform an operation that requires authentication.
 
 Example showing how to login and execute a command that requires authentication using `curl`:
+
 ```sh
 $ curl -i --header 'Referer: http://localhost:8080' --data 'username=admin&password=adminadmin' http://localhost:8080/login
 HTTP/1.1 200 OK
@@ -124,7 +126,7 @@ $ curl http://localhost:8080/query/torrents --cookie "SID=hBc7TxF76ERhvIw0jQQ4LZ
 
 Note: Set `Referer` or `Origin` header to the exact same domain and port as used in the HTTP query `Host` header.
 
-### Logout ###
+#### Logout ####
 
 ```http
 POST /logout HTTP/1.1
@@ -135,7 +137,7 @@ Content-Type: application/x-www-form-urlencoded
 Content-Length: length
 ```
 
-# GET methods #
+## GET methods ##
 
 ### Get API version ###
 
@@ -148,6 +150,7 @@ Host: 127.0.0.1
 ```
 
 Server reply (example):
+
 ```http
 HTTP/1.1 200 OK
 Content-Encoding:
@@ -157,7 +160,7 @@ Content-Type: text/plain; charset=UTF-8
 2
 ```
 
-### Get minimum API version ###
+#### Get minimum API version ####
 
 Get the minimum API version supported. Any application designed to work with an API version greater than or equal to the minimum API version is guaranteed to work.
 
@@ -168,6 +171,7 @@ Host: 127.0.0.1
 ```
 
 Server reply (example):
+
 ```http
 HTTP/1.1 200 OK
 Content-Encoding:
@@ -177,7 +181,7 @@ Content-Type: text/plain; charset=UTF-8
 2
 ```
 
-### Get qBittorrent version ###
+#### Get qBittorrent version ####
 
 ```http
 GET /version/qbittorrent HTTP/1.1
@@ -186,6 +190,7 @@ Host: 127.0.0.1
 ```
 
 Server reply (example):
+
 ```http
 HTTP/1.1 200 OK
 Content-Encoding:
@@ -195,7 +200,7 @@ Content-Type: text/plain; charset=UTF-8
 v3.2.0
 ```
 
-### Shutdown qBittorrent ###
+#### Shutdown qBittorrent ####
 
 ```http
 GET /command/shutdown HTTP/1.1
@@ -205,12 +210,13 @@ Cookie: SID=your_sid
 ```
 
 Server reply (example):
+
 ```http
 HTTP/1.1 200 OK
 Content-Encoding:
 ```
 
-### Get torrent list ###
+#### Get torrent list ####
 
 ```http
 GET /query/torrents HTTP/1.1
@@ -232,6 +238,7 @@ Param     | Description
 `hashes`  | Filter by hashes. Can contain multiple hashes separated by `\|`
 
 Example:
+
 ```http
 /query/torrents?filter=downloading&category=sample%20category&sort=ratio
 ```
@@ -285,7 +292,7 @@ Value         | Description
 `stalledDL`   | Torrent is being downloaded, but no connection were made
 `metaDL`      | Torrent has just started downloading and is fetching metadata
 
-### Get torrent generic properties ###
+#### Get torrent generic properties ####
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -350,10 +357,9 @@ Property                  | Type    | Description
 `up_speed_avg` `API4`     | integer | Torrent average upload speed (bytes/second)
 `up_speed` `API4`         | integer | Torrent upload speed (bytes/second)
 
-
 NB: `-1` is returned when the value is not known if the type is integer.
 
-### Get torrent trackers ###
+#### Get torrent trackers ####
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -398,7 +404,7 @@ Value               | Description
 `Not working`       | Tracker has been contacted, but it is not working (or doesn't send proper replies)
 `Not contacted yet` | Tracker has not been contacted yet
 
-### Get torrent web seeds ###
+#### Get torrent web seeds ####
 
 `API3`
 
@@ -423,7 +429,7 @@ Property      | Type     | Description
 --------------|----------|------------
 `url`         | string   | URL of the web seed
 
-### Get torrent contents ###
+#### Get torrent contents ####
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -470,7 +476,7 @@ Value      | Description
 `6`        | High priority
 `7`        | Maximal priority
 
-### Get torrent pieces' states ###
+#### Get torrent pieces' states ####
 
 Returns an array of states (integers) of all pieces (in order) of a specific torrent.
 
@@ -509,7 +515,7 @@ Value      | Description
 `1`        | Now downloading
 `2`        | Already downloaded
 
-### Get torrent pieces' hashes ###
+#### Get torrent pieces' hashes ####
 
 Returns an array of hashes (strings) of all pieces (in order) of a specific torrent.
 
@@ -540,7 +546,7 @@ content-length: length
 ["54eddd830a5b58480a6143d616a97e3a6c23c439","f8a99d225aa4241db100f88407fc3bdaead583ab","928fb615b9bd4dd8f9e9022552c8f8f37ef76f58"]
 ```
 
-### Get global transfer info ###
+#### Get global transfer info ####
 
 This method returns info you usually see in qBt status bar.
 
@@ -582,13 +588,13 @@ Property               | Type    | Description
 
 Possible values of `connection_status`:
 
-Value               |
+Value |
 --------------------|
-`connected`         |
+`connected` |
 `firewalled`        |
-`disconnected`      |
+`disconnected` |
 
-### Get qBittorrent preferences ###
+#### Get qBittorrent preferences ####
 
 ```http
 GET /query/preferences HTTP/1.1
@@ -606,6 +612,7 @@ content-length: length
 
 {"locale":"ru_RU","save_path":"C:/Users/Dayman/Downloads","temp_path_enabled":false,"temp_path":"C:/Users/Dayman/Documents/Downloads/temp","scan_dirs":["D:/Browser Downloads"],"download_in_scan_dirs":[false],"export_dir_enabled":false,"export_dir":"","mail_notification_enabled":false,"mail_notification_email":"","mail_notification_smtp":"smtp.changeme.com","mail_notification_ssl_enabled":false,"mail_notification_auth_enabled":false,"mail_notification_username":"","mail_notification_password":"","autorun_enabled":false,"autorun_program":"","preallocate_all":false,"queueing_enabled":true,"max_active_downloads":2,"max_active_torrents":200,"max_active_uploads":200,"dont_count_slow_torrents":false,"incomplete_files_ext":false,"listen_port":31498,"upnp":false,"dl_limit":3072,"up_limit":3072,"max_connec":500,"max_connec_per_torrent":100,"max_uploads_per_torrent":15,"enable_utp":true,"limit_utp_rate":false,"limit_tcp_overhead":true,"alt_dl_limit":1024,"alt_up_limit":2048,"scheduler_enabled":false,"schedule_from_hour":8,"schedule_from_min":0,"schedule_to_hour":20,"schedule_to_min":0,"scheduler_days":0,"dht":true,"dhtSameAsBT":true,"dht_port":6881,"pex":true,"lsd":true,"encryption":0,"anonymous_mode":false,"proxy_type":-1,"proxy_ip":"0.0.0.0","proxy_port":8080,"proxy_peer_connections":false,"proxy_auth_enabled":false,"proxy_username":"","proxy_password":"","ip_filter_enabled":false,"ip_filter_path":null,"web_ui_port":80,"web_ui_username":"admin","web_ui_password":"8888efb275743684292cff99f57867a9","bypass_local_auth":false,"use_https":false,"ssl_key":"","ssl_cert":"","dyndns_enabled":false,"dyndns_service":0,"dyndns_username":"","dyndns_password":"","dyndns_domain":"changeme.dyndns.org"}
 ```
+
 where
 
 Property                          | Type    | Description
@@ -743,7 +750,7 @@ Value | Description
 `0`   | Pause torrent
 `1`   | Remove torrent
 
-### Get partial data ###
+#### Get partial data ####
 
 Request only for changes since the last request.
 
@@ -761,11 +768,13 @@ Param | Description
 `rid` | Response ID. If not provided, `rid=0` will be assumed. If the given `rid` is different from the one of last server reply, `full_update` will be `true` (see the server reply details for more info)
 
 Example:
+
 ```http
 http://127.0.0.1/sync/maindata?rid=14
 ```
 
 Server reply (example):
+
 ```http
 HTTP/1.1 200 OK
 content-type: application/json
@@ -785,7 +794,7 @@ Property                      | Type    | Description
 `queueing`                    | bool    | Priority system usage flag
 `server_state`                | object  | Same as [global transfer info](#get-global-transfer-info)
 
-### Get log ###
+#### Get log ####
 
 ```http
 GET /query/getLog HTTP/1.1
@@ -805,6 +814,7 @@ Param           | Type    | Description
 `last_known_id` | integer | Exclude messages with "message id" <= `last_known_id` (default: `-1`)
 
 Example:
+
 ```http
 /query/getLog?normal=true&info=true&warning=true&critical=true&last_known_id=-1
 ```
@@ -826,13 +836,14 @@ Property    | Type    | Description
 `timestamp` | integer | Milliseconds since epoch
 `type`      | integer | Type of the message: Log::NORMAL: `1`, Log::INFO: `2`, Log::WARNING: `4`, Log::CRITICAL: `8`
 
-# POST methods #
+## POST methods ##
 
 ### Download torrent from URL ###
 
 This method can add torrents from URLs. `http://`, `https://`, `magnet:` and `bc://bt/` links are supported.
 
 **After qBittorrent v3.3.1 `API7` (included):**
+
 ```http
 POST /command/download HTTP/1.1
 User-Agent: Fiddler
@@ -889,6 +900,7 @@ Property                      | Type    | Description
 `firstLastPiecePrio`          | string  | (optional) Prioritize download first last piece. Possible values are `true`, `false` (default)
 
 **Before qBittorrent v3.3.1 `API6`:**
+
 ```http
 POST /command/download HTTP/1.1
 User-Agent: Fiddler
@@ -899,6 +911,7 @@ Content-Length: length
 
 urls=http://www.nyaa.eu/?page=download%26tid=305093%0Ahttp://www.nyaa.eu/?page=download%26tid=305255%0Amagnet:?xt=urn:btih:4c284ebef5bf0d967e2e174cfe825d9fb40ae5e1%26dn=QBittorrent+2.8.4+Win7+Vista+64+working+version%26tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80%26tr=udp%3A%2F%2Ftracker.publicbt.com%3A80%26tr=udp%3A%2F%2Ftracker.istole.it%3A6969%26tr=udp%3A%2F%2Ftracker.ccc.de%3A80
 ```
+
 Please note that:
 
 1. `Content-Type: application/x-www-form-urlencoded` is required
@@ -911,7 +924,7 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
-### Upload torrent from disk ###
+#### Upload torrent from disk ####
 
 ```http
 POST /command/upload HTTP/1.1
@@ -952,7 +965,7 @@ Property                      | Type    | Description
 `sequentialDownload`          | string  | (optional) Enable sequential download. Possible values are `true`, `false` (default)
 `firstLastPiecePrio`          | string  | (optional) Prioritize download first last piece. Possible values are `true`, `false` (default)
 
-### Add trackers to torrent ###
+#### Add trackers to torrent ####
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -975,7 +988,7 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
-### Pause torrent ###
+#### Pause torrent ####
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -996,7 +1009,7 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
-### Pause all torrents ###
+#### Pause all torrents ####
 
 ```http
 POST /command/pauseAll HTTP/1.1
@@ -1012,7 +1025,7 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
-### Resume torrent ###
+#### Resume torrent ####
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -1033,7 +1046,7 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
-### Resume all torrents ###
+#### Resume all torrents ####
 
 ```http
 POST /command/resumeAll HTTP/1.1
@@ -1049,7 +1062,7 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
-### Delete torrent ###
+#### Delete torrent ####
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -1072,7 +1085,7 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
-### Delete torrent with downloaded data ###
+#### Delete torrent with downloaded data ####
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -1095,7 +1108,7 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
-### Recheck torrent ###
+#### Recheck torrent ####
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -1115,7 +1128,8 @@ No matter if successful or not server will return the following reply:
 ```http
 HTTP/1.1 200 OK
 ```
-### Increase torrent priority ###
+
+#### Increase torrent priority ####
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -1138,7 +1152,7 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
-### Decrease torrent priority ###
+#### Decrease torrent priority ####
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -1161,7 +1175,7 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
-### Maximal torrent priority ###
+#### Maximal torrent priority ####
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -1184,7 +1198,7 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
-### Minimal torrent priority ###
+#### Minimal torrent priority ####
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -1207,7 +1221,7 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
-### Set file priority ###
+#### Set file priority ####
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -1230,7 +1244,7 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
-### Get global download limit ###
+#### Get global download limit ####
 
 ```http
 POST /command/getGlobalDlLimit HTTP/1.1
@@ -1252,7 +1266,7 @@ content-length: length
 
 `3145728` is the value of current global download speed limit in bytes; this value will be zero if no limit is applied.
 
-### Set global download limit ###
+#### Set global download limit ####
 
 ```http
 POST /command/setGlobalDlLimit HTTP/1.1
@@ -1273,7 +1287,7 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
-### Get global upload limit ###
+#### Get global upload limit ####
 
 ```http
 POST /command/getGlobalUpLimit HTTP/1.1
@@ -1295,7 +1309,7 @@ content-length: length
 
 `3145728` is the value of current global upload speed limit in bytes; this value will be zero if no limit is applied.
 
-### Set global upload limit ###
+#### Set global upload limit ####
 
 ```http
 POST /command/setGlobalUpLimit HTTP/1.1
@@ -1316,7 +1330,7 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
-### Get torrent download limit ###
+#### Get torrent download limit ####
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -1345,7 +1359,7 @@ content-length: length
 
 `8c212779b4abde7c6bc608063a0d008b7e40ce32` is the hash of the torrent and `338944` its download speed limit in bytes per second; this value will be zero if no limit is applied.
 
-### Set torrent download limit ###
+#### Set torrent download limit ####
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -1360,7 +1374,7 @@ Content-Length: length
 hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5d7cc2ba0&limit=131072
 ```
 
-`hashes` can contain multiple hashes separated by `|`<br />
+`hashes` can contain multiple hashes separated by `|` \
 `limit` is the download speed limit in bytes per second you want to set.
 
 No matter if successful or not server will return the following reply:
@@ -1369,7 +1383,7 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
-### Get torrent upload limit ###
+#### Get torrent upload limit ####
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -1398,7 +1412,7 @@ content-length: length
 
 `8c212779b4abde7c6bc608063a0d008b7e40ce32` is the hash of the torrent in the request and `338944` its upload speed limit in bytes per second; this value will be zero if no limit is applied.
 
-### Set torrent upload limit ###
+#### Set torrent upload limit ####
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -1413,7 +1427,7 @@ Content-Length: length
 hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5d7cc2ba0&limit=131072
 ```
 
-`hashes` can contain multiple hashes separated by `|`<br />
+`hashes` can contain multiple hashes separated by `|` \
 `limit` is the upload speed limit in bytes per second you want to set.
 
 No matter if successful or not server will return the following reply:
@@ -1422,7 +1436,7 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
-### Set torrent location ###
+#### Set torrent location ####
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -1437,7 +1451,7 @@ Content-Length: length
 hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5d7cc2ba0&location=/mnt/nfs/media
 ```
 
-`hashes` can contain multiple hashes separated by `|`<br />
+`hashes` can contain multiple hashes separated by `|` \
 `location` is the location to download the torrent to. If the location doesn't exist, the torrent's location is unchanged.
 
 No matter if successful or not server will return the following reply:
@@ -1446,7 +1460,7 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
-### Set torrent name ###
+#### Set torrent name ####
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -1473,7 +1487,7 @@ Otherwise, the server will reply with:
 HTTP/1.1 200 OK
 ```
 
-### Set torrent category ###
+#### Set torrent category ####
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -1488,7 +1502,7 @@ Content-Length: length
 hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5d7cc2ba0&category=CategoryName
 ```
 
-`hashes` can contain multiple hashes separated by `|`<br />
+`hashes` can contain multiple hashes separated by `|` \
 `category` is the torrent category you want to set. If the category doesn't exist, a new category is created.
 
 No matter if successful or not server will return the following reply:
@@ -1497,7 +1511,7 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
-### Add new category ###
+#### Add new category ####
 
 ```http
 POST /command/addCategory HTTP/1.1
@@ -1518,7 +1532,7 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
-### Remove categories ###
+#### Remove categories ####
 
 ```http
 POST /command/removeCategories HTTP/1.1
@@ -1539,7 +1553,7 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
-### Set automatic torrent management ###
+#### Set automatic torrent management ####
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -1554,7 +1568,7 @@ Content-Length: length
 hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5d7cc2ba0&enable=true
 ```
 
-`hashes` can contain multiple hashes separated by `|`<br />
+`hashes` can contain multiple hashes separated by `|` \
 `enable` is a boolean, affects the torrents listed in `hashes`, default is `false`
 
 No matter if successful or not server will return the following reply:
@@ -1563,7 +1577,7 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
-### Set qBittorrent preferences ###
+#### Set qBittorrent preferences ####
 
 ```http
 POST /command/setPreferences HTTP/1.1
@@ -1582,16 +1596,17 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
-  1. There is no need to pass all possible preferences' `token:value` pairs if you only want to change one option
-  1. When setting preferences `scan_dirs` must **always** be accompanied with `download_in_scan_dirs`
-  1. Paths in `scan_dirs` must exist, otherwise this option will have no effect
-  1. String values must be quoted; integer and boolean values must never be quoted
+1. There is no need to pass all possible preferences' `token:value` pairs if you only want to change one option
+1. When setting preferences `scan_dirs` must **always** be accompanied with `download_in_scan_dirs`
+1. Paths in `scan_dirs` must exist, otherwise this option will have no effect
+1. String values must be quoted; integer and boolean values must never be quoted
 
 For a list of possible preference options see [Get qBittorrent preferences](#get-qbittorrent-preferences)
 
-### Get alternative speed limits state ###
+#### Get alternative speed limits state ####
 
 Get the state of the alternative speed limits. `1` is returned if enabled, `0` otherwise.
+
 ```http
 POST /command/alternativeSpeedLimitsEnabled HTTP/1.1
 User-Agent: Fiddler
@@ -1602,6 +1617,7 @@ Content-Length: length
 ```
 
 Server reply (example):
+
 ```http
 HTTP/1.1 200 OK
 content-type: text/plain
@@ -1610,7 +1626,7 @@ content-length: length
 1
 ```
 
-### Toggle alternative speed limits ###
+#### Toggle alternative speed limits ####
 
 Toggle the state of the alternative speed limits
 
@@ -1623,7 +1639,7 @@ Content-Type: application/x-www-form-urlencoded
 Content-Length: length
 ```
 
-### Toggle sequential download ###
+#### Toggle sequential download ####
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -1646,7 +1662,7 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
-### Set first/last piece priority ###
+#### Set first/last piece priority ####
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -1669,7 +1685,7 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
-### Set force start ###
+#### Set force start ####
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -1684,7 +1700,7 @@ Content-Length: length
 hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32&value=true
 ```
 
-`hashes` can contain multiple hashes separated by `|`<br />
+`hashes` can contain multiple hashes separated by `|` \
 `value` is a boolean, affects the torrents listed in `hashes`, default is `false`
 
 No matter if successful or not server will return the following reply:
@@ -1693,7 +1709,7 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
-### Set super seeding ###
+#### Set super seeding ####
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -1708,7 +1724,7 @@ Content-Length: length
 hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32&value=true
 ```
 
-`hashes` can contain multiple hashes separated by `|`<br />
+`hashes` can contain multiple hashes separated by `|` \
 `value` is a boolean, affects the torrents listed in `hashes`, default is `false`
 
 No matter if successful or not server will return the following reply:
@@ -1717,7 +1733,7 @@ No matter if successful or not server will return the following reply:
 HTTP/1.1 200 OK
 ```
 
-### Pause all the torrents ###
+#### Pause all the torrents ####
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -1730,7 +1746,7 @@ Content-Type: application/x-www-form-urlencoded
 Content-Length: length
 ```
 
-### Resume all the torrents ###
+#### Resume all the torrents ####
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 

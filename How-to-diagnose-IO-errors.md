@@ -1,4 +1,6 @@
-### It is very likely that your storage or system has some issue, and there is not much we can do to fix that.
+# How to Diagnose IO Errors
+
+## It is very likely that your storage or system has some issue, and there is not much we can do to fix that.
 
 The Issue tracker is no place for helping with your computer.
 But, you are always welcome to make a topic on our forums, and we will try to help.
@@ -8,7 +10,8 @@ And always try to fix the problem first yourself.
 Knowing how to fix computer problems such as this can come in very handy, and it is not hard to do at all.
 Just don't shy away from a little challenge.
 
-## Check the  `Execution Log`.
+## Check the `Execution Log`.
+
 * On the top bar, click `View`, `Log` and then `Show`
 * Click the new `Execution Log` tab on top
 
@@ -17,7 +20,9 @@ It may contain useful information about why it's happening.
 Even if you can't make heads or tails of the lines, it will be helpful for the others who will try to help.
 
 ## Next step
+
 There are two things that can cause (most likely) IO errors and stopped downloads.
+
 * Permission problems
 * Faulty drives
 

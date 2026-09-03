@@ -1,20 +1,21 @@
 # Introduction
 
-When debugging qBittorrent with GDB, values of variables with Qt types such as `QByteArray` and  `QString` are not easily printable.
+When debugging qBittorrent with GDB, values of variables with Qt types such as `QByteArray` and `QString` are not easily printable.
 
 Fortunately, GDB has a pretty printer functionality that enables it to easily print such values in human readable form.
 
 This guide assumes you are relatively inexperienced with GDB, and either don't know what a `.gdbinit` file is or don't use one. If you are an experienced user with an existing `.gdbinit` setup, you should be able follow along and customize your existing setup as needed.
 
-# Setup
+## Setup
 
 1. Clone the qBittorrent repository if you haven't done so already. In this example, it is assumed it was cloned to `/home/user/Documents/qBittorrent`
 
 2. Create a folder called `.gdb` inside the cloned repository folder (`/home/user/Documents/qBittorrent`). Inside `.gdb` create another folder called `qt5prettyprinters`.
 
-3. Download the `qt.py` and `helper.py` files from [here](https://invent.kde.org/kdevelop/kdevelop/-/tree/master/plugins/gdb/printers)  ([backup link](https://github.com/KDE/kdevelop/tree/master/plugins/gdb/printers)) and place them inside the `.gdb/qt5prettyprinters` folder.
+3. Download the `qt.py` and `helper.py` files from [here](https://invent.kde.org/kdevelop/kdevelop/-/tree/master/plugins/gdb/printers) ([backup link](https://github.com/KDE/kdevelop/tree/master/plugins/gdb/printers)) and place them inside the `.gdb/qt5prettyprinters` folder.
 
 4. Create a file called `.gdbinit` inside the cloned repository folder with the following contents:
+
     ```python
     python
 
@@ -31,9 +32,9 @@ This guide assumes you are relatively inexperienced with GDB, and either don't k
     end
     ```
 
-# Usage
+## Usage
 
-After starting a debugging session with qBittorrent (`gdb qbittorrent`, for example), execute `source .gdbinit` in  the GDB console. You should see some output informing you that the pretty printers have been loaded.
+After starting a debugging session with qBittorrent (`gdb qbittorrent`, for example), execute `source .gdbinit` in the GDB console. You should see some output informing you that the pretty printers have been loaded.
 
 ```gdb
 (gdb) source .gdbinit
@@ -46,14 +47,15 @@ Now, you can use GDB as you usually would. Whenever you print a variable with a 
 For example, suppose you are at a breakpoint and print the value of a variable named `data`, which is a `QByteArray`, containing an HTTP request.
 
 - output without pretty printers:
-    ```
+
+    ```text
     (gdb) print data
     $1 = (const QByteArray &) @0x555555e2ecd0: {d = 0x555555e46610}
     ```
 
 - output with pretty printers:
 
-    ```
+    ```text
     (gdb) print data
     $1 = "POST /api/v2/auth/login HTTP/1.1\r\nHost: localhost:8080\r\nUser-Agent: python-requests/2.22.0\r\nAccept-Encoding: gzip, deflate\r\nAccept: */*\r\nConnection: keep-alive\r\nContent-Length: 34\r\nContent-Type: appli"... = {[0] = 80 'P', [1] = 79 'O',
   [2] = 83 'S', [3] = 84 'T', [4] = 32 ' ', [5] = 47 '/', [6] = 97 'a', [7] = 112 'p', [8] = 105 'i', [9] = 47 '/', [10] = 118 'v', [11] = 50 '2', [12] = 47 '/', [13] = 97 'a', [14] = 117 'u', [15] = 116 't', [16] = 104 'h', [17] = 47 '/', [18] = 108 'l',

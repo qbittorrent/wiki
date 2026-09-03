@@ -126,21 +126,21 @@ make clean && make -j$(nproc)</code></pre></td>
 
 Finally, you can install `libtorrent`.
 
-- If building with CMake:
+* If building with CMake:
 
-    `sudo cmake --install cmake-build-dir/release`
+  `sudo cmake --install cmake-build-dir/release`
 
-    This generates an `install_manifest.txt` file in the build folder that can later be used to uninstall all installed files with `sudo xargs rm < install_manifest.txt`. The default installation prefix is `/usr/local`, as expected.
+  This generates an `install_manifest.txt` file in the build folder that can later be used to uninstall all installed files with `sudo xargs rm < install_manifest.txt`. The default installation prefix is `/usr/local`, as expected.
 
-- If building with `autotools`:
+* If building with `autotools`:
 
-    If you have `checkinstall`, the following command will generate and install a `.deb` package that can be tracked and managed by your package manager:
+  If you have `checkinstall`, the following command will generate and install a `.deb` package that can be tracked and managed by your package manager:
 
     ```bash
     sudo checkinstall --nodoc --backup=no --deldesc --pkgname libtorrent-rasterbar --pkgversion 1.x.x-source-compile # change the version to your liking
     ```
 
-    Alternatively, the traditional way will do just fine (but there is no tracking of the installed files):
+  Alternatively, the traditional way will do just fine (but there is no tracking of the installed files):
 
     ```bash
     sudo make install
@@ -148,7 +148,7 @@ Finally, you can install `libtorrent`.
 
 For more information on building libtorrent, see [libtorrent downloading and building](https://www.libtorrent.org/building.html).
 
-# Compiling qBittorrent (with the GUI)
+## Compiling qBittorrent (with the GUI)
 
 First, obtain the qBittorrent source code.
 
@@ -192,7 +192,7 @@ sudo make install
 
 That's it! qBittorrent is now installed. You should now be able to run it from the terminal or the installed shortcuts.
 
-# Compiling qBittorrent (without the GUI; aka qBittorrent-nox aka headless)
+## Compiling qBittorrent (without the GUI; aka qBittorrent-nox aka headless)
 
 The steps are almost all the same as the GUI version except for the configure step, where you should add the `--disable-gui` flag to it, like so:
 
@@ -213,29 +213,29 @@ Password: adminadmin
 
 Documentation about running qBittorrent without GUI is available [here](https://github.com/qbittorrent/qBittorrent/wiki/Running-qBittorrent-without-X-server-(WebUI-only)).
 
-# Troubleshooting
+## Troubleshooting
 
-## Compiling (generic)
+### Compiling (generic)
 
 * In the `make` command, the `-j$(nproc)` flag makes the number of build jobs equal to the number of hardware threads available. To see the actual value your system is using, run `echo $(nproc)` in a terminal. You could also manually specify a value like so: `-j5`. Higher values may make the build faster, but an eye must be kept on the memory usage.
 
-## Compiling `libtorrent`
+### Compiling `libtorrent`
 
 * If you get a `configure: error: Boost.System library not found`, check if you installed all the above dependencies.
 
-    If so, also pass the `--with-boost-libdir=/usr/lib/i386-linux-gnu` to the `./configure`
+  If so, also pass the `--with-boost-libdir=/usr/lib/i386-linux-gnu` to the `./configure`
 
-## Compiling qBittorrent
+### Compiling qBittorrent
 
 * If you're using `libtorrent-rasterbar` from the 0.16.x series, you also need to pass the `--with-libtorrent-rasterbar0.16` option to configure. qBittorrent v3.3.x has dropped the support of libtorrent 0.16.x.
 * If you want to compile with Qt4 instead of qt5, you also need to pass the `--with-qt4` option to configure. qBittorrent v4.0.x has dropped support for Qt4
 
-## Running qBittorrent
+### Running qBittorrent
 
 If you get an error similar to `qbittorrent: symbol lookup error: qbittorrent: undefined symbol:`
 Simply run:
- ldconfig
-The following method is too complex, but if you want to know what's going on, then you can read the following method (see https://github.com/qbittorrent/qBittorrent/issues/8047):
+ldconfig
+The following method is too complex, but if you want to know what's going on, then you can read the following method (see <https://github.com/qbittorrent/qBittorrent/issues/8047>):
 
 Check if your `LD_LIBRARY_PATH` environment variable is set and the path `/usr/local/lib` is included.
 
@@ -246,6 +246,6 @@ If so, you are good to go. If not, add the path to the variable:
 export LD_LIBRARY_PATH=/usr/local/lib:${LD_LIBRARY_PATH}
 ```
 
-## Notes
+### Notes
 
 * If you experience any problem with this how to, do not hesitate to contact sledgehammer999(at)qbittorrent(dot)org.

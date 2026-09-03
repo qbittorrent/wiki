@@ -1,0 +1,29 @@
+# https://rumdl.dev/global-settings/
+# https://rumdl.dev/rules/
+
+[global]
+enable = ["ALL"]
+disable = [
+    "MD013",
+    "MD026",
+    "MD036",
+    "MD059",
+    "MD060",
+    "MD063",
+    "MD080",
+    "MD082"
+]
+
+[per-file-ignores]
+"_Sidebar.md" = ["MD041"]
+"Home.md" = ["MD041"]
+
+[MD033]
+allowed-elements = ["kbd", "sup"]
+allowed-inside = ["table"]
+
+[MD041]
+allow-preamble = true
+
+[MD046]
+style = "fenced"

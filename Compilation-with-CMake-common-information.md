@@ -1,3 +1,5 @@
+# Common Compilation Information for CMake
+
 ## Introduction
 
 As of revision `63ff5e3` (this is after version 4.2.5), CMake should be considered the preferred way of building qBittorrent on all supported platforms.
@@ -32,7 +34,9 @@ You may use the following qBittorrent-specific options to customize the build. P
 | `WEBUI` | Bool | `ON` | Enables built-in HTTP server for headless use | - |
 
 ---
+
 ---
+
 ---
 
 ## CMake Basics
@@ -47,7 +51,7 @@ These input files will be then used to actually build the project in the **build
 
 A typical CMake invocation looks like the following 2 commands:
 
-```
+```text
 cmake -B build -G "Ninja" -DCMAKE_BUILD_TYPE=Release -DWEBUI=OFF
 cmake --build build --parallel 4
 ```
@@ -56,21 +60,21 @@ Here is what is happening in each command:
 
 - In the first one, which is the **configure step**:
 
-    - `-B build` in the **configure step** tells CMake to generate build files for a native buildsystem in a build directory called `build`, separate from the main source file hierarchy.
-        This is also known as an "out-of-source build"
-    - `-G Ninja` tells CMake to use its Ninja generator to generate input files for the `ninja` buildsystem.
-        This is the tool that will actually build the project
-    - `-DCMAKE_BUILD_TYPE=Release` is a special CMake **"configure-time"** option to select the build type/configuration for single-config generators like the Ninja generator.
-    - `-DWEBUI=OFF` is a **"configure-time"** option specific to the qBittorrent project that tells CMake to not build the WebUI components.
+  - `-B build` in the **configure step** tells CMake to generate build files for a native buildsystem in a build directory called `build`, separate from the main source file hierarchy.
+    This is also known as an "out-of-source build"
+  - `-G Ninja` tells CMake to use its Ninja generator to generate input files for the `ninja` buildsystem.
+    This is the tool that will actually build the project
+  - `-DCMAKE_BUILD_TYPE=Release` is a special CMake **"configure-time"** option to select the build type/configuration for single-config generators like the Ninja generator.
+  - `-DWEBUI=OFF` is a **"configure-time"** option specific to the qBittorrent project that tells CMake to not build the WebUI components.
 
 At the end of the **configure step** CMake will print some useful information to the terminal detailing the result of the configuration.
 
 - In the second one, which is the **build step**:
 
-    - `--build build` tells CMake to build the build tree generated under the `build/` directory (it is created if it doesn't already exist). All resulting build outputs will be under this directory when the build finishes.
-    - Since in this example a single-config generator is being used, the `--config <BuildType>` argument is not passed (it would be ignored anyway), since the build configuration was already selected at **"configure-time"**.
-    - `--parallel 4` tells CMake to instruct the underlying buildsytem to use 4 CPU cores for compilation. If not specified, the underlying buildsystem's default is used (for example, `Ninja` defaults to all available cores, `Unix Makefiles` defaults to 1).
-    - It is possible to pass additional options directly to the underlying buildsystem after `--`. For example, `cmake --build build -- -j 4` would do the same thing as `cmake --build build --parallel 4` when using the `Unix Makefiles` generator.
+  - `--build build` tells CMake to build the build tree generated under the `build/` directory (it is created if it doesn't already exist). All resulting build outputs will be under this directory when the build finishes.
+  - Since in this example a single-config generator is being used, the `--config <BuildType>` argument is not passed (it would be ignored anyway), since the build configuration was already selected at **"configure-time"**.
+  - `--parallel 4` tells CMake to instruct the underlying buildsytem to use 4 CPU cores for compilation. If not specified, the underlying buildsystem's default is used (for example, `Ninja` defaults to all available cores, `Unix Makefiles` defaults to 1).
+  - It is possible to pass additional options directly to the underlying buildsystem after `--`. For example, `cmake --build build -- -j 4` would do the same thing as `cmake --build build --parallel 4` when using the `Unix Makefiles` generator.
 
 The following subsections explain these points in further detail.
 
@@ -85,7 +89,7 @@ These are the main benefits of an out-of-source build vs. an in-source build:
 
 - Your source tree is always clean no matter what
 - As a consequence of the first point, your git working tree never gets polluted with build outputs
-    - this is only possible because in the case of qBittorrent, the whole `build/` subtree is set to be ignored via `.gitignore`, so you are encouraged to create your build trees under `build/` or subdirectories inside it.
+  - this is only possible because in the case of qBittorrent, the whole `build/` subtree is set to be ignored via `.gitignore`, so you are encouraged to create your build trees under `build/` or subdirectories inside it.
 - You may have several different build directories at the same time, each containing build trees configured with different options.
 
 To delete all the generated CMake files and build outputs in a build directory, you simply delete the whole build directory.
@@ -114,20 +118,19 @@ The build type/configuration selection is a bit different depending on whether a
 
 - Single-config generators generate build trees for only one configuration at a time.
 
-    - The configuration is specified via `-DCMAKE_BUILD_TYPE=` in the **configure step**. For example, `-DCMAKE_BUILD_TYPE=RelWithDebInfo`.
-    - If none is specified, the default is none.
-    - To change configuration, one must generate a new build tree with a new configuration type each time.
-    - The `--config` flag is ignored in the **build step**, if present.
+  - The configuration is specified via `-DCMAKE_BUILD_TYPE=` in the **configure step**. For example, `-DCMAKE_BUILD_TYPE=RelWithDebInfo`.
+  - If none is specified, the default is none.
+  - To change configuration, one must generate a new build tree with a new configuration type each time.
+  - The `--config` flag is ignored in the **build step**, if present.
 
 - Multi-config generators generate several configurations at a time.
 
-    - The build configuration is specified by the `--config` flag in the **build step**. For example `--config RelWithDebInfo`).
-    - If none is specified, the default is `Debug`.
-    - To change configuration, one just has to execute the build step on the same source tree with a different `--config` argument
-    - The `-DCMAKE_BUILD_TYPE=` flag of the **configure step** is ignored, if present.
+  - The build configuration is specified by the `--config` flag in the **build step**. For example `--config RelWithDebInfo`).
+  - If none is specified, the default is `Debug`.
+  - To change configuration, one just has to execute the build step on the same source tree with a different `--config` argument
+  - The `-DCMAKE_BUILD_TYPE=` flag of the **configure step** is ignored, if present.
 
 See the CMake documentation for more information about build types/configurations, including a list of built-in build types/configurations.
-
 
 ### Changing **configure-time** options
 
@@ -182,7 +185,7 @@ You can run the executable from the build directory, but you also may want to in
 
 This can be done with (you may need elevated privileges, depending on the install destination):
 
-```
+```text
 cmake --install build_dir
 ```
 
@@ -190,7 +193,7 @@ The install destination can be controlled via the `CMAKE_INSTALL_PREFIX` variabl
 
 CMake does not strip binaries by default. To install stripped binaries, pass the `--strip` flag to the install command:
 
-```
+```text
 make --install build_dir --strip
 ```
 

@@ -4,7 +4,7 @@ Portable mode makes it so that all qBittorrent config files get stored and read 
 
 **NOTE: Only available for version 4.2.1 and above.**
 
-# Linux
+## Linux
 
 Use `--profile=path/to/config/dir --relative-fastresume`, where `path/to/config/dir` is the folder where you want your portable config to be stored or read from, if the config files already exist inside it.
 
@@ -12,7 +12,7 @@ Alternatively, create a folder literally named `profile` in the same directory a
 
 **NOTE:** there are a bunch of caveats and pitfalls associated with portable mode and the `--relative-fastresume` flag in particular. Refer to the man page for more information and things to watch out for about these options. If just you want to use multiple configurations, use `--profile=path/to/config/dir` or `--configuration=config-name-here`. TODO: work on the new, complete man page is not yet finished.
 
-# Windows
+## Windows
 
 1. Place the qBittorrent binaries (`qbittorrent.exe` and `qbittorrent.pdb`) anywhere you want in your PC. You can extract them from the setup `.exe` file using 7-zip or similar (setup files are just fancy self-extracting archives).
 2. Create a folder called `profile` in the same directory as the `qbittorrent.exe` and `qbittorrent.pdb` files.

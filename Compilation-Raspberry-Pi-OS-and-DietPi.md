@@ -12,39 +12,39 @@ This guide was made possible by the authors of the [Debian/Ubuntu compilation gu
 
 * [Dependencies](#dependencies)
 * [Compiling Libtorrent](#compiling-libtorrent)
-	* [Get the source code](#get-the-source-code)
-        * [A. `git clone` from repository](#a-git-clone-from-repository)
-        * [B. Download the latest release](#b-download-the-latest-release)
-    * [Compile Libtorrent](#compile-libtorrent)
-    * [Add Libtorrent as a system library](#add-libtorrent-as-a-system-library)
+  * [Get the source code](#get-the-source-code)
+    * [A. `git clone` from repository](#a-git-clone-from-repository)
+    * [B. Download the latest release](#b-download-the-latest-release)
+  * [Compile Libtorrent](#compile-libtorrent)
+  * [Add Libtorrent as a system library](#add-libtorrent-as-a-system-library)
 * [Compiling qBittorrent-nox](#compiling-qbittorrent-nox)
-	* [Get the source code](#get-the-source-code-1)
-        * [A. `git clone` from repository](#a-git-clone-from-repository-1)
-        * [B. Download the latest release](#b-download-the-latest-release-1)
-    * [Compile qBittorrent-nox](#compile-qbittorrent-nox)
+  * [Get the source code](#get-the-source-code-1)
+    * [A. `git clone` from repository](#a-git-clone-from-repository-1)
+    * [B. Download the latest release](#b-download-the-latest-release-1)
+  * [Compile qBittorrent-nox](#compile-qbittorrent-nox)
 * [Running qBittorrent-nox on boot](#running-qbittorrent-nox-on-boot)
-    * [Add user for qBittorrent-nox service](#add-user-for-qbittorrent-nox-service)
-    * [Create systemd service file](#create-systemd-service-file)
-    * [Run and check systemd service status](#run-and-check-systemd-service-status)
+  * [Add user for qBittorrent-nox service](#add-user-for-qbittorrent-nox-service)
+  * [Create systemd service file](#create-systemd-service-file)
+  * [Run and check systemd service status](#run-and-check-systemd-service-status)
 * [Updating qBittorrent-nox](#updating-qbittorrent-nox)
-    * [Updating an already compiled version of qBittorrent-nox](#updating-an-already-compiled-version-of-qBittorrent-nox)
-    * [Checking the version to verify that the binary got updated](#checking-the-version-to-verify-that-the-binary-got-updated)
+  * [Updating an already compiled version of qBittorrent-nox](#updating-an-already-compiled-version-of-qBittorrent-nox)
+  * [Checking the version to verify that the binary got updated](#checking-the-version-to-verify-that-the-binary-got-updated)
 
-# Dependencies
+## Dependencies
 
 You will first need to install various tools and libraries needed for compilation.
 
-~~~~
+~~~~text
 sudo apt install build-essential pkg-config automake libtool libc6-dev libboost-dev libboost-system-dev libboost-chrono-dev libboost-random-dev libssl-dev qtbase5-dev qttools5-dev-tools libqt5svg5-dev zlib1g-dev
 ~~~~
 
 If you choose to retrieve source code using `git clone`, then also `sudo apt install git`.
 
-# Compiling Libtorrent
+## Compiling Libtorrent
 
 DietPi's and Raspberry Pi OS's repositories include older versions of [Libtorrent](https://libtorrent.org/). You will need to compile Libtorrent 1.2.x to get qBittorrent-nox 4.2.x running. Both methods below outline how to install Libtorrent 1.2.x for use with qBittorrent-nox 4.3.x (and likely later versions).
 
-## Get the source code
+### Get the source code
 
 Two versions of Libtorrent are currently maintained: 1.2.x and 2.0.x.
 
@@ -56,26 +56,26 @@ A. `git clone ...`
 
 B. `wget ...`
 
-### A. `git clone` from repository
+#### A. `git clone` from repository
 
-~~~~
+~~~~text
 git clone https://github.com/arvidn/libtorrent.git
 cd libtorrent
 # select the latest release tag
 git checkout $(git tag | grep v1\.2.\. | sort -t _ -n -k 3 | tail -n 1)
 ~~~~
 
-### B. Download the [latest release](https://github.com/arvidn/libtorrent/releases)
+#### B. Download the [latest release](https://github.com/arvidn/libtorrent/releases)
 
-~~~~
+~~~~text
 wget https://github.com/arvidn/libtorrent/archive/libtorrent-1_2_14.zip
 unzip libtorrent-1_2_14.zip
 cd libtorrent-libtorrent-1_2_14
 ~~~~
 
-## Compile Libtorrent
+### Compile Libtorrent
 
-~~~~
+~~~~text
 ./autotool.sh
 ./configure --with-boost-libdir=/usr/lib/arm-linux-gnueabihf --with-libiconv CXXFLAGS="-std=c++17"
 make -j$(nproc)
@@ -86,7 +86,7 @@ sudo make install
 
 If OOM errors occur, add a swap file.
 
-~~~~
+~~~~text
 sudo dd if=/dev/zero of=/.swapfile bs=1M count=1024
 sudo mkswap /.swapfile
 sudo swapon /.swapfile
@@ -101,7 +101,7 @@ sudo rm /.swapfile
 
 One example manifestation of an OOM error on Raspberry Pi OS looks like:
 
-~~~~
+~~~~text
 $ make
 ...
 make[1]: Entering directory '/tmp/libtorrent-libtorrent_1_2_0/src'
@@ -109,7 +109,7 @@ make[1]: Entering directory '/tmp/libtorrent-libtorrent_1_2_0/src'
 g++: internal compiler error: Killed (program cc1plus)
 ~~~~
 
-## Add Libtorrent as a system library
+### Add Libtorrent as a system library
 
 You will need to add Libtorrent as a system library or qBittorrent-nox won't run after you compile it.
 
@@ -121,9 +121,9 @@ Check if your `LD_LIBRARY_PATH` environment variable is set and the path `/usr/l
 
 If so, you are good to go. If not, add the path to the variable: `export LD_LIBRARY_PATH=/usr/local/lib:${LD_LIBRARY_PATH}`
 
-#  Compiling qBittorrent-nox
+## Compiling qBittorrent-nox
 
-## Get the source code
+### Get the source code
 
 To get the qBittorrent-nox source code, either:
 
@@ -131,26 +131,26 @@ A. `git clone ...`
 
 B. `wget ...`
 
-### A. `git clone` from repository
+#### A. `git clone` from repository
 
-~~~~
+~~~~text
 git clone -b v4_3_x https://github.com/qbittorrent/qBittorrent
 cd qBittorrent
 ~~~~
 
 You may select the branch version on the [branches page](https://github.com/qbittorrent/qBittorrent/branches).
 
-### B. Download the [latest release](https://github.com/qbittorrent/qBittorrent/releases)
+#### B. Download the [latest release](https://github.com/qbittorrent/qBittorrent/releases)
 
-~~~~
+~~~~text
 wget https://github.com/qbittorrent/qBittorrent/archive/release-4.3.5.zip
 unzip release-4.3.5.zip
 cd qBittorrent-release-4.3.5
 ~~~~
 
-## Compile qBittorrent-nox
+### Compile qBittorrent-nox
 
-~~~~
+~~~~text
 ./configure --disable-gui --enable-systemd --with-boost-libdir=/usr/lib/arm-linux-gnueabihf CXXFLAGS="-std=c++17"
 make -j$(nproc)
 sudo make install
@@ -161,34 +161,38 @@ NOTE: Review [Ubuntu/Debian compilation guide](https://github.com/qbittorrent/qB
 The binary should be located at `/usr/local/bin/qbittorrent-nox`. If `qbittorrent-nox` was installed using `apt` then that binary will be at `/usr/bin/qbittorrent-nox`. _Do not confuse them!_
 
 **Web UI access information**
-* _http://localhost:8080_
+
+* _<http://localhost:8080_>
 * Username: _admin_
 * Password: _adminadmin_
 
 qBittorrent-nox is currently installed as a terminal application, which is not optimal for headless use. We now will add qBittorrent-nox as a service.
 
-# Running qBittorrent-nox on boot
+## Running qBittorrent-nox on boot
 
-## Add user for qBittorrent-nox service
+### Add user for qBittorrent-nox service
 
 For Raspberry Pi OS:
-~~~~
+
+~~~~text
 sudo useradd -rm qbittorrent -G pi -s /usr/sbin/nologin
 ~~~~
 
 For DietPi:
-~~~~
+
+~~~~text
 sudo useradd -rm qbittorrent -G dietpi -s /usr/sbin/nologin
 ~~~~
 
-## Create systemd service file
+### Create systemd service file
 
 _UPDATE:_ this **may** not be necessary if qBittorrent compilation was configured with flag `--enable-systemd`.
 
 Create a systemd service file `sudo nano /etc/systemd/system/qbittorrent.service`.
 
 Contents for Raspberry Pi OS:
-~~~~
+
+~~~~text
 Description=qBittorrent Daemon Service
 After=network.target
 
@@ -203,7 +207,8 @@ WantedBy=multi-user.target
 ~~~~
 
 Contents for DietPi:
-~~~~
+
+~~~~text
 Description=qBittorrent Daemon Service
 After=network.target
 
@@ -217,9 +222,9 @@ ExecStop=/usr/bin/killall -w qbittorrent-nox
 WantedBy=multi-user.target
 ~~~~
 
-## Run and check systemd service status
+### Run and check systemd service status
 
-~~~~
+~~~~text
 sudo systemctl daemon-reload
 sudo systemctl start qbittorrent
 sudo systemctl status qbittorrent
@@ -229,24 +234,24 @@ The `systemctl status` command should show qBittorrent-nox is `active (running)`
 
 Enable `qbittorrent` service during boot: `sudo systemctl enable qbittorrent`.
 
-# Updating qBittorrent-nox
+## Updating qBittorrent-nox
 
-## Updating an already compiled version of qBittorrent-nox
+### Updating an already compiled version of qBittorrent-nox
 
 Get the latest version of qBittorrent using instructions outlined above (git/wget).
 
 Navigate to the qBittorrent directory with the latest release.
 
-~~~~
+~~~~text
 sudo systemctl stop qbittorrent
 ./configure --disable-gui --enable-systemd --with-boost-libdir=/usr/lib/arm-linux-gnueabihf CXXFLAGS="-std=c++17"
 make -j$(nproc)
 sudo make install
 ~~~~
 
-## Checking the version to verify that the binary got updated
+### Checking the version to verify that the binary got updated
 
-~~~~
+~~~~text
 sudo systemctl stop qbittorrent
 /usr/local/bin/qbittorrent-nox --version
 ~~~~

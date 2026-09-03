@@ -7,63 +7,64 @@ A non-exhaustive list of FOSS alternate WebUIs developed for qBittorrent by the 
 If you know of more, feel free to add a link to the repository along with a short description.
 
 ---
-### Custom WebUI Projects
 
-- https://github.com/dracula/qbittorrent
+## Custom WebUI Projects
 
-    Dracula Theme for QBittorrent.
+- <https://github.com/dracula/qbittorrent>
 
-- https://github.com/CzBiX/qb-web
+  Dracula Theme for QBittorrent.
 
-    A custom WebUI written in Typescript and VueJS with extra features, such as RSS and dark mode.
+- <https://github.com/CzBiX/qb-web>
 
-- https://github.com/AndersMalmgren/qBittorrent/tree/master/src/webui/www
+  A custom WebUI written in Typescript and VueJS with extra features, such as RSS and dark mode.
 
-    A fork of qBittorrent containing a WebUI modified to implement the WebAPI's RSS functionality.
+- <https://github.com/AndersMalmgren/qBittorrent/tree/master/src/webui/www>
 
-- https://github.com/VueTorrent/VueTorrent
+  A fork of qBittorrent containing a WebUI modified to implement the WebAPI's RSS functionality.
 
-    A full-featured modern looking and responsive WebUI for qBittorrent, made with VueJS! Includes dark mode, RSS, search engine, logs and more!
+- <https://github.com/VueTorrent/VueTorrent>
 
-- https://github.com/bill-ahmed/qbit-WebUI
+  A full-featured modern looking and responsive WebUI for qBittorrent, made with VueJS! Includes dark mode, RSS, search engine, logs and more!
 
-    A minimalist WebUI made using Typescript.
+- <https://github.com/bill-ahmed/qbit-WebUI>
 
-- https://github.com/ntoporcov/iQbit
+  A minimalist WebUI made using Typescript.
 
-    An iOS styled, mobile focused WebUI theme and PWA. Built in react and made especially for mobile devices and tablets, although it works in any browser as well.
+- <https://github.com/ntoporcov/iQbit>
 
-- https://github.com/crash0verride11/DarkLight-qBittorent-WebUI
+  An iOS styled, mobile focused WebUI theme and PWA. Built in react and made especially for mobile devices and tablets, although it works in any browser as well.
 
-    A toggle-able dark theme for the default WebUI. Archived 2024
+- <https://github.com/crash0verride11/DarkLight-qBittorent-WebUI>
 
-- https://flood.js.org
+  A toggle-able dark theme for the default WebUI. Archived 2024
 
-    A modern web UI for various torrent clients with a Node.js backend and React frontend. Flood supports touch devices, content previews, filesystem browsing and multi-user (with different clients).
+- <https://flood.js.org>
 
-- https://github.com/Carve/qbittorrent-webui-cjratliff.com
+  A modern web UI for various torrent clients with a Node.js backend and React frontend. Flood supports touch devices, content previews, filesystem browsing and multi-user (with different clients).
 
-    A sleek and modern dark theme with pretty colors for stats.
+- <https://github.com/Carve/qbittorrent-webui-cjratliff.com>
 
-- https://github.com/lantean-code/qbtmud
+  A sleek and modern dark theme with pretty colors for stats.
 
-    qbtmud is a drop-in replacement for qBittorrent's default WebUI, implementing all of its functionality with a modern and user-friendly interface.
+- <https://github.com/lantean-code/qbtmud>
 
-- https://github.com/MahdiMirzadeh/qbittorrent
+  qbtmud is a drop-in replacement for qBittorrent's default WebUI, implementing all of its functionality with a modern and user-friendly interface.
 
-    A bunch of different themes for both the Qt GUI Client and the WebUI. Both variations are generated from a single theme.json file.
-    Current Themes: solarized-light, gruvbox-light, solarized-dark, gruvbox-dark, dracula, dark
+- <https://github.com/MahdiMirzadeh/qbittorrent>
 
-- https://github.com/ksuaning-au/qbitwebber
+  A bunch of different themes for both the Qt GUI Client and the WebUI. Both variations are generated from a single theme.json file.
+  Current Themes: solarized-light, gruvbox-light, solarized-dark, gruvbox-dark, dracula, dark
 
-    A modern minimalist replacement for the qbittorrent WebUI. Responsive design for desktop and mobile. Built with React.
+- <https://github.com/ksuaning-au/qbitwebber>
+
+  A modern minimalist replacement for the qbittorrent WebUI. Responsive design for desktop and mobile. Built with React.
 
 ---
+
 ### Boilerplates
 
 This is a list of boilerplate projects for starting to develop a new WebUI
 
+- <https://github.com/ntoporcov/qbittorrent-webui-react-boilerplate>
 
-- https://github.com/ntoporcov/qbittorrent-webui-react-boilerplate
-
-    A barebones CRA React project modified for WebUI.
+  A barebones CRA React project modified for WebUI.

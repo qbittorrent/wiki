@@ -18,7 +18,6 @@ This WebUI API documentation applies to qBittorrent v4.1-v4.6.x. For other WebUI
    1. [API v2.6.0](#api-v260)
    1. [API v2.6.1](#api-v261)
    1. [API v2.6.2](#api-v262)
-   1. [API v2.7.0](#api-v270)
    1. [API v2.8.0](#api-v280)
    1. [API v2.8.1](#api-v281)
    1. [API v2.8.2](#api-v282)
@@ -125,36 +124,36 @@ This WebUI API documentation applies to qBittorrent v4.1-v4.6.x. For other WebUI
 
 ***
 
-# Changes #
+## Changes ##
 
-## API v2.0 ##
+### API v2.0 ###
 
 - New version naming scheme: X.Y.Z (where X - major version, Y - minor version, Z - release version)
 - New API paths. All API methods are under `api/vX/` (where X is API major version)
 - API methods are under new scopes
 
-## API v2.0.1 ##
+### API v2.0.1 ###
 
 - Add `hashes` field to `/torrents/info` ([#8782](https://github.com/qbittorrent/qBittorrent/pull/8782))
 - Add `/torrents/setShareLimits/` method ([#8598](https://github.com/qbittorrent/qBittorrent/pull/8598))
 
-## API v2.0.2 ##
+### API v2.0.2 ###
 
 - Add `/torrents/reannounce` method ([#9229](https://github.com/qbittorrent/qBittorrent/pull/9229))
 
-## API v2.1.0 ##
+### API v2.1.0 ###
 
 - Change `/sync/maindata` `categories` field from `array` to `object` ([#9228](https://github.com/qbittorrent/qBittorrent/pull/9228))
 - Add `savePath` field to `/torrents/createCategory` ([#9228](https://github.com/qbittorrent/qBittorrent/pull/9228)). This method now requires the category to already exist and will not create new categories.
 - Add `/torrents/editCategory` method ([#9228](https://github.com/qbittorrent/qBittorrent/pull/9228))
 
-## API v2.1.1 ##
+### API v2.1.1 ###
 
 - Add `/torrents/categories` method ([#9586](https://github.com/qbittorrent/qBittorrent/pull/9586))
 - Add `/search/` methods ([#8584](https://github.com/qbittorrent/qBittorrent/pull/8584))
 - Add `free_space_on_disk` field to `/sync/maindata` ([#8217](https://github.com/qbittorrent/qBittorrent/pull/8217))
 
-## API v2.2.0 ##
+### API v2.2.0 ###
 
 - Add `/torrents/editTracker` and `/torrents/removeTracker` methods ([#9375](https://github.com/qbittorrent/qBittorrent/pull/9375))
 - Add `tier`, `num_seeds`, `num_leeches`, and `num_downloaded` fields to `/torrents/trackers` ([#9375](https://github.com/qbittorrent/qBittorrent/pull/9375))
@@ -164,11 +163,11 @@ This WebUI API documentation applies to qBittorrent v4.1-v4.6.x. For other WebUI
 - Add `autoTMM` field to `/torrents/add` ([#9752](https://github.com/qbittorrent/qBittorrent/pull/9752))
 - Add various fields to `/app/getPreferences` and `/app/setPreferences` (`create_subfolder_enabled`, `start_paused_enabled`, `auto_delete_mode`, `preallocate_all`, `incomplete_files_ext`, `auto_tmm_enabled`, `torrent_changed_tmm_enabled`, `save_path_changed_tmm_enabled`, `category_changed_tmm_enabled`, `mail_notification_sender`, `limit_lan_peers`, `slow_torrent_dl_rate_threshold`, `slow_torrent_ul_rate_threshold`, `slow_torrent_inactive_timer`, `alternative_webui_enabled`, `alternative_webui_path`) ([#9752](https://github.com/qbittorrent/qBittorrent/pull/9752))
 
-## API v2.2.1 ##
+### API v2.2.1 ###
 
 - Add `rss/refreshItem` ([#11067](https://github.com/qbittorrent/qBittorrent/pull/11067))
 
-## API v2.3.0 ##
+### API v2.3.0 ###
 
 - Remove `web_ui_password` field from `/app/preferences`, this field is still writable in `/app/setPreferences` method ([#9942](https://github.com/qbittorrent/qBittorrent/pull/9942))
 - Add `/app/buildInfo` method ([#10096](https://github.com/qbittorrent/qBittorrent/pull/10096))
@@ -176,60 +175,69 @@ This WebUI API documentation applies to qBittorrent v4.1-v4.6.x. For other WebUI
 - Add `/torrents/addPeers` and `/transfer/banPeers` methods ([#10158](https://github.com/qbittorrent/qBittorrent/pull/10158))
 - Add `/torrents/addTags`, `/torrents/removeTags`, `/torrents/tags`, `/torrents/createTags`, `/torrents/deleteTags` methods ([#10527](https://github.com/qbittorrent/qBittorrent/pull/10527))
 
-## API v2.4.0 ##
+### API v2.4.0 ###
 
 - Add `/torrents/renameFile` method ([#11029](https://github.com/qbittorrent/qBittorrent/pull/11029))
 
-## API v2.4.1 ##
+### API v2.4.1 ###
 
 - Add `stalled`, `stalled_uploading` and `stalled_downloading` as possible values for the `filter` parameter in `/torrents/info` ([#11825](https://github.com/qbittorrent/qBittorrent/pull/11825))
 - Add various fields to `/app/preferences` and `/app/setPreferences` (`piece_extent_affinity`, `web_ui_secure_cookie_enabled`, `web_ui_max_auth_fail_count`, `web_ui_ban_duration`, `stop_tracker_timeout`) ([#11781](https://github.com/qbittorrent/qBittorrent/pull/11781), [#11726](https://github.com/qbittorrent/qBittorrent/pull/11726), [#12004](https://github.com/qbittorrent/qBittorrent/pull/12004), [#11834](https://github.com/qbittorrent/qBittorrent/pull/11834))
 
-## API v2.5.0 ##
-- Removes `enable_super_seeding` as fields from `/app/preferences` and `/app/setPreferences`  ([#12423](https://github.com/qbittorrent/qBittorrent/pull/12423))
+### API v2.5.0 ###
 
-## API v2.5.1 ##
+- Removes `enable_super_seeding` as fields from `/app/preferences` and `/app/setPreferences` ([#12423](https://github.com/qbittorrent/qBittorrent/pull/12423))
+
+### API v2.5.1 ###
+
 - Add `web_ui_use_custom_http_headers_enabled`, `web_ui_custom_http_headers`, `rss_download_repack_proper_episodes` and `rss_smart_episode_filters` as fields to `/app/preferences` and `/app/setPreferences` ([#12579](https://github.com/qbittorrent/qBittorrent/pull/12579), [#12549](https://github.com/qbittorrent/qBittorrent/pull/12549))
 - Add `/rss/markAsRead` and `/rss/matchingArticles` methods ([#12549](https://github.com/qbittorrent/qBittorrent/pull/12549))
 
-## API v2.6.0 ##
+### API v2.6.0 ###
+
 - Removed `/search/categories` method and modified `/search/plugins` method's response ([#12705](https://github.com/qbittorrent/qBittorrent/pull/12705))
 
-## API v2.6.1 ##
+### API v2.6.1 ###
+
 - Exposed `contentPath` via the `content_path` field in the response to `/torrents/info` ([#13625](https://github.com/qbittorrent/qBittorrent/pull/13625))
 
-## API v2.6.2 ##
+### API v2.6.2 ###
+
 - Added `tags` optional field to `/torrents/add` ([#13882](https://github.com/qbittorrent/qBittorrent/pull/13882))
 
-## API v2.8.0 ##
+### API v2.8.0 ###
+
 - Added `/torrents/renameFolder` method and modified `/torrents/renameFile` method's parameters ([#13995](https://github.com/qbittorrent/qBittorrent/pull/13995))
 
 Note that this change was released in qBittorrent v4.3.3, but the WebAPI version was incorrectly set to v2.7.0 (see [#14275](https://github.com/qbittorrent/qBittorrent/pull/14275#issuecomment-766310862) for details)
 
-## API v2.8.1 ##
+### API v2.8.1 ###
+
 - Added `ratioLimit` and `seedingTimeLimit` optional fields to `/torrents/add` ([#14519](https://github.com/qbittorrent/qBittorrent/pull/14519))
 - Added `seeding_time` field to `/torrents/info` ([#14554](https://github.com/qbittorrent/qBittorrent/pull/14554))
 
-## API v2.8.2 ##
+### API v2.8.2 ###
+
 - Added `indexes` optional parameter to `/torrents/files` ([#14795](https://github.com/qbittorrent/qBittorrent/pull/14795))
 - Added `index` field to `/torrents/files` response ([#14795](https://github.com/qbittorrent/qBittorrent/pull/14795))
 
-## API v2.8.3 ##
+### API v2.8.3 ###
+
 - Added `tag` optional parameter to `/torrents/info` ([#15152](https://github.com/qbittorrent/qBittorrent/pull/15152))
 
-# General Information #
+## General Information ##
 
 - All API methods follows the format `/api/v2/APIName/methodName`, where `APIName` is a certain subgroup of API methods whose functionality is related.
 - All API methods only allows `GET` or `POST` methods. Use `POST` when you are mutating some state (or when your request is too big to fit into `GET`) and use `GET` otherwise. Starting with qBittorrent v4.4.4, server will return `405 Method Not Allowed` when you used the wrong request method.
 - All API methods require [authentication](#authentication) (except `/api/v2/auth/login`, obviously).
 
-# Authentication #
+## Authentication ##
 
 All Authentication API methods are under "auth", e.g.: `/api/v2/auth/methodName`.
 
 qBittorrent uses cookie-based authentication.
 
-## Login ##
+### Login ###
 
 Name: `login`
 
@@ -263,7 +271,7 @@ $ curl http://localhost:8080/api/v2/torrents/info --cookie "SID=hBc7TxF76ERhvIw0
 
 Note: Set `Referer` or `Origin` header to the exact same domain and port as used in the HTTP query `Host` header.
 
-## Logout ##
+### Logout ###
 
 Name: `logout`
 
@@ -277,11 +285,11 @@ HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
 200                               | All scenarios
 
-# Application #
+## Application ##
 
 All Application API methods are under "app", e.g.: `/api/v2/app/methodName`.
 
-## Get application version ##
+### Get application version ###
 
 Name: `version`
 
@@ -297,7 +305,7 @@ HTTP Status Code                  | Scenario
 
 The response is a string with the application version, e.g. `v4.1.3`
 
-## Get API version ##
+### Get API version ###
 
 Name: `webapiVersion`
 
@@ -313,7 +321,7 @@ HTTP Status Code                  | Scenario
 
 The response is a string with the WebAPI version, e.g. `2.0`
 
-## Get build info ##
+### Get build info ###
 
 Name: `buildInfo`
 
@@ -337,7 +345,7 @@ Property     | Type    | Description
 `openssl`    | string  | OpenSSL version
 `bitness`    | int     | Application bitness (e.g. 64-bit)
 
-## Shutdown application ##
+### Shutdown application ###
 
 Name: `shutdown`
 
@@ -351,7 +359,7 @@ HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
 200                               | All scenarios
 
-## Get application preferences ##
+### Get application preferences ###
 
 Name: `preferences`
 
@@ -759,7 +767,7 @@ Example:
 }
 ```
 
-## Set application preferences ##
+### Set application preferences ###
 
 Name: `setPreferences`
 
@@ -781,13 +789,13 @@ HTTP Status Code                  | Scenario
 
 **Notes**:
 
-  1. There is no need to pass all possible preferences' `token:value` pairs if you only want to change one option
-  1. Paths in `scan_dirs` must exist, otherwise this option will have no effect
-  1. String values must be quoted; integer and boolean values must never be quoted
+1. There is no need to pass all possible preferences' `token:value` pairs if you only want to change one option
+1. Paths in `scan_dirs` must exist, otherwise this option will have no effect
+1. String values must be quoted; integer and boolean values must never be quoted
 
 For a list of possible preference options see [Get application preferences](#get-application-preferences)
 
-## Get default save path ##
+### Get default save path ###
 
 Name: `defaultSavePath`
 
@@ -803,11 +811,11 @@ HTTP Status Code                  | Scenario
 
 The response is a string with the default save path, e.g. `C:/Users/Dayman/Downloads`.
 
-# Log #
+## Log ##
 
 All Log API methods are under "log", e.g.: `/api/v2/log/methodName`.
 
-## Get log ##
+### Get log ###
 
 Name: `main`
 
@@ -947,7 +955,7 @@ Example:
 ]
 ```
 
-## Get peer log ##
+### Get peer log ###
 
 Name: `peers`
 
@@ -973,12 +981,12 @@ Property    | Type    | Description
 `blocked`   | boolean | Whether or not the peer was blocked
 `reason`    | string  | Reason of the block
 
-# Sync #
+## Sync ##
 
 Sync API implements requests for obtaining changes since the last request.
 All Sync API methods are under "sync", e.g.: `/api/v2/sync/methodName`.
 
-## Get main data ##
+### Get main data ###
 
 Name: `maindata`
 
@@ -1029,7 +1037,7 @@ Example:
 }
 ```
 
-## Get torrent peers data ##
+### Get torrent peers data ###
 
 Name: `torrentPeers`
 
@@ -1055,11 +1063,11 @@ HTTP Status Code                  | Scenario
 
 The response is TODO
 
-# Transfer info #
+## Transfer info ##
 
 All Transfer info API methods are under "transfer", e.g.: `/api/v2/transfer/methodName`.
 
-## Get global transfer info ##
+### Get global transfer info ###
 
 This method returns info you usually see in qBt status bar.
 
@@ -1088,7 +1096,7 @@ Property            | Type    | Description
 `dht_nodes`         | integer | DHT nodes connected to
 `connection_status` | string  | Connection status. See possible values here below
 
-In addition to the above in partial data requests (see [Get partial data](#get-partial-data) for more info):
+In addition to the above in partial data requests:
 
 Property               | Type    | Description
 -----------------------|---------|------------
@@ -1098,11 +1106,11 @@ Property               | Type    | Description
 
 Possible values of `connection_status`:
 
-Value               |
+Value |
 --------------------|
-`connected`         |
+`connected` |
 `firewalled`        |
-`disconnected`      |
+`disconnected` |
 
 Example:
 
@@ -1119,7 +1127,7 @@ Example:
 }
 ```
 
-## Get alternative speed limits state ##
+### Get alternative speed limits state ###
 
 Name: `speedLimitsMode`
 
@@ -1135,7 +1143,7 @@ HTTP Status Code                  | Scenario
 
 The response is `1` if alternative speed limits are enabled, `0` otherwise.
 
-## Toggle alternative speed limits ##
+### Toggle alternative speed limits ###
 
 Name: `toggleSpeedLimitsMode`
 
@@ -1149,7 +1157,7 @@ HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
 200                               | All scenarios
 
-## Get global download limit ##
+### Get global download limit ###
 
 Name: `downloadLimit`
 
@@ -1165,7 +1173,7 @@ HTTP Status Code                  | Scenario
 
 The response is the value of current global download speed limit in bytes/second; this value will be zero if no limit is applied.
 
-## Set global download limit ##
+### Set global download limit ###
 
 Name: `setDownloadLimit`
 
@@ -1181,7 +1189,7 @@ HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
 200                               | All scenarios
 
-## Get global upload limit ##
+### Get global upload limit ###
 
 Name: `uploadLimit`
 
@@ -1197,7 +1205,7 @@ HTTP Status Code                  | Scenario
 
 The response is the value of current global upload speed limit in bytes/second; this value will be zero if no limit is applied.
 
-## Set global upload limit ##
+### Set global upload limit ###
 
 Name: `setUploadLimit`
 
@@ -1213,7 +1221,7 @@ HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
 200                               | All scenarios
 
-## Ban peers ##
+### Ban peers ###
 
 Name: `banPeers`
 
@@ -1229,11 +1237,11 @@ HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
 200                               | All scenarios
 
-# Torrent management #
+## Torrent management ##
 
 All Torrent management API methods are under "torrents", e.g.: `/api/v2/torrents/methodName`.
 
-## Get torrent list ##
+### Get torrent list ###
 
 Name: `info`
 
@@ -1370,7 +1378,7 @@ Example:
 ]
 ```
 
-## Get torrent generic properties ##
+### Get torrent generic properties ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -1474,7 +1482,7 @@ Example:
 }
 ```
 
-## Get torrent trackers ##
+### Get torrent trackers ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -1532,7 +1540,7 @@ Example:
 ]
 ```
 
-## Get torrent web seeds ##
+### Get torrent web seeds ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -1570,7 +1578,7 @@ Example:
 ]
 ```
 
-## Get torrent contents ##
+### Get torrent contents ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -1633,7 +1641,7 @@ Example:
 ]
 ```
 
-## Get torrent pieces' states ##
+### Get torrent pieces' states ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -1671,7 +1679,7 @@ Example:
 [0,0,2,1,0,0,2,1]
 ```
 
-## Get torrent pieces' hashes ##
+### Get torrent pieces' hashes ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -1701,7 +1709,7 @@ Example:
 ["54eddd830a5b58480a6143d616a97e3a6c23c439","f8a99d225aa4241db100f88407fc3bdaead583ab","928fb615b9bd4dd8f9e9022552c8f8f37ef76f58"]
 ```
 
-## Pause torrents ##
+### Pause torrents ###
 
 Requires knowing the torrent hashes. You can get it from [torrent list](#get-torrent-list).
 
@@ -1725,7 +1733,7 @@ HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
 200                               | All scenarios
 
-## Resume torrents ##
+### Resume torrents ###
 
 Requires knowing the torrent hashes. You can get it from [torrent list](#get-torrent-list).
 
@@ -1749,7 +1757,7 @@ HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
 200                               | All scenarios
 
-## Delete torrents ##
+### Delete torrents ###
 
 Requires knowing the torrent hashes. You can get it from [torrent list](#get-torrent-list).
 
@@ -1760,7 +1768,7 @@ Name: `delete`
 Parameter   | Type     | Description
 ------------|----------|------------
 `hashes`    | string   | The hashes of the torrents you want to delete. `hashes` can contain multiple hashes separated by `\|`, to delete multiple torrents, or set to `all`, to delete all torrents.
-`deleteFiles` | If set to `true`, the downloaded data will also be deleted, otherwise has no effect.
+`deleteFiles` | bool | If set to `true`, the downloaded data will also be deleted, otherwise has no effect.
 
 Example:
 
@@ -1774,7 +1782,7 @@ HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
 200                               | All scenarios
 
-## Recheck torrents ##
+### Recheck torrents ###
 
 Requires knowing the torrent hashes. You can get it from [torrent list](#get-torrent-list).
 
@@ -1798,7 +1806,7 @@ HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
 200                               | All scenarios
 
-## Reannounce torrents ##
+### Reannounce torrents ###
 
 Requires knowing the torrent hashes. You can get it from [torrent list](#get-torrent-list).
 
@@ -1822,9 +1830,9 @@ HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
 200                               | All scenarios
 
-## Add new torrent ##
+### Add new torrent ###
 
-This method can add torrents from  server local file or from URLs. `http://`, `https://`, `magnet:` and `bc://bt/` links are supported.
+This method can add torrents from server local file or from URLs. `http://`, `https://`, `magnet:` and `bc://bt/` links are supported.
 
 Add torrent from URLs example:
 
@@ -1921,18 +1929,18 @@ HTTP Status Code                  | Scenario
 415                               | Torrent file is not valid
 200                               | All other scenarios
 
-### Notes on boundaries ###
+#### Notes on boundaries ####
 
 Also, be aware that multipart/form-data boundaries in the POST body are preceded by two hyphens, and the end of the body is closed by two hyphens added to the end of the boundary string.
 For example, if you use a random string and your header has:
 
-```
+```text
 Content-Type: multipart/form-data; boundary=--AqhE2AFEJbRxE4xx
 ```
 
 Your POST body would look like this:
 
-```
+```text
 ----AqhE2AFEJbRxE4xx
 Content-Disposition: form-data; name="urls"
 
@@ -1940,7 +1948,7 @@ https://torcache.net/torrent/3B1A1469C180F447B77021074DBBCCAEF62611E7.torrent
 ----AqhE2AFEJbRxE4xx--
 ```
 
-## Add trackers to torrent ##
+### Add trackers to torrent ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -1964,7 +1972,7 @@ HTTP Status Code                  | Scenario
 404                               | Torrent hash was not found
 200                               | All other scenarios
 
-## Edit trackers ##
+### Edit trackers ###
 
 Name: `editTracker`
 
@@ -1986,7 +1994,7 @@ HTTP Status Code                  | Scenario
 409                               | `origUrl` was not found
 200                               | All other scenarios
 
-## Remove trackers ##
+### Remove trackers ###
 
 Name: `removeTrackers`
 
@@ -2005,7 +2013,7 @@ HTTP Status Code                  | Scenario
 409                               | All `urls` were not found
 200                               | All other scenarios
 
-## Add peers ##
+### Add peers ###
 
 Name: `addPeers`
 
@@ -2023,7 +2031,7 @@ HTTP Status Code                  | Scenario
 400                               | None of the supplied peers are valid
 200                               | All other scenarios
 
-## Increase torrent priority ##
+### Increase torrent priority ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -2048,7 +2056,7 @@ HTTP Status Code                  | Scenario
 409                               | Torrent queueing is not enabled
 200                               | All other scenarios
 
-## Decrease torrent priority ##
+### Decrease torrent priority ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -2073,7 +2081,7 @@ HTTP Status Code                  | Scenario
 409                               | Torrent queueing is not enabled
 200                               | All other scenarios
 
-## Maximal torrent priority ##
+### Maximal torrent priority ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -2098,7 +2106,7 @@ HTTP Status Code                  | Scenario
 409                               | Torrent queueing is not enabled
 200                               | All other scenarios
 
-## Minimal torrent priority ##
+### Minimal torrent priority ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -2123,7 +2131,7 @@ HTTP Status Code                  | Scenario
 409                               | Torrent queueing is not enabled
 200                               | All other scenarios
 
-## Set file priority ##
+### Set file priority ###
 
 Name: `filePrio`
 
@@ -2150,7 +2158,7 @@ HTTP Status Code                  | Scenario
 409                               | At least one file `id` was not found
 200                               | All other scenarios
 
-## Get torrent download limit ##
+### Get torrent download limit ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -2179,7 +2187,7 @@ content-length: length
 
 `8c212779b4abde7c6bc608063a0d008b7e40ce32` is the hash of the torrent and `338944` its download speed limit in bytes per second; this value will be zero if no limit is applied.
 
-## Set torrent download limit ##
+### Set torrent download limit ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -2203,7 +2211,7 @@ HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
 200                               | All scenarios
 
-## Set torrent share limit ##
+### Set torrent share limit ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -2234,7 +2242,7 @@ HTTP Status Code                  | Scenario
 200                               | All other scenarios
 400                               | Bad Request, e.g. missing parameter
 
-## Get torrent upload limit ##
+### Get torrent upload limit ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -2263,7 +2271,7 @@ content-length: length
 
 `8c212779b4abde7c6bc608063a0d008b7e40ce32` is the hash of the torrent in the request and `338944` its upload speed limit in bytes per second; this value will be zero if no limit is applied.
 
-## Set torrent upload limit ##
+### Set torrent upload limit ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -2287,7 +2295,7 @@ HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
 200                               | All scenarios
 
-## Set torrent location ##
+### Set torrent location ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -2314,7 +2322,7 @@ HTTP Status Code                  | Scenario
 409                               | Unable to create save path directory
 200                               | All other scenarios
 
-## Set torrent name ##
+### Set torrent name ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -2337,7 +2345,7 @@ HTTP Status Code                  | Scenario
 409                               | Torrent name is empty
 200                               | All other scenarios
 
-## Set torrent category ##
+### Set torrent category ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -2363,7 +2371,7 @@ HTTP Status Code                  | Scenario
 409                               | Category name does not exist
 200                               | All other scenarios
 
-## Get all categories ##
+### Get all categories ###
 
 Name: `categories`
 
@@ -2385,13 +2393,14 @@ Returns all categories in JSON format, e.g.:
     }
 }
 ```
+
 **Returns:**
 
 HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
 200                               | All scenarios
 
-## Add new category ##
+### Add new category ###
 
 ```http
 POST /api/v2/torrents/createCategory HTTP/1.1
@@ -2414,7 +2423,7 @@ HTTP Status Code                  | Scenario
 409                               | Category name is invalid
 200                               | All other scenarios
 
-## Edit category ##
+### Edit category ###
 
 ```http
 POST /api/v2/torrents/editCategory HTTP/1.1
@@ -2435,7 +2444,7 @@ HTTP Status Code                  | Scenario
 409                               | Category editing failed
 200                               | All other scenarios
 
-## Remove categories ##
+### Remove categories ###
 
 ```http
 POST /api/v2/torrents/removeCategories HTTP/1.1
@@ -2456,7 +2465,7 @@ HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
 200                               | All scenarios
 
-## Add torrent tags ##
+### Add torrent tags ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -2481,7 +2490,7 @@ HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
 200                               | All scenarios
 
-## Remove torrent tags ##
+### Remove torrent tags ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -2507,7 +2516,7 @@ HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
 200                               | All scenarios
 
-## Get all tags ##
+### Get all tags ###
 
 Name: `tags`
 
@@ -2523,13 +2532,14 @@ Returns all tags in JSON format, e.g.:
     "Tag 2"
 ]
 ```
+
 **Returns:**
 
 HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
 200                               | All scenarios
 
-## Create tags ##
+### Create tags ###
 
 ```http
 POST /api/v2/torrents/createTags HTTP/1.1
@@ -2541,6 +2551,7 @@ Content-Length: length
 
 tags=TagName1,TagName2
 ```
+
 `tags` is a list of tags you want to create.
 Can contain multiple tags separated by `,`.
 
@@ -2550,7 +2561,7 @@ HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
 200                               | All scenarios
 
-## Delete tags ##
+### Delete tags ###
 
 ```http
 POST /api/v2/torrents/deleteTags HTTP/1.1
@@ -2572,7 +2583,7 @@ HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
 200                               | All scenarios
 
-## Set automatic torrent management ##
+### Set automatic torrent management ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -2596,7 +2607,7 @@ HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
 200                               | All scenarios
 
-## Toggle sequential download ##
+### Toggle sequential download ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -2620,7 +2631,7 @@ HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
 200                               | All scenarios
 
-## Set first/last piece priority ##
+### Set first/last piece priority ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -2644,7 +2655,7 @@ HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
 200                               | All scenarios
 
-## Set force start ##
+### Set force start ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -2668,7 +2679,7 @@ HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
 200                               | All scenarios
 
-## Set super seeding ##
+### Set super seeding ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -2692,7 +2703,7 @@ HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
 200                               | All scenarios
 
-## Rename file ##
+### Rename file ###
 
 Name: `renameFile`
 
@@ -2712,7 +2723,7 @@ HTTP Status Code                  | Scenario
 409                               | Invalid `newPath` or `oldPath`, or `newPath` already in use
 200                               | All other scenarios
 
-## Rename folder ##
+### Rename folder ###
 
 Name: `renameFolder`
 
@@ -2732,11 +2743,11 @@ HTTP Status Code                  | Scenario
 409                               | Invalid `newPath` or `oldPath`, or `newPath` already in use
 200                               | All other scenarios
 
-# RSS (experimental) #
+## RSS (experimental) ##
 
 All RSS API methods are under "rss", e.g.: `/api/v2/rss/methodName`.
 
-## Add folder ##
+### Add folder ###
 
 Name: `addFolder`
 
@@ -2753,7 +2764,7 @@ HTTP Status Code                  | Scenario
 409                               | Failure to add folder
 200                               | All other scenarios
 
-## Add feed ##
+### Add feed ###
 
 Name: `addFeed`
 
@@ -2771,7 +2782,7 @@ HTTP Status Code                  | Scenario
 409                               | Failure to add feed
 200                               | All other scenarios
 
-## Remove item ##
+### Remove item ###
 
 Removes folder or feed.
 
@@ -2790,7 +2801,7 @@ HTTP Status Code                  | Scenario
 409                               | Failure to remove item
 200                               | All other scenarios
 
-## Move item ##
+### Move item ###
 
 Moves/renames folder or feed.
 
@@ -2810,7 +2821,7 @@ HTTP Status Code                  | Scenario
 409                               | Failure to move item
 200                               | All other scenarios
 
-## Get all items ##
+### Get all items ###
 
 Name: `items`
 
@@ -2833,7 +2844,7 @@ Returns all RSS items in JSON format, e.g.:
 }
 ```
 
-## Mark as read ##
+### Mark as read ###
 
 If `articleId` is provided only the article is marked as read otherwise the whole feed is going to be marked as read.
 
@@ -2852,7 +2863,7 @@ HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
 200                               | All scenarios
 
-## Refresh item ##
+### Refresh item ###
 
 Refreshes folder or feed.
 
@@ -2870,7 +2881,7 @@ HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
 200                               | All scenarios
 
-## Set auto-downloading rule ##
+### Set auto-downloading rule ###
 
 Name: `setRule`
 
@@ -2922,7 +2933,7 @@ E.g.:
 }
 ```
 
-## Rename auto-downloading rule ##
+### Rename auto-downloading rule ###
 
 Name: `renameRule`
 
@@ -2939,7 +2950,7 @@ HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
 200                               | All scenarios
 
-## Remove auto-downloading rule ##
+### Remove auto-downloading rule ###
 
 Name: `removeRule`
 
@@ -2955,8 +2966,7 @@ HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
 200                               | All scenarios
 
-
-## Get all auto-downloading rules ##
+### Get all auto-downloading rules ###
 
 Name: `rules`
 
@@ -2984,20 +2994,20 @@ Returns all auto-downloading rules in JSON format, e.g.:
     }
 }
 ```
+
 **Returns:**
 
 HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
 200                               | All scenarios
 
-## Get all articles matching a rule ##
+### Get all articles matching a rule ###
 
 Name: `matchingArticles`
 
 Parameter                         | Type    | Description
 ----------------------------------|---------|------------
 `ruleName`                        | string  | Rule name (e.g. "Linux")
-
 
 Returns all articles that match a rule by feed name in JSON format, e.g.:
 
@@ -3027,12 +3037,11 @@ HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
 200                               | All scenarios
 
-
-# Search #
+## Search ##
 
 All Search API methods are under "search", e.g.: `/api/v2/search/methodName`.
 
-## Start search ##
+### Start search ###
 
 Name: `start`
 
@@ -3065,7 +3074,7 @@ Example:
 }
 ```
 
-## Stop search ##
+### Stop search ###
 
 Name: `stop`
 
@@ -3082,7 +3091,7 @@ HTTP Status Code                  | Scenario
 404                               | Search job was not found
 200                               | All other scenarios
 
-## Get search status ##
+### Get search status ###
 
 Name: `status`
 
@@ -3119,7 +3128,7 @@ Example:
 ]
 ```
 
-## Get search results ##
+### Get search results ###
 
 Name: `results`
 
@@ -3188,7 +3197,7 @@ Example:
 }
 ```
 
-## Delete search ##
+### Delete search ###
 
 Name: `delete`
 
@@ -3205,7 +3214,7 @@ HTTP Status Code                  | Scenario
 404                               | Search job was not found
 200                               | All other scenarios
 
-## Get search plugins ##
+### Get search plugins ###
 
 Name: `plugins`
 
@@ -3264,7 +3273,7 @@ Field                             | Type    | Description
 ]
 ```
 
-## Install search plugin ##
+### Install search plugin ###
 
 Name: `installPlugin`
 
@@ -3280,7 +3289,7 @@ HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
 200                               | All scenarios
 
-## Uninstall search plugin ##
+### Uninstall search plugin ###
 
 Name: `uninstallPlugin`
 
@@ -3296,7 +3305,7 @@ HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
 200                               | All scenarios
 
-## Enable search plugin ##
+### Enable search plugin ###
 
 Name: `enablePlugin`
 
@@ -3313,7 +3322,7 @@ HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
 200                               | All scenarios
 
-## Update search plugins ##
+### Update search plugins ###
 
 Name: `updatePlugins`
 
@@ -3327,8 +3336,10 @@ HTTP Status Code                  | Scenario
 ----------------------------------|---------------------
 200                               | All scenarios
 
-# WebAPI versioning #
+## WebAPI versioning ##
+
 WebAPI uses the following versioning: `1.2.3`:
+
 1. Main version. Should be changed only on some global changes (e.g. total redesign/relayout)
 2. Changed on incompatible API changes (i.e. if it breaks outdated clients). E.g. if you change/remove something
 3. Changed on compatible API changes (i.e. if it doesn't break outdated clients). E.g. if you add something new outdated clients still can access old subset of API.

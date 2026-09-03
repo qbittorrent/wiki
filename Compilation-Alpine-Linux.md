@@ -41,7 +41,7 @@ apk add icu-dev openssl-dev qt6-qtbase-dev qt6-qttools-dev zlib-dev
 >
 > You can view all the tags for the boost Github repository here:
 >
-> - https://github.com/boostorg/boost/tags
+> - <https://github.com/boostorg/boost/tags>
 
 Download and extract the boost files.
 
@@ -61,7 +61,7 @@ tar xf ~/boost.tar.xz --strip-components=1 -C ~/boost-dev
 Download and build libtorrent by checking out the `RC_1_2` branch. You can also change the `git checkout` command filter `"v1*"` to `"v2*"` to use the latest version of a specific tag
 
 > [!TIP]
-> Any tag can be used to checkout the version you want - https://github.com/arvidn/libtorrent/tags
+> Any tag can be used to checkout the version you want - <https://github.com/arvidn/libtorrent/tags>
 
 ```shell
 git clone --shallow-submodules --recurse-submodules https://github.com/arvidn/libtorrent.git ~/libtorrent && cd ~/libtorrent
@@ -82,7 +82,7 @@ cmake --install build
 Build and install qBittorrent
 
 > [!TIP]
-> Any tag can be used to checkout the version you want - https://github.com/qbittorrent/qBittorrent/tags
+> Any tag can be used to checkout the version you want - <https://github.com/qbittorrent/qBittorrent/tags>
 
 > [!WARNING]
 > You are most likely not using a GUI (desktop) with Alpine, so remember we pass `-D GUI=OFF`.
