@@ -25,8 +25,8 @@ jobs:
         with:
           python-version: "*"
 
-      - name: Check files
-        uses: pre-commit/action@v3.0.1
+      - name: Check file health
+        uses: j178/prek-action@v2
 
       - name: Check GitHub Actions workflow
         env:
