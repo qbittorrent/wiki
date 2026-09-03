@@ -2,17 +2,17 @@ Here you will find explanation for various settings found under the options in q
 
 At the bottom, there is a list of deprecated options. This list may not be comprehensive.
 
-= Behavior =
+== Behavior ==
 
-== Language ==
+=== Language ===
 This is used to set the language qBittorrent uses in it's GUI (Graphical User Interface). If you want to provide another language, or update an already existing one, you may do so through Transifex. [https://qbforums.shiki.hu/index.php/topic,2134.0.html Here] is the corresponding forum topic.
 
-== Transfer lists ==
+=== Transfer lists ===
 *'''Use alternating row colors''' - using alternating row colors makes it easier for the human eye to read lists from a short distance. It is enabled by default, disable it if you choose.
 
 *'''Action on double click''' - You can also customize the actions that are triggered upon double clicking with the mouse.
 
-== Desktop ==
+=== Desktop ===
 
 *'''Start qBittorrent on Windows start up''' - specifies whether or not you want to start qBittorrent when you start up your Windows PC. Disabled by default.
 *'''Show splash screen on start up''' - specifies whether the screen containing the qBittorrent logo along with the current version number should be shown whenever the program is started. Enabled by default.
@@ -30,17 +30,17 @@ This is used to set the language qBittorrent uses in it's GUI (Graphical User In
 
 * '''Check for program updates''' — allows qBittorrent to check for new versions released on GitHub.  If a new version is found, user is asked to update qBittorrent.
 
-== Power Management ==
+=== Power Management ===
 This allows you to prevent the system from going into sleep mode when torrents are active. Useful if you do not want to change sleep settings for your system, but still don't want it to go into sleep mode when qBittorrent is up and running.
 
-= Downloads =
+== Downloads ==
 
-== When adding a torrent ==
+=== When adding a torrent ===
 * '''Display the torrent content and some options''' - this enables qBittorrent to allow you to configure the save location, specifying whether to start the torrent immediately, skip the hash check, to select the label, and to select the content to download and assign priorities.
 ** '''Bring torrent dialog to the front''' does what it says. It brings the torrent dialog to focus.
 * '''Do not start the download automatically''' allows you the option of either starting the download without delay, or to wait for the user to click on the Start button.
 
-== Hard Disk ==
+=== Hard Disk ===
 * '''Save files to location''' allows you to select your default save locations.
 ** '''Append the label of the torrent to the save path''' - if you want to append the labels of your torrent to the save path (click here if you want to know what labels are and how to use them), you can choose to do so.
 * '''Pre-allocate disk space for all files''' - this option allows qBittorrent to allocate (that is, assign) space on your hard disk (or SSD) so that the problem of not having enough space does not arise later on.
@@ -50,7 +50,7 @@ This allows you to prevent the system from going into sleep mode when torrents a
 * '''Copy .torrent files to''' option allows you to copy .torrent files for the torrents that you download to a specific folder (for example, ''Downloaded torrents'').
 * '''Copy .torrent files for finished downloads to''' option is the same as the above, with one difference. Only for completed torrents will qBittorrent copy the .torrent file to the specified location.
 
-== Email notification upon download completion ==
+=== Email notification upon download completion ===
 This allows you to receive an email when your download finishes. For this, you will have to supply the fields required.
 * '''From''' - provide the sending email address for the email notification.
 * '''To''' - provide the recipient email address for the email notification. '''''Note:''''' This can only be a single recipient email address.
@@ -61,59 +61,59 @@ This allows you to receive an email when your download finishes. For this, you w
 ** '''Password''' - provide the password for authentication to the SMTP server.
 * '''Send test email''' - pressing this button immediately sends a test email using the information you have provided in the other fields. Check your inbox to confirm success. Check the Execution Log for errors.
 
-== Run an external program on torrent completion ==
+=== Run an external program on torrent completion ===
 This allows you to run a program on finishing certain types of torrents in a certain location.
 
-= Connection =
+== Connection ==
 
-== Listening Port ==
+=== Listening Port ===
 * '''Port used for incoming connections''' - either specify the [https://whatismyipaddress.com/port port] or choose a random one.
 * '''Use UPnP/ NAT-PMP port forwarding from my router''' - for a helpful introduction to port forwarding, go [https://en.wikipedia.org/wiki/Port_forwarding here], or [https://www.lifewire.com/what-is-port-forwarding-2483494 here].
 * '''Use different port on each startup''' voids the first option, and randomly assigns a different port every time qBittorrent starts up.
 
-== Connection Limits ==
+=== Connection Limits ===
 * '''Global maximum number of connections''' sets the maximum number of peers to connect to for ''all'' torrents.
 * '''Maximum number of connections per torrent''' sets the maximum number of peers to connect to for ''each'' torrent.
 * '''Global maximum number of upload slots''' sets the maximum number of [http://wiki.vuze.com/w/Max_upload_slots_per_torrent upload slots] (basically the number of peers you connect to) for ''all'' torrents.
 * '''Maximum number of upload slots''' sets the maximum of upload slots for ''each'' torrent.
-== Proxy server ==
+=== Proxy server ===
 These options allow you to set up a proxy server to use when downloading torrents. A tutorial of sorts can be accessed [https://kickass.to/community/show/41088/ here] (for µTorrent, but can be used for qBittorrent as well).
 
 Disable connections not supported by proxies: [[Disable-connections-not-supported-by-proxies|link]]
 
-== IP filtering ==
+=== IP filtering ===
 This is a feature which allows you to block certain ''bad peers''. Didn't understand a word? More information about that [https://en.wikipedia.org/wiki/Leecher_(computing) here].
 
-= Speed =
+== Speed ==
 
-== Global Rate Limits ==
+=== Global Rate Limits ===
 You can use this to set global (for all torrents) rate limits for both downloads and uploads. For the other options, read [https://en.wikipedia.org/wiki/Micro_Transport_Protocol this]  Wikipedia article.
 
-== Alternative Global Rate Limits ==
+=== Alternative Global Rate Limits ===
 For those of you whose internet connectivity is limited during specific hours (for example, you might have unlimited bandwidth during the night, but limited during the day), this option is for you. You can schedule these to be activated automatically, or manually activate it using the bottom tool bar in qBittorrent.
 
-= BitTorrent =
+== BitTorrent ==
 
-== Privacy ==
+=== Privacy ===
 * '''Enable DHT (decentralized network) to find more peers'''  - DHT is a solution to make torrent downloading and uploading a tracker independent operation. More about DHT [https://en.wikipedia.org/wiki/BitTorrent_%28protocol%29#Creating_and_publishing_torrents here].
 * '''Enable Peer Exchange (PeX) to find more peers''' - another alternative to enable lesser dependency on trackers. More information [http://wiki.vuze.com/w/Peer_Exchange here].
 * '''Enable Local Peer Discovery to find more peers''' - an extension to the BitTorrent protocol to enable communication via LAN. More information [https://en.wikipedia.org/wiki/Local_Peer_Discovery here].
 * '''Enable anonymous mode''' - in simple terms, qBittorrent tries to maintain a certain degree of anonymity while using this function. Detailed explanation [[Anonymous-Mode|here]].
 
-== Torrent Queuing ==
+=== Torrent Queuing ===
 These options allow you to control the number of torrents being downloaded and uploaded. Refer to the documentation [https://www.libtorrent.org/single-page-ref.html#queuing here] for information on ''slow torrents''.
 
-== Share Ratio Limiting ==
+=== Share Ratio Limiting ===
 Here, you can configure to what ratio (amount uploaded/amount downloaded) the torrent should be seeded. You can also configure on whether you want them to be paused or removed after this.
 
-= Web UI =
+== Web UI ==
 You can use a remote control with qBittorrent. For more information, go [https://github.com/qbittorrent/qBittorrent/wiki#webui-related here].
 
-= Advanced =
+== Advanced ==
 
 The following settings are also documented in qBittorrent and libtorrent, respectively [https://github.com/qbittorrent/qBittorrent/blob/master/src/gui/advancedsettings.cpp here] and [https://github.com/arvidn/libtorrent/blob/master/include/libtorrent/settings_pack.hpp here].
 
-=== qBittorrent–specific configuration ===
+==== qBittorrent–specific configuration ====
 * '''Process memory priority (Windows >= 8 only)''' — (default: Below normal) Specifies the memory priority for a thread or process.
 * '''Network interface''' — (default: Any interface) Specifies which network interfaces qBittorrent listens on. On multi-NIC systems (e.g. device has an ethernet port and wifi) you may limit which interface should be used to send and transmit data.
 * '''Optional IP address to bind to''' — (default: All addresses) ''TBA''
@@ -133,7 +133,7 @@ The following settings are also documented in qBittorrent and libtorrent, respec
 * '''Enable embedded tracker''' — (default: disabled) Enable qbittorrent's tracker functionality. It is not a fully-featured bittorrent tracker, but it supports the basic features need for sharing a few torrents see the [https://github.com/qbittorrent/qBittorrent/wiki/How-to-use-qBittorrent-as-a-tracker how-to wiki page] for more info.
 * '''Embedded tracker port''' — (default: 9000) The port the embedded tracker should listen on.
 
-=== libtorrent–specific configuration ===
+==== libtorrent–specific configuration ====
 A complete list of libtorrent configuration may be found [https://www.libtorrent.org/reference-Settings.html here].
 * '''Asynchronous I/O threads''' — (default: 10) I/O threads that `libtorrent` will use. The number of threads actually used for SHA-1 hashing is n/4 (where n is the value of the setting), so for maximum performance, especially during torrent recheck, this setting should be set to 4 times the number of hardware threads on your machine. So for example, if your CPU is 4c/4t or 2c/4t, set this to 16, if your CPU is 4c/8t or 8c/8t set this to 32, etc. It is unlikely that setting this any higher than this will bring a performance benefit.
 * '''File pool size''' — (default: 5000) Sets the upper limit on the total number of files this session will keep open. The reason why files are left open at all is that some anti virus software hooks on every file close, and scans the file for viruses. deferring the closing of the files will be the difference between a usable system and a completely hogged down system. Most operating systems also has a limit on the total number of file descriptors a process may have open.
@@ -173,7 +173,7 @@ A complete list of libtorrent configuration may be found [https://www.libtorrent
 * '''Peer turnover threshold percentage''' — (default: 90 %) See above.
 * '''Peer turnover disconnect interval''' — (default: 300 s) is the interval (in seconds) between optimistic disconnects if the disconnects happen. See above.
 
-= Deprecated options =
+== Deprecated options ==
 
 Deprecated options may be safely removed from your config file.
 

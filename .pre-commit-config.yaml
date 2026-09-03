@@ -15,6 +15,16 @@ repos:
     - id: trailing-whitespace
       name: Check trailing whitespaces
 
+  - repo: local
+    hooks:
+    - id: wikilint
+      name: Check MediaWiki files
+      entry: wikilint
+      args: ["--lint-config", ".github/workflows/helpers/pre-commit/.wikilint.json", "--strict", "--fix"]
+      language: node
+      additional_dependencies: ['wikilint']
+      files: \.mediawiki$
+
   - repo: https://github.com/codespell-project/codespell.git
     rev: v2.4.3
     hooks:
@@ -27,4 +37,4 @@ repos:
     hooks:
     - id: typos
       name: Check spelling (typos)
-      args: ["--config", ".github/workflows/helper/pre-commit/.typos.toml"]
+      args: ["--config", ".github/workflows/helpers/pre-commit/.typos.toml"]

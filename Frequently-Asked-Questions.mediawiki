@@ -167,7 +167,7 @@ Here is how you should proceed:
 * For the torrents that are complete, you can select the ''Skip file checking and start seeding immediately'' option in the torrent addition dialog in order to save time and CPU. Basically, qBittorrent will trust that the local files are not corrupt and will start seeding them without rechecking all the files.
 
 == What does the settings in the Options → Advanced menu do? ==
-We have written a full explanation describing the advanced options in the guide <a href="https://github.com/qbittorrent/qBittorrent/wiki/Explanation-of-Options-in-qBittorrent#Advanced">here</a>.
+We have written a full explanation describing the advanced options in the guide [https://github.com/qbittorrent/qBittorrent/wiki/Explanation-of-Options-in-qBittorrent#Advanced here].
 
 == Can I run qBittorrent on a remote computer? Without X server? ==
 Yes and Yes!<br />
@@ -231,7 +231,7 @@ For example, we would have the following Peer IDs for these versions:
 
 Change your regional formatting settings:
 
-[[https://user-images.githubusercontent.com/66999033/85346082-0a415200-b4fd-11ea-8eb5-419cf9af81bd.PNG|Windows regional settings]]
+[https://user-images.githubusercontent.com/66999033/85346082-0a415200-b4fd-11ea-8eb5-419cf9af81bd.PNG Windows regional settings]
 
 == How do I do IP Filtering (eMule and PeerGuardian compatible) in qbittorrent in GNU/Linux? ==
 In most GNU/Linux distributions, you can go to '''Tools → Options → Connection''' then click on IP Filtering.
