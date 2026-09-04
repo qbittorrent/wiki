@@ -21,17 +21,17 @@ More information about what is needed specifically is detailed in each [platform
 
 You may use the following qBittorrent-specific options to customize the build. Pass them in the **configure step** like so: `-D<option_name>=<value>`. This information applies to any of the [platform-specific guides](https://github.com/qbittorrent/qBittorrent/wiki#cmake).
 
-| Option name | Type | Default value | Description | Conditions, if any |
-|-|-|-|-|-|
-| `DBUS` | Bool  | `ON` |  Enables support for notifications and power-management features on UNIX-like systems via D-Bus | Not Windows and not Apple |
-| `GUI` | Bool | `ON` | Enable graphical user interface | Can't be disabled on Windows |
-| `MSVC_RUNTIME_DYNAMIC` | Bool | `ON` | Use MSVC dynamic runtime library (-MD) instead of static (-MT) | Only relevant when building on Windows with MSVC |
-| `QBT_VER_STATUS` | String | `alpha1` | Additional version string to append | Should be empty for release builds. Purposefully left undocumented for now, may change or be removed in the future without notice. |
-| `STACKTRACE` | Bool | `ON` |Enable stacktraces | - |
-| `SYSTEMD` | Bool | `OFF` | Install systemd service file to a directory manually overridable with `Systemd_SERVICES_INSTALL_DIR` | Not Windows and not Apple and not `GUI` |
-| `Systemd_SERVICES_INSTALL_DIR` | Path | Default SystemD services directory | Where to install the SystemD service file to | Only relevant if `SYSTEMD` is `ON` |
-| `VERBOSE_CONFIGURE` | Bool | `OFF` | Show more information in the configure output (only useful for debugging the CMake build scripts) | - |
-| `WEBUI` | Bool | `ON` | Enables built-in HTTP server for headless use | - |
+| Option name                    | Type   | Default value                      | Description                                                                                          | Conditions, if any                                                                                                                 |
+| ------------------------------ | ------ | ---------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `DBUS`                         | Bool   | `ON`                               | Enables support for notifications and power-management features on UNIX-like systems via D-Bus       | Not Windows and not Apple                                                                                                          |
+| `GUI`                          | Bool   | `ON`                               | Enable graphical user interface                                                                      | Can't be disabled on Windows                                                                                                       |
+| `MSVC_RUNTIME_DYNAMIC`         | Bool   | `ON`                               | Use MSVC dynamic runtime library (-MD) instead of static (-MT)                                       | Only relevant when building on Windows with MSVC                                                                                   |
+| `QBT_VER_STATUS`               | String | `alpha1`                           | Additional version string to append                                                                  | Should be empty for release builds. Purposefully left undocumented for now, may change or be removed in the future without notice. |
+| `STACKTRACE`                   | Bool   | `ON`                               | Enable stacktraces                                                                                   | -                                                                                                                                  |
+| `SYSTEMD`                      | Bool   | `OFF`                              | Install systemd service file to a directory manually overridable with `Systemd_SERVICES_INSTALL_DIR` | Not Windows and not Apple and not `GUI`                                                                                            |
+| `Systemd_SERVICES_INSTALL_DIR` | Path   | Default SystemD services directory | Where to install the SystemD service file to                                                         | Only relevant if `SYSTEMD` is `ON`                                                                                                 |
+| `VERBOSE_CONFIGURE`            | Bool   | `OFF`                              | Show more information in the configure output (only useful for debugging the CMake build scripts)    | -                                                                                                                                  |
+| `WEBUI`                        | Bool   | `ON`                               | Enables built-in HTTP server for headless use                                                        | -                                                                                                                                  |
 
 ---
 

@@ -14,10 +14,10 @@ For users that run qBittorrent via Microsoft IIS as a reverse proxy some extra h
 12. Open the new rule and change the path to a subdirectory if needed (for example **qbweb/(.*)** = <http://domain.tld/qbweb/>)
 13. Under **Server Variables** add the following rules:
 
-    | Server variable name  | Value                     |
-    | --------------------- | ------------------------- |
-    | HTTP_X_Forwarded_Host | {HTTP_HOST}               |
-    | HTTP_X_Forwarded_For  | {REMOTE_ADDR}             |
+    | Server variable name  | Value         |
+    | --------------------- | ------------- |
+    | HTTP_X_Forwarded_Host | {HTTP_HOST}   |
+    | HTTP_X_Forwarded_For  | {REMOTE_ADDR} |
 
 14. Apply and return to the rules page
 15. Open **Add Rules** and select **Blank rule** under **Outbound rules**
