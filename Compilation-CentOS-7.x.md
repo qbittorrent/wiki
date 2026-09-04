@@ -124,7 +124,7 @@ Username: admin
 Password: adminadmin
 ```
 
-Documentation about running qBittorrent without GUI is available [here](https://github.com/qbittorrent/qBittorrent/wiki/Running-qBittorrent-without-X-server-(WebUI-only)).
+Documentation about running qBittorrent without GUI is available: <https://github.com/qbittorrent/qBittorrent/wiki/Running-qBittorrent-without-X-server-(WebUI-only)>
 
 To set up qbittorrent as a daemon see [this guide](https://github.com/qbittorrent/qBittorrent/wiki/Setting-up-qBittorrent-as-a-daemon-on-CentOS-7)
 

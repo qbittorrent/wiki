@@ -17,15 +17,15 @@ This page describes how to compile qBittorrent for both x86 and x64 platforms us
 ## Requirements ##
 
 * The Microsoft Visual C++ 2013 compiler.
-* A [Perl language](http://www.perl.org/) interpreter. [Strawberry Perl](http://strawberryperl.com/) or [ActivePerl](http://www.activestate.com/activeperl/downloads) can be used. Download Strawberry Perl 5.20.1.1 [here](http://strawberryperl.com/download/5.20.1.1/strawberry-perl-5.20.1.1-32bit.msi).
-* Latest release of the [NASM assembler](http://www.nasm.us/). Download version 2.11.05 [here](http://www.nasm.us/pub/nasm/releasebuilds/2.11.05/win32/nasm-2.11.05-win32.zip).
-* Latest release of [zlib](http://www.zlib.net/). Download version 1.2.8 [here](http://zlib.net/zlib128.zip).
-* Latest release of [OpenSSL](http://www.openssl.org/). Download version 1.0.1i [here](https://www.openssl.org/source/openssl-1.0.1i.tar.gz).
-* Latest release of the [Boost libraries](http://www.boost.org/). Download version 1.56.0 [here](http://sourceforge.net/projects/boost/files/boost/1.56.0/boost_1_56_0.7z/download).
-* Latest release of [libtorrent-rasterbar](http://www.libtorrent.org/). Download version 0.16.17 [here](http://sourceforge.net/projects/libtorrent/files/libtorrent/libtorrent-rasterbar-0.16.17.tar.gz/download).
-* Latest release of the [Qt4 source](http://qt-project.org/). Download version 4.8.6 [here](http://download.qt-project.org/archive/qt/4.8/4.8.6/qt-everywhere-opensource-src-4.8.6.zip).
-* Latest release of [Qt Creator](http://qt-project.org/wiki/category:Tools::QtCreator). Download version 3.2.1 [here](http://download.qt-project.org/official_releases/qtcreator/3.2/3.2.1/qt-creator-opensource-windows-x86-3.2.1.exe).
-* Latest release of [qBittorrent](http://www.qbittorrent.org). Download version 3.1.10 [here](http://sourceforge.net/projects/qbittorrent/qbittorrent/qbittorrent-3.1.10/qbittorrent-3.1.10.tar.gz/download).
+* A [Perl language](http://www.perl.org/) interpreter. [Strawberry Perl](http://strawberryperl.com/) or [ActivePerl](http://www.activestate.com/activeperl/downloads) can be used. Download [Strawberry Perl 5.20.1.1](http://strawberryperl.com/download/5.20.1.1/strawberry-perl-5.20.1.1-32bit.msi).
+* Latest release of the [NASM assembler](http://www.nasm.us/). Download [version 2.11.05](http://www.nasm.us/pub/nasm/releasebuilds/2.11.05/win32/nasm-2.11.05-win32.zip).
+* Latest release of [zlib](http://www.zlib.net/). Download [version 1.2.8](http://zlib.net/zlib128.zip).
+* Latest release of [OpenSSL](http://www.openssl.org/). Download [version 1.0.1i](https://www.openssl.org/source/openssl-1.0.1i.tar.gz).
+* Latest release of the [Boost libraries](http://www.boost.org/). Download [version 1.56.0](http://sourceforge.net/projects/boost/files/boost/1.56.0/boost_1_56_0.7z/download).
+* Latest release of [libtorrent-rasterbar](http://www.libtorrent.org/). Download [version 0.16.17](http://sourceforge.net/projects/libtorrent/files/libtorrent/libtorrent-rasterbar-0.16.17.tar.gz/download).
+* Latest release of the [Qt4 source](http://qt-project.org/). Download [version 4.8.6](http://download.qt-project.org/archive/qt/4.8/4.8.6/qt-everywhere-opensource-src-4.8.6.zip).
+* Latest release of [Qt Creator](http://qt-project.org/wiki/category:Tools::QtCreator). Download [version 3.2.1](http://download.qt-project.org/official_releases/qtcreator/3.2/3.2.1/qt-creator-opensource-windows-x86-3.2.1.exe).
+* Latest release of [qBittorrent](http://www.qbittorrent.org). Download [version 3.1.10](http://sourceforge.net/projects/qbittorrent/qbittorrent/qbittorrent-3.1.10/qbittorrent-3.1.10.tar.gz/download).
 
 Let's assume that the working directory(ies) for our compilation will be:
 
@@ -244,7 +244,8 @@ nmake -f ms\nt.mak install
 
 * Extract the **qBittorrent** sources in the working dir(s).
 
-* Go to [Maxmind](http://www.maxmind.com) and download the [GeoLite Country database](http://dev.maxmind.com/geoip/legacy/geolite/) in binary format. Here is the [link](http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz). Extract the ```GeoIP.dat``` file to: ```src\gui\geoip```
+* Go to [Maxmind](http://www.maxmind.com) and download the [GeoLite Country database](http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz) in binary format.
+  Extract the ```GeoIP.dat``` file to: ```src\gui\geoip```
 
 * Open the ```winconf.pri``` file, edit and adjust the paths:
   * For **both**:

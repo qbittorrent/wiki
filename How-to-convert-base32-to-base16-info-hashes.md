@@ -36,7 +36,8 @@ If you're into python, this base conversion can be accomplished as follows:
 
 which will output: b'b45bfccfcd5301e94af8500b1a1863415346a91a'
 
-In Delphi, you can make use of the excellent SZCodeBaseX library by Sasa Zeman (available for D4 to D2007, support seems to be dropped by now, but it's still available [here](http://www.torry.net/vcl/internet/coding/SZCodeBaseX.zip). This is a simple console application just to show how to perform the base conversion:
+In Delphi, you can make use of the excellent SZCodeBaseX library by Sasa Zeman (available for D4 to D2007, support seems to be dropped by now, but it's still available for download at the [archive](http://www.torry.net/vcl/internet/coding/SZCodeBaseX.zip)).
+This is a simple console application just to show how to perform the base conversion:
 
 ```text
 program Project1;

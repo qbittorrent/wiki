@@ -85,7 +85,7 @@ cmake --build build
 
 Check out the [common information](https://github.com/qbittorrent/qBittorrent/wiki/Compilation-with-CMake-common-information) page to learn more about the available build configuration options (for compiling without the GUI, for instance) and CMake itself, if you're new to it.
 
-Once qBittorrent is built, you can run it straight from the build directory. Documentation about running qBittorrent without GUI is available [here](https://github.com/qbittorrent/qBittorrent/wiki/Running-qBittorrent-without-X-server-(WebUI-only)).
+Once qBittorrent is built, you can run it straight from the build directory. Documentation about running qBittorrent without GUI is available: <https://github.com/qbittorrent/qBittorrent/wiki/Running-qBittorrent-without-X-server-(WebUI-only)>
 
 ### Installing (optional)
 

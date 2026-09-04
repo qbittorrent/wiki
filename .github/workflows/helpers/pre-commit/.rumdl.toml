@@ -6,7 +6,6 @@ enable = ["ALL"]
 disable = [
     "MD013",
     "MD036",
-    "MD059",
     "MD063",
     "MD080",
     "MD082"

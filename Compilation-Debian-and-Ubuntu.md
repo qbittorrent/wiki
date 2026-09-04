@@ -211,7 +211,7 @@ Username: admin
 Password: adminadmin
 ```
 
-Documentation about running qBittorrent without GUI is available [here](https://github.com/qbittorrent/qBittorrent/wiki/Running-qBittorrent-without-X-server-(WebUI-only)).
+Documentation about running qBittorrent without GUI is available: <https://github.com/qbittorrent/qBittorrent/wiki/Running-qBittorrent-without-X-server-(WebUI-only)>
 
 ## Troubleshooting
 
