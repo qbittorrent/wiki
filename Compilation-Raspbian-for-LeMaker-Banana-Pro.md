@@ -34,11 +34,11 @@ _[ at the time of this writing, Qt5 libraries were not available for Raspbian on
 
 Default Raspbian distro packages a very old _(and very unstable)_ version of libtorrent, hence you will need to compile it yourself.
 
-### Notes:
+### Notes
 
 The procedure for compiling and installing Libtorrent on B-Pro is derived from the [Deluge Wiki](https://dev.deluge-torrent.org/wiki/Building/libtorrent): some minor adjustments have been made to the procedure in order to work correctly on B-Pro.
 
-### Install dependencies for libtorrent build automatically, using build-dep:
+### Install dependencies for libtorrent build automatically, using build-dep
 
 ```text
 sudo apt-get build-dep libtorrent-rasterbar
@@ -52,7 +52,7 @@ If previous installation fails then proceed manually:
 sudo apt-get install build-essential checkinstall libboost-system-dev libboost-python-dev libssl-dev libgeoip-dev
 ```
 
-### Download libtorrent and extract:
+### Download libtorrent and extract
 
 `wget https://github.com/arvidn/libtorrent/releases/download/libtorrent_1_1_11/libtorrent-rasterbar-1.1.11.tar.gz`
 
@@ -60,7 +60,7 @@ sudo apt-get install build-essential checkinstall libboost-system-dev libboost-p
 
    `cd libtorrent-rasterbar-1.0.10`
 
-### Configure:
+### Configure
 
 `./configure --enable-python-binding --with-libgeoip --with-libiconv --with-qt4`
 
@@ -74,13 +74,13 @@ To overcome this error and configure correctly you must issue the following comm
    ./configure --enable-python-binding --with-libgeoip --with-libiconv --with-boost-libdir=/usr/lib/arm-linux-gnueabihf
    ```
 
-### Build:
+### Build
 
    `make -j$(nproc)`
 
    _[The make option -j$(nproc) will utilize all available cpu cores.]_
 
-### Install library and python bindings:
+### Install library and python bindings
 
    `sudo checkinstall`
 
@@ -116,7 +116,7 @@ cd qBittorrent/
 make
 ```
 
-### Install qBittorrent:
+### Install qBittorrent
 
    `sudo checkinstall`
 
@@ -152,7 +152,7 @@ cd qBittorrent/
 make
 ```
 
-### Install qBittorrent-nox:
+### Install qBittorrent-nox
 
    `sudo checkinstall`
 

@@ -10,7 +10,7 @@ The easiest way to see where the problem lies is, disabling everything in betwee
 
 * If you are using a VPN or Proxy, disable and check if that solves your issue. By default, both solutions render you passive, puts you behind a firewall, so to say. Some VPN providers offer active port forwarding, but it varies by provider.
 
-## Other issues/symptoms...
+## Other issues/symptoms
 
 * Check if you have an **Anti-Virus** or Security solution that comes with a Firewalll. That can cause high CPU usage, connection problems. Thus, affecting your speed and experience.
 * If you use a **router** in your network, make sure you do a port forward by hand. UPnP (the feature that routers use to allow automatic port forward) can be really buggy and they barely ever work. Just add a port for TCP and UDP each by hand, and you are good.

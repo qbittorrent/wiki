@@ -1,4 +1,4 @@
-# This wiki page is still work in progress! Please, check back later.
+# This wiki page is still work in progress! Please, check back later
 
 ## Version 0.2
 

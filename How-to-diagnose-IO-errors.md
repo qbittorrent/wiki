@@ -1,6 +1,6 @@
 # How to Diagnose IO Errors
 
-## It is very likely that your storage or system has some issue, and there is not much we can do to fix that.
+## It is very likely that your storage or system has some issue, and there is not much we can do to fix that
 
 The Issue tracker is no place for helping with your computer.
 But, you are always welcome to make a topic on our forums, and we will try to help.
@@ -10,7 +10,7 @@ And always try to fix the problem first yourself.
 Knowing how to fix computer problems such as this can come in very handy, and it is not hard to do at all.
 Just don't shy away from a little challenge.
 
-## Check the `Execution Log`.
+## Check the `Execution Log`
 
 * On the top bar, click `View`, `Log` and then `Show`
 * Click the new `Execution Log` tab on top

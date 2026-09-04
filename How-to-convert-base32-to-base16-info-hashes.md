@@ -1,14 +1,14 @@
 # How to Convert Base32 to Base16 Info-Hashes
 
-## Using info-hashes as download handles.
+## Using info-hashes as download handles
 
 When interfacing qBittorrent through the WebUI api, there are cases when you add a download via a magnet URI and then you want to track its state (for instance, to perform certain file operation once it's finished). The problem here is that the /command/download method does not return a handle to the download for you to track it. On the other hand, webUI api methods refer to every download through its info-hash, so it's possible to use that string as a handle. As every magnet URI will contain, al least, the info-hash (as stated in [this](http://www.bittorrent.org/beps/bep_0009.html) document at BitTorrent.org) you can parse the hash string from the uri itself. These hashes are base16 encoded, for a total of 40 characters.
 
-## Special case: base32 encoded info-hashes.
+## Special case: base32 encoded info-hashes
 
 For compatibility reasons, the same document states that clients should also support the 32 character base32 encoded info-hash. When adding such a magnet link, qBittorrent will automatically convert it to a base16 hash, and you end up with a mismatching handle (the original base32 encoded info-hash and the base16 one used by qBittorrent). In this situation it's necessary to previously re-encode the hash yourself. Basically you need to decode the base32 hash and then re-encode it to base16, this way you´ll have the same string as qBittorrent.
 
-## Example:
+## Example
 
 Suppose you have the following magnet link:
 
@@ -24,7 +24,7 @@ if it´s added to qBittorrent and then you issue a /query/torrents command, you�
 
 which shows how qBittorrent converted our base32 hash to its base16 representation.
 
-## How to implement the base conversion:
+## How to implement the base conversion
 
 If you're into python, this base conversion can be accomplished as follows:
 
