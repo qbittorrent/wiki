@@ -51,3 +51,7 @@ If you know of more, feel free to add a link to the repository along with a shor
 - <https://github.com/yosemiteyss/qbittorrent_api>
 
   Dart wrapper for qBittorrent Web API
+
+- <https://github.com/LECOQQ/qbit-ops>
+
+  CLI and TUI for bulk operations on torrents and trackers, dry-run by default
