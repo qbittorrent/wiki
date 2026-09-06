@@ -41,6 +41,10 @@ See [How to use custom UI themes](https://github.com/qbittorrent/qBittorrent/wik
 
   Soothing pastel theme for qBittorrent
 
+- <https://github.com/catthode/qbittorrent>
+
+  A warm CRT-inspired dark theme with pure black backgrounds and amber accents.
+
 - <https://github.com/witalihirsch/qBitTorrent-fluent-theme>
 
   Fluent dark/light themes for qBittorrent
