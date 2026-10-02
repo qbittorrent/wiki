@@ -62,8 +62,6 @@ This WebUI API documentation applies to qBittorrent v3.2.0-v4.0.4. For other API
    1. [Pause all the torrents](#pause-all-the-torrents)
    1. [Resume all the torrents](#resume-all-the-torrents)
 
-***
-
 ## Changes ##
 
 `APIX`, where `X` is a number representing the API version, specifies the first API version in which the marked entry is available.

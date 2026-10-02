@@ -6,8 +6,6 @@ A non-exhaustive list of FOSS alternate WebUIs developed for qBittorrent by the 
 
 If you know of more, feel free to add a link to the repository along with a short description.
 
----
-
 ## Custom WebUI Projects
 
 - <https://github.com/dracula/qbittorrent>
@@ -58,8 +56,6 @@ If you know of more, feel free to add a link to the repository along with a shor
 - <https://github.com/ksuaning-au/qbitwebber>
 
   A modern minimalist replacement for the qbittorrent WebUI. Responsive design for desktop and mobile. Built with React.
-
----
 
 ### Boilerplates
 

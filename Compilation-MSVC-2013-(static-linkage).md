@@ -12,8 +12,6 @@ This page describes how to compile qBittorrent for both x86 and x64 platforms us
 * [Configuring Qt Creator](#configuring-qt-creator)
 * [Compiling qBittorrent](#compiling-qbittorrent)
 
-***
-
 ## Requirements ##
 
 * The Microsoft Visual C++ 2013 compiler.

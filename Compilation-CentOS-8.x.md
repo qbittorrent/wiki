@@ -7,8 +7,6 @@ First of all, you need install
 yum install "https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm"
 ```
 
-***
-
 # Required dependencies
 
 ## General required dependencies

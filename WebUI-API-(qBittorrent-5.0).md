@@ -107,8 +107,6 @@ This WebUI API documentation applies to qBittorrent v5.0+. For other WebUI API v
    1. [Update search plugins](#update-search-plugins)
 1. [WebAPI versioning](#webapi-versioning)
 
-***
-
 ## Changes ##
 
 ### API v2.9.3 ###
