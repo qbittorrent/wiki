@@ -39,8 +39,6 @@ This WebUI API documentation applies to qBittorrent v3.1.x. For other API versio
 1. [Additional information](#additional-information)
   1. [Version 3.0.8 bugs](#version-308-bugs)
 
-***
-
 ## Authorization ##
 
 Authorization requires using `Authorization` header inside GET/POST requests. qBittorrent uses the standard Digest Authorization type (using a MD5 hash generator).
