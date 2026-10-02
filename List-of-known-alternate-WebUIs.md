@@ -56,6 +56,10 @@ If you know of more, feel free to add a link to the repository along with a shor
 - <https://github.com/ksuaning-au/qbitwebber>
 
   A modern minimalist replacement for the qbittorrent WebUI. Responsive design for desktop and mobile. Built with React.
+  
+- <https://github.com/weigefenxiang/WeiG-qB-WebUI>
+  
+  A mobile-focused qBittorrent WebUI with dark mode and broad version compatibility, supporting qBittorrent 4.1.0 through 5.2.x.
 
 ### Boilerplates
 
