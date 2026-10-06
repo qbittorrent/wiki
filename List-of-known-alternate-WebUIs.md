@@ -61,7 +61,7 @@ If you know of more, feel free to add a link to the repository along with a shor
   
 - <https://github.com/weigefenxiang/WeiG-qB-WebUI>
   
-  A mobile-focused qBittorrent WebUI with dark mode and broad version compatibility, supporting qBittorrent 4.1.0 through 5.2.x.
+  A mobile-focused qBittorrent WebUI with dark mode and broad version compatibility.
 
 ---
 
