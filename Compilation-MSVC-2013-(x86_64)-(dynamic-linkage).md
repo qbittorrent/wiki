@@ -17,8 +17,6 @@ This page describes the process of building qBittorrent on Windows targeting x86
 1. [Build qBittorrent](#build-qbittorrent)
 1. [Using resulting binaries on different computers](#using-resulting-binaries-on-different-computers)
 
-***
-
 ## Software Requirements ##
 
 1. At least Windows 7 SP1 64-bit

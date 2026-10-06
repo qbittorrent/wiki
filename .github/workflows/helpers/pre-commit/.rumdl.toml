@@ -8,7 +8,8 @@ disable = [
     "MD036",
     "MD063",
     "MD080",
-    "MD082"
+    "MD082",
+    "MD093"
 ]
 
 [per-file-ignores]

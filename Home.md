@@ -40,8 +40,6 @@ The wiki source code is hosted at <https://github.com/qbittorrent/wiki> and is a
 
 - [How to translate qBittorrent](https://github.com/qbittorrent/qBittorrent/wiki/How-to-translate-qBittorrent)
 
----
-
 ## WebUI
 
 ### WebUI API
@@ -82,15 +80,11 @@ The wiki source code is hosted at <https://github.com/qbittorrent/wiki> and is a
 - [Let's Encrypt certificates - Linux](https://github.com/qbittorrent/qBittorrent/wiki/Linux-WebUI-setting-up-HTTPS-with-Let's-Encrypt-certificates)
 - [Self-signed SSL certificates - Linux](https://github.com/qbittorrent/qBittorrent/wiki/Linux-WebUI-setting-up-HTTPS-with-self-signed-SSL-certificates)
 
----
-
 ## Linux
 
 - [Running qBittorrent without X server (WebUI only)](<https://github.com/qbittorrent/qBittorrent/wiki/Running-qBittorrent-without-X-server-(WebUI-only)>)
 - [Running qBittorrent without X server (WebUI only, systemd service set up, Ubuntu 15.04 or newer)](<https://github.com/qbittorrent/qBittorrent/wiki/Running-qBittorrent-without-X-server-(WebUI-only,-systemd-service-set-up,-Ubuntu-15.04-or-newer)>)
 - [OpenVPN and qBittorrent without X server](https://github.com/qbittorrent/qBittorrent/wiki/OpenVPN-and-qBittorrent-without-X-server)
-
----
 
 ## Development
 

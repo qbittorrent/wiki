@@ -33,12 +33,6 @@ You may use the following qBittorrent-specific options to customize the build. P
 | `VERBOSE_CONFIGURE`            | Bool   | `OFF`                              | Show more information in the configure output (only useful for debugging the CMake build scripts)    | -                                                                                                                                  |
 | `WEBUI`                        | Bool   | `ON`                               | Enables built-in HTTP server for headless use                                                        | -                                                                                                                                  |
 
----
-
----
-
----
-
 ## CMake Basics
 
 Building qBittorrent with CMake comes down to a 2-step process:

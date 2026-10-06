@@ -14,8 +14,6 @@ The numbers mean how hard is it to check on a scale of 5.
 * [Your Power Supply](#how-to-check-psu) (4/5)
 * [Something else](#something-else) (5/5)
 
-***
-
 ## How to diagnose BSOD
 
 ! Take a picture of the BSOD message, every detail. Use your phone, or anything you have at your disposal. You have a few seconds until Windows finishes writing out the memory dump. **Wait until it says 100%/ready, otherwise you will have nothing to work with.**
@@ -32,8 +30,6 @@ The `c:\symbols` will be your local symbol cache. I would suggest using somethin
 6. Open `memory.dmp`
 7. Wait. Once you see "Ready", use the `!analyze -v` command.
 8. It will tell you the most likely culprit, but the other loaded things are also suspects. For me, the "most likely" thing was a Windows DLL, but my Avast file scanner service was also there. Removed Avast - boom - no BSOD ever since.
-
-***
 
 ## How to check RAM
 
@@ -54,8 +50,6 @@ I usually stop after 1 PASS, but you can wait until 2 PASS or so. If there are n
 
 If you can't get Memtest86 to work, a live Ubuntu ISO will work just as well.
 Download the latest Ubuntu LTS version (16.04 at the moment), and put it on a pendrive, CD or DVD.
-
-***
 
 ## How to check the HDD or storage
 
@@ -86,8 +80,6 @@ You want to check:
 
 * Power_On_Hours:
 > How many hours your HDD ran. HDDs usually die around 20-30k hours. Some may run up to 60k. It is totally random, and there is no guarantee a hard drive will run to X hours. It's however a good idea to back up more often and worry once you reach a lot of hours.
-
-***
 
 ## How to check PSU
 
