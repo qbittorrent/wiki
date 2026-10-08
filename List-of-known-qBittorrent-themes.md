@@ -20,7 +20,7 @@ See [How to use custom UI themes](https://github.com/qbittorrent/qBittorrent/wik
 
   A dark theme inspired by one of the above.
 
-- <https://gitlab.com/qbittorrent-black-theme/client>
+- <https://gitlab.com/maejok/q-bittorrent-black-theme>
 
   A fully dark theme for qBittorrent, just simple black and white, nothing else.
 
