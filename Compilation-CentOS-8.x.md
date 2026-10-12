@@ -1,4 +1,4 @@
-This how-to will guide you though the compilation of qBittorrent and libtorrent-rasterbar.<br />
+This how-to will guide you though the compilation of qBittorrent and libtorrent-rasterbar. \
 This guide is written for CentOS 8.x, but the process should be similar for other RHEL distributions.
 
 First of all, you need install
@@ -7,7 +7,7 @@ First of all, you need install
 yum install "https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm"
 ```
 
-***
+# Required dependencies
 
 ## General required dependencies
 

@@ -2,7 +2,7 @@
 
 Since version 2.5.0, qBittorrent ships a fully-functional built-in tracker that allows you to share files with your friends without having to use public trackers.
 
-# How to enable the embedded tracker
+## How to enable the embedded tracker
 
 qBittorrent's embedded tracker is disabled by default.
 You can enable it in the advanced settings (`Tools -> Options -> Advanced -> Enable embedded tracker`).
@@ -10,7 +10,7 @@ You can enable it in the advanced settings (`Tools -> Options -> Advanced -> Ena
 By default, the tracker URL is `http://your_public_ip:9000/announce`.
 You can check [this website](http://www.whatsmyip.org/) to know your public IP address.
 
-# Forward the tracker port on your router
+## Forward the tracker port on your router
 
 Your home connection is most likely behind some kind of NAT, so if you want your tracker to be accessible from Internet (i.e. outside your LAN), you need to configure your router to forward the tracker port to your machine.
 Otherwise, your friends will not be able to connect to it.
@@ -25,7 +25,7 @@ Once you have configured your router, you can test that your configuration is wo
 4. Press the "Check" button
 5. If your router is properly configured, you should get a result like `Port <port> is open on address.`
 
-# Sharing files with friends
+## Sharing files with friends
 
 1. Start qBittorrent and enable the embedded tracker
 2. Create a torrent with the files you wish to share; you can use qBittorrent's built-in torrent creator (`Tools -> Torrent creator`)

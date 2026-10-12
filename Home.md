@@ -1,6 +1,6 @@
 Everyone is welcome to improve the wiki!
 
-The wiki source code is hosted at https://github.com/qbittorrent/wiki and is accepting Pull Requests.
+The wiki source code is hosted at <https://github.com/qbittorrent/wiki> and is accepting Pull Requests.
 
 > :point_right: If you create a page, place it below in its respective place and update the sidebar with the content below.
 
@@ -12,7 +12,7 @@ The wiki source code is hosted at https://github.com/qbittorrent/wiki and is acc
 - [How to use qBittorrent as a tracker](https://github.com/qbittorrent/qBittorrent/wiki/How-to-use-qBittorrent-as-a-tracker)
 - [How to use portable mode](https://github.com/qbittorrent/qBittorrent/wiki/How-to-use-portable-mode)
 - [Anonymous mode](https://github.com/qbittorrent/qBittorrent/wiki/Anonymous-Mode)
-- [How to bind your vpn to prevent ip leaks](https://github.com/qbittorrent/qBittorrent/wiki/How-to-bind-your-vpn-to-prevent-ip-leaks.md)
+- [How to bind your vpn to prevent ip leaks](https://github.com/qbittorrent/qBittorrent/wiki/How-to-bind-your-vpn-to-prevent-ip-leaks)
 
 ### Troubleshooting
 
@@ -39,8 +39,6 @@ The wiki source code is hosted at https://github.com/qbittorrent/wiki and is acc
 ### Translation
 
 - [How to translate qBittorrent](https://github.com/qbittorrent/qBittorrent/wiki/How-to-translate-qBittorrent)
-
----
 
 ## WebUI
 
@@ -82,15 +80,11 @@ The wiki source code is hosted at https://github.com/qbittorrent/wiki and is acc
 - [Let's Encrypt certificates - Linux](https://github.com/qbittorrent/qBittorrent/wiki/Linux-WebUI-setting-up-HTTPS-with-Let's-Encrypt-certificates)
 - [Self-signed SSL certificates - Linux](https://github.com/qbittorrent/qBittorrent/wiki/Linux-WebUI-setting-up-HTTPS-with-self-signed-SSL-certificates)
 
----
-
 ## Linux
 
 - [Running qBittorrent without X server (WebUI only)](<https://github.com/qbittorrent/qBittorrent/wiki/Running-qBittorrent-without-X-server-(WebUI-only)>)
 - [Running qBittorrent without X server (WebUI only, systemd service set up, Ubuntu 15.04 or newer)](<https://github.com/qbittorrent/qBittorrent/wiki/Running-qBittorrent-without-X-server-(WebUI-only,-systemd-service-set-up,-Ubuntu-15.04-or-newer)>)
 - [OpenVPN and qBittorrent without X server](https://github.com/qbittorrent/qBittorrent/wiki/OpenVPN-and-qBittorrent-without-X-server)
-
----
 
 ## Development
 

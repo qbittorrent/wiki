@@ -4,9 +4,9 @@ Many VPNs offer a 'kill-switch' feature designed to block all internet connectio
 
 The following is a guide to enable this functionality
 
-# Procedure
+## Procedure
 
-## Windows 11
+### Windows 11
 
 1. Open the start menu by pressing the windows key, or by clicking on it.
 2. Type into the search bar `view network connections` and hit `ENTER`. Alternatively, you can navigate with `Control Panel -> Network and Internet -> Network and Sharing Center`. This should open up a list of networks such as Ethernet and/or WiFi.

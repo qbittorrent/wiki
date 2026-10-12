@@ -1,3 +1,5 @@
+# qBittorrent Compilation on macOS (Cross Compilation)
+
 This guide covers qBittorrent compilation process for any supported Mac systems as of writing, i.e. following this guide you will be able to build as x86_64 (aka for Intel chip based Mac) so as arm64 (aka for Apple Silicon based Mac) binaries. Cross-compilation process is covered as well. Most of the steps are the same for all cases, required adjustments for a specific case are highlighted. Cross-compilation is possible (and was tested) in both directions, i.e. producing arm64 binaries on x86_64 host and vice versa. Universal (aka "fat") binaries are not supported due to a lot of technically difficult reasons of compiling required dependencies.
 
 Rosetta (or any other software allowing to run non-native binaries) is not required to produce binaries for other architecture, neither for running compiled qBittorrent.
@@ -6,8 +8,7 @@ This guide was written based on sources from master branch at the time of writin
 
 No deep knowledge in C/C++ compilation/development process is required, just following this guide allows to achieve desired result. Also it can be a good starting point if you plan to start qBittorrent development (or just want to understand the basics of cross-compiling). Even more, this guide can be interesting for any person who wants to build/run Qt-based software on Apple Silicon based Mac.
 
-Conventions used in this document
----------------------------------
+## Conventions used in this document
 
 All provided commands should NOT be run as root (i.e. superuser) and assume next directory structure:
 
@@ -21,8 +22,7 @@ Any provided command assumes that you are in `src` directory unless otherwise is
 
 CMake app is placed in standard `/Applications` folder.
 
-Build environment setup
------------------------
+## Build environment setup
 
 Only few things are required:
 
@@ -39,8 +39,7 @@ There is may be some bug in Apple' tools, author encountered it on two laptops r
 
 Please avoid usage of Homebrew or any tools/dependencies installed from it. It is known that it can interfere with provided by default or installed by user similar software. Successful build in case of presence of Homebrew is not guaranteed. If you encounter any build issues due to presence of Homebrew you are of your own.
 
-Required sources
-----------------
+## Required sources
 
 - [qBittorrent itself](https://github.com/qbittorrent/qBittorrent) - use git to clone repository or just download snapshot as archive or release tarball
 - [Qt](https://code.qt.io/cgit/qt/qt5.git/) - use latest available from 5.15.x series, it is recommended to clone repository instead of downloading release tarball sources, covered below in this guide
@@ -73,8 +72,7 @@ Now all Qt sources are ready.
 
 Please do not try to use Qt 6.x, qBittorrent doesn't support it yet.
 
-Building dependencies
----------------------
+## Building dependencies
 
 All required libraries will be compiled as static libraries, there are few reasons for that, but the main reason was some Qt-specific issues. Moreover, usage of static libraries significantly simplifies the process in case of cross-compilation (again, due to Qt specific).
 
@@ -203,8 +201,7 @@ make install
 
 Build process takes 10-20 minutes depending on hardware. All headers and binaries will be placed into yours `$HOME/qbt/root`.
 
-Building qBittorrent
---------------------
+## Building qBittorrent
 
 So, you went so far and the end is near: only the last step is left - to build qBittorrent itself. CMake is also used to build qBittorrent (as it was for libtorrent):
 
@@ -235,7 +232,6 @@ hdiutil create -srcfolder qbittorrent.app -nospotlight -layout NONE -fs HFS+ -fo
 
 Happy building!
 
-About this document
--------------------
+## About this document
 
 As afterwards, it is worth to mention how this document is appeared. Someday on qBittorrent GitHub page author found an issue requesting Apple M1 support. That days an author already had suitable hardware (MacBook Pro 13 M1 2020) got from his office due to work responsibilities and decided to try to build qBittorrent on it... And that worked! Later he found the way to do cross-compilation to make it possible to get arm64 binaries using x86_64 host. This guide is result of that research and almost completely repeats the authors steps made this possible, but in much cleaner way. Also there is the [script](https://gist.github.com/Kolcha/3ccd533123b773ba110b8fd778b1c2bf) allowing to build qBittorrent master branch for desired architecture in "fully automatic mode". Script was also written by the same author as this guide.

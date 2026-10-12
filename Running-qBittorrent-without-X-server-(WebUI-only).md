@@ -6,7 +6,7 @@ You can install it from a binary package repository such as your distro's reposi
 
 You can also compile it from source by toggling the flag that disables the GUI (refer to the relevant compilation guides on the wiki).
 
-# Running
+## Running
 
 Simply execute `qbittorrent-nox`. At first execution, you should get prompted to accept the legal disclaimer. After that, qBittorrent will print out some useful information, such as the URL the WebAPI/WebUI can be accessed at, via a web browser, and the default credentials.
 
@@ -18,7 +18,7 @@ After first start and having accepted the legal disclaimer, you can also use `qb
 
 You probably want to control the daemon, like setting it to start on system boot, for example. To learn how to do that with `systemd` on Ubuntu 15.04 and other modern releases of mainstream distros, check out the [dedicated article](https://github.com/qbittorrent/qBittorrent/wiki/Running-qBittorrent-without-X-server-(WebUI-only---systemd-service-setup,-Ubuntu-15.04-or-newer)).
 
-# Settings and logs
+## Settings and logs
 
 Settings can be customized via the WebUI, WebAPI, or, if needed, manually editing the config file when qBitorrent is not running (`~/.config/qBittorrent/qBittorrent.conf).
 

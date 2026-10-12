@@ -8,42 +8,50 @@ If you know of more, feel free to add a link to the repository along with a shor
 
 ---
 
-- https://github.com/rmartin16/qbittorrent-api
+- <https://github.com/rmartin16/qbittorrent-api>
 
-    Python client implementation for qBittorrent's WebAPI
+  Python client implementation for qBittorrent's WebAPI
 
-- https://github.com/lgallard/qBittorrent-Controller
+- <https://github.com/lgallard/qBittorrent-Controller>
 
-    Android app for managing qBittorrent remotely via its WebAPI
+  Android app for managing qBittorrent remotely via its WebAPI
 
-- https://github.com/Conan1996-2/qBitorrent-WebUI-API
+- <https://github.com/Conan1996-2/qBitorrent-WebUI-API>
 
-    VB .NET code to access qBitorrent's WebAPI
+  VB .NET code to access qBitorrent's WebAPI
 
-- https://github.com/fedarovich/qbittorrent-cli
+- <https://github.com/taylorcox75/qRemote>
 
-    Cross-platform command line interface qBittorrent WebAPI client
+  iOS app for managing qBittorrent remotely via its WebAPI, available (free) in App Store
 
-- https://github.com/hrap1919/qbc.git
+- <https://github.com/fedarovich/qbittorrent-cli>
 
-    A simple WebAPI command-line client using only bash, curl and jq for Linux (or Cygwin etc).
+  Cross-platform command line interface qBittorrent WebAPI client
 
-- https://github.com/jesec/flood/blob/master/server/services/qBittorrent/clientRequestManager.ts
+- <https://github.com/hrap1919/qbc.git>
 
-    TypeScript/JavaScript implementation for qBittorrent's WebAPI
+  A simple WebAPI command-line client using only bash, curl and jq for Linux (or Cygwin etc).
 
-- https://github.com/bnzbnz/qBit4Delphi
+- <https://github.com/jesec/flood/blob/master/server/services/qBittorrent/clientRequestManager.ts>
 
-    A free Delphi VCL/FMX implementation of qBittorrent's WebAPI
+  TypeScript/JavaScript implementation for qBittorrent's WebAPI
 
-- https://github.com/bnzbnz/qBit4Delphi
+- <https://github.com/bnzbnz/qBit4Delphi>
 
-    qNOXify : a qBittorrent/NOX Thin Client implementing  qBit4Delphi (in progress...)
+  A free Delphi VCL/FMX implementation of qBittorrent's WebAPI
 
-- https://github.com/George-Miao/qbit
+- <https://github.com/bnzbnz/qBit4Delphi>
 
-    A Rust library for interacting with qBittorrent's Web API
+  qNOXify : a qBittorrent/NOX Thin Client implementing qBit4Delphi (in progress...)
 
-- https://github.com/yosemiteyss/qbittorrent_api
+- <https://github.com/George-Miao/qbit>
 
-    Dart wrapper for qBittorrent Web API
+  A Rust library for interacting with qBittorrent's Web API
+
+- <https://github.com/yosemiteyss/qbittorrent_api>
+
+  Dart wrapper for qBittorrent Web API
+
+- <https://github.com/LECOQQ/qbit-ops>
+
+  CLI and TUI for bulk operations on torrents and trackers, dry-run by default

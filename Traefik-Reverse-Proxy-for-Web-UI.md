@@ -1,4 +1,5 @@
 The following exposes the Web UI at `http://<container host>/qb` using compose-style syntax (which can be translated to the traefik syntax of your choice)
+
 ```yaml
 ...
 services:

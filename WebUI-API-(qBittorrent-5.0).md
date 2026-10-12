@@ -107,46 +107,46 @@ This WebUI API documentation applies to qBittorrent v5.0+. For other WebUI API v
    1. [Update search plugins](#update-search-plugins)
 1. [WebAPI versioning](#webapi-versioning)
 
-***
+## Changes ##
 
-# Changes #
+### API v2.9.3 ###
 
-## API v2.9.3 ##
 - Added `reannounce` to `/torrents/info` ([#19571](https://github.com/qbittorrent/qBittorrent/pull/19571))
 
-## API v2.11.3 ##
+### API v2.11.3 ###
+
 - Add APIs for managing cookies` ([#21340](https://github.com/qbittorrent/qBittorrent/pull/21340))
 - Remove `cookie` field from `/torrents/add` request
 
-# General Information #
+## General Information ##
 
 - All API methods follows the format `/api/v2/APIName/methodName`, where `APIName` is a certain subgroup of API methods whose functionality is related.
 - All API methods only allows `GET` or `POST` methods. Use `POST` when you are mutating some state (or when your request is too big to fit into `GET`) and use `GET` otherwise. Starting with qBittorrent v4.4.4, server will return `405 Method Not Allowed` when you used the wrong request method.
 - All API methods require [authentication](#authentication) (except `/api/v2/auth/login`, obviously).
 
-# Authentication #
+## Authentication ##
 
 All Authentication API methods are under "auth", e.g.: `/api/v2/auth/methodName`.
 
 qBittorrent uses cookie-based authentication.
 
-## Login ##
+### Login ###
 
 Name: `login`
 
 **Parameters:**
 
-Parameter                         | Type    | Description
-----------------------------------|---------|------------
-`username`                        | string  | Username used to access the WebUI
-`password`                        | string  | Password used to access the WebUI
+| Parameter  | Type   | Description                       |
+| ---------- | ------ | --------------------------------- |
+| `username` | string | Username used to access the WebUI |
+| `password` | string | Password used to access the WebUI |
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-403                               | User's IP is banned for too many failed login attempts
-200                               | All other scenarios
+| HTTP Status Code | Scenario                                               |
+| ---------------- | ------------------------------------------------------ |
+| 403              | User's IP is banned for too many failed login attempts |
+| 200              | All other scenarios                                    |
 
 Upon success, the response will contain a cookie with your SID. You must supply the cookie whenever you want to perform an operation that requires authentication.
 
@@ -164,7 +164,7 @@ $ curl http://localhost:8080/api/v2/torrents/info --cookie "SID=hBc7TxF76ERhvIw0
 
 Note: Set `Referer` or `Origin` header to the exact same domain and port as used in the HTTP query `Host` header.
 
-## Logout ##
+### Logout ###
 
 Name: `logout`
 
@@ -174,15 +174,15 @@ None
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios
+| HTTP Status Code | Scenario      |
+| ---------------- | ------------- |
+| 200              | All scenarios |
 
-# Application #
+## Application ##
 
 All Application API methods are under "app", e.g.: `/api/v2/app/methodName`.
 
-## Get application version ##
+### Get application version ###
 
 Name: `version`
 
@@ -192,13 +192,13 @@ None
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios
+| HTTP Status Code | Scenario      |
+| ---------------- | ------------- |
+| 200              | All scenarios |
 
 The response is a string with the application version, e.g. `v4.1.3`
 
-## Get API version ##
+### Get API version ###
 
 Name: `webapiVersion`
 
@@ -208,13 +208,13 @@ None
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios
+| HTTP Status Code | Scenario      |
+| ---------------- | ------------- |
+| 200              | All scenarios |
 
 The response is a string with the WebAPI version, e.g. `2.0`
 
-## Get build info ##
+### Get build info ###
 
 Name: `buildInfo`
 
@@ -224,21 +224,21 @@ None
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios- see JSON below
+| HTTP Status Code | Scenario                      |
+| ---------------- | ----------------------------- |
+| 200              | All scenarios- see JSON below |
 
 The response is a JSON object containing the following fields
 
-Property     | Type    | Description
--------------|---------|------------
-`qt`         | string  | QT version
-`libtorrent` | string  | libtorrent version
-`boost`      | string  | Boost version
-`openssl`    | string  | OpenSSL version
-`bitness`    | int     | Application bitness (e.g. 64-bit)
+| Property     | Type   | Description                       |
+| ------------ | ------ | --------------------------------- |
+| `qt`         | string | QT version                        |
+| `libtorrent` | string | libtorrent version                |
+| `boost`      | string | Boost version                     |
+| `openssl`    | string | OpenSSL version                   |
+| `bitness`    | int    | Application bitness (e.g. 64-bit) |
 
-## Shutdown application ##
+### Shutdown application ###
 
 Name: `shutdown`
 
@@ -248,11 +248,11 @@ None
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios
+| HTTP Status Code | Scenario      |
+| ---------------- | ------------- |
+| 200              | All scenarios |
 
-## Get application preferences ##
+### Get application preferences ###
 
 Name: `preferences`
 
@@ -262,250 +262,250 @@ None
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios- see JSON below
+| HTTP Status Code | Scenario                      |
+| ---------------- | ----------------------------- |
+| 200              | All scenarios- see JSON below |
 
 The response is a JSON object with several fields (key-value) pairs representing the application's settings. The contents may vary depending on which settings are present in qBittorrent.ini.
 
 Possible fields:
 
-Property                                 | Type    | Description
------------------------------------------|---------|------------
-`locale`                                 | string  | Currently selected language (e.g. en_GB for English)
-`create_subfolder_enabled`               | bool    | True if a subfolder should be created when adding a torrent
-`start_paused_enabled`                   | bool    | True if torrents should be added in a Paused state
-`auto_delete_mode`                       | integer | TODO
-`preallocate_all`                        | bool    | True if disk space should be pre-allocated for all files
-`incomplete_files_ext`                   | bool    | True if ".!qB" should be appended to incomplete files
-`auto_tmm_enabled`                       | bool    | True if Automatic Torrent Management is enabled by default
-`torrent_changed_tmm_enabled`            | bool    | True if torrent should be relocated when its Category changes
-`save_path_changed_tmm_enabled`          | bool    | True if torrent should be relocated when the default save path changes
-`category_changed_tmm_enabled`           | bool    | True if torrent should be relocated when its Category's save path changes
-`save_path`                              | string  | Default save path for torrents, separated by slashes
-`temp_path_enabled`                      | bool    | True if folder for incomplete torrents is enabled
-`temp_path`                              | string  | Path for incomplete torrents, separated by slashes
-`scan_dirs`                              | object  | Property: directory to watch for torrent files, value: where torrents loaded from this directory should be downloaded to (see list of possible values below). Slashes are used as path separators; multiple key/value pairs can be specified
-`export_dir`                             | string  | Path to directory to copy .torrent files to. Slashes are used as path separators
-`export_dir_fin`                         | string  | Path to directory to copy .torrent files of completed downloads to. Slashes are used as path separators
-`mail_notification_enabled`              | bool    | True if e-mail notification should be enabled
-`mail_notification_sender`               | string  | e-mail where notifications should originate from
-`mail_notification_email`                | string  | e-mail to send notifications to
-`mail_notification_smtp`                 | string  | smtp server for e-mail notifications
-`mail_notification_ssl_enabled`          | bool    | True if smtp server requires SSL connection
-`mail_notification_auth_enabled`         | bool    | True if smtp server requires authentication
-`mail_notification_username`             | string  | Username for smtp authentication
-`mail_notification_password`             | string  | Password for smtp authentication
-`autorun_enabled`                        | bool    | True if external program should be run after torrent has finished downloading
-`autorun_program`                        | string  | Program path/name/arguments to run if `autorun_enabled` is enabled; path is separated by slashes; you can use `%f` and `%n` arguments, which will be expanded by qBittorrent as path_to_torrent_file and torrent_name (from the GUI; not the .torrent file name) respectively
-`queueing_enabled`                       | bool    | True if torrent queuing is enabled
-`max_active_downloads`                   | integer | Maximum number of active simultaneous downloads
-`max_active_torrents`                    | integer | Maximum number of active simultaneous downloads and uploads
-`max_active_uploads`                     | integer | Maximum number of active simultaneous uploads
-`dont_count_slow_torrents`               | bool    | If true torrents w/o any activity (stalled ones) will not be counted towards `max_active_*` limits; see [dont_count_slow_torrents](https://www.libtorrent.org/reference-Settings.html#dont_count_slow_torrents) for more information
-`slow_torrent_dl_rate_threshold`         | integer | Download rate in KiB/s for a torrent to be considered "slow"
-`slow_torrent_ul_rate_threshold`         | integer | Upload rate in KiB/s for a torrent to be considered "slow"
-`slow_torrent_inactive_timer`            | integer | Seconds a torrent should be inactive before considered "slow"
-`max_ratio_enabled`                      | bool    | True if share ratio limit is enabled
-`max_ratio`                              | float   | Get the global share ratio limit
-`max_ratio_act`                          | integer | Action performed when a torrent reaches the maximum share ratio. See list of possible values here below.
-`listen_port`                            | integer | Port for incoming connections
-`upnp`                                   | bool    | True if UPnP/NAT-PMP is enabled
-`random_port`                            | bool    | True if the port is randomly selected
-`dl_limit`                               | integer | Global download speed limit in KiB/s; `-1` means no limit is applied
-`up_limit`                               | integer | Global upload speed limit in KiB/s; `-1` means no limit is applied
-`max_connec`                             | integer | Maximum global number of simultaneous connections
-`max_connec_per_torrent`                 | integer | Maximum number of simultaneous connections per torrent
-`max_uploads`                            | integer | Maximum number of upload slots
-`max_uploads_per_torrent`                | integer | Maximum number of upload slots per torrent
-`stop_tracker_timeout`                   | integer | Timeout in seconds for a `stopped` announce request to trackers
-`enable_piece_extent_affinity`           | bool    | True if the advanced libtorrent option `piece_extent_affinity` is enabled
-`bittorrent_protocol`                    | integer | Bittorrent Protocol to use (see list of possible values below)
-`limit_utp_rate`                         | bool    | True if `[du]l_limit` should be applied to uTP connections; this option is only available in qBittorrent built against libtorrent version 0.16.X and higher
-`limit_tcp_overhead`                     | bool    | True if `[du]l_limit` should be applied to estimated TCP overhead (service data: e.g. packet headers)
-`limit_lan_peers`                        | bool    | True if `[du]l_limit` should be applied to peers on the LAN
-`alt_dl_limit`                           | integer | Alternative global download speed limit in KiB/s
-`alt_up_limit`                           | integer | Alternative global upload speed limit in KiB/s
-`scheduler_enabled`                      | bool    | True if alternative limits should be applied according to schedule
-`schedule_from_hour`                     | integer | Scheduler starting hour
-`schedule_from_min`                      | integer | Scheduler starting minute
-`schedule_to_hour`                       | integer | Scheduler ending hour
-`schedule_to_min`                        | integer | Scheduler ending minute
-`scheduler_days`                         | integer | Scheduler days. See possible values here below
-`dht`                                    | bool    | True if DHT is enabled
-`pex`                                    | bool    | True if PeX is enabled
-`lsd`                                    | bool    | True if LSD is enabled
-`encryption`                             | integer | See list of possible values here below
-`anonymous_mode`                         | bool    | If true anonymous mode will be enabled; read more [here](Anonymous-Mode); this option is only available in qBittorrent built against libtorrent version 0.16.X and higher
-`proxy_type`                             | integer | See list of possible values here below
-`proxy_ip`                               | string  | Proxy IP address or domain name
-`proxy_port`                             | integer | Proxy port
-`proxy_peer_connections`                 | bool    | True if peer and web seed connections should be proxified; this option will have any effect only in qBittorrent built against libtorrent version 0.16.X and higher
-`proxy_auth_enabled`                     | bool    | True proxy requires authentication; doesn't apply to SOCKS4 proxies
-`proxy_username`                         | string  | Username for proxy authentication
-`proxy_password`                         | string  | Password for proxy authentication
-`proxy_torrents_only`                    | bool    | True if proxy is only used for torrents
-`ip_filter_enabled`                      | bool    | True if external IP filter should be enabled
-`ip_filter_path`                         | string  | Path to IP filter file (.dat, .p2p, .p2b files are supported); path is separated by slashes
-`ip_filter_trackers`                     | bool    | True if IP filters are applied to trackers
-`web_ui_domain_list`                     | string  | Semicolon-separated list of domains to accept when performing Host header validation
-`web_ui_address`                         | string  | IP address to use for the WebUI
-`web_ui_port`                            | integer | WebUI port
-`web_ui_upnp`                            | bool    | True if UPnP is used for the WebUI port
-`web_ui_username`                        | string  | WebUI username
-`web_ui_password`                        | string  | For API ≥ v2.3.0: Plaintext WebUI password, not readable, write-only. For API < v2.3.0: MD5 hash of WebUI password, hash is generated from the following string: `username:Web UI Access:plain_text_web_ui_password`
-`web_ui_csrf_protection_enabled`         | bool    | True if WebUI CSRF protection is enabled
-`web_ui_clickjacking_protection_enabled` | bool    | True if WebUI clickjacking protection is enabled
-`web_ui_secure_cookie_enabled`           | bool    | True if WebUI cookie `Secure` flag is enabled
-`web_ui_max_auth_fail_count`             | integer | Maximum number of authentication failures before WebUI access ban
-`web_ui_ban_duration`                    | integer | WebUI access ban duration in seconds
-`web_ui_session_timeout`                 | integer | Seconds until WebUI is automatically signed off
-`web_ui_host_header_validation_enabled`  | bool    | True if WebUI host header validation is enabled
-`bypass_local_auth`                      | bool    | True if authentication challenge for loopback address (127.0.0.1) should be disabled
-`bypass_auth_subnet_whitelist_enabled`   | bool    | True if webui authentication should be bypassed for clients whose ip resides within (at least) one of the subnets on the whitelist
-`bypass_auth_subnet_whitelist`           | string  | (White)list of ipv4/ipv6 subnets for which webui authentication should be bypassed; list entries are separated by commas
-`alternative_webui_enabled`              | bool    | True if an alternative WebUI should be used
-`alternative_webui_path`                 | string  | File path to the alternative WebUI
-`use_https`                              | bool    | True if WebUI HTTPS access is enabled
-`ssl_key`                                | string  | For API < v2.0.1: SSL keyfile contents (this is a not a path)
-`ssl_cert`                               | string  | For API < v2.0.1: SSL certificate contents (this is a not a path)
-`web_ui_https_key_path`                  | string  | For API ≥ v2.0.1: Path to SSL keyfile
-`web_ui_https_cert_path`                 | string  | For API ≥ v2.0.1: Path to SSL certificate
-`dyndns_enabled`                         | bool    | True if server DNS should be updated dynamically
-`dyndns_service`                         | integer | See list of possible values here below
-`dyndns_username`                        | string  | Username for DDNS service
-`dyndns_password`                        | string  | Password for DDNS service
-`dyndns_domain`                          | string  | Your DDNS domain name
-`rss_refresh_interval`                   | integer | RSS refresh interval
-`rss_max_articles_per_feed`              | integer | Max stored articles per RSS feed
-`rss_processing_enabled`                 | bool    | Enable processing of RSS feeds
-`rss_auto_downloading_enabled`           | bool    | Enable auto-downloading of torrents from the RSS feeds
-`rss_download_repack_proper_episodes`    | bool    | For API ≥ v2.5.1: Enable downloading of repack/proper Episodes
-`rss_smart_episode_filters`              | string  | For API ≥ v2.5.1: List of RSS Smart Episode Filters
-`add_trackers_enabled`                   | bool    | Enable automatic adding of trackers to new torrents
-`add_trackers`                           | string  | List of trackers to add to new torrent
-`web_ui_use_custom_http_headers_enabled` | bool    | For API ≥ v2.5.1: Enable custom http headers
-`web_ui_custom_http_headers`             | string  | For API ≥ v2.5.1: List of custom http headers
-`max_seeding_time_enabled`               | bool    | True enables max seeding time
-`max_seeding_time`                       | integer | Number of minutes to seed a torrent
-`announce_ip`                            | string  | TODO
-`announce_to_all_tiers`                  | bool    | True always announce to all tiers
-`announce_to_all_trackers`               | bool    | True always announce to all trackers in a tier
-`async_io_threads`                       | integer | Number of asynchronous I/O threads
-`banned_IPs`                             | string  | List of banned IPs
-`checking_memory_use`                    | integer | Outstanding memory when checking torrents in MiB
-`current_interface_address`              | string  | IP Address to bind to. Empty String means All addresses
-`current_network_interface`              | string  | Network Interface used
-`disk_cache`                             | integer | Disk cache used in MiB
-`disk_cache_ttl`                         | integer | Disk cache expiry interval in seconds
-`embedded_tracker_port`                  | integer | Port used for embedded tracker
-`enable_coalesce_read_write`             | bool    | True enables coalesce reads & writes
-`enable_embedded_tracker`                | bool    | True enables embedded tracker
-`enable_multi_connections_from_same_ip`  | bool    | True allows multiple connections from the same IP address
-`enable_os_cache`                        | bool    | True enables os cache
-`enable_upload_suggestions`              | bool    | True enables sending of upload piece suggestions
-`file_pool_size`                         | integer | File pool size
-`outgoing_ports_max`                     | integer | Maximal outgoing port (0: Disabled)
-`outgoing_ports_min`                     | integer | Minimal outgoing port (0: Disabled)
-`recheck_completed_torrents`             | bool    | True rechecks torrents on completion
-`resolve_peer_countries`                 | bool    | True resolves peer countries
-`save_resume_data_interval`              | integer | Save resume data interval in min
-`send_buffer_low_watermark`              | integer | Send buffer low watermark in KiB
-`send_buffer_watermark`                  | integer | Send buffer watermark in KiB
-`send_buffer_watermark_factor`           | integer | Send buffer watermark factor in percent
-`socket_backlog_size`                    | integer | Socket backlog size
-`upload_choking_algorithm`               | integer | Upload choking algorithm used (see list of possible values below)
-`upload_slots_behavior`                  | integer | Upload slots behavior used (see list of possible values below)
-`upnp_lease_duration`                    | integer | UPnP lease duration (0: Permanent lease)
-`utp_tcp_mixed_mode`                     | integer | μTP-TCP mixed mode algorithm (see list of possible values below)
+| Property                                 | Type    | Description                                                                                                                                                                                                                                                                   |
+| ---------------------------------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `locale`                                 | string  | Currently selected language (e.g. en_GB for English)                                                                                                                                                                                                                          |
+| `create_subfolder_enabled`               | bool    | True if a subfolder should be created when adding a torrent                                                                                                                                                                                                                   |
+| `start_paused_enabled`                   | bool    | True if torrents should be added in a Paused state                                                                                                                                                                                                                            |
+| `auto_delete_mode`                       | integer | TODO                                                                                                                                                                                                                                                                          |
+| `preallocate_all`                        | bool    | True if disk space should be pre-allocated for all files                                                                                                                                                                                                                      |
+| `incomplete_files_ext`                   | bool    | True if ".!qB" should be appended to incomplete files                                                                                                                                                                                                                         |
+| `auto_tmm_enabled`                       | bool    | True if Automatic Torrent Management is enabled by default                                                                                                                                                                                                                    |
+| `torrent_changed_tmm_enabled`            | bool    | True if torrent should be relocated when its Category changes                                                                                                                                                                                                                 |
+| `save_path_changed_tmm_enabled`          | bool    | True if torrent should be relocated when the default save path changes                                                                                                                                                                                                        |
+| `category_changed_tmm_enabled`           | bool    | True if torrent should be relocated when its Category's save path changes                                                                                                                                                                                                     |
+| `save_path`                              | string  | Default save path for torrents, separated by slashes                                                                                                                                                                                                                          |
+| `temp_path_enabled`                      | bool    | True if folder for incomplete torrents is enabled                                                                                                                                                                                                                             |
+| `temp_path`                              | string  | Path for incomplete torrents, separated by slashes                                                                                                                                                                                                                            |
+| `scan_dirs`                              | object  | Property: directory to watch for torrent files, value: where torrents loaded from this directory should be downloaded to (see list of possible values below). Slashes are used as path separators; multiple key/value pairs can be specified                                  |
+| `export_dir`                             | string  | Path to directory to copy .torrent files to. Slashes are used as path separators                                                                                                                                                                                              |
+| `export_dir_fin`                         | string  | Path to directory to copy .torrent files of completed downloads to. Slashes are used as path separators                                                                                                                                                                       |
+| `mail_notification_enabled`              | bool    | True if e-mail notification should be enabled                                                                                                                                                                                                                                 |
+| `mail_notification_sender`               | string  | e-mail where notifications should originate from                                                                                                                                                                                                                              |
+| `mail_notification_email`                | string  | e-mail to send notifications to                                                                                                                                                                                                                                               |
+| `mail_notification_smtp`                 | string  | smtp server for e-mail notifications                                                                                                                                                                                                                                          |
+| `mail_notification_ssl_enabled`          | bool    | True if smtp server requires SSL connection                                                                                                                                                                                                                                   |
+| `mail_notification_auth_enabled`         | bool    | True if smtp server requires authentication                                                                                                                                                                                                                                   |
+| `mail_notification_username`             | string  | Username for smtp authentication                                                                                                                                                                                                                                              |
+| `mail_notification_password`             | string  | Password for smtp authentication                                                                                                                                                                                                                                              |
+| `autorun_enabled`                        | bool    | True if external program should be run after torrent has finished downloading                                                                                                                                                                                                 |
+| `autorun_program`                        | string  | Program path/name/arguments to run if `autorun_enabled` is enabled; path is separated by slashes; you can use `%f` and `%n` arguments, which will be expanded by qBittorrent as path_to_torrent_file and torrent_name (from the GUI; not the .torrent file name) respectively |
+| `queueing_enabled`                       | bool    | True if torrent queuing is enabled                                                                                                                                                                                                                                            |
+| `max_active_downloads`                   | integer | Maximum number of active simultaneous downloads                                                                                                                                                                                                                               |
+| `max_active_torrents`                    | integer | Maximum number of active simultaneous downloads and uploads                                                                                                                                                                                                                   |
+| `max_active_uploads`                     | integer | Maximum number of active simultaneous uploads                                                                                                                                                                                                                                 |
+| `dont_count_slow_torrents`               | bool    | If true torrents w/o any activity (stalled ones) will not be counted towards `max_active_*` limits; see [dont_count_slow_torrents](https://www.libtorrent.org/reference-Settings.html#dont_count_slow_torrents) for more information                                          |
+| `slow_torrent_dl_rate_threshold`         | integer | Download rate in KiB/s for a torrent to be considered "slow"                                                                                                                                                                                                                  |
+| `slow_torrent_ul_rate_threshold`         | integer | Upload rate in KiB/s for a torrent to be considered "slow"                                                                                                                                                                                                                    |
+| `slow_torrent_inactive_timer`            | integer | Seconds a torrent should be inactive before considered "slow"                                                                                                                                                                                                                 |
+| `max_ratio_enabled`                      | bool    | True if share ratio limit is enabled                                                                                                                                                                                                                                          |
+| `max_ratio`                              | float   | Get the global share ratio limit                                                                                                                                                                                                                                              |
+| `max_ratio_act`                          | integer | Action performed when a torrent reaches the maximum share ratio. See list of possible values here below.                                                                                                                                                                      |
+| `listen_port`                            | integer | Port for incoming connections                                                                                                                                                                                                                                                 |
+| `upnp`                                   | bool    | True if UPnP/NAT-PMP is enabled                                                                                                                                                                                                                                               |
+| `random_port`                            | bool    | True if the port is randomly selected                                                                                                                                                                                                                                         |
+| `dl_limit`                               | integer | Global download speed limit in KiB/s; `-1` means no limit is applied                                                                                                                                                                                                          |
+| `up_limit`                               | integer | Global upload speed limit in KiB/s; `-1` means no limit is applied                                                                                                                                                                                                            |
+| `max_connec`                             | integer | Maximum global number of simultaneous connections                                                                                                                                                                                                                             |
+| `max_connec_per_torrent`                 | integer | Maximum number of simultaneous connections per torrent                                                                                                                                                                                                                        |
+| `max_uploads`                            | integer | Maximum number of upload slots                                                                                                                                                                                                                                                |
+| `max_uploads_per_torrent`                | integer | Maximum number of upload slots per torrent                                                                                                                                                                                                                                    |
+| `stop_tracker_timeout`                   | integer | Timeout in seconds for a `stopped` announce request to trackers                                                                                                                                                                                                               |
+| `enable_piece_extent_affinity`           | bool    | True if the advanced libtorrent option `piece_extent_affinity` is enabled                                                                                                                                                                                                     |
+| `bittorrent_protocol`                    | integer | Bittorrent Protocol to use (see list of possible values below)                                                                                                                                                                                                                |
+| `limit_utp_rate`                         | bool    | True if `[du]l_limit` should be applied to uTP connections; this option is only available in qBittorrent built against libtorrent version 0.16.X and higher                                                                                                                   |
+| `limit_tcp_overhead`                     | bool    | True if `[du]l_limit` should be applied to estimated TCP overhead (service data: e.g. packet headers)                                                                                                                                                                         |
+| `limit_lan_peers`                        | bool    | True if `[du]l_limit` should be applied to peers on the LAN                                                                                                                                                                                                                   |
+| `alt_dl_limit`                           | integer | Alternative global download speed limit in KiB/s                                                                                                                                                                                                                              |
+| `alt_up_limit`                           | integer | Alternative global upload speed limit in KiB/s                                                                                                                                                                                                                                |
+| `scheduler_enabled`                      | bool    | True if alternative limits should be applied according to schedule                                                                                                                                                                                                            |
+| `schedule_from_hour`                     | integer | Scheduler starting hour                                                                                                                                                                                                                                                       |
+| `schedule_from_min`                      | integer | Scheduler starting minute                                                                                                                                                                                                                                                     |
+| `schedule_to_hour`                       | integer | Scheduler ending hour                                                                                                                                                                                                                                                         |
+| `schedule_to_min`                        | integer | Scheduler ending minute                                                                                                                                                                                                                                                       |
+| `scheduler_days`                         | integer | Scheduler days. See possible values here below                                                                                                                                                                                                                                |
+| `dht`                                    | bool    | True if DHT is enabled                                                                                                                                                                                                                                                        |
+| `pex`                                    | bool    | True if PeX is enabled                                                                                                                                                                                                                                                        |
+| `lsd`                                    | bool    | True if LSD is enabled                                                                                                                                                                                                                                                        |
+| `encryption`                             | integer | See list of possible values here below                                                                                                                                                                                                                                        |
+| `anonymous_mode`                         | bool    | If true [anonymous mode](Anonymous-Mode) will be enabled; this option is only available in qBittorrent built against libtorrent version 0.16.X and higher                                                                                                                     |
+| `proxy_type`                             | integer | See list of possible values here below                                                                                                                                                                                                                                        |
+| `proxy_ip`                               | string  | Proxy IP address or domain name                                                                                                                                                                                                                                               |
+| `proxy_port`                             | integer | Proxy port                                                                                                                                                                                                                                                                    |
+| `proxy_peer_connections`                 | bool    | True if peer and web seed connections should be proxified; this option will have any effect only in qBittorrent built against libtorrent version 0.16.X and higher                                                                                                            |
+| `proxy_auth_enabled`                     | bool    | True proxy requires authentication; doesn't apply to SOCKS4 proxies                                                                                                                                                                                                           |
+| `proxy_username`                         | string  | Username for proxy authentication                                                                                                                                                                                                                                             |
+| `proxy_password`                         | string  | Password for proxy authentication                                                                                                                                                                                                                                             |
+| `proxy_torrents_only`                    | bool    | True if proxy is only used for torrents                                                                                                                                                                                                                                       |
+| `ip_filter_enabled`                      | bool    | True if external IP filter should be enabled                                                                                                                                                                                                                                  |
+| `ip_filter_path`                         | string  | Path to IP filter file (.dat, .p2p, .p2b files are supported); path is separated by slashes                                                                                                                                                                                   |
+| `ip_filter_trackers`                     | bool    | True if IP filters are applied to trackers                                                                                                                                                                                                                                    |
+| `web_ui_domain_list`                     | string  | Semicolon-separated list of domains to accept when performing Host header validation                                                                                                                                                                                          |
+| `web_ui_address`                         | string  | IP address to use for the WebUI                                                                                                                                                                                                                                               |
+| `web_ui_port`                            | integer | WebUI port                                                                                                                                                                                                                                                                    |
+| `web_ui_upnp`                            | bool    | True if UPnP is used for the WebUI port                                                                                                                                                                                                                                       |
+| `web_ui_username`                        | string  | WebUI username                                                                                                                                                                                                                                                                |
+| `web_ui_password`                        | string  | For API ≥ v2.3.0: Plaintext WebUI password, not readable, write-only. For API < v2.3.0: MD5 hash of WebUI password, hash is generated from the following string: `username:Web UI Access:plain_text_web_ui_password`                                                          |
+| `web_ui_csrf_protection_enabled`         | bool    | True if WebUI CSRF protection is enabled                                                                                                                                                                                                                                      |
+| `web_ui_clickjacking_protection_enabled` | bool    | True if WebUI clickjacking protection is enabled                                                                                                                                                                                                                              |
+| `web_ui_secure_cookie_enabled`           | bool    | True if WebUI cookie `Secure` flag is enabled                                                                                                                                                                                                                                 |
+| `web_ui_max_auth_fail_count`             | integer | Maximum number of authentication failures before WebUI access ban                                                                                                                                                                                                             |
+| `web_ui_ban_duration`                    | integer | WebUI access ban duration in seconds                                                                                                                                                                                                                                          |
+| `web_ui_session_timeout`                 | integer | Seconds until WebUI is automatically signed off                                                                                                                                                                                                                               |
+| `web_ui_host_header_validation_enabled`  | bool    | True if WebUI host header validation is enabled                                                                                                                                                                                                                               |
+| `bypass_local_auth`                      | bool    | True if authentication challenge for loopback address (127.0.0.1) should be disabled                                                                                                                                                                                          |
+| `bypass_auth_subnet_whitelist_enabled`   | bool    | True if webui authentication should be bypassed for clients whose ip resides within (at least) one of the subnets on the whitelist                                                                                                                                            |
+| `bypass_auth_subnet_whitelist`           | string  | (White)list of ipv4/ipv6 subnets for which webui authentication should be bypassed; list entries are separated by commas                                                                                                                                                      |
+| `alternative_webui_enabled`              | bool    | True if an alternative WebUI should be used                                                                                                                                                                                                                                   |
+| `alternative_webui_path`                 | string  | File path to the alternative WebUI                                                                                                                                                                                                                                            |
+| `use_https`                              | bool    | True if WebUI HTTPS access is enabled                                                                                                                                                                                                                                         |
+| `ssl_key`                                | string  | For API < v2.0.1: SSL keyfile contents (this is a not a path)                                                                                                                                                                                                                 |
+| `ssl_cert`                               | string  | For API < v2.0.1: SSL certificate contents (this is a not a path)                                                                                                                                                                                                             |
+| `web_ui_https_key_path`                  | string  | For API ≥ v2.0.1: Path to SSL keyfile                                                                                                                                                                                                                                         |
+| `web_ui_https_cert_path`                 | string  | For API ≥ v2.0.1: Path to SSL certificate                                                                                                                                                                                                                                     |
+| `dyndns_enabled`                         | bool    | True if server DNS should be updated dynamically                                                                                                                                                                                                                              |
+| `dyndns_service`                         | integer | See list of possible values here below                                                                                                                                                                                                                                        |
+| `dyndns_username`                        | string  | Username for DDNS service                                                                                                                                                                                                                                                     |
+| `dyndns_password`                        | string  | Password for DDNS service                                                                                                                                                                                                                                                     |
+| `dyndns_domain`                          | string  | Your DDNS domain name                                                                                                                                                                                                                                                         |
+| `rss_refresh_interval`                   | integer | RSS refresh interval                                                                                                                                                                                                                                                          |
+| `rss_max_articles_per_feed`              | integer | Max stored articles per RSS feed                                                                                                                                                                                                                                              |
+| `rss_processing_enabled`                 | bool    | Enable processing of RSS feeds                                                                                                                                                                                                                                                |
+| `rss_auto_downloading_enabled`           | bool    | Enable auto-downloading of torrents from the RSS feeds                                                                                                                                                                                                                        |
+| `rss_download_repack_proper_episodes`    | bool    | For API ≥ v2.5.1: Enable downloading of repack/proper Episodes                                                                                                                                                                                                                |
+| `rss_smart_episode_filters`              | string  | For API ≥ v2.5.1: List of RSS Smart Episode Filters                                                                                                                                                                                                                           |
+| `add_trackers_enabled`                   | bool    | Enable automatic adding of trackers to new torrents                                                                                                                                                                                                                           |
+| `add_trackers`                           | string  | List of trackers to add to new torrent                                                                                                                                                                                                                                        |
+| `web_ui_use_custom_http_headers_enabled` | bool    | For API ≥ v2.5.1: Enable custom http headers                                                                                                                                                                                                                                  |
+| `web_ui_custom_http_headers`             | string  | For API ≥ v2.5.1: List of custom http headers                                                                                                                                                                                                                                 |
+| `max_seeding_time_enabled`               | bool    | True enables max seeding time                                                                                                                                                                                                                                                 |
+| `max_seeding_time`                       | integer | Number of minutes to seed a torrent                                                                                                                                                                                                                                           |
+| `announce_ip`                            | string  | TODO                                                                                                                                                                                                                                                                          |
+| `announce_to_all_tiers`                  | bool    | True always announce to all tiers                                                                                                                                                                                                                                             |
+| `announce_to_all_trackers`               | bool    | True always announce to all trackers in a tier                                                                                                                                                                                                                                |
+| `async_io_threads`                       | integer | Number of asynchronous I/O threads                                                                                                                                                                                                                                            |
+| `banned_IPs`                             | string  | List of banned IPs                                                                                                                                                                                                                                                            |
+| `checking_memory_use`                    | integer | Outstanding memory when checking torrents in MiB                                                                                                                                                                                                                              |
+| `current_interface_address`              | string  | IP Address to bind to. Empty String means All addresses                                                                                                                                                                                                                       |
+| `current_network_interface`              | string  | Network Interface used                                                                                                                                                                                                                                                        |
+| `disk_cache`                             | integer | Disk cache used in MiB                                                                                                                                                                                                                                                        |
+| `disk_cache_ttl`                         | integer | Disk cache expiry interval in seconds                                                                                                                                                                                                                                         |
+| `embedded_tracker_port`                  | integer | Port used for embedded tracker                                                                                                                                                                                                                                                |
+| `enable_coalesce_read_write`             | bool    | True enables coalesce reads & writes                                                                                                                                                                                                                                          |
+| `enable_embedded_tracker`                | bool    | True enables embedded tracker                                                                                                                                                                                                                                                 |
+| `enable_multi_connections_from_same_ip`  | bool    | True allows multiple connections from the same IP address                                                                                                                                                                                                                     |
+| `enable_os_cache`                        | bool    | True enables os cache                                                                                                                                                                                                                                                         |
+| `enable_upload_suggestions`              | bool    | True enables sending of upload piece suggestions                                                                                                                                                                                                                              |
+| `file_pool_size`                         | integer | File pool size                                                                                                                                                                                                                                                                |
+| `outgoing_ports_max`                     | integer | Maximal outgoing port (0: Disabled)                                                                                                                                                                                                                                           |
+| `outgoing_ports_min`                     | integer | Minimal outgoing port (0: Disabled)                                                                                                                                                                                                                                           |
+| `recheck_completed_torrents`             | bool    | True rechecks torrents on completion                                                                                                                                                                                                                                          |
+| `resolve_peer_countries`                 | bool    | True resolves peer countries                                                                                                                                                                                                                                                  |
+| `save_resume_data_interval`              | integer | Save resume data interval in min                                                                                                                                                                                                                                              |
+| `send_buffer_low_watermark`              | integer | Send buffer low watermark in KiB                                                                                                                                                                                                                                              |
+| `send_buffer_watermark`                  | integer | Send buffer watermark in KiB                                                                                                                                                                                                                                                  |
+| `send_buffer_watermark_factor`           | integer | Send buffer watermark factor in percent                                                                                                                                                                                                                                       |
+| `socket_backlog_size`                    | integer | Socket backlog size                                                                                                                                                                                                                                                           |
+| `upload_choking_algorithm`               | integer | Upload choking algorithm used (see list of possible values below)                                                                                                                                                                                                             |
+| `upload_slots_behavior`                  | integer | Upload slots behavior used (see list of possible values below)                                                                                                                                                                                                                |
+| `upnp_lease_duration`                    | integer | UPnP lease duration (0: Permanent lease)                                                                                                                                                                                                                                      |
+| `utp_tcp_mixed_mode`                     | integer | μTP-TCP mixed mode algorithm (see list of possible values below)                                                                                                                                                                                                              |
 
 Possible values of `scan_dirs`:
 
-Value                       | Description
-----------------------------|------------
-`0`                         | Download to the monitored folder
-`1`                         | Download to the default save path
-`"/path/to/download/to"`    | Download to this path
+| Value                    | Description                       |
+| ------------------------ | --------------------------------- |
+| `0`                      | Download to the monitored folder  |
+| `1`                      | Download to the default save path |
+| `"/path/to/download/to"` | Download to this path             |
 
 Possible values of `scheduler_days`:
 
-Value  | Description
--------|------------
-`0`    | Every day
-`1`    | Every weekday
-`2`    | Every weekend
-`3`    | Every Monday
-`4`    | Every Tuesday
-`5`    | Every Wednesday
-`6`    | Every Thursday
-`7`    | Every Friday
-`8`    | Every Saturday
-`9`    | Every Sunday
+| Value | Description     |
+| ----- | --------------- |
+| `0`   | Every day       |
+| `1`   | Every weekday   |
+| `2`   | Every weekend   |
+| `3`   | Every Monday    |
+| `4`   | Every Tuesday   |
+| `5`   | Every Wednesday |
+| `6`   | Every Thursday  |
+| `7`   | Every Friday    |
+| `8`   | Every Saturday  |
+| `9`   | Every Sunday    |
 
 Possible values of `encryption`:
 
-Value  | Description
--------|------------
-`0`    | Prefer encryption
-`1`    | Force encryption on
-`2`    | Force encryption off
+| Value | Description          |
+| ----- | -------------------- |
+| `0`   | Prefer encryption    |
+| `1`   | Force encryption on  |
+| `2`   | Force encryption off |
 
 NB: the first options allows you to use both encrypted and unencrypted connections (this is the default); other options are mutually exclusive: e.g. by forcing encryption on you won't be able to use unencrypted connections and vice versa.
 
 Possible values of `proxy_type`:
 
-Value | Description
-------|------------
-`-1`  | Proxy is disabled
-`1`   | HTTP proxy without authentication
-`2`   | SOCKS5 proxy without authentication
-`3`   | HTTP proxy with authentication
-`4`   | SOCKS5 proxy with authentication
-`5`   | SOCKS4 proxy without authentication
+| Value | Description                         |
+| ----- | ----------------------------------- |
+| `-1`  | Proxy is disabled                   |
+| `1`   | HTTP proxy without authentication   |
+| `2`   | SOCKS5 proxy without authentication |
+| `3`   | HTTP proxy with authentication      |
+| `4`   | SOCKS5 proxy with authentication    |
+| `5`   | SOCKS4 proxy without authentication |
 
 Possible values of `dyndns_service`:
 
-Value  | Description
--------|------------
-`0`    | Use DyDNS
-`1`    | Use NOIP
+| Value | Description |
+| ----- | ----------- |
+| `0`   | Use DyDNS   |
+| `1`   | Use NOIP    |
 
 Possible values of `max_ratio_act`:
 
-Value | Description
-------|------------
-`0`   | Pause torrent
-`1`   | Remove torrent
+| Value | Description    |
+| ----- | -------------- |
+| `0`   | Pause torrent  |
+| `1`   | Remove torrent |
 
 Possible values of `bittorrent_protocol`:
 
-Value  | Description
--------|------------
-`0`    | TCP and μTP
-`1`    | TCP
-`2`    | μTP
+| Value | Description |
+| ----- | ----------- |
+| `0`   | TCP and μTP |
+| `1`   | TCP         |
+| `2`   | μTP         |
 
 Possible values of `upload_choking_algorithm`:
 
-Value  | Description
--------|------------
-`0`    | Round-robin
-`1`    | Fastest upload
-`2`    | Anti-leech
+| Value | Description    |
+| ----- | -------------- |
+| `0`   | Round-robin    |
+| `1`   | Fastest upload |
+| `2`   | Anti-leech     |
 
 Possible values of `upload_slots_behavior`:
 
-Value  | Description
--------|------------
-`0`    | Fixed slots
-`1`    | Upload rate based
+| Value | Description       |
+| ----- | ----------------- |
+| `0`   | Fixed slots       |
+| `1`   | Upload rate based |
 
 Possible values of `utp_tcp_mixed_mode`:
 
-Value  | Description
--------|------------
-`0`    | Prefer TCP
-`1`    | Peer proportional
+| Value | Description       |
+| ----- | ----------------- |
+| `0`   | Prefer TCP        |
+| `1`   | Peer proportional |
 
 Example:
 
@@ -660,7 +660,7 @@ Example:
 }
 ```
 
-## Set application preferences ##
+### Set application preferences ###
 
 Name: `setPreferences`
 
@@ -676,19 +676,19 @@ json={"save_path":"C:/Users/Dayman/Downloads","queueing_enabled":false,"scan_dir
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios
+| HTTP Status Code | Scenario      |
+| ---------------- | ------------- |
+| 200              | All scenarios |
 
 **Notes**:
 
-  1. There is no need to pass all possible preferences' `token:value` pairs if you only want to change one option
-  1. Paths in `scan_dirs` must exist, otherwise this option will have no effect
-  1. String values must be quoted; integer and boolean values must never be quoted
+1. There is no need to pass all possible preferences' `token:value` pairs if you only want to change one option
+1. Paths in `scan_dirs` must exist, otherwise this option will have no effect
+1. String values must be quoted; integer and boolean values must never be quoted
 
 For a list of possible preference options see [Get application preferences](#get-application-preferences)
 
-## Get default save path ##
+### Get default save path ###
 
 Name: `defaultSavePath`
 
@@ -698,13 +698,13 @@ None
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios
+| HTTP Status Code | Scenario      |
+| ---------------- | ------------- |
+| 200              | All scenarios |
 
 The response is a string with the default save path, e.g. `C:/Users/Dayman/Downloads`.
 
-## Get cookies ##
+### Get cookies ###
 
 Name: `cookies`
 
@@ -714,21 +714,21 @@ None
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios
+| HTTP Status Code | Scenario      |
+| ---------------- | ------------- |
+| 200              | All scenarios |
 
 The response is a JSON array in which each element is an entry of the log.
 
 Each element of the array has the following properties:
 
-Property         | Type    | Description
------------------|---------|------------
-`name`           | string  | Cookie name
-`domain`         | string  | Cookie domain
-`path`           | string  | Cookie path
-`value`          | string  | Cookie value
-`expirationDate` | integer | Seconds since epoch
+| Property         | Type    | Description         |
+| ---------------- | ------- | ------------------- |
+| `name`           | string  | Cookie name         |
+| `domain`         | string  | Cookie domain       |
+| `path`           | string  | Cookie path         |
+| `value`          | string  | Cookie value        |
+| `expirationDate` | integer | Seconds since epoch |
 
 Example:
 
@@ -744,7 +744,7 @@ Example:
 ]
 ```
 
-## Set cookies ##
+### Set cookies ###
 
 Name: `setCookies`
 
@@ -754,38 +754,38 @@ A json array of cookies to send when downloading .torrent files.
 
 Each element of the array has the following properties:
 
-Property         | Type     | Description
------------------|----------|------------
-`name`           | string?  | Cookie name
-`domain`         | string?  | Cookie domain
-`path`           | string?  | Cookie path
-`value`          | string?  | Cookie value
-`expirationDate` | integer? | Seconds since epoch
+| Property         | Type     | Description         |
+| ---------------- | -------- | ------------------- |
+| `name`           | string?  | Cookie name         |
+| `domain`         | string?  | Cookie domain       |
+| `path`           | string?  | Cookie path         |
+| `value`          | string?  | Cookie value        |
+| `expirationDate` | integer? | Seconds since epoch |
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | Cookies were saved
-400                               | Request was not a valid json array of cookie objects
+| HTTP Status Code | Scenario                                             |
+| ---------------- | ---------------------------------------------------- |
+| 200              | Cookies were saved                                   |
+| 400              | Request was not a valid json array of cookie objects |
 
-# Log #
+## Log ##
 
 All Log API methods are under "log", e.g.: `/api/v2/log/methodName`.
 
-## Get log ##
+### Get log ###
 
 Name: `main`
 
 **Parameters:**
 
-Parameter       | Type    | Description
-----------------|---------|------------
-`normal`        | bool    | Include normal messages (default: `true`)
-`info`          | bool    | Include info messages (default: `true`)
-`warning`       | bool    | Include warning messages (default: `true`)
-`critical`      | bool    | Include critical messages (default: `true`)
-`last_known_id` | integer | Exclude messages with "message id" <= `last_known_id` (default: `-1`)
+| Parameter       | Type    | Description                                                           |
+| --------------- | ------- | --------------------------------------------------------------------- |
+| `normal`        | bool    | Include normal messages (default: `true`)                             |
+| `info`          | bool    | Include info messages (default: `true`)                               |
+| `warning`       | bool    | Include warning messages (default: `true`)                            |
+| `critical`      | bool    | Include critical messages (default: `true`)                           |
+| `last_known_id` | integer | Exclude messages with "message id" <= `last_known_id` (default: `-1`) |
 
 Example:
 
@@ -795,20 +795,20 @@ Example:
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios- see JSON below
+| HTTP Status Code | Scenario                      |
+| ---------------- | ----------------------------- |
+| 200              | All scenarios- see JSON below |
 
 The response is a JSON array in which each element is an entry of the log.
 
 Each element of the array has the following properties:
 
-Property    | Type    | Description
-------------|---------|------------
-`id`        | integer | ID of the message
-`message`   | string  | Text of the message
-`timestamp` | integer | Seconds since epoch (Note: switched from milliseconds to seconds in v4.5.0)
-`type`      | integer | Type of the message: Log::NORMAL: `1`, Log::INFO: `2`, Log::WARNING: `4`, Log::CRITICAL: `8`
+| Property    | Type    | Description                                                                                  |
+| ----------- | ------- | -------------------------------------------------------------------------------------------- |
+| `id`        | integer | ID of the message                                                                            |
+| `message`   | string  | Text of the message                                                                          |
+| `timestamp` | integer | Seconds since epoch (Note: switched from milliseconds to seconds in v4.5.0)                  |
+| `type`      | integer | Type of the message: Log::NORMAL: `1`, Log::INFO: `2`, Log::WARNING: `4`, Log::CRITICAL: `8` |
 
 Example:
 
@@ -913,46 +913,46 @@ Example:
 ]
 ```
 
-## Get peer log ##
+### Get peer log ###
 
 Name: `peers`
 
 **Parameters:**
 
-Parameter       | Type    | Description
-----------------|---------|------------
-`last_known_id` | integer | Exclude messages with "message id" <= `last_known_id` (default: `-1`)
+| Parameter       | Type    | Description                                                           |
+| --------------- | ------- | --------------------------------------------------------------------- |
+| `last_known_id` | integer | Exclude messages with "message id" <= `last_known_id` (default: `-1`) |
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios- see JSON below
+| HTTP Status Code | Scenario                      |
+| ---------------- | ----------------------------- |
+| 200              | All scenarios- see JSON below |
 
 The response a JSON array. Each element of the array of objects (each object is the information relative to a peer) containing the following fields
 
-Property    | Type    | Description
-------------|---------|------------
-`id`        | integer | ID of the peer
-`ip`        | string  | IP of the peer
-`timestamp` | integer | Seconds since epoch
-`blocked`   | boolean | Whether or not the peer was blocked
-`reason`    | string  | Reason of the block
+| Property    | Type    | Description                         |
+| ----------- | ------- | ----------------------------------- |
+| `id`        | integer | ID of the peer                      |
+| `ip`        | string  | IP of the peer                      |
+| `timestamp` | integer | Seconds since epoch                 |
+| `blocked`   | boolean | Whether or not the peer was blocked |
+| `reason`    | string  | Reason of the block                 |
 
-# Sync #
+## Sync ##
 
 Sync API implements requests for obtaining changes since the last request.
 All Sync API methods are under "sync", e.g.: `/api/v2/sync/methodName`.
 
-## Get main data ##
+### Get main data ###
 
 Name: `maindata`
 
 **Parameters:**
 
-Parameter | Type    | Description
-----------|---------|------------
-`rid`     | integer | Response ID. If not provided, `rid=0` will be assumed. If the given `rid` is different from the one of last server reply, `full_update` will be `true` (see the server reply details for more info)
+| Parameter | Type    | Description                                                                                                                                                                                         |
+| --------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `rid`     | integer | Response ID. If not provided, `rid=0` will be assumed. If the given `rid` is different from the one of last server reply, `full_update` will be `true` (see the server reply details for more info) |
 
 Example:
 
@@ -962,23 +962,23 @@ Example:
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios- see JSON below
+| HTTP Status Code | Scenario                      |
+| ---------------- | ----------------------------- |
+| 200              | All scenarios- see JSON below |
 
 The response is a JSON object with the following possible fields
 
-Property                      | Type    | Description
-------------------------------|---------|------------
-`rid`                         | integer | Response ID
-`full_update`                 | bool    | Whether the response contains all the data or partial data
-`torrents`                    | object  | Property: torrent hash, value: same as [torrent list](#get-torrent-list)
-`torrents_removed`            | array   | List of hashes of torrents removed since last request
-`categories`                  | object  | Info for categories added since last request
-`categories_removed`          | array   | List of categories removed since last request
-`tags`                        | array   | List of tags added since last request
-`tags_removed`                | array   | List of tags removed since last request
-`server_state`                | object  | Global transfer info
+| Property             | Type    | Description                                                              |
+| -------------------- | ------- | ------------------------------------------------------------------------ |
+| `rid`                | integer | Response ID                                                              |
+| `full_update`        | bool    | Whether the response contains all the data or partial data               |
+| `torrents`           | object  | Property: torrent hash, value: same as [torrent list](#get-torrent-list) |
+| `torrents_removed`   | array   | List of hashes of torrents removed since last request                    |
+| `categories`         | object  | Info for categories added since last request                             |
+| `categories_removed` | array   | List of categories removed since last request                            |
+| `tags`               | array   | List of tags added since last request                                    |
+| `tags_removed`       | array   | List of tags removed since last request                                  |
+| `server_state`       | object  | Global transfer info                                                     |
 
 Example:
 
@@ -995,16 +995,16 @@ Example:
 }
 ```
 
-## Get torrent peers data ##
+### Get torrent peers data ###
 
 Name: `torrentPeers`
 
 **Parameters:**
 
-Parameter | Type    | Description
-----------|---------|------------
-`hash`    | string  | Torrent hash
-`rid`     | integer | Response ID. If not provided, `rid=0` will be assumed. If the given `rid` is different from the one of last server reply, `full_update` will be `true` (see the server reply details for more info)
+| Parameter | Type    | Description                                                                                                                                                                                         |
+| --------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `hash`    | string  | Torrent hash                                                                                                                                                                                        |
+| `rid`     | integer | Response ID. If not provided, `rid=0` will be assumed. If the given `rid` is different from the one of last server reply, `full_update` will be `true` (see the server reply details for more info) |
 
 Example:
 
@@ -1014,18 +1014,18 @@ Example:
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-404                               | Torrent hash was not found
-200                               | All other scenarios- see JSON below
+| HTTP Status Code | Scenario                            |
+| ---------------- | ----------------------------------- |
+| 404              | Torrent hash was not found          |
+| 200              | All other scenarios- see JSON below |
 
 The response is TODO
 
-# Transfer info #
+## Transfer info ##
 
 All Transfer info API methods are under "transfer", e.g.: `/api/v2/transfer/methodName`.
 
-## Get global transfer info ##
+### Get global transfer info ###
 
 This method returns info you usually see in qBt status bar.
 
@@ -1037,38 +1037,38 @@ None
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios- see JSON below
+| HTTP Status Code | Scenario                      |
+| ---------------- | ----------------------------- |
+| 200              | All scenarios- see JSON below |
 
 The response is a JSON object with the following fields
 
-Property            | Type    | Description
---------------------|---------|------------
-`dl_info_speed`     | integer | Global download rate (bytes/s)
-`dl_info_data`      | integer | Data downloaded this session (bytes)
-`up_info_speed`     | integer | Global upload rate (bytes/s)
-`up_info_data`      | integer | Data uploaded this session (bytes)
-`dl_rate_limit`     | integer | Download rate limit (bytes/s)
-`up_rate_limit`     | integer | Upload rate limit (bytes/s)
-`dht_nodes`         | integer | DHT nodes connected to
-`connection_status` | string  | Connection status. See possible values here below
+| Property            | Type    | Description                                       |
+| ------------------- | ------- | ------------------------------------------------- |
+| `dl_info_speed`     | integer | Global download rate (bytes/s)                    |
+| `dl_info_data`      | integer | Data downloaded this session (bytes)              |
+| `up_info_speed`     | integer | Global upload rate (bytes/s)                      |
+| `up_info_data`      | integer | Data uploaded this session (bytes)                |
+| `dl_rate_limit`     | integer | Download rate limit (bytes/s)                     |
+| `up_rate_limit`     | integer | Upload rate limit (bytes/s)                       |
+| `dht_nodes`         | integer | DHT nodes connected to                            |
+| `connection_status` | string  | Connection status. See possible values here below |
 
-In addition to the above in partial data requests (see [Get partial data](#get-partial-data) for more info):
+In addition to the above in partial data requests:
 
-Property               | Type    | Description
------------------------|---------|------------
-`queueing`             | bool    | True if torrent queueing is enabled
-`use_alt_speed_limits` | bool    | True if alternative speed limits are enabled
-`refresh_interval`     | integer | Transfer list refresh interval (milliseconds)
+| Property               | Type    | Description                                   |
+| ---------------------- | ------- | --------------------------------------------- |
+| `queueing`             | bool    | True if torrent queueing is enabled           |
+| `use_alt_speed_limits` | bool    | True if alternative speed limits are enabled  |
+| `refresh_interval`     | integer | Transfer list refresh interval (milliseconds) |
 
 Possible values of `connection_status`:
 
-Value               |
+Value |
 --------------------|
-`connected`         |
+`connected` |
 `firewalled`        |
-`disconnected`      |
+`disconnected` |
 
 Example:
 
@@ -1085,7 +1085,7 @@ Example:
 }
 ```
 
-## Get alternative speed limits state ##
+### Get alternative speed limits state ###
 
 Name: `speedLimitsMode`
 
@@ -1095,13 +1095,13 @@ None
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios
+| HTTP Status Code | Scenario      |
+| ---------------- | ------------- |
+| 200              | All scenarios |
 
 The response is `1` if alternative speed limits are enabled, `0` otherwise.
 
-## Toggle alternative speed limits ##
+### Toggle alternative speed limits ###
 
 Name: `toggleSpeedLimitsMode`
 
@@ -1111,11 +1111,11 @@ None
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios
+| HTTP Status Code | Scenario      |
+| ---------------- | ------------- |
+| 200              | All scenarios |
 
-## Get global download limit ##
+### Get global download limit ###
 
 Name: `downloadLimit`
 
@@ -1125,29 +1125,29 @@ None
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios
+| HTTP Status Code | Scenario      |
+| ---------------- | ------------- |
+| 200              | All scenarios |
 
 The response is the value of current global download speed limit in bytes/second; this value will be zero if no limit is applied.
 
-## Set global download limit ##
+### Set global download limit ###
 
 Name: `setDownloadLimit`
 
 **Parameters:**
 
-Parameter                         | Type    | Description
-----------------------------------|---------|------------
-`limit`                           | integer | The global download speed limit to set in bytes/second
+| Parameter | Type    | Description                                            |
+| --------- | ------- | ------------------------------------------------------ |
+| `limit`   | integer | The global download speed limit to set in bytes/second |
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios
+| HTTP Status Code | Scenario      |
+| ---------------- | ------------- |
+| 200              | All scenarios |
 
-## Get global upload limit ##
+### Get global upload limit ###
 
 Name: `uploadLimit`
 
@@ -1157,64 +1157,64 @@ None
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios
+| HTTP Status Code | Scenario      |
+| ---------------- | ------------- |
+| 200              | All scenarios |
 
 The response is the value of current global upload speed limit in bytes/second; this value will be zero if no limit is applied.
 
-## Set global upload limit ##
+### Set global upload limit ###
 
 Name: `setUploadLimit`
 
 **Parameters:**
 
-Parameter                         | Type    | Description
-----------------------------------|---------|------------
-`limit`                           | integer | The global upload speed limit to set in bytes/second
+| Parameter | Type    | Description                                          |
+| --------- | ------- | ---------------------------------------------------- |
+| `limit`   | integer | The global upload speed limit to set in bytes/second |
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios
+| HTTP Status Code | Scenario      |
+| ---------------- | ------------- |
+| 200              | All scenarios |
 
-## Ban peers ##
+### Ban peers ###
 
 Name: `banPeers`
 
 **Parameters:**
 
-Parameter                         | Type    | Description
-----------------------------------|---------|------------
-`peers`                           | string  | The peer to ban, or multiple peers separated by a pipe `\|`. Each peer is a colon-separated `host:port`
+| Parameter | Type   | Description                                                                                             |
+| --------- | ------ | ------------------------------------------------------------------------------------------------------- |
+| `peers`   | string | The peer to ban, or multiple peers separated by a pipe `\|`. Each peer is a colon-separated `host:port` |
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios
+| HTTP Status Code | Scenario      |
+| ---------------- | ------------- |
+| 200              | All scenarios |
 
-# Torrent management #
+## Torrent management ##
 
 All Torrent management API methods are under "torrents", e.g.: `/api/v2/torrents/methodName`.
 
-## Get torrent list ##
+### Get torrent list ###
 
 Name: `info`
 
 **Parameters:**
 
-Parameter             | Type    | Description
-----------------------|---------|------------
-`filter`  _optional_  | string  | Filter torrent list by state. Allowed state filters: `all`, `downloading`, `seeding`, `completed`, `stopped`, `active`, `inactive`, `running`, `stalled`, `stalled_uploading`, `stalled_downloading`, `errored`
-`category` _optional_ | string  | Get torrents with the given category (empty string means "without category"; no "category" parameter means "any category"). Remember to URL-encode the category name. For example, `My category` becomes `My%20category`
-`tag` _optional_ <sup>since 2.8.3</sup> | string  | Get torrents with the given tag (empty string means "without tag"; no "tag" parameter means "any tag". Remember to URL-encode the category name. For example, `My tag` becomes `My%20tag`
-`sort` _optional_     | string  | Sort torrents by given key. They can be sorted using any field of the response's JSON array (which are documented below) as the sort key.
-`reverse` _optional_  | bool    | Enable reverse sorting. Defaults to `false`
-`limit` _optional_    | integer | Limit the number of torrents returned
-`offset` _optional_   | integer | Set offset (if less than 0, offset from end)
-`hashes` _optional_   | string  | Filter by hashes. Can contain multiple hashes separated by `\|`
+| Parameter                               | Type    | Description                                                                                                                                                                                                              |
+| --------------------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `filter`  _optional_                    | string  | Filter torrent list by state. Allowed state filters: `all`, `downloading`, `seeding`, `completed`, `stopped`, `active`, `inactive`, `running`, `stalled`, `stalled_uploading`, `stalled_downloading`, `errored`          |
+| `category` _optional_                   | string  | Get torrents with the given category (empty string means "without category"; no "category" parameter means "any category"). Remember to URL-encode the category name. For example, `My category` becomes `My%20category` |
+| `tag` _optional_ <sup>since 2.8.3</sup> | string  | Get torrents with the given tag (empty string means "without tag"; no "tag" parameter means "any tag". Remember to URL-encode the category name. For example, `My tag` becomes `My%20tag`                                |
+| `sort` _optional_                       | string  | Sort torrents by given key. They can be sorted using any field of the response's JSON array (which are documented below) as the sort key.                                                                                |
+| `reverse` _optional_                    | bool    | Enable reverse sorting. Defaults to `false`                                                                                                                                                                              |
+| `limit` _optional_                      | integer | Limit the number of torrents returned                                                                                                                                                                                    |
+| `offset` _optional_                     | integer | Set offset (if less than 0, offset from end)                                                                                                                                                                             |
+| `hashes` _optional_                     | string  | Filter by hashes. Can contain multiple hashes separated by `\|`                                                                                                                                                          |
 
 Example:
 
@@ -1224,85 +1224,85 @@ Example:
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios- see JSON below
+| HTTP Status Code | Scenario                      |
+| ---------------- | ----------------------------- |
+| 200              | All scenarios- see JSON below |
 
 The response is a JSON array with the following fields
 
-Property             | Type    | Description
----------------------|---------|------------
-`added_on`           | integer | Time (Unix Epoch) when the torrent was added to the client
-`amount_left`        | integer | Amount of data left to download (bytes)
-`auto_tmm`           | bool    | Whether this torrent is managed by Automatic Torrent Management
-`availability`       | float   | Percentage of file pieces currently available
-`category`           | string  | Category of the torrent
-`completed`          | integer | Amount of transfer data completed (bytes)
-`completion_on`      | integer | Time (Unix Epoch) when the torrent completed
-`content_path`       | string  | Absolute path of torrent content (root path for multifile torrents, absolute file path for singlefile torrents)
-`dl_limit`           | integer | Torrent download speed limit (bytes/s). `-1` if unlimited.
-`dlspeed`            | integer | Torrent download speed (bytes/s)
-`downloaded`         | integer | Amount of data downloaded
-`downloaded_session` | integer | Amount of data downloaded this session
-`eta`                | integer | Torrent ETA (seconds)
-`f_l_piece_prio`     | bool    | True if first last piece are prioritized
-`force_start`        | bool    | True if force start is enabled for this torrent
-`hash`               | string  | Torrent hash
-`isPrivate`          | bool    | True if torrent is from a private tracker (added in 5.0.0)
-`last_activity`      | integer | Last time (Unix Epoch) when a chunk was downloaded/uploaded
-`magnet_uri`         | string  | Magnet URI corresponding to this torrent
-`max_ratio`          | float   | Maximum share ratio until torrent is stopped from seeding/uploading
-`max_seeding_time`   | integer | Maximum seeding time (seconds) until torrent is stopped from seeding
-`name`               | string  | Torrent name
-`num_complete`       | integer | Number of seeds in the swarm
-`num_incomplete`     | integer | Number of leechers in the swarm
-`num_leechs`         | integer | Number of leechers connected to
-`num_seeds`          | integer | Number of seeds connected to
-`priority`           | integer | Torrent priority. Returns -1 if queuing is disabled or torrent is in seed mode
-`progress`           | float   | Torrent progress (percentage/100)
-`ratio`              | float   | Torrent share ratio. Max ratio value: 9999.
-`ratio_limit`        | float   | TODO (what is different from `max_ratio`?)
-`reannounce`         | integer | Time until the next tracker reannounce
-`save_path`          | string  | Path where this torrent's data is stored
-`seeding_time`       | integer | Torrent elapsed time while complete (seconds)
-`seeding_time_limit` | integer | TODO (what is different from `max_seeding_time`?) seeding_time_limit is a per torrent setting, when Automatic Torrent Management is disabled, furthermore then max_seeding_time is set to seeding_time_limit for this torrent. If Automatic Torrent Management is enabled, the value is -2. And if max_seeding_time is unset it have a default value -1.
-`seen_complete`      | integer | Time (Unix Epoch) when this torrent was last seen complete
-`seq_dl`             | bool    | True if sequential download is enabled
-`size`               | integer | Total size (bytes) of files selected for download
-`state`              | string  | Torrent state. See table here below for the possible values
-`super_seeding`      | bool    | True if super seeding is enabled
-`tags`               | string  | Comma-concatenated tag list of the torrent
-`time_active`        | integer | Total active time (seconds)
-`total_size`         | integer | Total size (bytes) of all file in this torrent (including unselected ones)
-`tracker`            | string  | The first tracker with working status. Returns empty string if no tracker is working.
-`up_limit`           | integer | Torrent upload speed limit (bytes/s). `-1` if unlimited.
-`uploaded`           | integer | Amount of data uploaded
-`uploaded_session`   | integer | Amount of data uploaded this session
-`upspeed`            | integer | Torrent upload speed (bytes/s)
+| Property             | Type    | Description                                                                                                                                                                                                                                                                                                                                              |
+| -------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `added_on`           | integer | Time (Unix Epoch) when the torrent was added to the client                                                                                                                                                                                                                                                                                               |
+| `amount_left`        | integer | Amount of data left to download (bytes)                                                                                                                                                                                                                                                                                                                  |
+| `auto_tmm`           | bool    | Whether this torrent is managed by Automatic Torrent Management                                                                                                                                                                                                                                                                                          |
+| `availability`       | float   | Percentage of file pieces currently available                                                                                                                                                                                                                                                                                                            |
+| `category`           | string  | Category of the torrent                                                                                                                                                                                                                                                                                                                                  |
+| `completed`          | integer | Amount of transfer data completed (bytes)                                                                                                                                                                                                                                                                                                                |
+| `completion_on`      | integer | Time (Unix Epoch) when the torrent completed                                                                                                                                                                                                                                                                                                             |
+| `content_path`       | string  | Absolute path of torrent content (root path for multifile torrents, absolute file path for singlefile torrents)                                                                                                                                                                                                                                          |
+| `dl_limit`           | integer | Torrent download speed limit (bytes/s). `-1` if unlimited.                                                                                                                                                                                                                                                                                               |
+| `dlspeed`            | integer | Torrent download speed (bytes/s)                                                                                                                                                                                                                                                                                                                         |
+| `downloaded`         | integer | Amount of data downloaded                                                                                                                                                                                                                                                                                                                                |
+| `downloaded_session` | integer | Amount of data downloaded this session                                                                                                                                                                                                                                                                                                                   |
+| `eta`                | integer | Torrent ETA (seconds)                                                                                                                                                                                                                                                                                                                                    |
+| `f_l_piece_prio`     | bool    | True if first last piece are prioritized                                                                                                                                                                                                                                                                                                                 |
+| `force_start`        | bool    | True if force start is enabled for this torrent                                                                                                                                                                                                                                                                                                          |
+| `hash`               | string  | Torrent hash                                                                                                                                                                                                                                                                                                                                             |
+| `isPrivate`          | bool    | True if torrent is from a private tracker (added in 5.0.0)                                                                                                                                                                                                                                                                                               |
+| `last_activity`      | integer | Last time (Unix Epoch) when a chunk was downloaded/uploaded                                                                                                                                                                                                                                                                                              |
+| `magnet_uri`         | string  | Magnet URI corresponding to this torrent                                                                                                                                                                                                                                                                                                                 |
+| `max_ratio`          | float   | Maximum share ratio until torrent is stopped from seeding/uploading                                                                                                                                                                                                                                                                                      |
+| `max_seeding_time`   | integer | Maximum seeding time (seconds) until torrent is stopped from seeding                                                                                                                                                                                                                                                                                     |
+| `name`               | string  | Torrent name                                                                                                                                                                                                                                                                                                                                             |
+| `num_complete`       | integer | Number of seeds in the swarm                                                                                                                                                                                                                                                                                                                             |
+| `num_incomplete`     | integer | Number of leechers in the swarm                                                                                                                                                                                                                                                                                                                          |
+| `num_leechs`         | integer | Number of leechers connected to                                                                                                                                                                                                                                                                                                                          |
+| `num_seeds`          | integer | Number of seeds connected to                                                                                                                                                                                                                                                                                                                             |
+| `priority`           | integer | Torrent priority. Returns -1 if queuing is disabled or torrent is in seed mode                                                                                                                                                                                                                                                                           |
+| `progress`           | float   | Torrent progress (percentage/100)                                                                                                                                                                                                                                                                                                                        |
+| `ratio`              | float   | Torrent share ratio. Max ratio value: 9999.                                                                                                                                                                                                                                                                                                              |
+| `ratio_limit`        | float   | TODO (what is different from `max_ratio`?)                                                                                                                                                                                                                                                                                                               |
+| `reannounce`         | integer | Time until the next tracker reannounce                                                                                                                                                                                                                                                                                                                   |
+| `save_path`          | string  | Path where this torrent's data is stored                                                                                                                                                                                                                                                                                                                 |
+| `seeding_time`       | integer | Torrent elapsed time while complete (seconds)                                                                                                                                                                                                                                                                                                            |
+| `seeding_time_limit` | integer | TODO (what is different from `max_seeding_time`?) seeding_time_limit is a per torrent setting, when Automatic Torrent Management is disabled, furthermore then max_seeding_time is set to seeding_time_limit for this torrent. If Automatic Torrent Management is enabled, the value is -2. And if max_seeding_time is unset it have a default value -1. |
+| `seen_complete`      | integer | Time (Unix Epoch) when this torrent was last seen complete                                                                                                                                                                                                                                                                                               |
+| `seq_dl`             | bool    | True if sequential download is enabled                                                                                                                                                                                                                                                                                                                   |
+| `size`               | integer | Total size (bytes) of files selected for download                                                                                                                                                                                                                                                                                                        |
+| `state`              | string  | Torrent state. See table here below for the possible values                                                                                                                                                                                                                                                                                              |
+| `super_seeding`      | bool    | True if super seeding is enabled                                                                                                                                                                                                                                                                                                                         |
+| `tags`               | string  | Comma-concatenated tag list of the torrent                                                                                                                                                                                                                                                                                                               |
+| `time_active`        | integer | Total active time (seconds)                                                                                                                                                                                                                                                                                                                              |
+| `total_size`         | integer | Total size (bytes) of all file in this torrent (including unselected ones)                                                                                                                                                                                                                                                                               |
+| `tracker`            | string  | The first tracker with working status. Returns empty string if no tracker is working.                                                                                                                                                                                                                                                                    |
+| `up_limit`           | integer | Torrent upload speed limit (bytes/s). `-1` if unlimited.                                                                                                                                                                                                                                                                                                 |
+| `uploaded`           | integer | Amount of data uploaded                                                                                                                                                                                                                                                                                                                                  |
+| `uploaded_session`   | integer | Amount of data uploaded this session                                                                                                                                                                                                                                                                                                                     |
+| `upspeed`            | integer | Torrent upload speed (bytes/s)                                                                                                                                                                                                                                                                                                                           |
 
 Possible values of `state`:
 
-Value         | Description
---------------|------------
-`error`       | Some error occurred, applies to paused torrents
-`missingFiles`| Torrent data files is missing
-`uploading`   | Torrent is being seeded and data is being transferred
-`pausedUP`    | Torrent is paused and has finished downloading
-`queuedUP`    | Queuing is enabled and torrent is queued for upload
-`stalledUP`   | Torrent is being seeded, but no connection were made
-`checkingUP`  | Torrent has finished downloading and is being checked
-`forcedUP`    | Torrent is forced to uploading and ignore queue limit
-`allocating`  | Torrent is allocating disk space for download
-`downloading` | Torrent is being downloaded and data is being transferred
-`metaDL`      | Torrent has just started downloading and is fetching metadata
-`pausedDL`    | Torrent is paused and has NOT finished downloading
-`queuedDL`    | Queuing is enabled and torrent is queued for download
-`stalledDL`   | Torrent is being downloaded, but no connection were made
-`checkingDL`  | Same as checkingUP, but torrent has NOT finished downloading
-`forcedDL`    | Torrent is forced to downloading to ignore queue limit
-`checkingResumeData`| Checking resume data on qBt startup
-`moving`      | Torrent is moving to another location
-`unknown`     | Unknown status
+| Value                | Description                                                   |
+| -------------------- | ------------------------------------------------------------- |
+| `error`              | Some error occurred, applies to paused torrents               |
+| `missingFiles`       | Torrent data files is missing                                 |
+| `uploading`          | Torrent is being seeded and data is being transferred         |
+| `pausedUP`           | Torrent is paused and has finished downloading                |
+| `queuedUP`           | Queuing is enabled and torrent is queued for upload           |
+| `stalledUP`          | Torrent is being seeded, but no connection were made          |
+| `checkingUP`         | Torrent has finished downloading and is being checked         |
+| `forcedUP`           | Torrent is forced to uploading and ignore queue limit         |
+| `allocating`         | Torrent is allocating disk space for download                 |
+| `downloading`        | Torrent is being downloaded and data is being transferred     |
+| `metaDL`             | Torrent has just started downloading and is fetching metadata |
+| `pausedDL`           | Torrent is paused and has NOT finished downloading            |
+| `queuedDL`           | Queuing is enabled and torrent is queued for download         |
+| `stalledDL`          | Torrent is being downloaded, but no connection were made      |
+| `checkingDL`         | Same as checkingUP, but torrent has NOT finished downloading  |
+| `forcedDL`           | Torrent is forced to downloading to ignore queue limit        |
+| `checkingResumeData` | Checking resume data on qBt startup                           |
+| `moving`             | Torrent is moving to another location                         |
+| `unknown`            | Unknown status                                                |
 
 Example:
 
@@ -1337,7 +1337,7 @@ Example:
 ]
 ```
 
-## Get torrent generic properties ##
+### Get torrent generic properties ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -1345,58 +1345,58 @@ Name: `properties`
 
 **Parameters:**
 
-Parameter | Type   | Description
-----------|--------|------------
-`hash`    | string | The hash of the torrent you want to get the generic properties of
+| Parameter | Type   | Description                                                       |
+| --------- | ------ | ----------------------------------------------------------------- |
+| `hash`    | string | The hash of the torrent you want to get the generic properties of |
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-404                               | Torrent hash was not found
-200                               | All other scenarios- see JSON below
+| HTTP Status Code | Scenario                            |
+| ---------------- | ----------------------------------- |
+| 404              | Torrent hash was not found          |
+| 200              | All other scenarios- see JSON below |
 
 The response is:
 
 - empty, if the torrent hash is invalid
 - otherwise, a JSON object with the following fields
 
-Property                  | Type    | Description
---------------------------|---------|------------
-`save_path`               | string  | Torrent save path
-`creation_date`           | integer | Torrent creation date (Unix timestamp)
-`piece_size`              | integer | Torrent piece size (bytes)
-`comment`                 | string  | Torrent comment
-`total_wasted`            | integer | Total data wasted for torrent (bytes)
-`total_uploaded`          | integer | Total data uploaded for torrent (bytes)
-`total_uploaded_session`  | integer | Total data uploaded this session (bytes)
-`total_downloaded`        | integer | Total data downloaded for torrent (bytes)
-`total_downloaded_session`| integer | Total data downloaded this session (bytes)
-`up_limit`                | integer | Torrent upload limit (bytes/s)
-`dl_limit`                | integer | Torrent download limit (bytes/s)
-`time_elapsed`            | integer | Torrent elapsed time (seconds)
-`seeding_time`            | integer | Torrent elapsed time while complete (seconds)
-`nb_connections`          | integer | Torrent connection count
-`nb_connections_limit`    | integer | Torrent connection count limit
-`share_ratio`             | float   | Torrent share ratio
-`addition_date`           | integer | When this torrent was added (unix timestamp)
-`completion_date`         | integer | Torrent completion date (unix timestamp)
-`created_by`              | string  | Torrent creator
-`dl_speed_avg`            | integer | Torrent average download speed (bytes/second)
-`dl_speed`                | integer | Torrent download speed (bytes/second)
-`eta`                     | integer | Torrent ETA (seconds)
-`last_seen`               | integer | Last seen complete date (unix timestamp)
-`peers`                   | integer | Number of peers connected to
-`peers_total`             | integer | Number of peers in the swarm
-`pieces_have`             | integer | Number of pieces owned
-`pieces_num`              | integer | Number of pieces of the torrent
-`reannounce`              | integer | Number of seconds until the next announce
-`seeds`                   | integer | Number of seeds connected to
-`seeds_total`             | integer | Number of seeds in the swarm
-`total_size`              | integer | Torrent total size (bytes)
-`up_speed_avg`            | integer | Torrent average upload speed (bytes/second)
-`up_speed`                | integer | Torrent upload speed (bytes/second)
-`isPrivate`               | bool    | True if torrent is from a private tracker
+| Property                   | Type    | Description                                   |
+| -------------------------- | ------- | --------------------------------------------- |
+| `save_path`                | string  | Torrent save path                             |
+| `creation_date`            | integer | Torrent creation date (Unix timestamp)        |
+| `piece_size`               | integer | Torrent piece size (bytes)                    |
+| `comment`                  | string  | Torrent comment                               |
+| `total_wasted`             | integer | Total data wasted for torrent (bytes)         |
+| `total_uploaded`           | integer | Total data uploaded for torrent (bytes)       |
+| `total_uploaded_session`   | integer | Total data uploaded this session (bytes)      |
+| `total_downloaded`         | integer | Total data downloaded for torrent (bytes)     |
+| `total_downloaded_session` | integer | Total data downloaded this session (bytes)    |
+| `up_limit`                 | integer | Torrent upload limit (bytes/s)                |
+| `dl_limit`                 | integer | Torrent download limit (bytes/s)              |
+| `time_elapsed`             | integer | Torrent elapsed time (seconds)                |
+| `seeding_time`             | integer | Torrent elapsed time while complete (seconds) |
+| `nb_connections`           | integer | Torrent connection count                      |
+| `nb_connections_limit`     | integer | Torrent connection count limit                |
+| `share_ratio`              | float   | Torrent share ratio                           |
+| `addition_date`            | integer | When this torrent was added (unix timestamp)  |
+| `completion_date`          | integer | Torrent completion date (unix timestamp)      |
+| `created_by`               | string  | Torrent creator                               |
+| `dl_speed_avg`             | integer | Torrent average download speed (bytes/second) |
+| `dl_speed`                 | integer | Torrent download speed (bytes/second)         |
+| `eta`                      | integer | Torrent ETA (seconds)                         |
+| `last_seen`                | integer | Last seen complete date (unix timestamp)      |
+| `peers`                    | integer | Number of peers connected to                  |
+| `peers_total`              | integer | Number of peers in the swarm                  |
+| `pieces_have`              | integer | Number of pieces owned                        |
+| `pieces_num`               | integer | Number of pieces of the torrent               |
+| `reannounce`               | integer | Number of seconds until the next announce     |
+| `seeds`                    | integer | Number of seeds connected to                  |
+| `seeds_total`              | integer | Number of seeds in the swarm                  |
+| `total_size`               | integer | Torrent total size (bytes)                    |
+| `up_speed_avg`             | integer | Torrent average upload speed (bytes/second)   |
+| `up_speed`                 | integer | Torrent upload speed (bytes/second)           |
+| `isPrivate`                | bool    | True if torrent is from a private tracker     |
 
 NB: `-1` is returned if the type of the property is integer but its value is not known.
 
@@ -1441,7 +1441,7 @@ Example:
 }
 ```
 
-## Get torrent trackers ##
+### Get torrent trackers ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -1449,39 +1449,39 @@ Name: `trackers`
 
 **Parameters:**
 
-Parameter | Type   | Description
-----------|--------|------------
-`hash`    | string | The hash of the torrent you want to get the trackers of
+| Parameter | Type   | Description                                             |
+| --------- | ------ | ------------------------------------------------------- |
+| `hash`    | string | The hash of the torrent you want to get the trackers of |
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-404                               | Torrent hash was not found
-200                               | All other scenarios- see JSON below
+| HTTP Status Code | Scenario                            |
+| ---------------- | ----------------------------------- |
+| 404              | Torrent hash was not found          |
+| 200              | All other scenarios- see JSON below |
 
 The response is a JSON array, where each element contains info about one tracker, with the following fields
 
-Property         | Type     | Description
------------------|----------|-------------
-`url`            | string   | Tracker url
-`status`         | integer  | Tracker status. See the table below for possible values
-`tier`           | integer  | Tracker priority tier. Lower tier trackers are tried before higher tiers. Tier numbers are valid when `>= 0`, `< 0` is used as placeholder when `tier` does not exist for special entries (such as DHT).
-`num_peers`      | integer  | Number of peers for current torrent, as reported by the tracker
-`num_seeds`      | integer  | Number of seeds for current torrent, asreported by the tracker
-`num_leeches`    | integer  | Number of leeches for current torrent, as reported by the tracker
-`num_downloaded` | integer  | Number of completed downloads for current torrent, as reported by the tracker
-`msg`            | string   | Tracker message (there is no way of knowing what this message is - it's up to tracker admins)
+| Property         | Type    | Description                                                                                                                                                                                              |
+| ---------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `url`            | string  | Tracker url                                                                                                                                                                                              |
+| `status`         | integer | Tracker status. See the table below for possible values                                                                                                                                                  |
+| `tier`           | integer | Tracker priority tier. Lower tier trackers are tried before higher tiers. Tier numbers are valid when `>= 0`, `< 0` is used as placeholder when `tier` does not exist for special entries (such as DHT). |
+| `num_peers`      | integer | Number of peers for current torrent, as reported by the tracker                                                                                                                                          |
+| `num_seeds`      | integer | Number of seeds for current torrent, asreported by the tracker                                                                                                                                           |
+| `num_leeches`    | integer | Number of leeches for current torrent, as reported by the tracker                                                                                                                                        |
+| `num_downloaded` | integer | Number of completed downloads for current torrent, as reported by the tracker                                                                                                                            |
+| `msg`            | string  | Tracker message (there is no way of knowing what this message is - it's up to tracker admins)                                                                                                            |
 
 Possible values of `status`:
 
-Value  | Description
--------|------------
-0      | Tracker is disabled (used for DHT, PeX, and LSD)
-1      | Tracker has not been contacted yet
-2      | Tracker has been contacted and is working
-3      | Tracker is updating
-4      | Tracker has been contacted, but it is not working (or doesn't send proper replies)
+| Value | Description                                                                        |
+| ----- | ---------------------------------------------------------------------------------- |
+| 0     | Tracker is disabled (used for DHT, PeX, and LSD)                                   |
+| 1     | Tracker has not been contacted yet                                                 |
+| 2     | Tracker has been contacted and is working                                          |
+| 3     | Tracker is updating                                                                |
+| 4     | Tracker has been contacted, but it is not working (or doesn't send proper replies) |
 
 Example:
 
@@ -1499,7 +1499,7 @@ Example:
 ]
 ```
 
-## Get torrent web seeds ##
+### Get torrent web seeds ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -1507,22 +1507,22 @@ Name: `webseeds`
 
 **Parameters:**
 
-Parameter | Type   | Description
-----------|--------|------------
-`hash`    | string | The hash of the torrent you want to get the webseeds of
+| Parameter | Type   | Description                                             |
+| --------- | ------ | ------------------------------------------------------- |
+| `hash`    | string | The hash of the torrent you want to get the webseeds of |
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-404                               | Torrent hash was not found
-200                               | All other scenarios- see JSON below
+| HTTP Status Code | Scenario                            |
+| ---------------- | ----------------------------------- |
+| 404              | Torrent hash was not found          |
+| 200              | All other scenarios- see JSON below |
 
 The response is a JSON array, where each element is information about one webseed, with the following fields
 
-Property      | Type     | Description
---------------|----------|------------
-`url`         | string   | URL of the web seed
+| Property | Type   | Description         |
+| -------- | ------ | ------------------- |
+| `url`    | string | URL of the web seed |
 
 Example:
 
@@ -1537,7 +1537,7 @@ Example:
 ]
 ```
 
-## Get torrent contents ##
+### Get torrent contents ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -1545,42 +1545,42 @@ Name: `files`
 
 **Parameters:**
 
-Parameter | Type   | Description
-----------|--------|------------
-`hash`    | string | The hash of the torrent you want to get the contents of
-`indexes` _optional_ <sup>since 2.8.2</sup> | string | The indexes of the files you want to retrieve. `indexes` can contain multiple values separated by `\|`.
+| Parameter                                   | Type   | Description                                                                                             |
+| ------------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------- |
+| `hash`                                      | string | The hash of the torrent you want to get the contents of                                                 |
+| `indexes` _optional_ <sup>since 2.8.2</sup> | string | The indexes of the files you want to retrieve. `indexes` can contain multiple values separated by `\|`. |
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-404                               | Torrent hash was not found
-200                               | All other scenarios- see JSON below
+| HTTP Status Code | Scenario                            |
+| ---------------- | ----------------------------------- |
+| 404              | Torrent hash was not found          |
+| 200              | All other scenarios- see JSON below |
 
 The response is:
 
 - empty, if the torrent hash is invalid
 - otherwise, a JSON array, where each element contains info about one file, with the following fields
 
-Property       | Type          | Description
----------------|---------------|-------------
-`index` <sup>since 2.8.2</sup> | integer | File index
-`name`         | string        | File name (including relative path)
-`size`         | integer       | File size (bytes)
-`progress`     | float         | File progress (percentage/100)
-`priority`     | integer       | File priority. See possible values here below
-`is_seed`      | bool          | True if file is seeding/complete
-`piece_range`  | integer array | The first number is the starting piece index and the second number is the ending piece index (inclusive)
-`availability` | float         | Percentage of file pieces currently available (percentage/100)
+| Property                       | Type          | Description                                                                                              |
+| ------------------------------ | ------------- | -------------------------------------------------------------------------------------------------------- |
+| `index` <sup>since 2.8.2</sup> | integer       | File index                                                                                               |
+| `name`                         | string        | File name (including relative path)                                                                      |
+| `size`                         | integer       | File size (bytes)                                                                                        |
+| `progress`                     | float         | File progress (percentage/100)                                                                           |
+| `priority`                     | integer       | File priority. See possible values here below                                                            |
+| `is_seed`                      | bool          | True if file is seeding/complete                                                                         |
+| `piece_range`                  | integer array | The first number is the starting piece index and the second number is the ending piece index (inclusive) |
+| `availability`                 | float         | Percentage of file pieces currently available (percentage/100)                                           |
 
 Possible values of `priority`:
 
-Value      | Description
------------|------------
-`0`        | Do not download
-`1`        | Normal priority
-`6`        | High priority
-`7`        | Maximal priority
+| Value | Description      |
+| ----- | ---------------- |
+| `0`   | Do not download  |
+| `1`   | Normal priority  |
+| `6`   | High priority    |
+| `7`   | Maximal priority |
 
 Example:
 
@@ -1600,7 +1600,7 @@ Example:
 ]
 ```
 
-## Get torrent pieces' states ##
+### Get torrent pieces' states ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -1608,16 +1608,16 @@ Name: `pieceStates`
 
 **Parameters:**
 
-Parameter | Type   | Description
-----------|--------|------------
-`hash`    | string | The hash of the torrent you want to get the pieces' states of
+| Parameter | Type   | Description                                                   |
+| --------- | ------ | ------------------------------------------------------------- |
+| `hash`    | string | The hash of the torrent you want to get the pieces' states of |
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-404                               | Torrent hash was not found
-200                               | All other scenarios- see JSON below
+| HTTP Status Code | Scenario                            |
+| ---------------- | ----------------------------------- |
+| 404              | Torrent hash was not found          |
+| 200              | All other scenarios- see JSON below |
 
 The response is:
 
@@ -1626,11 +1626,11 @@ The response is:
 
 Value meanings are defined as below:
 
-Value      | Description
------------|------------
-`0`        | Not downloaded yet
-`1`        | Now downloading
-`2`        | Already downloaded
+| Value | Description        |
+| ----- | ------------------ |
+| `0`   | Not downloaded yet |
+| `1`   | Now downloading    |
+| `2`   | Already downloaded |
 
 Example:
 
@@ -1638,7 +1638,7 @@ Example:
 [0,0,2,1,0,0,2,1]
 ```
 
-## Get torrent pieces' hashes ##
+### Get torrent pieces' hashes ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -1646,16 +1646,16 @@ Name: `pieceHashes`
 
 **Parameters:**
 
-Parameter | Type   | Description
-----------|--------|------------
-`hash`    | string | The hash of the torrent you want to get the pieces' hashes of
+| Parameter | Type   | Description                                                   |
+| --------- | ------ | ------------------------------------------------------------- |
+| `hash`    | string | The hash of the torrent you want to get the pieces' hashes of |
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-404                               | Torrent hash was not found
-200                               | All other scenarios- see JSON below
+| HTTP Status Code | Scenario                            |
+| ---------------- | ----------------------------------- |
+| 404              | Torrent hash was not found          |
+| 200              | All other scenarios- see JSON below |
 
 The response is:
 
@@ -1668,7 +1668,7 @@ Example:
 ["54eddd830a5b58480a6143d616a97e3a6c23c439","f8a99d225aa4241db100f88407fc3bdaead583ab","928fb615b9bd4dd8f9e9022552c8f8f37ef76f58"]
 ```
 
-## Pause torrents ##
+### Pause torrents ###
 
 Requires knowing the torrent hashes. You can get it from [torrent list](#get-torrent-list).
 
@@ -1676,9 +1676,9 @@ Name: `stop`
 
 **Parameters:**
 
-Parameter   | Type     | Description
-------------|----------|------------
-`hashes`    | string   | The hashes of the torrents you want to pause. `hashes` can contain multiple hashes separated by `\|`, to pause multiple torrents, or set to `all`, to pause all torrents.
+| Parameter | Type   | Description                                                                                                                                                               |
+| --------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `hashes`  | string | The hashes of the torrents you want to pause. `hashes` can contain multiple hashes separated by `\|`, to pause multiple torrents, or set to `all`, to pause all torrents. |
 
 Example:
 
@@ -1688,11 +1688,11 @@ Example:
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios
+| HTTP Status Code | Scenario      |
+| ---------------- | ------------- |
+| 200              | All scenarios |
 
-## Resume torrents ##
+### Resume torrents ###
 
 Requires knowing the torrent hashes. You can get it from [torrent list](#get-torrent-list).
 
@@ -1700,9 +1700,9 @@ Name: `start`
 
 **Parameters:**
 
-Parameter   | Type     | Description
-------------|----------|------------
-`hashes`    | string   | The hashes of the torrents you want to resume. `hashes` can contain multiple hashes separated by `\|`, to resume multiple torrents, or set to `all`, to resume all torrents.
+| Parameter | Type   | Description                                                                                                                                                                  |
+| --------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `hashes`  | string | The hashes of the torrents you want to resume. `hashes` can contain multiple hashes separated by `\|`, to resume multiple torrents, or set to `all`, to resume all torrents. |
 
 Example:
 
@@ -1712,11 +1712,11 @@ Example:
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios
+| HTTP Status Code | Scenario      |
+| ---------------- | ------------- |
+| 200              | All scenarios |
 
-## Delete torrents ##
+### Delete torrents ###
 
 Requires knowing the torrent hashes. You can get it from [torrent list](#get-torrent-list).
 
@@ -1724,10 +1724,10 @@ Name: `delete`
 
 **Parameters:**
 
-Parameter   | Type     | Description
-------------|----------|------------
-`hashes`    | string   | The hashes of the torrents you want to delete. `hashes` can contain multiple hashes separated by `\|`, to delete multiple torrents, or set to `all`, to delete all torrents.
-`deleteFiles` | If set to `true`, the downloaded data will also be deleted, otherwise has no effect.
+| Parameter     | Type   | Description                                                                                                                                                                  |
+| ------------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `hashes`      | string | The hashes of the torrents you want to delete. `hashes` can contain multiple hashes separated by `\|`, to delete multiple torrents, or set to `all`, to delete all torrents. |
+| `deleteFiles` | bool   | If set to `true`, the downloaded data will also be deleted, otherwise has no effect.                                                                                         |
 
 Example:
 
@@ -1737,11 +1737,11 @@ Example:
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios
+| HTTP Status Code | Scenario      |
+| ---------------- | ------------- |
+| 200              | All scenarios |
 
-## Recheck torrents ##
+### Recheck torrents ###
 
 Requires knowing the torrent hashes. You can get it from [torrent list](#get-torrent-list).
 
@@ -1749,9 +1749,9 @@ Name: `recheck`
 
 **Parameters:**
 
-Parameter   | Type     | Description
-------------|----------|------------
-`hashes`    | string   | The hashes of the torrents you want to recheck. `hashes` can contain multiple hashes separated by `\|`, to recheck multiple torrents, or set to `all`, to recheck all torrents.
+| Parameter | Type   | Description                                                                                                                                                                     |
+| --------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `hashes`  | string | The hashes of the torrents you want to recheck. `hashes` can contain multiple hashes separated by `\|`, to recheck multiple torrents, or set to `all`, to recheck all torrents. |
 
 Example:
 
@@ -1761,11 +1761,11 @@ Example:
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios
+| HTTP Status Code | Scenario      |
+| ---------------- | ------------- |
+| 200              | All scenarios |
 
-## Reannounce torrents ##
+### Reannounce torrents ###
 
 Requires knowing the torrent hashes. You can get it from [torrent list](#get-torrent-list).
 
@@ -1773,9 +1773,9 @@ Name: `reannounce`
 
 **Parameters:**
 
-Parameter   | Type     | Description
-------------|----------|------------
-`hashes`    | string   | The hashes of the torrents you want to reannounce. `hashes` can contain multiple hashes separated by `\|`, to reannounce multiple torrents, or set to `all`, to reannounce all torrents.
+| Parameter | Type   | Description                                                                                                                                                                              |
+| --------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `hashes`  | string | The hashes of the torrents you want to reannounce. `hashes` can contain multiple hashes separated by `\|`, to reannounce multiple torrents, or set to `all`, to reannounce all torrents. |
 
 Example:
 
@@ -1785,13 +1785,13 @@ Example:
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios
+| HTTP Status Code | Scenario      |
+| ---------------- | ------------- |
+| 200              | All scenarios |
 
-## Add new torrent ##
+### Add new torrent ###
 
-This method can add torrents from  server local file or from URLs. `http://`, `https://`, `magnet:` and `bc://bt/` links are supported.
+This method can add torrents from server local file or from URLs. `http://`, `https://`, `magnet:` and `bc://bt/` links are supported.
 
 Add torrent from URLs example:
 
@@ -1857,33 +1857,33 @@ file_binary_data_goes_here
 
 The above example will add two torrent files. `file_binary_data_goes_here` represents raw data of torrent file (basically a byte array).
 
-Property                        | Type    | Description
---------------------------------|---------|------------
-`urls`                          | string  | URLs separated with newlines
-`torrents`                      | raw     | Raw data of torrent file. `torrents` can be presented multiple times.
-`savepath` _optional_           | string  | Download folder
-`category` _optional_           | string  | Category for the torrent
-`tags` _optional_               | string  | Tags for the torrent, split by ','
-`skip_checking` _optional_      | string  | Skip hash checking. Possible values are `true`, `false` (default)
-`paused` _optional_             | string  | Add torrents in the paused state. Possible values are `true`, `false` (default)
-`root_folder` _optional_        | string  | Create the root folder. Possible values are `true`, `false`, unset (default)
-`rename` _optional_             | string  | Rename torrent
-`upLimit` _optional_            | integer | Set torrent upload speed limit. Unit in bytes/second
-`dlLimit` _optional_            | integer | Set torrent download speed limit. Unit in bytes/second
-`ratioLimit` _optional_ <sup>since 2.8.1</sup> | float   | Set torrent share ratio limit
-`seedingTimeLimit` _optional_ <sup>since 2.8.1</sup>  | integer | Set torrent seeding time limit. Unit in minutes
-`autoTMM` _optional_         | bool    | Whether Automatic Torrent Management should be used
-`sequentialDownload` _optional_ | string  | Enable sequential download. Possible values are `true`, `false` (default)
-`firstLastPiecePrio` _optional_ | string  | Prioritize download first last piece. Possible values are `true`, `false` (default)
+| Property                                             | Type    | Description                                                                         |
+| ---------------------------------------------------- | ------- | ----------------------------------------------------------------------------------- |
+| `urls`                                               | string  | URLs separated with newlines                                                        |
+| `torrents`                                           | raw     | Raw data of torrent file. `torrents` can be presented multiple times.               |
+| `savepath` _optional_                                | string  | Download folder                                                                     |
+| `category` _optional_                                | string  | Category for the torrent                                                            |
+| `tags` _optional_                                    | string  | Tags for the torrent, split by ','                                                  |
+| `skip_checking` _optional_                           | string  | Skip hash checking. Possible values are `true`, `false` (default)                   |
+| `paused` _optional_                                  | string  | Add torrents in the paused state. Possible values are `true`, `false` (default)     |
+| `root_folder` _optional_                             | string  | Create the root folder. Possible values are `true`, `false`, unset (default)        |
+| `rename` _optional_                                  | string  | Rename torrent                                                                      |
+| `upLimit` _optional_                                 | integer | Set torrent upload speed limit. Unit in bytes/second                                |
+| `dlLimit` _optional_                                 | integer | Set torrent download speed limit. Unit in bytes/second                              |
+| `ratioLimit` _optional_ <sup>since 2.8.1</sup>       | float   | Set torrent share ratio limit                                                       |
+| `seedingTimeLimit` _optional_ <sup>since 2.8.1</sup> | integer | Set torrent seeding time limit. Unit in minutes                                     |
+| `autoTMM` _optional_                                 | bool    | Whether Automatic Torrent Management should be used                                 |
+| `sequentialDownload` _optional_                      | string  | Enable sequential download. Possible values are `true`, `false` (default)           |
+| `firstLastPiecePrio` _optional_                      | string  | Prioritize download first last piece. Possible values are `true`, `false` (default) |
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-415                               | Torrent file is not valid
-200                               | All other scenarios
+| HTTP Status Code | Scenario                  |
+| ---------------- | ------------------------- |
+| 415              | Torrent file is not valid |
+| 200              | All other scenarios       |
 
-## Add trackers to torrent ##
+### Add trackers to torrent ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -1902,71 +1902,71 @@ This adds two trackers to torrent with hash `8c212779b4abde7c6bc608063a0d008b7e4
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-404                               | Torrent hash was not found
-200                               | All other scenarios
+| HTTP Status Code | Scenario                   |
+| ---------------- | -------------------------- |
+| 404              | Torrent hash was not found |
+| 200              | All other scenarios        |
 
-## Edit trackers ##
+### Edit trackers ###
 
 Name: `editTracker`
 
 **Parameters:**
 
-Parameter                         | Type    | Description
-----------------------------------|---------|------------
-`hash`                            | string  | The hash of the torrent
-`origUrl`                         | string  | The tracker URL you want to edit
-`newUrl`                          | string  | The new URL to replace the `origUrl`
+| Parameter | Type   | Description                      |
+| --------- | ------ | -------------------------------- |
+| `hash`    | string | The hash of the torrent          |
+| `url`     | string | The tracker URL you want to edit |
+| `newUrl`  | string | The new URL to replace the `url` |
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-400                               | `newUrl` is not a valid URL
-404                               | Torrent hash was not found
-409                               | `newUrl` already exists for the torrent
-409                               | `origUrl` was not found
-200                               | All other scenarios
+| HTTP Status Code | Scenario                                |
+| ---------------- | --------------------------------------- |
+| 400              | `newUrl` is not a valid URL             |
+| 404              | Torrent hash was not found              |
+| 409              | `newUrl` already exists for the torrent |
+| 409              | `url` was not found                     |
+| 200              | All other scenarios                     |
 
-## Remove trackers ##
+### Remove trackers ###
 
 Name: `removeTrackers`
 
 **Parameters:**
 
-Parameter                         | Type    | Description
-----------------------------------|---------|------------
-`hash`                            | string  | The hash of the torrent
-`urls`                            | string  | URLs to remove, separated by `\|`
+| Parameter | Type   | Description                       |
+| --------- | ------ | --------------------------------- |
+| `hash`    | string | The hash of the torrent           |
+| `urls`    | string | URLs to remove, separated by `\|` |
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-404                               | Torrent hash was not found
-409                               | All `urls` were not found
-200                               | All other scenarios
+| HTTP Status Code | Scenario                   |
+| ---------------- | -------------------------- |
+| 404              | Torrent hash was not found |
+| 409              | All `urls` were not found  |
+| 200              | All other scenarios        |
 
-## Add peers ##
+### Add peers ###
 
 Name: `addPeers`
 
 **Parameters:**
 
-Parameter                         | Type    | Description
-----------------------------------|---------|------------
-`hashes`                          | string  | The hash of the torrent, or multiple hashes separated by a pipe `\|`
-`peers`                           | string  | The peer to add, or multiple peers separated by a pipe `\|`. Each peer is a colon-separated `host:port`
+| Parameter | Type   | Description                                                                                             |
+| --------- | ------ | ------------------------------------------------------------------------------------------------------- |
+| `hashes`  | string | The hash of the torrent, or multiple hashes separated by a pipe `\|`                                    |
+| `peers`   | string | The peer to add, or multiple peers separated by a pipe `\|`. Each peer is a colon-separated `host:port` |
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-400                               | None of the supplied peers are valid
-200                               | All other scenarios
+| HTTP Status Code | Scenario                             |
+| ---------------- | ------------------------------------ |
+| 400              | None of the supplied peers are valid |
+| 200              | All other scenarios                  |
 
-## Increase torrent priority ##
+### Increase torrent priority ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -1974,9 +1974,9 @@ Name: `increasePrio`
 
 **Parameters:**
 
-Parameter   | Type     | Description
-------------|----------|------------
-`hashes`    | string   | The hashes of the torrents you want to increase the priority of. `hashes` can contain multiple hashes separated by `\|`, to increase the priority of multiple torrents, or set to `all`, to increase the priority of all torrents.
+| Parameter | Type   | Description                                                                                                                                                                                                                        |
+| --------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `hashes`  | string | The hashes of the torrents you want to increase the priority of. `hashes` can contain multiple hashes separated by `\|`, to increase the priority of multiple torrents, or set to `all`, to increase the priority of all torrents. |
 
 Example:
 
@@ -1986,12 +1986,12 @@ Example:
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-409                               | Torrent queueing is not enabled
-200                               | All other scenarios
+| HTTP Status Code | Scenario                        |
+| ---------------- | ------------------------------- |
+| 409              | Torrent queueing is not enabled |
+| 200              | All other scenarios             |
 
-## Decrease torrent priority ##
+### Decrease torrent priority ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -1999,9 +1999,9 @@ Name: `decreasePrio`
 
 **Parameters:**
 
-Parameter   | Type     | Description
-------------|----------|------------
-`hashes`    | string   | The hashes of the torrents you want to decrease the priority of. `hashes` can contain multiple hashes separated by `\|`, to decrease the priority of multiple torrents, or set to `all`, to decrease the priority of all torrents.
+| Parameter | Type   | Description                                                                                                                                                                                                                        |
+| --------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `hashes`  | string | The hashes of the torrents you want to decrease the priority of. `hashes` can contain multiple hashes separated by `\|`, to decrease the priority of multiple torrents, or set to `all`, to decrease the priority of all torrents. |
 
 Example:
 
@@ -2011,12 +2011,12 @@ Example:
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-409                               | Torrent queueing is not enabled
-200                               | All other scenarios
+| HTTP Status Code | Scenario                        |
+| ---------------- | ------------------------------- |
+| 409              | Torrent queueing is not enabled |
+| 200              | All other scenarios             |
 
-## Maximal torrent priority ##
+### Maximal torrent priority ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -2024,9 +2024,9 @@ Name: `topPrio`
 
 **Parameters:**
 
-Parameter   | Type     | Description
-------------|----------|------------
-`hashes`    | string   | The hashes of the torrents you want to set to the maximum priority. `hashes` can contain multiple hashes separated by `\|`, to set multiple torrents to the maximum priority, or set to `all`, to set all torrents to the maximum priority.
+| Parameter | Type   | Description                                                                                                                                                                                                                                 |
+| --------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `hashes`  | string | The hashes of the torrents you want to set to the maximum priority. `hashes` can contain multiple hashes separated by `\|`, to set multiple torrents to the maximum priority, or set to `all`, to set all torrents to the maximum priority. |
 
 Example:
 
@@ -2036,12 +2036,12 @@ Example:
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-409                               | Torrent queueing is not enabled
-200                               | All other scenarios
+| HTTP Status Code | Scenario                        |
+| ---------------- | ------------------------------- |
+| 409              | Torrent queueing is not enabled |
+| 200              | All other scenarios             |
 
-## Minimal torrent priority ##
+### Minimal torrent priority ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -2049,9 +2049,9 @@ Name: `bottomPrio`
 
 **Parameters:**
 
-Parameter   | Type     | Description
-------------|----------|------------
-`hashes`    | string   | The hashes of the torrents you want to set to the minimum priority. `hashes` can contain multiple hashes separated by `\|`, to set multiple torrents to the minimum priority, or set to `all`, to set all torrents to the minimum priority.
+| Parameter | Type   | Description                                                                                                                                                                                                                                 |
+| --------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `hashes`  | string | The hashes of the torrents you want to set to the minimum priority. `hashes` can contain multiple hashes separated by `\|`, to set multiple torrents to the minimum priority, or set to `all`, to set all torrents to the minimum priority. |
 
 Example:
 
@@ -2061,22 +2061,22 @@ Example:
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-409                               | Torrent queueing is not enabled
-200                               | All other scenarios
+| HTTP Status Code | Scenario                        |
+| ---------------- | ------------------------------- |
+| 409              | Torrent queueing is not enabled |
+| 200              | All other scenarios             |
 
-## Set file priority ##
+### Set file priority ###
 
 Name: `filePrio`
 
 **Parameters:**
 
-Parameter                         | Type    | Description
-----------------------------------|---------|------------
-`hash`                            | string  | The hash of the torrent
-`id`                              | string  | File ids, separated by `\|`
-`priority`                        | number  | File priority to set (consult [torrent contents API](#get-torrent-contents) for possible values)
+| Parameter  | Type   | Description                                                                                      |
+| ---------- | ------ | ------------------------------------------------------------------------------------------------ |
+| `hash`     | string | The hash of the torrent                                                                          |
+| `id`       | string | File ids, separated by `\|`                                                                      |
+| `priority` | number | File priority to set (consult [torrent contents API](#get-torrent-contents) for possible values) |
 
 `id` values correspond to file position inside the array returned by [torrent contents API](#get-torrent-contents), e.g. `id=0` for first file, `id=1` for second file, etc.
 
@@ -2084,16 +2084,16 @@ Since 2.8.2 it is recommended to use `index` field returned by [torrent contents
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-400                               | Priority is invalid
-400                               | At least one file `id` is not a valid integer
-404                               | Torrent hash was not found
-409                               | Torrent metadata hasn't downloaded yet
-409                               | At least one file `id` was not found
-200                               | All other scenarios
+| HTTP Status Code | Scenario                                      |
+| ---------------- | --------------------------------------------- |
+| 400              | Priority is invalid                           |
+| 400              | At least one file `id` is not a valid integer |
+| 404              | Torrent hash was not found                    |
+| 409              | Torrent metadata hasn't downloaded yet        |
+| 409              | At least one file `id` was not found          |
+| 200              | All other scenarios                           |
 
-## Get torrent download limit ##
+### Get torrent download limit ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -2122,7 +2122,7 @@ content-length: length
 
 `8c212779b4abde7c6bc608063a0d008b7e40ce32` is the hash of the torrent and `338944` its download speed limit in bytes per second; this value will be zero if no limit is applied.
 
-## Set torrent download limit ##
+### Set torrent download limit ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -2142,11 +2142,11 @@ hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios
+| HTTP Status Code | Scenario      |
+| ---------------- | ------------- |
+| 200              | All scenarios |
 
-## Set torrent share limit ##
+### Set torrent share limit ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -2173,12 +2173,12 @@ Property                      | Type    | Description
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All other scenarios
-400                               | Bad Request, e.g. missing parameter
+| HTTP Status Code | Scenario                            |
+| ---------------- | ----------------------------------- |
+| 200              | All other scenarios                 |
+| 400              | Bad Request, e.g. missing parameter |
 
-## Get torrent upload limit ##
+### Get torrent upload limit ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -2207,7 +2207,7 @@ content-length: length
 
 `8c212779b4abde7c6bc608063a0d008b7e40ce32` is the hash of the torrent in the request and `338944` its upload speed limit in bytes per second; this value will be zero if no limit is applied.
 
-## Set torrent upload limit ##
+### Set torrent upload limit ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -2227,11 +2227,11 @@ hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios
+| HTTP Status Code | Scenario      |
+| ---------------- | ------------- |
+| 200              | All scenarios |
 
-## Set torrent location ##
+### Set torrent location ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -2251,14 +2251,14 @@ hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-400                               | Save path is empty
-403                               | User does not have write access to directory
-409                               | Unable to create save path directory
-200                               | All other scenarios
+| HTTP Status Code | Scenario                                     |
+| ---------------- | -------------------------------------------- |
+| 400              | Save path is empty                           |
+| 403              | User does not have write access to directory |
+| 409              | Unable to create save path directory         |
+| 200              | All other scenarios                          |
 
-## Set torrent name ##
+### Set torrent name ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -2275,13 +2275,13 @@ hash=8c212779b4abde7c6bc608063a0d008b7e40ce32&name=This%20is%20a%20test
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-404                               | Torrent hash is invalid
-409                               | Torrent name is empty
-200                               | All other scenarios
+| HTTP Status Code | Scenario                |
+| ---------------- | ----------------------- |
+| 404              | Torrent hash is invalid |
+| 409              | Torrent name is empty   |
+| 200              | All other scenarios     |
 
-## Set torrent category ##
+### Set torrent category ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -2302,12 +2302,12 @@ hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-409                               | Category name does not exist
-200                               | All other scenarios
+| HTTP Status Code | Scenario                     |
+| ---------------- | ---------------------------- |
+| 409              | Category name does not exist |
+| 200              | All other scenarios          |
 
-## Get all categories ##
+### Get all categories ###
 
 Name: `categories`
 
@@ -2329,13 +2329,14 @@ Returns all categories in JSON format, e.g.:
     }
 }
 ```
+
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios
+| HTTP Status Code | Scenario      |
+| ---------------- | ------------- |
+| 200              | All scenarios |
 
-## Add new category ##
+### Add new category ###
 
 ```http
 POST /api/v2/torrents/createCategory HTTP/1.1
@@ -2352,13 +2353,13 @@ category=CategoryName&savePath=/path/to/dir
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-400                               | Category name is empty
-409                               | Category name is invalid
-200                               | All other scenarios
+| HTTP Status Code | Scenario                 |
+| ---------------- | ------------------------ |
+| 400              | Category name is empty   |
+| 409              | Category name is invalid |
+| 200              | All other scenarios      |
 
-## Edit category ##
+### Edit category ###
 
 ```http
 POST /api/v2/torrents/editCategory HTTP/1.1
@@ -2373,13 +2374,13 @@ category=CategoryName&savePath=/path/to/save/torrents/to
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-400                               | Category name is empty
-409                               | Category editing failed
-200                               | All other scenarios
+| HTTP Status Code | Scenario                |
+| ---------------- | ----------------------- |
+| 400              | Category name is empty  |
+| 409              | Category editing failed |
+| 200              | All other scenarios     |
 
-## Remove categories ##
+### Remove categories ###
 
 ```http
 POST /api/v2/torrents/removeCategories HTTP/1.1
@@ -2396,11 +2397,11 @@ categories=Category1%0ACategory2
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios
+| HTTP Status Code | Scenario      |
+| ---------------- | ------------- |
+| 200              | All scenarios |
 
-## Add torrent tags ##
+### Add torrent tags ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -2421,11 +2422,11 @@ hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios
+| HTTP Status Code | Scenario      |
+| ---------------- | ------------- |
+| 200              | All scenarios |
 
-## Remove torrent tags ##
+### Remove torrent tags ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -2447,11 +2448,11 @@ Empty list removes all tags from relevant torrents.
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios
+| HTTP Status Code | Scenario      |
+| ---------------- | ------------- |
+| 200              | All scenarios |
 
-## Get all tags ##
+### Get all tags ###
 
 Name: `tags`
 
@@ -2467,13 +2468,14 @@ Returns all tags in JSON format, e.g.:
     "Tag 2"
 ]
 ```
+
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios
+| HTTP Status Code | Scenario      |
+| ---------------- | ------------- |
+| 200              | All scenarios |
 
-## Create tags ##
+### Create tags ###
 
 ```http
 POST /api/v2/torrents/createTags HTTP/1.1
@@ -2485,16 +2487,17 @@ Content-Length: length
 
 tags=TagName1,TagName2
 ```
+
 `tags` is a list of tags you want to create.
 Can contain multiple tags separated by `,`.
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios
+| HTTP Status Code | Scenario      |
+| ---------------- | ------------- |
+| 200              | All scenarios |
 
-## Delete tags ##
+### Delete tags ###
 
 ```http
 POST /api/v2/torrents/deleteTags HTTP/1.1
@@ -2512,11 +2515,11 @@ Can contain multiple tags separated by `,`.
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios
+| HTTP Status Code | Scenario      |
+| ---------------- | ------------- |
+| 200              | All scenarios |
 
-## Set automatic torrent management ##
+### Set automatic torrent management ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -2536,11 +2539,11 @@ hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios
+| HTTP Status Code | Scenario      |
+| ---------------- | ------------- |
+| 200              | All scenarios |
 
-## Toggle sequential download ##
+### Toggle sequential download ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -2548,9 +2551,9 @@ Name: `toggleSequentialDownload`
 
 **Parameters:**
 
-Parameter   | Type     | Description
-------------|----------|------------
-`hashes`    | string   | The hashes of the torrents you want to toggle sequential download for. `hashes` can contain multiple hashes separated by `\|`, to toggle sequential download for multiple torrents, or set to `all`, to toggle sequential download for all torrents.
+| Parameter | Type   | Description                                                                                                                                                                                                                                          |
+| --------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `hashes`  | string | The hashes of the torrents you want to toggle sequential download for. `hashes` can contain multiple hashes separated by `\|`, to toggle sequential download for multiple torrents, or set to `all`, to toggle sequential download for all torrents. |
 
 Example:
 
@@ -2560,11 +2563,11 @@ Example:
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios
+| HTTP Status Code | Scenario      |
+| ---------------- | ------------- |
+| 200              | All scenarios |
 
-## Set first/last piece priority ##
+### Set first/last piece priority ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -2572,9 +2575,9 @@ Name: `toggleFirstLastPiecePrio`
 
 **Parameters:**
 
-Parameter   | Type     | Description
-------------|----------|------------
-`hashes`    | string   | The hashes of the torrents you want to toggle the first/last piece priority for. `hashes` can contain multiple hashes separated by `\|`, to toggle the first/last piece priority for multiple torrents, or set to `all`, to toggle the first/last piece priority for all torrents.
+| Parameter | Type   | Description                                                                                                                                                                                                                                                                        |
+| --------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `hashes`  | string | The hashes of the torrents you want to toggle the first/last piece priority for. `hashes` can contain multiple hashes separated by `\|`, to toggle the first/last piece priority for multiple torrents, or set to `all`, to toggle the first/last piece priority for all torrents. |
 
 Example:
 
@@ -2584,11 +2587,11 @@ Example:
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios
+| HTTP Status Code | Scenario      |
+| ---------------- | ------------- |
+| 200              | All scenarios |
 
-## Set force start ##
+### Set force start ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -2608,11 +2611,11 @@ hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32?value=true
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios
+| HTTP Status Code | Scenario      |
+| ---------------- | ------------- |
+| 200              | All scenarios |
 
-## Set super seeding ##
+### Set super seeding ###
 
 Requires knowing the torrent hash. You can get it from [torrent list](#get-torrent-list).
 
@@ -2632,90 +2635,90 @@ hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32?value=true
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios
+| HTTP Status Code | Scenario      |
+| ---------------- | ------------- |
+| 200              | All scenarios |
 
-## Rename file ##
+### Rename file ###
 
 Name: `renameFile`
 
 **Parameters:**
 
-Parameter                         | Type     | Description
-----------------------------------|----------|------------
-`hash`                            | string   | The hash of the torrent
-`oldPath`                         | string   | The old path of the torrent
-`newPath`                         | string   | The new path to use for the file
+| Parameter | Type   | Description                      |
+| --------- | ------ | -------------------------------- |
+| `hash`    | string | The hash of the torrent          |
+| `oldPath` | string | The old path of the torrent      |
+| `newPath` | string | The new path to use for the file |
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-400                               | Missing `newPath` parameter
-409                               | Invalid `newPath` or `oldPath`, or `newPath` already in use
-200                               | All other scenarios
+| HTTP Status Code | Scenario                                                    |
+| ---------------- | ----------------------------------------------------------- |
+| 400              | Missing `newPath` parameter                                 |
+| 409              | Invalid `newPath` or `oldPath`, or `newPath` already in use |
+| 200              | All other scenarios                                         |
 
-## Rename folder ##
+### Rename folder ###
 
 Name: `renameFolder`
 
 **Parameters:**
 
-Parameter                         | Type     | Description
-----------------------------------|----------|------------
-`hash`                            | string   | The hash of the torrent
-`oldPath`                         | string   | The old path of the torrent
-`newPath`                         | string   | The new path to use for the file
+| Parameter | Type   | Description                      |
+| --------- | ------ | -------------------------------- |
+| `hash`    | string | The hash of the torrent          |
+| `oldPath` | string | The old path of the torrent      |
+| `newPath` | string | The new path to use for the file |
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-400                               | Missing `newPath` parameter
-409                               | Invalid `newPath` or `oldPath`, or `newPath` already in use
-200                               | All other scenarios
+| HTTP Status Code | Scenario                                                    |
+| ---------------- | ----------------------------------------------------------- |
+| 400              | Missing `newPath` parameter                                 |
+| 409              | Invalid `newPath` or `oldPath`, or `newPath` already in use |
+| 200              | All other scenarios                                         |
 
-# RSS (experimental) #
+## RSS (experimental) ##
 
 All RSS API methods are under "rss", e.g.: `/api/v2/rss/methodName`.
 
-## Add folder ##
+### Add folder ###
 
 Name: `addFolder`
 
 Parameters:
 
-Parameter                         | Type    | Description
-----------------------------------|---------|------------
-`path`                            | string  | Full path of added folder (e.g. "The Pirate Bay\Top100")
+| Parameter | Type   | Description                                              |
+| --------- | ------ | -------------------------------------------------------- |
+| `path`    | string | Full path of added folder (e.g. "The Pirate Bay\Top100") |
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-409                               | Failure to add folder
-200                               | All other scenarios
+| HTTP Status Code | Scenario              |
+| ---------------- | --------------------- |
+| 409              | Failure to add folder |
+| 200              | All other scenarios   |
 
-## Add feed ##
+### Add feed ###
 
 Name: `addFeed`
 
 Parameters:
 
-Parameter                         | Type    | Description
-----------------------------------|---------|------------
-`url`                             | string  | URL of RSS feed (e.g. "[http://thepiratebay.org/rss//top100/200](http://thepiratebay.org/rss//top100/200)")
-`path` _optional_                 | string  | Full path of added folder (e.g. "The Pirate Bay\Top100\Video")
+| Parameter         | Type   | Description                                                                                                 |
+| ----------------- | ------ | ----------------------------------------------------------------------------------------------------------- |
+| `url`             | string | URL of RSS feed (e.g. "[http://thepiratebay.org/rss//top100/200](http://thepiratebay.org/rss//top100/200)") |
+| `path` _optional_ | string | Full path of added folder (e.g. "The Pirate Bay\Top100\Video")                                              |
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-409                               | Failure to add feed
-200                               | All other scenarios
+| HTTP Status Code | Scenario            |
+| ---------------- | ------------------- |
+| 409              | Failure to add feed |
+| 200              | All other scenarios |
 
-## Remove item ##
+### Remove item ###
 
 Removes folder or feed.
 
@@ -2723,18 +2726,18 @@ Name: `removeItem`
 
 Parameters:
 
-Parameter                         | Type    | Description
-----------------------------------|---------|------------
-`path`                            | string  | Full path of removed item (e.g. "The Pirate Bay\Top100")
+| Parameter | Type   | Description                                              |
+| --------- | ------ | -------------------------------------------------------- |
+| `path`    | string | Full path of removed item (e.g. "The Pirate Bay\Top100") |
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-409                               | Failure to remove item
-200                               | All other scenarios
+| HTTP Status Code | Scenario               |
+| ---------------- | ---------------------- |
+| 409              | Failure to remove item |
+| 200              | All other scenarios    |
 
-## Move item ##
+### Move item ###
 
 Moves/renames folder or feed.
 
@@ -2742,27 +2745,27 @@ Name: `moveItem`
 
 Parameters:
 
-Parameter                         | Type    | Description
-----------------------------------|---------|------------
-`itemPath`                        | string  | Current full path of item (e.g. "The Pirate Bay\Top100")
-`destPath`                        | string  | New full path of item (e.g. "The Pirate Bay")
+| Parameter  | Type   | Description                                              |
+| ---------- | ------ | -------------------------------------------------------- |
+| `itemPath` | string | Current full path of item (e.g. "The Pirate Bay\Top100") |
+| `destPath` | string | New full path of item (e.g. "The Pirate Bay")            |
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-409                               | Failure to move item
-200                               | All other scenarios
+| HTTP Status Code | Scenario             |
+| ---------------- | -------------------- |
+| 409              | Failure to move item |
+| 200              | All other scenarios  |
 
-## Get all items ##
+### Get all items ###
 
 Name: `items`
 
 Parameters:
 
-Parameter                         | Type    | Description
-----------------------------------|---------|------------
-`withData` _optional_             | bool    | True if you need current feed articles
+| Parameter             | Type | Description                            |
+| --------------------- | ---- | -------------------------------------- |
+| `withData` _optional_ | bool | True if you need current feed articles |
 
 Returns all RSS items in JSON format, e.g.:
 
@@ -2777,7 +2780,7 @@ Returns all RSS items in JSON format, e.g.:
 }
 ```
 
-## Mark as read ##
+### Mark as read ###
 
 If `articleId` is provided only the article is marked as read otherwise the whole feed is going to be marked as read.
 
@@ -2785,18 +2788,18 @@ Name: `markAsRead`
 
 Parameters:
 
-Parameter                         | Type    | Description
-----------------------------------|---------|------------
-`itemPath`                        | string  | Current full path of item (e.g. "The Pirate Bay\Top100")
-`articleId` _optional_            | string  | ID of article
+| Parameter              | Type   | Description                                              |
+| ---------------------- | ------ | -------------------------------------------------------- |
+| `itemPath`             | string | Current full path of item (e.g. "The Pirate Bay\Top100") |
+| `articleId` _optional_ | string | ID of article                                            |
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios
+| HTTP Status Code | Scenario      |
+| ---------------- | ------------- |
+| 200              | All scenarios |
 
-## Refresh item ##
+### Refresh item ###
 
 Refreshes folder or feed.
 
@@ -2804,44 +2807,44 @@ Name: `refreshItem`
 
 Parameters:
 
-Parameter                         | Type    | Description
-----------------------------------|---------|------------
-`itemPath`                        | string  | Current full path of item (e.g. "The Pirate Bay\Top100")
+| Parameter  | Type   | Description                                              |
+| ---------- | ------ | -------------------------------------------------------- |
+| `itemPath` | string | Current full path of item (e.g. "The Pirate Bay\Top100") |
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios
+| HTTP Status Code | Scenario      |
+| ---------------- | ------------- |
+| 200              | All scenarios |
 
-## Set auto-downloading rule ##
+### Set auto-downloading rule ###
 
 Name: `setRule`
 
 Parameters:
 
-Parameter                         | Type    | Description
-----------------------------------|---------|------------
-`ruleName`                        | string  | Rule name (e.g. "Punisher")
-`ruleDef`                         | string  | JSON encoded rule definition
+| Parameter  | Type   | Description                  |
+| ---------- | ------ | ---------------------------- |
+| `ruleName` | string | Rule name (e.g. "Punisher")  |
+| `ruleDef`  | string | JSON encoded rule definition |
 
 Rule definition is JSON encoded dictionary with the following fields:
 
-Field                             | Type    | Description
-----------------------------------|---------|------------
-`enabled`                         | bool    | Whether the rule is enabled
-`mustContain`                     | string  | The substring that the torrent name must contain
-`mustNotContain`                  | string  | The substring that the torrent name must not contain
-`useRegex`                        | bool    | Enable regex mode in "mustContain" and "mustNotContain"
-`episodeFilter`                   | string  | Episode filter definition
-`smartFilter`                     | bool    | Enable smart episode filter
-`previouslyMatchedEpisodes`       | list    | The list of episode IDs already matched by smart filter
-`affectedFeeds`                   | list    | The feed URLs the rule applied to
-`ignoreDays`                      | number  | Ignore sunsequent rule matches
-`lastMatch`                       | string  | The rule last match time
-`addPaused`                       | bool    | Add matched torrent in paused mode
-`assignedCategory`                | string  | Assign category to the torrent
-`savePath`                        | string  | Save torrent to the given directory
+| Field                       | Type   | Description                                             |
+| --------------------------- | ------ | ------------------------------------------------------- |
+| `enabled`                   | bool   | Whether the rule is enabled                             |
+| `mustContain`               | string | The substring that the torrent name must contain        |
+| `mustNotContain`            | string | The substring that the torrent name must not contain    |
+| `useRegex`                  | bool   | Enable regex mode in "mustContain" and "mustNotContain" |
+| `episodeFilter`             | string | Episode filter definition                               |
+| `smartFilter`               | bool   | Enable smart episode filter                             |
+| `previouslyMatchedEpisodes` | list   | The list of episode IDs already matched by smart filter |
+| `affectedFeeds`             | list   | The feed URLs the rule applied to                       |
+| `ignoreDays`                | number | Ignore sunsequent rule matches                          |
+| `lastMatch`                 | string | The rule last match time                                |
+| `addPaused`                 | bool   | Add matched torrent in paused mode                      |
+| `assignedCategory`          | string | Assign category to the torrent                          |
+| `savePath`                  | string | Save torrent to the given directory                     |
 
 E.g.:
 
@@ -2866,41 +2869,40 @@ E.g.:
 }
 ```
 
-## Rename auto-downloading rule ##
+### Rename auto-downloading rule ###
 
 Name: `renameRule`
 
 Parameters:
 
-Parameter                         | Type    | Description
-----------------------------------|---------|------------
-`ruleName`                        | string  | Rule name (e.g. "Punisher")
-`newRuleName`                     | string  | New rule name (e.g. "The Punisher")
+| Parameter     | Type   | Description                         |
+| ------------- | ------ | ----------------------------------- |
+| `ruleName`    | string | Rule name (e.g. "Punisher")         |
+| `newRuleName` | string | New rule name (e.g. "The Punisher") |
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios
+| HTTP Status Code | Scenario      |
+| ---------------- | ------------- |
+| 200              | All scenarios |
 
-## Remove auto-downloading rule ##
+### Remove auto-downloading rule ###
 
 Name: `removeRule`
 
 Parameters:
 
-Parameter                         | Type    | Description
-----------------------------------|---------|------------
-`ruleName`                        | string  | Rule name (e.g. "Punisher")
+| Parameter  | Type   | Description                 |
+| ---------- | ------ | --------------------------- |
+| `ruleName` | string | Rule name (e.g. "Punisher") |
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios
+| HTTP Status Code | Scenario      |
+| ---------------- | ------------- |
+| 200              | All scenarios |
 
-
-## Get all auto-downloading rules ##
+### Get all auto-downloading rules ###
 
 Name: `rules`
 
@@ -2928,20 +2930,20 @@ Returns all auto-downloading rules in JSON format, e.g.:
     }
 }
 ```
+
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios
+| HTTP Status Code | Scenario      |
+| ---------------- | ------------- |
+| 200              | All scenarios |
 
-## Get all articles matching a rule ##
+### Get all articles matching a rule ###
 
 Name: `matchingArticles`
 
-Parameter                         | Type    | Description
-----------------------------------|---------|------------
-`ruleName`                        | string  | Rule name (e.g. "Linux")
-
+| Parameter  | Type   | Description              |
+| ---------- | ------ | ------------------------ |
+| `ruleName` | string | Rule name (e.g. "Linux") |
 
 Returns all articles that match a rule by feed name in JSON format, e.g.:
 
@@ -2967,39 +2969,38 @@ Returns all articles that match a rule by feed name in JSON format, e.g.:
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios
+| HTTP Status Code | Scenario      |
+| ---------------- | ------------- |
+| 200              | All scenarios |
 
-
-# Search #
+## Search ##
 
 All Search API methods are under "search", e.g.: `/api/v2/search/methodName`.
 
-## Start search ##
+### Start search ###
 
 Name: `start`
 
 **Parameters:**
 
-Parameter                         | Type    | Description
-----------------------------------|---------|------------
-`pattern`                         | string  | Pattern to search for (e.g. "Ubuntu 18.04")
-`plugins`                         | string  | Plugins to use for searching (e.g. "legittorrents"). Supports multiple plugins separated by `\|`. Also supports `all` and `enabled`
-`category`                        | string  | Categories to limit your search to (e.g. "legittorrents"). Available categories depend on the specified `plugins`. Also supports `all`
+| Parameter  | Type   | Description                                                                                                                            |
+| ---------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `pattern`  | string | Pattern to search for (e.g. "Ubuntu 18.04")                                                                                            |
+| `plugins`  | string | Plugins to use for searching (e.g. "legittorrents"). Supports multiple plugins separated by `\|`. Also supports `all` and `enabled`    |
+| `category` | string | Categories to limit your search to (e.g. "legittorrents"). Available categories depend on the specified `plugins`. Also supports `all` |
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-409                               | User has reached the limit of max `Running` searches (currently set to 5)
-200                               | All other scenarios- see JSON below
+| HTTP Status Code | Scenario                                                                  |
+| ---------------- | ------------------------------------------------------------------------- |
+| 409              | User has reached the limit of max `Running` searches (currently set to 5) |
+| 200              | All other scenarios- see JSON below                                       |
 
 The response is a JSON object with the following fields
 
-Field                             | Type    | Description
-----------------------------------|---------|------------
-`id`                              | number  | ID of the search job
+| Field | Type   | Description          |
+| ----- | ------ | -------------------- |
+| `id`  | number | ID of the search job |
 
 Example:
 
@@ -3009,47 +3010,47 @@ Example:
 }
 ```
 
-## Stop search ##
+### Stop search ###
 
 Name: `stop`
 
 **Parameters:**
 
-Parameter                         | Type    | Description
-----------------------------------|---------|------------
-`id`                              | number  | ID of the search job
+| Parameter | Type   | Description          |
+| --------- | ------ | -------------------- |
+| `id`      | number | ID of the search job |
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-404                               | Search job was not found
-200                               | All other scenarios
+| HTTP Status Code | Scenario                 |
+| ---------------- | ------------------------ |
+| 404              | Search job was not found |
+| 200              | All other scenarios      |
 
-## Get search status ##
+### Get search status ###
 
 Name: `status`
 
 **Parameters:**
 
-Parameter                         | Type    | Description
-----------------------------------|---------|------------
-`id` _optional_                   | number  | ID of the search job. If not specified, all search jobs are returned
+| Parameter       | Type   | Description                                                          |
+| --------------- | ------ | -------------------------------------------------------------------- |
+| `id` _optional_ | number | ID of the search job. If not specified, all search jobs are returned |
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-404                               | Search job was not found
-200                               | All other scenarios- see JSON below
+| HTTP Status Code | Scenario                            |
+| ---------------- | ----------------------------------- |
+| 404              | Search job was not found            |
+| 200              | All other scenarios- see JSON below |
 
 The response is a JSON array of objects containing the following fields
 
-Field                             | Type    | Description
-----------------------------------|---------|------------
-`id`                              | number  | ID of the search job
-`status`                          | string  | Current status of the search job (either `Running` or `Stopped`)
-`total`                           | number  | Total number of results. If the status is `Running` this number may contineu to increase
+| Field    | Type   | Description                                                                              |
+| -------- | ------ | ---------------------------------------------------------------------------------------- |
+| `id`     | number | ID of the search job                                                                     |
+| `status` | string | Current status of the search job (either `Running` or `Stopped`)                         |
+| `total`  | number | Total number of results. If the status is `Running` this number may contineu to increase |
 
 Example:
 
@@ -3063,45 +3064,45 @@ Example:
 ]
 ```
 
-## Get search results ##
+### Get search results ###
 
 Name: `results`
 
 **Parameters:**
 
-Parameter                         | Type    | Description
-----------------------------------|---------|------------
-`id`                              | number  | ID of the search job
-`limit` _optional_                | number  | max number of results to return. 0 or negative means no limit
-`offset` _optional_               | number  | result to start at. A negative number means count backwards (e.g. `-2` returns the 2 most recent results)
+| Parameter           | Type   | Description                                                                                               |
+| ------------------- | ------ | --------------------------------------------------------------------------------------------------------- |
+| `id`                | number | ID of the search job                                                                                      |
+| `limit` _optional_  | number | max number of results to return. 0 or negative means no limit                                             |
+| `offset` _optional_ | number | result to start at. A negative number means count backwards (e.g. `-2` returns the 2 most recent results) |
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-404                               | Search job was not found
-409                               | Offset is too large, or too small (e.g. absolute value of negative number is greater than # results)
-200                               | All other scenarios- see JSON below
+| HTTP Status Code | Scenario                                                                                             |
+| ---------------- | ---------------------------------------------------------------------------------------------------- |
+| 404              | Search job was not found                                                                             |
+| 409              | Offset is too large, or too small (e.g. absolute value of negative number is greater than # results) |
+| 200              | All other scenarios- see JSON below                                                                  |
 
 The response is a JSON object with the following fields
 
-Field                             | Type    | Description
-----------------------------------|---------|------------
-`results`                         | array   | Array of `result` objects- see table below
-`status`                          | string  | Current status of the search job (either `Running` or `Stopped`)
-`total`                           | number  | Total number of results. If the status is `Running` this number may continue to increase
+| Field     | Type   | Description                                                                              |
+| --------- | ------ | ---------------------------------------------------------------------------------------- |
+| `results` | array  | Array of `result` objects- see table below                                               |
+| `status`  | string | Current status of the search job (either `Running` or `Stopped`)                         |
+| `total`   | number | Total number of results. If the status is `Running` this number may continue to increase |
 
 **Result object:**
 
-Field                             | Type    | Description
-----------------------------------|---------|------------
-`descrLink`                       | string  | URL of the torrent's description page
-`fileName`                        | string  | Name of the file
-`fileSize`                        | number  | Size of the file in Bytes
-`fileUrl`                         | string  | Torrent download link (usually either .torrent file or magnet link)
-`nbLeechers`                      | number  | Number of leechers
-`nbSeeders`                       | number  | Number of seeders
-`siteUrl`                         | string  | URL of the torrent site
+| Field        | Type   | Description                                                         |
+| ------------ | ------ | ------------------------------------------------------------------- |
+| `descrLink`  | string | URL of the torrent's description page                               |
+| `fileName`   | string | Name of the file                                                    |
+| `fileSize`   | number | Size of the file in Bytes                                           |
+| `fileUrl`    | string | Torrent download link (usually either .torrent file or magnet link) |
+| `nbLeechers` | number | Number of leechers                                                  |
+| `nbSeeders`  | number | Number of seeders                                                   |
+| `siteUrl`    | string | URL of the torrent site                                             |
 
 Example:
 
@@ -3132,24 +3133,24 @@ Example:
 }
 ```
 
-## Delete search ##
+### Delete search ###
 
 Name: `delete`
 
 **Parameters:**
 
-Parameter                         | Type    | Description
-----------------------------------|---------|------------
-`id`                              | number  | ID of the search job
+| Parameter | Type   | Description          |
+| --------- | ------ | -------------------- |
+| `id`      | number | ID of the search job |
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-404                               | Search job was not found
-200                               | All other scenarios
+| HTTP Status Code | Scenario                 |
+| ---------------- | ------------------------ |
+| 404              | Search job was not found |
+| 200              | All other scenarios      |
 
-## Get search plugins ##
+### Get search plugins ###
 
 Name: `plugins`
 
@@ -3159,20 +3160,20 @@ None
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios- see JSON below
+| HTTP Status Code | Scenario                      |
+| ---------------- | ----------------------------- |
+| 200              | All scenarios- see JSON below |
 
 The response is a JSON array of objects containing the following fields
 
-Field                             | Type    | Description
-----------------------------------|---------|------------
-`enabled`                         | bool    | Whether the plugin is enabled
-`fullName`                        | string  | Full name of the plugin
-`name`                            | string  | Short name of the plugin
-`supportedCategories`             | array   | List of category objects
-`url`                             | string  | URL of the torrent site
-`version`                         | string  | Installed version of the plugin
+| Field                 | Type   | Description                     |
+| --------------------- | ------ | ------------------------------- |
+| `enabled`             | bool   | Whether the plugin is enabled   |
+| `fullName`            | string | Full name of the plugin         |
+| `name`                | string | Short name of the plugin        |
+| `supportedCategories` | array  | List of category objects        |
+| `url`                 | string | URL of the torrent site         |
+| `version`             | string | Installed version of the plugin |
 
 ```JSON
 [
@@ -3208,56 +3209,56 @@ Field                             | Type    | Description
 ]
 ```
 
-## Install search plugin ##
+### Install search plugin ###
 
 Name: `installPlugin`
 
 **Parameters:**
 
-Parameter                         | Type    | Description
-----------------------------------|---------|------------
-`sources`                         | string  | Url or file path of the plugin to install (e.g. "[https://raw.githubusercontent.com/qbittorrent/search-plugins/master/nova3/engines/legittorrents.py](https://raw.githubusercontent.com/qbittorrent/search-plugins/master/nova3/engines/legittorrents.py)"). Supports multiple sources separated by `\|`
+| Parameter | Type   | Description                                                                                                                                                                                                                                                                                              |
+| --------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `sources` | string | Url or file path of the plugin to install (e.g. "[https://raw.githubusercontent.com/qbittorrent/search-plugins/master/nova3/engines/legittorrents.py](https://raw.githubusercontent.com/qbittorrent/search-plugins/master/nova3/engines/legittorrents.py)"). Supports multiple sources separated by `\|` |
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios
+| HTTP Status Code | Scenario      |
+| ---------------- | ------------- |
+| 200              | All scenarios |
 
-## Uninstall search plugin ##
+### Uninstall search plugin ###
 
 Name: `uninstallPlugin`
 
 **Parameters:**
 
-Parameter                         | Type    | Description
-----------------------------------|---------|------------
-`names`                           | string  | Name of the plugin to uninstall (e.g. "legittorrents"). Supports multiple names separated by `\|`
+| Parameter | Type   | Description                                                                                       |
+| --------- | ------ | ------------------------------------------------------------------------------------------------- |
+| `names`   | string | Name of the plugin to uninstall (e.g. "legittorrents"). Supports multiple names separated by `\|` |
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios
+| HTTP Status Code | Scenario      |
+| ---------------- | ------------- |
+| 200              | All scenarios |
 
-## Enable search plugin ##
+### Enable search plugin ###
 
 Name: `enablePlugin`
 
 **Parameters:**
 
-Parameter                         | Type    | Description
-----------------------------------|---------|------------
-`names`                           | string  | Name of the plugin to enable/disable (e.g. "legittorrents"). Supports multiple names separated by `\|`
-`enable`                          | bool    | Whether the plugins should be enabled
+| Parameter | Type   | Description                                                                                            |
+| --------- | ------ | ------------------------------------------------------------------------------------------------------ |
+| `names`   | string | Name of the plugin to enable/disable (e.g. "legittorrents"). Supports multiple names separated by `\|` |
+| `enable`  | bool   | Whether the plugins should be enabled                                                                  |
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios
+| HTTP Status Code | Scenario      |
+| ---------------- | ------------- |
+| 200              | All scenarios |
 
-## Update search plugins ##
+### Update search plugins ###
 
 Name: `updatePlugins`
 
@@ -3267,12 +3268,14 @@ None
 
 **Returns:**
 
-HTTP Status Code                  | Scenario
-----------------------------------|---------------------
-200                               | All scenarios
+| HTTP Status Code | Scenario      |
+| ---------------- | ------------- |
+| 200              | All scenarios |
 
-# WebAPI versioning #
+## WebAPI versioning ##
+
 WebAPI uses the following versioning: `1.2.3`:
+
 1. Main version. Should be changed only on some global changes (e.g. total redesign/relayout)
 2. Changed on incompatible API changes (i.e. if it breaks outdated clients). E.g. if you change/remove something
 3. Changed on compatible API changes (i.e. if it doesn't break outdated clients). E.g. if you add something new outdated clients still can access old subset of API.

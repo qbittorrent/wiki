@@ -1,3 +1,4 @@
+# Disable Connections Not Supported by Proxies
 
 ## Always enabled in qBittorrent 4.2 and above
 
@@ -12,6 +13,7 @@ The option is removed.
 This feature attempts to enhance client privacy by disallowing any traffic that doesn't flow through a configured proxy. If enabling this option, you may also be interested in [Anonymous Mode](Anonymous-Mode).
 
 ## Features
+
 * Disables Local Peer Discovery
 * Disables UPnP & NAT-PMP
 * Only talks to http(s) trackers via (any) proxy

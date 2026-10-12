@@ -3,11 +3,12 @@
 If so, please do not ask for assistance here, go to the [Official qBittorrent support forum](http://forum.qbittorrent.org) and provide the answers to the following:
 
 ## Connection Speed
+
 What your ISP has sold you is irrelevant, to calculate a starting place for settings requires a real time check of bandwidth/speed capability.
 
 ### Instructions
 
-Turn off any and all BitTorrent clients that are running, open [Speedtest.net](http://www.speedtest.net)  in a browser, run the test(s), then provide a screen shot of the results in your post.
+Turn off any and all BitTorrent clients that are running, open [Speedtest.net](http://www.speedtest.net) in a browser, run the test(s), then provide a screen shot of the results in your post.
 
 ## Version and Operating System
 
@@ -36,6 +37,7 @@ This is essential. Also before asking, please ensure that you are using the late
 * Are there other users on the LAN?
 
 If a specific loaded task is a problem, please provide:
+
 * The status of the task.
 * Seed and Peer counts in bracketed form x(n)... The number in the bracket is possible, the number outside is actual.
 * Tracker status information.

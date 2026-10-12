@@ -1,4 +1,4 @@
-## How to disable auto-seed
+# How to disable auto-seed
 
 How to stop qbittorrent continuing to seed after whatever ratio limit that you want has been reached:
 

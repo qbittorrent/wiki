@@ -1,3 +1,5 @@
+# How to Diagnose IO Error, BSOD, Crash (Windows)
+
 ## qBittorrent gave you a lockup or BSOD (Blue Screen of Death). Now what?
 
 First of all, if you get a BSOD, and it's not `irql_not_less_or_equal`, there is a good chance you will be able to debug the BSOD. It is a very powerful and useful tool to find why your Windows system just crashed.
@@ -11,8 +13,6 @@ The numbers mean how hard is it to check on a scale of 5.
 * [Your HDD/Storage](#how-to-check-the-hdd-or-storage) (2/5)
 * [Your Power Supply](#how-to-check-psu) (4/5)
 * [Something else](#something-else) (5/5)
-
-***
 
 ## How to diagnose BSOD
 
@@ -31,19 +31,18 @@ The `c:\symbols` will be your local symbol cache. I would suggest using somethin
 7. Wait. Once you see "Ready", use the `!analyze -v` command.
 8. It will tell you the most likely culprit, but the other loaded things are also suspects. For me, the "most likely" thing was a Windows DLL, but my Avast file scanner service was also there. Removed Avast - boom - no BSOD ever since.
 
-
-***
-
 ## How to check RAM
 
 ### Windows in-built tool
 
-* https://www.cnet.com/how-to/test-your-ram-with-windows-memory-diagnostic-tool/
+* <https://www.cnet.com/how-to/test-your-ram-with-windows-memory-diagnostic-tool/>
 
 ### Alternatives
+
 In case Windows's in-built test does not work for you.
-* https://www.memtest86.com
-* https://www.howtogeek.com/260813/how-to-test-your-computers-ram-for-problems/
+
+* <https://www.memtest86.com>
+* <https://www.howtogeek.com/260813/how-to-test-your-computers-ram-for-problems/>
 
 You have to download Memtest86 and put it on a pendrive, CD or DVD.
 Boot it, and it will check your RAM.
@@ -52,27 +51,27 @@ I usually stop after 1 PASS, but you can wait until 2 PASS or so. If there are n
 If you can't get Memtest86 to work, a live Ubuntu ISO will work just as well.
 Download the latest Ubuntu LTS version (16.04 at the moment), and put it on a pendrive, CD or DVD.
 
-
-***
-
-
 ## How to check the HDD or storage
 
 ### Windows
+
 There are many great free tools for this.
-* https://hddguardian.codeplex.com
-* https://crystalmark.info/en/software/crystaldiskinfo/
+
+* <https://hddguardian.codeplex.com>
+* <https://crystalmark.info/en/software/crystaldiskinfo/>
 
 ### Ubuntu
+
 If you can't boot Windows, you can use an [Ubuntu Live CD](https://www.howtogeek.com/191054/how-to-create-bootable-usb-drives-and-sd-cards-for-every-operating-system/) to diagnose your HDD.
-* https://askubuntu.com/questions/528072/how-can-i-check-the-smart-status-of-a-drive-on-ubuntu-14-04-through-16-10
-* https://askubuntu.com/questions/38566/how-can-i-check-the-health-of-my-hard-drive
+
+* <https://askubuntu.com/questions/528072/how-can-i-check-the-smart-status-of-a-drive-on-ubuntu-14-04-through-16-10>
+* <https://askubuntu.com/questions/38566/how-can-i-check-the-health-of-my-hard-drive>
 
 You want to check:
+
 * Reallocated_Sector_Ct
 * Current_Pending_Sector
 * Power_On_Hours
-
 * Reallocated_Sector_Ct:
 > Once this reaches 1, or any higher, the HDD is a ticking bomb. Back up and replace ASAP. Only store throwaway data on it.
 
@@ -82,9 +81,8 @@ You want to check:
 * Power_On_Hours:
 > How many hours your HDD ran. HDDs usually die around 20-30k hours. Some may run up to 60k. It is totally random, and there is no guarantee a hard drive will run to X hours. It's however a good idea to back up more often and worry once you reach a lot of hours.
 
-***
-
 ## How to check PSU
+
 This one is very tricky.
 The best and easiest method is to switch the PSU to an other one.
 Use the computer, try every application, game and whatnot.
@@ -104,5 +102,6 @@ If you have a BSOD, or the computer restarts/turns off, you have a bad PSU.
 Your PSU might also be able to deliver stable power during stress (not likely), so also test some other situations where you had a freeze/lockup.
 
 ## Something else
+
 Check if the cables to your HDD/things are connected firmly, and they are not loose. This can also cause trouble.
 If nothing helped, your motherboard can also be faulty. An anti-virus can also cause BSOD, but it will show up with "windbg".

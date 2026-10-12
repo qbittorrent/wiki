@@ -16,17 +16,17 @@ jobs:
       security-events: write
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           persist-credentials: false
 
       - name: Install tools
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v7
         with:
           python-version: "*"
 
-      - name: Check files
-        uses: pre-commit/action@v3.0.1
+      - name: Check file health
+        uses: j178/prek-action@v2
 
       - name: Check GitHub Actions workflow
         env:

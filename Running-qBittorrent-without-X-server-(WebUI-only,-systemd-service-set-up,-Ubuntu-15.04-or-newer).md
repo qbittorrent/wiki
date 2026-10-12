@@ -1,3 +1,5 @@
+# Running qBittorrent without X server (WebUI only, systemd service set up, Ubuntu 15.04 or newer)
+
 ## Introduction
 
 qBittorrent has a feature-rich Web UI allowing users to control qBittorrent remotely.
@@ -15,7 +17,7 @@ All instructions assume very basic knowledge of how to use the terminal.
 Official qBittorrent packages are available for all mainstream Linux distributions, but distributions may not always contain the latest package versions.
 
 For Ubuntu, it's advisable to install `qbittorrent-nox` from the official PPAs to get the latest version.
-Refer to https://github.com/qbittorrent/qBittorrent/wiki/Installing-qBittorrent for more information.
+Refer to <https://github.com/qbittorrent/qBittorrent/wiki/Installing-qBittorrent> for more information.
 
 Alternatively, you can always compile from source. Check out the articles under the [Compilation](https://github.com/qbittorrent/qBittorrent/wiki#compilation) section of the Wiki home page for more information.
 
@@ -83,7 +85,8 @@ You can now stop impersonating the qbittorrent user by executing the `exit` comm
 ## Setup the `systemd` service
 
 If you are not using a very ancient version of qBittorrent, usually a service file will be already installed and it should be located at `/usr/lib/systemd/system/qbittorrent-nox@.service` \
-In case the file isn't present on your system, you can create one by copying the contents from here: https://github.com/qbittorrent/qBittorrent/blob/master/dist/unix/systemd/qbittorrent-nox%40.service.in. Save it and run `sudo systemctl daemon-reload` to make the service manager aware of it.
+In case the file isn't present on your system, you can create one by copying the contents from here: <https://github.com/qbittorrent/qBittorrent/blob/master/dist/unix/systemd/qbittorrent-nox%40.service.in>. Save it and run `sudo systemctl daemon-reload` to make the service manager aware of it.
+
 - To start the service run: `sudo systemctl start qbittorrent-nox@qbtuser`
 - To let the service start up on boot: `sudo systemctl enable qbittorrent-nox@qbtuser`
 
