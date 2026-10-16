@@ -61,6 +61,10 @@ If you know of more, feel free to add a link to the repository along with a shor
 
   A mobile-focused qBittorrent WebUI with dark mode and broad version compatibility.
 
+- <https://github.com/IsidroPenh/penumbra>
+
+  A dark skin for the default WebUI that keeps all of its features, plus a dedicated touch-first mobile interface (installable PWA) that opens automatically on phones.
+
 ### Boilerplates
 
 This is a list of boilerplate projects for starting to develop a new WebUI
