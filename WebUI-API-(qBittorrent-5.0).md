@@ -2246,16 +2246,15 @@ hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5
 ```
 
 `hashes` can contain multiple hashes separated by `|` or set to `all`
-`location` is the location to download the torrent to. If the location doesn't exist, the torrent's location is unchanged.
+`location` is the location to download the torrent to. If the location doesn't exist, it is created.
 
 **Returns:**
 
-| HTTP Status Code | Scenario                                     |
-| ---------------- | -------------------------------------------- |
-| 400              | Save path is empty                           |
-| 403              | User does not have write access to directory |
-| 409              | Unable to create save path directory         |
-| 200              | All other scenarios                          |
+| HTTP Status Code | Scenario                             |
+| ---------------- | ------------------------------------ |
+| 400              | Save path is empty                   |
+| 409              | Unable to create save path directory |
+| 200              | All other scenarios                  |
 
 ### Set torrent name ###
 
