@@ -18,7 +18,7 @@ magnet:?xt=urn:btih:WRN7ZT6NKMA6SSXYKAFRUGDDIFJUNKI2
 
 if it´s added to qBittorrent and then you issue a /query/torrents command, you´ll get a JSON object like this (fields other than "hash" are omitted):
 
-```text
+```json
 [{...,"hash":"b45bfccfcd5301e94af8500b1a1863415346a91a",...},...]
 ```
 
@@ -26,13 +26,15 @@ which shows how qBittorrent converted our base32 hash to its base16 representati
 
 ## How to implement the base conversion
 
-If you're into python, this base conversion can be accomplished as follows:
+If you're into Python, this base conversion can be accomplished as follows:
 
-    >>> import base64
-    >>> b32Hash = "WRN7ZT6NKMA6SSXYKAFRUGDDIFJUNKI2"
-    >>> b16Hash = base64.b16encode(base64.b32decode(b32Hash))
-    >>> b16Hash = b16Hash.lower()
-    >>> print (b16Hash)
+```python
+import base64
+b32Hash = "WRN7ZT6NKMA6SSXYKAFRUGDDIFJUNKI2"
+b16Hash = base64.b16encode(base64.b32decode(b32Hash))
+b16Hash = b16Hash.lower()
+print (b16Hash)
+```
 
 which will output: b'b45bfccfcd5301e94af8500b1a1863415346a91a'
 
