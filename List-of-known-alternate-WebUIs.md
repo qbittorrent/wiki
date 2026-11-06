@@ -69,6 +69,10 @@ If you know of more, feel free to add a link to the repository along with a shor
 
   A macOS-style skin for the default WebUI that keeps all of its features, plus an option to show speeds and enter speed limits in bits (kbit/s, Mbit/s). Available as a zip release and as a linuxserver.io Docker mod.
 
+- <https://github.com/kajover/qbminimal>
+
+  A minimal, phone-friendly replacement for the WebUI, built with React.
+
 ### Boilerplates
 
 This is a list of boilerplate projects for starting to develop a new WebUI
