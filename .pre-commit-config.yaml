@@ -29,7 +29,7 @@ repos:
       entry: wikilint
       args: ["--lint-config", ".github/workflows/helpers/pre-commit/.wikilint.json", "--strict", "--fix"]
       language: node
-      additional_dependencies: ['wikilint']
+      additional_dependencies: ["--ignore-scripts=true", "--min-release-age=3", "wikilint"]
       files: \.mediawiki$
 
   - repo: https://github.com/codespell-project/codespell.git
