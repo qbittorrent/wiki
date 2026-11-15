@@ -1881,7 +1881,7 @@ The above example will add two torrent files. `file_binary_data_goes_here` repre
 | HTTP Status Code | Scenario                  |
 | ---------------- | ------------------------- |
 | 415              | Torrent file is not valid |
-| 200              | All other scenarios       |
+| 202              | All other scenarios       |
 
 ### Add trackers to torrent ###
 
