@@ -118,6 +118,10 @@ This WebUI API documentation applies to qBittorrent v5.0+. For other WebUI API v
 - Add APIs for managing cookies` ([#21340](https://github.com/qbittorrent/qBittorrent/pull/21340))
 - Remove `cookie` field from `/torrents/add` request
 
+### Later API Changes ###
+
+Further API changes are documented in [WebAPI_Changelog.md](https://github.com/qbittorrent/qBittorrent/blob/master/WebAPI_Changelog.md).
+
 ## General Information ##
 
 - All API methods follows the format `/api/v2/APIName/methodName`, where `APIName` is a certain subgroup of API methods whose functionality is related.
