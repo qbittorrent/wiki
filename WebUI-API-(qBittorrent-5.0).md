@@ -4,7 +4,8 @@ This WebUI API documentation applies to qBittorrent v5.0+. For other WebUI API v
 
 1. [Changes](#changes)
    1. [API v2.9.3](#api-v293)
-   2. [API v2.11.3](#api-v2113)
+   1. [API v2.11.3](#api-v2113)
+   1. [Later API Changes](#later-api-changes)
 1. [General information](#general-information)
 1. [Authentication](#authentication)
    1. [Login](#login)
