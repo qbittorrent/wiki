@@ -1731,7 +1731,7 @@ Name: `delete`
 
 Example:
 
-```bash
+```sh
 curl \
   -X POST \
   -H "Content-Type: application/x-www-form-urlencoded" \
