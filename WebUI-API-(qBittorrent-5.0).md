@@ -146,7 +146,7 @@ Name: `login`
 | HTTP Status Code | Scenario                                               |
 | ---------------- | ------------------------------------------------------ |
 | 403              | User's IP is banned for too many failed login attempts |
-| 200              | All other scenarios                                    |
+| 204              | All other scenarios                                    |
 
 Upon success, the response will contain a cookie with your SID. You must supply the cookie whenever you want to perform an operation that requires authentication.
 
@@ -154,7 +154,7 @@ Example showing how to login and execute a command that requires authentication 
 
 ```sh
 $ curl -i --header 'Referer: http://localhost:8080' --data 'username=admin&password=adminadmin' http://localhost:8080/api/v2/auth/login
-HTTP/1.1 200 OK
+HTTP/1.1 204 OK
 Content-Encoding:
 Content-Length: 3
 Content-Type: text/plain; charset=UTF-8
