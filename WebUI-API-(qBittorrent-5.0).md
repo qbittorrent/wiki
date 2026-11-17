@@ -1732,10 +1732,10 @@ Name: `delete`
 Example:
 
 ```bash
-curl
+curl \
   -X POST \
   -H "Content-Type: application/x-www-form-urlencoded" \
-  --cookie "QBT_SID_8080=hBc7TxF76ERhvIw0jQQ4LZ7Z1jQUV0tQ"
+  --cookie "QBT_SID_8080=hBc7TxF76ERhvIw0jQQ4LZ7Z1jQUV0tQ" \
   --data-urlencode "hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32" \
   --data-urlencode "deleteFiles=false" \
   "http://localhost:8080/api/v2/torrents/delete"
