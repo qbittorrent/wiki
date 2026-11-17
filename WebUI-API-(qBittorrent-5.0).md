@@ -148,7 +148,7 @@ Name: `login`
 | 403              | User's IP is banned for too many failed login attempts |
 | 200              | All other scenarios                                    |
 
-Upon success, the response will contain a cookie with your SID in a cookie matching the format of `QBT_SID_<port>`, where `<port>` is the port on which qBittorrent is listening for requests - e.g., when your qBittorrent API is available at http://localhost:8080, the SID will be stored (and accepted in) a cookie named `QBT_SID_8080`.
+Upon success, the response contains a session cookie in the `Set-Cookie` header. Reuse the cookie name and value returned by the server rather than deriving the name from the request URL: qBittorrent v5.0.0 defaults to `SID` (which can be overridden by configuration), while versions using port-qualified names return `QBT_SID_<port>`, where `<port>` is qBittorrent's configured WebUI port. The examples below assume the port-qualified format with port 8080; substitute the cookie name returned by your server if it differs.
 
 You must supply the cookie whenever you want to perform an operation that requires authentication.
 
