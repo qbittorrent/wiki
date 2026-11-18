@@ -153,7 +153,9 @@ Name: `login`
 | 403              | User's IP is banned for too many failed login attempts |
 | 200              | All other scenarios                                    |
 
-Upon success, the response will contain a cookie with your SID. You must supply the cookie whenever you want to perform an operation that requires authentication.
+Upon success, the response contains a session cookie in the `Set-Cookie` header. Reuse the cookie name and value returned by the server rather than deriving the name from the request URL: qBittorrent v5.0.0 defaults to `SID` (which can be overridden by configuration), while versions using port-qualified names return `QBT_SID_<port>`, where `<port>` is qBittorrent's configured WebUI port. The examples below assume the port-qualified format with port 8080; substitute the cookie name returned by your server if it differs.
+
+You must supply the cookie whenever you want to perform an operation that requires authentication.
 
 Example showing how to login and execute a command that requires authentication using `curl`:
 
@@ -163,8 +165,8 @@ HTTP/1.1 200 OK
 Content-Encoding:
 Content-Length: 3
 Content-Type: text/plain; charset=UTF-8
-Set-Cookie: SID=hBc7TxF76ERhvIw0jQQ4LZ7Z1jQUV0tQ; path=/
-$ curl http://localhost:8080/api/v2/torrents/info --cookie "SID=hBc7TxF76ERhvIw0jQQ4LZ7Z1jQUV0tQ"
+Set-Cookie: QBT_SID_8080=hBc7TxF76ERhvIw0jQQ4LZ7Z1jQUV0tQ; path=/
+$ curl http://localhost:8080/api/v2/torrents/info --cookie "QBT_SID_8080=hBc7TxF76ERhvIw0jQQ4LZ7Z1jQUV0tQ"
 ```
 
 Note: Set `Referer` or `Origin` header to the exact same domain and port as used in the HTTP query `Host` header.
@@ -1804,7 +1806,7 @@ Add torrent from URLs example:
 POST /api/v2/torrents/add HTTP/1.1
 User-Agent: Fiddler
 Host: 127.0.0.1
-Cookie: SID=your_sid
+Cookie: QBT_SID_8080=your_sid
 Content-Type: multipart/form-data; boundary=---------------------------6688794727912
 Content-Length: length
 
@@ -1843,7 +1845,7 @@ POST /api/v2/torrents/add HTTP/1.1
 Content-Type: multipart/form-data; boundary=-------------------------acebdf13572468
 User-Agent: Fiddler
 Host: 127.0.0.1
-Cookie: SID=your_sid
+Cookie: QBT_SID_8080=your_sid
 Content-Length: length
 
 ---------------------------acebdf13572468
@@ -1896,7 +1898,7 @@ Requires knowing the torrent hash. You can get it from [torrent list](#get-torre
 POST /api/v2/torrents/addTrackers HTTP/1.1
 User-Agent: Fiddler
 Host: 127.0.0.1
-Cookie: SID=your_sid
+Cookie: QBT_SID_8080=your_sid
 Content-Type: application/x-www-form-urlencoded
 Content-Length: length
 
@@ -2106,7 +2108,7 @@ Requires knowing the torrent hash. You can get it from [torrent list](#get-torre
 POST /api/v2/torrents/downloadLimit HTTP/1.1
 User-Agent: Fiddler
 Host: 127.0.0.1
-Cookie: SID=your_sid
+Cookie: QBT_SID_8080=your_sid
 Content-Type: application/x-www-form-urlencoded
 Content-Length: length
 
@@ -2135,7 +2137,7 @@ Requires knowing the torrent hash. You can get it from [torrent list](#get-torre
 POST /api/v2/torrents/setDownloadLimit HTTP/1.1
 User-Agent: Fiddler
 Host: 127.0.0.1
-Cookie: SID=your_sid
+Cookie: QBT_SID_8080=your_sid
 Content-Type: application/x-www-form-urlencoded
 Content-Length: length
 
@@ -2159,7 +2161,7 @@ Requires knowing the torrent hash. You can get it from [torrent list](#get-torre
 POST /api/v2/torrents/setShareLimits HTTP/1.1
 User-Agent: Fiddler
 Host: 127.0.0.1
-Cookie: SID=your_sid
+Cookie: QBT_SID_8080=your_sid
 Content-Type: application/x-www-form-urlencoded
 Content-Length: length
 
@@ -2190,7 +2192,7 @@ Requires knowing the torrent hash. You can get it from [torrent list](#get-torre
 POST /api/v2/torrents/uploadLimit HTTP/1.1
 User-Agent: Fiddler
 Host: 127.0.0.1
-Cookie: SID=your_sid
+Cookie: QBT_SID_8080=your_sid
 Content-Type: application/x-www-form-urlencoded
 Content-Length: length
 
@@ -2219,7 +2221,7 @@ Requires knowing the torrent hash. You can get it from [torrent list](#get-torre
 POST /api/v2/torrents/setUploadLimit HTTP/1.1
 User-Agent: Fiddler
 Host: 127.0.0.1
-Cookie: SID=your_sid
+Cookie: QBT_SID_8080=your_sid
 Content-Type: application/x-www-form-urlencoded
 Content-Length: length
 
@@ -2243,7 +2245,7 @@ Requires knowing the torrent hash. You can get it from [torrent list](#get-torre
 POST /api/v2/torrents/setLocation HTTP/1.1
 User-Agent: Fiddler
 Host: 127.0.0.1
-Cookie: SID=your_sid
+Cookie: QBT_SID_8080=your_sid
 Content-Type: application/x-www-form-urlencoded
 Content-Length: length
 
@@ -2269,7 +2271,7 @@ Requires knowing the torrent hash. You can get it from [torrent list](#get-torre
 POST /api/v2/torrents/rename HTTP/1.1
 User-Agent: Fiddler
 Host: 127.0.0.1
-Cookie: SID=your_sid
+Cookie: QBT_SID_8080=your_sid
 Content-Type: application/x-www-form-urlencoded
 Content-Length: length
 
@@ -2292,7 +2294,7 @@ Requires knowing the torrent hash. You can get it from [torrent list](#get-torre
 POST /api/v2/torrents/setCategory HTTP/1.1
 User-Agent: Fiddler
 Host: 127.0.0.1
-Cookie: SID=your_sid
+Cookie: QBT_SID_8080=your_sid
 Content-Type: application/x-www-form-urlencoded
 Content-Length: length
 
@@ -2345,7 +2347,7 @@ Returns all categories in JSON format, e.g.:
 POST /api/v2/torrents/createCategory HTTP/1.1
 User-Agent: Fiddler
 Host: 127.0.0.1
-Cookie: SID=your_sid
+Cookie: QBT_SID_8080=your_sid
 Content-Type: application/x-www-form-urlencoded
 Content-Length: length
 
@@ -2368,7 +2370,7 @@ category=CategoryName&savePath=/path/to/dir
 POST /api/v2/torrents/editCategory HTTP/1.1
 User-Agent: Fiddler
 Host: 127.0.0.1
-Cookie: SID=your_sid
+Cookie: QBT_SID_8080=your_sid
 Content-Type: application/x-www-form-urlencoded
 Content-Length: length
 
@@ -2389,7 +2391,7 @@ category=CategoryName&savePath=/path/to/save/torrents/to
 POST /api/v2/torrents/removeCategories HTTP/1.1
 User-Agent: Fiddler
 Host: 127.0.0.1
-Cookie: SID=your_sid
+Cookie: QBT_SID_8080=your_sid
 Content-Type: application/x-www-form-urlencoded
 Content-Length: length
 
@@ -2412,7 +2414,7 @@ Requires knowing the torrent hash. You can get it from [torrent list](#get-torre
 POST /api/v2/torrents/addTags HTTP/1.1
 User-Agent: Fiddler
 Host: 127.0.0.1
-Cookie: SID=your_sid
+Cookie: QBT_SID_8080=your_sid
 Content-Type: application/x-www-form-urlencoded
 Content-Length: length
 
@@ -2437,7 +2439,7 @@ Requires knowing the torrent hash. You can get it from [torrent list](#get-torre
 POST /api/v2/torrents/removeTags HTTP/1.1
 User-Agent: Fiddler
 Host: 127.0.0.1
-Cookie: SID=your_sid
+Cookie: QBT_SID_8080=your_sid
 Content-Type: application/x-www-form-urlencoded
 Content-Length: length
 
@@ -2484,7 +2486,7 @@ Returns all tags in JSON format, e.g.:
 POST /api/v2/torrents/createTags HTTP/1.1
 User-Agent: Fiddler
 Host: 127.0.0.1
-Cookie: SID=your_sid
+Cookie: QBT_SID_8080=your_sid
 Content-Type: application/x-www-form-urlencoded
 Content-Length: length
 
@@ -2506,7 +2508,7 @@ Can contain multiple tags separated by `,`.
 POST /api/v2/torrents/deleteTags HTTP/1.1
 User-Agent: Fiddler
 Host: 127.0.0.1
-Cookie: SID=your_sid
+Cookie: QBT_SID_8080=your_sid
 Content-Type: application/x-www-form-urlencoded
 Content-Length: length
 
@@ -2530,7 +2532,7 @@ Requires knowing the torrent hash. You can get it from [torrent list](#get-torre
 POST /api/v2/torrents/setAutoManagement HTTP/1.1
 User-Agent: Fiddler
 Host: 127.0.0.1
-Cookie: SID=your_sid
+Cookie: QBT_SID_8080=your_sid
 Content-Type: application/x-www-form-urlencoded
 Content-Length: length
 
@@ -2602,7 +2604,7 @@ Requires knowing the torrent hash. You can get it from [torrent list](#get-torre
 POST /api/v2/torrents/setForceStart HTTP/1.1
 User-Agent: Fiddler
 Host: 127.0.0.1
-Cookie: SID=your_sid
+Cookie: QBT_SID_8080=your_sid
 Content-Type: application/x-www-form-urlencoded
 Content-Length: length
 
@@ -2626,7 +2628,7 @@ Requires knowing the torrent hash. You can get it from [torrent list](#get-torre
 POST /api/v2/torrents/setSuperSeeding HTTP/1.1
 User-Agent: Fiddler
 Host: 127.0.0.1
-Cookie: SID=your_sid
+Cookie: QBT_SID_8080=your_sid
 Content-Type: application/x-www-form-urlencoded
 Content-Length: length
 
