@@ -1725,7 +1725,7 @@ Example:
 
 ### Delete torrents ###
 
-Requires knowing the torrent hashes. You can get it from [torrent list](#get-torrent-list).
+Requires knowing the torrent hashes. You can get it from [torrent list](#get-torrent-list). The hashes and file deletion flag must be provided as URL-encoded form data.
 
 Name: `delete`
 
@@ -1738,8 +1738,14 @@ Name: `delete`
 
 Example:
 
-```http
-/api/v2/torrents/delete?hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32&deleteFiles=false
+```sh
+curl \
+  -X POST \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  --cookie "QBT_SID_8080=hBc7TxF76ERhvIw0jQQ4LZ7Z1jQUV0tQ" \
+  --data-urlencode "hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32" \
+  --data-urlencode "deleteFiles=false" \
+  "http://localhost:8080/api/v2/torrents/delete"
 ```
 
 **Returns:**
