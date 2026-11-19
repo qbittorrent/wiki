@@ -1870,6 +1870,19 @@ file_binary_data_goes_here
 
 The above example will add two torrent files. `file_binary_data_goes_here` represents raw data of torrent file (basically a byte array).
 
+Starting with v5.2.0, a torrent is imported immediately if it is:
+
+* An uploaded `.torrent` file
+* A Magnet / base hash
+* A local `.torrent` file (either by path or provided as a `file://` URL)
+* A result of resolving torrent information using `fetchMetadata`
+
+A torrent is imported asynchronously if it is:
+
+* Magnet with a downloader
+* A non-`file://` URL pointing at a `.torrent` file (e.g., an HTTP URL)
+* Search-plugin page URL with a downloader
+
 | Property                                             | Type    | Description                                                                         |
 | ---------------------------------------------------- | ------- | ----------------------------------------------------------------------------------- |
 | `urls`                                               | string  | URLs separated with newlines                                                        |
@@ -1891,10 +1904,11 @@ The above example will add two torrent files. `file_binary_data_goes_here` repre
 
 **Returns:**
 
-| HTTP Status Code | Scenario                  |
-| ---------------- | ------------------------- |
-| 415              | Torrent file is not valid |
-| 200              | All other scenarios       |
+| HTTP Status Code | Scenario                                                                    |
+| ---------------- | --------------------------------------------------------------------------- |
+| 415              | Torrent file is not valid                                                   |
+| 200              | < v5.2.0: all scenarios; v.5.2.0+: if torrent is added synchronously        |
+| 202              | Starting with v5.2.0, this is returned if a torrent is added asynchronously |
 
 ### Add trackers to torrent ###
 
