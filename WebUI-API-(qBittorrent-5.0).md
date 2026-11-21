@@ -2182,6 +2182,8 @@ hashes=8c212779b4abde7c6bc608063a0d008b7e40ce32|284b83c9c7935002391129fd97f43db5
 | `ratioLimit`               | float   | The maximum seeding ratio for the torrent. `-2` means the global limit should be used, `-1` means no limit.                                                |
 | `seedingTimeLimit`         | integer | The maximum seeding time (minutes) for the torrent. `-2` means the global limit should be used, `-1` means no limit.                                       |
 | `inactiveSeedingTimeLimit` | integer | The maximum amount of time (minutes) the torrent is allowed to seed while being inactive. `-2` means the global limit should be used, `-1` means no limit. |
+| `shareLimitAction`         | string  | Action taken when a share limit is reached (Default, Stop, Remove, RemoveWithContent, EnableSuperSeeding). |
+| `shareLimitsMode`          | string  | How share limits combine (Default, MatchAny, MatchAll). |
 
 **Returns:**
 
