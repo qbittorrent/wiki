@@ -151,7 +151,7 @@ Name: `login`
 | HTTP Status Code | Scenario                                               |
 | ---------------- | ------------------------------------------------------ |
 | 403              | User's IP is banned for too many failed login attempts |
-| 200              | All other scenarios                                    |
+| 204              | All other scenarios                                    |
 
 Upon success, the response contains a session cookie in the `Set-Cookie` header. Reuse the cookie name and value returned by the server rather than deriving the name from the request URL: qBittorrent v5.0.0 defaults to `SID` (which can be overridden by configuration), while versions using port-qualified names return `QBT_SID_<port>`, where `<port>` is qBittorrent's configured WebUI port. The examples below assume the port-qualified format with port 8080; substitute the cookie name returned by your server if it differs.
 
@@ -161,7 +161,7 @@ Example showing how to login and execute a command that requires authentication 
 
 ```sh
 $ curl -i --header 'Referer: http://localhost:8080' --data 'username=admin&password=adminadmin' http://localhost:8080/api/v2/auth/login
-HTTP/1.1 200 OK
+HTTP/1.1 204 OK
 Content-Encoding:
 Content-Length: 3
 Content-Type: text/plain; charset=UTF-8
