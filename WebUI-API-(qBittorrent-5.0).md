@@ -1859,16 +1859,16 @@ The above example will add two torrent files. `file_binary_data_goes_here` repre
 
 Starting with v5.2.0, a torrent is imported immediately if it is:
 
-* An uploaded `.torrent` file
-* A Magnet / base hash
-* A local `.torrent` file (either by path or provided as a `file://` URL)
-* A result of resolving torrent information using `fetchMetadata`
+- An uploaded `.torrent` file
+- A Magnet / base hash
+- A local `.torrent` file (either by path or provided as a `file://` URL)
+- A result of resolving torrent information using `fetchMetadata`
 
 A torrent is imported asynchronously if it is:
 
-* Magnet with a downloader
-* A non-`file://` URL pointing at a `.torrent` file (e.g., an HTTP URL)
-* Search-plugin page URL with a downloader
+- Magnet with a downloader
+- A non-`file://` URL pointing at a `.torrent` file (e.g., an HTTP URL)
+- Search-plugin page URL with a downloader
 
 | Property                                             | Type    | Description                                                                         |
 | ---------------------------------------------------- | ------- | ----------------------------------------------------------------------------------- |
